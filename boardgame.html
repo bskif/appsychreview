@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Psych Land</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- GENERAL LAYOUT --- */
+        body {
+            background-color: #f0f8ff;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* --- THE BOARD WRAPPER --- */
+        .board-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+        }
+
+        #game-board-img {
+            width: 100%;
+            display: block;
+            pointer-events: none;
+        }
+
+        /* --- PLAYER PIECES --- */
+        .player-piece {
+            font-size: 2rem;
+            position: absolute;
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 50;
+            transform: translate(-50%, -70%);
+            filter: drop-shadow(0px 5px 3px rgba(0,0,0,0.5));
+            pointer-events: none;
+        }
+
+        .p1 { z-index: 54; }
+        .p2 { filter: hue-rotate(210deg); z-index: 53; margin-left: 5px; } 
+        .p3 { filter: hue-rotate(100deg); z-index: 52; margin-top: 5px; }
+        .p4 { filter: hue-rotate(50deg);  z-index: 51; margin-left: 5px; margin-top: 5px; }
+
+        /* --- SPECIAL MARKERS --- */
+        .special-marker {
+            position: absolute;
+            font-size: 1.5rem;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, -50%); }
+            50% { transform: translate(-50%, -65%); }
+        }
+
+        /* --- UI ELEMENTS --- */
+        .sticky-controls {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+        
+        #feedback-modal { z-index: 300; }
+
+        .game-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 8px solid #333; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Standard Game Button */
+        .game-btn {
+            padding: 12px;
+            border: 2px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .game-btn:hover { background: #eee; transform: translateY(-2px); }
+
+        /* Fancy Feedback Button (Fixed Style) */
+        .feedback-btn {
+            background-color: var(--accent) !important;
+            color: white !important;
+            border: none;
+            padding: 10px 25px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .feedback-btn:hover {
+            background-color: #2980b9 !important;
+            transform: scale(1.05);
+        }
+
+        /* Setup Screen */
+        #setup-screen {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .active-turn {
+            border-bottom: 3px solid var(--accent);
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="confusingpairs.html">Confusing Pairs</a>
+        <a href="connectionsgame.html">Connections</a>
+        <a href="boardgame.html">Psych Land</a>
+        <a href="battleship.html">Cortex Commander</a>
+    </nav>
+
+    <div class="container game-container">
+        <h1>🧠 Psych Land</h1>
+
+        <div id="setup-screen">
+            <h3>Game Setup</h3>
+            <p>Race through the Psych Land path!</p>
+            
+            <label style="display:block; text-align:left;">Number of Players:</label>
+            <select id="player-count">
+                <option value="1">1 Player (vs Computer)</option>
+                <option value="2">2 Players</option>
+                <option value="3">3 Players</option>
+                <option value="4">4 Players</option>
+            </select>
+            
+            <label style="display:block; text-align:left;">Review Content:</label>
+            <select id="unit-select">
+                <option value="all">All Units</option>
+            </select>
+
+            <button class="nav-btn" onclick="initGame()">Start Game</button>
+        </div>
+
+        <div id="game-ui" style="display:none; width: 100%;">
+            
+            <div class="sticky-controls">
+                <div id="status-text" style="font-weight:bold; font-size: 1.1rem;">Player 1's Turn</div>
+                <button class="nav-btn" id="draw-btn" style="padding: 8px 20px;" onclick="drawCard()">🃏 Draw Card</button>
+            </div>
+
+            <div id="score-board" style="text-align:center; margin: 15px 0; color:#555;"></div>
+
+            <div class="board-wrapper" id="board-area">
+                <img id="game-board-img" src="board.png" alt="Game Board">
+                </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="card-modal">
+        <div class="game-card" id="card-content">
+            <h2 id="card-move-title" style="color: var(--primary);">Question</h2>
+            <p id="card-def" style="font-size: 1.2rem; margin: 20px 0;">Definition...</p>
+            <div class="options-grid" id="card-options"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="feedback-modal">
+        <div class="game-card" style="border-color: var(--primary);">
+            <h2 id="feedback-title" style="color: var(--primary);">Title</h2>
+            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
+            <button class="feedback-btn" onclick="closeFeedback()">Dismiss</button>
+        </div>
+    </div>
+
+    <script>
+        // --- COORDINATES (Pasted from your mapper) ---
+        const COORDINATES = [{"x":22.59,"y":13.82},{"x":27.69,"y":12.39},{"x":31.44,"y":12.65},{"x":34.99,"y":12.91},{"x":37.96,"y":14.21},{"x":41.22,"y":17.06},{"x":44.05,"y":20.03},{"x":46.81,"y":23.27},{"x":50.35,"y":26.9},{"x":53.61,"y":28.45},{"x":58.5,"y":27.16},{"x":61.47,"y":22.88},{"x":63.53,"y":18.61},{"x":65.93,"y":15.24},{"x":69.26,"y":13.95},{"x":72.8,"y":13.82},{"x":76.35,"y":15.5},{"x":79.25,"y":19.91},{"x":80.59,"y":24.96},{"x":80.38,"y":30.01},{"x":79.25,"y":33.77},{"x":76.35,"y":37},{"x":72.8,"y":38.82},{"x":69.12,"y":40.11},{"x":65.01,"y":40.63},{"x":61.9,"y":40.11},{"x":58.14,"y":39.46},{"x":54.32,"y":37.13},{"x":50.92,"y":35.06},{"x":47.45,"y":32.34},{"x":44.41,"y":29.75},{"x":40.72,"y":26.9},{"x":36.54,"y":25.35},{"x":33.71,"y":25.09},{"x":28.68,"y":26.25},{"x":24.93,"y":27.81},{"x":23.09,"y":33.38},{"x":26.13,"y":36.74},{"x":30.59,"y":37.52},{"x":34.56,"y":35.84},{"x":38.39,"y":36.74},{"x":40.23,"y":41.67},{"x":36.97,"y":46.07},{"x":32.86,"y":47.37},{"x":28.9,"y":47.88},{"x":24.93,"y":47.24},{"x":21.18,"y":46.59},{"x":17.56,"y":48.01},{"x":15.37,"y":53.2},{"x":16.01,"y":59.15},{"x":18.7,"y":62.39},{"x":22.8,"y":63.43},{"x":27.48,"y":63.3},{"x":31.44,"y":62.65},{"x":35.27,"y":60.45},{"x":39.24,"y":57.21},{"x":42.49,"y":53.07},{"x":45.96,"y":49.44},{"x":49.86,"y":47.5},{"x":53.61,"y":48.14},{"x":57.79,"y":49.44},{"x":61.61,"y":50.47},{"x":65.72,"y":49.31},{"x":70.11,"y":48.27},{"x":73.37,"y":47.24},{"x":77.76,"y":47.75},{"x":80.59,"y":51.77},{"x":80.1,"y":57.47},{"x":76.91,"y":60.32},{"x":72.88,"y":61.87},{"x":68.84,"y":62.91},{"x":64.59,"y":62.65},{"x":60.41,"y":62.13},{"x":57.08,"y":59.93},{"x":54.39,"y":55.4},{"x":53.33,"y":46.98},{"x":49.29,"y":47.11},{"x":45.47,"y":48.79},{"x":42.35,"y":52.68},{"x":39.24,"y":56.43},{"x":35.13,"y":59.8},{"x":31.44,"y":62.13},{"x":27.69,"y":63.04},{"x":23.44,"y":63.17},{"x":19.33,"y":62.78},{"x":15.16,"y":67.44},{"x":13.17,"y":74.05},{"x":14.09,"y":79.62},{"x":17.63,"y":81.3},{"x":22.52,"y":83.12},{"x":26.63,"y":83.12},{"x":30.45,"y":81.17},{"x":33.99,"y":77.42},{"x":37.61,"y":72.11},{"x":41.36,"y":70.42},{"x":45.18,"y":71.2},{"x":48.87,"y":73.27},{"x":52.76,"y":77.81},{"x":57.08,"y":81.69},{"x":60.76,"y":83.64},{"x":65.01,"y":84.28},{"x":69.62,"y":84.67},{"x":73.8,"y":82.6},{"x":82.58,"y":80.27}];
+        const SPECIALS = {
+            10: 'gap', 45: 'gap', 85: 'gap', 115: 'gap',
+            20: 'freeze', 60: 'freeze', 95: 'freeze', 125: 'freeze'
+        };
+
+        // --- STATE ---
+        let allTerms = [];
+        let players = [];
+        let currentPlayerIndex = 0;
+        let selectedUnitFilter = 'all';
+        let feedbackCallback = null;
+        let feedbackTimer = null;
+
+        // 1. Load Data
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                allTerms = data.terms;
+                const units = [...new Set(allTerms.map(t => t.unit))].sort();
+                const select = document.getElementById('unit-select');
+                units.forEach(u => {
+                    const opt = document.createElement('option');
+                    opt.value = u;
+                    opt.innerText = u;
+                    select.appendChild(opt);
+                });
+            });
+
+        // 2. Init Game
+        function initGame() {
+            const count = parseInt(document.getElementById('player-count').value);
+            selectedUnitFilter = document.getElementById('unit-select').value;
+            
+            players = [];
+            for(let i=0; i<count; i++) {
+                players.push({ id: i, name: `Player ${i+1}`, pos: 0, isBot: false, skipTurn: false });
+            }
+            if(count === 1) {
+                players.push({ id: 1, name: "Computer", pos: 0, isBot: true, skipTurn: false });
+            }
+
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'block';
+            
+            renderBoardOverlay();
+            renderPlayers();
+            updateUI();
+        }
+
+        // 3. Render Functions
+        function renderBoardOverlay() {
+            const boardArea = document.getElementById('board-area');
+            document.querySelectorAll('.special-marker').forEach(e => e.remove());
+
+            for (const [index, type] of Object.entries(SPECIALS)) {
+                if(index < COORDINATES.length) {
+                    const pos = COORDINATES[index];
+                    const marker = document.createElement('div');
+                    marker.className = 'special-marker';
+                    marker.style.left = pos.x + '%';
+                    marker.style.top = pos.y + '%';
+                    marker.innerHTML = type === 'gap' ? '⚡' : '❄️';
+                    boardArea.appendChild(marker);
+                }
+            }
+        }
+
+        function renderPlayers() {
+            const boardArea = document.getElementById('board-area');
+            document.querySelectorAll('.player-piece').forEach(e => e.remove());
+
+            players.forEach((p, idx) => {
+                const coord = COORDINATES[p.pos];
+                if(coord) {
+                    const piece = document.createElement('div');
+                    piece.className = `player-piece p${idx+1}`;
+                    piece.innerText = p.isBot ? '🤖' : '🧠';
+                    piece.style.left = coord.x + '%';
+                    piece.style.top = coord.y + '%';
+                    boardArea.appendChild(piece);
+                }
+            });
+        }
+
+        // 4. Feedback Modal Logic
+        function showFeedback(title, msg, callback, autoClose = false) {
+            document.getElementById('feedback-title').innerText = title;
+            document.getElementById('feedback-msg').innerText = msg;
+            feedbackCallback = callback;
+            
+            document.getElementById('feedback-modal').style.display = 'flex';
+            
+            if(feedbackTimer) clearTimeout(feedbackTimer);
+
+            if(autoClose) {
+                feedbackTimer = setTimeout(closeFeedback, 1000); 
+            }
+        }
+
+        function closeFeedback() {
+            if(feedbackTimer) clearTimeout(feedbackTimer);
+            document.getElementById('feedback-modal').style.display = 'none';
+            if (feedbackCallback) {
+                feedbackCallback();
+                feedbackCallback = null;
+            }
+        }
+
+        // 5. Gameplay Logic
+        function drawCard() {
+            const p = players[currentPlayerIndex];
+            if(p.skipTurn) {
+                showFeedback("Frozen!", `${p.name} is frozen and loses a turn! ❄️`, () => {
+                    p.skipTurn = false;
+                    nextTurn();
+                }, true);
+                return;
+            }
+
+            // --- Generate a random number (1 to 5) to move instead of a color ---
+            const spacesToMove = Math.floor(Math.random() * 5) + 1;
+            
+            // Pool filtering
+            let pool = (selectedUnitFilter === 'all') ? allTerms : allTerms.filter(t => t.unit === selectedUnitFilter);
+            if(pool.length < 4) {
+                movePlayer(spacesToMove); 
+                return;
+            }
+
+            // Pick Correct Answer
+            const correct = pool[Math.floor(Math.random() * pool.length)];
+            
+            // --- UPDATED LOGIC: Distractors from SAME TOPIC ---
+            
+            // 1. Try to find distractors in the same topic
+            let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
+            sameTopicTerms.sort(() => Math.random() - 0.5);
+
+            // 2. Take up to 3
+            let distractors = sameTopicTerms.slice(0, 3);
+
+            // 3. If not enough (small topic), fill with others from the unit
+            if (distractors.length < 3) {
+                let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
+                otherTerms.sort(() => Math.random() - 0.5);
+                let needed = 3 - distractors.length;
+                distractors = [...distractors, ...otherTerms.slice(0, needed)];
+            }
+            
+            // --------------------------------------------------
+
+            let options = [...distractors, correct].sort(() => Math.random() - 0.5);
+
+            if(p.isBot) botTurn(correct, spacesToMove);
+            else showQuestion(correct, options, spacesToMove);
+        }
+
+        function showQuestion(correct, options, spaces) {
+            const modal = document.getElementById('card-modal');
+            document.getElementById('card-def').innerText = correct.definition;
+            
+            const title = document.getElementById('card-move-title');
+            const spaceWord = spaces > 1 ? "Spaces" : "Space";
+            title.innerHTML = `Move Forward ${spaces} ${spaceWord} 🎲`;
+
+            const container = document.getElementById('card-options');
+            container.innerHTML = '';
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'game-btn';
+                btn.innerText = opt.term;
+                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces);
+                container.appendChild(btn);
+            });
+            modal.style.display = 'flex';
+        }
+
+        function handleAnswer(isCorrect, spaces) {
+            document.getElementById('card-modal').style.display = 'none';
+            if(isCorrect) {
+                const spaceWord = spaces > 1 ? "spaces" : "space";
+                showFeedback("Correct!", `Great job! Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), true);
+            } else {
+                showFeedback("Incorrect", "Review that definition! Stay put.", () => nextTurn(), true);
+            }
+        }
+
+        function movePlayer(spaces) {
+            const p = players[currentPlayerIndex];
+            
+            // Advance the player the correct number of spaces
+            p.pos += spaces;
+            
+            // Make sure they don't go past the final board space
+            if (p.pos >= COORDINATES.length - 1) {
+                p.pos = COORDINATES.length - 1;
+            }
+
+            renderPlayers(); 
+
+            // Check Win
+            if(p.pos >= COORDINATES.length - 1) {
+                showFeedback("VICTORY!", `${p.name} Wins! 🏆`, () => location.reload(), false);
+                return;
+            }
+
+            // Check Specials
+            if(SPECIALS[p.pos] === 'gap') {
+                p.pos = Math.min(p.pos + 5, COORDINATES.length - 1);
+                renderPlayers(); 
+                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", () => nextTurn(), true);
+                return;
+            }
+            if(SPECIALS[p.pos] === 'freeze') {
+                p.skipTurn = true;
+                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", () => nextTurn(), true);
+                return;
+            }
+            
+            setTimeout(nextTurn, 500);
+        }
+
+        function botTurn(correct, spaces) {
+            document.getElementById('draw-btn').disabled = true;
+            document.getElementById('status-text').innerText = "Computer thinking...";
+            setTimeout(() => {
+                if(Math.random() < 0.7) {
+                    showFeedback("Computer Turn", `Computer got the answer RIGHT! Moving ${spaces}...`, () => movePlayer(spaces), true);
+                } else {
+                    showFeedback("Computer Turn", "Computer got the answer WRONG.", () => nextTurn(), true);
+                }
+                document.getElementById('draw-btn').disabled = false;
+            }, 1000);
+        }
+
+        function nextTurn() {
+            currentPlayerIndex++;
+            if(currentPlayerIndex >= players.length) currentPlayerIndex = 0;
+            updateUI();
+        }
+
+        function updateUI() {
+            const p = players[currentPlayerIndex];
+            const status = document.getElementById('status-text');
+            status.innerText = p.isBot ? "Computer's Turn" : `${p.name}'s Turn`;
+            
+            const board = document.getElementById('score-board');
+            board.innerHTML = players.map(pl => 
+                `<span class="${pl.id === currentPlayerIndex ? 'active-turn' : ''}">
+                 ${pl.isBot ? '🤖' : '🧠'} ${pl.name}
+                 </span>`
+            ).join(' | ');
+
+            if(p.isBot) setTimeout(drawCard, 1000);
+        }
+    </script>
+
+    <footer>
+        <p>Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+    </footer>
+
+</body>
+</html>
