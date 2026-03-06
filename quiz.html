@@ -97,6 +97,31 @@
             color: #721c24 !important;
         }
 
+        /* --- Explanation Box --- */
+        .explanation-box {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 5px;
+            text-align: left;
+            display: none; /* Hidden until answer is selected */
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .explanation-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .next-btn-container {
+            margin-top: 25px;
+            display: none; /* Hidden until answer is selected */
+        }
+
         /* Score & Progress */
         .stats-bar {
             display: flex;
@@ -172,7 +197,14 @@
                 <div id="question-context" class="question-context"></div>
                 <img id="question-image" class="question-image" alt="Question Image" src="">
                 <div class="question-text" id="question-text">Loading...</div>
+                
                 <div class="options-grid" id="options-container"></div>
+
+                <div id="explanation-box" class="explanation-box"></div>
+
+                <div id="next-btn-container" class="next-btn-container">
+                    <button class="nav-btn" style="padding: 12px 30px; font-size: 1.1rem;" onclick="goToNextQuestion()">Next Question ➡</button>
+                </div>
             </div>
 
             <div id="results-screen" class="results-screen">
@@ -264,7 +296,7 @@
         function startQuiz() {
             const selectedUnit = document.getElementById('unit-select').value;
             const selectedTopic = document.getElementById('topic-select').value;
-            const selectedCount = document.getElementById('count-select').value; // Get requested number
+            const selectedCount = document.getElementById('count-select').value; 
             
             // Filter Pool
             let pool = allQuestions.filter(q => {
@@ -281,10 +313,9 @@
             pool.sort(() => Math.random() - 0.5);
 
             // LOGIC FOR QUESTION COUNT
-            let limit = pool.length; // Default to all available
+            let limit = pool.length; 
             if(selectedCount !== 'all') {
                 limit = parseInt(selectedCount);
-                // If requested is more than available, stick to available
                 if (limit > pool.length) limit = pool.length;
             }
 
@@ -302,6 +333,10 @@
         function loadQuestion() {
             isAnswering = true;
             const currentQ = quizQueue[currentQuestionIndex];
+            
+            // Reset UI for new question
+            document.getElementById('explanation-box').style.display = 'none';
+            document.getElementById('next-btn-container').style.display = 'none';
             
             document.getElementById('progress-text').textContent = `Question ${currentQuestionIndex + 1}/${quizQueue.length}`;
             
@@ -359,8 +394,11 @@
         // 4. HANDLE ANSWER
         function handleAnswer(selectedBtn, isCorrect, correctLetter) {
             if (!isAnswering) return; 
-            isAnswering = false;
+            isAnswering = false; // Prevents clicking other buttons
 
+            const currentQ = quizQueue[currentQuestionIndex];
+
+            // 1. Color the buttons
             if (isCorrect) {
                 selectedBtn.classList.add('correct');
                 score++;
@@ -369,7 +407,6 @@
                 selectedBtn.classList.add('incorrect');
                 
                 // Highlight Correct One
-                const currentQ = quizQueue[currentQuestionIndex];
                 let correctText = "";
                 if(correctLetter === "A") correctText = currentQ.option_a;
                 if(correctLetter === "B") correctText = currentQ.option_b;
@@ -384,14 +421,32 @@
                 });
             }
 
-            setTimeout(() => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < quizQueue.length) {
-                    loadQuestion();
-                } else {
-                    showResults();
-                }
-            }, 1500);
+            // 2. Setup the Explanation Box
+            const explanationBox = document.getElementById('explanation-box');
+            const explanationText = currentQ.explanation ? currentQ.explanation : "No explanation provided for this question.";
+            
+            let headerHtml = "";
+            if(isCorrect) {
+                headerHtml = `<h4 style="color: #155724;">✅ Correct!</h4>`;
+            } else {
+                headerHtml = `<h4 style="color: #721c24;">❌ Incorrect</h4>`;
+            }
+
+            explanationBox.innerHTML = headerHtml + `<p style="margin: 0;">${explanationText}</p>`;
+            
+            // 3. Show Explanation and Next Button
+            explanationBox.style.display = 'block';
+            document.getElementById('next-btn-container').style.display = 'block';
+        }
+
+        // 5. GO TO NEXT QUESTION
+        function goToNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizQueue.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
         }
 
         function showResults() {
