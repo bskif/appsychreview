@@ -171,6 +171,7 @@
             text-align: center;
             border: 4px solid var(--water);
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: border-color 0.3s;
         }
         .options-grid {
             display: grid;
@@ -274,10 +275,10 @@
 </div>
 
 <div class="modal-overlay" id="feedback-modal">
-    <div class="game-card" style="border-color: var(--hit-red);">
+    <div class="game-card" id="feedback-card">
         <h2 id="feedback-title" style="color: var(--hit-red);">Incorrect</h2>
-        <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
-        <button class="feedback-btn" onclick="closeFeedback()">Dismiss</button>
+        <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0; text-align: left; line-height: 1.5;">Message goes here.</p>
+        <button class="feedback-btn" onclick="closeFeedback()">Continue</button>
     </div>
 </div>
 
@@ -424,8 +425,12 @@
     }
 
     // --- FEEDBACK MODAL LOGIC ---
-    function showFeedback(msg, callback) {
-        document.getElementById('feedback-msg').innerText = msg;
+    function showFeedback(title, msgHtml, color, callback) {
+        document.getElementById('feedback-title').innerText = title;
+        document.getElementById('feedback-title').style.color = color;
+        document.getElementById('feedback-card').style.borderColor = color;
+        document.getElementById('feedback-msg').innerHTML = msgHtml;
+        
         feedbackCallback = callback;
         document.getElementById('feedback-modal').style.display = 'flex';
     }
@@ -467,7 +472,7 @@
         // 2. Take up to 3 distractors from same topic
         let distractors = sameTopicTerms.slice(0, 3);
 
-        // 3. Fallback: If topic is small (e.g., only 2 items), fill with others from Unit
+        // 3. Fallback: If topic is small, fill with others from Unit
         if (distractors.length < 3) {
             let otherTerms = activeTerms.filter(t => t.topic !== correctTerm.topic && t !== correctTerm);
             otherTerms.sort(() => Math.random() - 0.5);
@@ -485,16 +490,35 @@
             const btn = document.createElement('button');
             btn.className = 'game-btn';
             btn.innerText = opt.term;
-            // Pass correct term string to resolveShot
-            btn.onclick = () => resolveShot(opt === correctTerm, correctTerm.term);
+            // Pass correct term and definition to resolveShot
+            btn.onclick = () => resolveShot(opt === correctTerm, correctTerm.term, correctTerm.definition);
             container.appendChild(btn);
         });
 
         modal.style.display = 'flex';
     }
 
-    function resolveShot(isCorrect, correctTermString) {
+    function resolveShot(isCorrect, correctTermString, definitionString) {
         document.getElementById('question-modal').style.display = 'none';
+
+        let title, color, msgHtml;
+        
+        if (isCorrect) {
+            title = "✅ Target Locked! (Correct)";
+            color = "#28a745"; // Green
+            msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Weapon systems ready to fire.</em>`;
+        } else {
+            title = "❌ Misfire! (Incorrect)";
+            color = "var(--hit-red)"; // Red
+            msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Weapon systems misfired. Turn lost.</em>`;
+        }
+
+        showFeedback(title, msgHtml, color, () => {
+            applyShotResult(isCorrect);
+        });
+    }
+
+    function applyShotResult(isCorrect) {
         const { r, c } = currentTarget;
 
         if (isCorrect) {
@@ -511,15 +535,13 @@
             
             checkWinCondition();
             renderGameGrids();
-            if (gameActive) setTimeout(computerTurn, 1500);
+            if (gameActive) setTimeout(computerTurn, 1000);
         } else {
             // MISFIRE
             log(`⚠️ MISFIRE! Question incorrect. Turn lost.`);
-            showFeedback(`The correct answer was:\n\n${correctTermString}\n\nWeapon systems misfired.`, () => {
-                renderGameGrids();
-                // 1-second delay after dismissing before the enemy attacks
-                if (gameActive) setTimeout(computerTurn, 1000);
-            });
+            renderGameGrids();
+            // 1-second delay after dismissing before the enemy attacks
+            if (gameActive) setTimeout(computerTurn, 1000);
         }
     }
 
