@@ -409,19 +409,21 @@
                 const btn = document.createElement('button');
                 btn.className = 'game-btn';
                 btn.innerText = opt.term;
-                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces);
+                // Pass correct term so we can show it if they are wrong!
+                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term);
                 container.appendChild(btn);
             });
             modal.style.display = 'flex';
         }
 
-        function handleAnswer(isCorrect, spaces) {
+        function handleAnswer(isCorrect, spaces, correctTerm) {
             document.getElementById('card-modal').style.display = 'none';
             if(isCorrect) {
                 const spaceWord = spaces > 1 ? "spaces" : "space";
                 showFeedback("Correct!", `Great job! Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), true);
             } else {
-                showFeedback("Incorrect", "Review that definition! Stay put.", () => nextTurn(), true);
+                // Modified: Now shows correct answer and autoClose is false
+                showFeedback("Incorrect", `The correct answer was:\n\n**${correctTerm}**\n\nStay put and review that term!`, () => nextTurn(), false);
             }
         }
 
@@ -496,7 +498,8 @@
     </script>
 
     <footer>
-        <p>Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
 
 </body>

@@ -159,6 +159,9 @@
             align-items: center;
             z-index: 100;
         }
+        #feedback-modal {
+            z-index: 200;
+        }
         .game-card {
             background: white;
             padding: 30px;
@@ -184,6 +187,21 @@
             color: #333;
         }
         button.game-btn:hover { background: #e2e6ea; }
+
+        .feedback-btn {
+            background-color: var(--water);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+        .feedback-btn:hover {
+            background-color: #003366;
+        }
 
     </style>
 </head>
@@ -255,6 +273,14 @@
     </div>
 </div>
 
+<div class="modal-overlay" id="feedback-modal">
+    <div class="game-card" style="border-color: var(--hit-red);">
+        <h2 id="feedback-title" style="color: var(--hit-red);">Incorrect</h2>
+        <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
+        <button class="feedback-btn" onclick="closeFeedback()">Dismiss</button>
+    </div>
+</div>
+
 <script>
     // --- CONFIGURATION ---
     const GRID_SIZE = 10;
@@ -275,6 +301,7 @@
     let enemyShips = [];
     let gameActive = false;
     let currentTarget = null; // {x, y} stored when modal opens
+    let feedbackCallback = null;
 
     // 1. Load Data
     fetch('data.json')
@@ -396,6 +423,21 @@
         }
     }
 
+    // --- FEEDBACK MODAL LOGIC ---
+    function showFeedback(msg, callback) {
+        document.getElementById('feedback-msg').innerText = msg;
+        feedbackCallback = callback;
+        document.getElementById('feedback-modal').style.display = 'flex';
+    }
+
+    function closeFeedback() {
+        document.getElementById('feedback-modal').style.display = 'none';
+        if (feedbackCallback) {
+            feedbackCallback();
+            feedbackCallback = null;
+        }
+    }
+
     // --- TURN LOGIC ---
     function handleCellClick(r, c) {
         if (!gameActive) return;
@@ -443,14 +485,15 @@
             const btn = document.createElement('button');
             btn.className = 'game-btn';
             btn.innerText = opt.term;
-            btn.onclick = () => resolveShot(opt === correctTerm);
+            // Pass correct term string to resolveShot
+            btn.onclick = () => resolveShot(opt === correctTerm, correctTerm.term);
             container.appendChild(btn);
         });
 
         modal.style.display = 'flex';
     }
 
-    function resolveShot(isCorrect) {
+    function resolveShot(isCorrect, correctTermString) {
         document.getElementById('question-modal').style.display = 'none';
         const { r, c } = currentTarget;
 
@@ -467,13 +510,17 @@
             }
             
             checkWinCondition();
+            renderGameGrids();
+            if (gameActive) setTimeout(computerTurn, 1500);
         } else {
             // MISFIRE
             log(`⚠️ MISFIRE! Question incorrect. Turn lost.`);
+            showFeedback(`The correct answer was:\n\n${correctTermString}\n\nWeapon systems misfired.`, () => {
+                renderGameGrids();
+                // 1-second delay after dismissing before the enemy attacks
+                if (gameActive) setTimeout(computerTurn, 1000);
+            });
         }
-
-        renderGameGrids();
-        if (gameActive) setTimeout(computerTurn, 1500);
     }
 
     function computerTurn() {
@@ -572,7 +619,8 @@
 </script>
 
 <footer>
-    <p>Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 </footer>
 
 </body>
