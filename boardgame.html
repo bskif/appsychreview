@@ -230,7 +230,7 @@
         <div class="game-card" style="border-color: var(--primary);">
             <h2 id="feedback-title" style="color: var(--primary);">Title</h2>
             <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
-            <button class="feedback-btn" onclick="closeFeedback()">Dismiss</button>
+            <button class="feedback-btn" onclick="closeFeedback()">Continue</button>
         </div>
     </div>
 
@@ -352,7 +352,7 @@
                 showFeedback("Frozen!", `${p.name} is frozen and loses a turn! ❄️`, () => {
                     p.skipTurn = false;
                     nextTurn();
-                }, true);
+                }, false);
                 return;
             }
 
@@ -409,19 +409,22 @@
                 const btn = document.createElement('button');
                 btn.className = 'game-btn';
                 btn.innerText = opt.term;
-                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces);
+                // Add correct.term as the third argument here:
+                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term);
                 container.appendChild(btn);
             });
             modal.style.display = 'flex';
         }
 
-        function handleAnswer(isCorrect, spaces) {
+        function handleAnswer(isCorrect, spaces, correctTerm) {
             document.getElementById('card-modal').style.display = 'none';
             if(isCorrect) {
                 const spaceWord = spaces > 1 ? "spaces" : "space";
-                showFeedback("Correct!", `Great job! Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), true);
+                // Show the answer to reinforce it, and change 'true' to 'false' so it doesn't auto-close
+                showFeedback("Correct!", `Great job! The answer is ${correctTerm}. Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), false);
             } else {
-                showFeedback("Incorrect", "Review that definition! Stay put.", () => nextTurn(), true);
+                // Show the correct answer, and change 'true' to 'false' so it doesn't auto-close
+                showFeedback("Incorrect", `The correct answer was: ${correctTerm}. Stay put.`, () => nextTurn(), false);
             }
         }
 
@@ -448,12 +451,12 @@
             if(SPECIALS[p.pos] === 'gap') {
                 p.pos = Math.min(p.pos + 5, COORDINATES.length - 1);
                 renderPlayers(); 
-                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", () => nextTurn(), true);
+                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", () => nextTurn(), false);
                 return;
             }
             if(SPECIALS[p.pos] === 'freeze') {
                 p.skipTurn = true;
-                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", () => nextTurn(), true);
+                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", () => nextTurn(), false);
                 return;
             }
             
@@ -465,9 +468,9 @@
             document.getElementById('status-text').innerText = "Computer thinking...";
             setTimeout(() => {
                 if(Math.random() < 0.7) {
-                    showFeedback("Computer Turn", `Computer got the answer RIGHT! Moving ${spaces}...`, () => movePlayer(spaces), true);
+                    showFeedback("Computer Turn", `Computer got the answer RIGHT! The answer was ${correct.term}. Moving ${spaces}...`, () => movePlayer(spaces), false);
                 } else {
-                    showFeedback("Computer Turn", "Computer got the answer WRONG.", () => nextTurn(), true);
+                    showFeedback("Computer Turn", `Computer got the answer WRONG. The answer was ${correct.term}.`, () => nextTurn(), false);
                 }
                 document.getElementById('draw-btn').disabled = false;
             }, 1000);
