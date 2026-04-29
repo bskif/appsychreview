@@ -105,7 +105,6 @@
             text-align: center;
             border: 8px solid #333; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            transition: border-color 0.3s;
         }
         
         .options-grid {
@@ -228,10 +227,10 @@
     </div>
 
     <div class="modal-overlay" id="feedback-modal">
-        <div class="game-card" id="feedback-card" style="border-color: var(--primary);">
+        <div class="game-card" style="border-color: var(--primary);">
             <h2 id="feedback-title" style="color: var(--primary);">Title</h2>
-            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0; text-align: left; line-height: 1.5;">Message goes here.</p>
-            <button class="feedback-btn" onclick="closeFeedback()">Continue</button>
+            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
+            <button class="feedback-btn" onclick="closeFeedback()">Dismiss</button>
         </div>
     </div>
 
@@ -255,47 +254,21 @@
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                // Robust loader: Supports terms or questions, ignores blank items!
-                if (data.terms && data.terms.length > 0) {
-                    allTerms = data.terms;
-                } else if (data.questions && data.questions.length > 0) {
-                    allTerms = data.questions.map(q => ({
-                        unit: q.unit,
-                        topic: q.topic,
-                        term: q.correct_answer,
-                        definition: q.question
-                    }));
-                }
-
-                if (!allTerms || allTerms.length === 0) {
-                    console.error("No valid data found in data.json!");
-                    return;
-                }
-
-                // Get unique units, making sure we don't grab undefined/null
-                const units = [...new Set(allTerms.map(t => t.unit).filter(u => u))].sort();
+                allTerms = data.terms;
+                const units = [...new Set(allTerms.map(t => t.unit))].sort();
                 const select = document.getElementById('unit-select');
-                
                 units.forEach(u => {
                     const opt = document.createElement('option');
                     opt.value = u;
                     opt.innerText = u;
                     select.appendChild(opt);
                 });
-            })
-            .catch(err => {
-                console.error("Error fetching data:", err);
             });
 
         // 2. Init Game
         function initGame() {
             const count = parseInt(document.getElementById('player-count').value);
             selectedUnitFilter = document.getElementById('unit-select').value;
-            
-            if (allTerms.length === 0) {
-                alert("Game data is still loading or failed to load. Please check your data.json file!");
-                return;
-            }
             
             players = [];
             for(let i=0; i<count; i++) {
@@ -349,11 +322,9 @@
         }
 
         // 4. Feedback Modal Logic
-        function showFeedback(title, msgHtml, color, callback, autoClose = false) {
+        function showFeedback(title, msg, callback, autoClose = false) {
             document.getElementById('feedback-title').innerText = title;
-            document.getElementById('feedback-title').style.color = color || 'var(--primary)';
-            document.getElementById('feedback-card').style.borderColor = color || 'var(--primary)';
-            document.getElementById('feedback-msg').innerHTML = msgHtml;
+            document.getElementById('feedback-msg').innerText = msg;
             feedbackCallback = callback;
             
             document.getElementById('feedback-modal').style.display = 'flex';
@@ -361,7 +332,7 @@
             if(feedbackTimer) clearTimeout(feedbackTimer);
 
             if(autoClose) {
-                feedbackTimer = setTimeout(closeFeedback, 2000); 
+                feedbackTimer = setTimeout(closeFeedback, 1000); 
             }
         }
 
@@ -378,14 +349,14 @@
         function drawCard() {
             const p = players[currentPlayerIndex];
             if(p.skipTurn) {
-                showFeedback("Frozen!", `${p.name} is frozen and loses a turn! ❄️`, "#00a8ff", () => {
+                showFeedback("Frozen!", `${p.name} is frozen and loses a turn! ❄️`, () => {
                     p.skipTurn = false;
                     nextTurn();
-                }, false);
+                }, true);
                 return;
             }
 
-            // Generate a random number (1 to 5) to move
+            // --- Generate a random number (1 to 5) to move instead of a color ---
             const spacesToMove = Math.floor(Math.random() * 5) + 1;
             
             // Pool filtering
@@ -398,19 +369,25 @@
             // Pick Correct Answer
             const correct = pool[Math.floor(Math.random() * pool.length)];
             
-            // Distractors from SAME TOPIC
-            let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t.term !== correct.term);
+            // --- UPDATED LOGIC: Distractors from SAME TOPIC ---
+            
+            // 1. Try to find distractors in the same topic
+            let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
             sameTopicTerms.sort(() => Math.random() - 0.5);
 
+            // 2. Take up to 3
             let distractors = sameTopicTerms.slice(0, 3);
 
+            // 3. If not enough (small topic), fill with others from the unit
             if (distractors.length < 3) {
-                let otherTerms = pool.filter(t => t.topic !== correct.topic && t.term !== correct.term);
+                let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
                 otherTerms.sort(() => Math.random() - 0.5);
                 let needed = 3 - distractors.length;
                 distractors = [...distractors, ...otherTerms.slice(0, needed)];
             }
             
+            // --------------------------------------------------
+
             let options = [...distractors, correct].sort(() => Math.random() - 0.5);
 
             if(p.isBot) botTurn(correct, spacesToMove);
@@ -432,34 +409,20 @@
                 const btn = document.createElement('button');
                 btn.className = 'game-btn';
                 btn.innerText = opt.term;
-                // Pass correct term and definition to handleAnswer
-                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term, correct.definition);
+                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces);
                 container.appendChild(btn);
             });
             modal.style.display = 'flex';
         }
 
-        function handleAnswer(isCorrect, spaces, correctTermString, definitionString) {
+        function handleAnswer(isCorrect, spaces) {
             document.getElementById('card-modal').style.display = 'none';
-            const spaceWord = spaces > 1 ? "spaces" : "space";
-            
-            let title, color, msgHtml;
-            
-            if (isCorrect) {
-                title = "✅ Correct!";
-                color = "#28a745"; // Green
-                msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Moving forward ${spaces} ${spaceWord}...</em>`;
+            if(isCorrect) {
+                const spaceWord = spaces > 1 ? "spaces" : "space";
+                showFeedback("Correct!", `Great job! Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), true);
             } else {
-                title = "❌ Incorrect!";
-                color = "#d90429"; // Red
-                msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Brain stalled. Stay put and review that term!</em>`;
+                showFeedback("Incorrect", "Review that definition! Stay put.", () => nextTurn(), true);
             }
-
-            // autoClose is FALSE so the player must click Continue
-            showFeedback(title, msgHtml, color, () => {
-                if(isCorrect) movePlayer(spaces);
-                else nextTurn();
-            }, false);
         }
 
         function movePlayer(spaces) {
@@ -477,7 +440,7 @@
 
             // Check Win
             if(p.pos >= COORDINATES.length - 1) {
-                showFeedback("VICTORY!", `${p.name} Wins! 🏆`, "var(--primary)", () => location.reload(), false);
+                showFeedback("VICTORY!", `${p.name} Wins! 🏆`, () => location.reload(), false);
                 return;
             }
 
@@ -485,12 +448,12 @@
             if(SPECIALS[p.pos] === 'gap') {
                 p.pos = Math.min(p.pos + 5, COORDINATES.length - 1);
                 renderPlayers(); 
-                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", "var(--primary)", () => nextTurn(), false);
+                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", () => nextTurn(), true);
                 return;
             }
             if(SPECIALS[p.pos] === 'freeze') {
                 p.skipTurn = true;
-                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", "#00a8ff", () => nextTurn(), false);
+                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", () => nextTurn(), true);
                 return;
             }
             
@@ -501,11 +464,10 @@
             document.getElementById('draw-btn').disabled = true;
             document.getElementById('status-text').innerText = "Computer thinking...";
             setTimeout(() => {
-                const spaceWord = spaces > 1 ? "spaces" : "space";
                 if(Math.random() < 0.7) {
-                    showFeedback("Computer Turn", `Computer got the answer RIGHT!<br><br><em style="color:#555;">Moving ${spaces} ${spaceWord}...</em>`, "#28a745", () => movePlayer(spaces), true);
+                    showFeedback("Computer Turn", `Computer got the answer RIGHT! Moving ${spaces}...`, () => movePlayer(spaces), true);
                 } else {
-                    showFeedback("Computer Turn", "Computer got the answer WRONG.<br><br><em style="color:#555;">Turn lost.</em>", "#d90429", () => nextTurn(), true);
+                    showFeedback("Computer Turn", "Computer got the answer WRONG.", () => nextTurn(), true);
                 }
                 document.getElementById('draw-btn').disabled = false;
             }, 1000);
