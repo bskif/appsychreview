@@ -255,21 +255,47 @@
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                allTerms = data.terms;
-                const units = [...new Set(allTerms.map(t => t.unit))].sort();
+                // Robust loader: Supports terms or questions, ignores blank items!
+                if (data.terms && data.terms.length > 0) {
+                    allTerms = data.terms;
+                } else if (data.questions && data.questions.length > 0) {
+                    allTerms = data.questions.map(q => ({
+                        unit: q.unit,
+                        topic: q.topic,
+                        term: q.correct_answer,
+                        definition: q.question
+                    }));
+                }
+
+                if (!allTerms || allTerms.length === 0) {
+                    console.error("No valid data found in data.json!");
+                    return;
+                }
+
+                // Get unique units, making sure we don't grab undefined/null
+                const units = [...new Set(allTerms.map(t => t.unit).filter(u => u))].sort();
                 const select = document.getElementById('unit-select');
+                
                 units.forEach(u => {
                     const opt = document.createElement('option');
                     opt.value = u;
                     opt.innerText = u;
                     select.appendChild(opt);
                 });
+            })
+            .catch(err => {
+                console.error("Error fetching data:", err);
             });
 
         // 2. Init Game
         function initGame() {
             const count = parseInt(document.getElementById('player-count').value);
             selectedUnitFilter = document.getElementById('unit-select').value;
+            
+            if (allTerms.length === 0) {
+                alert("Game data is still loading or failed to load. Please check your data.json file!");
+                return;
+            }
             
             players = [];
             for(let i=0; i<count; i++) {
@@ -373,13 +399,13 @@
             const correct = pool[Math.floor(Math.random() * pool.length)];
             
             // Distractors from SAME TOPIC
-            let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
+            let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t.term !== correct.term);
             sameTopicTerms.sort(() => Math.random() - 0.5);
 
             let distractors = sameTopicTerms.slice(0, 3);
 
             if (distractors.length < 3) {
-                let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
+                let otherTerms = pool.filter(t => t.topic !== correct.topic && t.term !== correct.term);
                 otherTerms.sort(() => Math.random() - 0.5);
                 let needed = 3 - distractors.length;
                 distractors = [...distractors, ...otherTerms.slice(0, needed)];
