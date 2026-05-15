@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Oddball</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <style>
         .game-container {
@@ -50,6 +53,7 @@
             border: 2px solid #ddd;
             border-radius: 10px;
             background: #fdfdfd;
+            color: #333;
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -60,10 +64,9 @@
             transform: translateY(-2px);
         }
 
-        /* Feedback Colors */
         .term-btn.correct {
             background-color: #2ecc71 !important;
-            color: white;
+            color: white !important;
             border-color: #27ae60;
             transform: scale(1.02);
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
@@ -71,7 +74,7 @@
 
         .term-btn.incorrect {
             background-color: #e74c3c !important;
-            color: white;
+            color: white !important;
             border-color: #c0392b;
             opacity: 0.8;
         }
@@ -135,18 +138,34 @@
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="confusingpairs.html">Confusing Pairs</a>
-        <a href="connectionsgame.html">Connections</a>
-        <a href="boardgame.html">Psych Land</a>
-        <a href="battleship.html">Cortex Commander</a>
-        <a href="oddball.html">Oddball</a>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <div class="game-container">
-        
         <div id="setup-screen">
             <h1>🔍 Oddball</h1>
             <p>Find the term that doesn't belong!</p>
@@ -181,7 +200,6 @@
             <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
             <button class="action-btn" onclick="location.reload()">Play Again</button>
         </div>
-
     </div>
 
     <script>
@@ -194,7 +212,6 @@
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                // Look for the "oddball" array in the JSON file
                 if(data.oddball) {
                     allOddballData = data.oddball;
                     populateDropdown();
@@ -225,7 +242,6 @@
                 currentQueue = allOddballData.filter(item => item.unit === selectedUnit);
             }
 
-            // Shuffle the queue so it's fresh each time
             currentQueue.sort(() => Math.random() - 0.5);
 
             if (currentQueue.length === 0) {
@@ -245,18 +261,14 @@
             hasGuessedCurrent = false;
             const currentItem = currentQueue[currentIndex];
             
-            // Update Counter
             document.getElementById('question-counter').innerText = `Set ${currentIndex + 1} of ${currentQueue.length}`;
             
-            // Hide Explanation
             const expBox = document.getElementById('explanation-box');
             expBox.style.display = 'none';
             expBox.innerHTML = '';
 
-            // Update Nav Buttons
             document.getElementById('prev-btn').disabled = (currentIndex === 0);
             
-            // Prepare Terms Array
             let terms = [
                 { text: currentItem.oddball, isOddball: true },
                 { text: currentItem.related1, isOddball: false },
@@ -264,10 +276,8 @@
                 { text: currentItem.related3, isOddball: false }
             ];
 
-            // Shuffle Terms so the answer isn't always in the same spot
             terms.sort(() => Math.random() - 0.5);
 
-            // Render Buttons
             const grid = document.getElementById('terms-grid');
             grid.innerHTML = '';
             
@@ -275,7 +285,6 @@
                 const btn = document.createElement('button');
                 btn.className = 'term-btn';
                 btn.innerText = termObj.text;
-                // Save whether it's correct directly to the HTML element
                 btn.dataset.correct = termObj.isOddball; 
                 
                 btn.onclick = () => handleGuess(btn, currentItem.explanation);
@@ -285,7 +294,6 @@
 
         // 4. Handle Guess
         function handleGuess(clickedBtn, explanationText) {
-            // Prevent multiple guesses on the same question
             if (hasGuessedCurrent) return; 
             hasGuessedCurrent = true;
 
@@ -296,7 +304,6 @@
                 clickedBtn.classList.add('correct');
             } else {
                 clickedBtn.classList.add('incorrect');
-                // Find the correct one and highlight it green
                 allBtns.forEach(btn => {
                     if (btn.dataset.correct === "true") {
                         btn.classList.add('correct');
@@ -304,10 +311,8 @@
                 });
             }
 
-            // Disable all buttons after guess
             allBtns.forEach(btn => btn.disabled = true);
 
-            // Show explanation
             const expBox = document.getElementById('explanation-box');
             expBox.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
             expBox.style.display = 'block';
@@ -319,7 +324,6 @@
                 currentIndex++;
                 loadQuestion();
             } else {
-                // End of Unit
                 document.getElementById('game-ui').style.display = 'none';
                 document.getElementById('end-screen').style.display = 'block';
             }
@@ -335,8 +339,11 @@
 
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 </html>

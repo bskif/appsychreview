@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Connections</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <style>
         .game-container {
@@ -38,296 +41,312 @@
             gap: 12px;
             margin-bottom: 20px;
         }
-        .grid-item {
+
+        /* Mobile Grid Adjustment */
+        @media (max-width: 600px) {
+            .grid-container {
+                gap: 8px;
+            }
+        }
+
+        .tile {
             background-color: #efefef;
-            padding: 20px 5px;
-            font-weight: bold;
-            text-transform: uppercase;
+            border: none;
             border-radius: 8px;
+            padding: 20px 10px;
+            font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.2s;
             user-select: none;
-            text-align: center;
-            font-size: 0.9rem;
-            border: 2px solid transparent;
-            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            line-height: 1.2;
-            color: #333;
+            min-height: 80px;
         }
-        .grid-item:hover { background-color: #e0e0e0; }
-        .grid-item.selected {
-            background-color: #5a5a5a;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .solved-category {
-            grid-column: span 4;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            color: black;
-            font-weight: bold;
-            animation: popIn 0.5s;
-        }
-        .solved-title { font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
-        .solved-items { font-weight: normal; font-size: 0.95rem; }
-
-        @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        @keyframes shake { 
-            0% { transform: translateX(0); } 25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } 100% { transform: translateX(0); }
-        }
-        .shake { animation: shake 0.4s; }
-
-        .bg-0 { background-color: #F9E79F; } 
-        .bg-1 { background-color: #A9DFBF; } 
-        .bg-2 { background-color: #AED6F1; } 
-        .bg-3 { background-color: #E6B0AA; } 
 
         @media (max-width: 600px) {
-            .grid-item { font-size: 0.7rem; padding: 10px 2px; min-height: 60px; }
+            .tile {
+                font-size: 0.85rem;
+                padding: 10px 5px;
+                min-height: 70px;
+            }
         }
+
+        .tile.selected {
+            background-color: #5a5a5a;
+            color: white;
+        }
+        
+        /* Solved Group Colors */
+        .solved-0 { background-color: #f1c40f; color: #333; cursor: default; } /* Yellow */
+        .solved-1 { background-color: #2ecc71; color: white; cursor: default;} /* Green */
+        .solved-2 { background-color: #3498db; color: white; cursor: default;} /* Blue */
+        .solved-3 { background-color: #9b59b6; color: white; cursor: default;} /* Purple */
+
+        .solved-row {
+            grid-column: span 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .solved-title { font-size: 1.2rem; margin-bottom: 5px; }
+        .solved-items { font-weight: normal; font-size: 0.9rem; }
+
+        .btn-group { margin-top: 20px; display: flex; justify-content: center; gap: 10px; }
+        .action-btn {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .action-btn:hover { background: #eee; }
+        .submit-btn { background: #333; color: white; }
+        .submit-btn:hover { background: #111; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="confusingpairs.html">Confusing Pairs</a>
-        <a href="connectionsgame.html">Connections</a>
-        <a href="boardgame.html">Psych Land</a>
-        <a href="battleship.html">Cortex Commander</a>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
-    <div class="container game-container">
-        <h1>🔗 Connections</h1>
-        
-        <div class="controls-area">
-            <p>Group the 16 items into 4 categories.</p>
-            <label><strong>Select Unit:</strong></label>
-            <br>
-            <select id="unit-select" onchange="startNewGame()">
-                <option value="all">All Units</option>
-            </select>
-            <br><br>
-            <button class="nav-btn" onclick="startNewGame()">🔄 New Game</button>
-        </div>
+<div class="game-container">
+    <h1>🔗 Connections</h1>
+    <p>Group the terms into 4 categories of 4.</p>
 
+    <div class="controls-area">
+        <select id="unit-select" onchange="startGame()">
+            <option value="all">All Units</option>
+        </select>
         <div class="status-bar">
-            Mistakes Remaining: <span id="mistakes-display">⚫⚫⚫⚫</span>
-        </div>
-
-        <div id="game-board" class="grid-container"></div>
-
-        <div class="controls-area" style="border-top: 1px solid #eee; padding-top:20px;">
-            <button class="nav-btn" style="background:#ddd; color:#333;" onclick="deselectAll()">Deselect All</button>
-            <button class="nav-btn" onclick="shuffleGrid()">Shuffle</button>
-            <button class="nav-btn" style="background:var(--primary); color:white;" onclick="submitGuess()">Submit</button>
+            Mistakes remaining: <span id="mistakes-display"></span>
         </div>
     </div>
 
-    <script>
-        let allGroups = [];
-        let activePuzzle = [];
-        let activeItems = [];
-        let selectedIndices = [];
-        let solvedGroups = [];
-        let mistakes = 0;
-        const MAX_MISTAKES = 4;
+    <div id="board" class="grid-container"></div>
 
-        // 1. FETCH DATA (Using the correct fields from your file)
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                if(data.connections) {
-                    allGroups = data.connections;
-                    populateUnitDropdown();
-                    startNewGame();
-                } else {
-                    alert("No 'connections' array found in data.json!");
-                }
-            })
-            .catch(err => console.error(err));
+    <div class="btn-group">
+        <button class="action-btn" onclick="shuffleBoard()">Shuffle</button>
+        <button class="action-btn" onclick="deselectAll()">Deselect All</button>
+        <button class="action-btn submit-btn" onclick="submitGuess()">Submit</button>
+    </div>
+</div>
 
-        function populateUnitDropdown() {
-            const units = [...new Set(allGroups.map(g => g.unit))].sort();
+<script>
+    let allConnections = [];
+    let currentGroups = []; // Array of 4 group objects { theme, terms: [] }
+    let boardItems = []; // Array of { term, groupIndex, selected, solved }
+    let solvedGroups = []; // Array of groupIndexes that are solved
+    let mistakes = 0;
+    const MAX_MISTAKES = 4;
+
+    // 1. Load Data
+    fetch('data.json')
+        .then(res => res.json())
+        .then(data => {
+            allConnections = data.connections;
+            
+            // Populate Unit Select
+            const units = [...new Set(allConnections.map(c => c.unit))].sort();
             const select = document.getElementById('unit-select');
             units.forEach(u => {
-                if(!u) return;
                 const opt = document.createElement('option');
                 opt.value = u;
                 opt.innerText = u;
                 select.appendChild(opt);
             });
+
+            startGame();
+        });
+
+    function startGame() {
+        const unit = document.getElementById('unit-select').value;
+        let pool = unit === 'all' ? allConnections : allConnections.filter(c => c.unit === unit);
+        
+        if (pool.length < 4) {
+            alert("Not enough groups in this unit to play!");
+            return;
         }
 
-        // 2. START GAME
-        function startNewGame() {
-            mistakes = 0;
+        // Shuffle and pick 4 groups
+        pool.sort(() => Math.random() - 0.5);
+        currentGroups = pool.slice(0, 4).map(c => ({
+            theme: c.theme,
+            terms: [c.item_1, c.item_2, c.item_3, c.item_4]
+        }));
+
+        // Flatten to board items
+        boardItems = [];
+        currentGroups.forEach((group, index) => {
+            group.terms.forEach(term => {
+                boardItems.push({ term: term, groupIndex: index, selected: false });
+            });
+        });
+
+        solvedGroups = [];
+        mistakes = 0;
+        shuffleBoard();
+        updateMistakesUI();
+    }
+
+    function shuffleBoard() {
+        // Only shuffle unsolved items
+        const unsolved = boardItems.filter(item => !solvedGroups.includes(item.groupIndex));
+        unsolved.sort(() => Math.random() - 0.5);
+        
+        let unsolvedIndex = 0;
+        boardItems = boardItems.map(item => {
+            if (solvedGroups.includes(item.groupIndex)) return item;
+            return unsolved[unsolvedIndex++];
+        });
+        
+        renderBoard();
+    }
+
+    function deselectAll() {
+        boardItems.forEach(item => item.selected = false);
+        renderBoard();
+    }
+
+    function renderBoard() {
+        const board = document.getElementById('board');
+        board.innerHTML = '';
+
+        // 1. Render Solved Groups First (taking up whole rows)
+        solvedGroups.forEach(groupIndex => {
+            const group = currentGroups[groupIndex];
+            const div = document.createElement('div');
+            div.className = `solved-row solved-${groupIndex}`;
+            div.innerHTML = `
+                <div class="solved-title">${group.theme.toUpperCase()}</div>
+                <div class="solved-items">${group.terms.join(', ')}</div>
+            `;
+            board.appendChild(div);
+        });
+
+        // 2. Render Unsolved Tiles
+        boardItems.forEach((item, index) => {
+            if (!solvedGroups.includes(item.groupIndex)) {
+                const btn = document.createElement('div');
+                btn.className = `tile ${item.selected ? 'selected' : ''}`;
+                btn.innerText = item.term;
+                btn.onclick = () => toggleSelect(index);
+                board.appendChild(btn);
+            }
+        });
+
+        // Add shake animation class logic if needed later
+    }
+
+    function toggleSelect(index) {
+        const selectedCount = boardItems.filter(i => i.selected).length;
+        
+        if (boardItems[index].selected) {
+            boardItems[index].selected = false;
+        } else if (selectedCount < 4) {
+            boardItems[index].selected = true;
+        }
+        renderBoard();
+    }
+
+    function submitGuess() {
+        const selectedItems = boardItems.filter(i => i.selected);
+        if(selectedItems.length !== 4) return;
+
+        // Check if all 4 belong to the same group
+        const firstGroup = selectedItems[0].groupIndex;
+        const isCorrect = selectedItems.every(i => i.groupIndex === firstGroup);
+
+        if(isCorrect) {
+            solvedGroups.push(firstGroup);
+            deselectAll(); // Re-renders board with new solved row
+            
+            if(solvedGroups.length === 4) {
+                setTimeout(() => alert("Perfect! You found all connections! 🎉"), 300);
+            }
+        } else {
+            // Check if 3 are correct (One away)
+            const groupCounts = {};
+            selectedItems.forEach(i => {
+                groupCounts[i.groupIndex] = (groupCounts[i.groupIndex] || 0) + 1;
+            });
+            const isOneAway = Object.values(groupCounts).includes(3);
+
+            mistakes++;
             updateMistakesUI();
-            selectedIndices = [];
-            solvedGroups = [];
             
-            const selectedUnit = document.getElementById('unit-select').value;
-            
-            let pool = allGroups;
-            if(selectedUnit !== 'all') {
-                pool = allGroups.filter(g => g.unit === selectedUnit);
-            }
-
-            if(pool.length < 4) {
-                // Fill with random others if not enough in this unit
-                const needed = 4 - pool.length;
-                const others = allGroups.filter(g => !pool.includes(g));
-                const filler = others.sort(() => Math.random() - 0.5).slice(0, needed);
-                pool = [...pool, ...filler];
-            }
-
-            // Pick 4 random groups
-            pool.sort(() => Math.random() - 0.5);
-            activePuzzle = pool.slice(0, 4);
-
-            // Create flat list of 16 items
-            activeItems = [];
-            activePuzzle.forEach((group, index) => {
-                // Collect the 4 items from your specific fields
-                const items = [group.item_1, group.item_2, group.item_3, group.item_4];
-                
-                items.forEach(itemText => {
-                    activeItems.push({
-                        text: itemText,
-                        groupId: index,
-                        groupName: group.category_title, // Using your specific field name
-                        fullItems: items
-                    });
-                });
+            // Visual feedback
+            const tiles = document.querySelectorAll('.tile.selected');
+            tiles.forEach(t => {
+                t.style.transform = 'translateY(-5px)';
+                setTimeout(() => t.style.transform = 'translateY(0)', 150);
             });
 
-            // Shuffle
-            activeItems.sort(() => Math.random() - 0.5);
-            renderBoard();
-        }
+            setTimeout(() => deselectAll(), 400);
 
-        // 3. RENDER
-        function renderBoard() {
-            const board = document.getElementById('game-board');
-            board.innerHTML = '';
+            if(isOneAway) setTimeout(() => alert("One away..."), 400);
 
-            // A. Solved Rows
-            solvedGroups.forEach(groupIndex => {
-                // Find one item from this group to get the metadata
-                const sample = activeItems.find(i => i.groupId === groupIndex);
-                if (!sample) return;
-
-                const div = document.createElement('div');
-                div.className = `solved-category bg-${groupIndex}`;
-                div.innerHTML = `
-                    <div class="solved-title">${sample.groupName}</div>
-                    <div class="solved-items">${sample.fullItems.join(', ')}</div>
-                `;
-                board.appendChild(div);
-            });
-
-            // B. Active Tiles
-            activeItems.forEach((item, index) => {
-                if(solvedGroups.includes(item.groupId)) return;
-
-                const tile = document.createElement('div');
-                tile.className = 'grid-item';
-                if(selectedIndices.includes(index)) tile.classList.add('selected');
-                
-                tile.innerText = item.text;
-                tile.onclick = () => toggleSelect(index);
-                board.appendChild(tile);
-            });
-        }
-
-        // 4. LOGIC
-        function toggleSelect(index) {
-            if(selectedIndices.includes(index)) {
-                selectedIndices = selectedIndices.filter(i => i !== index);
-            } else {
-                if(selectedIndices.length < 4) {
-                    selectedIndices.push(index);
-                }
-            }
-            renderBoard();
-        }
-
-        function deselectAll() {
-            selectedIndices = [];
-            renderBoard();
-        }
-
-        function shuffleGrid() {
-            // Simple visual shuffle
-            activeItems.sort(() => Math.random() - 0.5);
-            selectedIndices = [];
-            renderBoard();
-        }
-
-        function submitGuess() {
-            if(selectedIndices.length !== 4) return;
-
-            const selectedObjects = selectedIndices.map(i => activeItems[i]);
-            const firstId = selectedObjects[0].groupId;
-            const isMatch = selectedObjects.every(obj => obj.groupId === firstId);
-
-            if(isMatch) {
-                solvedGroups.push(firstId);
-                selectedIndices = [];
-                renderBoard();
-                
-                if(solvedGroups.length === 4) {
-                    setTimeout(() => alert("🎉 Perfect! You found all connections!"), 300);
-                }
-            } else {
-                // Check "One Away"
-                const counts = {};
-                selectedObjects.forEach(obj => {
-                    counts[obj.groupId] = (counts[obj.groupId] || 0) + 1;
-                });
-                const isOneAway = Object.values(counts).some(c => c === 3);
-
-                mistakes++;
-                updateMistakesUI();
-
-                const board = document.getElementById('game-board');
-                board.classList.add('shake');
-                setTimeout(() => board.classList.remove('shake'), 400);
-
-                if(isOneAway) setTimeout(() => alert("One away..."), 400);
-
-                if(mistakes >= MAX_MISTAKES) {
-                    setTimeout(() => {
-                        alert("Game Over! Better luck next time.");
-                        solvedGroups = [0, 1, 2, 3]; // Reveal all
-                        renderBoard();
-                    }, 500);
-                }
+            if(mistakes >= MAX_MISTAKES) {
+                setTimeout(() => {
+                    alert("Game Over! Better luck next time.");
+                    solvedGroups = [0, 1, 2, 3]; // Reveal all
+                    renderBoard();
+                }, 500);
             }
         }
+    }
 
-        function updateMistakesUI() {
-            const remaining = MAX_MISTAKES - mistakes;
-            let html = '';
-            for(let i=0; i<MAX_MISTAKES; i++) {
-                if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
-                else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
-            }
-            document.getElementById('mistakes-display').innerHTML = html;
+    function updateMistakesUI() {
+        const remaining = MAX_MISTAKES - mistakes;
+        let html = '';
+        for(let i=0; i<MAX_MISTAKES; i++) {
+            if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
+            else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
         }
-    </script>
+        document.getElementById('mistakes-display').innerHTML = html;
+    }
+</script>
 
-    <footer>
-        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-    </footer>
+<footer>
+    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+    
+    <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+</footer>
+
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 </html>
