@@ -50,6 +50,7 @@
             border: 2px solid #ddd;
             border-radius: 10px;
             background: #fdfdfd;
+            color: #333; /* <-- This forces the text to be dark gray before clicking */
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -63,7 +64,7 @@
         /* Feedback Colors */
         .term-btn.correct {
             background-color: #2ecc71 !important;
-            color: white;
+            color: white !important;
             border-color: #27ae60;
             transform: scale(1.02);
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
@@ -71,7 +72,7 @@
 
         .term-btn.incorrect {
             background-color: #e74c3c !important;
-            color: white;
+            color: white !important;
             border-color: #c0392b;
             opacity: 0.8;
         }
