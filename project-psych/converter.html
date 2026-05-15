@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AP Psych Data Converter v4 (Oddball Added)</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; background-color: #f4f4f9; }
+        h1 { text-align: center; color: #333; }
+        p { text-align: center; color: #666; }
+        
+        .step { 
+            margin-bottom: 2rem; 
+            padding: 1.5rem; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background: #fff; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        textarea { 
+            width: 100%; 
+            height: 100px; 
+            margin-top: 0.5rem; 
+            font-family: monospace; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            box-sizing: border-box; /* Keeps padding inside width */
+        }
+        
+        button { 
+            background: #2c3e50; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            display: block; 
+            width: 100%; 
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover { background: #34495e; }
+        
+        h3 { margin-top: 0; color: #2c3e50; }
+        .note { font-size: 0.9rem; color: #666; margin-bottom: 5px; display: block; font-style: italic;}
+    </style>
+</head>
+<body>
+
+    <h1>🧠 AP Psych Data Converter (v4)</h1>
+    <p>Copy the cells directly from your spreadsheet tabs and Paste them below.</p>
+
+    <div class="step">
+        <h3>1. Topics (Table of Contents)</h3>
+        <span class="note">Columns: unit, topic_id, topic_title</span>
+        <textarea id="csvTopics" placeholder="Unit 1, 1.1, Introducing Psychology..."></textarea>
+    </div>
+
+    <div class="step">
+        <h3>2. Terms (Flashcards)</h3>
+        <span class="note">Columns: id, unit, topic, term, definition</span>
+        <textarea id="csvTerms" placeholder="1, Unit 1, 1.1, Empiricism, ..."></textarea>
+    </div>
+
+    <div class="step">
+        <h3>3. Questions (Quiz)</h3>
+        <span class="note">Columns: id, unit, topic, question, option_a, option_b, option_c, option_d, correct_answer</span>
+        <textarea id="csvQuestions" placeholder="1, Unit 1, 1.1, Who is..., A, B, C, D, A"></textarea>
+    </div>
+
+    <div class="step">
+        <h3>4. Confusing Pairs</h3>
+        <span class="note">Columns: id, unit, topic, term_1, definition_1, term_2, definition_2</span>
+        <textarea id="csvPairs" placeholder="..."></textarea>
+    </div>
+
+    <div class="step">
+        <h3>5. Connections</h3>
+        <span class="note">Columns: id, unit, difficulty, category_title, item_1, item_2, item_3, item_4</span>
+        <textarea id="csvConnections" placeholder="..."></textarea>
+    </div>
+
+    <div class="step">
+        <h3>6. Oddball</h3>
+        <span class="note">Columns: id, unit, oddball, related1, related2, related3, explanation</span>
+        <textarea id="csvOddball" placeholder="1, Unit 1, Double-blind procedure, Case study, Naturalistic observation, Survey, Explanation text..."></textarea>
+    </div>
+
+    <button onclick="convertAll()">Generate JSON File</button>
+
+    <div class="step">
+        <h3>Result (Save this as data.json)</h3>
+        <textarea id="output" style="height: 300px; background: #333; color: #fff;"></textarea>
+    </div>
+
+    <script>
+        // --- SMART CSV PARSER (Handles commas inside quotes & TSV from direct paste) ---
+        function parseCSVLine(text) {
+            // If the user pastes directly from Excel/Sheets, it might use tabs instead of commas
+            if (text.indexOf('\t') !== -1 && text.indexOf('","') === -1) {
+                return text.split('\t').map(val => val.trim());
+            }
+
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                
+                // Toggle "Inside Quotes" mode
+                if (char === '"') {
+                    // Check if it's an escaped quote ("") vs a real quote
+                    if (i + 1 < text.length && text[i+1] === '"') {
+                        current += '"';
+                        i++; // Skip the next quote
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } 
+                // If we hit a comma and we are NOT in quotes, that's a separator
+                else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } 
+                // Otherwise, just add the character
+                else {
+                    current += char;
+                }
+            }
+            // Push the final field
+            result.push(current);
+            
+            return result.map(val => val.trim());
+        }
+
+        function csvToJson(csv) {
+            const lines = csv.trim().split("\n");
+            if (lines.length < 2) return [];
+
+            // 1. Get Headers
+            const headers = parseCSVLine(lines[0]);
+
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                // Skip empty lines
+                if (!lines[i].trim()) continue;
+
+                // 2. Parse the line respecting quotes/tabs
+                const currentline = parseCSVLine(lines[i]);
+
+                // Only add if column count matches headers (or is close enough)
+                if (currentline.length > 0) {
+                    const obj = {};
+                    for (let j = 0; j < headers.length; j++) {
+                        // Safety check in case a row is shorter than headers
+                        let val = currentline[j] || "";
+                        obj[headers[j]] = val;
+                    }
+                    result.push(obj);
+                }
+            }
+            return result;
+        }
+
+        function convertAll() {
+            const topicsRaw = document.getElementById('csvTopics').value;
+            const termsRaw = document.getElementById('csvTerms').value;
+            const questionsRaw = document.getElementById('csvQuestions').value;
+            const pairsRaw = document.getElementById('csvPairs').value;
+            const connectionsRaw = document.getElementById('csvConnections').value;
+            const oddballRaw = document.getElementById('csvOddball').value;
+
+            // Convert all inputs
+            const database = {
+                topics: csvToJson(topicsRaw),
+                terms: csvToJson(termsRaw),
+                questions: csvToJson(questionsRaw),
+                confusing_pairs: csvToJson(pairsRaw),
+                connections: csvToJson(connectionsRaw),
+                oddball: csvToJson(oddballRaw)
+            };
+
+            const jsonString = JSON.stringify(database, null, 2);
+            document.getElementById('output').value = jsonString;
+            
+            alert("Conversion Complete! Copy the black box at the bottom.");
+        }
+    </script>
+</body>
+</html>

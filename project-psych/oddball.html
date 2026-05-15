@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oddball</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* --- SETUP SCREEN --- */
+        #setup-screen {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        #setup-screen select {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* --- GAME UI --- */
+        #question-counter {
+            font-weight: bold;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .term-btn {
+            padding: 25px 15px;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #fdfdfd;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .term-btn:hover:not(:disabled) {
+            background: #eee;
+            transform: translateY(-2px);
+        }
+
+        /* Feedback Colors */
+        .term-btn.correct {
+            background-color: #2ecc71 !important;
+            color: white;
+            border-color: #27ae60;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .term-btn.incorrect {
+            background-color: #e74c3c !important;
+            color: white;
+            border-color: #c0392b;
+            opacity: 0.8;
+        }
+
+        .term-btn:disabled {
+            cursor: default;
+        }
+
+        /* --- EXPLANATION BOX --- */
+        #explanation-box {
+            display: none;
+            background-color: #f0f8ff;
+            border-left: 5px solid var(--accent, #5F7FFF);
+            padding: 20px;
+            margin-top: 25px;
+            text-align: left;
+            font-size: 1.1rem;
+            border-radius: 0 8px 8px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- NAVIGATION --- */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            padding: 10px 25px;
+            border: none;
+            background-color: var(--accent, #5F7FFF);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .action-btn:hover:not(:disabled) {
+            background-color: #3b5bdb;
+        }
+        .action-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        /* --- END SCREEN --- */
+        #end-screen {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="confusingpairs.html">Confusing Pairs</a>
+        <a href="connectionsgame.html">Connections</a>
+        <a href="boardgame.html">Psych Land</a>
+        <a href="battleship.html">Cortex Commander</a>
+        <a href="oddball.html">Oddball</a>
+    </nav>
+
+    <div class="game-container">
+        
+        <div id="setup-screen">
+            <h1>🔍 Oddball</h1>
+            <p>Find the term that doesn't belong!</p>
+            
+            <label style="display:block; text-align:left; font-weight:bold;">Select Unit to Review:</label>
+            <select id="unit-select">
+                <option value="all">All Units</option>
+            </select>
+
+            <button class="action-btn" style="width: 100%; margin-top: 10px;" onclick="startGame()">Start Game</button>
+        </div>
+
+        <div id="game-ui" style="display: none;">
+            <div id="question-counter">Set 1 of 10</div>
+            
+            <h2 style="margin-bottom: 20px;">Which term is the oddball?</h2>
+            
+            <div class="grid-2x2" id="terms-grid">
+                </div>
+
+            <div id="explanation-box">
+                </div>
+
+            <div class="nav-controls">
+                <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
+                <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next ➡️</button>
+            </div>
+        </div>
+
+        <div id="end-screen">
+            <h1>🎉 Unit Complete!</h1>
+            <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
+            <button class="action-btn" onclick="location.reload()">Play Again</button>
+        </div>
+
+    </div>
+
+    <script>
+        let allOddballData = [];
+        let currentQueue = [];
+        let currentIndex = 0;
+        let hasGuessedCurrent = false;
+
+        // 1. Load Data
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                // Look for the "oddball" array in the JSON file
+                if(data.oddball) {
+                    allOddballData = data.oddball;
+                    populateDropdown();
+                } else {
+                    alert("Oddball data not found in data.json yet!");
+                }
+            })
+            .catch(err => console.error("Error loading JSON:", err));
+
+        function populateDropdown() {
+            const units = [...new Set(allOddballData.map(item => item.unit))].sort();
+            const select = document.getElementById('unit-select');
+            units.forEach(u => {
+                const opt = document.createElement('option');
+                opt.value = u;
+                opt.innerText = u;
+                select.appendChild(opt);
+            });
+        }
+
+        // 2. Start Game
+        function startGame() {
+            const selectedUnit = document.getElementById('unit-select').value;
+            
+            if (selectedUnit === 'all') {
+                currentQueue = [...allOddballData];
+            } else {
+                currentQueue = allOddballData.filter(item => item.unit === selectedUnit);
+            }
+
+            // Shuffle the queue so it's fresh each time
+            currentQueue.sort(() => Math.random() - 0.5);
+
+            if (currentQueue.length === 0) {
+                alert("No questions found for this unit!");
+                return;
+            }
+
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'block';
+            
+            currentIndex = 0;
+            loadQuestion();
+        }
+
+        // 3. Load Question
+        function loadQuestion() {
+            hasGuessedCurrent = false;
+            const currentItem = currentQueue[currentIndex];
+            
+            // Update Counter
+            document.getElementById('question-counter').innerText = `Set ${currentIndex + 1} of ${currentQueue.length}`;
+            
+            // Hide Explanation
+            const expBox = document.getElementById('explanation-box');
+            expBox.style.display = 'none';
+            expBox.innerHTML = '';
+
+            // Update Nav Buttons
+            document.getElementById('prev-btn').disabled = (currentIndex === 0);
+            
+            // Prepare Terms Array
+            let terms = [
+                { text: currentItem.oddball, isOddball: true },
+                { text: currentItem.related1, isOddball: false },
+                { text: currentItem.related2, isOddball: false },
+                { text: currentItem.related3, isOddball: false }
+            ];
+
+            // Shuffle Terms so the answer isn't always in the same spot
+            terms.sort(() => Math.random() - 0.5);
+
+            // Render Buttons
+            const grid = document.getElementById('terms-grid');
+            grid.innerHTML = '';
+            
+            terms.forEach(termObj => {
+                const btn = document.createElement('button');
+                btn.className = 'term-btn';
+                btn.innerText = termObj.text;
+                // Save whether it's correct directly to the HTML element
+                btn.dataset.correct = termObj.isOddball; 
+                
+                btn.onclick = () => handleGuess(btn, currentItem.explanation);
+                grid.appendChild(btn);
+            });
+        }
+
+        // 4. Handle Guess
+        function handleGuess(clickedBtn, explanationText) {
+            // Prevent multiple guesses on the same question
+            if (hasGuessedCurrent) return; 
+            hasGuessedCurrent = true;
+
+            const isCorrect = clickedBtn.dataset.correct === "true";
+            const allBtns = document.querySelectorAll('.term-btn');
+
+            if (isCorrect) {
+                clickedBtn.classList.add('correct');
+            } else {
+                clickedBtn.classList.add('incorrect');
+                // Find the correct one and highlight it green
+                allBtns.forEach(btn => {
+                    if (btn.dataset.correct === "true") {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
+
+            // Disable all buttons after guess
+            allBtns.forEach(btn => btn.disabled = true);
+
+            // Show explanation
+            const expBox = document.getElementById('explanation-box');
+            expBox.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
+            expBox.style.display = 'block';
+        }
+
+        // 5. Navigation
+        function nextQuestion() {
+            if (currentIndex < currentQueue.length - 1) {
+                currentIndex++;
+                loadQuestion();
+            } else {
+                // End of Unit
+                document.getElementById('game-ui').style.display = 'none';
+                document.getElementById('end-screen').style.display = 'block';
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadQuestion();
+            }
+        }
+    </script>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+</body>
+</html>
