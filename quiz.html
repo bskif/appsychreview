@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <style>
         .quiz-container {
@@ -147,13 +150,31 @@
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="confusingpairs.html">Confusing Pairs</a>
-        <a href="connectionsgame.html">Connections</a>
-        <a href="boardgame.html">Psych Land</a>
-        <a href="battleship.html">Cortex Commander</a>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <div class="container">
@@ -468,8 +489,13 @@
 
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        
+        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 </html>
