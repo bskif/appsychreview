@@ -17,23 +17,129 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar */
+/* --- NAVIGATION BAR (Responsive & Dropdown) --- */
 nav {
     background-color: var(--primary);
-    padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 60px;
 }
 
-nav a {
+.nav-brand a {
     color: var(--white);
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
-nav a:hover {
+/* Hide the checkbox that controls the mobile menu */
+#menu-toggle {
+    display: none;
+}
+
+/* The hamburger icon (hidden on desktop) */
+.menu-icon {
+    display: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    user-select: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: #1a252f;
     color: var(--accent);
+}
+
+/* Dropdown Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    border-bottom: 1px solid #1a252f;
+    font-size: 1rem;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* --- MOBILE VIEW (Hamburger Menu) --- */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+    
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Directly below nav */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        z-index: 999;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* When checkbox is checked, show the menu */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        position: static; /* Let it flow normally in the column */
+        box-shadow: none;
+        background-color: #1a252f;
+        min-width: 100%;
+    }
+
+    .dropdown-content a {
+        padding-left: 2.5rem; /* Indent sub-items so they look nested */
+    }
 }
 
 /* Main Container */
