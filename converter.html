@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AP Psych Data Converter v3 (Robust)</title>
+    <title>AP Psych Data Converter v4 (Oddball Added)</title>
     <style>
         body { font-family: sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; background-color: #f4f4f9; }
         h1 { text-align: center; color: #333; }
@@ -50,8 +50,8 @@
 </head>
 <body>
 
-    <h1>🧠 AP Psych Data Converter (v3)</h1>
-    <p>Open your CSV files in Notepad, Copy All, and Paste below.</p>
+    <h1>🧠 AP Psych Data Converter (v4)</h1>
+    <p>Copy the cells directly from your spreadsheet tabs and Paste them below.</p>
 
     <div class="step">
         <h3>1. Topics (Table of Contents)</h3>
@@ -83,6 +83,12 @@
         <textarea id="csvConnections" placeholder="..."></textarea>
     </div>
 
+    <div class="step">
+        <h3>6. Oddball</h3>
+        <span class="note">Columns: id, unit, oddball, related1, related2, related3, explanation</span>
+        <textarea id="csvOddball" placeholder="1, Unit 1, Double-blind procedure, Case study, Naturalistic observation, Survey, Explanation text..."></textarea>
+    </div>
+
     <button onclick="convertAll()">Generate JSON File</button>
 
     <div class="step">
@@ -91,8 +97,13 @@
     </div>
 
     <script>
-        // --- SMART CSV PARSER (Handles commas inside quotes) ---
+        // --- SMART CSV PARSER (Handles commas inside quotes & TSV from direct paste) ---
         function parseCSVLine(text) {
+            // If the user pastes directly from Excel/Sheets, it might use tabs instead of commas
+            if (text.indexOf('\t') !== -1 && text.indexOf('","') === -1) {
+                return text.split('\t').map(val => val.trim());
+            }
+
             const result = [];
             let current = '';
             let inQuotes = false;
@@ -123,8 +134,6 @@
             // Push the final field
             result.push(current);
             
-            // Clean up: Google Sheets usually wraps fields in quotes if they contain commas.
-            // We need to strip those outer quotes if they exist, but be careful not to damage the content.
             return result.map(val => val.trim());
         }
 
@@ -141,7 +150,7 @@
                 // Skip empty lines
                 if (!lines[i].trim()) continue;
 
-                // 2. Parse the line respecting quotes
+                // 2. Parse the line respecting quotes/tabs
                 const currentline = parseCSVLine(lines[i]);
 
                 // Only add if column count matches headers (or is close enough)
@@ -164,6 +173,7 @@
             const questionsRaw = document.getElementById('csvQuestions').value;
             const pairsRaw = document.getElementById('csvPairs').value;
             const connectionsRaw = document.getElementById('csvConnections').value;
+            const oddballRaw = document.getElementById('csvOddball').value;
 
             // Convert all inputs
             const database = {
@@ -171,7 +181,8 @@
                 terms: csvToJson(termsRaw),
                 questions: csvToJson(questionsRaw),
                 confusing_pairs: csvToJson(pairsRaw),
-                connections: csvToJson(connectionsRaw)
+                connections: csvToJson(connectionsRaw),
+                oddball: csvToJson(oddballRaw)
             };
 
             const jsonString = JSON.stringify(database, null, 2);
