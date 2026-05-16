@@ -174,6 +174,7 @@
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
                     <a href="flashcards.html">Flashcards</a>
                     <a href="quiz.html">Quiz</a>
                     <a href="confusingpairs.html">Confusing Pairs</a>
@@ -261,23 +262,30 @@
         let score = 0;
         let isAnswering = false;
 
-        // 1. FETCH DATA
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                if(data.topics) {
-                    allTopics = data.topics;
+        // 1. FETCH DATA CONCURRENTLY
+        Promise.all([
+            fetch('quiz.json').then(res => res.json()),
+            fetch('topics.json').then(res => res.json())
+        ])
+        .then(([quizData, topicsData]) => {
+            try {
+                if(topicsData && topicsData.topics) {
+                    allTopics = topicsData.topics;
                 }
 
-                if(data.questions && data.questions.length > 0) {
-                    allQuestions = data.questions;
+                if(quizData && quizData.quiz && quizData.quiz.length > 0) {
+                    allQuestions = quizData.quiz;
                     populateUnitDropdown();
                     populateTopicDropdown(); 
                 } else {
-                    alert("No questions found in data.json!");
+                    alert("No questions found in quiz.json!");
                 }
-            })
-            .catch(error => console.error('Error loading data:', error));
+            } catch(error) {
+                console.error('Processing error:', error);
+                alert("An error occurred while loading the data.");
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
         // --- FILTER LOGIC ---
         function populateUnitDropdown() {
@@ -401,15 +409,15 @@
             // Text
             document.getElementById('question-text').textContent = currentQ.question;
 
-            // Options 
+            // Options (Updated for the new JSON structure)
             const container = document.getElementById('options-container');
             container.innerHTML = ''; 
 
             const optionsList = [
-                { text: currentQ.option_a, letter: 'A' },
-                { text: currentQ.option_b, letter: 'B' },
-                { text: currentQ.option_c, letter: 'C' },
-                { text: currentQ.option_d, letter: 'D' }
+                { text: currentQ.options[0], letter: 'A' },
+                { text: currentQ.options[1], letter: 'B' },
+                { text: currentQ.options[2], letter: 'C' },
+                { text: currentQ.options[3], letter: 'D' }
             ];
 
             optionsList.sort(() => Math.random() - 0.5);
@@ -421,7 +429,7 @@
                 btn.className = 'option-btn';
                 btn.textContent = opt.text;
                 
-                btn.onclick = () => handleAnswer(btn, opt.letter === currentQ.correct_answer, currentQ.correct_answer);
+                btn.onclick = () => handleAnswer(btn, opt.letter === currentQ.answer, currentQ.answer);
                 container.appendChild(btn);
             });
         }
@@ -441,12 +449,12 @@
             } else {
                 selectedBtn.classList.add('incorrect');
                 
-                // Highlight Correct One
+                // Highlight Correct One (Updated for new JSON structure)
                 let correctText = "";
-                if(correctLetter === "A") correctText = currentQ.option_a;
-                if(correctLetter === "B") correctText = currentQ.option_b;
-                if(correctLetter === "C") correctText = currentQ.option_c;
-                if(correctLetter === "D") correctText = currentQ.option_d;
+                if(correctLetter === "A") correctText = currentQ.options[0];
+                if(correctLetter === "B") correctText = currentQ.options[1];
+                if(correctLetter === "C") correctText = currentQ.options[2];
+                if(correctLetter === "D") correctText = currentQ.options[3];
 
                 const buttons = document.querySelectorAll('.option-btn');
                 buttons.forEach(btn => {
