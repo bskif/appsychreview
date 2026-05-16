@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Quiz</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -144,6 +144,20 @@
             color: var(--accent);
             font-weight: bold;
             margin: 20px 0;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 15px;
+            }
+            .option-btn {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+            .question-text {
+                font-size: 1.15rem;
+            }
         }
     </style>
 </head>
