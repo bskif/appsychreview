@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary - Psych Review Hub</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .glossary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- SEARCH BAR --- */
+        .search-container {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 8px rgba(95, 127, 255, 0.5);
+        }
+
+        /* --- GLOSSARY STRUCTURE --- */
+        .unit-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .unit-header {
+            color: var(--primary);
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .topic-section {
+            margin-bottom: 25px;
+        }
+
+        .topic-header {
+            color: #555;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            background-color: #f1f3f5;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* --- TERM CARDS --- */
+        .term-card {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .term-card:hover {
+            background-color: #f9fbfd;
+            border-color: #dbe4ef;
+        }
+
+        .term-title {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .term-def {
+            color: #444;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+
+        /* Hide items dynamically during search */
+        .hidden {
+            display: none !important;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            .unit-section {
+                padding: 15px;
+            }
+            .unit-header {
+                font-size: 1.5rem;
+            }
+            .topic-header {
+                font-size: 1.1rem;
+            }
+            .search-input {
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a> <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container glossary-container">
+        <h1 style="text-align: center;">📖 Master Glossary</h1>
+        <p style="text-align: center; margin-bottom: 20px;">Search for a specific term, or scroll to review by course unit.</p>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Search for a term or keyword..." onkeyup="filterGlossary()">
+        </div>
+
+        <div id="glossary-content">
+            <h3 style="text-align: center; color: #777;">Loading terms...</h3>
+        </div>
+    </div>
+
+    <script>
+        let allTerms = [];
+        let allTopics = [];
+
+        // 1. Fetch the data
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                if(data.topics) allTopics = data.topics;
+                if(data.terms) {
+                    allTerms = data.terms;
+                    buildGlossary();
+                }
+            })
+            .catch(err => {
+                document.getElementById('glossary-content').innerHTML = "<h3 style='color:red;'>Error loading glossary data.</h3>";
+            });
+
+        // 2. Build the HTML structure
+        function buildGlossary() {
+            const container = document.getElementById('glossary-content');
+            container.innerHTML = ''; // Clear loading text
+
+            // Find all unique Units and sort them alphabetically/numerically
+            const units = [...new Set(allTerms.map(t => t.unit))].sort();
+
+            units.forEach(unit => {
+                if(!unit) return;
+
+                // Create Unit Wrapper
+                const unitDiv = document.createElement('div');
+                unitDiv.className = 'unit-section';
+                
+                const unitHeader = document.createElement('h2');
+                unitHeader.className = 'unit-header';
+                unitHeader.innerText = unit;
+                unitDiv.appendChild(unitHeader);
+
+                // Find all unique Topics within this Unit
+                const unitTerms = allTerms.filter(t => t.unit === unit);
+                const topics = [...new Set(unitTerms.map(t => t.topic))].sort();
+
+                topics.forEach(topicId => {
+                    if(!topicId) return;
+
+                    const topicDiv = document.createElement('div');
+                    topicDiv.className = 'topic-section';
+
+                    // Get the actual topic title from allTopics
+                    const topicObj = allTopics.find(t => t.topic_id === topicId);
+                    const topicName = topicObj ? `${topicObj.topic_id} ${topicObj.topic_title}` : topicId;
+
+                    const topicHeader = document.createElement('h3');
+                    topicHeader.className = 'topic-header';
+                    topicHeader.innerText = topicName;
+                    topicDiv.appendChild(topicHeader);
+
+                    // Get terms for this specific topic and sort them alphabetically
+                    const topicTerms = unitTerms.filter(t => t.topic === topicId);
+                    topicTerms.sort((a, b) => a.term.localeCompare(b.term));
+
+                    // Generate Term Cards
+                    topicTerms.forEach(term => {
+                        const termCard = document.createElement('div');
+                        termCard.className = 'term-card';
+                        
+                        // Store the searchable text as a data attribute (lowercase for easy matching)
+                        termCard.dataset.search = `${term.term} ${term.definition}`.toLowerCase();
+
+                        termCard.innerHTML = `
+                            <div class="term-title">${term.term}</div>
+                            <div class="term-def">${term.definition}</div>
+                        `;
+                        topicDiv.appendChild(termCard);
+                    });
+
+                    unitDiv.appendChild(topicDiv);
+                });
+
+                container.appendChild(unitDiv);
+            });
+        }
+
+        // 3. Live Search Functionality
+        function filterGlossary() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const units = document.querySelectorAll('.unit-section');
+
+            units.forEach(unit => {
+                let unitHasVisibleTerms = false;
+                const topics = unit.querySelectorAll('.topic-section');
+
+                topics.forEach(topic => {
+                    let topicHasVisibleTerms = false;
+                    const terms = topic.querySelectorAll('.term-card');
+
+                    terms.forEach(term => {
+                        // Check if the search query is in the term name or definition
+                        if (term.dataset.search.includes(query)) {
+                            term.classList.remove('hidden');
+                            topicHasVisibleTerms = true;
+                            unitHasVisibleTerms = true;
+                        } else {
+                            term.classList.add('hidden');
+                        }
+                    });
+
+                    // Hide the topic header if all its terms are hidden
+                    if (topicHasVisibleTerms) {
+                        topic.classList.remove('hidden');
+                    } else {
+                        topic.classList.add('hidden');
+                    }
+                });
+
+                // Hide the entire unit header if all its topics are hidden
+                if (unitHasVisibleTerms) {
+                    unit.classList.remove('hidden');
+                } else {
+                    unit.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+</html>
