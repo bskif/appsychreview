@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Connections</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Connections - Psych Review Hub</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -57,6 +58,7 @@
             font-size: 0.9rem;
             min-height: 80px;
             user-select: none;
+            color: #333; /* Ensures text inside grid is dark */
         }
 
         .grid-item.selected {
@@ -103,13 +105,15 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+            flex-wrap: wrap; 
         }
+        
         .action-btn {
             padding: 12px 25px;
             font-size: 1rem;
             border: 2px solid #333;
             background: white;
+            color: #333; /* FIX: Added explicit dark text color */
             cursor: pointer;
             border-radius: 25px;
             font-weight: bold;
@@ -130,7 +134,7 @@
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
             .grid-container {
-                grid-template-columns: repeat(2, 1fr); /* 2x2 blocks on mobile instead of 4x4 */
+                grid-template-columns: repeat(2, 1fr); 
                 gap: 8px;
             }
             .grid-item {
@@ -158,6 +162,7 @@
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
                     <a href="flashcards.html">Flashcards</a>
                     <a href="quiz.html">Quiz</a>
                     <a href="confusingpairs.html">Confusing Pairs</a>
@@ -189,7 +194,8 @@
         </div>
 
         <div class="grid-container" id="grid">
-            </div>
+            <h3 style="grid-column: 1 / -1; color: #777;">Loading puzzle...</h3>
+        </div>
 
         <div class="btn-row">
             <button class="action-btn" onclick="shuffleGrid()">Shuffle</button>
@@ -211,16 +217,26 @@
         let mistakes = 0;
         const MAX_MISTAKES = 4;
 
+        // FETCH DATA WITH BULLETPROOF ERROR HANDLING
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                allData = data.connections;
-                populateFilters();
-                loadNewGame();
+                if(data.connections && Array.isArray(data.connections)) {
+                    allData = data.connections;
+                    populateFilters();
+                    loadNewGame();
+                } else {
+                    document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: red;'>Could not find 'connections' data in data.json!</h3>";
+                }
+            })
+            .catch(err => {
+                console.error("Connections Game Error:", err);
+                document.getElementById('grid').innerHTML = `<h3 style='grid-column: 1 / -1; color: red;'>Error loading data: ${err.message}</h3>`;
             });
 
         function populateFilters() {
-            const units = [...new Set(allData.map(item => item.unit))].sort();
+            // Safely filter out undefined/empty units
+            const units = [...new Set(allData.map(item => item.unit).filter(u => u))].sort();
             const select = document.getElementById('unit-select');
             units.forEach(u => {
                 const opt = document.createElement('option');
@@ -240,7 +256,7 @@
             let pool = unit === 'all' ? allData : allData.filter(d => d.unit === unit);
 
             if(pool.length < 4) {
-                alert("Not enough categories in this unit to form a puzzle.");
+                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #555;'>Not enough categories in this unit to form a puzzle (Need at least 4).</h3>";
                 return;
             }
 
@@ -248,15 +264,17 @@
             let shuffledPool = [...pool].sort(() => 0.5 - Math.random());
             currentPuzzle = shuffledPool.slice(0, 4);
 
-            // Prepare grid items
+            // Prepare grid items safely
             gridItems = [];
             currentPuzzle.forEach((group, groupIndex) => {
-                group.terms.forEach(term => {
-                    gridItems.push({
-                        term: term,
-                        groupIndex: groupIndex
+                if(group.terms && Array.isArray(group.terms)) {
+                    group.terms.forEach(term => {
+                        gridItems.push({
+                            term: term || "Missing Term",
+                            groupIndex: groupIndex
+                        });
                     });
-                });
+                }
             });
 
             shuffleGrid();
@@ -288,9 +306,12 @@
                 const row = document.createElement('div');
                 row.className = `solved-row color-${solvedGroups.indexOf(groupIndex)}`;
                 
+                const safeCategory = group.category || "Unknown Category";
+                const safeTerms = (group.terms && Array.isArray(group.terms)) ? group.terms.join(', ') : "Missing terms";
+
                 row.innerHTML = `
-                    <div class="category-title">${group.category}</div>
-                    <div class="category-terms">${group.terms.join(', ')}</div>
+                    <div class="category-title">${safeCategory}</div>
+                    <div class="category-terms">${safeTerms}</div>
                 `;
                 grid.appendChild(row);
             });
