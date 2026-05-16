@@ -236,15 +236,25 @@
             .then(res => res.json())
             .then(data => {
                 if(data.topics) allTopics = data.topics;
-                if(data.terms) {
+                
+                if(data.terms && Array.isArray(data.terms)) {
                     allTerms = data.terms;
-                    // Pre-sort all terms alphabetically just in case
-                    allTerms.sort((a, b) => a.term.localeCompare(b.term));
+                    
+                    // SAFE SORT: Prevents the page from breaking if a term is blank
+                    allTerms.sort((a, b) => {
+                        const termA = (a.term || "").toString().toLowerCase();
+                        const termB = (b.term || "").toString().toLowerCase();
+                        return termA.localeCompare(termB);
+                    });
+                    
                     buildGlossary();
+                } else {
+                    document.getElementById('glossary-content').innerHTML = "<h3 style='color:red; text-align:center;'>Could not find 'terms' in your data.json file!</h3>";
                 }
             })
             .catch(err => {
-                document.getElementById('glossary-content').innerHTML = "<h3 style='color:red;'>Error loading glossary data.</h3>";
+                console.error("Glossary Error:", err);
+                document.getElementById('glossary-content').innerHTML = `<h3 style='color:red; text-align:center;'>Error loading data: ${err.message}</h3>`;
             });
 
         // 2. State Management
@@ -277,17 +287,15 @@
 
         // --- RENDER MODE: UNIT / TOPIC ---
         function renderByUnit(container, ribbon) {
-            const units = [...new Set(allTerms.map(t => t.unit))].sort();
+            // Filter out any blank units and sort safely
+            const units = [...new Set(allTerms.map(t => t.unit).filter(u => u))].sort();
 
             units.forEach(unit => {
-                if(!unit) return;
-
                 // Create Jump Link
                 const safeUnitId = "sec-" + unit.replace(/[^a-zA-Z0-9]/g, '');
                 const link = document.createElement('a');
                 link.href = `#${safeUnitId}`;
                 link.className = 'jump-link';
-                // Extract just the number if it follows "Unit X" format, otherwise use whole string
                 const match = unit.match(/Unit (\d+)/i);
                 link.innerText = match ? `Unit ${match[1]}` : unit;
                 ribbon.appendChild(link);
@@ -304,11 +312,9 @@
 
                 // Topics within Unit
                 const unitTerms = allTerms.filter(t => t.unit === unit);
-                const topics = [...new Set(unitTerms.map(t => t.topic))].sort();
+                const topics = [...new Set(unitTerms.map(t => t.topic).filter(t => t))].sort();
 
                 topics.forEach(topicId => {
-                    if(!topicId) return;
-
                     const topicDiv = document.createElement('div');
                     topicDiv.className = 'sub-section';
 
@@ -335,14 +341,19 @@
 
         // --- RENDER MODE: ALPHABETICAL ---
         function renderAlphabetical(container, ribbon) {
-            // Group by first letter
             const grouped = {};
+            
             allTerms.forEach(t => {
-                if(!t.term) return;
-                const firstLetter = t.term.charAt(0).toUpperCase();
+                if(!t.term) return; // Skip if term is completely missing
+                const firstLetter = t.term.toString().trim().charAt(0).toUpperCase();
+                
                 if (firstLetter >= 'A' && firstLetter <= 'Z') {
                     if (!grouped[firstLetter]) grouped[firstLetter] = [];
                     grouped[firstLetter].push(t);
+                } else {
+                    // Group numbers or symbols under "#"
+                    if (!grouped['#']) grouped['#'] = [];
+                    grouped['#'].push(t);
                 }
             });
 
@@ -350,8 +361,9 @@
 
             letters.forEach(letter => {
                 // Create Jump Link
+                const safeId = letter === '#' ? 'sec-numbers' : `sec-${letter}`;
                 const link = document.createElement('a');
-                link.href = `#sec-${letter}`;
+                link.href = `#${safeId}`;
                 link.className = 'jump-link';
                 link.innerText = letter;
                 ribbon.appendChild(link);
@@ -359,7 +371,7 @@
                 // Create Letter Wrapper
                 const letterDiv = document.createElement('div');
                 letterDiv.className = 'main-section';
-                letterDiv.id = `sec-${letter}`;
+                letterDiv.id = safeId;
                 
                 const letterHeader = document.createElement('h2');
                 letterHeader.className = 'main-header';
@@ -374,14 +386,65 @@
             });
         }
 
-        // Helper to generate standard term card
+        // --- SAFE TERM CARD GENERATOR ---
         function createTermCard(term) {
             const termCard = document.createElement('div');
             termCard.className = 'term-card';
-            termCard.dataset.search = `${term.term} ${term.definition}`.toLowerCase();
+            
+            // Provide fallback text just in case a field is empty
+            const safeName = term.term || "Missing Term Name";
+            const safeDef = term.definition || "No definition provided.";
+            
+            termCard.dataset.search = `${safeName} ${safeDef}`.toLowerCase();
 
             termCard.innerHTML = `
-                <div class="term-title">${term.term}</div>
-                <div class="term-def">${term.definition}</div>
+                <div class="term-title">${safeName}</div>
+                <div class="term-def">${safeDef}</div>
             `;
             return termCard;
+        }
+
+        // 4. Live Search Functionality
+        function filterGlossary() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const allCards = document.querySelectorAll('.term-card');
+
+            allCards.forEach(card => {
+                if (card.dataset.search.includes(query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Clean up empty headers
+            document.querySelectorAll('.sub-section').forEach(sub => {
+                const visibleTerms = sub.querySelectorAll('.term-card:not(.hidden)');
+                if (visibleTerms.length === 0) {
+                    sub.classList.add('hidden');
+                } else {
+                    sub.classList.remove('hidden');
+                }
+            });
+
+            document.querySelectorAll('.main-section').forEach(main => {
+                const visibleTerms = main.querySelectorAll('.term-card:not(.hidden)');
+                if (visibleTerms.length === 0) {
+                    main.classList.add('hidden');
+                } else {
+                    main.classList.remove('hidden');
+                }
+            });
+        }
+    </script>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+</html>
