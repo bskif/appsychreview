@@ -119,6 +119,7 @@
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
                     <a href="flashcards.html">Flashcards</a>
                     <a href="quiz.html">Quiz</a>
                     <a href="confusingpairs.html">Confusing Pairs</a>
@@ -186,18 +187,36 @@
         let isFlipped = false;
         let showDefFirst = false;
 
-        // 1. Fetch Data
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                if(data.topics) allTopics = data.topics;
-                if(data.terms) {
-                    allTerms = data.terms;
+        // 1. Fetch Data (Updated to pull from multiple files concurrently)
+        Promise.all([
+            fetch('terms.json').then(res => res.json()),
+            fetch('topics.json').then(res => res.json())
+        ])
+        .then(([termsData, topicsData]) => {
+            try {
+                if(topicsData && topicsData.topics) {
+                    allTopics = topicsData.topics;
+                }
+                if(termsData && termsData.terms) {
+                    allTerms = termsData.terms;
                     populateUnitDropdown();
                     populateTopicDropdown();
                     filterDeck(); // Initial Load
+                } else {
+                    document.getElementById('card-term').innerText = "Data Error";
+                    document.getElementById('card-def').innerText = "Could not find terms data in terms.json.";
                 }
-            });
+            } catch(error) {
+                console.error("Processing Error:", error);
+                document.getElementById('card-term').innerText = "Processing Error";
+                document.getElementById('card-def').innerText = "An error occurred while loading data.";
+            }
+        })
+        .catch(err => {
+            console.error("Fetch Error:", err);
+            document.getElementById('card-term').innerText = "File Error";
+            document.getElementById('card-def').innerText = "Could not load JSON files.";
+        });
 
         // 2. Populate Dropdowns
         function populateUnitDropdown() {
