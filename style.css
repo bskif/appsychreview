@@ -81,7 +81,7 @@ nav {
     display: none;
     position: absolute;
     background-color: var(--primary);
-    min-width: 200px;
+    min-width: max-content; /* Fix: Adjusts width to fit the longest text */
     box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
     z-index: 1000;
     top: 100%;
@@ -96,6 +96,7 @@ nav {
     padding: 12px 16px;
     border-bottom: 1px solid #1a252f;
     font-size: 1rem;
+    white-space: nowrap; /* Fix: Keeps text on a single line */
 }
 
 .dropdown-content a:last-child {
@@ -139,6 +140,7 @@ nav {
 
     .dropdown-content a {
         padding-left: 2.5rem; /* Indent sub-items so they look nested */
+        white-space: normal; /* Allows text to wrap normally on mobile if needed */
     }
 }
 
