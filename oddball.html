@@ -245,14 +245,14 @@
         let score = 0;
 
         // 1. Load Data
-        fetch('data.json')
+        fetch('oddball.json')
             .then(res => res.json())
             .then(data => {
                 if(data.oddball) {
                     allOddballData = data.oddball;
                     populateDropdown();
                 } else {
-                    alert("Oddball data not found in data.json yet!");
+                    alert("Oddball data not found in oddball.json yet!");
                 }
             })
             .catch(err => console.error("Error loading JSON:", err));
