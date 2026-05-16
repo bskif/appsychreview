@@ -170,7 +170,7 @@ h2 { color: var(--accent); margin-top: 0; }
 /* 1. Default Global Button (Blue with White Text) */
 button {
     background-color: var(--accent);
-    color: white; /* This causes the issue on white buttons if not overridden! */
+    color: white; 
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -198,15 +198,34 @@ button:hover {
 }
 
 /* --- FORM ELEMENTS (Text Boxes & Dropdowns) --- */
-/* Ensures these always have dark text, even if browser defaults vary */
 select, input, textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
     margin-bottom: 20px;
-    color: var(--text);      /* Force Dark Text */
-    background-color: var(--white); /* Force White Background */
+    color: var(--text);      
+    background-color: var(--white); 
+}
+
+/* --- INLINE BACK TO TOP ARROWS --- */
+/* Targets back-to-top links specifically inside your glossary/unit sections */
+.unit-section a[href="#top"],
+.topic-section a[href="#top"],
+.inline-top-arrow {
+    color: var(--primary); 
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+}
+
+.unit-section a[href="#top"]:hover,
+.topic-section a[href="#top"]:hover,
+.inline-top-arrow:hover {
+    color: #1a252f; 
+    transform: translateY(-2px);
 }
 
 /* --- FOOTER --- */
@@ -220,7 +239,7 @@ footer {
 }
 
 footer a {
-    color: #2980b9; /* Your accent color */
+    color: #2980b9; 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s;
