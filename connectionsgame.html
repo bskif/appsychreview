@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Connections</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Connections</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -39,76 +39,110 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
-        /* Mobile Grid Adjustment */
-        @media (max-width: 600px) {
-            .grid-container {
-                gap: 8px;
-            }
-        }
-
-        .tile {
-            background-color: #efefef;
-            border: none;
+        .grid-item {
+            background-color: #f1f3f5;
+            border: 2px solid #dee2e6;
             border-radius: 8px;
             padding: 20px 10px;
-            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.2s;
-            user-select: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-transform: uppercase;
+            font-size: 0.9rem;
             min-height: 80px;
+            user-select: none;
         }
 
-        @media (max-width: 600px) {
-            .tile {
-                font-size: 0.85rem;
-                padding: 10px 5px;
-                min-height: 70px;
-            }
-        }
-
-        .tile.selected {
-            background-color: #5a5a5a;
+        .grid-item.selected {
+            background-color: #5c6c7d;
             color: white;
+            border-color: #5c6c7d;
         }
-        
-        /* Solved Group Colors */
-        .solved-0 { background-color: #f1c40f; color: #333; cursor: default; } /* Yellow */
-        .solved-1 { background-color: #2ecc71; color: white; cursor: default;} /* Green */
-        .solved-2 { background-color: #3498db; color: white; cursor: default;} /* Blue */
-        .solved-3 { background-color: #9b59b6; color: white; cursor: default;} /* Purple */
 
         .solved-row {
-            grid-column: span 4;
+            grid-column: 1 / -1;
+            border-radius: 8px;
+            padding: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
+            animation: popIn 0.5s ease-out;
         }
-        .solved-title { font-size: 1.2rem; margin-bottom: 5px; }
-        .solved-items { font-weight: normal; font-size: 0.9rem; }
+        
+        .solved-row .category-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .solved-row .category-terms {
+            font-size: 0.85rem;
+            font-weight: normal;
+        }
 
-        .btn-group { margin-top: 20px; display: flex; justify-content: center; gap: 10px; }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Category Colors */
+        .color-0 { background-color: #fce181; border: 2px solid #fce181; color: #333;} /* Yellow */
+        .color-1 { background-color: #b5e5a4; border: 2px solid #b5e5a4; color: #333;} /* Green */
+        .color-2 { background-color: #a8c8f9; border: 2px solid #a8c8f9; color: #333;} /* Blue */
+        .color-3 { background-color: #d1b3ff; border: 2px solid #d1b3ff; color: #333;} /* Purple */
+
+        .btn-row {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+        }
         .action-btn {
-            padding: 10px 20px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: 2px solid #333;
             background: white;
             cursor: pointer;
+            border-radius: 25px;
             font-weight: bold;
+            transition: all 0.2s;
         }
-        .action-btn:hover { background: #eee; }
-        .submit-btn { background: #333; color: white; }
-        .submit-btn:hover { background: #111; }
+        .action-btn:hover {
+            background: #eee;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .submit-btn:hover {
+            background: #3730a3;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 blocks on mobile instead of 4x4 */
+                gap: 8px;
+            }
+            .grid-item {
+                padding: 15px 5px;
+                font-size: 0.8rem;
+                min-height: 60px;
+            }
+            .action-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -141,44 +175,52 @@
         </ul>
     </nav>
 
-<div class="game-container">
-    <h1>🔗 Connections</h1>
-    <p>Group the terms into 4 categories of 4.</p>
+    <div class="container game-container">
+        <h1>🔗 Connections</h1>
+        <p>Group 4 related terms together. Watch out for distractors!</p>
 
-    <div class="controls-area">
-        <select id="unit-select" onchange="startGame()">
-            <option value="all">All Units</option>
-        </select>
-        <div class="status-bar">
-            Mistakes remaining: <span id="mistakes-display"></span>
+        <div class="controls-area">
+            <select id="unit-select" onchange="loadNewGame()">
+                <option value="all">Mixed Units</option>
+            </select>
+            <div class="status-bar">
+                Mistakes remaining: <span id="mistakes-display">⚫ ⚫ ⚫ ⚫</span>
+            </div>
+        </div>
+
+        <div class="grid-container" id="grid">
+            </div>
+
+        <div class="btn-row">
+            <button class="action-btn" onclick="shuffleGrid()">Shuffle</button>
+            <button class="action-btn" onclick="deselectAll()">Deselect All</button>
+            <button class="action-btn submit-btn" onclick="submitSelection()">Submit</button>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button class="action-btn" onclick="loadNewGame()" style="border-color: var(--accent); color: var(--accent);">Next Puzzle</button>
         </div>
     </div>
 
-    <div id="board" class="grid-container"></div>
+    <script>
+        let allData = [];
+        let currentPuzzle = []; // 4 groups of 4
+        let gridItems = []; // Array of objects representing the 16 squares
+        let selectedItems = [];
+        let solvedGroups = []; // Indices of groups that have been solved (0-3)
+        let mistakes = 0;
+        const MAX_MISTAKES = 4;
 
-    <div class="btn-group">
-        <button class="action-btn" onclick="shuffleBoard()">Shuffle</button>
-        <button class="action-btn" onclick="deselectAll()">Deselect All</button>
-        <button class="action-btn submit-btn" onclick="submitGuess()">Submit</button>
-    </div>
-</div>
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                allData = data.connections;
+                populateFilters();
+                loadNewGame();
+            });
 
-<script>
-    let allConnections = [];
-    let currentGroups = []; // Array of 4 group objects { theme, terms: [] }
-    let boardItems = []; // Array of { term, groupIndex, selected, solved }
-    let solvedGroups = []; // Array of groupIndexes that are solved
-    let mistakes = 0;
-    const MAX_MISTAKES = 4;
-
-    // 1. Load Data
-    fetch('data.json')
-        .then(res => res.json())
-        .then(data => {
-            allConnections = data.connections;
-            
-            // Populate Unit Select
-            const units = [...new Set(allConnections.map(c => c.unit))].sort();
+        function populateFilters() {
+            const units = [...new Set(allData.map(item => item.unit))].sort();
             const select = document.getElementById('unit-select');
             units.forEach(u => {
                 const opt = document.createElement('option');
@@ -186,167 +228,169 @@
                 opt.innerText = u;
                 select.appendChild(opt);
             });
-
-            startGame();
-        });
-
-    function startGame() {
-        const unit = document.getElementById('unit-select').value;
-        let pool = unit === 'all' ? allConnections : allConnections.filter(c => c.unit === unit);
-        
-        if (pool.length < 4) {
-            alert("Not enough groups in this unit to play!");
-            return;
         }
 
-        // Shuffle and pick 4 groups
-        pool.sort(() => Math.random() - 0.5);
-        currentGroups = pool.slice(0, 4).map(c => ({
-            theme: c.theme,
-            terms: [c.item_1, c.item_2, c.item_3, c.item_4]
-        }));
-
-        // Flatten to board items
-        boardItems = [];
-        currentGroups.forEach((group, index) => {
-            group.terms.forEach(term => {
-                boardItems.push({ term: term, groupIndex: index, selected: false });
-            });
-        });
-
-        solvedGroups = [];
-        mistakes = 0;
-        shuffleBoard();
-        updateMistakesUI();
-    }
-
-    function shuffleBoard() {
-        // Only shuffle unsolved items
-        const unsolved = boardItems.filter(item => !solvedGroups.includes(item.groupIndex));
-        unsolved.sort(() => Math.random() - 0.5);
-        
-        let unsolvedIndex = 0;
-        boardItems = boardItems.map(item => {
-            if (solvedGroups.includes(item.groupIndex)) return item;
-            return unsolved[unsolvedIndex++];
-        });
-        
-        renderBoard();
-    }
-
-    function deselectAll() {
-        boardItems.forEach(item => item.selected = false);
-        renderBoard();
-    }
-
-    function renderBoard() {
-        const board = document.getElementById('board');
-        board.innerHTML = '';
-
-        // 1. Render Solved Groups First (taking up whole rows)
-        solvedGroups.forEach(groupIndex => {
-            const group = currentGroups[groupIndex];
-            const div = document.createElement('div');
-            div.className = `solved-row solved-${groupIndex}`;
-            div.innerHTML = `
-                <div class="solved-title">${group.theme.toUpperCase()}</div>
-                <div class="solved-items">${group.terms.join(', ')}</div>
-            `;
-            board.appendChild(div);
-        });
-
-        // 2. Render Unsolved Tiles
-        boardItems.forEach((item, index) => {
-            if (!solvedGroups.includes(item.groupIndex)) {
-                const btn = document.createElement('div');
-                btn.className = `tile ${item.selected ? 'selected' : ''}`;
-                btn.innerText = item.term;
-                btn.onclick = () => toggleSelect(index);
-                board.appendChild(btn);
-            }
-        });
-
-        // Add shake animation class logic if needed later
-    }
-
-    function toggleSelect(index) {
-        const selectedCount = boardItems.filter(i => i.selected).length;
-        
-        if (boardItems[index].selected) {
-            boardItems[index].selected = false;
-        } else if (selectedCount < 4) {
-            boardItems[index].selected = true;
-        }
-        renderBoard();
-    }
-
-    function submitGuess() {
-        const selectedItems = boardItems.filter(i => i.selected);
-        if(selectedItems.length !== 4) return;
-
-        // Check if all 4 belong to the same group
-        const firstGroup = selectedItems[0].groupIndex;
-        const isCorrect = selectedItems.every(i => i.groupIndex === firstGroup);
-
-        if(isCorrect) {
-            solvedGroups.push(firstGroup);
-            deselectAll(); // Re-renders board with new solved row
-            
-            if(solvedGroups.length === 4) {
-                setTimeout(() => alert("Perfect! You found all connections! 🎉"), 300);
-            }
-        } else {
-            // Check if 3 are correct (One away)
-            const groupCounts = {};
-            selectedItems.forEach(i => {
-                groupCounts[i.groupIndex] = (groupCounts[i.groupIndex] || 0) + 1;
-            });
-            const isOneAway = Object.values(groupCounts).includes(3);
-
-            mistakes++;
+        function loadNewGame() {
+            mistakes = 0;
+            solvedGroups = [];
+            selectedItems = [];
             updateMistakesUI();
-            
-            // Visual feedback
-            const tiles = document.querySelectorAll('.tile.selected');
-            tiles.forEach(t => {
-                t.style.transform = 'translateY(-5px)';
-                setTimeout(() => t.style.transform = 'translateY(0)', 150);
+
+            const unit = document.getElementById('unit-select').value;
+            let pool = unit === 'all' ? allData : allData.filter(d => d.unit === unit);
+
+            if(pool.length < 4) {
+                alert("Not enough categories in this unit to form a puzzle.");
+                return;
+            }
+
+            // Randomly select 4 categories
+            let shuffledPool = [...pool].sort(() => 0.5 - Math.random());
+            currentPuzzle = shuffledPool.slice(0, 4);
+
+            // Prepare grid items
+            gridItems = [];
+            currentPuzzle.forEach((group, groupIndex) => {
+                group.terms.forEach(term => {
+                    gridItems.push({
+                        term: term,
+                        groupIndex: groupIndex
+                    });
+                });
             });
 
-            setTimeout(() => deselectAll(), 400);
+            shuffleGrid();
+        }
 
-            if(isOneAway) setTimeout(() => alert("One away..."), 400);
+        function shuffleGrid() {
+            // Only shuffle unsolved items
+            let unsolvedItems = gridItems.filter(item => !solvedGroups.includes(item.groupIndex));
+            unsolvedItems.sort(() => 0.5 - Math.random());
 
-            if(mistakes >= MAX_MISTAKES) {
-                setTimeout(() => {
-                    alert("Game Over! Better luck next time.");
-                    solvedGroups = [0, 1, 2, 3]; // Reveal all
-                    renderBoard();
-                }, 500);
+            // Reconstruct gridItems: solved items first, then shuffled unsolved items
+            let newGridItems = [];
+            solvedGroups.forEach(groupIndex => {
+                newGridItems.push(...gridItems.filter(item => item.groupIndex === groupIndex));
+            });
+            newGridItems.push(...unsolvedItems);
+            
+            gridItems = newGridItems;
+            renderBoard();
+        }
+
+        function renderBoard() {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = '';
+
+            // 1. Render Solved Groups as full rows
+            solvedGroups.forEach(groupIndex => {
+                const group = currentPuzzle[groupIndex];
+                const row = document.createElement('div');
+                row.className = `solved-row color-${solvedGroups.indexOf(groupIndex)}`;
+                
+                row.innerHTML = `
+                    <div class="category-title">${group.category}</div>
+                    <div class="category-terms">${group.terms.join(', ')}</div>
+                `;
+                grid.appendChild(row);
+            });
+
+            // 2. Render Unsolved Grid Items
+            gridItems.forEach(item => {
+                if (solvedGroups.includes(item.groupIndex)) return; // Skip if already solved
+
+                const div = document.createElement('div');
+                div.className = 'grid-item';
+                if (selectedItems.includes(item)) div.classList.add('selected');
+                
+                div.innerText = item.term;
+                div.onclick = () => toggleSelect(item, div);
+                
+                grid.appendChild(div);
+            });
+        }
+
+        function toggleSelect(item, element) {
+            const index = selectedItems.indexOf(item);
+            if (index > -1) {
+                selectedItems.splice(index, 1);
+                element.classList.remove('selected');
+            } else {
+                if (selectedItems.length < 4) {
+                    selectedItems.push(item);
+                    element.classList.add('selected');
+                }
             }
         }
-    }
 
-    function updateMistakesUI() {
-        const remaining = MAX_MISTAKES - mistakes;
-        let html = '';
-        for(let i=0; i<MAX_MISTAKES; i++) {
-            if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
-            else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
+        function deselectAll() {
+            selectedItems = [];
+            renderBoard();
         }
-        document.getElementById('mistakes-display').innerHTML = html;
-    }
-</script>
 
-<footer>
-    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-    
-    <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+        function submitSelection() {
+            if (selectedItems.length !== 4) {
+                alert("Select 4 terms!");
+                return;
+            }
 
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-</footer>
+            // Check if all 4 selected items have the same groupIndex
+            const groupIndices = selectedItems.map(item => item.groupIndex);
+            const isCorrect = groupIndices.every(val => val === groupIndices[0]);
 
-<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+            if (isCorrect) {
+                const solvedIndex = groupIndices[0];
+                solvedGroups.push(solvedIndex);
+                selectedItems = [];
+                
+                if (solvedGroups.length === 4) {
+                    setTimeout(() => alert("Puzzle Solved! Great job! 🎉"), 300);
+                }
+                renderBoard();
+            } else {
+                mistakes++;
+                updateMistakesUI();
+                
+                // Check for "One away" (3 of the same group)
+                const counts = {};
+                groupIndices.forEach(x => counts[x] = (counts[x] || 0) + 1);
+                const isOneAway = Object.values(counts).includes(3);
+
+                selectedItems = []; // clear selection on mistake
+                setTimeout(() => renderBoard(), 400);
+
+                if(isOneAway) setTimeout(() => alert("One away..."), 400);
+
+                if(mistakes >= MAX_MISTAKES) {
+                    setTimeout(() => {
+                        alert("Game Over! Better luck next time.");
+                        solvedGroups = [0, 1, 2, 3]; // Reveal all
+                        renderBoard();
+                    }, 500);
+                }
+            }
+        }
+
+        function updateMistakesUI() {
+            const remaining = MAX_MISTAKES - mistakes;
+            let html = '';
+            for(let i=0; i<MAX_MISTAKES; i++) {
+                if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
+                else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
+            }
+            document.getElementById('mistakes-display').innerHTML = html;
+        }
+    </script>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        
+        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 </html>
