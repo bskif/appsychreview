@@ -105,7 +105,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             margin-bottom: 30px;
-            scroll-margin-top: 180px; /* Prevents sticky header from covering titles */
+            scroll-margin-top: 180px; 
         }
 
         .main-header {
@@ -129,6 +129,47 @@
             padding: 10px 15px;
             border-radius: 5px;
             border-left: 4px solid var(--accent);
+        }
+
+        /* --- BACK TO TOP LINKS & BUTTON --- */
+        .top-arrow {
+            float: right;
+            color: #bbb;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .top-arrow:hover {
+            color: var(--accent);
+        }
+
+        .sub-header .top-arrow {
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+
+        #floating-top-btn {
+            display: none; 
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #floating-top-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
         }
 
         /* --- TERM CARDS --- */
@@ -158,7 +199,6 @@
             font-size: 1rem;
         }
 
-        /* Hide items dynamically during search */
         .hidden {
             display: none !important;
         }
@@ -171,10 +211,17 @@
             .search-input { padding: 10px; font-size: 1rem; }
             .toggle-btn { padding: 6px 12px; font-size: 0.85rem; }
             .jump-link { padding: 4px 8px; font-size: 0.8rem; }
+            
+            #floating-top-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
-<body>
+<body id="top-of-page">
 
     <nav>
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
@@ -226,6 +273,8 @@
         </div>
     </div>
 
+    <button id="floating-top-btn" onclick="scrollToTop()" title="Go to top">⬆️</button>
+
     <script>
         let allTerms = [];
         let allTopics = [];
@@ -240,7 +289,7 @@
                 if(data.terms && Array.isArray(data.terms)) {
                     allTerms = data.terms;
                     
-                    // SAFE SORT: Prevents the page from breaking if a term is blank
+                    // SAFE SORT
                     allTerms.sort((a, b) => {
                         const termA = (a.term || "").toString().toLowerCase();
                         const termB = (b.term || "").toString().toLowerCase();
@@ -260,14 +309,9 @@
         // 2. State Management
         function setMode(mode) {
             currentMode = mode;
-            
-            // Update button styles
             document.getElementById('btn-unit').classList.toggle('active', mode === 'unit');
             document.getElementById('btn-alpha').classList.toggle('active', mode === 'alpha');
-            
-            // Clear search when switching modes
             document.getElementById('search-input').value = '';
-            
             buildGlossary();
         }
 
@@ -287,11 +331,9 @@
 
         // --- RENDER MODE: UNIT / TOPIC ---
         function renderByUnit(container, ribbon) {
-            // Filter out any blank units and sort safely
             const units = [...new Set(allTerms.map(t => t.unit).filter(u => u))].sort();
 
             units.forEach(unit => {
-                // Create Jump Link
                 const safeUnitId = "sec-" + unit.replace(/[^a-zA-Z0-9]/g, '');
                 const link = document.createElement('a');
                 link.href = `#${safeUnitId}`;
@@ -300,17 +342,16 @@
                 link.innerText = match ? `Unit ${match[1]}` : unit;
                 ribbon.appendChild(link);
 
-                // Create Unit Wrapper
                 const unitDiv = document.createElement('div');
                 unitDiv.className = 'main-section';
                 unitDiv.id = safeUnitId;
                 
                 const unitHeader = document.createElement('h2');
                 unitHeader.className = 'main-header';
-                unitHeader.innerText = unit;
+                // Add the Inline Arrow here
+                unitHeader.innerHTML = `${unit} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
                 unitDiv.appendChild(unitHeader);
 
-                // Topics within Unit
                 const unitTerms = allTerms.filter(t => t.unit === unit);
                 const topics = [...new Set(unitTerms.map(t => t.topic).filter(t => t))].sort();
 
@@ -323,7 +364,8 @@
 
                     const topicHeader = document.createElement('h3');
                     topicHeader.className = 'sub-header';
-                    topicHeader.innerText = topicName;
+                    // Add the Inline Arrow here
+                    topicHeader.innerHTML = `${topicName} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
                     topicDiv.appendChild(topicHeader);
 
                     const topicTerms = unitTerms.filter(t => t.topic === topicId);
@@ -344,14 +386,13 @@
             const grouped = {};
             
             allTerms.forEach(t => {
-                if(!t.term) return; // Skip if term is completely missing
+                if(!t.term) return; 
                 const firstLetter = t.term.toString().trim().charAt(0).toUpperCase();
                 
                 if (firstLetter >= 'A' && firstLetter <= 'Z') {
                     if (!grouped[firstLetter]) grouped[firstLetter] = [];
                     grouped[firstLetter].push(t);
                 } else {
-                    // Group numbers or symbols under "#"
                     if (!grouped['#']) grouped['#'] = [];
                     grouped['#'].push(t);
                 }
@@ -360,7 +401,6 @@
             const letters = Object.keys(grouped).sort();
 
             letters.forEach(letter => {
-                // Create Jump Link
                 const safeId = letter === '#' ? 'sec-numbers' : `sec-${letter}`;
                 const link = document.createElement('a');
                 link.href = `#${safeId}`;
@@ -368,14 +408,14 @@
                 link.innerText = letter;
                 ribbon.appendChild(link);
 
-                // Create Letter Wrapper
                 const letterDiv = document.createElement('div');
                 letterDiv.className = 'main-section';
                 letterDiv.id = safeId;
                 
                 const letterHeader = document.createElement('h2');
                 letterHeader.className = 'main-header';
-                letterHeader.innerText = letter;
+                // Add the Inline Arrow here
+                letterHeader.innerHTML = `${letter} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
                 letterDiv.appendChild(letterHeader);
 
                 grouped[letter].forEach(term => {
@@ -391,7 +431,6 @@
             const termCard = document.createElement('div');
             termCard.className = 'term-card';
             
-            // Provide fallback text just in case a field is empty
             const safeName = term.term || "Missing Term Name";
             const safeDef = term.definition || "No definition provided.";
             
@@ -417,7 +456,6 @@
                 }
             });
 
-            // Clean up empty headers
             document.querySelectorAll('.sub-section').forEach(sub => {
                 const visibleTerms = sub.querySelectorAll('.term-card:not(.hidden)');
                 if (visibleTerms.length === 0) {
@@ -435,6 +473,21 @@
                     main.classList.remove('hidden');
                 }
             });
+        }
+
+        // 5. Floating Back to Top Logic
+        window.onscroll = function() {
+            const btn = document.getElementById("floating-top-btn");
+            // Show button after scrolling down 400px
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 
