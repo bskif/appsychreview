@@ -9,18 +9,22 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .glossary-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* --- SEARCH BAR --- */
-        .search-container {
+        /* --- CONTROL PANEL (Search, Toggle, Jump Links) --- */
+        .controls-panel {
             position: sticky;
             top: 10px;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -30,28 +34,81 @@
 
         .search-input {
             width: 100%;
-            padding: 15px;
+            padding: 12px 15px;
             font-size: 1.1rem;
             border: 2px solid var(--accent);
             border-radius: 8px;
             outline: none;
             transition: box-shadow 0.2s;
+            margin-bottom: 15px;
         }
 
         .search-input:focus {
             box-shadow: 0 0 8px rgba(95, 127, 255, 0.5);
         }
 
+        /* Toggle Buttons */
+        .toggle-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .toggle-btn {
+            padding: 8px 15px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .toggle-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Jump Links Ribbon */
+        .jump-ribbon {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .jump-link {
+            text-decoration: none;
+            color: #555;
+            background: #f1f3f5;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .jump-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
         /* --- GLOSSARY STRUCTURE --- */
-        .unit-section {
+        .main-section {
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             margin-bottom: 30px;
+            scroll-margin-top: 180px; /* Prevents sticky header from covering titles */
         }
 
-        .unit-header {
+        .main-header {
             color: var(--primary);
             font-size: 1.8rem;
             border-bottom: 3px solid var(--primary);
@@ -60,11 +117,11 @@
             margin-top: 0;
         }
 
-        .topic-section {
+        .sub-section {
             margin-bottom: 25px;
         }
 
-        .topic-header {
+        .sub-header {
             color: #555;
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -108,19 +165,12 @@
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
-            .unit-section {
-                padding: 15px;
-            }
-            .unit-header {
-                font-size: 1.5rem;
-            }
-            .topic-header {
-                font-size: 1.1rem;
-            }
-            .search-input {
-                padding: 12px;
-                font-size: 1rem;
-            }
+            .main-section { padding: 15px; scroll-margin-top: 220px; }
+            .main-header { font-size: 1.5rem; }
+            .sub-header { font-size: 1.1rem; }
+            .search-input { padding: 10px; font-size: 1rem; }
+            .toggle-btn { padding: 6px 12px; font-size: 0.85rem; }
+            .jump-link { padding: 4px 8px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -137,7 +187,8 @@
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
-                    <a href="glossary.html">Glossary</a> <a href="flashcards.html">Flashcards</a>
+                    <a href="glossary.html">Glossary</a>
+                    <a href="flashcards.html">Flashcards</a>
                     <a href="quiz.html">Quiz</a>
                     <a href="confusingpairs.html">Confusing Pairs</a>
                 </div>
@@ -156,10 +207,18 @@
 
     <div class="container glossary-container">
         <h1 style="text-align: center;">📖 Master Glossary</h1>
-        <p style="text-align: center; margin-bottom: 20px;">Search for a specific term, or scroll to review by course unit.</p>
+        <p style="text-align: center; margin-bottom: 20px;">Review all course terms below.</p>
 
-        <div class="search-container">
+        <div class="controls-panel">
             <input type="text" id="search-input" class="search-input" placeholder="🔍 Search for a term or keyword..." onkeyup="filterGlossary()">
+            
+            <div class="toggle-wrapper">
+                <button id="btn-unit" class="toggle-btn active" onclick="setMode('unit')">Sort by Unit</button>
+                <button id="btn-alpha" class="toggle-btn" onclick="setMode('alpha')">Sort A-Z</button>
+            </div>
+
+            <div id="jump-ribbon" class="jump-ribbon">
+                </div>
         </div>
 
         <div id="glossary-content">
@@ -170,6 +229,7 @@
     <script>
         let allTerms = [];
         let allTopics = [];
+        let currentMode = 'unit'; // 'unit' or 'alpha'
 
         // 1. Fetch the data
         fetch('data.json')
@@ -178,6 +238,8 @@
                 if(data.topics) allTopics = data.topics;
                 if(data.terms) {
                     allTerms = data.terms;
+                    // Pre-sort all terms alphabetically just in case
+                    allTerms.sort((a, b) => a.term.localeCompare(b.term));
                     buildGlossary();
                 }
             })
@@ -185,27 +247,62 @@
                 document.getElementById('glossary-content').innerHTML = "<h3 style='color:red;'>Error loading glossary data.</h3>";
             });
 
-        // 2. Build the HTML structure
+        // 2. State Management
+        function setMode(mode) {
+            currentMode = mode;
+            
+            // Update button styles
+            document.getElementById('btn-unit').classList.toggle('active', mode === 'unit');
+            document.getElementById('btn-alpha').classList.toggle('active', mode === 'alpha');
+            
+            // Clear search when switching modes
+            document.getElementById('search-input').value = '';
+            
+            buildGlossary();
+        }
+
+        // 3. Build the Interface
         function buildGlossary() {
             const container = document.getElementById('glossary-content');
-            container.innerHTML = ''; // Clear loading text
+            const ribbon = document.getElementById('jump-ribbon');
+            container.innerHTML = '';
+            ribbon.innerHTML = '';
 
-            // Find all unique Units and sort them alphabetically/numerically
+            if (currentMode === 'unit') {
+                renderByUnit(container, ribbon);
+            } else {
+                renderAlphabetical(container, ribbon);
+            }
+        }
+
+        // --- RENDER MODE: UNIT / TOPIC ---
+        function renderByUnit(container, ribbon) {
             const units = [...new Set(allTerms.map(t => t.unit))].sort();
 
             units.forEach(unit => {
                 if(!unit) return;
 
+                // Create Jump Link
+                const safeUnitId = "sec-" + unit.replace(/[^a-zA-Z0-9]/g, '');
+                const link = document.createElement('a');
+                link.href = `#${safeUnitId}`;
+                link.className = 'jump-link';
+                // Extract just the number if it follows "Unit X" format, otherwise use whole string
+                const match = unit.match(/Unit (\d+)/i);
+                link.innerText = match ? `Unit ${match[1]}` : unit;
+                ribbon.appendChild(link);
+
                 // Create Unit Wrapper
                 const unitDiv = document.createElement('div');
-                unitDiv.className = 'unit-section';
+                unitDiv.className = 'main-section';
+                unitDiv.id = safeUnitId;
                 
                 const unitHeader = document.createElement('h2');
-                unitHeader.className = 'unit-header';
+                unitHeader.className = 'main-header';
                 unitHeader.innerText = unit;
                 unitDiv.appendChild(unitHeader);
 
-                // Find all unique Topics within this Unit
+                // Topics within Unit
                 const unitTerms = allTerms.filter(t => t.unit === unit);
                 const topics = [...new Set(unitTerms.map(t => t.topic))].sort();
 
@@ -213,34 +310,20 @@
                     if(!topicId) return;
 
                     const topicDiv = document.createElement('div');
-                    topicDiv.className = 'topic-section';
+                    topicDiv.className = 'sub-section';
 
-                    // Get the actual topic title from allTopics
                     const topicObj = allTopics.find(t => t.topic_id === topicId);
                     const topicName = topicObj ? `${topicObj.topic_id} ${topicObj.topic_title}` : topicId;
 
                     const topicHeader = document.createElement('h3');
-                    topicHeader.className = 'topic-header';
+                    topicHeader.className = 'sub-header';
                     topicHeader.innerText = topicName;
                     topicDiv.appendChild(topicHeader);
 
-                    // Get terms for this specific topic and sort them alphabetically
                     const topicTerms = unitTerms.filter(t => t.topic === topicId);
-                    topicTerms.sort((a, b) => a.term.localeCompare(b.term));
 
-                    // Generate Term Cards
                     topicTerms.forEach(term => {
-                        const termCard = document.createElement('div');
-                        termCard.className = 'term-card';
-                        
-                        // Store the searchable text as a data attribute (lowercase for easy matching)
-                        termCard.dataset.search = `${term.term} ${term.definition}`.toLowerCase();
-
-                        termCard.innerHTML = `
-                            <div class="term-title">${term.term}</div>
-                            <div class="term-def">${term.definition}</div>
-                        `;
-                        topicDiv.appendChild(termCard);
+                        topicDiv.appendChild(createTermCard(term));
                     });
 
                     unitDiv.appendChild(topicDiv);
@@ -250,55 +333,55 @@
             });
         }
 
-        // 3. Live Search Functionality
-        function filterGlossary() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const units = document.querySelectorAll('.unit-section');
-
-            units.forEach(unit => {
-                let unitHasVisibleTerms = false;
-                const topics = unit.querySelectorAll('.topic-section');
-
-                topics.forEach(topic => {
-                    let topicHasVisibleTerms = false;
-                    const terms = topic.querySelectorAll('.term-card');
-
-                    terms.forEach(term => {
-                        // Check if the search query is in the term name or definition
-                        if (term.dataset.search.includes(query)) {
-                            term.classList.remove('hidden');
-                            topicHasVisibleTerms = true;
-                            unitHasVisibleTerms = true;
-                        } else {
-                            term.classList.add('hidden');
-                        }
-                    });
-
-                    // Hide the topic header if all its terms are hidden
-                    if (topicHasVisibleTerms) {
-                        topic.classList.remove('hidden');
-                    } else {
-                        topic.classList.add('hidden');
-                    }
-                });
-
-                // Hide the entire unit header if all its topics are hidden
-                if (unitHasVisibleTerms) {
-                    unit.classList.remove('hidden');
-                } else {
-                    unit.classList.add('hidden');
+        // --- RENDER MODE: ALPHABETICAL ---
+        function renderAlphabetical(container, ribbon) {
+            // Group by first letter
+            const grouped = {};
+            allTerms.forEach(t => {
+                if(!t.term) return;
+                const firstLetter = t.term.charAt(0).toUpperCase();
+                if (firstLetter >= 'A' && firstLetter <= 'Z') {
+                    if (!grouped[firstLetter]) grouped[firstLetter] = [];
+                    grouped[firstLetter].push(t);
                 }
             });
+
+            const letters = Object.keys(grouped).sort();
+
+            letters.forEach(letter => {
+                // Create Jump Link
+                const link = document.createElement('a');
+                link.href = `#sec-${letter}`;
+                link.className = 'jump-link';
+                link.innerText = letter;
+                ribbon.appendChild(link);
+
+                // Create Letter Wrapper
+                const letterDiv = document.createElement('div');
+                letterDiv.className = 'main-section';
+                letterDiv.id = `sec-${letter}`;
+                
+                const letterHeader = document.createElement('h2');
+                letterHeader.className = 'main-header';
+                letterHeader.innerText = letter;
+                letterDiv.appendChild(letterHeader);
+
+                grouped[letter].forEach(term => {
+                    letterDiv.appendChild(createTermCard(term));
+                });
+
+                container.appendChild(letterDiv);
+            });
         }
-    </script>
 
-    <footer>
-        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-    </footer>
+        // Helper to generate standard term card
+        function createTermCard(term) {
+            const termCard = document.createElement('div');
+            termCard.className = 'term-card';
+            termCard.dataset.search = `${term.term} ${term.definition}`.toLowerCase();
 
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
-</body>
-</html>
+            termCard.innerHTML = `
+                <div class="term-title">${term.term}</div>
+                <div class="term-def">${term.definition}</div>
+            `;
+            return termCard;
