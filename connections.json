@@ -1,0 +1,700 @@
+{
+  "connections": [
+    {
+      "id": "1",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Neurotransmitters",
+      "terms": [
+        "Dopamine",
+        "Serotonin",
+        "GABA",
+        "Glutamate"
+      ]
+    },
+    {
+      "id": "2",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Brain Lobes",
+      "terms": [
+        "Frontal",
+        "Parietal",
+        "Occipital",
+        "Temporal"
+      ]
+    },
+    {
+      "id": "3",
+      "unit": "Unit 1",
+      "difficulty": "1",
+      "category": "Brain Imaging",
+      "terms": [
+        "EEG",
+        "MRI",
+        "fMRI",
+        "PET"
+      ]
+    },
+    {
+      "id": "4",
+      "unit": "Unit 1",
+      "difficulty": "1",
+      "category": "Sleep Stages",
+      "terms": [
+        "NREM-1",
+        "NREM-2",
+        "NREM-3",
+        "REM"
+      ]
+    },
+    {
+      "id": "5",
+      "unit": "Unit 2",
+      "difficulty": "4",
+      "category": "Gestalt Principles",
+      "terms": [
+        "Closure",
+        "Proximity",
+        "Similarity",
+        "Continuity"
+      ]
+    },
+    {
+      "id": "6",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Problem Solving",
+      "terms": [
+        "Algorithm",
+        "Heuristic",
+        "Insight",
+        "Trial & Error"
+      ]
+    },
+    {
+      "id": "7",
+      "unit": "Unit 2",
+      "difficulty": "2",
+      "category": "Types of Memory",
+      "terms": [
+        "Sensory",
+        "Short-term",
+        "Long-term",
+        "Working"
+      ]
+    },
+    {
+      "id": "8",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Depth Cues",
+      "terms": [
+        "Linear Perspective",
+        "Interposition",
+        "Relative Size",
+        "Texture Gradient"
+      ]
+    },
+    {
+      "id": "9",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Piaget Stages",
+      "terms": [
+        "Sensorimotor",
+        "Preoperational",
+        "Concrete",
+        "Formal"
+      ]
+    },
+    {
+      "id": "10",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Attachment Styles",
+      "terms": [
+        "Secure",
+        "Avoidant",
+        "Anxious",
+        "Disorganized"
+      ]
+    },
+    {
+      "id": "11",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Parenting Styles",
+      "terms": [
+        "Authoritative",
+        "Authoritarian",
+        "Permissive",
+        "Neglectful"
+      ]
+    },
+    {
+      "id": "12",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Operant Schedules",
+      "terms": [
+        "Fixed Ratio",
+        "Variable Ratio",
+        "Fixed Interval",
+        "Variable Interval"
+      ]
+    },
+    {
+      "id": "13",
+      "unit": "Unit 4",
+      "difficulty": "4",
+      "category": "Attribution Biases",
+      "terms": [
+        "Fundamental Attribution",
+        "Self-Serving Bias",
+        "Actor-Observer",
+        "Halo Effect"
+      ]
+    },
+    {
+      "id": "14",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Motivation Theories",
+      "terms": [
+        "Drive-Reduction",
+        "Incentive Theory",
+        "Arousal Theory",
+        "Self-Determination"
+      ]
+    },
+    {
+      "id": "15",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Big Five Traits",
+      "terms": [
+        "Openness",
+        "Conscientiousness",
+        "Extraversion",
+        "Agreeableness"
+      ]
+    },
+    {
+      "id": "16",
+      "unit": "Unit 4",
+      "difficulty": "4",
+      "category": "Defense Mechanisms",
+      "terms": [
+        "Repression",
+        "Regression",
+        "Projection",
+        "Denial"
+      ]
+    },
+    {
+      "id": "17",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Anxiety Disorders",
+      "terms": [
+        "GAD",
+        "Panic Disorder",
+        "Phobias",
+        "Social Anxiety"
+      ]
+    },
+    {
+      "id": "18",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Personality Disorders",
+      "terms": [
+        "Boderline",
+        "Antisocial",
+        "Narcissistic",
+        "Schizotypal"
+      ]
+    },
+    {
+      "id": "19",
+      "unit": "Unit 5",
+      "difficulty": "1",
+      "category": "Biomedical Treatments",
+      "terms": [
+        "Antidepressants",
+        "Antipsychotics",
+        "Lithium",
+        "Electroconvulsive therapy"
+      ]
+    },
+    {
+      "id": "20",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Stress Concepts",
+      "terms": [
+        "Eustress",
+        "Distress",
+        "General Adaptation",
+        "Stressors"
+      ]
+    },
+    {
+      "id": "21",
+      "unit": "Unit 0",
+      "difficulty": "2",
+      "category": "Research Ethics",
+      "terms": [
+        "Informed consent",
+        "Debriefing",
+        "Confidentiality",
+        "Protection from harm"
+      ]
+    },
+    {
+      "id": "22",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Nervous System Divisions",
+      "terms": [
+        "Central",
+        "Peripheral",
+        "Somatic",
+        "Autonomic"
+      ]
+    },
+    {
+      "id": "23",
+      "unit": "Unit 1",
+      "difficulty": "6",
+      "category": "Eye Anatomy",
+      "terms": [
+        "Retina",
+        "Cornea",
+        "Lens",
+        "Pupil"
+      ]
+    },
+    {
+      "id": "24",
+      "unit": "Unit 1",
+      "difficulty": "5",
+      "category": "Sleep Disorders",
+      "terms": [
+        "Narcolepsy",
+        "Sleep apnea",
+        "Night terrors",
+        "Insomnia"
+      ]
+    },
+    {
+      "id": "25",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Intelligence Theories",
+      "terms": [
+        "Fluid",
+        "Crystallized",
+        "Multiple",
+        "Emotional"
+      ]
+    },
+    {
+      "id": "26",
+      "unit": "Unit 3",
+      "difficulty": "2",
+      "category": "Developmental Psychologists",
+      "terms": [
+        "Jean Piaget",
+        "Erik Erikson",
+        "Lawrence Kohlberg",
+        "Lev Vygotsky"
+      ]
+    },
+    {
+      "id": "27",
+      "unit": "Unit 0",
+      "difficulty": "2",
+      "category": "Research Methods",
+      "terms": [
+        "Case study",
+        "Correlational",
+        "Naturalistic observation",
+        "Experiment"
+      ]
+    },
+    {
+      "id": "28",
+      "unit": "Unit 0",
+      "difficulty": "1",
+      "category": "Measures of Central Tendency",
+      "terms": [
+        "Mean",
+        "Median",
+        "Mode",
+        "Range"
+      ]
+    },
+    {
+      "id": "29",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Operant Conditioning Concepts",
+      "terms": [
+        "Reinforcement",
+        "Punishment",
+        "Shaping",
+        "Extinction"
+      ]
+    },
+    {
+      "id": "30",
+      "unit": "Unit 3",
+      "difficulty": "2",
+      "category": "Classical Conditioning",
+      "terms": [
+        "Unconditioned stimulus",
+        "Conditioned stimulus",
+        "Unconditioned response",
+        "Conditioned response"
+      ]
+    },
+    {
+      "id": "31",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Observational Learning",
+      "terms": [
+        "Modeling",
+        "Imitation",
+        "Vicarious reinforcement",
+        "Mirror neurons"
+      ]
+    },
+    {
+      "id": "32",
+      "unit": "Unit 2",
+      "difficulty": "2",
+      "category": "Long-Term Memory Types",
+      "terms": [
+        "Explicit memory",
+        "Implicit memory",
+        "Procedural memory",
+        "Episodic memory"
+      ]
+    },
+    {
+      "id": "33",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Language Development Terms",
+      "terms": [
+        "Phonemes",
+        "Morphemes",
+        "Grammar",
+        "Syntax"
+      ]
+    },
+    {
+      "id": "34",
+      "unit": "Unit 3",
+      "difficulty": "1",
+      "category": "Freudian Concepts",
+      "terms": [
+        "Id",
+        "Ego",
+        "Superego",
+        "Defense mechanisms"
+      ]
+    },
+    {
+      "id": "35",
+      "unit": "Unit 5",
+      "difficulty": "4",
+      "category": "Schizophrenia Symptoms",
+      "terms": [
+        "Delusions",
+        "Hallucinations",
+        "Disorganized speech",
+        "Flat affect"
+      ]
+    },
+    {
+      "id": "36",
+      "unit": "Unit 0",
+      "difficulty": "2",
+      "category": "Descriptive Statistics",
+      "terms": [
+        "Histogram",
+        "Bar graph",
+        "Frequency distribution",
+        "Scatterplot"
+      ]
+    },
+    {
+      "id": "37",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Neuron Structure",
+      "terms": [
+        "Dendrite",
+        "Axon",
+        "Myelin sheath",
+        "Soma"
+      ]
+    },
+    {
+      "id": "38",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Neural Communication",
+      "terms": [
+        "Action potential",
+        "Synapse",
+        "Reuptake",
+        "Threshold"
+      ]
+    },
+    {
+      "id": "39",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Brainstem Structures",
+      "terms": [
+        "Medulla",
+        "Pons",
+        "Reticular formation",
+        "Midbrain"
+      ]
+    },
+    {
+      "id": "40",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Limbic System",
+      "terms": [
+        "Amygdala",
+        "Hippocampus",
+        "Hypothalamus",
+        "Thalamus"
+      ]
+    },
+    {
+      "id": "41",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Sleep Functions",
+      "terms": [
+        "Memory consolidation",
+        "Growth hormone",
+        "Restoration",
+        "Circadian rhythm"
+      ]
+    },
+    {
+      "id": "42",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Drug Effects",
+      "terms": [
+        "Tolerance",
+        "Withdrawal",
+        "Addiction",
+        "Dependence"
+      ]
+    },
+    {
+      "id": "43",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Memory Cues",
+      "terms": [
+        "Mnemonics",
+        "Context-dependent memory",
+        "State-dependent memory",
+        "Priming"
+      ]
+    },
+    {
+      "id": "44",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Memory Errors",
+      "terms": [
+        "Misinformation effect",
+        "Source amnesia",
+        "Déjà vu",
+        "False memories"
+      ]
+    },
+    {
+      "id": "45",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Language Development Stages",
+      "terms": [
+        "Babbling",
+        "One-word stage",
+        "Telegraphic speech",
+        "Cooing"
+      ]
+    },
+    {
+      "id": "46",
+      "unit": "Unit 4",
+      "difficulty": "4",
+      "category": "Social Influence",
+      "terms": [
+        "Conformity",
+        "Compliance",
+        "Obedience",
+        "Normative influence"
+      ]
+    },
+    {
+      "id": "47",
+      "unit": "Unit 2",
+      "difficulty": "4",
+      "category": "Types of Amnesia",
+      "terms": [
+        "Retrograde",
+        "Anterograde",
+        "Infantile",
+        "Source"
+      ]
+    },
+    {
+      "id": "48",
+      "unit": "Unit 1",
+      "difficulty": "4",
+      "category": "Sensation Theories",
+      "terms": [
+        "Trichromatic",
+        "Opponent-process",
+        "Place",
+        "Frequency"
+      ]
+    },
+    {
+      "id": "49",
+      "unit": "Unit 4",
+      "difficulty": "4",
+      "category": "Persuasion Techniques",
+      "terms": [
+        "Foot in the Door",
+        "Door in the Face",
+        "Central Route",
+        "Peripheral Route"
+      ]
+    },
+    {
+      "id": "50",
+      "unit": "Unit 5",
+      "difficulty": "4",
+      "category": "Humanistic Psychology",
+      "terms": [
+        "Maslow",
+        "Self-Actualization",
+        "Unconditional Positive Regard",
+        "Self-Concept"
+      ]
+    },
+    {
+      "id": "51",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Erikson Conflicts (Negative)",
+      "terms": [
+        "Despair",
+        "Stagnation",
+        "Guilt",
+        "Mistrust"
+      ]
+    },
+    {
+      "id": "52",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Erikson Conflicts (Positive)",
+      "terms": [
+        "Intimacy",
+        "Generativity",
+        "Trust",
+        "Autonomy"
+      ]
+    },
+    {
+      "id": "53",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Prenatal Development",
+      "terms": [
+        "Zygote",
+        "Embryo",
+        "Fetus",
+        "Teratogens"
+      ]
+    },
+    {
+      "id": "54",
+      "unit": "Unit 5",
+      "difficulty": "4",
+      "category": "Behavioral Therapy",
+      "terms": [
+        "Exposure Therapy",
+        "Systematic Desensitization",
+        "Aversive Conditioning",
+        "Token Economy"
+      ]
+    },
+    {
+      "id": "55",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Sensation",
+      "terms": [
+        "Bottom-up Processing",
+        "Top-Down Processing",
+        "Transduction",
+        "Absolute Threshold"
+      ]
+    },
+    {
+      "id": "56",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Hearing Structures",
+      "terms": [
+        "Cochlea",
+        "Basilar Membrance",
+        "Auditory Nerve",
+        "Inner Ear"
+      ]
+    },
+    {
+      "id": "57",
+      "unit": "Unit 1",
+      "difficulty": "1",
+      "category": "Types of Drugs",
+      "terms": [
+        "Depressants",
+        "Stimulants",
+        "Hallucinogens",
+        "Opiates"
+      ]
+    },
+    {
+      "id": "58",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Social Perception",
+      "terms": [
+        "Halo Effect",
+        "Self-Fulfilling Prophecy",
+        "Stereotypes",
+        "Prejudice"
+      ]
+    }
+  ]
+}
