@@ -131,6 +131,43 @@
             background: #3730a3;
         }
 
+        /* --- ADMIN ALERT BANNER --- */
+        #admin-alert {
+            display: none; 
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            text-align: left;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        #admin-alert h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        #admin-alert ul {
+            margin: 0 0 15px 20px;
+            padding: 0;
+        }
+        .dismiss-alert-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .dismiss-alert-btn:hover {
+            background-color: #111;
+        }
+
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
             .grid-container {
@@ -208,12 +245,20 @@
         </div>
     </div>
 
+    <div id="admin-alert">
+        <h4>⚠️ Data Error Report</h4>
+        <p style="margin: 0 0 10px 0;">The following categories in your data.json file were skipped because they don't have exactly 4 terms:</p>
+        <ul id="admin-alert-list">
+            </ul>
+        <button class="dismiss-alert-btn" onclick="document.getElementById('admin-alert').style.display='none'">Dismiss Warning</button>
+    </div>
+
     <script>
-        // GLOBAL ERROR CATCHER (If the script crashes, it prints the error to the screen)
+        // GLOBAL ERROR CATCHER
         window.onerror = function(message, source, lineno, colno, error) {
             const grid = document.getElementById('grid');
             if(grid) {
-                grid.innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Script Crashed: ${message} (Line ${lineno})</h3>`;
+                grid.innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Script Error: ${message} (Line ${lineno})</h3>`;
             }
             return false;
         };
@@ -231,9 +276,7 @@
             .then(function(res) { return res.json(); })
             .then(function(data) {
                 try {
-                    // Check if data.connections exists
                     if(data && data.connections && Array.isArray(data.connections)) {
-                        // Safely filter out broken entries
                         allData = data.connections.filter(function(item) {
                             return item !== null && typeof item === 'object';
                         });
@@ -253,7 +296,6 @@
             });
 
         function populateFilters() {
-            // Highly compatible sorting and filtering
             const rawUnits = allData.map(function(item) {
                 return item ? item.unit : null;
             }).filter(function(u) { return u; });
@@ -285,17 +327,62 @@
 
             const unit = document.getElementById('unit-select').value;
             
-            let pool = [];
+            let rawPool = [];
             if(unit === 'all') {
-                pool = allData;
+                rawPool = allData;
             } else {
-                pool = allData.filter(function(d) {
+                rawPool = allData.filter(function(d) {
                     return d && d.unit === unit;
                 });
             }
 
+            let validPool = [];
+            let errorMessages = [];
+
+            // --- SMART FILTER & ERROR REPORTER ---
+            rawPool.forEach(function(group) {
+                const catName = group.category ? group.category : "Unnamed Category";
+                
+                if(!group.terms || !Array.isArray(group.terms)) {
+                    errorMessages.push(`<strong>${catName}</strong> (Missing or invalid terms list)`);
+                    return; // Skip this one
+                }
+                
+                let validCount = 0;
+                for(let i = 0; i < group.terms.length; i++) {
+                    if(group.terms[i] && group.terms[i].toString().trim() !== "") {
+                        validCount++;
+                    }
+                }
+                
+                if(validCount === 4) {
+                    validPool.push(group); // It's perfect, keep it
+                } else {
+                    errorMessages.push(`<strong>${catName}</strong> (Has ${validCount} valid terms instead of 4)`);
+                }
+            });
+
+            // Display Admin Alert if errors were found
+            const adminAlert = document.getElementById('admin-alert');
+            const alertList = document.getElementById('admin-alert-list');
+            
+            if (errorMessages.length > 0) {
+                alertList.innerHTML = "";
+                errorMessages.forEach(function(msg) {
+                    const li = document.createElement('li');
+                    li.innerHTML = msg;
+                    alertList.appendChild(li);
+                });
+                adminAlert.style.display = "block";
+            } else {
+                adminAlert.style.display = "none";
+            }
+
+            // Assign the pool to the cleaned, perfectly valid list
+            let pool = validPool;
+
             if(pool.length < 4) {
-                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #777;'>Not enough categories to form a puzzle (Needs at least 4). Check your data.json file!</h3>";
+                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #777;'>Not enough complete categories (exactly 4 terms each) to form a puzzle for this selection!</h3>";
                 return;
             }
 
@@ -306,21 +393,15 @@
 
             gridItems = [];
             currentPuzzle.forEach(function(group, groupIndex) {
-                if(group && group.terms && Array.isArray(group.terms)) {
-                    group.terms.forEach(function(term) {
+                group.terms.forEach(function(term) {
+                    if (term && term.toString().trim() !== "") {
                         gridItems.push({
-                            term: term || "Missing Term",
+                            term: term.toString().trim(),
                             groupIndex: groupIndex
                         });
-                    });
-                }
+                    }
+                });
             });
-
-            // Make sure we have exactly 16 items
-            if(gridItems.length !== 16) {
-                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Data Error: One of the selected categories does not have exactly 4 terms! Fix your data.json.</h3>";
-                return;
-            }
 
             shuffleGrid();
         }
@@ -455,7 +536,9 @@
             const remaining = MAX_MISTAKES - mistakes;
             let html = '';
             for(let i=0; i<MAX_MISTAKES; i++) {
-                if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';\n                else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';\n            }
+                if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
+                else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
+            }
             document.getElementById('mistakes-display').innerHTML = html;
         }
     </script>
