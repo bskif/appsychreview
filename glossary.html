@@ -9,22 +9,18 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         .glossary-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* --- CONTROL PANEL (Search, Toggle, Jump Links) --- */
-        .controls-panel {
+        /* --- SEARCH BAR --- */
+        .search-container {
             position: sticky;
             top: 10px;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -34,81 +30,28 @@
 
         .search-input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px;
             font-size: 1.1rem;
             border: 2px solid var(--accent);
             border-radius: 8px;
             outline: none;
             transition: box-shadow 0.2s;
-            margin-bottom: 15px;
         }
 
         .search-input:focus {
             box-shadow: 0 0 8px rgba(95, 127, 255, 0.5);
         }
 
-        /* Toggle Buttons */
-        .toggle-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .toggle-btn {
-            padding: 8px 15px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .toggle-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Jump Links Ribbon */
-        .jump-ribbon {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            border-top: 1px solid #eee;
-            padding-top: 12px;
-        }
-
-        .jump-link {
-            text-decoration: none;
-            color: #555;
-            background: #f1f3f5;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .jump-link:hover {
-            background: var(--accent);
-            color: white;
-        }
-
         /* --- GLOSSARY STRUCTURE --- */
-        .main-section {
+        .unit-section {
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             margin-bottom: 30px;
-            scroll-margin-top: 180px; 
         }
 
-        .main-header {
+        .unit-header {
             color: var(--primary);
             font-size: 1.8rem;
             border-bottom: 3px solid var(--primary);
@@ -117,11 +60,11 @@
             margin-top: 0;
         }
 
-        .sub-section {
+        .topic-section {
             margin-bottom: 25px;
         }
 
-        .sub-header {
+        .topic-header {
             color: #555;
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -129,47 +72,6 @@
             padding: 10px 15px;
             border-radius: 5px;
             border-left: 4px solid var(--accent);
-        }
-
-        /* --- BACK TO TOP LINKS & BUTTON --- */
-        .top-arrow {
-            float: right;
-            color: #bbb;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-
-        .top-arrow:hover {
-            color: var(--accent);
-        }
-
-        .sub-header .top-arrow {
-            font-size: 1.1rem;
-            margin-top: 2px;
-        }
-
-        #floating-top-btn {
-            display: none; 
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: var(--primary);
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        #floating-top-btn:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
         }
 
         /* --- TERM CARDS --- */
@@ -199,29 +101,30 @@
             font-size: 1rem;
         }
 
+        /* Hide items dynamically during search */
         .hidden {
             display: none !important;
         }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
-            .main-section { padding: 15px; scroll-margin-top: 220px; }
-            .main-header { font-size: 1.5rem; }
-            .sub-header { font-size: 1.1rem; }
-            .search-input { padding: 10px; font-size: 1rem; }
-            .toggle-btn { padding: 6px 12px; font-size: 0.85rem; }
-            .jump-link { padding: 4px 8px; font-size: 0.8rem; }
-            
-            #floating-top-btn {
-                bottom: 20px;
-                right: 20px;
+            .unit-section {
+                padding: 15px;
+            }
+            .unit-header {
+                font-size: 1.5rem;
+            }
+            .topic-header {
+                font-size: 1.1rem;
+            }
+            .search-input {
                 padding: 12px;
                 font-size: 1rem;
             }
         }
     </style>
 </head>
-<body id="top-of-page">
+<body>
 
     <nav>
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
@@ -254,18 +157,10 @@
 
     <div class="container glossary-container">
         <h1 style="text-align: center;">📖 Master Glossary</h1>
-        <p style="text-align: center; margin-bottom: 20px;">Review all course terms below.</p>
+        <p style="text-align: center; margin-bottom: 20px;">Search for a specific term, or scroll to review by course unit.</p>
 
-        <div class="controls-panel">
+        <div class="search-container">
             <input type="text" id="search-input" class="search-input" placeholder="🔍 Search for a term or keyword..." onkeyup="filterGlossary()">
-            
-            <div class="toggle-wrapper">
-                <button id="btn-unit" class="toggle-btn active" onclick="setMode('unit')">Sort by Unit</button>
-                <button id="btn-alpha" class="toggle-btn" onclick="setMode('alpha')">Sort A-Z</button>
-            </div>
-
-            <div id="jump-ribbon" class="jump-ribbon">
-                </div>
         </div>
 
         <div id="glossary-content">
@@ -273,105 +168,92 @@
         </div>
     </div>
 
-    <button id="floating-top-btn" onclick="scrollToTop()" title="Go to top">⬆️</button>
-
     <script>
         let allTerms = [];
         let allTopics = [];
-        let currentMode = 'unit'; // 'unit' or 'alpha'
 
-        // 1. Fetch the data
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                if(data.topics) allTopics = data.topics;
-                
-                if(data.terms && Array.isArray(data.terms)) {
-                    allTerms = data.terms;
-                    
-                    // SAFE SORT
-                    allTerms.sort((a, b) => {
-                        const termA = (a.term || "").toString().toLowerCase();
-                        const termB = (b.term || "").toString().toLowerCase();
-                        return termA.localeCompare(termB);
-                    });
-                    
+        // 1. Fetch the data concurrently
+        Promise.all([
+            fetch('terms.json').then(res => res.json()),
+            fetch('topics.json').then(res => res.json())
+        ])
+        .then(([termsData, topicsData]) => {
+            try {
+                if(topicsData && topicsData.topics) {
+                    allTopics = topicsData.topics;
+                }
+                if(termsData && termsData.terms) {
+                    allTerms = termsData.terms;
                     buildGlossary();
                 } else {
-                    document.getElementById('glossary-content').innerHTML = "<h3 style='color:red; text-align:center;'>Could not find 'terms' in your data.json file!</h3>";
+                    document.getElementById('glossary-content').innerHTML = "<h3 style='text-align: center; color: #e74c3c;'>Data Error: Could not find terms data in terms.json.</h3>";
                 }
-            })
-            .catch(err => {
-                console.error("Glossary Error:", err);
-                document.getElementById('glossary-content').innerHTML = `<h3 style='color:red; text-align:center;'>Error loading data: ${err.message}</h3>`;
-            });
+            } catch(error) {
+                console.error("Processing Error:", error);
+                document.getElementById('glossary-content').innerHTML = `<h3 style='text-align: center; color: #e74c3c;'>Processing Error: ${error.message}</h3>`;
+            }
+        })
+        .catch(err => {
+            console.error("Fetch Error:", err);
+            document.getElementById('glossary-content').innerHTML = "<h3 style='text-align: center; color: #e74c3c;'>File Error: Could not load JSON data files.</h3>";
+        });
 
-        // 2. State Management
-        function setMode(mode) {
-            currentMode = mode;
-            document.getElementById('btn-unit').classList.toggle('active', mode === 'unit');
-            document.getElementById('btn-alpha').classList.toggle('active', mode === 'alpha');
-            document.getElementById('search-input').value = '';
-            buildGlossary();
-        }
-
-        // 3. Build the Interface
+        // 2. Build the HTML structure
         function buildGlossary() {
             const container = document.getElementById('glossary-content');
-            const ribbon = document.getElementById('jump-ribbon');
-            container.innerHTML = '';
-            ribbon.innerHTML = '';
+            container.innerHTML = ''; // Clear loading text
 
-            if (currentMode === 'unit') {
-                renderByUnit(container, ribbon);
-            } else {
-                renderAlphabetical(container, ribbon);
-            }
-        }
-
-        // --- RENDER MODE: UNIT / TOPIC ---
-        function renderByUnit(container, ribbon) {
-            const units = [...new Set(allTerms.map(t => t.unit).filter(u => u))].sort();
+            // Find all unique Units and sort them alphabetically/numerically
+            const units = [...new Set(allTerms.map(t => t.unit))].sort();
 
             units.forEach(unit => {
-                const safeUnitId = "sec-" + unit.replace(/[^a-zA-Z0-9]/g, '');
-                const link = document.createElement('a');
-                link.href = `#${safeUnitId}`;
-                link.className = 'jump-link';
-                const match = unit.match(/Unit (\d+)/i);
-                link.innerText = match ? `Unit ${match[1]}` : unit;
-                ribbon.appendChild(link);
+                if(!unit) return;
 
+                // Create Unit Wrapper
                 const unitDiv = document.createElement('div');
-                unitDiv.className = 'main-section';
-                unitDiv.id = safeUnitId;
+                unitDiv.className = 'unit-section';
                 
                 const unitHeader = document.createElement('h2');
-                unitHeader.className = 'main-header';
-                // Add the Inline Arrow here
-                unitHeader.innerHTML = `${unit} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
+                unitHeader.className = 'unit-header';
+                unitHeader.innerText = unit;
                 unitDiv.appendChild(unitHeader);
 
+                // Find all unique Topics within this Unit
                 const unitTerms = allTerms.filter(t => t.unit === unit);
-                const topics = [...new Set(unitTerms.map(t => t.topic).filter(t => t))].sort();
+                const topics = [...new Set(unitTerms.map(t => t.topic))].sort();
 
                 topics.forEach(topicId => {
-                    const topicDiv = document.createElement('div');
-                    topicDiv.className = 'sub-section';
+                    if(!topicId) return;
 
+                    const topicDiv = document.createElement('div');
+                    topicDiv.className = 'topic-section';
+
+                    // Get the actual topic title from allTopics
                     const topicObj = allTopics.find(t => t.topic_id === topicId);
                     const topicName = topicObj ? `${topicObj.topic_id} ${topicObj.topic_title}` : topicId;
 
                     const topicHeader = document.createElement('h3');
-                    topicHeader.className = 'sub-header';
-                    // Add the Inline Arrow here
-                    topicHeader.innerHTML = `${topicName} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
+                    topicHeader.className = 'topic-header';
+                    topicHeader.innerText = topicName;
                     topicDiv.appendChild(topicHeader);
 
+                    // Get terms for this specific topic and sort them alphabetically
                     const topicTerms = unitTerms.filter(t => t.topic === topicId);
+                    topicTerms.sort((a, b) => a.term.localeCompare(b.term));
 
+                    // Generate Term Cards
                     topicTerms.forEach(term => {
-                        topicDiv.appendChild(createTermCard(term));
+                        const termCard = document.createElement('div');
+                        termCard.className = 'term-card';
+                        
+                        // Store the searchable text as a data attribute (lowercase for easy matching)
+                        termCard.dataset.search = `${term.term} ${term.definition}`.toLowerCase();
+
+                        termCard.innerHTML = `
+                            <div class="term-title">${term.term}</div>
+                            <div class="term-def">${term.definition}</div>
+                        `;
+                        topicDiv.appendChild(termCard);
                     });
 
                     unitDiv.appendChild(topicDiv);
@@ -381,113 +263,45 @@
             });
         }
 
-        // --- RENDER MODE: ALPHABETICAL ---
-        function renderAlphabetical(container, ribbon) {
-            const grouped = {};
-            
-            allTerms.forEach(t => {
-                if(!t.term) return; 
-                const firstLetter = t.term.toString().trim().charAt(0).toUpperCase();
-                
-                if (firstLetter >= 'A' && firstLetter <= 'Z') {
-                    if (!grouped[firstLetter]) grouped[firstLetter] = [];
-                    grouped[firstLetter].push(t);
-                } else {
-                    if (!grouped['#']) grouped['#'] = [];
-                    grouped['#'].push(t);
-                }
-            });
-
-            const letters = Object.keys(grouped).sort();
-
-            letters.forEach(letter => {
-                const safeId = letter === '#' ? 'sec-numbers' : `sec-${letter}`;
-                const link = document.createElement('a');
-                link.href = `#${safeId}`;
-                link.className = 'jump-link';
-                link.innerText = letter;
-                ribbon.appendChild(link);
-
-                const letterDiv = document.createElement('div');
-                letterDiv.className = 'main-section';
-                letterDiv.id = safeId;
-                
-                const letterHeader = document.createElement('h2');
-                letterHeader.className = 'main-header';
-                // Add the Inline Arrow here
-                letterHeader.innerHTML = `${letter} <a href="#top-of-page" class="top-arrow" title="Back to top">↑</a>`;
-                letterDiv.appendChild(letterHeader);
-
-                grouped[letter].forEach(term => {
-                    letterDiv.appendChild(createTermCard(term));
-                });
-
-                container.appendChild(letterDiv);
-            });
-        }
-
-        // --- SAFE TERM CARD GENERATOR ---
-        function createTermCard(term) {
-            const termCard = document.createElement('div');
-            termCard.className = 'term-card';
-            
-            const safeName = term.term || "Missing Term Name";
-            const safeDef = term.definition || "No definition provided.";
-            
-            termCard.dataset.search = `${safeName} ${safeDef}`.toLowerCase();
-
-            termCard.innerHTML = `
-                <div class="term-title">${safeName}</div>
-                <div class="term-def">${safeDef}</div>
-            `;
-            return termCard;
-        }
-
-        // 4. Live Search Functionality
+        // 3. Live Search Functionality
         function filterGlossary() {
             const query = document.getElementById('search-input').value.toLowerCase();
-            const allCards = document.querySelectorAll('.term-card');
+            const units = document.querySelectorAll('.unit-section');
 
-            allCards.forEach(card => {
-                if (card.dataset.search.includes(query)) {
-                    card.classList.remove('hidden');
+            units.forEach(unit => {
+                let unitHasVisibleTerms = false;
+                const topics = unit.querySelectorAll('.topic-section');
+
+                topics.forEach(topic => {
+                    let topicHasVisibleTerms = false;
+                    const terms = topic.querySelectorAll('.term-card');
+
+                    terms.forEach(term => {
+                        // Check if the search query is in the term name or definition
+                        if (term.dataset.search.includes(query)) {
+                            term.classList.remove('hidden');
+                            topicHasVisibleTerms = true;
+                            unitHasVisibleTerms = true;
+                        } else {
+                            term.classList.add('hidden');
+                        }
+                    });
+
+                    // Hide the topic header if all its terms are hidden
+                    if (topicHasVisibleTerms) {
+                        topic.classList.remove('hidden');
+                    } else {
+                        topic.classList.add('hidden');
+                    }
+                });
+
+                // Hide the entire unit header if all its topics are hidden
+                if (unitHasVisibleTerms) {
+                    unit.classList.remove('hidden');
                 } else {
-                    card.classList.add('hidden');
+                    unit.classList.add('hidden');
                 }
             });
-
-            document.querySelectorAll('.sub-section').forEach(sub => {
-                const visibleTerms = sub.querySelectorAll('.term-card:not(.hidden)');
-                if (visibleTerms.length === 0) {
-                    sub.classList.add('hidden');
-                } else {
-                    sub.classList.remove('hidden');
-                }
-            });
-
-            document.querySelectorAll('.main-section').forEach(main => {
-                const visibleTerms = main.querySelectorAll('.term-card:not(.hidden)');
-                if (visibleTerms.length === 0) {
-                    main.classList.add('hidden');
-                } else {
-                    main.classList.remove('hidden');
-                }
-            });
-        }
-
-        // 5. Floating Back to Top Logic
-        window.onscroll = function() {
-            const btn = document.getElementById("floating-top-btn");
-            // Show button after scrolling down 400px
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 
