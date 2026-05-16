@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Oddball</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Oddball</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -132,6 +132,17 @@
             display: none;
             text-align: center;
             padding: 40px 20px;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            .grid-2x2 {
+                grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+            }
+            .term-btn {
+                padding: 15px 10px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
