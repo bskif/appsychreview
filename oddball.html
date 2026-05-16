@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oddball</title>
+    <title>Oddball - Psych Review Hub</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -223,13 +223,17 @@
                 <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
                 <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next ➡️</button>
             </div>
+            
+            <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
+                <button class="action-btn" style="background-color: #95a5a6; font-size: 0.9rem; padding: 8px 20px;" onclick="resetToSetup()">🔄 Start New Set</button>
+            </div>
         </div>
 
         <div id="end-screen">
             <h1>🎉 Unit Complete!</h1>
             <div class="final-score-display" id="final-score-text">0/0</div>
             <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
-            <button class="action-btn" onclick="location.reload()">Play Again</button>
+            <button class="action-btn" onclick="resetToSetup()">Play Again</button>
         </div>
     </div>
 
@@ -238,7 +242,7 @@
         let currentQueue = [];
         let currentIndex = 0;
         let hasGuessedCurrent = false;
-        let score = 0; // NEW: Track the score!
+        let score = 0;
 
         // 1. Load Data
         fetch('data.json')
@@ -286,6 +290,7 @@
             document.getElementById('score-counter').innerText = `Score: ${score}`;
 
             document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('end-screen').style.display = 'none';
             document.getElementById('game-ui').style.display = 'block';
             
             currentIndex = 0;
@@ -338,7 +343,6 @@
 
             if (isCorrect) {
                 clickedBtn.classList.add('correct');
-                // ADD TO SCORE IF CORRECT
                 score++;
                 document.getElementById('score-counter').innerText = `Score: ${score}`;
             } else {
@@ -375,6 +379,13 @@
                 currentIndex--;
                 loadQuestion();
             }
+        }
+        
+        // 6. Reset Game State to Setup Screen
+        function resetToSetup() {
+            document.getElementById('game-ui').style.display = 'none';
+            document.getElementById('end-screen').style.display = 'none';
+            document.getElementById('setup-screen').style.display = 'block';
         }
     </script>
 
