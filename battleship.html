@@ -222,6 +222,7 @@
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
                     <a href="flashcards.html">Flashcards</a>
                     <a href="quiz.html">Quiz</a>
                     <a href="confusingpairs.html">Confusing Pairs</a>
@@ -326,23 +327,28 @@
     let feedbackCallback = null;
 
     // 1. Load Data
-    fetch('data.json')
+    fetch('terms.json')
         .then(res => res.json())
         .then(data => {
-            allTerms = data.terms;
-            const units = [...new Set(allTerms.map(t => t.unit))].sort();
-            const select = document.getElementById('unit-select');
-            units.forEach(u => {
-                const opt = document.createElement('option');
-                opt.value = u;
-                opt.innerText = u;
-                select.appendChild(opt);
-            });
-            // Init Preview
-            playerGridState = createEmptyGrid();
-            playerShips = placeShipsRandomly(playerGridState);
-            renderGrid(document.getElementById('preview-board'), playerGridState, true);
-        });
+            if(data.terms) {
+                allTerms = data.terms;
+                const units = [...new Set(allTerms.map(t => t.unit))].sort();
+                const select = document.getElementById('unit-select');
+                units.forEach(u => {
+                    const opt = document.createElement('option');
+                    opt.value = u;
+                    opt.innerText = u;
+                    select.appendChild(opt);
+                });
+                // Init Preview
+                playerGridState = createEmptyGrid();
+                playerShips = placeShipsRandomly(playerGridState);
+                renderGrid(document.getElementById('preview-board'), playerGridState, true);
+            } else {
+                alert("Terms data not found in terms.json!");
+            }
+        })
+        .catch(err => console.error("Error loading JSON:", err));
 
     // --- SETUP FUNCTIONS ---
     function createEmptyGrid() {
