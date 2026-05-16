@@ -131,43 +131,6 @@
             background: #3730a3;
         }
 
-        /* --- ADMIN ALERT BANNER --- */
-        #admin-alert {
-            display: none; 
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f39c12;
-            color: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
-            z-index: 1000;
-            text-align: left;
-            font-size: 0.95rem;
-            box-sizing: border-box;
-        }
-        #admin-alert h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-        }
-        #admin-alert ul {
-            margin: 0 0 15px 20px;
-            padding: 0;
-        }
-        .dismiss-alert-btn {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .dismiss-alert-btn:hover {
-            background-color: #111;
-        }
-
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
             .grid-container {
@@ -245,24 +208,7 @@
         </div>
     </div>
 
-    <div id="admin-alert">
-        <h4>⚠️ Data Error Report</h4>
-        <p style="margin: 0 0 10px 0;">The following categories in your data.json file were skipped because they don't have exactly 4 terms:</p>
-        <ul id="admin-alert-list">
-            </ul>
-        <button class="dismiss-alert-btn" onclick="document.getElementById('admin-alert').style.display='none'">Dismiss Warning</button>
-    </div>
-
     <script>
-        // GLOBAL ERROR CATCHER
-        window.onerror = function(message, source, lineno, colno, error) {
-            const grid = document.getElementById('grid');
-            if(grid) {
-                grid.innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Script Error: ${message} (Line ${lineno})</h3>`;
-            }
-            return false;
-        };
-
         let allData = [];
         let currentPuzzle = []; 
         let gridItems = []; 
@@ -271,52 +217,44 @@
         let mistakes = 0;
         const MAX_MISTAKES = 4;
 
-        // FETCH DATA
-        fetch('data.json')
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
+        // FETCH DATA WITH BULLETPROOF ERROR HANDLING
+        fetch('connections.json')
+            .then(res => res.json())
+            .then(data => {
                 try {
+                    // Safety check: ensure data.connections exists and is a valid array
                     if(data && data.connections && Array.isArray(data.connections)) {
-                        allData = data.connections.filter(function(item) {
-                            return item !== null && typeof item === 'object';
-                        });
+                        // Filter out any accidentally empty entries in the JSON array
+                        allData = data.connections.filter(item => item !== null && typeof item === 'object');
                         
                         populateFilters();
                         loadNewGame();
                     } else {
-                        document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Could not find 'connections' data in your data.json file!</h3>";
+                        document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Could not find 'connections' data in your connections.json file!</h3>";
                     }
                 } catch(error) {
                     document.getElementById('grid').innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Processing Error: ${error.message}</h3>`;
                 }
             })
-            .catch(function(err) {
-                console.error("Fetch Error:", err);
-                document.getElementById('grid').innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>File Error: Could not load data.json</h3>`;
+            .catch(err => {
+                console.error("Connections Game Fetch Error:", err);
+                document.getElementById('grid').innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>File Error: Could not load connections.json</h3>`;
             });
 
         function populateFilters() {
-            const rawUnits = allData.map(function(item) {
-                return item ? item.unit : null;
-            }).filter(function(u) { return u; });
-
-            const units = [];
-            for(let i = 0; i < rawUnits.length; i++) {
-                if(units.indexOf(rawUnits[i]) === -1) {
-                    units.push(rawUnits[i]);
-                }
-            }
-            units.sort();
-
+            // Safely grab units, ignoring missing ones
+            const units = [...new Set(allData.map(item => item?.unit).filter(u => u))].sort();
             const select = document.getElementById('unit-select');
+            
+            // Clear existing options except 'Mixed Units'
             select.innerHTML = '<option value="all">Mixed Units</option>';
 
-            for(let j = 0; j < units.length; j++) {
+            units.forEach(u => {
                 const opt = document.createElement('option');
-                opt.value = units[j];
-                opt.innerText = units[j];
+                opt.value = u;
+                opt.innerText = u;
                 select.appendChild(opt);
-            }
+            });
         }
 
         function loadNewGame() {
@@ -326,100 +264,50 @@
             updateMistakesUI();
 
             const unit = document.getElementById('unit-select').value;
-            
-            let rawPool = [];
-            if(unit === 'all') {
-                rawPool = allData;
-            } else {
-                rawPool = allData.filter(function(d) {
-                    return d && d.unit === unit;
-                });
-            }
-
-            let validPool = [];
-            let errorMessages = [];
-
-            // --- SMART FILTER & ERROR REPORTER ---
-            rawPool.forEach(function(group) {
-                const catName = group.category ? group.category : "Unnamed Category";
-                
-                if(!group.terms || !Array.isArray(group.terms)) {
-                    errorMessages.push(`<strong>${catName}</strong> (Missing or invalid terms list)`);
-                    return; // Skip this one
-                }
-                
-                let validCount = 0;
-                for(let i = 0; i < group.terms.length; i++) {
-                    if(group.terms[i] && group.terms[i].toString().trim() !== "") {
-                        validCount++;
-                    }
-                }
-                
-                if(validCount === 4) {
-                    validPool.push(group); // It's perfect, keep it
-                } else {
-                    errorMessages.push(`<strong>${catName}</strong> (Has ${validCount} valid terms instead of 4)`);
-                }
-            });
-
-            // Display Admin Alert if errors were found
-            const adminAlert = document.getElementById('admin-alert');
-            const alertList = document.getElementById('admin-alert-list');
-            
-            if (errorMessages.length > 0) {
-                alertList.innerHTML = "";
-                errorMessages.forEach(function(msg) {
-                    const li = document.createElement('li');
-                    li.innerHTML = msg;
-                    alertList.appendChild(li);
-                });
-                adminAlert.style.display = "block";
-            } else {
-                adminAlert.style.display = "none";
-            }
-
-            // Assign the pool to the cleaned, perfectly valid list
-            let pool = validPool;
+            let pool = unit === 'all' ? allData : allData.filter(d => d?.unit === unit);
 
             if(pool.length < 4) {
-                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #777;'>Not enough complete categories (exactly 4 terms each) to form a puzzle for this selection!</h3>";
+                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #777;'>Not enough complete categories to form a puzzle (Need at least 4).</h3>";
                 return;
             }
 
-            // Shuffle pool
-            let shuffledPool = pool.slice();
-            shuffledPool.sort(function() { return 0.5 - Math.random(); });
+            // Randomly select 4 categories
+            let shuffledPool = [...pool].sort(() => 0.5 - Math.random());
             currentPuzzle = shuffledPool.slice(0, 4);
 
+            // Prepare grid items safely
             gridItems = [];
-            currentPuzzle.forEach(function(group, groupIndex) {
-                group.terms.forEach(function(term) {
-                    if (term && term.toString().trim() !== "") {
+            currentPuzzle.forEach((group, groupIndex) => {
+                if(group?.terms && Array.isArray(group.terms)) {
+                    group.terms.forEach(term => {
                         gridItems.push({
-                            term: term.toString().trim(),
+                            term: term || "Missing Term",
                             groupIndex: groupIndex
                         });
-                    }
-                });
+                    });
+                }
             });
+
+            // Ensure we actually got 16 items
+            if(gridItems.length !== 16) {
+                document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Data Error: One of the selected categories does not have exactly 4 terms! Refresh to try a different puzzle.</h3>";
+                return;
+            }
 
             shuffleGrid();
         }
 
         function shuffleGrid() {
-            let unsolvedItems = gridItems.filter(function(item) {
-                return solvedGroups.indexOf(item.groupIndex) === -1;
-            });
-            unsolvedItems.sort(function() { return 0.5 - Math.random(); });
+            // Only shuffle unsolved items
+            let unsolvedItems = gridItems.filter(item => !solvedGroups.includes(item.groupIndex));
+            unsolvedItems.sort(() => 0.5 - Math.random());
 
+            // Reconstruct gridItems: solved items first, then shuffled unsolved items
             let newGridItems = [];
-            solvedGroups.forEach(function(groupIndex) {
-                let solvedItems = gridItems.filter(function(item) {
-                    return item.groupIndex === groupIndex;
-                });
-                newGridItems = newGridItems.concat(solvedItems);
+            solvedGroups.forEach(groupIndex => {
+                newGridItems.push(...gridItems.filter(item => item.groupIndex === groupIndex));
             });
-            newGridItems = newGridItems.concat(unsolvedItems);
+            newGridItems.push(...unsolvedItems);
             
             gridItems = newGridItems;
             renderBoard();
@@ -429,13 +317,14 @@
             const grid = document.getElementById('grid');
             grid.innerHTML = '';
 
-            solvedGroups.forEach(function(groupIndex) {
+            // 1. Render Solved Groups as full rows
+            solvedGroups.forEach(groupIndex => {
                 const group = currentPuzzle[groupIndex];
                 const row = document.createElement('div');
                 row.className = `solved-row color-${solvedGroups.indexOf(groupIndex)}`;
                 
-                const safeCategory = (group && group.category) ? group.category : "Unknown Category";
-                const safeTerms = (group && group.terms && Array.isArray(group.terms)) ? group.terms.join(', ') : "Missing terms";
+                const safeCategory = group?.category || "Unknown Category";
+                const safeTerms = (group?.terms && Array.isArray(group.terms)) ? group.terms.join(', ') : "Missing terms";
 
                 row.innerHTML = `
                     <div class="category-title">${safeCategory}</div>
@@ -444,15 +333,16 @@
                 grid.appendChild(row);
             });
 
-            gridItems.forEach(function(item) {
-                if (solvedGroups.indexOf(item.groupIndex) !== -1) return; 
+            // 2. Render Unsolved Grid Items
+            gridItems.forEach(item => {
+                if (solvedGroups.includes(item.groupIndex)) return; // Skip if already solved
 
                 const div = document.createElement('div');
                 div.className = 'grid-item';
-                if (selectedItems.indexOf(item) !== -1) div.classList.add('selected');
+                if (selectedItems.includes(item)) div.classList.add('selected');
                 
                 div.innerText = item.term;
-                div.onclick = function() { toggleSelect(item, div); };
+                div.onclick = () => toggleSelect(item, div);
                 
                 grid.appendChild(div);
             });
@@ -482,15 +372,9 @@
                 return;
             }
 
-            const groupIndices = selectedItems.map(function(item) { return item.groupIndex; });
-            
-            let isCorrect = true;
-            for(let i = 1; i < groupIndices.length; i++) {
-                if(groupIndices[i] !== groupIndices[0]) {
-                    isCorrect = false;
-                    break;
-                }
-            }
+            // Check if all 4 selected items have the same groupIndex
+            const groupIndices = selectedItems.map(item => item.groupIndex);
+            const isCorrect = groupIndices.every(val => val === groupIndices[0]);
 
             if (isCorrect) {
                 const solvedIndex = groupIndices[0];
@@ -498,34 +382,27 @@
                 selectedItems = [];
                 
                 if (solvedGroups.length === 4) {
-                    setTimeout(function() { alert("Puzzle Solved! Great job! 🎉"); }, 300);
+                    setTimeout(() => alert("Puzzle Solved! Great job! 🎉"), 300);
                 }
                 renderBoard();
             } else {
                 mistakes++;
                 updateMistakesUI();
                 
-                // Check for "One away"
+                // Check for "One away" (3 of the same group)
                 const counts = {};
-                for(let i = 0; i < groupIndices.length; i++) {
-                    const x = groupIndices[i];
-                    counts[x] = (counts[x] || 0) + 1;
-                }
-                
-                let isOneAway = false;
-                for (let key in counts) {
-                    if (counts[key] === 3) isOneAway = true;
-                }
+                groupIndices.forEach(x => counts[x] = (counts[x] || 0) + 1);
+                const isOneAway = Object.values(counts).includes(3);
 
-                selectedItems = []; 
-                setTimeout(function() { renderBoard(); }, 400);
+                selectedItems = []; // clear selection on mistake
+                setTimeout(() => renderBoard(), 400);
 
-                if(isOneAway) setTimeout(function() { alert("One away..."); }, 400);
+                if(isOneAway) setTimeout(() => alert("One away..."), 400);
 
                 if(mistakes >= MAX_MISTAKES) {
-                    setTimeout(function() {
+                    setTimeout(() => {
                         alert("Game Over! Better luck next time.");
-                        solvedGroups = [0, 1, 2, 3]; 
+                        solvedGroups = [0, 1, 2, 3]; // Reveal all
                         renderBoard();
                     }, 500);
                 }
