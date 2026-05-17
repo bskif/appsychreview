@@ -249,9 +249,9 @@
     </div>
 
     <div class="modal-overlay" id="feedback-modal">
-        <div class="game-card" style="border-color: var(--primary);">
+        <div class="game-card" id="feedback-card" style="border-color: var(--primary);">
             <h2 id="feedback-title" style="color: var(--primary);">Title</h2>
-            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0;">Message goes here.</p>
+            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0; text-align: left; line-height: 1.5;">Message goes here.</p>
             <button class="feedback-btn" onclick="closeFeedback()">Continue</button>
         </div>
     </div>
@@ -349,18 +349,14 @@
         }
 
         // 4. Feedback Modal Logic
-        function showFeedback(title, msg, callback, autoClose = false) {
+        function showFeedback(title, msgHtml, color, callback) {
             document.getElementById('feedback-title').innerText = title;
-            document.getElementById('feedback-msg').innerText = msg;
+            document.getElementById('feedback-title').style.color = color;
+            document.getElementById('feedback-card').style.borderColor = color;
+            document.getElementById('feedback-msg').innerHTML = msgHtml;
+            
             feedbackCallback = callback;
-            
             document.getElementById('feedback-modal').style.display = 'flex';
-            
-            if(feedbackTimer) clearTimeout(feedbackTimer);
-
-            if(autoClose) {
-                feedbackTimer = setTimeout(closeFeedback, 1000); 
-            }
         }
 
         function closeFeedback() {
@@ -376,10 +372,15 @@
         function drawCard() {
             const p = players[currentPlayerIndex];
             if(p.skipTurn) {
-                showFeedback("Frozen!", `${p.name} is frozen and loses a turn! ❄️`, () => {
-                    p.skipTurn = false;
-                    nextTurn();
-                }, false);
+                showFeedback(
+                    "Frozen!", 
+                    `${p.name} is frozen and loses a turn! ❄️`, 
+                    "#3498db", 
+                    () => {
+                        p.skipTurn = false;
+                        nextTurn();
+                    }
+                );
                 return;
             }
 
@@ -436,22 +437,31 @@
                 const btn = document.createElement('button');
                 btn.className = 'game-btn';
                 btn.innerText = opt.term;
-                // Add correct.term as the third argument here:
-                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term);
+                // Add correct.definition as the fourth argument here:
+                btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term, correct.definition);
                 container.appendChild(btn);
             });
             modal.style.display = 'flex';
         }
 
-        function handleAnswer(isCorrect, spaces, correctTerm) {
+        function handleAnswer(isCorrect, spaces, correctTermString, definitionString) {
             document.getElementById('card-modal').style.display = 'none';
+            const spaceWord = spaces > 1 ? "spaces" : "space";
+
+            let title, color, msgHtml;
+
             if(isCorrect) {
-                const spaceWord = spaces > 1 ? "spaces" : "space";
-                // Show the answer to reinforce it, and change 'true' to 'false' so it doesn't auto-close
-                showFeedback("Correct!", `Great job! The answer is ${correctTerm}. Moving forward ${spaces} ${spaceWord}...`, () => movePlayer(spaces), false);
+                title = "✅ Correct!";
+                color = "#28a745"; // Green
+                msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Moving forward ${spaces} ${spaceWord}...</em>`;
+                
+                showFeedback(title, msgHtml, color, () => movePlayer(spaces));
             } else {
-                // Show the correct answer, and change 'true' to 'false' so it doesn't auto-close
-                showFeedback("Incorrect", `The correct answer was: ${correctTerm}. Stay put.`, () => nextTurn(), false);
+                title = "❌ Incorrect";
+                color = "#d90429"; // Red (matches hit-red from Battleship)
+                msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Stay put. Turn lost.</em>`;
+                
+                showFeedback(title, msgHtml, color, () => nextTurn());
             }
         }
 
@@ -470,7 +480,12 @@
 
             // Check Win
             if(p.pos >= COORDINATES.length - 1) {
-                showFeedback("VICTORY!", `${p.name} Wins! 🏆`, () => location.reload(), false);
+                showFeedback(
+                    "VICTORY!", 
+                    `<div style="text-align:center;">${p.name} Wins! 🏆</div>`, 
+                    "#f39c12", // Gold
+                    () => location.reload()
+                );
                 return;
             }
 
@@ -478,12 +493,22 @@
             if(SPECIALS[p.pos] === 'gap') {
                 p.pos = Math.min(p.pos + 5, COORDINATES.length - 1);
                 renderPlayers(); 
-                showFeedback("Synaptic Gap!", "Electrical surge! Jump forward 5 spaces.", () => nextTurn(), false);
+                showFeedback(
+                    "Synaptic Gap!", 
+                    "Electrical surge! Jump forward 5 spaces.", 
+                    "#f1c40f", // Yellow
+                    () => nextTurn()
+                );
                 return;
             }
             if(SPECIALS[p.pos] === 'freeze') {
                 p.skipTurn = true;
-                showFeedback("Brain Freeze!", "You are frozen and lose your next turn.", () => nextTurn(), false);
+                showFeedback(
+                    "Brain Freeze!", 
+                    "You are frozen and lose your next turn.", 
+                    "#3498db", // Light Blue
+                    () => nextTurn()
+                );
                 return;
             }
             
@@ -493,11 +518,23 @@
         function botTurn(correct, spaces) {
             document.getElementById('draw-btn').disabled = true;
             document.getElementById('status-text').innerText = "Computer thinking...";
+            
             setTimeout(() => {
+                const spaceWord = spaces > 1 ? "spaces" : "space";
+                let title, color, msgHtml;
+
                 if(Math.random() < 0.7) {
-                    showFeedback("Computer Turn", `Computer got the answer RIGHT! The answer was ${correct.term}. Moving ${spaces}...`, () => movePlayer(spaces), false);
+                    title = "🤖 Computer Turn (Correct)";
+                    color = "#28a745";
+                    msgHtml = `Computer got the answer RIGHT!<br><br><strong>Definition:</strong> ${correct.definition}<br><br><strong>Correct Answer:</strong> ${correct.term}<br><br><em style="color:#555;">Moving ${spaces} ${spaceWord}...</em>`;
+                    
+                    showFeedback(title, msgHtml, color, () => movePlayer(spaces));
                 } else {
-                    showFeedback("Computer Turn", `Computer got the answer WRONG. The answer was ${correct.term}.`, () => nextTurn(), false);
+                    title = "🤖 Computer Turn (Incorrect)";
+                    color = "#d90429";
+                    msgHtml = `Computer got the answer WRONG.<br><br><strong>Definition:</strong> ${correct.definition}<br><br><strong>Correct Answer:</strong> ${correct.term}<br><br><em style="color:#555;">Stay put.</em>`;
+                    
+                    showFeedback(title, msgHtml, color, () => nextTurn());
                 }
                 document.getElementById('draw-btn').disabled = false;
             }, 1000);
