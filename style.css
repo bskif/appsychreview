@@ -81,11 +81,17 @@ nav {
     display: none;
     position: absolute;
     background-color: var(--primary);
-    min-width: max-content; /* Fix: Adjusts width to fit the longest text */
+    min-width: max-content; 
     box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
     z-index: 1000;
     top: 100%;
     left: 0;
+}
+
+/* Fix: Pulls the last dropdown (Games) inward so it doesn't go off the right side of the screen */
+.nav-links li:last-child .dropdown-content {
+    left: auto;
+    right: 0;
 }
 
 .dropdown:hover .dropdown-content {
@@ -96,7 +102,7 @@ nav {
     padding: 12px 16px;
     border-bottom: 1px solid #1a252f;
     font-size: 1rem;
-    white-space: nowrap; /* Fix: Keeps text on a single line */
+    white-space: nowrap; 
 }
 
 .dropdown-content a:last-child {
