@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Quiz - Psych Review Hub</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -383,22 +383,27 @@
             
             document.getElementById('progress-text').textContent = `Question ${currentQuestionIndex + 1}/${quizQueue.length}`;
             
-            // Context (Formatted HTML)
+            // Context/Stimulus Checker (Checks for any common JSON label)
+            const contextData = currentQ.context || currentQ.stimulus || currentQ.prompt || currentQ.scenario || "";
             const contextEl = document.getElementById('question-context');
-            if (currentQ.context && currentQ.context.trim() !== "") {
-                contextEl.innerHTML = currentQ.context; 
+            
+            if (contextData && String(contextData).trim() !== "") {
+                contextEl.innerHTML = String(contextData); 
                 contextEl.style.display = 'block';
             } else {
                 contextEl.style.display = 'none';
             }
 
-            // Image Handler
+            // Image Handler (Smart Checker to add images/ if missing)
             const imageEl = document.getElementById('question-image');
             if (currentQ.image && currentQ.image.trim() !== "") {
-                let imgPath = currentQ.image;
+                let imgPath = currentQ.image.trim();
+                
+                // If the path doesn't start with "images/" or "http", add "images/" to the front
                 if (!imgPath.startsWith('images/') && !imgPath.startsWith('http')) {
                     imgPath = 'images/' + imgPath;
                 }
+                
                 imageEl.src = imgPath;
                 imageEl.style.display = 'block';
             } else {
@@ -409,7 +414,7 @@
             // Text
             document.getElementById('question-text').textContent = currentQ.question;
 
-            // Options (Updated for the new JSON structure)
+            // Options
             const container = document.getElementById('options-container');
             container.innerHTML = ''; 
 
@@ -449,7 +454,7 @@
             } else {
                 selectedBtn.classList.add('incorrect');
                 
-                // Highlight Correct One (Updated for new JSON structure)
+                // Highlight Correct One
                 let correctText = "";
                 if(correctLetter === "A") correctText = currentQ.options[0];
                 if(correctLetter === "B") correctText = currentQ.options[1];
