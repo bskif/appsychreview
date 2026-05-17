@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Cortex Commander</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Cortex Commander - Psych Review Hub</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
@@ -572,49 +572,70 @@
         }
     }
 
+    // --- UPDATED COMPUTER TURN LOGIC ---
     function computerTurn() {
         if (!gameActive) return;
         document.getElementById('enemy-status').innerText = "Enemy Targeting...";
         
         setTimeout(() => {
-            // 1. Computer "Answers Question" (Simulated)
+            // Select a random term for the computer to "answer"
+            const compTerm = activeTerms[Math.floor(Math.random() * activeTerms.length)];
+            
             // 75% chance to get it right
             const computerCorrect = Math.random() < 0.75; 
 
-            if (!computerCorrect) {
-                log("🤖 Enemy sensors malfunctioned! They missed their turn.");
-                document.getElementById('enemy-status').innerText = "Targeting System: READY";
-                return;
-            }
+            let title, color, msgHtml;
 
-            // 2. Select Target (Random for now)
-            let r, c;
-            let valid = false;
-            // Simple AI: Don't shoot where already shot
-            let attempts = 0;
-            while (!valid && attempts < 200) {
-                r = Math.floor(Math.random() * GRID_SIZE);
-                c = Math.floor(Math.random() * GRID_SIZE);
-                if (playerGridState[r][c] < 2) valid = true;
-                attempts++;
-            }
-
-            // 3. Fire
-            const hit = playerGridState[r][c] === 1;
-            playerGridState[r][c] = hit ? 3 : 2;
-            
-            if (hit) {
-                log(`🚨 WARNING! Enemy hit our ship at ${String.fromCharCode(65 + c)}${r + 1}!`);
-                checkSunk(playerShips, r, c, "Our");
+            if (computerCorrect) {
+                title = "🤖 Enemy Target Locked! (Correct)";
+                color = "#28a745"; // Green
+                msgHtml = `The enemy answered correctly!<br><br><strong>Definition:</strong> ${compTerm.definition}<br><br><strong>Correct Answer:</strong> ${compTerm.term}<br><br><em style="color:#555;">Enemy weapons firing...</em>`;
+                
+                showFeedback(title, msgHtml, color, () => resolveComputerShot(true));
             } else {
-                log(`🛡️ Enemy fired at ${String.fromCharCode(65 + c)}${r + 1} and missed.`);
+                title = "🤖 Enemy Misfire! (Incorrect)";
+                color = "var(--hit-red)"; // Red
+                msgHtml = `The enemy answered incorrectly!<br><br><strong>Definition:</strong> ${compTerm.definition}<br><br><strong>Correct Answer:</strong> ${compTerm.term}<br><br><em style="color:#555;">Enemy weapons misfired.</em>`;
+                
+                showFeedback(title, msgHtml, color, () => resolveComputerShot(false));
             }
 
-            renderGameGrids();
-            checkWinCondition();
-            document.getElementById('enemy-status').innerText = "Targeting System: READY";
+        }, 1000); // Small delay so the "Targeting..." text is visible before the popup
+    }
 
-        }, 1500);
+    function resolveComputerShot(didFire) {
+        if (!didFire) {
+            log("🤖 Enemy sensors malfunctioned! They missed their turn.");
+            document.getElementById('enemy-status').innerText = "Targeting System: READY";
+            return;
+        }
+
+        // 2. Select Target (Random for now)
+        let r, c;
+        let valid = false;
+        // Simple AI: Don't shoot where already shot
+        let attempts = 0;
+        while (!valid && attempts < 200) {
+            r = Math.floor(Math.random() * GRID_SIZE);
+            c = Math.floor(Math.random() * GRID_SIZE);
+            if (playerGridState[r][c] < 2) valid = true;
+            attempts++;
+        }
+
+        // 3. Fire
+        const hit = playerGridState[r][c] === 1;
+        playerGridState[r][c] = hit ? 3 : 2;
+        
+        if (hit) {
+            log(`🚨 WARNING! Enemy hit our ship at ${String.fromCharCode(65 + c)}${r + 1}!`);
+            checkSunk(playerShips, r, c, "Our");
+        } else {
+            log(`🛡️ Enemy fired at ${String.fromCharCode(65 + c)}${r + 1} and missed.`);
+        }
+
+        renderGameGrids();
+        checkWinCondition();
+        document.getElementById('enemy-status').innerText = "Targeting System: READY";
     }
 
     function checkSunk(fleet, r, c, owner) {
