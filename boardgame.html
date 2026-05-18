@@ -215,9 +215,14 @@
         <div id="setup-screen">
             <h3>Expedition Briefing</h3>
             
-            <p style="font-size: 1.05rem; text-align: left; line-height: 1.5; color: #444; margin-bottom: 20px; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-                <strong>Rules of the Road:</strong> Select your player count and review unit. On your turn, click "Draw Card" to roll for 1-5 spaces. You will be prompted with a psychology definition—select the correct term to move forward! If you answer incorrectly, you stay put and lose your turn. Watch out for Synaptic Gaps (⚡) that surge you forward and Brain Freezes (❄️) that make you skip a turn. First to the end wins!
-            </p>
+            <div style="font-size: 1.05rem; text-align: left; line-height: 1.5; color: #444; margin-bottom: 20px; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
+                <p style="margin: 0 0 12px 0;">
+                    <strong>Rules of the Road:</strong> Select your player count and review unit. On your turn, click "Draw Card" to roll for 1-5 spaces. You will be prompted with a psychology definition—select the correct term to move forward! If you answer incorrectly, you stay put and lose your turn. Watch out for Synaptic Gaps (⚡) that surge you forward and Brain Freezes (❄️) that make you skip a turn. First to the end wins!
+                </p>
+                <p style="margin: 0; font-size: 0.98rem; color: #555; border-top: 1px solid #d0e0ec; padding-top: 10px;">
+                    🎮 <strong>Play Modes:</strong> Test your knowledge solo by flying past an automated computer bot, or select 2-4 players to face off against your classmates using a single device—just pass the computer around when your turn pops up!
+                </p>
+            </div>
             
             <label style="display:block; text-align:left;">Number of Players:</label>
             <select id="player-count">
@@ -267,7 +272,7 @@
     </div>
 
     <script>
-        // --- COORDINATES (Pasted from your mapper) ---
+        // --- COORDINATES ---
         const COORDINATES = [{"x":22.59,"y":13.82},{"x":27.69,"y":12.39},{"x":31.44,"y":12.65},{"x":34.99,"y":12.91},{"x":37.96,"y":14.21},{"x":41.22,"y":17.06},{"x":44.05,"y":20.03},{"x":46.81,"y":23.27},{"x":50.35,"y":26.9},{"x":53.61,"y":28.45},{"x":58.5,"y":27.16},{"x":61.47,"y":22.88},{"x":63.53,"y":18.61},{"x":65.93,"y":15.24},{"x":69.26,"y":13.95},{"x":72.8,"y":13.82},{"x":76.35,"y":15.5},{"x":79.25,"y":19.91},{"x":80.59,"y":24.96},{"x":80.38,"y":30.01},{"x":79.25,"y":33.77},{"x":76.35,"y":37},{"x":72.8,"y":38.82},{"x":69.12,"y":40.11},{"x":65.01,"y":40.63},{"x":61.9,"y":40.11},{"x":58.14,"y":39.46},{"x":54.32,"y":37.13},{"x":50.92,"y":35.06},{"x":47.45,"y":32.34},{"x":44.41,"y":29.75},{"x":40.72,"y":26.9},{"x":36.54,"y":25.35},{"x":33.71,"y":25.09},{"x":28.68,"y":26.25},{"x":24.93,"y":27.81},{"x":23.09,"y":33.38},{"x":26.13,"y":36.74},{"x":30.59,"y":37.52},{"x":34.56,"y":35.84},{"x":38.39,"y":36.74},{"x":40.23,"y":41.67},{"x":36.97,"y":46.07},{"x":32.86,"y":47.37},{"x":28.9,"y":47.88},{"x":24.93,"y":47.24},{"x":21.18,"y":46.59},{"x":17.56,"y":48.01},{"x":15.37,"y":53.2},{"x":16.01,"y":59.15},{"x":18.7,"y":62.39},{"x":22.8,"y":63.43},{"x":27.48,"y":63.3},{"x":31.44,"y":62.65},{"x":35.27,"y":60.45},{"x":39.24,"y":57.21},{"x":42.49,"y":53.07},{"x":45.96,"y":49.44},{"x":49.86,"y":47.5},{"x":53.61,"y":48.14},{"x":57.79,"y":49.44},{"x":61.61,"y":50.47},{"x":65.72,"y":49.31},{"x":70.11,"y":48.27},{"x":73.37,"y":47.24},{"x":77.76,"y":47.75},{"x":80.59,"y":51.77},{"x":80.1,"y":57.47},{"x":76.91,"y":60.32},{"x":72.88,"y":61.87},{"x":68.84,"y":62.91},{"x":64.59,"y":62.65},{"x":60.41,"y":62.13},{"x":57.08,"y":59.93},{"x":54.39,"y":55.4},{"x":53.33,"y":46.98},{"x":49.29,"y":47.11},{"x":45.47,"y":48.79},{"x":42.35,"y":52.68},{"x":39.24,"y":56.43},{"x":35.13,"y":59.8},{"x":31.44,"y":62.13},{"x":27.69,"y":63.04},{"x":23.44,"y":63.17},{"x":19.33,"y":62.78},{"x":15.16,"y":67.44},{"x":13.17,"y":74.05},{"x":14.09,"y":79.62},{"x":17.63,"y":81.3},{"x":22.52,"y":83.12},{"x":26.63,"y":83.12},{"x":30.45,"y":81.17},{"x":33.99,"y":77.42},{"x":37.61,"y":72.11},{"x":41.36,"y":70.42},{"x":45.18,"y":71.2},{"x":48.87,"y":73.27},{"x":52.76,"y":77.81},{"x":57.08,"y":81.69},{"x":60.76,"y":83.64},{"x":65.01,"y":84.28},{"x":69.62,"y":84.67},{"x":73.8,"y":82.6},{"x":82.58,"y":80.27}];
         const SPECIALS = {
             10: 'gap', 45: 'gap', 85: 'gap', 115: 'gap',
@@ -394,29 +399,21 @@
                 return;
             }
 
-            // --- Generate a random number (1 to 5) to move instead of a color ---
             const spacesToMove = Math.floor(Math.random() * 5) + 1;
             
-            // Pool filtering
             let pool = (selectedUnitFilter === 'all') ? allTerms : allTerms.filter(t => t.unit === selectedUnitFilter);
             if(pool.length < 4) {
                 movePlayer(spacesToMove); 
                 return;
             }
 
-            // Pick Correct Answer
             const correct = pool[Math.floor(Math.random() * pool.length)];
             
-            // --- UPDATED LOGIC: Distractors from SAME TOPIC ---
-            
-            // 1. Try to find distractors in the same topic
             let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
             sameTopicTerms.sort(() => Math.random() - 0.5);
 
-            // 2. Take up to 3
             let distractors = sameTopicTerms.slice(0, 3);
 
-            // 3. If not enough (small topic), fill with others from the unit
             if (distractors.length < 3) {
                 let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
                 otherTerms.sort(() => Math.random() - 0.5);
@@ -424,8 +421,6 @@
                 distractors = [...distractors, ...otherTerms.slice(0, needed)];
             }
             
-            // --------------------------------------------------
-
             let options = [...distractors, correct].sort(() => Math.random() - 0.5);
 
             if(p.isBot) botTurn(correct, spacesToMove);
@@ -447,7 +442,6 @@
                 const btn = document.createElement('button');
                 btn.className = 'game-btn';
                 btn.innerText = opt.term;
-                // Add correct.definition as the fourth argument here:
                 btn.onclick = () => handleAnswer(opt.term === correct.term, spaces, correct.term, correct.definition);
                 container.appendChild(btn);
             });
@@ -462,13 +456,13 @@
 
             if(isCorrect) {
                 title = "✅ Correct!";
-                color = "#28a745"; // Green
+                color = "#28a745";
                 msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Moving forward ${spaces} ${spaceWord}...</em>`;
                 
                 showFeedback(title, msgHtml, color, () => movePlayer(spaces));
             } else {
                 title = "❌ Incorrect";
-                color = "#d90429"; // Red (matches hit-red from Battleship)
+                color = "#d90429";
                 msgHtml = `<strong>Definition:</strong> ${definitionString}<br><br><strong>Correct Answer:</strong> ${correctTermString}<br><br><em style="color:#555;">Stay put. Turn lost.</em>`;
                 
                 showFeedback(title, msgHtml, color, () => nextTurn());
@@ -477,36 +471,31 @@
 
         function movePlayer(spaces) {
             const p = players[currentPlayerIndex];
-            
-            // Advance the player the correct number of spaces
             p.pos += spaces;
             
-            // Make sure they don't go past the final board space
             if (p.pos >= COORDINATES.length - 1) {
                 p.pos = COORDINATES.length - 1;
             }
 
             renderPlayers(); 
 
-            // Check Win
             if(p.pos >= COORDINATES.length - 1) {
                 showFeedback(
                     "VICTORY!", 
                     `<div style="text-align:center;">${p.name} Wins! 🏆</div>`, 
-                    "#f39c12", // Gold
+                    "#f39c12", 
                     () => location.reload()
                 );
                 return;
             }
 
-            // Check Specials
             if(SPECIALS[p.pos] === 'gap') {
                 p.pos = Math.min(p.pos + 5, COORDINATES.length - 1);
                 renderPlayers(); 
                 showFeedback(
                     "Synaptic Gap!", 
                     "Electrical surge! Jump forward 5 spaces.", 
-                    "#f1c40f", // Yellow
+                    "#f1c40f", 
                     () => nextTurn()
                 );
                 return;
@@ -516,7 +505,7 @@
                 showFeedback(
                     "Brain Freeze!", 
                     "You are frozen and lose your next turn.", 
-                    "#3498db", // Light Blue
+                    "#3498db", 
                     () => nextTurn()
                 );
                 return;
