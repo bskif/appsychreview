@@ -189,209 +189,74 @@
                     <a href="oddball.html">Oddball</a>
                 </div>
             </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
-    <div class="game-container">
-        <div id="setup-screen">
-            <h1>🔍 Oddball</h1>
-            <p>Find the term that doesn't belong!</p>
-            
-            <label style="display:block; text-align:left; font-weight:bold;">Select Unit to Review:</label>
-            <select id="unit-select">
-                <option value="all">All Units</option>
-            </select>
-
-            <button class="action-btn" style="width: 100%; margin-top: 10px;" onclick="startGame()">Start Game</button>
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding-top: 20px;">
+        <h1 style="text-align: center;">🔍 Oddball</h1>
+        
+        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 600px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
+            <strong>Directions:</strong> One of these things isn't like the other! Review the four psychology terms presented in each set. Three of them share a specific underlying connection, but one is an oddball that doesn't belong. Select the oddball to advance and reveal the explanation!
         </div>
 
-        <div id="game-ui" style="display: none;">
-            <div class="status-bar">
-                <span id="question-counter">Set 1 of 10</span>
-                <span id="score-counter">Score: 0</span>
+        <div class="game-container" style="margin-top: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div id="setup-screen">
+                <label style="display:block; text-align:left; font-weight:bold;">Select Unit to Review:</label>
+                <select id="unit-select">
+                    <option value="all">All Units</option>
+                </select>
+
+                <button class="action-btn" style="width: 100%; margin-top: 10px;" onclick="startGame()">Start Game</button>
             </div>
-            
-            <h2 style="margin-bottom: 20px;">Which term is the oddball?</h2>
-            
-            <div class="grid-2x2" id="terms-grid">
+
+            <div id="game-ui" style="display: none;">
+                <div class="status-bar">
+                    <span id="question-counter">Set 1 of 10</span>
+                    <span id="score-counter">Score: 0</span>
                 </div>
+                
+                <h2 style="margin-bottom: 20px;">Which term is the oddball?</h2>
+                
+                <div class="grid-2x2" id="terms-grid">
+                    </div>
 
-            <div id="explanation-box">
+                <div id="explanation-box">
+                    </div>
+
+                <div class="nav-controls">
+                    <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
+                    <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next ➡️</button>
                 </div>
-
-            <div class="nav-controls">
-                <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
-                <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next ➡️</button>
+                
+                <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
+                    <button class="action-btn" style="background-color: #95a5a6; font-size: 0.9rem; padding: 8px 20px;" onclick="resetToSetup()">🔄 Start New Set</button>
+                </div>
             </div>
-            
-            <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
-                <button class="action-btn" style="background-color: #95a5a6; font-size: 0.9rem; padding: 8px 20px;" onclick="resetToSetup()">🔄 Start New Set</button>
-            </div>
-        </div>
 
-        <div id="end-screen">
-            <h1>🎉 Unit Complete!</h1>
-            <div class="final-score-display" id="final-score-text">0/0</div>
-            <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
-            <button class="action-btn" onclick="resetToSetup()">Play Again</button>
+            <div id="end-screen">
+                <h1>🎉 Unit Complete!</h1>
+                <div class="final-score-display" id="final-score-text">0/0</div>
+                <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
+                <button class="action-btn" onclick="resetToSetup()">Play Again</button>
+            </div>
         </div>
     </div>
 
-    <script>
-        let allOddballData = [];
-        let currentQueue = [];
-        let currentIndex = 0;
-        let hasGuessedCurrent = false;
-        let score = 0;
-
-        // 1. Load Data
-        fetch('oddball.json')
-            .then(res => res.json())
-            .then(data => {
-                if(data.oddball) {
-                    allOddballData = data.oddball;
-                    populateDropdown();
-                } else {
-                    alert("Oddball data not found in oddball.json yet!");
-                }
-            })
-            .catch(err => console.error("Error loading JSON:", err));
-
-        function populateDropdown() {
-            const units = [...new Set(allOddballData.map(item => item.unit))].sort();
-            const select = document.getElementById('unit-select');
-            units.forEach(u => {
-                const opt = document.createElement('option');
-                opt.value = u;
-                opt.innerText = u;
-                select.appendChild(opt);
-            });
-        }
-
-        // 2. Start Game
-        function startGame() {
-            const selectedUnit = document.getElementById('unit-select').value;
-            
-            if (selectedUnit === 'all') {
-                currentQueue = [...allOddballData];
-            } else {
-                currentQueue = allOddballData.filter(item => item.unit === selectedUnit);
-            }
-
-            currentQueue.sort(() => Math.random() - 0.5);
-
-            if (currentQueue.length === 0) {
-                alert("No questions found for this unit!");
-                return;
-            }
-
-            // RESET SCORE ON START
-            score = 0;
-            document.getElementById('score-counter').innerText = `Score: ${score}`;
-
-            document.getElementById('setup-screen').style.display = 'none';
-            document.getElementById('end-screen').style.display = 'none';
-            document.getElementById('game-ui').style.display = 'block';
-            
-            currentIndex = 0;
-            loadQuestion();
-        }
-
-        // 3. Load Question
-        function loadQuestion() {
-            hasGuessedCurrent = false;
-            const currentItem = currentQueue[currentIndex];
-            
-            document.getElementById('question-counter').innerText = `Set ${currentIndex + 1} of ${currentQueue.length}`;
-            
-            const expBox = document.getElementById('explanation-box');
-            expBox.style.display = 'none';
-            expBox.innerHTML = '';
-
-            document.getElementById('prev-btn').disabled = (currentIndex === 0);
-            
-            let terms = [
-                { text: currentItem.oddball, isOddball: true },
-                { text: currentItem.related1, isOddball: false },
-                { text: currentItem.related2, isOddball: false },
-                { text: currentItem.related3, isOddball: false }
-            ];
-
-            terms.sort(() => Math.random() - 0.5);
-
-            const grid = document.getElementById('terms-grid');
-            grid.innerHTML = '';
-            
-            terms.forEach(termObj => {
-                const btn = document.createElement('button');
-                btn.className = 'term-btn';
-                btn.innerText = termObj.text;
-                btn.dataset.correct = termObj.isOddball; 
-                
-                btn.onclick = () => handleGuess(btn, currentItem.explanation);
-                grid.appendChild(btn);
-            });
-        }
-
-        // 4. Handle Guess
-        function handleGuess(clickedBtn, explanationText) {
-            if (hasGuessedCurrent) return; 
-            hasGuessedCurrent = true;
-
-            const isCorrect = clickedBtn.dataset.correct === "true";
-            const allBtns = document.querySelectorAll('.term-btn');
-
-            if (isCorrect) {
-                clickedBtn.classList.add('correct');
-                score++;
-                document.getElementById('score-counter').innerText = `Score: ${score}`;
-            } else {
-                clickedBtn.classList.add('incorrect');
-                allBtns.forEach(btn => {
-                    if (btn.dataset.correct === "true") {
-                        btn.classList.add('correct');
-                    }
-                });
-            }
-
-            allBtns.forEach(btn => btn.disabled = true);
-
-            const expBox = document.getElementById('explanation-box');
-            expBox.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
-            expBox.style.display = 'block';
-        }
-
-        // 5. Navigation
-        function nextQuestion() {
-            if (currentIndex < currentQueue.length - 1) {
-                currentIndex++;
-                loadQuestion();
-            } else {
-                // GAME OVER: Show Final Score
-                document.getElementById('game-ui').style.display = 'none';
-                document.getElementById('end-screen').style.display = 'block';
-                document.getElementById('final-score-text').innerText = `${score} / ${currentQueue.length}`;
-            }
-        }
-
-        function prevQuestion() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                loadQuestion();
-            }
-        }
-        
-        // 6. Reset Game State to Setup Screen
-        function resetToSetup() {
-            document.getElementById('game-ui').style.display = 'none';
-            document.getElementById('end-screen').style.display = 'none';
-            document.getElementById('setup-screen').style.display = 'block';
-        }
-    </script>
-
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+        
+        <p style="margin-bottom: 15px;">
+            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
 
