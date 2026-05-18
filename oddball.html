@@ -210,7 +210,13 @@
             <div id="setup-screen">
                 <label style="display:block; text-align:left; font-weight:bold;">Select Unit to Review:</label>
                 <select id="unit-select">
-                    <option value="all">All Units</option>
+                    <option value="all">All Units Mixed (Full Review)</option>
+                    <option value="Unit 0">Unit 0 - Scientific Foundations</option>
+                    <option value="Unit 1">Unit 1 - Biological Bases of Behavior</option>
+                    <option value="Unit 2">Unit 2 - Cognition</option>
+                    <option value="Unit 3">Unit 3 - Development and Learning</option>
+                    <option value="Unit 4">Unit 4 - Social Psychology and Personality</option>
+                    <option value="Unit 5">Unit 5 - Mental and Physical Health</option>
                 </select>
 
                 <button class="action-btn" style="width: 100%; margin-top: 10px;" onclick="startGame()">Start Game</button>
@@ -224,11 +230,9 @@
                 
                 <h2 style="margin-bottom: 20px;">Which term is the oddball?</h2>
                 
-                <div class="grid-2x2" id="terms-grid">
-                    </div>
+                <div class="grid-2x2" id="terms-grid"></div>
 
-                <div id="explanation-box">
-                    </div>
+                <div id="explanation-box"></div>
 
                 <div class="nav-controls">
                     <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
@@ -262,5 +266,201 @@
 
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
+    <script>
+        let masterOddballData = [];
+        let activeQuestionSets = [];
+        let activeQuestionIndex = 0;
+        let cumulativeScore = 0;
+        let selectedAnswersTracking = []; 
+
+        // Load targeted data pool file profiles from oddball.json on window startup
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('oddball.json')
+                .then(res => res.json())
+                .then(data => {
+                    // Safe parser to handle your specific oddball.json array structure
+                    masterOddballData = Array.isArray(data) ? data : (data.oddball || data.questions || []);
+                })
+                .catch(err => console.error("Error loading designated oddball data matrix file profile:", err));
+        });
+
+        function startGame() {
+            if (!masterOddballData || masterOddballData.length === 0) {
+                alert("The oddball problem file is currently loading. Give it a split second and click again!");
+                return;
+            }
+
+            const targetUnit = document.getElementById('unit-select').value;
+            
+            // Filter entries to match selection guidelines, converting "Unit 1" to "1"
+            let filteredSets = masterOddballData.filter(item => {
+                let itemUnitStr = String(item.unit).trim();
+                let targetUnitNum = targetUnit.replace("Unit ", "").trim();
+                return targetUnit === 'all' || itemUnitStr === targetUnitNum || itemUnitStr === targetUnit;
+            });
+
+            if (filteredSets.length === 0) {
+                alert("No handcrafted Oddball questions were found matching this selected Unit pool filter in your oddball.json file!");
+                return;
+            }
+
+            // Remap JSON keys into standard array configurations for the board
+            let processedSets = filteredSets.map(item => {
+                let choices = [item.oddball, item.related1, item.related2, item.related3];
+                choices.sort(() => 0.5 - Math.random()); // Randomize button order
+                
+                return {
+                    options: choices,
+                    correctValue: item.oddball,
+                    explanation: item.explanation
+                };
+            });
+
+            // Shuffle filtered pool and cap at 10 sets for standard game size
+            activeQuestionSets = [...processedSets].sort(() => 0.5 - Math.random()).slice(0, 10);
+
+            // Re-initialize game runtime states
+            activeQuestionIndex = 0;
+            cumulativeScore = 0;
+            selectedAnswersTracking = Array(activeQuestionSets.length).fill(null);
+
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('end-screen').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'block';
+
+            renderActiveQuestionSet();
+        }
+
+        function renderActiveQuestionSet() {
+            const currentSetData = activeQuestionSets[activeQuestionIndex];
+            
+            // Render text updates onto dashboard markers
+            document.getElementById('question-counter').innerText = `Set ${activeQuestionIndex + 1} of ${activeQuestionSets.length}`;
+            document.getElementById('score-counter').innerText = `Score: ${cumulativeScore}`;
+
+            const gridContainer = document.getElementById('terms-grid');
+            const expBox = document.getElementById('explanation-box');
+            
+            gridContainer.innerHTML = '';
+            expBox.style.display = 'none';
+            expBox.innerHTML = '';
+
+            // Handle options structure mapping dynamically
+            currentSetData.options.forEach((optionText, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'term-btn';
+                btn.innerText = optionText;
+                
+                const isThisTheOddball = (optionText === currentSetData.correctValue);
+                
+                btn.onclick = () => processAnswerSelection(idx, isThisTheOddball, btn);
+                gridContainer.appendChild(btn);
+            });
+
+            // Re-render display features if the user is looking back onto an entry card
+            if (selectedAnswersTracking[activeQuestionIndex] !== null) {
+                restoreSolvedCardUIState();
+            } else {
+                updateNavigationButtonsControl();
+            }
+        }
+
+        function processAnswerSelection(chosenIdx, isCorrect, selectedBtn) {
+            if (selectedAnswersTracking[activeQuestionIndex] !== null) return;
+
+            selectedAnswersTracking[activeQuestionIndex] = chosenIdx;
+            const currentSetData = activeQuestionSets[activeQuestionIndex];
+            const buttons = document.querySelectorAll('.term-btn');
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (isCorrect) {
+                selectedBtn.classList.add('correct');
+                cumulativeScore++;
+                document.getElementById('score-counter').innerText = `Score: ${cumulativeScore}`;
+            } else {
+                selectedBtn.classList.add('incorrect');
+                // Expose where target correct element value is mapped
+                buttons.forEach(b => {
+                    if (b.innerText === currentSetData.correctValue) {
+                        b.classList.add('correct');
+                    }
+                });
+            }
+
+            const expBox = document.getElementById('explanation-box');
+            expBox.innerHTML = `<strong>Explanation:</strong> ${currentSetData.explanation}`;
+            expBox.style.display = 'block';
+
+            updateNavigationButtonsControl();
+        }
+
+        function restoreSolvedCardUIState() {
+            const currentSetData = activeQuestionSets[activeQuestionIndex];
+            const savedChoiceIdx = selectedAnswersTracking[activeQuestionIndex];
+            const buttons = document.querySelectorAll('.term-btn');
+            const expBox = document.getElementById('explanation-box');
+
+            buttons.forEach((b, idx) => {
+                b.disabled = true;
+                const matchesTargetValue = (b.innerText === currentSetData.correctValue);
+                
+                if (matchesTargetValue) {
+                    b.classList.add('correct');
+                }
+                if (idx === savedChoiceIdx && !matchesTargetValue) {
+                    b.classList.add('incorrect');
+                }
+            });
+
+            expBox.innerHTML = `<strong>Explanation:</strong> ${currentSetData.explanation}`;
+            expBox.style.display = 'block';
+
+            updateNavigationButtonsControl();
+        }
+
+        function updateNavigationButtonsControl() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            prevBtn.disabled = (activeQuestionIndex === 0);
+
+            if (activeQuestionIndex === activeQuestionSets.length - 1) {
+                nextBtn.innerText = "Finish 🏁";
+            } else {
+                nextBtn.innerText = "Next ➡️";
+            }
+
+            nextBtn.disabled = (selectedAnswersTracking[activeQuestionIndex] === null);
+        }
+
+        function nextQuestion() {
+            if (activeQuestionIndex < activeQuestionSets.length - 1) {
+                activeQuestionIndex++;
+                renderActiveQuestionSet();
+            } else {
+                showFinalRecapSummary();
+            }
+        }
+
+        function prevQuestion() {
+            if (activeQuestionIndex > 0) {
+                activeQuestionIndex--;
+                renderActiveQuestionSet();
+            }
+        }
+
+        function showFinalRecapSummary() {
+            document.getElementById('game-ui').style.display = 'none';
+            document.getElementById('final-score-text').innerText = `${cumulativeScore} / ${activeQuestionSets.length}`;
+            document.getElementById('end-screen').style.display = 'block';
+        }
+
+        function resetToSetup() {
+            document.getElementById('game-ui').style.display = 'none';
+            document.getElementById('end-screen').style.display = 'none';
+            document.getElementById('setup-screen').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
