@@ -118,12 +118,22 @@
                     <a href="oddball.html">Oddball</a>
                 </div>
             </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>⚖️ Confusing Sets</h1>
-        <p style="text-align: center;">Drag the definitions to the correct term.</p>
+        
+        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 600px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
+            <strong>Sorting Protocol:</strong> Closely related vocabulary terms can easily trick you on exam day! Untangle them by dragging each definition block from the bottom pool and dropping it onto its matching psychology term box. Once a set is correctly aligned, it will lock green. Match all definitions in the set to clear it and advance to the next round!
+        </div>
 
         <div style="text-align: center; margin-bottom: 1rem;">
             <select id="unit-select" onchange="startGame()">
@@ -152,9 +162,9 @@
         let currentPool = [];
         let currentSet = null;
         let solvedCount = 0;
-        let activeZonesCount = 0; // Tracks if we are looking for 2 or 3 matches
+        let activeZonesCount = 0; 
 
-        // 1. Load Data (Updated to point to confusingpairs.json with error handling)
+        // 1. Load Data
         fetch('confusingpairs.json')
             .then(res => res.json())
             .then(data => {
@@ -193,31 +203,26 @@
             nextPair();
         }
 
-        // 2. Setup Round (Dynamic for 2 or 3 items)
+        // 2. Setup Round
         function nextPair() {
             if(currentPool.length === 0) {
                 document.getElementById('zones-container').innerHTML = "<h3 style='text-align:center'>No sets found!</h3>";
                 return;
             }
 
-            // Reset UI
             document.getElementById('next-btn').style.display = 'none';
             const zonesContainer = document.getElementById('zones-container');
             zonesContainer.innerHTML = ''; 
             const pool = document.getElementById('def-pool');
             pool.innerHTML = '';
 
-            // Pick random set
             currentSet = currentPool[Math.floor(Math.random() * currentPool.length)];
 
-            // Build our list of items for this round
-            // We check if term_3 exists and is not empty
             let items = [
                 { term: currentSet.term_1, def: currentSet.definition_1, id: "def_1" },
                 { term: currentSet.term_2, def: currentSet.definition_2, id: "def_2" }
             ];
 
-            // Check for triplet
             if (currentSet.term_3 && currentSet.term_3.trim() !== "") {
                 items.push({ 
                     term: currentSet.term_3, 
@@ -228,16 +233,13 @@
 
             activeZonesCount = items.length;
 
-            // Create Drop Zones
             items.forEach((item, index) => {
                 const zone = document.createElement('div');
                 zone.className = 'drop-zone';
-                // We set the Target ID to match the definition ID
                 zone.dataset.correctId = item.id; 
                 zone.ondragover = allowDrop;
                 zone.ondrop = drop;
                 
-                // Add header
                 const h3 = document.createElement('h3');
                 h3.innerText = item.term;
                 zone.appendChild(h3);
@@ -245,8 +247,6 @@
                 zonesContainer.appendChild(zone);
             });
 
-            // Create Draggable Definitions
-            // Shuffle them so they aren't in order 1, 2, 3
             let shuffledItems = [...items].sort(() => Math.random() - 0.5);
 
             shuffledItems.forEach(item => {
@@ -256,7 +256,6 @@
                 div.innerText = item.def;
                 div.id = item.id;
                 
-                // Event Listeners
                 div.ondragstart = drag;
                 div.addEventListener('touchstart', handleTouchStart, {passive: false});
                 div.addEventListener('touchmove', handleTouchMove, {passive: false});
@@ -277,7 +276,6 @@
         }
 
         function handleDropLogic(element, target) {
-            // Ensure we drop on the zone div
             if(!target.classList.contains('drop-zone')) {
                 target = target.closest('.drop-zone');
             }
@@ -285,7 +283,6 @@
 
             const correctId = target.dataset.correctId;
             
-            // Check Match
             if(element.id === correctId) {
                 target.appendChild(element); 
                 element.classList.add('locked'); 
@@ -296,7 +293,6 @@
         }
 
         function checkWin() {
-            // Count how many zones are green (correct)
             const correctZones = document.querySelectorAll('.correct-zone').length;
             
             if(correctZones === activeZonesCount) {
@@ -343,7 +339,10 @@
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
         
-        <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+        <p style="margin-bottom: 15px;">
+            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
         
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
