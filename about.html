@@ -51,10 +51,40 @@
             border-radius: 5px;
         }
 
+        /* --- VISITOR MAP GRAPHIC --- */
+        .map-container {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 650px;
+        }
+
+        .map-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .map-caption {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 12px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
             .about-container {
                 padding: 20px; 
+            }
+            .map-container {
+                margin: 20px auto;
+            }
+            .map-caption {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -117,6 +147,13 @@
             <p>The journey to get here actually started with a crash—literally. My first attempt at building an interactive study tool was on Canva, but the sheer volume of AP Psychology terms, questions, and topics kept bringing the system down. I went back to the drawing board and custom-built this version from the ground up.</p>
             
             <p>Initially, it was just a tool for my own students. But once I saw the final product, I shared it with a community of fellow psychology teachers, and it took off. What started in one classroom quickly went global—in the first three months alone, the site welcomed students from almost every US state and nearly 1,200 different cities across 41 countries! During the week of the AP exam, the site averaged over 2,000 visits a day, spiking to an incredible 8,000 visits in the final 24 hours before the test.</p>
+            
+            <div class="map-container">
+                <img src="images/2026global.png" alt="Psych Review Hub Global Visitor Map" class="map-image">
+                <div class="map-caption">
+                    What started as a local review tool has now helped psychology students from all across the globe! Here is a look at where our community is studying from this semester.
+                </div>
+            </div>
             
             <p>Now, Psych Review Hub has been completely rebuilt and expanded to be even more powerful—designed to be your go-to resource all year long, not just during the final exam cram.</p>
 
