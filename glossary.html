@@ -98,11 +98,58 @@
             line-height: 1.5;
             font-size: 0.95rem;
         }
+
+        /* --- BACK TO TOP STYLES --- */
+        .back-to-top-inline {
+            float: right;
+            font-size: 0.9rem;
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .back-to-top-inline:hover {
+            text-decoration: underline;
+        }
+
+        #backToTopBtn {
+            display: none; 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 99; 
+            font-size: 1.2rem;
+            border: none; 
+            outline: none; 
+            background-color: var(--accent); 
+            color: white; 
+            cursor: pointer; 
+            padding: 12px 18px; 
+            border-radius: 50px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #3b5bdb; 
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            #backToTopBtn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
+    <nav id="top">
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
         
         <label for="menu-toggle" class="menu-icon">☰</label>
@@ -160,10 +207,22 @@
         </div>
     </div>
 
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑ Top</button>
+
     <script>
         let allTerms = [];
         let allTopics = [];
         let sortMode = 'alpha'; // default view
+
+        // Updated 2024 AP Psych Unit Titles Dictionary
+        const unitTitles = {
+            "Unit 0": "Science Practices",
+            "Unit 1": "Biological Bases of Behavior",
+            "Unit 2": "Cognition",
+            "Unit 3": "Development and Learning",
+            "Unit 4": "Social Psychology and Personality",
+            "Unit 5": "Mental and Physical Health"
+        };
 
         // 1. Fetch Data
         Promise.all([
@@ -229,7 +288,7 @@
                     
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.innerText = letter;
+                    h2.innerHTML = `${letter} <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
                     section.appendChild(h2);
                     
                     grouped[letter].sort((a,b) => a.term.localeCompare(b.term)).forEach(t => {
@@ -256,9 +315,15 @@
                     const unitSec = document.createElement('div');
                     unitSec.className = 'glossary-section unit-section';
                     
+                    // Lookup Unit Title from our dictionary
+                    let displayUnit = unit;
+                    if (unitTitles[unit]) {
+                        displayUnit = `${unit} - ${unitTitles[unit]}`;
+                    }
+
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.innerText = unit;
+                    h2.innerHTML = `${displayUnit} <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
                     unitSec.appendChild(h2);
                     
                     Object.keys(grouped[unit]).sort().forEach(topic => {
@@ -273,7 +338,7 @@
                         
                         const h3 = document.createElement('h3');
                         h3.className = 'topic-header';
-                        h3.innerText = topicTitle;
+                        h3.innerHTML = `${topicTitle} <span class="back-to-top-inline" style="font-size: 0.8rem;" onclick="scrollToTop()">↑ Top</span>`;
                         topicSec.appendChild(h3);
                         
                         grouped[unit][topic].sort((a,b) => a.term.localeCompare(b.term)).forEach(t => {
@@ -332,6 +397,28 @@
                 
                 // Hide header if nothing is visible under it
                 section.style.display = sectionHasVisible ? 'block' : 'none';
+            });
+        }
+
+        // --- BACK TO TOP LOGIC ---
+        let topButton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         }
     </script>
