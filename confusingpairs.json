@@ -14,11 +14,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Quantitative Data",
-      "definition_1": "\"Deals with numbers- height",
-      "term_2": "weight",
-      "definition_2": "time\"",
-      "term_3": "Qualitative Data",
-      "definition_3": "\"Deals with descriptions- color"
+      "definition_1": "Deals with numbers- height, weight, time",
+      "term_2": "Qualitative Data",
+      "definition_2": "Deals with descriptions- color, smell, taste"
     },
     {
       "id": "3",
@@ -97,11 +95,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Sympathetic Nervous System",
-      "definition_1": "\"The flight",
-      "term_2": "fight or freeze response. Automatically accelerates heart rate",
-      "definition_2": "breathing",
-      "term_3": "dilates pupils",
-      "definition_3": "slows down digestion\""
+      "definition_1": "The flight, fight or freeze response. Automatically accelerates heart rate, breathing, dilates pupils, slows down digestion",
+      "term_2": "Parasympathetic Nervous System",
+      "definition_2": "Calms you down after a stressful event; rest and digest"
     },
     {
       "id": "12",
@@ -173,11 +169,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Rods",
-      "definition_1": "\"Night and peripheral vision",
-      "term_2": "black",
-      "definition_2": "white",
-      "term_3": "and shades of gray\"",
-      "definition_3": "Cones"
+      "definition_1": "Night and peripheral vision, black, white, and shades of gray",
+      "term_2": "Cones",
+      "definition_2": "Day, detailed, and color vision"
     },
     {
       "id": "20",
@@ -319,11 +313,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Generalization",
-      "definition_1": "\"In conditioning",
-      "term_2": "response to similar stimuli\"",
-      "definition_2": "Discrimination",
-      "term_3": "Responds to only the conditioned stimulus",
-      "definition_3": ""
+      "definition_1": "In conditioning, response to similar stimuli",
+      "term_2": "Discrimination",
+      "definition_2": "Responds to only the conditioned stimulus"
     },
     {
       "id": "36",
@@ -339,11 +331,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Collectivist Culture",
-      "definition_1": "\"Family",
-      "term_2": "community is stressed\"",
-      "definition_2": "Individualistic Culture",
-      "term_3": "Uniqueness of individual stressed",
-      "definition_3": ""
+      "definition_1": "Family, community is stressed",
+      "term_2": "Individualistic Culture",
+      "definition_2": "Uniqueness of individual stressed"
     },
     {
       "id": "38",
@@ -361,9 +351,7 @@
       "term_1": "Fundamental Attribution Error",
       "definition_1": "Blame a person’s disposition/personality and not consider the situation",
       "term_2": "Actor-Observer Bias",
-      "definition_2": "\"When its others you blame the person’s disposition",
-      "term_3": "when it’s yourself you blame the situation\"",
-      "definition_3": ""
+      "definition_2": "When its others you blame the person’s disposition, when it’s yourself you blame the situation"
     },
     {
       "id": "40",
@@ -381,11 +369,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Obsessive-Compulsive Disorder (OCD)",
-      "definition_1": "\"Intrusive thoughts",
-      "term_2": "anxiety driven obsessions & compulsions",
-      "definition_2": "people often recognize their thoughts/behaviors as irrational\"",
-      "term_3": "Obsessive-Compulsive Personality Disorder (OCPD)",
-      "definition_3": "\"Perfectionism"
+      "definition_1": "Intrusive thoughts, anxiety driven obsessions & compulsions, people often recognize their thoughts/behaviors as irrational",
+      "term_2": "Obsessive-Compulsive Personality Disorder (OCPD)",
+      "definition_2": "Perfectionism, control, and rigidity, no intrusive thoughts, but worry about order and rules, stubborn"
     },
     {
       "id": "42",
@@ -394,20 +380,16 @@
       "term_1": "Authoritarian Parenting",
       "definition_1": "Rules & obedience (my way or the highway)",
       "term_2": "Authoritative Parenting",
-      "definition_2": "\"Balanced approach",
-      "term_3": "give and take parenting\"",
-      "definition_3": ""
+      "definition_2": "Balanced approach, give and take parenting"
     },
     {
       "id": "43",
       "unit": "",
       "topic": "",
       "term_1": "Emotion Focused Coping",
-      "definition_1": "\"Coping to alleviate stress by avoiding stressor",
-      "term_2": "attending to emotional need\"",
-      "definition_2": "Problem Focused Coping",
-      "term_3": "Attempt to alleviate stress directly by changing stressor",
-      "definition_3": ""
+      "definition_1": "Coping to alleviate stress by avoiding stressor, attending to emotional need",
+      "term_2": "Problem Focused Coping",
+      "definition_2": "Attempt to alleviate stress directly by changing stressor"
     },
     {
       "id": "44",
@@ -488,9 +470,7 @@
       "term_1": "Anorexia Nervosa",
       "definition_1": "Starvation diet and excessive exercising",
       "term_2": "Bulimia Nervosa",
-      "definition_2": "\"Binge eating followed by vomiting",
-      "term_3": "laxative use",
-      "definition_3": "fasting or excessive exercise\""
+      "definition_2": "Binge eating followed by vomiting, laxative use, fasting or excessive exercise"
     },
     {
       "id": "53",
@@ -519,9 +499,7 @@
       "term_1": "Trichromatic Theory",
       "definition_1": "Theory that color comes from 3 different types of color receptors (R-G-B)",
       "term_2": "Opponent Process Theory",
-      "definition_2": "\"Theory that color comes from 3 sets of opposing retinal processes (red-green",
-      "term_3": "blue-yellow",
-      "definition_3": "white-black)\""
+      "definition_2": "Theory that color comes from 3 sets of opposing retinal processes (red-green, blue-yellow, white-black)"
     },
     {
       "id": "56",
@@ -573,11 +551,9 @@
       "unit": "",
       "topic": "",
       "term_1": "Sensorimotor Stage",
-      "definition_1": "\"Birth to about 2. Lack object permanence",
-      "term_2": "explore with senses",
-      "definition_2": "stranger anxiety\"",
-      "term_3": "Preoperational Stage",
-      "definition_3": "End of sensorimotor stage to about 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation"
+      "definition_1": "Birth to about 2. Lack object permanence, explore with senses, stranger anxiety",
+      "term_2": "Preoperational Stage",
+      "definition_2": "End of sensorimotor stage to about 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation"
     },
     {
       "id": "62",
@@ -604,9 +580,7 @@
       "term_1": "Consciousness",
       "definition_1": "Being aware of the immediate sensory environment",
       "term_2": "Conscientiousness",
-      "definition_2": "\"Big 5 personality trait measuring timeliness",
-      "term_3": "dependability",
-      "definition_3": "accountability etc.\""
+      "definition_2": "Big 5 personality trait measuring timeliness, dependability, accountability etc."
     },
     {
       "id": "65",
@@ -633,44 +607,36 @@
       "unit": "",
       "topic": "",
       "term_1": "Wavelength (Sound)",
-      "definition_1": "\"The physical property of a sound wave that determines pitch (low pitches are long",
-      "term_2": "high pitches are short)\"",
-      "definition_2": "Amplitude (Sound)",
-      "term_3": "\"The physical property of a sound wave that determines loudness (loud are tall",
-      "definition_3": "soft are short)\""
+      "definition_1": "The physical property of a sound wave that determines pitch (low pitches are long, high pitches are short)",
+      "term_2": "Amplitude (Sound)",
+      "definition_2": "The physical property of a sound wave that determines loudness (loud are tall, soft are short)"
     },
     {
       "id": "68",
       "unit": "",
       "topic": "",
       "term_1": "Wavelength (Color)",
-      "definition_1": "\"The physical property of a light wave that determines hue (color) (red",
-      "term_2": "long; green",
-      "definition_2": "medium; blue",
-      "term_3": "short)\"",
-      "definition_3": "Amplitude (Color)"
+      "definition_1": "The physical property of a light wave that determines hue (color) (red,long; green,medium; blue, short)",
+      "term_2": "Amplitude (Color)",
+      "definition_2": "The physical property of a light wave that determines brightness (tall = bright, short = dull)"
     },
     {
       "id": "69",
       "unit": "",
       "topic": "",
       "term_1": "Myopia (Nearsightedness)",
-      "definition_1": "\"Eye is too long",
-      "term_2": "light focused in front of retina",
-      "definition_2": "blurry vision when looking at far away objects\"",
-      "term_3": "Hyperopia (Farsightedness)",
-      "definition_3": "\"Eye is too short"
+      "definition_1": "Eye is too long, light focused in front of retina, blurry vision when looking at far away objects",
+      "term_2": "Hyperopia (Farsightedness)",
+      "definition_2": "Eye is too short, light focused behind retina, blurry vision when looking at close object"
     },
     {
       "id": "70",
       "unit": "",
       "topic": "",
       "term_1": "Multiple Sclerosis",
-      "definition_1": "\"Destruction of myelin sheath",
-      "term_2": "causes impaired mobility",
-      "definition_2": "paralysis",
-      "term_3": "pain",
-      "definition_3": "impacts CNS\""
+      "definition_1": "Destruction of myelin sheath, causes impaired mobility, paralysis, pain, impacts CNS",
+      "term_2": "Myasthenia Gravis",
+      "definition_2": "Acetylcholine blocked, causes poor motor control and paralysis, impacts PNS"
     },
     {
       "id": "71",
@@ -697,9 +663,7 @@
       "term_1": "Gambler’s Fallacy",
       "definition_1": "People believe outcome of random event is influenced by previous outcomes",
       "term_2": "Sunk-Cost Fallacy",
-      "definition_2": "\"People continue invest time",
-      "term_3": "money",
-      "definition_3": "effort into something because they have already invested\""
+      "definition_2": "People continue invest time, money, effort into something because they have already invested"
     },
     {
       "id": "74",
@@ -708,7 +672,7 @@
       "term_1": "Sensory Interaction",
       "definition_1": "Process by which different senses influence each other to enhance perception (ex- way taste and smell work together)",
       "term_2": "Synesthesia",
-      "definition_2": "\"Neurological condition where stimulation of one sense involuntarily triggers another unrelated sense (ex- a person may \"\"see\"\" colors when they hear music)\""
+      "definition_2": "Neurological condition where stimulation of one sense involuntarily triggers another unrelated sense (ex- a person may see colors when they hear music)"
     },
     {
       "id": "75",
@@ -724,11 +688,11 @@
       "unit": "",
       "topic": "",
       "term_1": "Schema",
-      "definition_1": "\"How our brain organizes information and experiences (a dog",
-      "term_2": "has 4 legs",
-      "definition_2": "barks",
-      "term_3": "helps you recognize dogs you’ve never seen before)\"",
-      "definition_3": "Prototype"
+      "definition_1": "How our brain organizes information and experiences (a dog, has 4 legs, barks, helps you recognize dogs you’ve never seen before)",
+      "term_2": "Prototype",
+      "definition_2": "Best example or first one that comes to mind (you own a Lab, the prototype when thinking about a dog is Lab)",
+      "term_3": "Perceptual Set",
+      "definition_3": "Expectation influences perception (when walking past a dog park, you hear rustling in bushes, you expect a dog to pop but it could be a cat or raccoon)"
     }
   ]
 }
