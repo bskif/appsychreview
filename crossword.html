@@ -250,12 +250,12 @@
                 <label for="unit-select" style="font-weight: bold; display: block; text-align: left; margin-bottom: 5px;">Select Vocabulary Pool:</label>
                 <select id="unit-select">
                     <option value="mixed">All Units Mixed (Full Diagnostic Practice)</option>
-                    <option value="Unit 0">Unit 0: Scientific Attitude & Foundations</option>
-                    <option value="Unit 1">Unit 1: Biological Bases of Behavior</option>
-                    <option value="Unit 2">Unit 2: Cognition & Memory</option>
-                    <option value="Unit 3">Unit 3: Developmental & Learning Perspectives</option>
-                    <option value="Unit 4">Unit 4: Social, Personality & Motivation</option>
-                    <option value="Unit 5">Unit 5: Clinical Psychology & Treatment</option>
+                    <option value="Unit 0">Unit 0 - Scientific Foundations</option>
+                    <option value="Unit 1">Unit 1 - Biological Bases of Behavior</option>
+                    <option value="Unit 2">Unit 2 - Cognition</option>
+                    <option value="Unit 3">Unit 3 - Development and Learning</option>
+                    <option value="Unit 4">Unit 4 - Social Psychology and Personality</option>
+                    <option value="Unit 5">Unit 5 - Mental and Physical Health</option>
                 </select>
 
                 <button class="btn" onclick="initCrosswordGenerator()" style="width: 100%; padding: 12px; margin-top: 10px;">Generate Crossword Grid</button>
@@ -308,18 +308,19 @@
         let globalMasterTerms = [];
         let compiledCrosswordData = null;
 
-        // Auto-fetch your actual terms JSON array file on initial load
+        // Corrected parser to handle direct array structures from terms.json
         window.addEventListener('DOMContentLoaded', () => {
             fetch('terms.json')
                 .then(res => res.json())
                 .then(data => {
-                    globalMasterTerms = data.terms || data;
+                    // Safe handling for raw array formats or wrapped objects
+                    globalMasterTerms = Array.isArray(data) ? data : (data.terms || []);
                 })
                 .catch(err => console.error("Error loading terms database profile:", err));
         });
 
         function initCrosswordGenerator() {
-            if (globalMasterTerms.length === 0) {
+            if (!globalMasterTerms || globalMasterTerms.length === 0) {
                 alert("The vocabulary term file is currently downloading. Please wait a quick second and try again!");
                 return;
             }
@@ -328,15 +329,16 @@
             
             // Filter pool matching clean word criteria
             let filteredList = globalMasterTerms.filter(item => {
+                if (!item.term || !item.definition) return false;
                 if (targetPool !== 'mixed' && item.unit !== targetPool) return false;
                 
-                // Clean crosswords require standard alphabetical strings
+                // Exclude long multi-word definitions that ruin crossword grid rendering
                 let cleanWord = item.term.replace(/[^a-zA-Z]/g, '');
-                return cleanWord.length >= 3 && cleanWord.length <= 14;
+                return cleanWord.length >= 3 && cleanWord.length <= 13;
             });
 
-            if (filteredList.length < 10) {
-                alert("Not enough short, single-word vocabulary items found in this target pool block to build an intersecting grid. Please choose a different Unit pool configuration or Mixed!");
+            if (filteredList.length < 8) {
+                alert("Not enough single-word vocabulary items found in this target pool block to build an intersecting grid. Please choose a different Unit pool configuration or Mixed!");
                 return;
             }
 
@@ -344,21 +346,20 @@
             let executionSuccess = false;
             let attempts = 0;
             
-            while (!executionSuccess && attempts < 30) {
+            while (!executionSuccess && attempts < 50) {
                 attempts++;
-                // Pick random subset of 12 words to compile
-                let operationalDeck = [...filteredList].sort(() => 0.5 - Math.random()).slice(0, 13);
+                // Select a healthy sample set to attempt intersection compiling
+                let operationalDeck = [...filteredList].sort(() => 0.5 - Math.random()).slice(0, 14);
                 let puzzleLayout = attemptCompilationLayout(operationalDeck);
                 
-                if (puzzleLayout && puzzleLayout.placedWords.length >= 7) {
+                if (puzzleLayout && puzzleLayout.placedWords.length >= 6) {
                     compiledCrosswordData = puzzleLayout;
                     executionSuccess = true;
                 }
             }
 
             if (!executionSuccess) {
-                // Fail-safe generation using default broader pool parameters
-                alert("We couldn't get a highly locked overlap layout from that specific draw. Click generate again to reroll the selection grid structure!");
+                alert("We couldn't get a tight intersection layout from that specific random sample. Click generate again to re-roll the grid layout!");
                 return;
             }
 
@@ -375,8 +376,7 @@
                 definition: w.definition
             })).sort((a,b) => b.cleanTerm.length - a.cleanTerm.length); // Longest strings first
 
-            // Establish arbitrary tracking matrix bounds
-            let size = 30;
+            let size = 32;
             let grid = Array(size).fill(null).map(() => Array(size).fill(''));
             let placedWords = [];
 
@@ -398,7 +398,6 @@
                 let current = wordsToPlace[wIdx];
                 let placementFound = false;
 
-                // Scan positions against placed words
                 for (let placed of placedWords) {
                     if (placementFound) break;
 
@@ -409,13 +408,11 @@
 
                         for (let j = 0; j < placed.term.length; j++) {
                             if (placed.term[j] === currentLetter) {
-                                // Letter matching intersection hit! Determine alternative directional vector
                                 let targetDir = (placed.dir === 'across') ? 'down' : 'across';
                                 let tRow = (targetDir === 'down') ? (placed.row - i) : (placed.row + j);
                                 let tCol = (targetDir === 'down') ? (placed.col + j) : (placed.col - i);
 
                                 if (verifyPlacementLegality(grid, current.cleanTerm, tRow, tCol, targetDir, size)) {
-                                    // Complete assignment onto board
                                     for (let k = 0; k < current.cleanTerm.length; k++) {
                                         let currR = (targetDir === 'down') ? tRow + k : tRow;
                                         let currC = (targetDir === 'down') ? tCol : tCol + k;
@@ -434,19 +431,15 @@
                 }
             }
 
-            // Crop down boundary matrix parameters for rendering viewport efficiency
             return calculateGridBoundingBox(grid, placedWords, size);
         }
 
         function verifyPlacementLegality(grid, word, row, col, dir, max) {
-            // Check out of bounds bounds
             if (row < 1 || col < 1 || row >= max - 1 || col >= max - 1) return false;
             if (dir === 'down' && row + word.length >= max - 1) return false;
             if (dir === 'across' && col + word.length >= max - 1) return false;
 
-            let overlapCount = 0;
-
-            // Verify trailing safety buffer cell before entry
+            // Verify trailing safety buffers
             if (dir === 'down') {
                 if (grid[row - 1][col] !== '') return false;
                 if (grid[row + word.length][col] !== '') return false;
@@ -459,13 +452,9 @@
                 let r = (dir === 'down') ? row + i : row;
                 let c = (dir === 'down') ? col : col + i;
 
-                if (grid[r][c] !== '' && grid[r][c] !== word[i]) return false; // Collision mismatch
-                if (grid[r][c] === word[i]) {
-                    overlapCount++;
-                    continue;
-                }
+                if (grid[r][c] !== '' && grid[r][c] !== word[i]) return false; 
+                if (grid[r][c] === word[i]) continue;
 
-                // Cross-directional structural integrity safety checks
                 if (dir === 'down') {
                     if (grid[r][c-1] !== '' || grid[r][c+1] !== '') return false;
                 } else {
@@ -478,10 +467,12 @@
 
         function calculateGridBoundingBox(fullGrid, placedWords, maxSize) {
             let minR = maxSize, maxR = 0, minC = maxSize, maxC = 0;
+            let count = 0;
 
             for (let r = 0; r < maxSize; r++) {
                 for (let c = 0; c < maxSize; c++) {
                     if (fullGrid[r][c] !== '') {
+                        count++;
                         if (r < minR) minR = r;
                         if (r > maxR) maxR = r;
                         if (c < minC) minC = c;
@@ -490,7 +481,8 @@
                 }
             }
 
-            // Pad margins
+            if (count === 0) return null;
+
             minR = Math.max(0, minR - 1);
             maxR = Math.min(maxSize - 1, maxR + 1);
             minC = Math.max(0, minC - 1);
@@ -506,21 +498,19 @@
                 }
             }
 
-            // Re-normalize layout pointers
             let structuralWords = placedWords.map(w => ({
                 ...w,
                 row: w.row - minR,
                 col: w.col - minC
             }));
 
-            // Assign number anchors logically sorting top-to-bottom/left-to-right
-            let itemMarker = 1;
-            let numberedCoordinates = {};
-
             structuralWords.sort((a,b) => {
                 if (a.row !== b.row) return a.row - b.row;
                 return a.col - b.col;
             });
+
+            let itemMarker = 1;
+            let numberedCoordinates = {};
 
             for (let w of structuralWords) {
                 let coordKey = `${w.row}_${w.col}`;
@@ -537,7 +527,8 @@
                 grid: croppedGrid,
                 words: structuralWords,
                 rows: rows,
-                cols: cols
+                cols: cols,
+                placedWords: structuralWords
             };
         }
 
@@ -551,7 +542,6 @@
             acrossContainer.innerHTML = '';
             downContainer.innerHTML = '';
 
-            // Generate HTML structure grid mapping array indices
             for (let r = 0; r < compiledCrosswordData.rows; r++) {
                 let tr = document.createElement('tr');
                 for (let c = 0; c < compiledCrosswordData.cols; c++) {
@@ -564,7 +554,6 @@
                     if (letter !== '') {
                         td.classList.add('white-cell');
                         
-                        // Check if an anchor junction intersection number belongs here
                         let matchingWord = compiledCrosswordData.words.find(w => w.row === r && w.col === c);
                         if (matchingWord) {
                             let numSpan = document.createElement('span');
@@ -579,20 +568,17 @@
                         input.maxLength = 1;
                         input.setAttribute('autocomplete', 'off');
 
-                        // Arrow navigation keys and automatic tracking triggers
                         input.addEventListener('focus', () => triggerCellFocusHighlight(r, c));
                         input.addEventListener('input', (e) => handleLetterInputMovement(e, r, c));
                         input.addEventListener('keydown', (e) => handleKeyNavEvents(e, r, c));
 
                         td.appendChild(input);
                     }
-
                     tr.appendChild(td);
                 }
                 table.appendChild(tr);
             }
 
-            // Append textual clues lists orderly
             let acrossWords = compiledCrosswordData.words.filter(w => w.dir === 'across').sort((a,b) => a.num - b.num);
             let downWords = compiledCrosswordData.words.filter(w => w.dir === 'down').sort((a,b) => a.num - b.num);
 
@@ -615,16 +601,14 @@
             });
         }
 
-        let dynamicActiveDirection = 'across'; // Track navigation orientation flow dynamically
+        let dynamicActiveDirection = 'across';
 
         function triggerCellFocusHighlight(row, col) {
-            // Remove lingering focus highlights
             document.querySelectorAll('.crossword-cell').forEach(el => {
                 el.classList.remove('highlighted', 'active-cell-focus');
             });
             document.querySelectorAll('.clue-item').forEach(el => el.classList.remove('active-clue-list'));
 
-            // Look up if cell matches active structural definitions inside pool
             let activeCandidates = compiledCrosswordData.words.filter(w => {
                 if (w.dir === 'across') {
                     return row === w.row && col >= w.col && col < w.col + w.term.length;
@@ -636,17 +620,14 @@
             if (activeCandidates.length === 0) return;
 
             let activeWord = activeCandidates.find(w => w.dir === dynamicActiveDirection) || activeCandidates[0];
-            dynamicActiveDirection = activeWord.dir; // Normalize orientation state
+            dynamicActiveDirection = activeWord.dir;
 
-            // Render HUD hint box panel values
             const HUD = document.getElementById('active-clue-display');
             HUD.innerHTML = `<strong>${activeWord.num}-${activeWord.dir.toUpperCase()}:</strong> ${activeWord.hint}`;
 
-            // Sync list highlights
             let targetClueEl = document.getElementById(`clue-${activeWord.dir}-${activeWord.num}`);
             if (targetClueEl) targetClueEl.classList.add('active-clue-list');
 
-            // Apply color tint across selected rows or columns
             for (let i = 0; i < activeWord.term.length; i++) {
                 let r = (activeWord.dir === 'down') ? activeWord.row + i : activeWord.row;
                 let c = (activeWord.dir === 'down') ? activeWord.col : activeWord.col + i;
@@ -667,7 +648,6 @@
             e.target.value = val;
 
             if (val.length === 1) {
-                // Seek forward step matching structural direction vector
                 let nextR = (dynamicActiveDirection === 'down') ? row + 1 : row;
                 let nextC = (dynamicActiveDirection === 'down') ? col : col + 1;
 
@@ -680,7 +660,6 @@
 
         function handleKeyNavEvents(e, row, col) {
             if (e.key === 'Backspace' && e.target.value === '') {
-                // Reverse backtrack input cursor step
                 let prevR = (dynamicActiveDirection === 'down') ? row - 1 : row;
                 let prevC = (dynamicActiveDirection === 'down') ? col : col - 1;
 
@@ -690,7 +669,6 @@
                     e.preventDefault();
                 }
             } else if (e.key === ' ' || e.key === 'Spacebar') {
-                // Toggle orientation tracking direction manually via Spacebar
                 dynamicActiveDirection = (dynamicActiveDirection === 'across') ? 'down' : 'across';
                 triggerCellFocusHighlight(row, col);
                 e.preventDefault();
@@ -703,7 +681,6 @@
             if (firstInput) firstInput.focus();
         }
 
-        // --- VERIFICATION CAPABILITIES ---
         function verifyCrosswordAnswers() {
             let cells = document.querySelectorAll('.crossword-cell.white-cell');
             
@@ -724,7 +701,7 @@
         }
 
         function revealCrosswordBoard() {
-            if (!confirm("Are you sure you want to reveal all solutions on the board? This will fill out the entire grid!")) return;
+            if (!confirm("Are you sure you want to reveal all solutions on the board?")) return;
             
             let cells = document.querySelectorAll('.crossword-cell.white-cell');
             cells.forEach(cell => {
