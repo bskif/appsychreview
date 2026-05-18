@@ -237,6 +237,13 @@
                     <a href="oddball.html">Oddball</a>
                 </div>
             </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
@@ -245,7 +252,9 @@
 
     <div id="setup-screen">
         <h3>Mission Briefing</h3>
-        <p>Select your target data and deploy your fleet.</p>
+        <p style="font-size: 1.05rem; text-align: left; line-height: 1.5; color: #444; margin-bottom: 20px; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--water); border-radius: 4px;">
+            <strong>Rules of Engagement:</strong> Select your review unit and deploy your fleet. To attack, click a coordinate on the Enemy Waters grid. You will be prompted with a psychology term—answer correctly to lock your weapons and fire! If you miss the question, your weapons misfire and you lose your turn. Sink all 5 enemy ships before they sink yours to win!
+        </p>
         
         <label style="display:block; text-align:left; font-weight:bold;">Select Unit:</label>
         <select id="unit-select">
@@ -691,7 +700,10 @@
 <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
     
-    <p style="margin-bottom: 15px;"><a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline;">Privacy Policy</a></p>
+    <p style="margin-bottom: 15px;">
+        <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+        <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+    </p>
 
     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 </footer>
