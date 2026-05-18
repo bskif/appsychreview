@@ -11,22 +11,22 @@
       "id": "2",
       "unit": "Unit 0",
       "topic": "0.1",
-      "term": "\"Curiosity",
-      "definition": "Skepticism"
+      "term": "Curiosity, Skepticism, Humility",
+      "definition": "The three main components of the scientific attitude; the passion to explore, the refusal to accept claims without evidence, and the willingness to admit when one is wrong."
     },
     {
       "id": "3",
       "unit": "Unit 0",
       "topic": "0.1",
       "term": "Critical Thinking",
-      "definition": "\"Thinking that does not blindly accept arguments and conclusions; rather"
+      "definition": "Thinking that does not blindly accept arguments and conclusions; rather, it examines assumptions, discerns hidden values, evaluates evidence, and assesses conclusions."
     },
     {
       "id": "4",
       "unit": "Unit 0",
       "topic": "0.1",
       "term": "Hindsight bias",
-      "definition": "\"The tendency to believe"
+      "definition": "The tendency to believe, after learning an outcome, that one would have foreseen it (also known as the I-knew-it-all-along phenomenon)."
     },
     {
       "id": "5",
@@ -47,7 +47,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Peer reviewers",
-      "definition": "\"Scientific experts who evaluate a research article's theory"
+      "definition": "Scientific experts who evaluate a research article's theory, originality, and accuracy before it is published to ensure quality."
     },
     {
       "id": "8",
@@ -61,7 +61,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Hypothesis",
-      "definition": "\"A testable prediction"
+      "definition": "A testable prediction, often implied by a theory."
     },
     {
       "id": "10",
@@ -75,7 +75,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Replication",
-      "definition": "\"Repeating the essence of a research study"
+      "definition": "Repeating the essence of a research study, usually with different participants in different situations, to see whether the basic finding extends to other participants and circumstances."
     },
     {
       "id": "12",
@@ -103,7 +103,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Survey",
-      "definition": "\"A technique for ascertaining the self-reported attitudes or behaviors of a particular group"
+      "definition": "A technique for ascertaining the self-reported attitudes or behaviors of a particular group, usually by questioning a representative, random sample of the group."
     },
     {
       "id": "16",
@@ -117,7 +117,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Self-report bias",
-      "definition": "\"A methodological problem that arises when researchers rely on participants to give their own accounts of their behaviors or feelings"
+      "definition": "A methodological problem that arises when researchers rely on participants to give their own accounts of their behaviors or feelings, which may be inaccurate."
     },
     {
       "id": "18",
@@ -131,7 +131,7 @@
       "unit": "Unit 0",
       "topic": "0.2",
       "term": "Population",
-      "definition": "\"All those in a group being studied"
+      "definition": "All those in a group being studied, from which samples may be drawn."
     },
     {
       "id": "20",
@@ -173,14 +173,14 @@
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Non-Experimental Methodology",
-      "definition": "\"Research methods that do not involve manipulation of independent variables (e.g."
+      "definition": "Research methods that do not involve manipulation of independent variables (e.g., observation, correlation, case studies)."
     },
     {
       "id": "26",
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Correlation",
-      "definition": "\"A measure of the extent to which two variables change together"
+      "definition": "A measure of the extent to which two variables change together, and thus of how well either variable predicts the other."
     },
     {
       "id": "27",
@@ -201,21 +201,21 @@
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Scatterplot",
-      "definition": "\"A graphed cluster of dots"
+      "definition": "A graphed cluster of dots, each of which represents the values of two variables. The slope suggests the direction of the relationship."
     },
     {
       "id": "30",
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Illusory Correlation",
-      "definition": "\"The perception of a relationship where none exists"
+      "definition": "The perception of a relationship where none exists, or perceiving a stronger-than-actual relationship."
     },
     {
       "id": "31",
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Directionality Problem",
-      "definition": "\"The situation in correlational research where it is known that two variables are related"
+      "definition": "The situation in correlational research where it is known that two variables are related, but it is unclear which variable is causing the other."
     },
     {
       "id": "32",
@@ -236,14 +236,14 @@
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Experimental Group",
-      "definition": "\"In an experiment"
+      "definition": "In an experiment, the group exposed to the treatment, that is, to one version of the independent variable."
     },
     {
       "id": "35",
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Control Group",
-      "definition": "\"In an experiment"
+      "definition": "In an experiment, the group not exposed to the treatment; contrasts with the experimental group and serves as a comparison."
     },
     {
       "id": "36",
@@ -264,7 +264,7 @@
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Random Assignment",
-      "definition": "\"Assigning participants to experimental and control groups by chance"
+      "definition": "Assigning participants to experimental and control groups by chance, thus minimizing preexisting differences between the different groups."
     },
     {
       "id": "39",
@@ -285,7 +285,7 @@
       "unit": "Unit 0",
       "topic": "0.3",
       "term": "Placebo",
-      "definition": "\"An inert substance or condition that may be administered instead of a presumed active agent"
+      "definition": "An inert substance or condition that may be administered instead of a presumed active agent, such as a drug, to see if it triggers the effects believed to characterize the active agent."
     },
     {
       "id": "42",
@@ -306,14 +306,14 @@
       "unit": "Unit 0",
       "topic": "0.4",
       "term": "Qualitative Research",
-      "definition": "\"Research that focuses on non-numerical data"
+      "definition": "Research that focuses on non-numerical data, such as subjective experiences, feelings, or beliefs."
     },
     {
       "id": "45",
       "unit": "Unit 0",
       "topic": "0.4",
       "term": "Likert Scales",
-      "definition": "\"A psychometric scale commonly involved in research that employs questionnaires (e.g."
+      "definition": "A psychometric scale commonly involved in research that employs questionnaires (e.g., Strongly Agree to Strongly Disagree)."
     },
     {
       "id": "46",
@@ -348,7 +348,7 @@
       "unit": "Unit 0",
       "topic": "0.4",
       "term": "Debriefing",
-      "definition": "\"The post-experimental explanation of a study"
+      "definition": "The post-experimental explanation of a study, including its purpose and any deceptions, to its participants."
     },
     {
       "id": "51",
@@ -369,7 +369,7 @@
       "unit": "Unit 0",
       "topic": "0.5",
       "term": "Measure of Central Tendency",
-      "definition": "\"A single score that represents a whole set of scores (e.g."
+      "definition": "A single score that represents a whole set of scores (e.g., mean, median, mode)."
     },
     {
       "id": "54",
@@ -383,7 +383,7 @@
       "unit": "Unit 0",
       "topic": "0.5",
       "term": "Mean",
-      "definition": "\"The arithmetic average of a distribution"
+      "definition": "The arithmetic average of a distribution, obtained by adding the scores and then dividing by the number of scores."
     },
     {
       "id": "56",
@@ -404,14 +404,14 @@
       "unit": "Unit 0",
       "topic": "0.5",
       "term": "Skewed Distribution",
-      "definition": "\"A representation of scores that lack symmetry around their average value (e.g."
+      "definition": "A representation of scores that lack symmetry around their average value (e.g., a long tail on one side)."
     },
     {
       "id": "59",
       "unit": "Unit 0",
       "topic": "0.5",
       "term": "Measures of Variation",
-      "definition": "\"Tools used to describe the distribution or dispersion of data (e.g."
+      "definition": "Tools used to describe the distribution or dispersion of data (e.g., range, standard deviation)."
     },
     {
       "id": "60",
@@ -432,7 +432,7 @@
       "unit": "Unit 0",
       "topic": "0.5",
       "term": "Normal Curve",
-      "definition": "\"A symmetrical"
+      "definition": "A symmetrical, bell-shaped curve that describes the distribution of many types of data; most scores fall near the mean."
     },
     {
       "id": "63",
@@ -460,28 +460,28 @@
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Biological perspective",
-      "definition": "\"A branch of psychology that links biological (genetic"
+      "definition": "A branch of psychology that links biological (genetic, neural, hormonal) and psychological processes."
     },
     {
       "id": "67",
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Psychodynamic perspective",
-      "definition": "\"A branch of psychology that studies how unconscious drives and conflicts influence behavior"
+      "definition": "A branch of psychology that studies how unconscious drives and conflicts influence behavior, and uses that information to treat people with psychological disorders."
     },
     {
       "id": "68",
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Behavioral perspective",
-      "definition": "\"The scientific study of observable behavior"
+      "definition": "The scientific study of observable behavior, and its explanation by principles of learning (e.g., conditioning, reinforcement)."
     },
     {
       "id": "69",
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Cognitive perspective",
-      "definition": "\"The scientific study of all the mental activities associated with thinking"
+      "definition": "The scientific study of all the mental activities associated with thinking, knowing, remembering, and communicating."
     },
     {
       "id": "70",
@@ -502,7 +502,7 @@
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Biopsychosocial perspective",
-      "definition": "\"An integrated approach that incorporates biological"
+      "definition": "An integrated approach that incorporates biological, psychological, and social-cultural levels of analysis."
     },
     {
       "id": "73",
@@ -516,14 +516,14 @@
       "unit": "Unit 1",
       "topic": "1.1",
       "term": "Nature",
-      "definition": "\"The influence of our inherited characteristics (genetics) on personality"
+      "definition": "The influence of our inherited characteristics (genetics) on personality, physical growth, and social interactions."
     },
     {
       "id": "75",
       "unit": "Unit 1",
       "topic": "1.1",
       "term": "Nurture",
-      "definition": "\"The influence of environmental factors such as family"
+      "definition": "The influence of environmental factors such as family, culture, and experience on development."
     },
     {
       "id": "76",
@@ -537,7 +537,7 @@
       "unit": "Unit 1",
       "topic": "1.1",
       "term": "Evolutionary perspective",
-      "definition": "\"The study of the evolution of behavior and the mind"
+      "definition": "The study of the evolution of behavior and the mind, using principles of natural selection."
     },
     {
       "id": "78",
@@ -565,7 +565,7 @@
       "unit": "Unit 1",
       "topic": "1.2",
       "term": "Central nervous system",
-      "definition": "\"The complex of nerve tissues that controls the activities of the body"
+      "definition": "The complex of nerve tissues that controls the activities of the body, comprising the brain and spinal cord."
     },
     {
       "id": "82",
@@ -586,14 +586,14 @@
       "unit": "Unit 1",
       "topic": "1.2",
       "term": "Sympathetic nervous system",
-      "definition": "\"The division of the autonomic nervous system that arouses the body"
+      "definition": "The division of the autonomic nervous system that arouses the body, mobilizing its energy in stressful situations (Fight or Flight)."
     },
     {
       "id": "85",
       "unit": "Unit 1",
       "topic": "1.2",
       "term": "Parasympathetic nervous system",
-      "definition": "\"The division of the autonomic nervous system that calms the body"
+      "definition": "The division of the autonomic nervous system that calms the body, conserving its energy (Rest and Digest)."
     },
     {
       "id": "86",
@@ -614,14 +614,14 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Glial cells",
-      "definition": "\"Cells in the nervous system that support"
+      "definition": "Cells in the nervous system that support, nourish, and protect neurons; they also play a role in learning and thinking."
     },
     {
       "id": "89",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Reflex arc",
-      "definition": "\"A neural pathway that controls a reflex"
+      "definition": "A neural pathway that controls a reflex, involving sensory neurons, interneurons in the spinal cord, and motor neurons."
     },
     {
       "id": "90",
@@ -677,7 +677,7 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Refractory period",
-      "definition": "\"A period of inactivity after a neuron has fired"
+      "definition": "A period of inactivity after a neuron has fired, during which it cannot fire again until it resets."
     },
     {
       "id": "98",
@@ -705,7 +705,7 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Multiple sclerosis",
-      "definition": "\"A disease in which the immune system eats away at the protective covering (myelin sheath) of nerves"
+      "definition": "A disease in which the immune system eats away at the protective covering (myelin sheath) of nerves, slowing communication."
     },
     {
       "id": "102",
@@ -733,14 +733,14 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Dopamine",
-      "definition": "\"Influences movement"
+      "definition": "Influences movement, learning, attention, and emotion; excess linked to schizophrenia, starved linked to Parkinson’s."
     },
     {
       "id": "106",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Serotonin",
-      "definition": "\"Affects mood"
+      "definition": "Affects mood, hunger, sleep, and arousal; undersupply linked to depression."
     },
     {
       "id": "107",
@@ -768,7 +768,7 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Endorphins",
-      "definition": "\"\"\"Morphine within\"\"—natural"
+      "definition": "Morphine within—natural, opiate-like neurotransmitters linked to pain control and to pleasure."
     },
     {
       "id": "111",
@@ -782,21 +782,21 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Acetylcholine",
-      "definition": "\"Enables muscle action"
+      "definition": "Enables muscle action, learning, and memory; deterioration of ACh-producing neurons leads to Alzheimer’s."
     },
     {
       "id": "113",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Hormones",
-      "definition": "\"Chemical messengers that are manufactured by the endocrine glands"
+      "definition": "Chemical messengers that are manufactured by the endocrine glands, travel through the bloodstream, and affect other tissues."
     },
     {
       "id": "114",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Adrenaline",
-      "definition": "\"A hormone secreted by the adrenal glands"
+      "definition": "A hormone secreted by the adrenal glands, especially in conditions of stress, increasing rates of blood circulation and breathing."
     },
     {
       "id": "115",
@@ -810,7 +810,7 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Ghrelin",
-      "definition": "\"A hormone secreted by an empty stomach that sends \"\"I'm hungry\"\" signals to the brain.\""
+      "definition": "A hormone secreted by an empty stomach that sends I'm hungry signals to the brain."
     },
     {
       "id": "117",
@@ -852,77 +852,77 @@
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Reuptake inhibitors",
-      "definition": "\"Drugs that block the reabsorption of neurotransmitters by the presynaptic neuron"
+      "definition": "Drugs that block the reabsorption of neurotransmitters by the presynaptic neuron, increasing their concentration in the synapse."
     },
     {
       "id": "123",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Stimulants",
-      "definition": "\"Drugs (such as caffeine"
+      "definition": "Drugs (such as caffeine, nicotine, and the more powerful amphetamines, cocaine, and Ecstasy) that excite neural activity and speed up body functions."
     },
     {
       "id": "124",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Caffeine",
-      "definition": "\"A stimulant drug found in coffee"
+      "definition": "A stimulant drug found in coffee, tea, and soda that increases alertness."
     },
     {
       "id": "125",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Cocaine",
-      "definition": "\"A powerful and addictive stimulant"
+      "definition": "A powerful and addictive stimulant, derived from the coca plant, producing temporarily increased alertness and euphoria."
     },
     {
       "id": "126",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Depressants",
-      "definition": "\"Drugs (such as alcohol"
+      "definition": "Drugs (such as alcohol, barbiturates, and opiates) that reduce neural activity and slow body functions."
     },
     {
       "id": "127",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Alcohol",
-      "definition": "\"A depressant that slows the central nervous system"
+      "definition": "A depressant that slows the central nervous system, reduces inhibitions, and impairs judgment."
     },
     {
       "id": "128",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Hallucinogens",
-      "definition": "\"Psychedelic drugs"
+      "definition": "Psychedelic drugs, such as LSD, that distort perceptions and evoke sensory images in the absence of sensory input."
     },
     {
       "id": "129",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Marijuana",
-      "definition": "\"A mild hallucinogen that can amplify sensitivity to colors"
+      "definition": "A mild hallucinogen that can amplify sensitivity to colors, sounds, tastes, and smells, but also relax and disinhibit."
     },
     {
       "id": "130",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Opioids",
-      "definition": "\"Opium and its derivatives"
+      "definition": "Opium and its derivatives, such as morphine and heroin; they depress neural activity, temporarily lessening pain and anxiety."
     },
     {
       "id": "131",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Heroin",
-      "definition": "\"A highly addictive analgesic drug derived from morphine"
+      "definition": "A highly addictive analgesic drug derived from morphine, often used illicitly as a narcotic."
     },
     {
       "id": "132",
       "unit": "Unit 1",
       "topic": "1.3",
       "term": "Tolerance",
-      "definition": "\"The diminishing effect with regular use of the same dose of a drug"
+      "definition": "The diminishing effect with regular use of the same dose of a drug, requiring the user to take larger and larger doses to experience the effect."
     },
     {
       "id": "133",
@@ -943,7 +943,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Brain stem",
-      "definition": "\"The oldest part and central core of the brain"
+      "definition": "The oldest part and central core of the brain, beginning where the spinal cord swells as it enters the skull; responsible for automatic survival functions."
     },
     {
       "id": "136",
@@ -971,7 +971,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Cerebellum",
-      "definition": "\"The \"\"little brain\"\" at the rear of the brainstem; functions include processing sensory input"
+      "definition": "The little brain at the rear of the brainstem; functions include processing sensory input, coordinating movement output, and balance."
     },
     {
       "id": "140",
@@ -992,21 +992,21 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Thalamus",
-      "definition": "\"The brain's sensory control center"
+      "definition": "The brain's sensory control center, located on top of the brainstem; it directs messages to the sensory receiving areas in the cortex."
     },
     {
       "id": "143",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Hypothalamus",
-      "definition": "\"A neural structure below the thalamus; directs eating"
+      "definition": "A neural structure below the thalamus; directs eating, drinking, body temperature, and helps govern the endocrine system via the pituitary gland."
     },
     {
       "id": "144",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Pituitary gland",
-      "definition": "\"The endocrine system's most influential gland (Master Gland). Under the influence of the hypothalamus"
+      "definition": "The endocrine system's most influential gland (Master Gland). Under the influence of the hypothalamus, it regulates growth and controls other glands."
     },
     {
       "id": "145",
@@ -1020,7 +1020,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Amygdala",
-      "definition": "\"Two lima-bean-sized neural clusters in the limbic system; linked to emotion"
+      "definition": "Two lima-bean-sized neural clusters in the limbic system; linked to emotion, specifically fear and aggression."
     },
     {
       "id": "147",
@@ -1055,7 +1055,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Association areas",
-      "definition": "\"Areas of the cerebral cortex that are not involved in primary motor or sensory functions; rather"
+      "definition": "Areas of the cerebral cortex that are not involved in primary motor or sensory functions; rather, they are involved in higher mental functions."
     },
     {
       "id": "152",
@@ -1069,35 +1069,35 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Frontal lobes",
-      "definition": "\"Portion of the cerebral cortex lying just behind the forehead; involved in speaking"
+      "definition": "Portion of the cerebral cortex lying just behind the forehead; involved in speaking, muscle movements, and in making plans and judgments."
     },
     {
       "id": "154",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Linguistic processing",
-      "definition": "\"The brain's ability to understand and produce language"
+      "definition": "The brain's ability to understand and produce language, primarily centered in the left hemisphere."
     },
     {
       "id": "155",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Higher-order thinking",
-      "definition": "\"Complex cognitive processes such as analysis"
+      "definition": "Complex cognitive processes such as analysis, synthesis, evaluation, and creation."
     },
     {
       "id": "156",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Executive functioning",
-      "definition": "\"Cognitive processes that include working memory"
+      "definition": "Cognitive processes that include working memory, flexible thinking, and self-control."
     },
     {
       "id": "157",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Prefrontal cortex",
-      "definition": "\"The forward part of the frontal lobes responsible for judgment"
+      "definition": "The forward part of the frontal lobes responsible for judgment, planning, and processing new memories."
     },
     {
       "id": "158",
@@ -1125,7 +1125,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Broca’s area",
-      "definition": "\"Controls language expression—an area of the frontal lobe"
+      "definition": "Controls language expression—an area of the frontal lobe, usually in the left hemisphere, that directs the muscle movements involved in speech."
     },
     {
       "id": "162",
@@ -1139,21 +1139,21 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Aphasia",
-      "definition": "\"Impairment of language"
+      "definition": "Impairment of language, usually caused by left hemisphere damage either to Broca’s area (impairing speaking) or to Wernicke’s area (impairing understanding)."
     },
     {
       "id": "164",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Contralateral organization",
-      "definition": "\"The concept that the left hemisphere controls the right side of the body"
+      "definition": "The concept that the left hemisphere controls the right side of the body, and the right hemisphere controls the left side."
     },
     {
       "id": "165",
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Plasticity",
-      "definition": "\"The brain’s ability to change"
+      "definition": "The brain’s ability to change, especially during childhood, by reorganizing after damage or by building new pathways based on experience."
     },
     {
       "id": "166",
@@ -1167,7 +1167,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "fMRI",
-      "definition": "\"Functional magnetic resonance imaging; a technique for revealing blood flow and"
+      "definition": "Functional magnetic resonance imaging; a technique for revealing blood flow and, therefore, brain activity by comparing successive MRI scans."
     },
     {
       "id": "168",
@@ -1202,7 +1202,7 @@
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "Shift work",
-      "definition": "\"Work schedules that take place outside the traditional 9-to-5 day"
+      "definition": "Work schedules that take place outside the traditional 9-to-5 day, often disrupting circadian rhythms and sleep patterns."
     },
     {
       "id": "173",
@@ -1216,21 +1216,21 @@
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "Hypnogogic sensations",
-      "definition": "\"Bizarre experiences"
+      "definition": "Bizarre experiences, such as jerking or a feeling of falling or floating weightlessly, while transitioning to sleep."
     },
     {
       "id": "175",
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "NREM stage 2",
-      "definition": "\"Deeper sleep characterized by sleep spindles (bursts of rapid"
+      "definition": "Deeper sleep characterized by sleep spindles (bursts of rapid, rhythmic brain-wave activity)."
     },
     {
       "id": "176",
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "NREM stage 3",
-      "definition": "\"Deep sleep stage characterized by large"
+      "definition": "Deep sleep stage characterized by large, slow delta waves."
     },
     {
       "id": "177",
@@ -1265,7 +1265,7 @@
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "Memory consolidation",
-      "definition": "\"The neural process by which a temporary memory is converted into a stable"
+      "definition": "The neural process by which a temporary memory is converted into a stable, long-term form."
     },
     {
       "id": "182",
@@ -1293,7 +1293,7 @@
       "unit": "Unit 1",
       "topic": "1.5",
       "term": "REM sleep behavior disorder",
-      "definition": "\"A sleep disorder in which you physically act out vivid"
+      "definition": "A sleep disorder in which you physically act out vivid, often unpleasant dreams with vocal sounds and sudden, often violent arm and leg movements."
     },
     {
       "id": "186",
@@ -1321,7 +1321,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Transduction",
-      "definition": "\"Conversion of one form of energy into another. In sensation"
+      "definition": "Conversion of one form of energy into another. In sensation, the transforming of stimulus energies into neural impulses our brain can interpret."
     },
     {
       "id": "190",
@@ -1349,14 +1349,14 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Weber’s law",
-      "definition": "\"The principle that"
+      "definition": "The principle that, to be perceived as different, two stimuli must differ by a constant minimum percentage (rather than a constant amount)."
     },
     {
       "id": "194",
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Sensory interaction",
-      "definition": "\"The principle that one sense may influence another"
+      "definition": "The principle that one sense may influence another, as when the smell of food influences its taste."
     },
     {
       "id": "195",
@@ -1370,7 +1370,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Retina",
-      "definition": "\"The light-sensitive inner surface of the eye"
+      "definition": "The light-sensitive inner surface of the eye, containing the receptor rods and cones plus layers of neurons that begin the processing of visual information."
     },
     {
       "id": "197",
@@ -1426,7 +1426,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Rods",
-      "definition": "\"Retinal receptors that detect black"
+      "definition": "Retinal receptors that detect black, white, and gray; necessary for peripheral and twilight vision, when cones don’t respond."
     },
     {
       "id": "205",
@@ -1440,14 +1440,14 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Trichromatic theory",
-      "definition": "\"The theory that the retina contains three different color receptors—one most sensitive to red"
+      "definition": "The theory that the retina contains three different color receptors—one most sensitive to red, one to green, one to blue—which, when stimulated in combination, can produce the perception of any color."
     },
     {
       "id": "207",
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Opponent-process theory",
-      "definition": "\"The theory that opposing retinal processes (red-green"
+      "definition": "The theory that opposing retinal processes (red-green, yellow-blue, white-black) enable color vision."
     },
     {
       "id": "208",
@@ -1482,7 +1482,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Prosopagnosia",
-      "definition": "\"A cognitive disorder of face perception in which the ability to recognize familiar faces"
+      "definition": "A cognitive disorder of face perception in which the ability to recognize familiar faces, including one's own face, is impaired."
     },
     {
       "id": "213",
@@ -1517,7 +1517,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Loudness",
-      "definition": "\"Our perception of the intensity of a sound"
+      "definition": "Our perception of the intensity of a sound, measured in decibels."
     },
     {
       "id": "218",
@@ -1531,7 +1531,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Place theory",
-      "definition": "\"In hearing"
+      "definition": "In hearing, the theory that links the pitch we hear with the location where the cochlea's membrane is stimulated"
     },
     {
       "id": "220",
@@ -1545,7 +1545,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Frequency theory",
-      "definition": "\"In hearing"
+      "definition": "In hearing, the theory that the rate of nerve impulses traveling up the auditory nerve matches the frequency of a tone, thus enabling us to sense its pitch."
     },
     {
       "id": "222",
@@ -1594,7 +1594,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Taste qualities",
-      "definition": "\"Sweet"
+      "definition": "Sweet, sour, salty, bitter, umami (savory), and oleogustus (fatty)."
     },
     {
       "id": "229",
@@ -1629,14 +1629,14 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Sensory interaction",
-      "definition": "\"The principle that one sense may influence another"
+      "definition": "The principle that one sense may influence another, such as how smell affects taste."
     },
     {
       "id": "234",
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Gate control theory",
-      "definition": "\"The theory that the spinal cord contains a neurological \"\"gate\"\" that blocks pain signals or allows them to pass on to the brain.\""
+      "definition": "The theory that the spinal cord contains a neurological gate that blocks pain signals or allows them to pass on to the brain."
     },
     {
       "id": "235",
@@ -1650,7 +1650,7 @@
       "unit": "Unit 1",
       "topic": "1.6",
       "term": "Vestibular sense",
-      "definition": "\"The sense of body movement and position"
+      "definition": "The sense of body movement and position, including the sense of balance (controlled by semicircular canals in the ear)."
     },
     {
       "id": "237",
@@ -1678,7 +1678,7 @@
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Top-down processing",
-      "definition": "\"Information processing guided by higher-level mental processes"
+      "definition": "Information processing guided by higher-level mental processes, drawing on experience and expectations."
     },
     {
       "id": "241",
@@ -1706,7 +1706,7 @@
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Closure",
-      "definition": "\"The Gestalt principle where the brain fills in gaps to create a complete"
+      "definition": "The Gestalt principle where the brain fills in gaps to create a complete, whole object."
     },
     {
       "id": "245",
@@ -1790,28 +1790,28 @@
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Monocular depth cues",
-      "definition": "\"Depth cues available to either eye alone (e.g."
+      "definition": "Depth cues available to either eye alone (e.g., relative size, interposition)."
     },
     {
       "id": "257",
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Relative clarity",
-      "definition": "\"Monocular cue; hazy objects are seen as farther away than sharp"
+      "definition": "Monocular cue; hazy objects are seen as farther away than sharp, clear objects."
     },
     {
       "id": "258",
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Relative size",
-      "definition": "\"Monocular cue; if two objects are similar in size"
+      "definition": "Monocular cue; if two objects are similar in size, the one that casts the smaller retinal image is farther away."
     },
     {
       "id": "259",
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Texture gradient",
-      "definition": "\"Monocular cue; a gradual change from a coarse distinct texture to a fine"
+      "definition": "Monocular cue; a gradual change from a coarse distinct texture to a fine, indistinct texture signals distance."
     },
     {
       "id": "260",
@@ -1825,14 +1825,14 @@
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Interposition",
-      "definition": "\"Monocular cue; if one object partially blocks our view of another"
+      "definition": "Monocular cue; if one object partially blocks our view of another, we perceive it as closer."
     },
     {
       "id": "262",
       "unit": "Unit 2",
       "topic": "2.1",
       "term": "Apparent movement",
-      "definition": "\"The perception of movement in stationary objects (e.g."
+      "definition": "The perception of movement in stationary objects (e.g., phi phenomenon)."
     },
     {
       "id": "263",
@@ -1867,7 +1867,7 @@
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Algorithms",
-      "definition": "\"A methodical"
+      "definition": "A methodical, logical rule or procedure that guarantees solving a particular problem."
     },
     {
       "id": "268",
@@ -1881,7 +1881,7 @@
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Representativeness heuristic",
-      "definition": "\"Judging the likelihood of things in terms of how well they seem to represent"
+      "definition": "Judging the likelihood of things in terms of how well they seem to represent, or match, particular prototypes."
     },
     {
       "id": "270",
@@ -1895,14 +1895,14 @@
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Mental set",
-      "definition": "\"A tendency to approach a problem in one particular way"
+      "definition": "A tendency to approach a problem in one particular way, often a way that has been successful in the past."
     },
     {
       "id": "272",
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Priming",
-      "definition": "\"The activation"
+      "definition": "The activation, often unconsciously, of certain associations, thus predisposing one's perception or memory."
     },
     {
       "id": "273",
@@ -1923,14 +1923,14 @@
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Sunk-cost fallacy",
-      "definition": "\"Continuing an endeavor as a result of previously invested resources (time"
+      "definition": "Continuing an endeavor as a result of previously invested resources (time, money, or effort)."
     },
     {
       "id": "276",
       "unit": "Unit 2",
       "topic": "2.2",
       "term": "Executive functions",
-      "definition": "\"Higher-order mental processes (planning"
+      "definition": "Higher-order mental processes (planning, decision making) handled by the frontal lobe."
     },
     {
       "id": "277",
@@ -1979,7 +1979,7 @@
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Explicit memory",
-      "definition": "\"Memory of facts and experiences that one can consciously know and \"\"declare.\"\"\""
+      "definition": "Memory of facts and experiences that one can consciously know and declare."
     },
     {
       "id": "284",
@@ -2007,7 +2007,7 @@
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Procedural memory",
-      "definition": "\"Implicit memory for cognitive and motor skills (e.g."
+      "definition": "Implicit memory for cognitive and motor skills (e.g., riding a bike)."
     },
     {
       "id": "288",
@@ -2021,28 +2021,28 @@
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Long-term potentiation",
-      "definition": "\"An increase in a cell's firing potential after brief"
+      "definition": "An increase in a cell's firing potential after brief, rapid stimulation; believed to be a neural basis for learning."
     },
     {
       "id": "290",
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Working memory model",
-      "definition": "\"Baddeley's model of memory that includes the central executive"
+      "definition": "Baddeley's model of memory that includes the central executive, phonological loop, and sketchpad."
     },
     {
       "id": "291",
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Working memory",
-      "definition": "\"Active processing of incoming auditory and visual-spatial information"
+      "definition": "Active processing of incoming auditory and visual-spatial information, and information retrieved from LTM."
     },
     {
       "id": "292",
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Central executive",
-      "definition": "\"The \"\"manager\"\" of working memory that directs attention and coordinates subsystems.\""
+      "definition": "The manager of working memory that directs attention and coordinates subsystems."
     },
     {
       "id": "293",
@@ -2077,7 +2077,7 @@
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Sensory memory",
-      "definition": "\"The immediate"
+      "definition": "The immediate, very brief recording of sensory information in the memory system."
     },
     {
       "id": "298",
@@ -2133,21 +2133,21 @@
       "unit": "Unit 2",
       "topic": "2.3",
       "term": "Deep encoding",
-      "definition": "\"Encoding semantically"
+      "definition": "Encoding semantically, based on the meaning of the words; yields the best retention."
     },
     {
       "id": "306",
       "unit": "Unit 2",
       "topic": "2.3",
-      "term": "\"Structural",
-      "definition": "phonemic"
+      "term": "Structural, phonemic, semantic",
+      "definition": "The three levels of processing: appearance, sound, and meaning."
     },
     {
       "id": "307",
       "unit": "Unit 2",
       "topic": "2.4",
       "term": "Mnemonic devices",
-      "definition": "\"Memory aids"
+      "definition": "Memory aids, especially those techniques that use vivid imagery and organizational devices."
     },
     {
       "id": "308",
@@ -2161,7 +2161,7 @@
       "unit": "Unit 2",
       "topic": "2.4",
       "term": "Chunking",
-      "definition": "\"Organizing items into familiar"
+      "definition": "Organizing items into familiar, manageable units; often occurs automatically."
     },
     {
       "id": "310",
@@ -2175,7 +2175,7 @@
       "unit": "Unit 2",
       "topic": "2.4",
       "term": "Hierarchies",
-      "definition": "\"Organizing information from broad concepts to narrower"
+      "definition": "Organizing information from broad concepts to narrower, more specific details."
     },
     {
       "id": "312",
@@ -2238,7 +2238,7 @@
       "unit": "Unit 2",
       "topic": "2.5",
       "term": "Elaborative rehearsal",
-      "definition": "\"Thinking about the meaning of the term to be remembered"
+      "definition": "Thinking about the meaning of the term to be remembered, as opposed to simply repeating it."
     },
     {
       "id": "321",
@@ -2287,14 +2287,14 @@
       "unit": "Unit 2",
       "topic": "2.6",
       "term": "Recall",
-      "definition": "\"Retrieving information that is not currently in your conscious awareness (e.g."
+      "definition": "Retrieving information that is not currently in your conscious awareness (e.g., fill-in-the-blank test)."
     },
     {
       "id": "328",
       "unit": "Unit 2",
       "topic": "2.6",
       "term": "Recognition",
-      "definition": "\"Identifying items previously learned (e.g."
+      "definition": "Identifying items previously learned (e.g., multiple-choice test)."
     },
     {
       "id": "329",
@@ -2329,7 +2329,7 @@
       "unit": "Unit 2",
       "topic": "2.6",
       "term": "Testing effect",
-      "definition": "\"Enhanced memory after retrieving"
+      "definition": "Enhanced memory after retrieving, rather than simply rereading, information."
     },
     {
       "id": "334",
@@ -2343,7 +2343,7 @@
       "unit": "Unit 2",
       "topic": "2.7",
       "term": "Forgetting curve",
-      "definition": "\"Ebbinghaus's finding that the course of forgetting is initially rapid"
+      "definition": "Ebbinghaus's finding that the course of forgetting is initially rapid, then levels off with time."
     },
     {
       "id": "336",
@@ -2378,7 +2378,7 @@
       "unit": "Unit 2",
       "topic": "2.7",
       "term": "Repression",
-      "definition": "\"In psychoanalytic theory"
+      "definition": "In psychoanalytic theory, the basic defense mechanism that banishes anxiety-arousing thoughts from consciousness."
     },
     {
       "id": "341",
@@ -2392,14 +2392,14 @@
       "unit": "Unit 2",
       "topic": "2.7",
       "term": "Source amnesia",
-      "definition": "\"Attributing to the wrong source an event we have experienced"
+      "definition": "Attributing to the wrong source an event we have experienced, heard about, or imagined."
     },
     {
       "id": "343",
       "unit": "Unit 2",
       "topic": "2.7",
       "term": "Constructive memory",
-      "definition": "\"An apparent memory of an event that did not actually happen"
+      "definition": "An apparent memory of an event that did not actually happen, built from various sources."
     },
     {
       "id": "344",
@@ -2413,7 +2413,7 @@
       "unit": "Unit 2",
       "topic": "2.8",
       "term": "Intelligence",
-      "definition": "\"Mental quality consisting of the ability to learn from experience"
+      "definition": "Mental quality consisting of the ability to learn from experience, solve problems, and use knowledge to adapt."
     },
     {
       "id": "346",
@@ -2560,7 +2560,7 @@
       "unit": "Unit 3",
       "topic": "3.1",
       "term": "Lifespan development",
-      "definition": "\"The field of study that examines patterns of growth"
+      "definition": "The field of study that examines patterns of growth, change, and stability in behavior that occur throughout the entire human life cycle."
     },
     {
       "id": "367",
@@ -2581,56 +2581,56 @@
       "unit": "Unit 3",
       "topic": "3.1",
       "term": "Continuous development",
-      "definition": "\"The view that development is a gradual"
+      "definition": "The view that development is a gradual, cumulative process of expanding upon existing skills."
     },
     {
       "id": "370",
       "unit": "Unit 3",
       "topic": "3.1",
       "term": "Discontinuous development",
-      "definition": "\"The view that development takes place in unique stages"
+      "definition": "The view that development takes place in unique stages, occurring at specific times or ages."
     },
     {
       "id": "371",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Teratogens",
-      "definition": "\"Agents"
+      "definition": "Agents, such as chemicals and viruses, that can reach the embryo or fetus during prenatal development and cause harm."
     },
     {
       "id": "372",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Fine motor coordination",
-      "definition": "\"The control and precision of small muscle movements"
+      "definition": "The control and precision of small muscle movements, such as those in the hands and fingers."
     },
     {
       "id": "373",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Gross motor coordination",
-      "definition": "\"The control and movement of large muscle groups"
+      "definition": "The control and movement of large muscle groups, such as those used for walking or jumping."
     },
     {
       "id": "374",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Maturation",
-      "definition": "\"Biological growth processes that enable orderly changes in behavior"
+      "definition": "Biological growth processes that enable orderly changes in behavior, relatively uninfluenced by experience."
     },
     {
       "id": "375",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Reflexes",
-      "definition": "\"Unlearned"
+      "definition": "Unlearned, organized involuntary responses that occur automatically in the presence of certain stimuli."
     },
     {
       "id": "376",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Rooting reflex",
-      "definition": "\"A baby's tendency"
+      "definition": "A baby's tendency, when touched on the cheek, to turn toward the touch and open the mouth in search of a nipple."
     },
     {
       "id": "377",
@@ -2672,21 +2672,21 @@
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Puberty",
-      "definition": "\"The period of sexual maturation"
+      "definition": "The period of sexual maturation, during which a person becomes capable of reproducing."
     },
     {
       "id": "383",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Primary sex characteristics",
-      "definition": "\"The body structures (ovaries"
+      "definition": "The body structures (ovaries, testes, and external genitalia) that make sexual reproduction possible."
     },
     {
       "id": "384",
       "unit": "Unit 3",
       "topic": "3.2",
       "term": "Secondary sex characteristics",
-      "definition": "\"Nonreproductive sexual characteristics"
+      "definition": "Nonreproductive sexual characteristics, such as female breasts and hips, male voice quality, and body hair."
     },
     {
       "id": "385",
@@ -2756,7 +2756,7 @@
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Mental symbols",
-      "definition": "\"Internal depictions of information that the mind can manipulate (e.g."
+      "definition": "Internal depictions of information that the mind can manipulate (e.g., images and concepts)."
     },
     {
       "id": "395",
@@ -2770,35 +2770,35 @@
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Conservation",
-      "definition": "\"The principle that properties such as mass"
+      "definition": "The principle that properties such as mass, volume, and number remain the same despite changes in the forms of objects."
     },
     {
       "id": "397",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Reversibility",
-      "definition": "\"The capacity to think through a series of steps and then mentally reverse direction"
+      "definition": "The capacity to think through a series of steps and then mentally reverse direction, returning to the starting point."
     },
     {
       "id": "398",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Animism",
-      "definition": "\"The belief that inanimate objects have lifelike qualities"
+      "definition": "The belief that inanimate objects have lifelike qualities, such as thoughts and feelings."
     },
     {
       "id": "399",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Egocentrism",
-      "definition": "\"In Piaget's theory"
+      "definition": "In Piaget's theory, the preoperational child's difficulty taking another's point of view."
     },
     {
       "id": "400",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Theory of mind",
-      "definition": "\"People's ideas about their own and others' mental states—about their feelings"
+      "definition": "People's ideas about their own and others' mental states—about their feelings, perceptions, and thoughts, and the behaviors these might predict."
     },
     {
       "id": "401",
@@ -2833,21 +2833,21 @@
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Hypothetical thinking",
-      "definition": "\"The ability to reason about \"\"what if\"\" scenarios and possibilities that may not be real.\""
+      "definition": "The ability to reason about what if scenarios and possibilities that may not be real."
     },
     {
       "id": "406",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Scaffolding (Vygotsky)",
-      "definition": "\"A process in which more skilled individuals provide temporary support to a learner"
+      "definition": "A process in which more skilled individuals provide temporary support to a learner, tapering it off as the learner's competence increases."
     },
     {
       "id": "407",
       "unit": "Unit 3",
       "topic": "3.4",
       "term": "Zone of proximal development",
-      "definition": "\"In Vygotsky's theory"
+      "definition": "In Vygotsky's theory, the range between children's present level of knowledge and their potential knowledge state if they receive help."
     },
     {
       "id": "408",
@@ -2875,28 +2875,28 @@
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "Phonemes",
-      "definition": "\"In language"
+      "definition": "In language, the smallest distinctive sound unit."
     },
     {
       "id": "412",
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "Morphemes",
-      "definition": "\"In language"
+      "definition": "In language, the smallest unit that carries meaning; may be a word or a part of a word (such as a prefix)."
     },
     {
       "id": "413",
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "Semantics",
-      "definition": "\"The set of rules by which we derive meaning from morphemes"
+      "definition": "The set of rules by which we derive meaning from morphemes, words, and sentences in a given language."
     },
     {
       "id": "414",
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "Grammar",
-      "definition": "\"In a language"
+      "definition": "In a language, a system of rules that enables us to communicate with and understand others."
     },
     {
       "id": "415",
@@ -2924,7 +2924,7 @@
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "One-word stage",
-      "definition": "\"The stage in speech development"
+      "definition": "The stage in speech development, from about age 1 to 2, during which a child speaks mostly in single words."
     },
     {
       "id": "419",
@@ -2938,7 +2938,7 @@
       "unit": "Unit 3",
       "topic": "3.5",
       "term": "Overgeneralization",
-      "definition": "\"A grammatical error in which children apply a language rule too broadly (e.g."
+      "definition": "A grammatical error in which children apply a language rule too broadly (e.g., I goed to the park)."
     },
     {
       "id": "421",
@@ -2952,42 +2952,42 @@
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Microsystem",
-      "definition": "\"The immediate environment that an individual interacts with directly (e.g."
+      "definition": "The immediate environment that an individual interacts with directly (e.g., family, school)."
     },
     {
       "id": "423",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Mesosystem",
-      "definition": "\"The connections between various microsystems (e.g."
+      "definition": "The connections between various microsystems (e.g., the relationship between a child's parents and their teacher)."
     },
     {
       "id": "424",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Exosystem",
-      "definition": "\"Social settings that a person may not experience firsthand but that still influence development (e.g."
+      "definition": "Social settings that a person may not experience firsthand but that still influence development (e.g., a parent's workplace)."
     },
     {
       "id": "425",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Macrosystem",
-      "definition": "\"The larger cultural context"
+      "definition": "The larger cultural context, including values, laws, and resources."
     },
     {
       "id": "426",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Chronosystem",
-      "definition": "\"The dimension of time in relation to a person's development"
+      "definition": "The dimension of time in relation to a person's development, including life transitions and historical events."
     },
     {
       "id": "427",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Authoritarian parenting",
-      "definition": "\"A restrictive"
+      "definition": "A restrictive, punitive style of parenting in which parents exhort the child to follow their directions and respect their work and effort."
     },
     {
       "id": "428",
@@ -3008,7 +3008,7 @@
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Attachment styles",
-      "definition": "\"The expectations people develop about relationships with others"
+      "definition": "The expectations people develop about relationships with others, based on the relationship they had with their primary caregiver."
     },
     {
       "id": "431",
@@ -3071,7 +3071,7 @@
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Imaginary audience",
-      "definition": "\"Adolescents' belief that others are as interested in them as they itself are; the feeling of being \"\"on stage.\"\"\""
+      "definition": "Adolescents' belief that others are as interested in them as they itself are; the feeling of being on stage."
     },
     {
       "id": "440",
@@ -3085,77 +3085,77 @@
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Social clock",
-      "definition": "\"The culturally preferred timing of social events such as marriage"
+      "definition": "The culturally preferred timing of social events such as marriage, parenthood, and retirement."
     },
     {
       "id": "442",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Emerging adulthood",
-      "definition": "\"A period from the late teens to mid-twenties"
+      "definition": "A period from the late teens to mid-twenties, bridging the gap between adolescent dependence and full adult independence and responsibility."
     },
     {
       "id": "443",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Stage theory (Erikson)",
-      "definition": "\"A comprehensive theory consisting of eight stages of psychosocial development"
+      "definition": "A comprehensive theory consisting of eight stages of psychosocial development, each characterized by a specific crisis."
     },
     {
       "id": "444",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Trust and mistrust",
-      "definition": "\"Erikson's first stage (0-1 yr): If needs are dependably met"
+      "definition": "Erikson's first stage (0-1 yr): If needs are dependably met, infants develop a sense of basic trust."
     },
     {
       "id": "445",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Autonomy and shame/doubt",
-      "definition": "\"Erikson's second stage (1-3 yrs): Toddlers learn to exercise their will and do things for themselves"
+      "definition": "Erikson's second stage (1-3 yrs): Toddlers learn to exercise their will and do things for themselves, or they doubt their abilities."
     },
     {
       "id": "446",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Initiative and guilt",
-      "definition": "\"Erikson's third stage (3-6 yrs): Preschoolers learn to initiate tasks and carry out plans"
+      "definition": "Erikson's third stage (3-6 yrs): Preschoolers learn to initiate tasks and carry out plans, or they feel guilty about their efforts to be independent."
     },
     {
       "id": "447",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Industry and inferiority",
-      "definition": "\"Erikson's fourth stage (6-puberty): Children learn the pleasure of applying themselves to tasks"
+      "definition": "Erikson's fourth stage (6-puberty): Children learn the pleasure of applying themselves to tasks, or they feel inferior."
     },
     {
       "id": "448",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Identity and role confusion",
-      "definition": "\"Erikson's fifth stage (adolescence): Teenagers work at refining a sense of self by testing roles"
+      "definition": "Erikson's fifth stage (adolescence): Teenagers work at refining a sense of self by testing roles, or they become confused about who they are."
     },
     {
       "id": "449",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Intimacy and isolation",
-      "definition": "\"Erikson's sixth stage (young adulthood): Individuals form close relationships and gain the capacity for intimate love"
+      "definition": "Erikson's sixth stage (young adulthood): Individuals form close relationships and gain the capacity for intimate love, or they feel socially isolated."
     },
     {
       "id": "450",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Generativity and stagnation",
-      "definition": "\"Erikson's seventh stage (middle adulthood): People discover a sense of contributing to the world"
+      "definition": "Erikson's seventh stage (middle adulthood): People discover a sense of contributing to the world, or they may feel a lack of purpose."
     },
     {
       "id": "451",
       "unit": "Unit 3",
       "topic": "3.6",
       "term": "Integrity and despair",
-      "definition": "\"Erikson's eighth stage (late adulthood): Reflecting on one's life"
+      "definition": "Erikson's eighth stage (late adulthood): Reflecting on one's life, an older adult may feel a sense of satisfaction or failure."
     },
     {
       "id": "452",
@@ -3239,14 +3239,14 @@
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Unconditioned response (UR)",
-      "definition": "\"The unlearned"
+      "definition": "The unlearned, naturally occurring response to the unconditioned stimulus."
     },
     {
       "id": "464",
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Conditioned stimulus (CS)",
-      "definition": "\"An originally irrelevant stimulus that"
+      "definition": "An originally irrelevant stimulus that, after association with an unconditioned stimulus, comes to trigger a conditioned response."
     },
     {
       "id": "465",
@@ -3267,7 +3267,7 @@
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Spontaneous recovery",
-      "definition": "\"The reappearance"
+      "definition": "The reappearance, after a pause, of an extinguished conditioned response."
     },
     {
       "id": "468",
@@ -3281,14 +3281,14 @@
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Stimulus generalization",
-      "definition": "\"The tendency"
+      "definition": "The tendency, once a response has been conditioned, for stimuli similar to the conditioned stimulus to elicit similar responses."
     },
     {
       "id": "470",
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Higher-order conditioning",
-      "definition": "\"A procedure in which the conditioned stimulus in one conditioning experience is paired with a new neutral stimulus"
+      "definition": "A procedure in which the conditioned stimulus in one conditioning experience is paired with a new neutral stimulus, creating a second (often weaker) conditioned stimulus."
     },
     {
       "id": "471",
@@ -3309,7 +3309,7 @@
       "unit": "Unit 3",
       "topic": "3.7",
       "term": "Biological preparedness",
-      "definition": "\"A propensity for learning particular kinds of associations over others (e.g."
+      "definition": "A propensity for learning particular kinds of associations over others (e.g., taste and nausea)."
     },
     {
       "id": "474",
@@ -3344,35 +3344,35 @@
       "unit": "Unit 3",
       "topic": "3.8",
       "term": "Law of Effect",
-      "definition": "\"Thorndike's principle that behaviors followed by favorable consequences become more likely"
+      "definition": "Thorndike's principle that behaviors followed by favorable consequences become more likely, and behaviors followed by unfavorable consequences become less likely."
     },
     {
       "id": "479",
       "unit": "Unit 3",
       "topic": "3.8",
       "term": "Positive reinforcement",
-      "definition": "\"Increasing behaviors by presenting positive stimuli"
+      "definition": "Increasing behaviors by presenting positive stimuli, such as food."
     },
     {
       "id": "480",
       "unit": "Unit 3",
       "topic": "3.8",
       "term": "Negative reinforcement",
-      "definition": "\"Increasing behaviors by stopping or reducing negative stimuli"
+      "definition": "Increasing behaviors by stopping or reducing negative stimuli, such as shock. (It is NOT punishment)."
     },
     {
       "id": "481",
       "unit": "Unit 3",
       "topic": "3.8",
       "term": "Primary reinforcers",
-      "definition": "\"An innately reinforcing stimulus"
+      "definition": "An innately reinforcing stimulus, such as one that satisfies a biological need (e.g., food)."
     },
     {
       "id": "482",
       "unit": "Unit 3",
       "topic": "3.8",
       "term": "Secondary reinforcers",
-      "definition": "\"A stimulus that gains its reinforcing power through its association with a primary reinforcer (e.g."
+      "definition": "A stimulus that gains its reinforcing power through its association with a primary reinforcer (e.g., money)."
     },
     {
       "id": "483",
@@ -3456,7 +3456,7 @@
       "unit": "Unit 3",
       "topic": "3.9",
       "term": "Insight learning",
-      "definition": "\"A sudden realization of a problem's solution; \"\"Aha!\"\" moment.\""
+      "definition": "A sudden realization of a problem's solution; Aha! moment."
     },
     {
       "id": "495",
@@ -3491,7 +3491,7 @@
       "unit": "Unit 4",
       "topic": "4.1",
       "term": "Dispositional attributions",
-      "definition": "\"Explaining behavior based on internal factors like personality"
+      "definition": "Explaining behavior based on internal factors like personality, character, or ability."
     },
     {
       "id": "500",
@@ -3512,14 +3512,14 @@
       "unit": "Unit 4",
       "topic": "4.1",
       "term": "Optimistic explanatory style",
-      "definition": "\"Attributing failures to external"
+      "definition": "Attributing failures to external, unstable, and specific causes."
     },
     {
       "id": "503",
       "unit": "Unit 4",
       "topic": "4.1",
       "term": "Pessimistic explanatory style",
-      "definition": "\"Attributing failures to internal"
+      "definition": "Attributing failures to internal, stable, and global causes."
     },
     {
       "id": "504",
@@ -3554,7 +3554,7 @@
       "unit": "Unit 4",
       "topic": "4.1",
       "term": "External locus of control",
-      "definition": "\"The belief that outcomes are determined by fate"
+      "definition": "The belief that outcomes are determined by fate, luck, or outside forces."
     },
     {
       "id": "509",
@@ -3715,7 +3715,7 @@
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Central Route to Persuasion",
-      "definition": "\"Persuasion focusing on logic"
+      "definition": "Persuasion focusing on logic, facts, and the content of the message."
     },
     {
       "id": "532",
@@ -3743,7 +3743,7 @@
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Door-in-the-face technique",
-      "definition": "\"Following an initial large"
+      "definition": "Following an initial large, rejected request with a smaller, more reasonable one."
     },
     {
       "id": "536",
@@ -3855,7 +3855,7 @@
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Burnout",
-      "definition": "\"Physical"
+      "definition": "Physical, mental, and emotional exhaustion caused by prolonged stress."
     },
     {
       "id": "552",
@@ -4009,14 +4009,14 @@
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Unconscious mind",
-      "definition": "\"A reservoir of mostly unacceptable thoughts"
+      "definition": "A reservoir of mostly unacceptable thoughts, wishes, and feelings."
     },
     {
       "id": "574",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Humanistic psychology",
-      "definition": "\"Focuses on personal growth"
+      "definition": "Focuses on personal growth, free will, and self-actualization."
     },
     {
       "id": "575",
@@ -4044,14 +4044,14 @@
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Reciprocal determinism",
-      "definition": "\"The interacting influences of behavior"
+      "definition": "The interacting influences of behavior, internal cognition, and environment."
     },
     {
       "id": "579",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Self-concept",
-      "definition": "\"All our thoughts and feelings about ourselves in answer to \"\"Who am I?\"\"\""
+      "definition": "All our thoughts and feelings about ourselves in answer to Who am I?"
     },
     {
       "id": "580",
@@ -4079,42 +4079,42 @@
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Big Five theory",
-      "definition": "\"A model consisting of Openness"
+      "definition": "A model consisting of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism."
     },
     {
       "id": "584",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Agreeableness",
-      "definition": "\"Trait characterized by being cooperative"
+      "definition": "Trait characterized by being cooperative, trustworthy, and good-natured."
     },
     {
       "id": "585",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Openness to experience",
-      "definition": "\"Trait characterized by curiosity"
+      "definition": "Trait characterized by curiosity, imagination, and independence."
     },
     {
       "id": "586",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Extraversion",
-      "definition": "\"Trait characterized by sociability"
+      "definition": "Trait characterized by sociability, energy, and talkativeness."
     },
     {
       "id": "587",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Conscientiousness",
-      "definition": "\"Trait characterized by organization"
+      "definition": "Trait characterized by organization, responsibility, and discipline."
     },
     {
       "id": "588",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Emotional Stability",
-      "definition": "\"The degree to which one is calm"
+      "definition": "The degree to which one is calm, secure, and self-satisfied (low Neuroticism)."
     },
     {
       "id": "589",
@@ -4170,7 +4170,7 @@
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Self-determination theory",
-      "definition": "\"Motivation is based on the needs for competence"
+      "definition": "Motivation is based on the needs for competence, autonomy, and relatedness."
     },
     {
       "id": "597",
@@ -4198,7 +4198,7 @@
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Instincts",
-      "definition": "\"Complex"
+      "definition": "Complex, unlearned behaviors that are rigidly patterned throughout a species."
     },
     {
       "id": "601",
@@ -4233,7 +4233,7 @@
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Sensation-seeking theory",
-      "definition": "\"Motivation to seek out novel"
+      "definition": "Motivation to seek out novel, complex, and intense experiences."
     },
     {
       "id": "606",
@@ -4282,14 +4282,14 @@
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Hypothalamus",
-      "definition": "\"The brain region that controls hunger"
+      "definition": "The brain region that controls hunger, thirst, and body temperature."
     },
     {
       "id": "613",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Pituitary gland",
-      "definition": "\"The \"\"master gland\"\" that regulates growth and other endocrine glands.\""
+      "definition": "The master gland that regulates growth and other endocrine glands."
     },
     {
       "id": "614",
@@ -4352,14 +4352,14 @@
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Health psychology",
-      "definition": "\"A subfield of psychology that provides psychology's contribution to behavioral medicine"
+      "definition": "A subfield of psychology that provides psychology's contribution to behavioral medicine, focusing on how biological, social, and psychological factors influence health and illness."
     },
     {
       "id": "623",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Stress",
-      "definition": "\"The process by which we perceive and respond to certain events"
+      "definition": "The process by which we perceive and respond to certain events, called stressors, that we appraise as threatening or challenging."
     },
     {
       "id": "624",
@@ -4373,7 +4373,7 @@
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Immune suppression",
-      "definition": "\"The weakening of the body's ability to fight off infection"
+      "definition": "The weakening of the body's ability to fight off infection, often caused by the release of stress hormones like cortisol."
     },
     {
       "id": "626",
@@ -4387,14 +4387,14 @@
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Eustress",
-      "definition": "\"A positive form of stress that results from a challenge and can lead to increased focus"
+      "definition": "A positive form of stress that results from a challenge and can lead to increased focus, motivation, and performance."
     },
     {
       "id": "628",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Distress",
-      "definition": "\"A negative form of stress that occurs when a person feels unable to cope with demands"
+      "definition": "A negative form of stress that occurs when a person feels unable to cope with demands, often leading to fatigue or health issues."
     },
     {
       "id": "629",
@@ -4408,42 +4408,42 @@
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "General adaptation syndrome (GAS)",
-      "definition": "\"Hans Selye's concept of the body's adaptive response to stress in three phases: alarm"
+      "definition": "Hans Selye's concept of the body's adaptive response to stress in three phases: alarm, resistance, and exhaustion."
     },
     {
       "id": "631",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Alarm reaction phase",
-      "definition": "\"The first stage of GAS where the sympathetic nervous system is suddenly activated (heart rate zooms"
+      "definition": "The first stage of GAS where the sympathetic nervous system is suddenly activated (heart rate zooms, blood diverted to muscles)."
     },
     {
       "id": "632",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Resistance phase",
-      "definition": "\"The second stage of GAS where temperature"
+      "definition": "The second stage of GAS where temperature, blood pressure, and respiration remain high, and the body attempts to cope with the stressor."
     },
     {
       "id": "633",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Flight-flight-freeze response",
-      "definition": "\"An involuntary physiological reaction to a perceived harmful event"
+      "definition": "An involuntary physiological reaction to a perceived harmful event, attack, or threat to survival."
     },
     {
       "id": "634",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Exhaustion phase",
-      "definition": "\"The third stage of GAS where the body’s resources are depleted"
+      "definition": "The third stage of GAS where the body’s resources are depleted, making the individual more vulnerable to illness or collapse."
     },
     {
       "id": "635",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Tend-and-befriend theory",
-      "definition": "\"Under stress"
+      "definition": "Under stress, people (especially women) often provide support to others (tend) and bond with and seek support from others (befriend)."
     },
     {
       "id": "636",
@@ -4464,14 +4464,14 @@
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive psychology",
-      "definition": "\"The scientific study of human flourishing"
+      "definition": "The scientific study of human flourishing, with the goals of discovering and promoting strengths and virtues that help individuals and communities to thrive."
     },
     {
       "id": "639",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Well-being",
-      "definition": "\"A positive state of mental"
+      "definition": "A positive state of mental, emotional, and social functioning, characterized by life satisfaction, resilience, and a sense of purpose"
     },
     {
       "id": "640",
@@ -4485,21 +4485,21 @@
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive emotions",
-      "definition": "\"Feelings such as joy"
+      "definition": "Feelings such as joy, pride, and relief that contribute to an individual's sense of well-being."
     },
     {
       "id": "642",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Gratitude",
-      "definition": "\"A felt sense of wonder"
+      "definition": "A felt sense of wonder, thankfulness, and appreciation for life and the benefits received from others."
     },
     {
       "id": "643",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive subjective experiences",
-      "definition": "\"Internal states like happiness"
+      "definition": "Internal states like happiness, joy, and satisfaction with life."
     },
     {
       "id": "644",
@@ -4520,21 +4520,21 @@
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Virtues",
-      "definition": "\"Core characteristics valued by moral philosophers and religious thinkers throughout history (e.g."
+      "definition": "Core characteristics valued by moral philosophers and religious thinkers throughout history (e.g., wisdom, courage)."
     },
     {
       "id": "647",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive objective experiences",
-      "definition": "\"Observable positive life circumstances"
+      "definition": "Observable positive life circumstances, such as educational attainment or stable relationships."
     },
     {
       "id": "648",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Happiness",
-      "definition": "\"A state of mind or feeling characterized by contentment"
+      "definition": "A state of mind or feeling characterized by contentment, love, satisfaction, pleasure, or joy."
     },
     {
       "id": "649",
@@ -4569,14 +4569,14 @@
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Temperance",
-      "definition": "\"Strengths that protect against excess (e.g."
+      "definition": "Strengths that protect against excess (e.g., forgiveness, humility, prudence)."
     },
     {
       "id": "654",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Transcendence",
-      "definition": "\"Strengths that forge connections to the larger universe and provide meaning (e.g."
+      "definition": "Strengths that forge connections to the larger universe and provide meaning (e.g., gratitude, hope)."
     },
     {
       "id": "655",
@@ -4597,7 +4597,7 @@
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Distress",
-      "definition": "\"Subjective feelings of pain"
+      "definition": "Subjective feelings of pain, anxiety, or sorrow that accompany psychological disorders."
     },
     {
       "id": "658",
@@ -4611,21 +4611,21 @@
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Stigma",
-      "definition": "\"A mark of disgrace associated with a particular circumstance"
+      "definition": "A mark of disgrace associated with a particular circumstance, quality, or person, often applied to mental illness."
     },
     {
       "id": "660",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Racism",
-      "definition": "\"Prejudice"
+      "definition": "Prejudice, discrimination, or antagonism directed against someone of a different race based on the belief that one's own race is superior."
     },
     {
       "id": "661",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Sexism",
-      "definition": "\"Prejudice"
+      "definition": "Prejudice, stereotyping, or discrimination, typically against women, on the basis of sex."
     },
     {
       "id": "662",
@@ -4653,14 +4653,14 @@
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "International Classification of Mental Disorders (ICD)",
-      "definition": "\"The World Health Organization's system for classifying diseases and health problems"
+      "definition": "The World Health Organization's system for classifying diseases and health problems, including mental disorders."
     },
     {
       "id": "666",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Eclectic approach",
-      "definition": "\"An approach to psychotherapy that"
+      "definition": "An approach to psychotherapy that, depending on the client’s problems, uses techniques from various forms of therapy."
     },
     {
       "id": "667",
@@ -4709,21 +4709,21 @@
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Sociocultural perspective",
-      "definition": "\"The view that social and cultural factors (e.g."
+      "definition": "The view that social and cultural factors (e.g., poverty, norms) contribute to the development of psychological disorders."
     },
     {
       "id": "674",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Biological perspective",
-      "definition": "\"The view that psychological disorders have physical causes that can be diagnosed"
+      "definition": "The view that psychological disorders have physical causes that can be diagnosed, treated, and often cured."
     },
     {
       "id": "675",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Biopsychosocial model",
-      "definition": "\"An integrated approach that incorporates biological"
+      "definition": "An integrated approach that incorporates biological, psychological, and social-cultural levels of analysis."
     },
     {
       "id": "676",
@@ -4737,7 +4737,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Neurodevelopmental disorders",
-      "definition": "\"Disorders that typically manifest early in development"
+      "definition": "Disorders that typically manifest early in development, often before the child enters grade school, and are characterized by developmental deficits."
     },
     {
       "id": "678",
@@ -4751,63 +4751,63 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Autism Spectrum Disorder (ASD)",
-      "definition": "\"A disorder that appears in childhood and is marked by significant deficiencies in communication and social interaction"
+      "definition": "A disorder that appears in childhood and is marked by significant deficiencies in communication and social interaction, and by rigidly fixated interests and repetitive behaviors."
     },
     {
       "id": "680",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Schizophrenic Spectrum Disorders",
-      "definition": "\"A group of severe disorders characterized by disorganized and delusional thinking"
+      "definition": "A group of severe disorders characterized by disorganized and delusional thinking, disturbed perceptions, and inappropriate emotions and behaviors."
     },
     {
       "id": "681",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions",
-      "definition": "\"False beliefs"
+      "definition": "False beliefs, often of persecution or grandeur, that may accompany psychotic disorders."
     },
     {
       "id": "682",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hallucinations",
-      "definition": "\"False sensory experiences"
+      "definition": "False sensory experiences, such as seeing something in the absence of an external visual stimulus."
     },
     {
       "id": "683",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Disorganized thinking",
-      "definition": "\"Fragmented or distorted thought processes"
+      "definition": "Fragmented or distorted thought processes, often visible through speech patterns in schizophrenia."
     },
     {
       "id": "684",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Disorganized speech",
-      "definition": "\"Speech that is incoherent and lacks a logical progression"
+      "definition": "Speech that is incoherent and lacks a logical progression, sometimes referred to as word salad."
     },
     {
       "id": "685",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Disorganized motor behavior",
-      "definition": "\"Unpredictable or inappropriate physical movement"
+      "definition": "Unpredictable or inappropriate physical movement, ranging from childlike silliness to violent agitation."
     },
     {
       "id": "686",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Negative symptoms",
-      "definition": "\"Symptoms characterized by the absence of normal behaviors"
+      "definition": "Symptoms characterized by the absence of normal behaviors, such as a flat affect or social withdrawal."
     },
     {
       "id": "687",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Positive symptoms",
-      "definition": "\"Symptoms characterized by the presence of inappropriate behaviors"
+      "definition": "Symptoms characterized by the presence of inappropriate behaviors, such as hallucinations or delusions."
     },
     {
       "id": "688",
@@ -4821,7 +4821,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions of grandeur",
-      "definition": "\"Beliefs that you are much more important"
+      "definition": "Beliefs that you are much more important, powerful, or wealthy than you actually are."
     },
     {
       "id": "690",
@@ -4835,14 +4835,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Flat affect",
-      "definition": "\"A severe reduction in emotional expressiveness"
+      "definition": "A severe reduction in emotional expressiveness, often found in schizophrenia."
     },
     {
       "id": "692",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Catatonic stupor",
-      "definition": "\"An immobile"
+      "definition": "An immobile, expressionless, coma-like state associated with schizophrenia."
     },
     {
       "id": "693",
@@ -4863,14 +4863,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Major Depressive Disorder",
-      "definition": "\"A disorder in which a person experiences two or more weeks with five or more symptoms"
+      "definition": "A disorder in which a person experiences two or more weeks with five or more symptoms, at least one of which must be depressed mood or loss of interest."
     },
     {
       "id": "696",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Persistent Depressive Disorder",
-      "definition": "\"A mild but long-term form of depression"
+      "definition": "A mild but long-term form of depression, lasting for at least two years."
     },
     {
       "id": "697",
@@ -4891,14 +4891,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Mania",
-      "definition": "\"A hyperactive"
+      "definition": "A hyperactive, wildly optimistic state in which dangerously poor judgment is common."
     },
     {
       "id": "700",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Depression",
-      "definition": "\"A state of low mood and aversion to activity that can affect a person's thoughts"
+      "definition": "A state of low mood and aversion to activity that can affect a person's thoughts, behavior, feelings, and sense of well-being."
     },
     {
       "id": "701",
@@ -4919,14 +4919,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Anxiety disorders",
-      "definition": "\"Psychological disorders characterized by distressing"
+      "definition": "Psychological disorders characterized by distressing, persistent anxiety or maladaptive behaviors that reduce anxiety."
     },
     {
       "id": "704",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Specific phobia",
-      "definition": "\"An anxiety disorder marked by a persistent"
+      "definition": "An anxiety disorder marked by a persistent, irrational fear and avoidance of a specific object, activity, or situation."
     },
     {
       "id": "705",
@@ -4947,14 +4947,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Agoraphobia",
-      "definition": "\"Fear or avoidance of situations"
+      "definition": "Fear or avoidance of situations, such as crowds or wide-open places, where one has felt loss of control and panic."
     },
     {
       "id": "708",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Panic disorder",
-      "definition": "\"An anxiety disorder marked by unpredictable"
+      "definition": "An anxiety disorder marked by unpredictable, minutes-long episodes of intense dread in which a person experiences terror and chest pain."
     },
     {
       "id": "709",
@@ -4968,14 +4968,14 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Ataque de nervios",
-      "definition": "\"A cultural syndrome found primarily among Latino populations"
+      "definition": "A cultural syndrome found primarily among Latino populations, involving intense emotional upset and physical symptoms similar to a panic attack."
     },
     {
       "id": "711",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Social anxiety disorder",
-      "definition": "\"Intense fear of social situations"
+      "definition": "Intense fear of social situations, leading to avoidance of such."
     },
     {
       "id": "712",
@@ -4989,7 +4989,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Generalized anxiety disorder (GAD)",
-      "definition": "\"An anxiety disorder in which a person is continually tense"
+      "definition": "An anxiety disorder in which a person is continually tense, apprehensive, and in a state of autonomic nervous system arousal."
     },
     {
       "id": "714",
@@ -5003,7 +5003,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Obsessions",
-      "definition": "\"Persistent"
+      "definition": "Persistent, unwanted thoughts, ideas, or images that cause distress."
     },
     {
       "id": "716",
@@ -5024,28 +5024,28 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hoarding disorder",
-      "definition": "\"Persistent difficulty discarding or parting with possessions"
+      "definition": "Persistent difficulty discarding or parting with possessions, regardless of their actual value."
     },
     {
       "id": "719",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociative disorders",
-      "definition": "\"Disorders in which conscious awareness becomes separated from previous memories"
+      "definition": "Disorders in which conscious awareness becomes separated from previous memories, thoughts, and feelings."
     },
     {
       "id": "720",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociation",
-      "definition": "\"A disconnection between a person's thoughts"
+      "definition": "A disconnection between a person's thoughts, memories, feelings, actions, or sense of who they are."
     },
     {
       "id": "721",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociative amnesia",
-      "definition": "\"A disorder characterized by an inability to recall important personal information"
+      "definition": "A disorder characterized by an inability to recall important personal information, usually of a traumatic or stressful nature."
     },
     {
       "id": "722",
@@ -5073,35 +5073,35 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Flashbacks",
-      "definition": "\"Vivid"
+      "definition": "Vivid, involuntary reliving of a traumatic event."
     },
     {
       "id": "726",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Insomnia",
-      "definition": "\"Persistent problems in falling or staying asleep"
+      "definition": "Persistent problems in falling or staying asleep, often associated with trauma or stress."
     },
     {
       "id": "727",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Emotional detachment",
-      "definition": "\"An inability to connect with others on an emotional level"
+      "definition": "An inability to connect with others on an emotional level, common in PTSD."
     },
     {
       "id": "728",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hostility",
-      "definition": "\"A state of ill will or unfriendliness"
+      "definition": "A state of ill will or unfriendliness, sometimes manifesting in trauma-related disorders."
     },
     {
       "id": "729",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Posttraumatic stress disorder",
-      "definition": "\"A disorder characterized by haunting memories"
+      "definition": "A disorder characterized by haunting memories, nightmares, social withdrawal, jumpy anxiety, and/or insomnia that lingers for four weeks or more after a traumatic experience."
     },
     {
       "id": "730",
@@ -5136,7 +5136,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cluster A (odd or eccentric cluster)",
-      "definition": "\"A group of personality disorders including Paranoid"
+      "definition": "A group of personality disorders including Paranoid, Schizoid, and Schizotypal."
     },
     {
       "id": "735",
@@ -5157,21 +5157,21 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Schizotypal personality disorder",
-      "definition": "\"Characterized by acute discomfort in close relationships"
+      "definition": "Characterized by acute discomfort in close relationships, cognitive or perceptual distortions, and eccentricities of behavior."
     },
     {
       "id": "738",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "\"Cluster B (dramatic",
-      "definition": "emotional"
+      "term": "Cluster B (dramatic, emotional, or erratic cluster)",
+      "definition": "A group of personality disorders including Antisocial, Borderline, Histrionic, and Narcissistic."
     },
     {
       "id": "739",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Antisocial personality disorder",
-      "definition": "\"A personality disorder in which a person exhibits a lack of conscience for wrongdoing"
+      "definition": "A personality disorder in which a person exhibits a lack of conscience for wrongdoing, even toward friends and family members."
     },
     {
       "id": "740",
@@ -5192,21 +5192,21 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Borderline personality disorder",
-      "definition": "\"Characterized by instability in interpersonal relationships"
+      "definition": "Characterized by instability in interpersonal relationships, self-image, and affects, and marked impulsivity."
     },
     {
       "id": "743",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cluster C (anxious or fearful cluster)",
-      "definition": "\"A group of personality disorders including Avoidant"
+      "definition": "A group of personality disorders including Avoidant, Dependent, and Obsessive-Compulsive."
     },
     {
       "id": "744",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Avoidant personality disorder",
-      "definition": "\"Characterized by social inhibition"
+      "definition": "Characterized by social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation."
     },
     {
       "id": "745",
@@ -5220,7 +5220,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Obsessive-compulsive personality disorder",
-      "definition": "\"Characterized by a pervasive pattern of preoccupation with orderliness"
+      "definition": "Characterized by a pervasive pattern of preoccupation with orderliness, perfectionism, and mental and interpersonal control."
     },
     {
       "id": "747",
@@ -5241,21 +5241,21 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Therapeutic alliance",
-      "definition": "\"A bond of trust and mutual understanding between a therapist and client"
+      "definition": "A bond of trust and mutual understanding between a therapist and client, who work together constructively to overcome the client’s problem."
     },
     {
       "id": "750",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Psychotropic medication",
-      "definition": "\"Drugs that affect mental processes"
+      "definition": "Drugs that affect mental processes, such as mind, emotions, and behavior."
     },
     {
       "id": "751",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Nonmaleficence",
-      "definition": "\"The ethical principle of \"\"doing no harm\"\" to the patient.\""
+      "definition": "The ethical principle of doing no harm to the patient."
     },
     {
       "id": "752",
@@ -5290,7 +5290,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Free association",
-      "definition": "\"A method of exploring the unconscious in which the person relaxes and says whatever comes to mind"
+      "definition": "A method of exploring the unconscious in which the person relaxes and says whatever comes to mind, no matter how trivial or embarrassing."
     },
     {
       "id": "757",
@@ -5304,7 +5304,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive therapies",
-      "definition": "\"Therapy that teaches people new"
+      "definition": "Therapy that teaches people new, more adaptive ways of thinking; based on the assumption that thoughts intervene between events and our emotional reactions."
     },
     {
       "id": "759",
@@ -5318,7 +5318,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Fear hierarchies",
-      "definition": "\"A list of feared situations ordered from least to most anxiety-provoking"
+      "definition": "A list of feared situations ordered from least to most anxiety-provoking, used in systematic desensitization."
     },
     {
       "id": "761",
@@ -5332,14 +5332,14 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive triad",
-      "definition": "\"Aaron Beck’s theory that depression is caused by negative views of the self"
+      "definition": "Aaron Beck’s theory that depression is caused by negative views of the self, the world, and the future."
     },
     {
       "id": "763",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Applied behavior analysis",
-      "definition": "\"The use of specific techniques and principles to bring about meaningful and positive change in behavior"
+      "definition": "The use of specific techniques and principles to bring about meaningful and positive change in behavior, often used with ASD."
     },
     {
       "id": "764",
@@ -5374,7 +5374,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Biofeedback",
-      "definition": "\"A system for electronically recording"
+      "definition": "A system for electronically recording, amplifying, and feeding back information regarding a subtle physiological state, such as blood pressure or muscle tension."
     },
     {
       "id": "769",
@@ -5388,49 +5388,49 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Dialectical behavior therapy",
-      "definition": "\"A form of CBT used to treat Borderline Personality Disorder"
+      "definition": "A form of CBT used to treat Borderline Personality Disorder, focusing on mindfulness and emotional regulation."
     },
     {
       "id": "771",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Rational emotive behavior therapy (REBT)",
-      "definition": "\"A confrontational cognitive therapy"
+      "definition": "A confrontational cognitive therapy, developed by Albert Ellis, that vigorously challenges people’s illogical, self-defeating attitudes and assumptions."
     },
     {
       "id": "772",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Person-centered therapy",
-      "definition": "\"A humanistic therapy"
+      "definition": "A humanistic therapy, developed by Carl Rogers, in which the therapist uses techniques such as active listening within a genuine, accepting, empathic environment."
     },
     {
       "id": "773",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Active listening",
-      "definition": "\"Empathic listening in which the listener echoes"
+      "definition": "Empathic listening in which the listener echoes, restates, and clarifies."
     },
     {
       "id": "774",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Unconditional positive regard",
-      "definition": "\"A caring"
+      "definition": "A caring, accepting, nonjudgmental attitude, which Carl Rogers believed would help clients develop self-awareness and self-acceptance."
     },
     {
       "id": "775",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Group therapy",
-      "definition": "\"Therapy conducted with groups rather than individuals"
+      "definition": "Therapy conducted with groups rather than individuals, permitting therapeutic benefits from group interaction."
     },
     {
       "id": "776",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Hypnosis",
-      "definition": "\"A social interaction in which one person suggests to another that certain perceptions"
+      "definition": "A social interaction in which one person suggests to another that certain perceptions, feelings, thoughts, or behaviors will spontaneously occur."
     },
     {
       "id": "777",
@@ -5444,7 +5444,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Antidepressants",
-      "definition": "\"Drugs used to treat depression"
+      "definition": "Drugs used to treat depression, anxiety disorders, OCD, and PTSD (most commonly SSRIs)."
     },
     {
       "id": "779",
@@ -5472,7 +5472,7 @@
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Tardive dyskinesia",
-      "definition": "\"Involuntary movements of the facial muscles"
+      "definition": "Involuntary movements of the facial muscles, tongue, and limbs; a possible neurotoxic side effect of long-term use of antipsychotic drugs."
     },
     {
       "id": "783",
