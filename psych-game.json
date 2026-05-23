@@ -1,0 +1,25 @@
+{
+  "hangman": [
+    {
+      "date": "05-22",
+      "term": "brain",
+      "hint": "Your body’s command center",
+      "unit": "1",
+      "topic": "1.2"
+    },
+    {
+      "date": "05-23",
+      "term": "Broca's area",
+      "hint": "Damage here can make speaking difficult",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "05-24",
+      "term": "Double-Blind",
+      "hint": "Prevents expectations from affecting results",
+      "unit": "0",
+      "topic": "0.2"
+    }
+  ]
+}

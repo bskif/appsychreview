@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Play Psych-Man</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Game Layout Styles */
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .mode-badge {
+            background-color: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; 
+        }
+        .image-placeholder {
+            background-color: #eee;
+            border: 2px dashed #ccc;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .word-container {
+            font-size: 2.5rem;
+            letter-spacing: 10px;
+            font-weight: bold;
+            margin: 30px 0;
+            text-transform: uppercase;
+        }
+        .keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .key-btn {
+            background-color: var(--white);
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text);
+        }
+        .key-btn:disabled {
+            background-color: #eee;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+        .hint-section {
+            margin: 20px 0;
+            min-height: 50px;
+            text-align: center;
+        }
+        .context-text {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .game-over-screen {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: #d4edda;
+            border-radius: 10px;
+            border: 2px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="psych-hub.html" style="color: var(--accent);">← Back to Hub</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="game-area">
+            <div class="game-header">
+                <span class="mode-badge" id="practice-badge">PRACTICE MODE (0 Pts)</span>
+                <span id="date-display" style="font-weight:bold; color:#666;">Loading...</span>
+            </div>
+
+            <div class="image-placeholder" id="visual-status">
+                Brain Intact. Lives Remaining: 6
+            </div>
+
+            <div class="word-container" id="word-display">_ _ _ _ _</div>
+
+            <div class="hint-section">
+                <div class="context-text" id="context-text"></div>
+                <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary);">👀 Reveal Hint (Forfeits +5 Bonus)</button>
+                <p id="hint-text" style="display: none; font-style: italic;"></p>
+            </div>
+
+            <div class="keyboard" id="keyboard">
+                </div>
+
+            <div class="game-over-screen" id="game-over-screen">
+                <h2 id="end-title">You Won!</h2>
+                <p id="end-message"></p>
+                <a href="psych-hub.html" class="play-btn">Return to Hub</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        <p style="margin-bottom: 15px;">
+            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+    </footer>
+
+    <script>
+        // --- 1. YOUR NEW JSON DATABASE STRUCTURE ---
+        const dbJSON = {
+          "hangman": [
+            {
+              "date": "05-22",
+              "term": "brain",
+              "hint": "Your body’s command center",
+              "unit": "1",
+              "topic": "1.2"
+            },
+            {
+              "date": "05-23",
+              "term": "Broca's area",
+              "hint": "Damage here can make speaking difficult",
+              "unit": "1",
+              "topic": "1.4"
+            },
+            {
+              "date": "05-24",
+              "term": "Double-Blind",
+              "hint": "Prevents expectations from affecting results",
+              "unit": "0",
+              "topic": "0.2"
+            }
+          ]
+        };
+
+        // --- 2. GAME STATE VARIABLES ---
+        let targetWord = "";
+        let hintText = "";
+        let guessedLetters = [];
+        let lives = 6;
+        let isPracticeMode = false;
+        let hintUsed = false;
+        let loadedDate = "";
+
+        // --- 3. INITIALIZATION LOGIC ---
+        function initGame() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlDate = urlParams.get('date');
+            const today = getTodayMMDD();
+
+            if (urlDate) {
+                loadedDate = urlDate;
+                if (urlDate !== today) {
+                    isPracticeMode = true;
+                    document.getElementById('practice-badge').style.display = 'inline-block';
+                }
+            } else {
+                loadedDate = today;
+            }
+
+            document.getElementById('date-display').innerText = "Puzzle Date: " + loadedDate;
+
+            // NEW SEARCH LOGIC: Find the object in the hangman array that matches the date
+            const puzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
+
+            if (!puzzleData) {
+                document.getElementById('word-display').innerText = "ERROR";
+                document.getElementById('hint-text').innerText = "No puzzle found for this date in the database.";
+                document.getElementById('hint-text').style.display = "block";
+                document.getElementById('hint-btn').style.display = "none";
+                return;
+            }
+
+            // Load data using your new keys
+            targetWord = puzzleData.term.toLowerCase();
+            hintText = puzzleData.hint;
+            
+            // Display Unit and Topic
+            document.getElementById('context-text').innerText = `Unit ${puzzleData.unit} | Topic ${puzzleData.topic}`;
+            document.getElementById('hint-text').innerText = hintText;
+
+            buildKeyboard();
+            updateWordDisplay();
+        }
+
+        // --- 4. GAMEPLAY MECHANICS ---
+        function updateWordDisplay() {
+            let displayStr = "";
+            let hasWon = true;
+
+            for (let i = 0; i < targetWord.length; i++) {
+                const char = targetWord[i];
+                // Auto-reveal spaces and punctuation
+                if (char === " " || char === "-" || char === "'") {
+                    displayStr += char + " "; 
+                } else if (guessedLetters.includes(char)) {
+                    displayStr += char + " ";
+                } else {
+                    displayStr += "_ ";
+                    hasWon = false;
+                }
+            }
+            document.getElementById('word-display').innerText = displayStr;
+
+            if (hasWon) { endGame(true); }
+        }
+
+        function guessLetter(letter) {
+            guessedLetters.push(letter);
+            
+            document.getElementById('key-' + letter).disabled = true;
+
+            if (!targetWord.includes(letter)) {
+                lives--;
+                updateVisualStatus();
+                if (lives === 0) { endGame(false); }
+            }
+            updateWordDisplay();
+        }
+
+        function updateVisualStatus() {
+            const statusDiv = document.getElementById('visual-status');
+            statusDiv.innerText = `Lives Remaining: ${lives}`;
+            if(lives === 0) statusDiv.style.backgroundColor = "#ffcccc";
+        }
+
+        function revealHint() {
+            document.getElementById('hint-text').style.display = "block";
+            document.getElementById('hint-btn').style.display = "none";
+            hintUsed = true;
+        }
+
+        // --- 5. END GAME & ECONOMY ---
+        function endGame(isWin) {
+            document.getElementById('keyboard').style.display = 'none';
+            document.getElementById('hint-btn').style.display = 'none';
+            document.getElementById('game-over-screen').style.display = 'block';
+
+            const screen = document.getElementById('game-over-screen');
+            const title = document.getElementById('end-title');
+            const msg = document.getElementById('end-message');
+
+            if (!isWin) {
+                screen.style.backgroundColor = "#f8d7da";
+                screen.style.borderColor = "#f5c6cb";
+                title.innerText = "Game Over!";
+                title.style.color = "#721c24";
+                document.getElementById('word-display').innerText = targetWord; 
+                
+                if(!isPracticeMode) { saveLoss(); }
+                msg.innerText = isPracticeMode ? "Practice makes perfect." : "0 Points. Try again tomorrow!";
+                return;
+            }
+
+            title.innerText = "You Won!";
+            title.style.color = "#155724";
+
+            if (isPracticeMode) {
+                msg.innerText = "Great practice session! (0 Points in Practice Mode)";
+            } else {
+                let pointsEarned = 10;
+                let bonusMsg = "";
+                
+                if (!hintUsed) {
+                    pointsEarned += 5;
+                    bonusMsg += "Perfect Recall (+5)! ";
+                }
+                if (lives === 6) {
+                    pointsEarned += 5;
+                    bonusMsg += "Flawless Spelling (+5)! ";
+                }
+
+                saveWin(pointsEarned);
+                msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
+            }
+        }
+
+        // Local Storage Handling
+        function saveWin(pointsEarned) {
+            let currentPoints = parseInt(localStorage.getItem('psychPoints') || 0);
+            let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
+            let totalWins = parseInt(localStorage.getItem('psychTotalWins') || 0);
+
+            localStorage.setItem('psychPoints', currentPoints + pointsEarned);
+            localStorage.setItem('psychStreak', currentStreak + 1);
+            localStorage.setItem('psychTotalWins', totalWins + 1);
+            localStorage.setItem('psychLastPlayed', getTodayMMDD());
+        }
+
+        function saveLoss() {
+            localStorage.setItem('psychStreak', 0); 
+            localStorage.setItem('psychLastPlayed', getTodayMMDD());
+        }
+
+        // --- UTILS ---
+        function getTodayMMDD() {
+            const today = new Date();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${month}-${day}`;
+        }
+
+        function buildKeyboard() {
+            const keyboardDiv = document.getElementById('keyboard');
+            const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+            alphabet.forEach(letter => {
+                const btn = document.createElement('button');
+                btn.innerText = letter.toUpperCase();
+                btn.className = "key-btn";
+                btn.id = "key-" + letter;
+                btn.onclick = () => guessLetter(letter);
+                keyboardDiv.appendChild(btn);
+            });
+        }
+
+        window.onload = initGame;
+    </script>
+</body>
+</html>

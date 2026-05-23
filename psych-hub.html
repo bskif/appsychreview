@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Daily Psych-Man Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .stats-board {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        .play-hero {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .massive-btn {
+            font-size: 1.5rem;
+            padding: 20px 40px;
+            border-radius: 10px;
+        }
+        .trophy-case, .archive-section {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .badge-list {
+            list-style: none;
+            padding: 0;
+        }
+        .badge-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+        .badge-unlocked {
+            color: var(--primary) !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>🧠 Daily Psych-Man</h1>
+            <p>Come back daily to keep your streak alive and earn points!</p>
+        </div>
+
+        <div class="stats-board">
+            <div class="stat-box">
+                <div class="stat-number" id="hub-points">0</div>
+                <div>Total Points</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="hub-streak">0</div>
+                <div>Day Streak</div>
+            </div>
+        </div>
+
+        <div class="play-hero">
+            <a href="psych-game.html" class="play-btn massive-btn" id="play-today-btn">Play Today's Puzzle</a>
+            <p id="played-message" style="display:none; color: green; font-weight: bold; margin-top: 15px;">You've already completed today's puzzle! Come back tomorrow.</p>
+        </div>
+
+        <div class="trophy-case">
+            <h2>🏆 Trophy Case (PoC)</h2>
+            <ul class="badge-list">
+                <li id="badge-first">🔒 Absolute Threshold (Play 1 Game)</li>
+                <li id="badge-streak">🔒 Miller's Law (7 Day Streak)</li>
+            </ul>
+        </div>
+
+        <div class="archive-section">
+            <h2>📅 Practice Archive</h2>
+            <p>Play past puzzles. No points awarded in Practice Mode.</p>
+            <input type="date" id="archive-date" style="padding: 10px; margin-right: 10px;">
+            <button onclick="loadPastGame()">Play Past Puzzle</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Psych Review Hub</p>
+    </footer>
+
+    <script>
+        // --- HUB LOGIC ---
+        function loadHubData() {
+            // 1. Get stats from local storage (or default to 0)
+            let points = localStorage.getItem('psychPoints') || 0;
+            let streak = localStorage.getItem('psychStreak') || 0;
+            let lastPlayed = localStorage.getItem('psychLastPlayed') || "";
+            let totalWins = localStorage.getItem('psychTotalWins') || 0;
+
+            // 2. Display them on the board
+            document.getElementById('hub-points').innerText = points;
+            document.getElementById('hub-streak').innerText = streak;
+
+            // 3. Check if they already played today to disable the main button
+            const todayStr = getTodayMMDD();
+            if (lastPlayed === todayStr) {
+                document.getElementById('play-today-btn').style.display = 'none';
+                document.getElementById('played-message').style.display = 'block';
+            }
+
+            // 4. Text-Based Badge Check
+            if (totalWins >= 1) {
+                document.getElementById('badge-first').innerHTML = "✅ Absolute Threshold (Unlocked!)";
+                document.getElementById('badge-first').classList.add('badge-unlocked');
+            }
+            if (streak >= 7) {
+                document.getElementById('badge-streak').innerHTML = "✅ Miller's Law (Unlocked!)";
+                document.getElementById('badge-streak').classList.add('badge-unlocked');
+            }
+        }
+
+        // Helper function: gets today's date in MM-DD format
+        function getTodayMMDD() {
+            const today = new Date();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${month}-${day}`;
+        }
+
+        // Archive logic: Redirects to game page with URL parameter
+        function loadPastGame() {
+            const dateInput = document.getElementById('archive-date').value;
+            if (!dateInput) {
+                alert("Please select a date first!");
+                return;
+            }
+            // Format HTML date picker (YYYY-MM-DD) to our DB format (MM-DD)
+            const parts = dateInput.split('-');
+            const formattedDate = `${parts[1]}-${parts[2]}`;
+            
+            // Redirect with query string
+            window.location.href = `psych-game.html?date=${formattedDate}`;
+        }
+
+        // Run when page loads
+        window.onload = loadHubData;
+    </script>
+</body>
+</html>
