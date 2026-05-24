@@ -83,12 +83,41 @@
     </style>
 </head>
 <body>
+    
     <nav>
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
+
         <ul class="nav-links">
-            <li><a href="psych-hub.html" style="color: var(--accent);">← Back to Hub</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="psych-hub.html">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="glossary.html">Glossary</a>
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
@@ -172,6 +201,9 @@
             const urlParams = new URLSearchParams(window.location.search);
             const urlDate = urlParams.get('date');
             const today = getTodayMMDD();
+            
+            // Grab the last played date from memory to check for the bug
+            const lastPlayed = localStorage.getItem('psychLastPlayed') || "";
 
             if (urlDate) {
                 loadedDate = urlDate;
@@ -183,9 +215,17 @@
                 loadedDate = today;
             }
 
+            // BUG FIX: If they load today's date but already played today, force Practice Mode
+            if (loadedDate === today && lastPlayed === today) {
+                isPracticeMode = true;
+                const badge = document.getElementById('practice-badge');
+                badge.innerText = "ALREADY PLAYED TODAY (0 Pts)";
+                badge.style.backgroundColor = "#e74c3c"; // Red badge for clarity
+                badge.style.display = 'inline-block';
+            }
+
             document.getElementById('date-display').innerText = "Puzzle Date: " + loadedDate;
 
-            // NEW SEARCH LOGIC: Find the object in the hangman array that matches the date
             const puzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
 
             if (!puzzleData) {
@@ -196,11 +236,9 @@
                 return;
             }
 
-            // Load data using your new keys
             targetWord = puzzleData.term.toLowerCase();
             hintText = puzzleData.hint;
             
-            // Display Unit and Topic
             document.getElementById('context-text').innerText = `Unit ${puzzleData.unit} | Topic ${puzzleData.topic}`;
             document.getElementById('hint-text').innerText = hintText;
 
@@ -215,7 +253,6 @@
 
             for (let i = 0; i < targetWord.length; i++) {
                 const char = targetWord[i];
-                // Auto-reveal spaces and punctuation
                 if (char === " " || char === "-" || char === "'") {
                     displayStr += char + " "; 
                 } else if (guessedLetters.includes(char)) {
