@@ -6,61 +6,50 @@
     <title>Daily Psych-Man Hub</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .stats-board {
-            display: flex;
-            justify-content: space-around;
+        .stats-board, .trophy-case, .archive-section, .rules-section {
             background-color: var(--white);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
-        .stat-box {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
-        .play-hero {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .massive-btn {
-            font-size: 1.5rem;
-            padding: 20px 40px;
-            border-radius: 10px;
-        }
-        .trophy-case, .archive-section {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        .badge-list {
-            list-style: none;
-            padding: 0;
-        }
-        .badge-list li {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            color: #666;
-        }
-        .badge-unlocked {
-            color: var(--primary) !important;
-            font-weight: bold;
-        }
+        .stats-board { display: flex; justify-content: space-around; }
+        .stat-box { text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent); }
+        .play-hero { text-align: center; margin: 40px 0; }
+        .massive-btn { font-size: 1.5rem; padding: 20px 40px; border-radius: 10px; text-decoration: none; display: inline-block; background-color: var(--accent); color: white;}
+        
+        /* Scoring Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border-bottom: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; color: var(--primary); }
+        
+        /* Visual Calendar Styles */
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .calendar-header button { padding: 5px 15px; cursor: pointer; background-color: var(--primary); color: white; border: none; border-radius: 5px; font-weight:bold;}
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+        .day-label { font-weight: bold; color: #666; margin-bottom: 5px; font-size: 0.9rem;}
+        .cal-day { padding: 15px 5px; border-radius: 5px; background-color: #f0f0f0; border: 1px solid #ddd; cursor: pointer; font-weight: bold; transition: transform 0.1s;}
+        .cal-day:hover { transform: scale(1.05); }
+        .cal-empty { background-color: transparent; border: none; pointer-events: none; }
+        .cal-future { opacity: 0.4; pointer-events: none; }
+        .cal-win { background-color: #2ecc71; color: white; border-color: #27ae60; }
+        .cal-loss { background-color: #e74c3c; color: white; border-color: #c0392b; }
+        
+        .badge-list { list-style: none; padding: 0; }
+        .badge-list li { padding: 10px; border-bottom: 1px solid #eee; color: #666; }
+        .badge-unlocked { color: var(--primary) !important; font-weight: bold; }
     </style>
 </head>
 <body>
+    
     <nav>
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="psych-hub.html">Daily Puzzle</a></li>
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
@@ -83,14 +72,14 @@
                 <a href="#">About ▾</a>
                 <div class="dropdown-content">
                     <a href="about.html">About Me</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
                 </div>
             </li>
         </ul>
     </nav>
 
     <div class="container">
-        <div class="hero">
+        <div class="hero" style="text-align: center; padding: 20px;">
             <h1>🧠 Daily Psych-Man</h1>
             <p>Come back daily to keep your streak alive and earn points!</p>
         </div>
@@ -107,8 +96,40 @@
         </div>
 
         <div class="play-hero">
-            <a href="psych-game.html" class="play-btn massive-btn" id="play-today-btn">Play Today's Puzzle</a>
-            <p id="played-message" style="display:none; color: green; font-weight: bold; margin-top: 15px;">You've already completed today's puzzle! Come back tomorrow.</p>
+            <a href="psych-game.html" class="massive-btn" id="play-today-btn">Play Today's Puzzle</a>
+            <p id="played-message" style="display:none; color: #27ae60; font-weight: bold; margin-top: 15px; font-size:1.2rem;">You've already completed today's puzzle! Come back tomorrow.</p>
+        </div>
+
+        <div class="rules-section">
+            <h2>📖 How to Play & Scoring Guide</h2>
+            <p style="margin-bottom: 10px;">Guess the hidden AP Psychology term before you run out of lives! The game resets every night at midnight.</p>
+            <table>
+                <tr><th>Action / Achievement</th><th>Points Earned</th></tr>
+                <tr><td><strong>Daily Puzzle Win</strong></td><td>+10 Points</td></tr>
+                <tr><td><strong>Bonus:</strong> Perfect Recall (Did not use hint)</td><td>+5 Points</td></tr>
+                <tr><td><strong>Bonus:</strong> Flawless (No wrong letters guessed)</td><td>+5 Points</td></tr>
+                <tr><td><strong>Puzzle Loss</strong></td><td>0 Points</td></tr>
+                <tr><td><strong>7-Day Streak</strong></td><td>+20 Points</td></tr>
+                <tr><td><strong>Unlock a Trophy Badge</strong></td><td>+25 Points</td></tr>
+            </table>
+        </div>
+
+        <div class="archive-section">
+            <h2>📅 Practice Archive</h2>
+            <p style="margin-bottom: 15px;">Click a past date to replay it in Practice Mode (0 Points). <strong style="color:#2ecc71;">Green = Won</strong> | <strong style="color:#e74c3c;">Red = Lost</strong></p>
+            
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">&#9664; Prev</button>
+                <h3 id="month-name" style="margin: 0;">Month Year</h3>
+                <button onclick="changeMonth(1)">Next &#9654;</button>
+            </div>
+            
+            <div class="calendar-grid">
+                <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
+                <div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div><div class="day-label">Sat</div>
+            </div>
+            <div class="calendar-grid" id="calendar-days">
+                </div>
         </div>
 
         <div class="trophy-case">
@@ -118,40 +139,31 @@
                 <li id="badge-streak">🔒 Miller's Law (7 Day Streak)</li>
             </ul>
         </div>
-
-        <div class="archive-section">
-            <h2>📅 Practice Archive</h2>
-            <p>Play past puzzles. No points awarded in Practice Mode.</p>
-            <input type="date" id="archive-date" style="padding: 10px; margin-right: 10px;">
-            <button onclick="loadPastGame()">Play Past Puzzle</button>
-        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Psych Review Hub</p>
+        <p>&copy; Psych Review Hub</p>
     </footer>
 
     <script>
-        // --- HUB LOGIC ---
+        // --- 1. STATS & BADGES ---
         function loadHubData() {
-            // 1. Get stats from local storage (or default to 0)
             let points = localStorage.getItem('psychPoints') || 0;
             let streak = localStorage.getItem('psychStreak') || 0;
             let lastPlayed = localStorage.getItem('psychLastPlayed') || "";
             let totalWins = localStorage.getItem('psychTotalWins') || 0;
 
-            // 2. Display them on the board
             document.getElementById('hub-points').innerText = points;
             document.getElementById('hub-streak').innerText = streak;
 
-            // 3. Check if they already played today to disable the main button
-            const todayStr = getTodayMMDD();
+            const today = new Date();
+            const todayStr = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            
             if (lastPlayed === todayStr) {
                 document.getElementById('play-today-btn').style.display = 'none';
                 document.getElementById('played-message').style.display = 'block';
             }
 
-            // 4. Text-Based Badge Check
             if (totalWins >= 1) {
                 document.getElementById('badge-first').innerHTML = "✅ Absolute Threshold (Unlocked!)";
                 document.getElementById('badge-first').classList.add('badge-unlocked');
@@ -160,32 +172,62 @@
                 document.getElementById('badge-streak').innerHTML = "✅ Miller's Law (Unlocked!)";
                 document.getElementById('badge-streak').classList.add('badge-unlocked');
             }
-        }
-
-        // Helper function: gets today's date in MM-DD format
-        function getTodayMMDD() {
-            const today = new Date();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            return `${month}-${day}`;
-        }
-
-        // Archive logic: Redirects to game page with URL parameter
-        function loadPastGame() {
-            const dateInput = document.getElementById('archive-date').value;
-            if (!dateInput) {
-                alert("Please select a date first!");
-                return;
-            }
-            // Format HTML date picker (YYYY-MM-DD) to our DB format (MM-DD)
-            const parts = dateInput.split('-');
-            const formattedDate = `${parts[1]}-${parts[2]}`;
             
-            // Redirect with query string
-            window.location.href = `psych-game.html?date=${formattedDate}`;
+            renderCalendar();
         }
 
-        // Run when page loads
+        // --- 2. VISUAL CALENDAR LOGIC ---
+        let currentCalDate = new Date(); // Tracks which month we are viewing
+
+        function changeMonth(dir) {
+            currentCalDate.setMonth(currentCalDate.getMonth() + dir);
+            renderCalendar();
+        }
+
+        function renderCalendar() {
+            const history = JSON.parse(localStorage.getItem('psychHistory')) || {};
+            const year = currentCalDate.getFullYear();
+            const month = currentCalDate.getMonth();
+            
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.getElementById('month-name').innerText = `${monthNames[month]} ${year}`;
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            const today = new Date();
+            const calDiv = document.getElementById('calendar-days');
+            calDiv.innerHTML = ""; // Clear existing
+
+            // Add blank spaces for days before the 1st
+            for (let i = 0; i < firstDay; i++) {
+                calDiv.innerHTML += `<div class="cal-day cal-empty"></div>`;
+            }
+
+            // Fill in the actual days
+            for (let day = 1; day <= daysInMonth; day++) {
+                let cellDate = new Date(year, month, day);
+                let isFuture = cellDate > today;
+                
+                // Format matching DB "MM-DD"
+                let dateStr = String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+                
+                let extraClass = "";
+                let clickAction = `onclick="window.location.href='psych-game.html?date=${dateStr}'"`;
+                
+                if (isFuture) {
+                    extraClass = "cal-future";
+                    clickAction = ""; // Cannot click future dates
+                } else if (history[dateStr] === "win") {
+                    extraClass = "cal-win";
+                } else if (history[dateStr] === "loss") {
+                    extraClass = "cal-loss";
+                }
+
+                calDiv.innerHTML += `<div class="cal-day ${extraClass}" ${clickAction}>${day}</div>`;
+            }
+        }
+
         window.onload = loadHubData;
     </script>
 </body>
