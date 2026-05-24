@@ -6,90 +6,24 @@
     <title>Play Psych-Man</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific Game Layout Styles */
-        .game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .mode-badge {
-            background-color: #f39c12;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            display: none; 
-        }
-        .image-placeholder {
-            background-color: #eee;
-            border: 2px dashed #ccc;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #666;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .word-container {
-            font-size: 2.5rem;
-            letter-spacing: 10px;
-            font-weight: bold;
-            margin: 30px 0;
-            text-transform: uppercase;
-        }
-        .keyboard {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 5px;
-            margin-top: 20px;
-        }
-        .key-btn {
-            background-color: var(--white);
-            border: 1px solid #ccc;
-            padding: 10px 15px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            color: var(--text);
-        }
-        .key-btn:disabled {
-            background-color: #eee;
-            color: #aaa;
-            cursor: not-allowed;
-        }
-        .hint-section {
-            margin: 20px 0;
-            min-height: 50px;
-            text-align: center;
-        }
-        .context-text {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .game-over-screen {
-            display: none;
-            text-align: center;
-            padding: 30px;
-            background-color: #d4edda;
-            border-radius: 10px;
-            border: 2px solid #c3e6cb;
-        }
+        .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .mode-badge { background-color: #f39c12; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; display: none; }
+        .image-placeholder { background-color: #eee; border: 2px dashed #ccc; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #666; margin-bottom: 20px; border-radius: 10px; }
+        .word-container { font-size: 2.5rem; letter-spacing: 10px; font-weight: bold; margin: 30px 0; text-transform: uppercase; text-align: center; }
+        .keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px; }
+        .key-btn { background-color: var(--white); border: 1px solid #ccc; padding: 10px 15px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; color: var(--text); }
+        .key-btn:disabled { background-color: #eee; color: #aaa; cursor: not-allowed; }
+        .hint-section { margin: 20px 0; min-height: 50px; text-align: center; }
+        .context-text { font-size: 0.95rem; color: #666; margin-bottom: 10px; font-weight: bold; }
+        .game-over-screen { display: none; text-align: center; padding: 30px; background-color: #d4edda; border-radius: 10px; border: 2px solid #c3e6cb; }
     </style>
 </head>
 <body>
     
     <nav>
         <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
-        
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
-
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="psych-hub.html">Daily Puzzle</a></li>
@@ -127,22 +61,14 @@
                 <span class="mode-badge" id="practice-badge">PRACTICE MODE (0 Pts)</span>
                 <span id="date-display" style="font-weight:bold; color:#666;">Loading...</span>
             </div>
-
-            <div class="image-placeholder" id="visual-status">
-                Brain Intact. Lives Remaining: 6
-            </div>
-
+            <div class="image-placeholder" id="visual-status">Brain Intact. Lives Remaining: 6</div>
             <div class="word-container" id="word-display">_ _ _ _ _</div>
-
             <div class="hint-section">
                 <div class="context-text" id="context-text"></div>
-                <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary);">👀 Reveal Hint (Forfeits +5 Bonus)</button>
+                <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary); padding:10px; color:white; border:none; border-radius:5px; cursor:pointer;">👀 Reveal Hint (Forfeits +5 Bonus)</button>
                 <p id="hint-text" style="display: none; font-style: italic;"></p>
             </div>
-
-            <div class="keyboard" id="keyboard">
-                </div>
-
+            <div class="keyboard" id="keyboard"></div>
             <div class="game-over-screen" id="game-over-screen">
                 <h2 id="end-title">You Won!</h2>
                 <p id="end-message"></p>
@@ -152,57 +78,25 @@
     </div>
 
     <footer>
-        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-        <p style="margin-bottom: 15px;">
-            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
-            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
-        </p>
+        <p>&copy; Psych Review Hub</p>
     </footer>
 
     <script>
-        // --- 1. YOUR NEW JSON DATABASE STRUCTURE ---
         const dbJSON = {
           "hangman": [
-            {
-              "date": "05-22",
-              "term": "brain",
-              "hint": "Your body’s command center",
-              "unit": "1",
-              "topic": "1.2"
-            },
-            {
-              "date": "05-23",
-              "term": "Broca's area",
-              "hint": "Damage here can make speaking difficult",
-              "unit": "1",
-              "topic": "1.4"
-            },
-            {
-              "date": "05-24",
-              "term": "Double-Blind",
-              "hint": "Prevents expectations from affecting results",
-              "unit": "0",
-              "topic": "0.2"
-            }
+            { "date": "05-22", "term": "brain", "hint": "Your body’s command center", "unit": "1", "topic": "1.2" },
+            { "date": "05-23", "term": "Broca's area", "hint": "Damage here can make speaking difficult", "unit": "1", "topic": "1.4" },
+            { "date": "05-24", "term": "Double-Blind", "hint": "Prevents expectations from affecting results", "unit": "0", "topic": "0.2" }
           ]
         };
 
-        // --- 2. GAME STATE VARIABLES ---
-        let targetWord = "";
-        let hintText = "";
-        let guessedLetters = [];
-        let lives = 6;
-        let isPracticeMode = false;
-        let hintUsed = false;
-        let loadedDate = "";
+        let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
+        let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
 
-        // --- 3. INITIALIZATION LOGIC ---
         function initGame() {
             const urlParams = new URLSearchParams(window.location.search);
             const urlDate = urlParams.get('date');
             const today = getTodayMMDD();
-            
-            // Grab the last played date from memory to check for the bug
             const lastPlayed = localStorage.getItem('psychLastPlayed') || "";
 
             if (urlDate) {
@@ -215,17 +109,15 @@
                 loadedDate = today;
             }
 
-            // BUG FIX: If they load today's date but already played today, force Practice Mode
             if (loadedDate === today && lastPlayed === today) {
                 isPracticeMode = true;
                 const badge = document.getElementById('practice-badge');
                 badge.innerText = "ALREADY PLAYED TODAY (0 Pts)";
-                badge.style.backgroundColor = "#e74c3c"; // Red badge for clarity
+                badge.style.backgroundColor = "#e74c3c"; 
                 badge.style.display = 'inline-block';
             }
 
             document.getElementById('date-display').innerText = "Puzzle Date: " + loadedDate;
-
             const puzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
 
             if (!puzzleData) {
@@ -238,7 +130,6 @@
 
             targetWord = puzzleData.term.toLowerCase();
             hintText = puzzleData.hint;
-            
             document.getElementById('context-text').innerText = `Unit ${puzzleData.unit} | Topic ${puzzleData.topic}`;
             document.getElementById('hint-text').innerText = hintText;
 
@@ -246,32 +137,21 @@
             updateWordDisplay();
         }
 
-        // --- 4. GAMEPLAY MECHANICS ---
         function updateWordDisplay() {
-            let displayStr = "";
-            let hasWon = true;
-
+            let displayStr = ""; let hasWon = true;
             for (let i = 0; i < targetWord.length; i++) {
                 const char = targetWord[i];
-                if (char === " " || char === "-" || char === "'") {
-                    displayStr += char + " "; 
-                } else if (guessedLetters.includes(char)) {
-                    displayStr += char + " ";
-                } else {
-                    displayStr += "_ ";
-                    hasWon = false;
-                }
+                if (char === " " || char === "-" || char === "'") { displayStr += char + " "; } 
+                else if (guessedLetters.includes(char)) { displayStr += char + " "; } 
+                else { displayStr += "_ "; hasWon = false; }
             }
             document.getElementById('word-display').innerText = displayStr;
-
             if (hasWon) { endGame(true); }
         }
 
         function guessLetter(letter) {
             guessedLetters.push(letter);
-            
             document.getElementById('key-' + letter).disabled = true;
-
             if (!targetWord.includes(letter)) {
                 lives--;
                 updateVisualStatus();
@@ -292,7 +172,6 @@
             hintUsed = true;
         }
 
-        // --- 5. END GAME & ECONOMY ---
         function endGame(isWin) {
             document.getElementById('keyboard').style.display = 'none';
             document.getElementById('hint-btn').style.display = 'none';
@@ -320,41 +199,38 @@
             if (isPracticeMode) {
                 msg.innerText = "Great practice session! (0 Points in Practice Mode)";
             } else {
-                let pointsEarned = 10;
-                let bonusMsg = "";
-                
-                if (!hintUsed) {
-                    pointsEarned += 5;
-                    bonusMsg += "Perfect Recall (+5)! ";
-                }
-                if (lives === 6) {
-                    pointsEarned += 5;
-                    bonusMsg += "Flawless Spelling (+5)! ";
-                }
-
+                let pointsEarned = 10; let bonusMsg = "";
+                if (!hintUsed) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
+                if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Spelling (+5)! "; }
                 saveWin(pointsEarned);
                 msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
             }
         }
 
-        // Local Storage Handling
         function saveWin(pointsEarned) {
             let currentPoints = parseInt(localStorage.getItem('psychPoints') || 0);
             let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
             let totalWins = parseInt(localStorage.getItem('psychTotalWins') || 0);
+            let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
 
             localStorage.setItem('psychPoints', currentPoints + pointsEarned);
             localStorage.setItem('psychStreak', currentStreak + 1);
             localStorage.setItem('psychTotalWins', totalWins + 1);
             localStorage.setItem('psychLastPlayed', getTodayMMDD());
+            
+            history[getTodayMMDD()] = "win";
+            localStorage.setItem('psychHistory', JSON.stringify(history));
         }
 
         function saveLoss() {
+            let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
             localStorage.setItem('psychStreak', 0); 
             localStorage.setItem('psychLastPlayed', getTodayMMDD());
+            
+            history[getTodayMMDD()] = "loss";
+            localStorage.setItem('psychHistory', JSON.stringify(history));
         }
 
-        // --- UTILS ---
         function getTodayMMDD() {
             const today = new Date();
             const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -374,7 +250,6 @@
                 keyboardDiv.appendChild(btn);
             });
         }
-
         window.onload = initGame;
     </script>
 </body>
