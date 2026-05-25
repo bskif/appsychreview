@@ -53,6 +53,37 @@
             flex-wrap: wrap;
         }
 
+        /* --- QUICK JUMP BAR --- */
+        .quick-jump-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .jump-link {
+            text-decoration: none;
+            color: var(--primary);
+            background: #f0f8ff;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .jump-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
         /* --- GLOSSARY CONTENT --- */
         .unit-header {
             color: var(--primary);
@@ -157,6 +188,7 @@
 
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="psych-hub.html">Daily Puzzle</a></li>
             <li class="dropdown">
                 <a href="#">Study Tools ▾</a>
                 <div class="dropdown-content">
@@ -200,6 +232,8 @@
                 <button id="btn-sort-alpha" class="nav-btn" style="background-color: var(--primary); color: white; margin: 0; padding: 8px 15px;" onclick="setSortMode('alpha')">Alphabetical (A-Z)</button>
                 <button id="btn-sort-unit" class="nav-btn" style="background-color: #eee; color: #333; margin: 0; padding: 8px 15px;" onclick="setSortMode('unit')">By Unit & Topic</button>
             </div>
+
+            <div id="quick-jump-container" class="quick-jump-container"></div>
         </div>
 
         <div id="glossary-content">
@@ -223,6 +257,16 @@
             "Unit 4": "Social Psychology and Personality",
             "Unit 5": "Mental and Physical Health"
         };
+
+        // Custom Jump Function to account for sticky search bar height
+        function jumpToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                const searchBarHeight = document.querySelector('.search-container').offsetHeight;
+                const y = el.getBoundingClientRect().top + window.scrollY - searchBarHeight - 20;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
 
         // 1. Fetch Data
         Promise.all([
@@ -268,10 +312,13 @@
             renderGlossary();
         }
 
-        // 3. Render Glossary Content
+        // 3. Render Glossary Content & Quick Jump Bar
         function renderGlossary() {
             const content = document.getElementById('glossary-content');
+            const jumpContainer = document.getElementById('quick-jump-container');
+            
             content.innerHTML = '';
+            jumpContainer.innerHTML = ''; // Reset jump links
             
             if (sortMode === 'alpha') {
                 // Group by first letter
@@ -283,8 +330,16 @@
                 });
                 
                 Object.keys(grouped).sort().forEach(letter => {
+                    // Populate Quick Jump Links
+                    const jumpBtn = document.createElement('a');
+                    jumpBtn.className = 'jump-link';
+                    jumpBtn.innerText = letter;
+                    jumpBtn.onclick = () => jumpToSection('sec-' + letter);
+                    jumpContainer.appendChild(jumpBtn);
+
                     const section = document.createElement('div');
                     section.className = 'glossary-section';
+                    section.id = 'sec-' + letter;
                     
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
@@ -312,8 +367,19 @@
                 });
                 
                 Object.keys(grouped).sort().forEach(unit => {
+                    // Process Unit ID for safe HTML anchors
+                    const unitIdSafe = unit.replace(/\s+/g, '-');
+
+                    // Populate Quick Jump Links
+                    const jumpBtn = document.createElement('a');
+                    jumpBtn.className = 'jump-link';
+                    jumpBtn.innerText = unit;
+                    jumpBtn.onclick = () => jumpToSection('sec-' + unitIdSafe);
+                    jumpContainer.appendChild(jumpBtn);
+
                     const unitSec = document.createElement('div');
                     unitSec.className = 'glossary-section unit-section';
+                    unitSec.id = 'sec-' + unitIdSafe;
                     
                     // Lookup Unit Title from our dictionary
                     let displayUnit = unit;
@@ -359,6 +425,14 @@
             const query = document.getElementById('search-bar').value.toLowerCase();
             const sections = document.querySelectorAll('.glossary-section');
             
+            // Hide the quick jump bar if the student is actively searching 
+            const jumpContainer = document.getElementById('quick-jump-container');
+            if (query.length > 0) {
+                jumpContainer.style.display = 'none';
+            } else {
+                jumpContainer.style.display = 'flex';
+            }
+
             sections.forEach(section => {
                 let sectionHasVisible = false;
                 
