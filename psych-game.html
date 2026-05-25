@@ -8,7 +8,26 @@
     <style>
         .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .mode-badge { background-color: #f39c12; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; display: none; }
-        .image-placeholder { background-color: #eee; border: 2px dashed #ccc; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #666; margin-bottom: 20px; border-radius: 10px; }
+        
+        /* Upgraded Image Container to cleanly render your Canva exports */
+        .image-container { 
+            background-color: #eee; 
+            border: 2px dashed #ccc; 
+            height: 220px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+            padding: 10px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .image-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain; /* Prevents stretching or distortion */
+        }
+
         .word-container { font-size: 2.5rem; letter-spacing: 10px; font-weight: bold; margin: 30px 0; text-transform: uppercase; text-align: center; }
         .keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px; }
         .key-btn { background-color: var(--white); border: 1px solid #ccc; padding: 10px 15px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; color: var(--text); }
@@ -61,7 +80,11 @@
                 <span class="mode-badge" id="practice-badge">PRACTICE MODE (0 Pts)</span>
                 <span id="date-display" style="font-weight:bold; color:#666;">Loading...</span>
             </div>
-            <div class="image-placeholder" id="visual-status">Brain Intact. Lives Remaining: 6</div>
+
+            <div class="image-container" id="image-container">
+                <img id="brain-image" src="images/brain_7.png" alt="Brain Status: Full Health">
+            </div>
+
             <div class="word-container" id="word-display">_ _ _ _ _</div>
             <div class="hint-section">
                 <div class="context-text" id="context-text"></div>
@@ -133,6 +156,8 @@
             document.getElementById('context-text').innerText = `Unit ${puzzleData.unit} | Topic ${puzzleData.topic}`;
             document.getElementById('hint-text').innerText = hintText;
 
+            // Explicitly sync visual system on initial startup
+            updateVisualStatus();
             buildKeyboard();
             updateWordDisplay();
         }
@@ -161,9 +186,21 @@
         }
 
         function updateVisualStatus() {
-            const statusDiv = document.getElementById('visual-status');
-            statusDiv.innerText = `Lives Remaining: ${lives}`;
-            if(lives === 0) statusDiv.style.backgroundColor = "#ffcccc";
+            const brainImg = document.getElementById('brain-image');
+            const container = document.getElementById('image-container');
+            
+            // Formula dynamically updates image src: brain_7.png down to brain_1.png
+            brainImg.src = `images/brain_${lives + 1}.png`;
+            brainImg.alt = `Brain Status: ${lives} Lives Remaining`;
+            
+            // Soft alert background color when completely out of lives
+            if (lives === 0) {
+                container.style.backgroundColor = "#ffcccc";
+                container.style.borderColor = "#e74c3c";
+            } else {
+                container.style.backgroundColor = "#eee";
+                container.style.borderColor = "#ccc";
+            }
         }
 
         function revealHint() {
