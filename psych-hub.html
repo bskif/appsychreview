@@ -93,6 +93,10 @@
                 <div class="stat-number" id="hub-streak">0</div>
                 <div>Day Streak</div>
             </div>
+            <div class="stat-box">
+                <div class="stat-number" id="hub-best-time">--:--</div>
+                <div>Best Time</div>
+            </div>
         </div>
 
         <div class="play-hero">
@@ -161,9 +165,18 @@
             let streak = localStorage.getItem('psychStreak') || 0;
             let lastPlayed = localStorage.getItem('psychLastPlayed') || "";
             let totalWins = localStorage.getItem('psychTotalWins') || 0;
+            let bestTime = localStorage.getItem('psychBestTime'); // New line to pull best time
 
             document.getElementById('hub-points').innerText = points;
             document.getElementById('hub-streak').innerText = streak;
+
+            // Format Best Time if it exists
+            if (bestTime) {
+                let seconds = parseInt(bestTime);
+                let displayM = String(Math.floor(seconds / 60)).padStart(2, '0');
+                let displayS = String(seconds % 60).padStart(2, '0');
+                document.getElementById('hub-best-time').innerText = `${displayM}:${displayS}`;
+            }
 
             const today = new Date();
             const todayStr = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
