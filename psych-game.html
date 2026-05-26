@@ -13,9 +13,9 @@
         .image-container { 
             background-color: #eee; 
             border: 2px dashed #ccc; 
-            height: 350px; /* Increased from 220px for better visibility */
-            max-width: 500px; /* Matches your 500x500 image size */
-            margin: 0 auto 20px auto; /* Centers the box nicely on the screen */
+            height: 350px; 
+            max-width: 500px; 
+            margin: 0 auto 20px auto; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -26,7 +26,7 @@
         .image-container img {
             max-height: 100%;
             max-width: 100%;
-            object-fit: contain; /* Prevents stretching */
+            object-fit: contain; 
         }
 
         /* Live Timer Style */
@@ -298,6 +298,12 @@
             let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
             let totalWins = parseInt(localStorage.getItem('psychTotalWins') || 0);
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
+            let currentBest = localStorage.getItem('psychBestTime'); // Retrieve previous best
+
+            // Check if this win is their new fastest time
+            if (!currentBest || elapsedSeconds < parseInt(currentBest)) {
+                localStorage.setItem('psychBestTime', elapsedSeconds);
+            }
 
             localStorage.setItem('psychPoints', currentPoints + pointsEarned);
             localStorage.setItem('psychStreak', currentStreak + 1);
