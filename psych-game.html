@@ -29,6 +29,20 @@
             object-fit: contain; /* Prevents stretching */
         }
 
+        /* Live Timer Style */
+        .timer-box {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #34495e;
+            background-color: #eaeaea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid #ccc;
+        }
+
         .word-container { font-size: 2.5rem; letter-spacing: 10px; font-weight: bold; margin: 30px 0; text-transform: uppercase; text-align: center; }
         .keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px; }
         .key-btn { background-color: var(--white); border: 1px solid #ccc; padding: 10px 15px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; color: var(--text); }
@@ -78,8 +92,13 @@
     <div class="container">
         <div class="game-area">
             <div class="game-header">
-                <span class="mode-badge" id="practice-badge">PRACTICE MODE (0 Pts)</span>
-                <span id="date-display" style="font-weight:bold; color:#666;">Loading...</span>
+                <div>
+                    <span class="mode-badge" id="practice-badge">PRACTICE MODE (0 Pts)</span>
+                    <span id="date-display" style="font-weight:bold; color:#666;">Loading...</span>
+                </div>
+                <div class="timer-box" id="timer-box">
+                    ⏱️ <span id="timer-display">00:00</span>
+                </div>
             </div>
 
             <div class="image-container" id="image-container">
@@ -101,18 +120,9 @@
         </div>
     </div>
 
-<footer>
-        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
-        
-        <p style="margin-bottom: 15px;">
-            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
-            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
-        </p>
-
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    <footer>
+        <p>&copy; Psych Review Hub</p>
     </footer>
-
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <script>
         const dbJSON = {
@@ -125,6 +135,10 @@
 
         let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
         let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
+        
+        // Timer Variables
+        let timerInterval;
+        let elapsedSeconds = 0;
 
         function initGame() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -170,6 +184,24 @@
             updateVisualStatus();
             buildKeyboard();
             updateWordDisplay();
+            
+            // Fire up the clock right as layout displays
+            startTimer();
+        }
+
+        function startTimer() {
+            elapsedSeconds = 0;
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                elapsedSeconds++;
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+            const seconds = String(elapsedSeconds % 60).padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${minutes}:${seconds}`;
         }
 
         function updateWordDisplay() {
@@ -220,6 +252,9 @@
         }
 
         function endGame(isWin) {
+            // Instantly stop the clock
+            clearInterval(timerInterval);
+
             document.getElementById('keyboard').style.display = 'none';
             document.getElementById('hint-btn').style.display = 'none';
             document.getElementById('game-over-screen').style.display = 'block';
@@ -249,6 +284,10 @@
                 let pointsEarned = 10; let bonusMsg = "";
                 if (!hintUsed) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
                 if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Spelling (+5)! "; }
+                
+                // Speed calculation: check if finished within 45 seconds
+                if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Fast (+5)! "; }
+                
                 saveWin(pointsEarned);
                 msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
             }
