@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Play Psych-Man Hub Puzzles</title>
+    <title>Play Psych Challenge</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -45,7 +45,7 @@
 
         .hint-section { margin: 20px 0; min-height: 50px; text-align: center; }
         .context-text { font-size: 1.1rem; color: #2c3e50; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-        .game-over-screen { display: none; text-align: center; padding: 30px; background-color: #d4edda; border-radius: 10px; border: 2px solid #c3e6cb; }
+        .game-over-screen { display: none; text-align: center; padding: 30px; background-color: #d4edda; border-radius: 10px; border: 2px solid #c3e6cb; margin-top: 20px;}
         
         /* --- GAME MODE VIEWS VIA SWITCHBOARD --- */
         .game-view { display: none; margin: 20px 0; text-align: center; }
@@ -67,11 +67,60 @@
         .choice-btn { background-color: #fff; border: 2px solid #34495e; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.2s; color: #34495e; }
         .choice-btn:hover { background-color: #f4f6f7; }
 
-        /* Mode 5: Synapse Snap (Memory Match) */
+        /* Mode 5: Synapse Snap (Memory Match) Upgraded 3D Cards */
         .snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 600px; margin: 25px auto; }
-        .snap-card { height: 90px; background-color: #34495e; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; text-align: center; padding: 5px; color: transparent; font-weight: bold; font-size: 0.85rem; border: 2px solid #2c3e50; user-select: none; transition: transform 0.2s; }
-        .snap-card.flipped { background-color: #fff; color: #2c3e50; border-color: var(--primary); transform: rotateY(180deg); }
-        .snap-card.matched { background-color: #2ecc71; color: white; border-color: #27ae60; cursor: default; transform: rotateY(180deg); }
+        .snap-card { 
+            height: 100px; 
+            background-color: transparent; 
+            perspective: 1000px; 
+            cursor: pointer; 
+        }
+        .snap-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+        .snap-card.flipped .snap-card-inner, .snap-card.matched .snap-card-inner {
+            transform: rotateY(180deg);
+        }
+        .snap-card-front, .snap-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 2px solid #2c3e50;
+        }
+        .snap-card-front {
+            background-color: #34495e;
+        }
+        .snap-card-back {
+            background-color: #fff;
+            color: #2c3e50;
+            transform: rotateY(180deg); /* Counteracts the flip to prevent mirrored text */
+            font-size: 0.8rem;
+            font-weight: bold;
+            overflow-y: auto; /* Scrollbar for very long text */
+            overflow-wrap: break-word; /* Prevents text spillover */
+        }
+        /* Custom mini-scrollbar for the back of the cards */
+        .snap-card-back::-webkit-scrollbar { width: 4px; }
+        .snap-card-back::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
+        
+        /* Green styling for matched pairs */
+        .snap-card.matched .snap-card-back {
+            background-color: #2ecc71;
+            color: white;
+            border-color: #27ae60;
+        }
     </style>
 </head>
 <body>
@@ -162,14 +211,14 @@
             </div>
 
             <div id="view-synapsesnap" class="game-view">
-                <p style="font-weight:bold; color:#7f8c8d;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
+                <p style="font-weight:bold; color:#7f8c8d; margin-bottom:15px;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
                 <div class="snap-grid" id="snap-card-grid"></div>
             </div>
 
             <div class="game-over-screen" id="game-over-screen">
                 <h2 id="end-title">Game Complete!</h2>
                 <p id="end-message" style="margin: 15px 0; font-size:1.1rem; font-weight:bold;"></p>
-                <a href="psych-hub.html" class="play-btn">Return to Hub</a>
+                <a href="psych-hub.html" class="play-btn" style="background-color: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Return to Hub</a>
             </div>
         </div>
     </div>
@@ -200,7 +249,7 @@
             } catch (error) {
                 console.error("Error loading JSON:", error);
                 document.getElementById('game-title-display').innerText = "DATABASE ERROR";
-                document.getElementById('global-hint-container').innerText = "Could not load psych-game.json. Make sure you are viewing this on a web server or using Live Server, rather than just double-clicking the file.";
+                document.getElementById('global-hint-container').innerText = "Could not load psych-game.json. Make sure you are viewing this on a web server or using Live Server.";
                 document.getElementById('hint-toggle-block').style.display = "none";
                 return;
             }
@@ -213,16 +262,13 @@
 
             // TIMEGATE SECURITY CHECK
             if (fullUrlDate) {
-                // If they manually try to put just MM-DD in the URL to bypass the year check
                 if (fullUrlDate.length === 5) {
                     fullUrlDate = todayObj.getFullYear() + "-" + fullUrlDate;
                 }
 
-                // Check dates at midnight to avoid timezone issues
                 const reqDate = new Date(fullUrlDate + "T00:00:00"); 
                 const todayCompare = new Date(todayObj.getFullYear(), todayObj.getMonth(), todayObj.getDate());
                 
-                // 1. Is it physically in the future?
                 if (reqDate > todayCompare) {
                     document.getElementById('game-title-display').innerText = "NICE TRY, TIME TRAVELER! 🛑";
                     document.getElementById('global-hint-container').innerText = "You cannot play puzzles from the future.";
@@ -230,7 +276,6 @@
                     return;
                 }
 
-                // 2. The "Last Year" Loophole
                 const daysOld = Math.floor((todayCompare - reqDate) / (1000 * 60 * 60 * 24));
                 if (daysOld > 200) {
                     document.getElementById('game-title-display').innerText = "ARCHIVE LOCKED 🔒";
@@ -239,7 +284,6 @@
                     return;
                 }
 
-                // Extract just the MM-DD for your JSON database
                 loadedDate = fullUrlDate.substring(5, 10);
                 
                 if (loadedDate !== todayMMDD) {
@@ -250,7 +294,6 @@
                 loadedDate = todayMMDD;
             }
 
-            // Already played today check
             if (loadedDate === todayMMDD && lastPlayed === todayMMDD && !isPracticeMode) {
                 isPracticeMode = true;
                 const badge = document.getElementById('practice-badge');
@@ -312,7 +355,7 @@
                 buildFactFictionUI();
             } 
             else if (activeGameMode === "synapsesnap") {
-                document.getElementById('game-title-display').innerText = `Synapse Snap Matrix`;
+                document.getElementById('game-title-display').innerText = `Synapse Snap`; // Name updated!
                 document.getElementById('view-synapsesnap').style.display = "block";
                 document.getElementById('hint-toggle-block').style.display = "none";
                 buildSynapseSnapUI();
@@ -442,7 +485,21 @@
                 card.className = "snap-card";
                 card.dataset.index = arrayIndex;
                 card.dataset.pairId = cardData.pairId;
-                card.innerText = cardData.text;
+                
+                // Constructing the 3D card layout
+                const inner = document.createElement('div');
+                inner.className = "snap-card-inner";
+                
+                const front = document.createElement('div');
+                front.className = "snap-card-front";
+                
+                const back = document.createElement('div');
+                back.className = "snap-card-back";
+                back.innerText = cardData.text; // Text goes safely on the back!
+                
+                inner.appendChild(front);
+                inner.appendChild(back);
+                card.appendChild(inner);
 
                 card.onclick = () => {
                     if (card.classList.contains('flipped') || card.classList.contains('matched') || selectedCards.length >= 2) return;
@@ -528,12 +585,14 @@
 
         function endGame(isWin) {
             clearInterval(timerInterval);
-            document.getElementById('view-hangman').style.display = 'none';
-            document.getElementById('view-anagram').style.display = 'none';
-            document.getElementById('view-distractor').style.display = 'none';
-            document.getElementById('view-factfiction').style.display = 'none';
-            document.getElementById('view-synapsesnap').style.display = 'none';
             document.getElementById('hint-toggle-block').style.display = 'none';
+            
+            // Reveals all cards at the end of the game regardless of win/loss
+            if (activeGameMode === "synapsesnap") {
+                document.querySelectorAll('.snap-card').forEach(card => card.classList.add('flipped'));
+            }
+
+            // We no longer hide the game view! Game Over screen pops up right below it.
             document.getElementById('game-over-screen').style.display = 'block';
 
             const screen = document.getElementById('game-over-screen');
@@ -549,7 +608,7 @@
                 if(!isPracticeMode) { 
                     saveLoss(); 
                 } else {
-                    savePractice(); // Saves history as "practice"
+                    savePractice(); 
                 }
                 
                 msg.innerText = `The target answer was: "${targetWord.toUpperCase()}". \n ` + (isPracticeMode ? "Practice session complete." : "0 Points. Try again tomorrow!");
@@ -560,7 +619,7 @@
             title.style.color = "#155724";
 
             if (isPracticeMode) {
-                savePractice(); // Saves history as "practice"
+                savePractice(); 
                 msg.innerText = "Great practice session! (0 Points in Practice Mode)";
             } else {
                 let pointsEarned = 10; let bonusMsg = "";
@@ -603,7 +662,6 @@
 
         function savePractice() {
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
-            // Only save "practice" if they haven't officially won or lost this day before
             if (!history[loadedDate]) {
                 history[loadedDate] = "practice";
                 localStorage.setItem('psychHistory', JSON.stringify(history));
