@@ -67,10 +67,20 @@
         .choice-btn { background-color: #fff; border: 2px solid #34495e; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.2s; color: #34495e; }
         .choice-btn:hover { background-color: #f4f6f7; }
 
-        /* Mode 5: Synapse Snap (Memory Match) Upgraded 3D Jumbo Cards */
-        .snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 800px; margin: 25px auto; } /* Widened Grid */
+        /* Mode 5: Synapse Snap (Memory Match) Upgraded JUMBO Cards */
+        .snap-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+            gap: 15px; 
+            max-width: 1000px; /* Massive max width */
+            margin: 25px auto; 
+        } 
+        @media(min-width: 768px) { 
+            .snap-grid { grid-template-columns: repeat(4, 1fr); } /* 4 columns on desktop */
+        }
+        
         .snap-card { 
-            height: 140px; /* Taller Cards */
+            height: 200px; /* Jumbo Height */
             background-color: transparent; 
             perspective: 1000px; 
             cursor: pointer; 
@@ -95,23 +105,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 12px;
             box-sizing: border-box;
             border: 2px solid #2c3e50;
         }
         .snap-card-front {
             background-color: #34495e;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
         .snap-card-back {
             background-color: #fff;
             color: #2c3e50;
             transform: rotateY(180deg);
-            font-size: 0.85rem; /* slightly larger text now that we have room */
+            font-size: 0.95rem; /* Larger text for readability */
+            line-height: 1.4;
             font-weight: bold;
             overflow-y: auto; 
             overflow-wrap: break-word; 
         }
-        .snap-card-back::-webkit-scrollbar { width: 4px; }
+        .snap-card-back::-webkit-scrollbar { width: 5px; }
         .snap-card-back::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
         
         .snap-card.matched .snap-card-back {
@@ -210,6 +224,9 @@
 
             <div id="view-synapsesnap" class="game-view">
                 <p style="font-weight:bold; color:#7f8c8d; margin-bottom:15px;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
+                
+                <button id="peek-btn" class="action-btn" onclick="useFreePeek()" style="background-color: #f39c12; margin-bottom: 10px; font-size: 0.95rem;">👀 Free Peek (1 Use)</button>
+                
                 <div class="snap-grid" id="snap-card-grid"></div>
             </div>
 
@@ -239,6 +256,7 @@
         // Fact/Fiction & Match Specific State Sub-Holders
         let ffCorrectAnswer = true;
         let selectedCards = []; let matchesFound = 0;
+        let freePeekUsed = false; let isPeeking = false;
 
         async function initGame() {
             try {
@@ -489,6 +507,7 @@
                 
                 const front = document.createElement('div');
                 front.className = "snap-card-front";
+                front.innerText = "?"; // Add a visual indicator to the back of the card
                 
                 const back = document.createElement('div');
                 back.className = "snap-card-back";
@@ -499,7 +518,8 @@
                 card.appendChild(inner);
 
                 card.onclick = () => {
-                    if (card.classList.contains('flipped') || card.classList.contains('matched') || selectedCards.length >= 2) return;
+                    // Prevent clicks during peek or if already flipped
+                    if (isPeeking || card.classList.contains('flipped') || card.classList.contains('matched') || selectedCards.length >= 2) return;
                     
                     card.classList.add('flipped');
                     selectedCards.push(card);
@@ -523,6 +543,30 @@
                 };
                 grid.appendChild(card);
             });
+        }
+        
+        function useFreePeek() {
+            if (freePeekUsed || isPeeking) return;
+            freePeekUsed = true;
+            isPeeking = true; // Block card clicks while peeking
+            
+            const peekBtn = document.getElementById('peek-btn');
+            peekBtn.innerText = "👀 Free Peek Used";
+            peekBtn.style.backgroundColor = "#95a5a6";
+            peekBtn.style.cursor = "not-allowed";
+
+            const allCards = document.querySelectorAll('.snap-card:not(.matched)');
+            allCards.forEach(card => card.classList.add('flipped'));
+
+            setTimeout(() => {
+                allCards.forEach(card => {
+                    // Only flip back if it wasn't one of the actively selected cards before peeking
+                    if (!selectedCards.includes(card)) {
+                        card.classList.remove('flipped');
+                    }
+                });
+                isPeeking = false; // Re-enable clicks
+            }, 3000); // Gives them exactly 3 seconds to scan the board
         }
 
         /* ================= CORE SYSTEM CONTROL HOOKS ================= */
