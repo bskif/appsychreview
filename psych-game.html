@@ -67,10 +67,10 @@
         .choice-btn { background-color: #fff; border: 2px solid #34495e; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.2s; color: #34495e; }
         .choice-btn:hover { background-color: #f4f6f7; }
 
-        /* Mode 5: Synapse Snap (Memory Match) Upgraded 3D Cards */
-        .snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 600px; margin: 25px auto; }
+        /* Mode 5: Synapse Snap (Memory Match) Upgraded 3D Jumbo Cards */
+        .snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 800px; margin: 25px auto; } /* Widened Grid */
         .snap-card { 
-            height: 100px; 
+            height: 140px; /* Taller Cards */
             background-color: transparent; 
             perspective: 1000px; 
             cursor: pointer; 
@@ -95,7 +95,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            padding: 10px;
             box-sizing: border-box;
             border: 2px solid #2c3e50;
         }
@@ -105,17 +105,15 @@
         .snap-card-back {
             background-color: #fff;
             color: #2c3e50;
-            transform: rotateY(180deg); /* Counteracts the flip to prevent mirrored text */
-            font-size: 0.8rem;
+            transform: rotateY(180deg);
+            font-size: 0.85rem; /* slightly larger text now that we have room */
             font-weight: bold;
-            overflow-y: auto; /* Scrollbar for very long text */
-            overflow-wrap: break-word; /* Prevents text spillover */
+            overflow-y: auto; 
+            overflow-wrap: break-word; 
         }
-        /* Custom mini-scrollbar for the back of the cards */
         .snap-card-back::-webkit-scrollbar { width: 4px; }
         .snap-card-back::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
         
-        /* Green styling for matched pairs */
         .snap-card.matched .snap-card-back {
             background-color: #2ecc71;
             color: white;
@@ -355,7 +353,7 @@
                 buildFactFictionUI();
             } 
             else if (activeGameMode === "synapsesnap") {
-                document.getElementById('game-title-display').innerText = `Synapse Snap`; // Name updated!
+                document.getElementById('game-title-display').innerText = `Synapse Snap`; 
                 document.getElementById('view-synapsesnap').style.display = "block";
                 document.getElementById('hint-toggle-block').style.display = "none";
                 buildSynapseSnapUI();
@@ -486,7 +484,6 @@
                 card.dataset.index = arrayIndex;
                 card.dataset.pairId = cardData.pairId;
                 
-                // Constructing the 3D card layout
                 const inner = document.createElement('div');
                 inner.className = "snap-card-inner";
                 
@@ -495,7 +492,7 @@
                 
                 const back = document.createElement('div');
                 back.className = "snap-card-back";
-                back.innerText = cardData.text; // Text goes safely on the back!
+                back.innerText = cardData.text; 
                 
                 inner.appendChild(front);
                 inner.appendChild(back);
@@ -587,12 +584,10 @@
             clearInterval(timerInterval);
             document.getElementById('hint-toggle-block').style.display = 'none';
             
-            // Reveals all cards at the end of the game regardless of win/loss
             if (activeGameMode === "synapsesnap") {
                 document.querySelectorAll('.snap-card').forEach(card => card.classList.add('flipped'));
             }
 
-            // We no longer hide the game view! Game Over screen pops up right below it.
             document.getElementById('game-over-screen').style.display = 'block';
 
             const screen = document.getElementById('game-over-screen');
