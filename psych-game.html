@@ -80,7 +80,7 @@
         }
         
         .snap-card { 
-            height: 200px; /* Jumbo Height */
+            height: 260px; /* EXTRA Jumbo Height for long definitions */
             background-color: transparent; 
             perspective: 1000px; 
             cursor: pointer; 
@@ -105,7 +105,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 15px; /* More internal padding */
             box-sizing: border-box;
             border: 2px solid #2c3e50;
         }
@@ -119,7 +119,7 @@
             background-color: #fff;
             color: #2c3e50;
             transform: rotateY(180deg);
-            font-size: 0.95rem; /* Larger text for readability */
+            font-size: 0.9rem; /* Optimal reading size */
             line-height: 1.4;
             font-weight: bold;
             overflow-y: auto; 
@@ -225,7 +225,7 @@
             <div id="view-synapsesnap" class="game-view">
                 <p style="font-weight:bold; color:#7f8c8d; margin-bottom:15px;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
                 
-                <button id="peek-btn" class="action-btn" onclick="useFreePeek()" style="background-color: #f39c12; margin-bottom: 10px; font-size: 0.95rem;">👀 Free Peek (1 Use)</button>
+                <button id="peek-btn" class="action-btn" onclick="useFreePeek()" style="background-color: #f39c12; margin-bottom: 10px; font-size: 0.95rem;">👀 Free Peek (Forfeits +5 Bonus)</button>
                 
                 <div class="snap-grid" id="snap-card-grid"></div>
             </div>
@@ -507,7 +507,7 @@
                 
                 const front = document.createElement('div');
                 front.className = "snap-card-front";
-                front.innerText = "?"; // Add a visual indicator to the back of the card
+                front.innerText = "?"; 
                 
                 const back = document.createElement('div');
                 back.className = "snap-card-back";
@@ -551,7 +551,7 @@
             isPeeking = true; // Block card clicks while peeking
             
             const peekBtn = document.getElementById('peek-btn');
-            peekBtn.innerText = "👀 Free Peek Used";
+            peekBtn.innerText = "👀 Free Peek Used (Bonus Lost)";
             peekBtn.style.backgroundColor = "#95a5a6";
             peekBtn.style.cursor = "not-allowed";
 
@@ -662,9 +662,17 @@
                 msg.innerText = "Great practice session! (0 Points in Practice Mode)";
             } else {
                 let pointsEarned = 10; let bonusMsg = "";
+                
+                // Classic bonuses
                 if (!hintUsed && (activeGameMode === 'hangman' || activeGameMode === 'anagram')) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
                 if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Score (+5)! "; }
                 if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Speed (+5)! "; }
+                
+                // New Synapse Snap specific No-Peek bonus
+                if (activeGameMode === 'synapsesnap' && !freePeekUsed) {
+                    pointsEarned += 5; 
+                    bonusMsg += "No Peek Bonus (+5)! "; 
+                }
                 
                 saveWin(pointsEarned);
                 msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
