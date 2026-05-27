@@ -70,17 +70,17 @@
         /* Mode 5: Synapse Snap (Memory Match) Upgraded JUMBO Cards */
         .snap-grid { 
             display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+            grid-template-columns: repeat(2, 1fr); 
             gap: 15px; 
-            max-width: 1000px; /* Massive max width */
+            max-width: 1000px; 
             margin: 25px auto; 
         } 
         @media(min-width: 768px) { 
-            .snap-grid { grid-template-columns: repeat(4, 1fr); } /* 4 columns on desktop */
+            .snap-grid { grid-template-columns: repeat(4, 1fr); } 
         }
         
         .snap-card { 
-            height: 260px; /* EXTRA Jumbo Height for long definitions */
+            height: 260px; 
             background-color: transparent; 
             perspective: 1000px; 
             cursor: pointer; 
@@ -105,7 +105,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px; /* More internal padding */
+            padding: 15px; 
             box-sizing: border-box;
             border: 2px solid #2c3e50;
         }
@@ -119,7 +119,7 @@
             background-color: #fff;
             color: #2c3e50;
             transform: rotateY(180deg);
-            font-size: 0.9rem; /* Optimal reading size */
+            font-size: 0.9rem; 
             line-height: 1.4;
             font-weight: bold;
             overflow-y: auto; 
@@ -332,10 +332,27 @@
             hintText = puzzleData.hint;
             document.getElementById('hint-text').innerText = hintText;
 
-            // DETERMINISTIC GAME ROTATION ENGINE
-            const dateDayNumber = parseInt(loadedDate.split('-')[1]) || 1;
-            const modes = ["hangman", "anagram", "distractor", "factfiction", "synapsesnap"];
-            activeGameMode = modes[dateDayNumber % modes.length];
+            // DETERMINISTIC GAME ROTATION ENGINE (Based on Day of the Week)
+            // Map: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
+            const dayOfWeekModes = [
+                "distractor",  // Sunday
+                "hangman",     // Monday
+                "distractor",  // Tuesday
+                "anagram",     // Wednesday
+                "factfiction", // Thursday
+                "synapsesnap", // Friday
+                "hangman"      // Saturday
+            ];
+            
+            // Get the actual Day of the Week from the requested date
+            let targetDateObj;
+            if (fullUrlDate) {
+                targetDateObj = new Date(fullUrlDate + "T00:00:00");
+            } else {
+                targetDateObj = new Date(); // Today
+            }
+            
+            activeGameMode = dayOfWeekModes[targetDateObj.getDay()];
 
             setupGameView(puzzleData);
             updateVisualStatus();
