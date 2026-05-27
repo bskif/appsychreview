@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Play Psych-Man</title>
+    <title>Play Psych-Man Hub Puzzles</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .mode-badge { background-color: #f39c12; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; display: none; }
         
-        /* Upgraded Image Container */
+        /* Upgraded Universal Image Container */
         .image-container { 
             background-color: #eee; 
             border: 2px dashed #ccc; 
@@ -43,13 +43,35 @@
             border: 1px solid #ccc;
         }
 
-        .word-container { font-size: 2.5rem; letter-spacing: 10px; font-weight: bold; margin: 30px 0; text-transform: uppercase; text-align: center; }
-        .keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px; }
+        .hint-section { margin: 20px 0; min-height: 50px; text-align: center; }
+        .context-text { font-size: 1.1rem; color: #2c3e50; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .game-over-screen { display: none; text-align: center; padding: 30px; background-color: #d4edda; border-radius: 10px; border: 2px solid #c3e6cb; }
+        
+        /* --- GAME MODE VIEWS VIA SWITCHBOARD --- */
+        .game-view { display: none; margin: 20px 0; text-align: center; }
+
+        /* Mode 1: Hangman */
+        .word-container { font-size: 2.5rem; letter-spacing: 10px; font-weight: bold; margin: 20px 0; text-transform: uppercase; }
+        .keyboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
         .key-btn { background-color: var(--white); border: 1px solid #ccc; padding: 10px 15px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; color: var(--text); }
         .key-btn:disabled { background-color: #eee; color: #aaa; cursor: not-allowed; }
-        .hint-section { margin: 20px 0; min-height: 50px; text-align: center; }
-        .context-text { font-size: 0.95rem; color: #666; margin-bottom: 10px; font-weight: bold; }
-        .game-over-screen { display: none; text-align: center; padding: 30px; background-color: #d4edda; border-radius: 10px; border: 2px solid #c3e6cb; }
+
+        /* Mode 2: Anagram Scramble */
+        .anagram-scrambled { font-size: 2.2rem; font-weight: bold; color: #2980b9; letter-spacing: 6px; margin: 15px 0; text-transform: uppercase; background: #e1f5fe; padding: 10px; border-radius: 5px; display: inline-block;}
+        .anagram-input-box { font-size: 1.8rem; padding: 10px; width: 80%; max-width: 400px; text-align: center; text-transform: uppercase; border: 2px solid #ccc; border-radius: 5px; margin-bottom: 15px; }
+        .action-btn { background-color: var(--primary); color: white; padding: 12px 24px; border: none; font-size: 1.1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+        /* Mode 3 & 4: Distractor & Fact/Fiction Grid Systems */
+        .grid-options { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 500px; margin: 20px auto; }
+        @media(min-width: 600px) { .grid-options { grid-template-columns: 1fr 1fr; } }
+        .choice-btn { background-color: #fff; border: 2px solid #34495e; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.2s; color: #34495e; }
+        .choice-btn:hover { background-color: #f4f6f7; }
+
+        /* Mode 5: Synapse Snap (Memory Match) */
+        .snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 600px; margin: 25px auto; }
+        .snap-card { height: 90px; background-color: #34495e; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; text-align: center; padding: 5px; color: transparent; font-weight: bold; font-size: 0.85rem; border: 2px solid #2c3e50; user-select: none; transition: transform 0.2s; }
+        .snap-card.flipped { background-color: #fff; color: #2c3e50; border-color: var(--primary); transform: rotateY(180deg); }
+        .snap-card.matched { background-color: #2ecc71; color: white; border-color: #27ae60; cursor: default; transform: rotateY(180deg); }
     </style>
 </head>
 <body>
@@ -102,19 +124,51 @@
             </div>
 
             <div class="image-container" id="image-container">
-                <img id="brain-image" src="images/brain_7.png" alt="Brain Status: Full Health">
+                <img id="brain-image" src="images/brain_7.png" alt="Brain Health Status Meter">
             </div>
 
-            <div class="word-container" id="word-display">_ _ _ _ _</div>
             <div class="hint-section">
-                <div class="context-text" id="context-text"></div>
-                <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary); padding:10px; color:white; border:none; border-radius:5px; cursor:pointer;">👀 Reveal Hint (Forfeits +5 Bonus)</button>
-                <p id="hint-text" style="display: none; font-style: italic;"></p>
+                <div class="context-text" id="game-title-display">Loading Active Engine...</div>
+                <div id="global-hint-container" style="font-size:1.2rem; margin:10px auto; font-style:italic; max-width:600px;"></div>
+                <div id="hint-toggle-block">
+                     <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary); padding:10px; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:5px;">👀 Reveal Definition Hint (Forfeits +5 Bonus)</button>
+                     <p id="hint-text" style="display: none; font-style: italic; margin-top:10px; color:#555; font-weight:bold;"></p>
+                </div>
             </div>
-            <div class="keyboard" id="keyboard"></div>
+
+            <div id="view-hangman" class="game-view">
+                <div class="word-container" id="word-display">_ _ _ _ _</div>
+                <div class="keyboard" id="keyboard"></div>
+            </div>
+
+            <div id="view-anagram" class="game-view">
+                <div class="anagram-scrambled" id="scrambled-target">-----</div>
+                <br>
+                <input type="text" id="anagram-input" class="anagram-input-box" placeholder="Type unscrambled term..." autocomplete="off">
+                <br>
+                <button class="action-btn" onclick="submitAnagram()">Submit Answer</button>
+            </div>
+
+            <div id="view-distractor" class="game-view">
+                <div class="grid-options" id="distractor-grid"></div>
+            </div>
+
+            <div id="view-factfiction" class="game-view">
+                <h3 id="ff-prompt" style="margin-bottom:20px; font-size:1.3rem; color:#2c3e50;"></h3>
+                <div class="grid-options">
+                    <button class="choice-btn" style="border-color:#2ecc71; color:#2ecc71;" onclick="submitFactFiction(true)">✔️ FACT (TRUE)</button>
+                    <button class="choice-btn" style="border-color:#e74c3c; color:#e74c3c;" onclick="submitFactFiction(false)">❌ FICTION (FALSE)</button>
+                </div>
+            </div>
+
+            <div id="view-synapsesnap" class="game-view">
+                <p style="font-weight:bold; color:#7f8c8d;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
+                <div class="snap-grid" id="snap-card-grid"></div>
+            </div>
+
             <div class="game-over-screen" id="game-over-screen">
-                <h2 id="end-title">You Won!</h2>
-                <p id="end-message"></p>
+                <h2 id="end-title">Game Complete!</h2>
+                <p id="end-message" style="margin: 15px 0; font-size:1.1rem; font-weight:bold;"></p>
                 <a href="psych-hub.html" class="play-btn">Return to Hub</a>
             </div>
         </div>
@@ -125,22 +179,34 @@
     </footer>
 
     <script>
-        const dbJSON = {
-          "hangman": [
-            { "date": "05-22", "term": "brain", "hint": "Your body’s command center", "unit": "1", "topic": "1.2" },
-            { "date": "05-23", "term": "Broca's area", "hint": "Damage here can make speaking difficult", "unit": "1", "topic": "1.4" },
-            { "date": "05-24", "term": "Double-Blind", "hint": "Prevents expectations from affecting results", "unit": "0", "topic": "0.2" }
-          ]
-        };
+        // Start with an empty database, we will fetch it!
+        let dbJSON = {}; 
 
+        // Core State Variables
         let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
         let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
+        let activeGameMode = "";
         
         // Timer Variables
-        let timerInterval;
-        let elapsedSeconds = 0;
+        let timerInterval; let elapsedSeconds = 0;
 
-        function initGame() {
+        // Fact/Fiction & Match Specific State Sub-Holders
+        let ffCorrectAnswer = true;
+        let selectedCards = []; let matchesFound = 0;
+
+        async function initGame() {
+            // Tell the HTML to fetch the separate JSON file
+            try {
+                const response = await fetch('psych-game.json');
+                dbJSON = await response.json();
+            } catch (error) {
+                console.error("Error loading JSON:", error);
+                document.getElementById('game-title-display').innerText = "DATABASE ERROR";
+                document.getElementById('global-hint-container').innerText = "Could not load psych-game.json. Make sure you are viewing this on a web server or using Live Server, rather than just double-clicking the file.";
+                document.getElementById('hint-toggle-block').style.display = "none";
+                return;
+            }
+
             const urlParams = new URLSearchParams(window.location.search);
             const urlDate = urlParams.get('date');
             const today = getTodayMMDD();
@@ -168,42 +234,66 @@
             const puzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
 
             if (!puzzleData) {
-                document.getElementById('word-display').innerText = "ERROR";
-                document.getElementById('hint-text').innerText = "No puzzle found for this date in the database.";
-                document.getElementById('hint-text').style.display = "block";
-                document.getElementById('hint-btn').style.display = "none";
+                document.getElementById('game-title-display').innerText = "ERROR";
+                document.getElementById('global-hint-container').innerText = "No puzzle configured for this date in database.";
+                document.getElementById('hint-toggle-block').style.display = "none";
                 return;
             }
 
             targetWord = puzzleData.term.toLowerCase();
             hintText = puzzleData.hint;
-            document.getElementById('context-text').innerText = `Unit ${puzzleData.unit} | Topic ${puzzleData.topic}`;
             document.getElementById('hint-text').innerText = hintText;
 
-            // Explicitly sync visual system on initial startup
+            // DETERMINISTIC GAME ROTATION ENGINE
+            // Distributes your 5 favorite games dynamically across dates cleanly
+            const dateDayNumber = parseInt(loadedDate.split('-')[1]) || 1;
+            const modes = ["hangman", "anagram", "distractor", "factfiction", "synapsesnap"];
+            activeGameMode = modes[dateDayNumber % modes.length];
+
+            // Initialize Selected System Layout
+            setupGameView(puzzleData);
             updateVisualStatus();
-            buildKeyboard();
-            updateWordDisplay();
-            
-            // Fire up the clock right as layout displays
             startTimer();
         }
 
-        function startTimer() {
-            elapsedSeconds = 0;
-            clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                elapsedSeconds++;
-                updateTimerDisplay();
-            }, 1000);
+        function setupGameView(dataObj) {
+            // Hide all views globally first
+            document.querySelectorAll('.game-view').forEach(v => v.style.display = 'none');
+            document.getElementById('hint-toggle-block').style.display = "block";
+
+            if (activeGameMode === "hangman") {
+                document.getElementById('game-title-display').innerText = `Psych-Man | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
+                document.getElementById('view-hangman').style.display = "block";
+                buildKeyboard();
+                updateWordDisplay();
+            } 
+            else if (activeGameMode === "anagram") {
+                document.getElementById('game-title-display').innerText = `Anagram Scramble | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
+                document.getElementById('view-anagram').style.display = "block";
+                document.getElementById('scrambled-target').innerText = scrambleString(targetWord);
+            } 
+            else if (activeGameMode === "distractor") {
+                document.getElementById('game-title-display').innerText = `The Distractor | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
+                document.getElementById('view-distractor').style.display = "block";
+                document.getElementById('global-hint-container').innerHTML = `<strong>Definition:</strong> ${hintText}`;
+                document.getElementById('hint-toggle-block').style.display = "none"; // Already showing definition
+                buildDistractorUI();
+            } 
+            else if (activeGameMode === "factfiction") {
+                document.getElementById('game-title-display').innerText = `Fact or Fiction | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
+                document.getElementById('view-factfiction').style.display = "block";
+                document.getElementById('hint-toggle-block').style.display = "none";
+                buildFactFictionUI();
+            } 
+            else if (activeGameMode === "synapsesnap") {
+                document.getElementById('game-title-display').innerText = `Synapse Snap Matrix`;
+                document.getElementById('view-synapsesnap').style.display = "block";
+                document.getElementById('hint-toggle-block').style.display = "none";
+                buildSynapseSnapUI();
+            }
         }
 
-        function updateTimerDisplay() {
-            const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
-            const seconds = String(elapsedSeconds % 60).padStart(2, '0');
-            document.getElementById('timer-display').innerText = `${minutes}:${seconds}`;
-        }
-
+        /* ================= ENGINE 1: HANGMAN ================= */
         function updateWordDisplay() {
             let displayStr = ""; let hasWon = true;
             for (let i = 0; i < targetWord.length; i++) {
@@ -227,15 +317,159 @@
             updateWordDisplay();
         }
 
+        /* ================= ENGINE 2: ANAGRAM SCRAMBLE ================= */
+        function scrambleString(str) {
+            let arr = str.replace(/[^a-zA-Z]/g, "").split("");
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr.join(" ");
+        }
+
+        function submitAnagram() {
+            const val = document.getElementById('anagram-input').value.trim().toLowerCase();
+            if(val === targetWord) {
+                endGame(true);
+            } else {
+                lives -= 2; // Penalize guessing errors heavily on open fields
+                if (lives <= 0) { lives = 0; updateVisualStatus(); endGame(false); }
+                else { alert(`Incorrect formulation! Lose 2 brain sectors. ${lives} sections left.`); updateVisualStatus(); }
+            }
+        }
+
+        /* ================= ENGINE 3: THE DISTRACTOR ================= */
+        function buildDistractorUI() {
+            const grid = document.getElementById('distractor-grid');
+            grid.innerHTML = "";
+            let choices = [targetWord];
+            
+            // Gather items from local list pool safely
+            dbJSON.hangman.forEach(item => {
+                if(item.term.toLowerCase() !== targetWord && choices.length < 4) {
+                    choices.push(item.term.toLowerCase());
+                }
+            });
+            while(choices.length < 4) { choices.push("placebo effect"); choices.push("schema"); } // Backups
+            choices.sort(() => Math.random() - 0.5);
+
+            choices.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = "choice-btn";
+                btn.innerText = option.toUpperCase();
+                btn.onclick = () => {
+                    if(option === targetWord) { endGame(true); }
+                    else { btn.style.borderColor = "#e74c3c"; btn.disabled = true; lives -= 2; updateVisualStatus(); if(lives <= 0) endGame(false); }
+                };
+                grid.appendChild(btn);
+            });
+        }
+
+        /* ================= ENGINE 4: FACT OR FICTION ================= */
+        function buildFactFictionUI() {
+            const coin = Math.random() >= 0.5;
+            ffCorrectAnswer = coin;
+            const promptEl = document.getElementById('ff-prompt');
+
+            if (coin) {
+                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches definition: "${hintText}"`;
+            } else {
+                let alternateHint = "A framework that organizes and interprets information.";
+                let altItem = dbJSON.hangman.find(item => item.term.toLowerCase() !== targetWord);
+                if(altItem) alternateHint = altItem.hint;
+                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches definition: "${alternateHint}"`;
+            }
+        }
+
+        function submitFactFiction(studentGuess) {
+            if(studentGuess === ffCorrectAnswer) { endGame(true); }
+            else { lives = 0; updateVisualStatus(); endGame(false); }
+        }
+
+        /* ================= ENGINE 5: SYNAPSE SNAP ================= */
+        function buildSynapseSnapUI() {
+            const grid = document.getElementById('snap-card-grid');
+            grid.innerHTML = "";
+            let cardPool = [];
+
+            // Add Current item pair
+            cardPool.push({ text: targetWord.toUpperCase(), pairId: 1, type: 'term' });
+            cardPool.push({ text: hintText, pairId: 1, type: 'def' });
+
+            // Gather elements safely from context history pool
+            let indexTracker = 2;
+            dbJSON.hangman.forEach(item => {
+                if(item.term.toLowerCase() !== targetWord && indexTracker <= 4) {
+                    cardPool.push({ text: item.term.toUpperCase(), pairId: indexTracker, type: 'term' });
+                    cardPool.push({ text: item.hint, pairId: indexTracker, type: 'def' });
+                    indexTracker++;
+                }
+            });
+
+            // Fill empty cells if DB size small
+            while (cardPool.length < 8) {
+                cardPool.push({ text: "RECONSOLIDATION", pairId: indexTracker, type: 'term' });
+                cardPool.push({ text: "The process of stabilizing a memory trace after initial acquisition.", pairId: indexTracker, type: 'def' });
+                indexTracker++;
+            }
+
+            cardPool.sort(() => Math.random() - 0.5);
+
+            cardPool.forEach((cardData, arrayIndex) => {
+                const card = document.createElement('div');
+                card.className = "snap-card";
+                card.dataset.index = arrayIndex;
+                card.dataset.pairId = cardData.pairId;
+                card.innerText = cardData.text;
+
+                card.onclick = () => {
+                    if (card.classList.contains('flipped') || card.classList.contains('matched') || selectedCards.length >= 2) return;
+                    
+                    card.classList.add('flipped');
+                    selectedCards.push(card);
+
+                    if (selectedCards.length === 2) {
+                        if (selectedCards[0].dataset.pairId === selectedCards[1].dataset.pairId) {
+                            // Match Found!
+                            selectedCards.forEach(c => c.classList.add('matched'));
+                            selectedCards = [];
+                            matchesFound++;
+                            if(matchesFound === 4) { endGame(true); }
+                        } else {
+                            // Mismatch configuration
+                            lives--;
+                            updateVisualStatus();
+                            setTimeout(() => {
+                                selectedCards.forEach(c => c.classList.remove('flipped'));
+                                selectedCards = [];
+                                if (lives <= 0) { endGame(false); }
+                            }, 1000);
+                        }
+                    }
+                };
+                grid.appendChild(card);
+            });
+        }
+
+        /* ================= CORE SYSTEM CONTROL HOOKS ================= */
+        function startTimer() {
+            elapsedSeconds = 0; clearInterval(timerInterval);
+            timerInterval = setInterval(() => { elapsedSeconds++; updateTimerDisplay(); }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+            const seconds = String(elapsedSeconds % 60).padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${minutes}:${seconds}`;
+        }
+
         function updateVisualStatus() {
             const brainImg = document.getElementById('brain-image');
             const container = document.getElementById('image-container');
             
-            // Formula dynamically updates image src: brain_7.png down to brain_1.png
             brainImg.src = `images/brain_${lives + 1}.png`;
-            brainImg.alt = `Brain Status: ${lives} Lives Remaining`;
+            brainImg.alt = `Brain Status Tracker: ${lives} Remaining`;
             
-            // Soft alert background color when completely out of lives
             if (lives === 0) {
                 container.style.backgroundColor = "#ffcccc";
                 container.style.borderColor = "#e74c3c";
@@ -251,12 +485,35 @@
             hintUsed = true;
         }
 
-        function endGame(isWin) {
-            // Instantly stop the clock
-            clearInterval(timerInterval);
+        function buildKeyboard() {
+            const keyboardDiv = document.getElementById('keyboard');
+            keyboardDiv.innerHTML = "";
+            const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+            alphabet.forEach(letter => {
+                const btn = document.createElement('button');
+                btn.innerText = letter.toUpperCase();
+                btn.className = "key-btn";
+                btn.id = "key-" + letter;
+                btn.onclick = () => guessLetter(letter);
+                keyboardDiv.appendChild(btn);
+            });
+        }
 
-            document.getElementById('keyboard').style.display = 'none';
-            document.getElementById('hint-btn').style.display = 'none';
+        function getTodayMMDD() {
+            const today = new Date();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${month}-${day}`;
+        }
+
+        function endGame(isWin) {
+            clearInterval(timerInterval);
+            document.getElementById('view-hangman').style.display = 'none';
+            document.getElementById('view-anagram').style.display = 'none';
+            document.getElementById('view-distractor').style.display = 'none';
+            document.getElementById('view-factfiction').style.display = 'none';
+            document.getElementById('view-synapsesnap').style.display = 'none';
+            document.getElementById('hint-toggle-block').style.display = 'none';
             document.getElementById('game-over-screen').style.display = 'block';
 
             const screen = document.getElementById('game-over-screen');
@@ -268,10 +525,8 @@
                 screen.style.borderColor = "#f5c6cb";
                 title.innerText = "Game Over!";
                 title.style.color = "#721c24";
-                document.getElementById('word-display').innerText = targetWord; 
-                
                 if(!isPracticeMode) { saveLoss(); }
-                msg.innerText = isPracticeMode ? "Practice makes perfect." : "0 Points. Try again tomorrow!";
+                msg.innerText = `The target answer was: "${targetWord.toUpperCase()}". \n ` + (isPracticeMode ? "Practice session complete." : "0 Points. Try again tomorrow!");
                 return;
             }
 
@@ -282,11 +537,9 @@
                 msg.innerText = "Great practice session! (0 Points in Practice Mode)";
             } else {
                 let pointsEarned = 10; let bonusMsg = "";
-                if (!hintUsed) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
-                if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Spelling (+5)! "; }
-                
-                // Speed calculation: check if finished within 45 seconds
-                if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Fast (+5)! "; }
+                if (!hintUsed && (activeGameMode === 'hangman' || activeGameMode === 'anagram')) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
+                if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Score (+5)! "; }
+                if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Speed (+5)! "; }
                 
                 saveWin(pointsEarned);
                 msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
@@ -298,9 +551,8 @@
             let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
             let totalWins = parseInt(localStorage.getItem('psychTotalWins') || 0);
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
-            let currentBest = localStorage.getItem('psychBestTime'); // Retrieve previous best
+            let currentBest = localStorage.getItem('psychBestTime');
 
-            // Check if this win is their new fastest time
             if (!currentBest || elapsedSeconds < parseInt(currentBest)) {
                 localStorage.setItem('psychBestTime', elapsedSeconds);
             }
@@ -318,30 +570,10 @@
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
             localStorage.setItem('psychStreak', 0); 
             localStorage.setItem('psychLastPlayed', getTodayMMDD());
-            
             history[getTodayMMDD()] = "loss";
             localStorage.setItem('psychHistory', JSON.stringify(history));
         }
 
-        function getTodayMMDD() {
-            const today = new Date();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            return `${month}-${day}`;
-        }
-
-        function buildKeyboard() {
-            const keyboardDiv = document.getElementById('keyboard');
-            const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-            alphabet.forEach(letter => {
-                const btn = document.createElement('button');
-                btn.innerText = letter.toUpperCase();
-                btn.className = "key-btn";
-                btn.id = "key-" + letter;
-                btn.onclick = () => guessLetter(letter);
-                keyboardDiv.appendChild(btn);
-            });
-        }
         window.onload = initGame;
     </script>
 </body>
