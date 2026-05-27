@@ -1,25 +1,2566 @@
 {
   "hangman": [
     {
+      "date": "01-01",
+      "term": "Melatonin",
+      "hint": "The chemical vampire hormone that your brain's pineal gland secretes to make you sleepy once the lights go down, which gets completely disrupted by the blue light of your phone screen at 1 am.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "01-02",
+      "term": "Concepts",
+      "hint": "Your brain's mental buckets or categories used to group similar objects, events, or ideas together—like grouping TikTok, Instagram, and Snapchat under the single mental label of social media.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "01-03",
+      "term": "Stereotype lift",
+      "hint": "A sudden boost in your performance that happens when you become aware of a negative stereotype associated with a group you aren't a part of.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "01-04",
+      "term": "Blind Spot",
+      "hint": "The literal hole in your vision where the optic nerve leaves the back of your eyeball, containing zero rods or cones, meaning your brain has to constantly copy-paste the surrounding background to fill in the blank.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "01-05",
+      "term": "Method of loci",
+      "hint": "A classic memory trick where you mentally walk through a highly familiar place—like your house or school hallway—and deposit vocabulary words or facts at specific spots to remember them for a quiz.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "01-06",
+      "term": "Myasthenia Gravis",
+      "hint": "A chronic autoimmune disorder where antibodies destroy the communication between nerves and muscles, leading to severe skeletal muscle weakness, like struggling to keep your eyelids open or blink.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "01-07",
+      "term": "Discontinuous development",
+      "hint": "The theory that human growth happens in distinct, dramatic stages or steps rather than a smooth, gradual slope—like a caterpillar suddenly bursting out into a butterfly overnight.",
+      "unit": "3",
+      "topic": "3.1"
+    },
+    {
+      "date": "01-08",
+      "term": "Nature and nurture",
+      "hint": "The ultimate biological vs. environmental debate over whether you inherited your short temper and math skills from your parents' genes or picked them up from the environment you grew up in.",
+      "unit": "3",
+      "topic": "3.1"
+    },
+    {
+      "date": "01-09",
+      "term": "Critical period",
+      "hint": "A strictly limited, high-stakes developmental window early in life when you must be exposed to a stimulus (like language) for it to develop properly, otherwise the brain's hardware locks up permanently.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-10",
+      "term": "Gross motor",
+      "hint": "The coordination of large muscle groups required for major, whole-body movements—like running up the stairs when the bell is about to ring or kicking a soccer ball across the field.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-11",
+      "term": "Rooting reflex",
+      "hint": "An automatic newborn survival instinct where a baby instantly turns their head and opens their mouth toward anything that brushes against their cheek, desperately searching for a bottle.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-12",
+      "term": "Teratogens",
+      "hint": "Dangerous external substances, chemicals, or viruses that can sneak past the placenta during pregnancy and cause severe damage or birth defects to a developing baby.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-13",
+      "term": "Imprinting",
+      "hint": "Fast-track attachment. This is why a newborn baby duckling might spend its whole life following a golden retriever around, simply because it was the first moving object it saw after hatching.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-14",
+      "term": "Maturation",
+      "hint": "The biological, orderly blueprint of growth that dictates when your body is naturally ready to do things—like crawling before walking—completely independent of how much practice you get.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-15",
+      "term": "Sensitive periods",
+      "hint": "A flexible, optimal window in development where it's incredibly easy to master a specific skill (like learning a second language or an instrument), though it’s still technically possible to learn it later in life with way more effort.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "01-16",
+      "term": "Animism",
+      "hint": "Attributing lifelike qualities to non-living objects. Feeling genuinely guilty for throwing a stuffed animal into the closet because you’re secretly worried you'll hurt its feelings.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-17",
+      "term": "Scaffolding",
+      "hint": "The temporary guidance, hints, and support a teacher or a smart friend provides to help you solve a tough homework problem, slowly pulling back the help as you start to understand it yourself.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-18",
+      "term": "Theory of mind",
+      "hint": "The crucial cognitive breakthrough where a child finally realizes that other people have their own unique thoughts, feelings, secrets, and perspectives that are completely separate from their own.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-19",
+      "term": "Object permanence",
+      "hint": "The cognitive milestone of realizing that an object still exists even when it's out of sight—the exact reason babies lose their minds during a game of peek-a-boo because they think your face literally ceased to exist.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-20",
+      "term": "Dementia",
+      "hint": "A progressive, broad category of brain diseases that cause a long-term and often gradual decrease in the ability to think and remember, severely interfering with a person's daily life and functioning.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-21",
+      "term": "Egocentrism",
+      "hint": "The childhood inability to see things from anyone else's perspective. It’s why a toddler will cover their own eyes and honestly believe they are completely invisible to you because they can't see you.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-22",
+      "term": "Accommodation",
+      "hint": "Modifying your existing mental categories because brand-new information flat-out doesn't fit. Like a toddler realizing that a four-legged furry animal that meows cannot be labeled as a dog, so they must create a new category for cat.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "01-23",
+      "term": "Cooing",
+      "hint": "The very first adorable, vowel-heavy stage of language development around 2 months old where a baby spends their day making soft, repetitive sounds like oooh and aaah.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "01-24",
+      "term": "Overgeneralization",
+      "hint": "When a young child learns a grammatical rule and applies it to everything, resulting in hilariously incorrect sentences like I goed to the park or My tooths hurt.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "01-25",
+      "term": "Telegraphic speech",
+      "hint": "The toddler stage of talking where sentences sound like a blunt, character-limited text message with zero grammar: Want juice or Go park.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "01-26",
+      "term": "Grammar",
+      "hint": "The foundational system of structural rules in a language that dictates exactly how words must be combined and ordered so that your sentences actually make sense to other humans.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "01-27",
+      "term": "Anxious attachment",
+      "hint": "A relationship style where a child becomes utterly distraught and inconsolable when their parent leaves the room, and then acts deeply resentful or angry when the parent finally returns.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "01-28",
+      "term": "Identity and role confusion",
+      "hint": "Erik Erikson's dramatic teenage stage where you try out completely different aesthetics, friend groups, and personalities to figure out who you actually are, vs. feeling totally lost about your future.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "01-29",
+      "term": "Imaginary audience",
+      "hint": "The intense teenage paranoia that absolutely everyone in the hallway is staring at you, judging your outfit, or talking about that one tiny pimple on your forehead, when in reality, everyone else is too self-absorbed to notice.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "01-30",
+      "term": "Microsystem",
+      "hint": "The immediate, daily environment you interact with face-to-face every single day—including your immediate family, your close friends, your teachers, and your neighborhood.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "01-31",
+      "term": "Parallel play",
+      "hint": "A childhood social stage where two toddlers sit right next to each other playing with the exact same type of toys, but completely ignore each other and play independently without any actual interaction.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "02-01",
+      "term": "Social clock",
+      "hint": "The culturally preferred timing of major life milestones—like the unspoken pressure from society or your family that says you should graduate college by age 22, get married by 28, and buy a house by 30.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "02-02",
+      "term": "Foreclosure",
+      "hint": "An identity status where a teenager blindly adopts the beliefs, values, or career choices of their parents without ever taking the time to explore who they actually are (e.g., My mom is a lawyer, so I am going to law school, no questions asked).",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "02-03",
+      "term": "Acquisition",
+      "hint": "The initial stage of learning in classical conditioning when a subject first links a neutral stimulus to an unconditioned stimulus. Like the exact moment a dog realizes that the sound of a bell consistently signals that food is coming.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-04",
+      "term": "Conditioned stimulus",
+      "hint": "A previously neutral stimulus that, after being repeatedly paired with an unconditioned stimulus, eventually triggers a learned response all on its own. Like hearing your teacher's specific ringtone and automatically feeling a jolt of anxiety because it's always followed by a pop quiz.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-05",
+      "term": "Habituation",
+      "hint": "The tendency to show a decreasing behavioral response to a stimulus after it is repeatedly presented. Like completely ignoring the annoying, repetitive ticking noise of a classroom clock after sitting in the room for twenty minutes.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-06",
+      "term": "Stimulus discrimination",
+      "hint": "The psychological ability to tell the difference between a conditioned stimulus and other similar stimuli. Like your dog losing its mind when it hears your specific car pull into the driveway, but completely ignoring every other car that drives down the street.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-07",
+      "term": "Unconditioned stimulus",
+      "hint": "A stimulus that naturally, automatically, and unconditionally triggers a specific physical response without any prior training. Like the actual plate of spicy food that makes your mouth instantly water before you even take a bite.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-08",
+      "term": "Spontaneous recovery",
+      "hint": "The sudden, random reappearance of an extinguished conditioned response after a period of time has passed. Like randomly feeling a wave of nervous panic when you hear a school bell ring during the middle of summer vacation.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "02-09",
+      "term": "Shaping",
+      "hint": "An operant conditioning method where you reward successive approximations of a target behavior. Like teaching a dog to roll over by first rewarding them for sitting, then for lying down, and finally only when they roll all the way over.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-10",
+      "term": "Reinforcement",
+      "hint": "Any event or consequence that immediately follows a behavior and increases the likelihood that you will repeat that behavior in the future—like getting a $20 bill for every A on your report card.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-11",
+      "term": "Learned helplessness",
+      "hint": "The passive resignation a human or animal develops when they feel completely powerless to avoid repeated, negative events. Like giving up entirely on studying for chemistry because you failed the first three quizzes and have convinced yourself you're just doomed no matter what.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-12",
+      "term": "Instinctive drift",
+      "hint": "The tendency for trained animals to gradually revert back to their natural, evolutionary behaviors, overriding any conditioned tricks they learned—like a trained pig forgetting its performance routine and starting to root around in the dirt with its snout instead.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-13",
+      "term": "Variable interval",
+      "hint": "A reinforcement schedule where a reward is given after an unpredictable, changing amount of time has passed. Like continuously refreshing your email or social feed waiting for a message because you have no idea exactly when it will finally pop up.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-14",
+      "term": "Primary reinforcers",
+      "hint": "Unlearned, naturally satisfying rewards that fulfill a basic biological need—like a cold glass of water when you're completely dehydrated, a slice of pizza when you're starving, or a warm bed when you're exhausted.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-15",
+      "term": "Fixed ratio",
+      "hint": "A reinforcement schedule where a reward is delivered only after a set, predictable number of behaviors are completed. Like a coffee shop loyalty card where you have to buy exactly 10 drinks before you get one completely free.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-16",
+      "term": "Positive punishment",
+      "hint": "Adding an unpleasant consequence immediately after an unwanted behavior to ensure you don't do it again—like your parents giving you a list of extra chores to do because you came home two hours past your curfew.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "02-17",
+      "term": "Latent learning",
+      "hint": "Learning that occurs secretly without any immediate reward, only becoming obvious when there's an actual reason to demonstrate it. Like realizing you know exactly how to drive to a new store because you’ve sat in the passenger seat watching your parents drive there for years.",
+      "unit": "3",
+      "topic": "3.9"
+    },
+    {
+      "date": "02-18",
+      "term": "Vicarious conditioning",
+      "hint": "Learning a behavioral lesson entirely by observing the consequences that happen to someone else. Like watching your classmate get aggressively roasted by the teacher for having their phone out, instantly teaching you to keep yours deep inside your backpack.",
+      "unit": "3",
+      "topic": "3.9"
+    },
+    {
+      "date": "02-19",
+      "term": "Cognitive maps",
+      "hint": "A mental layout or blueprint of your physical environment. It’s what allows you to effortlessly navigate your way from your bedroom to the kitchen in the pitch-black middle of the night without crashing into any walls.",
+      "unit": "3",
+      "topic": "3.9"
+    },
+    {
+      "date": "02-20",
+      "term": "Attributions",
+      "hint": "The mental explanations you create to justify why people do the things they do. Like trying to decide if your friend left you on read because they are secretly mad at you (dispositional) or because their phone battery just died (situational).",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "02-21",
+      "term": "Self-serving bias",
+      "hint": "The universal habit of taking full credit for your massive successes but blaming external factors for your failures. Like claiming you got an A because you're an absolute genius, but blaming a D on the teacher making the test completely unfair.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "02-22",
+      "term": "Actor-observer bias",
+      "hint": "The tendency to blame your own bad behavior on situational factors, while blaming other people's identical behavior on their personal flaws. Like excusing your own speeding because you're late, but calling someone else a reckless lunatic when they speed past you.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "02-23",
+      "term": "Relative deprivation",
+      "hint": "The frustrating feeling that you are worse off than the people you compare yourself to. Like being perfectly thrilled with your upgraded phone until you see your friend show up to school with the absolute newest, most expensive model.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "02-24",
+      "term": "Mere exposure effect",
+      "hint": "The psychological rule that simply being around something or someone repeatedly makes you like them more. It explains why a song you originally thought was incredibly annoying slowly becomes your favorite track after hearing it on the radio twenty times.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "02-25",
+      "term": "Cognitive dissonance",
+      "hint": "The deeply uncomfortable mental tension you experience when your beliefs don't align with your actions. Like knowing full well that staying up until 3 am scrolling through your phone is ruining your health, but doing it anyway while feeling intensely guilty.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "02-26",
+      "term": "Just-world phenomenon",
+      "hint": "The comforting but flawed belief that life is completely fair and that people always get exactly what they deserve—leading to the assumption that good things only happen to good people, and bad things only happen to bad people.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "02-27",
+      "term": "Belief perseverance",
+      "hint": "Clinging to your initial beliefs even after someone presents you with absolute, undeniable proof that you are completely wrong. It's the ultimate don't confuse me with the facts mental shield.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "02-28",
+      "term": "Stereotype",
+      "hint": "A generalized, oversimplified, and often rigid belief about a specific group of people. Like assuming every single teenager is incredibly lazy and obsessed with social media, completely ignoring individual differences.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "02-29",
+      "term": "Altruism",
+      "hint": "Pure, unselfish concern for the well-being of others without expecting any reward or recognition in return. Like stopping to help a complete stranger pick up a massive stack of dropped papers in a crowded hallway, even though it means you will definitely be late to your own class.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-01",
+      "term": "Social debt",
+      "hint": "A feeling of psychological obligation to return a favor or match someone's kindness. Like when a classmate lets you borrow their notes, and now you feel a nagging pressure to buy them a coffee or help them with their next assignment to clear your mental tab.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-02",
+      "term": "Industrial-organizational psychologists",
+      "hint": "Psychologists who apply psychological principles to workplaces. They are the ones hired by massive companies to figure out exactly how to keep employees happy and motivated so they work harder, rather than burning out by 5 pm.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-03",
+      "term": "Social facilitation",
+      "hint": "The tendency to perform better on simple or well-learned tasks when others are watching. Like absolutely nailing your soccer penalty kick or piano solo when a huge crowd is cheering, though it backfires completely if you haven't practiced.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-04",
+      "term": "Groupthink",
+      "hint": "The dangerous group habit of prioritizing harmony and agreement over realistic thinking. Like when your group project team collectively agrees to a terrible, unrealistic presentation idea simply because nobody wants to cause drama or start an argument.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-05",
+      "term": "Deindividuation",
+      "hint": "The loss of self-awareness and personal restraint occurring in group situations that foster anonymity. Like losing your mind and screaming at the top of your lungs at a wild concert or sports game because you're buried in a massive crowd where nobody knows who you are.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-06",
+      "term": "Peripheral Route to Persuasion",
+      "hint": "Being convinced to buy or believe something based on superficial cues—like a flashy design, cool background music, or an attractive celebrity endorsement—rather than the actual quality, logic, or facts of the product.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-07",
+      "term": "Door-in-the-face technique",
+      "hint": "A compliance method where you start with an outrageously large request that you know will be rejected, just so your follow-up, much smaller request sounds completely reasonable. Like asking your parents for a $500 designer jacket, and when they scream No, you say, Okay, can I just have $20 for DoorDash?",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-08",
+      "term": "Superordinate goals",
+      "hint": "Shared goals that override differences among people and require cooperation to achieve. Like two bitter rival groups or ex-best friends putting aside all their drama and working together seamlessly because they absolutely need to pass their biology final project.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "03-09",
+      "term": "Sublimation",
+      "hint": "A defense mechanism where you channel unacceptable impulses into socially productive activities. Like channeling all your absolute rage from a bad breakup or a terrible day at school into an intense, sweat-dripping session at the gym or writing an incredible song.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "03-10",
+      "term": "Psychodynamic theory",
+      "hint": "Sigmund Freud's classic perspective that your personality and actions are deeply driven by hidden, unconscious conflicts, childhood dramas, and unfulfilled desires buried deep within your mind.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "03-11",
+      "term": "Unconditional positive regard",
+      "hint": "Total, judgment-free acceptance and support from another person. It's the ultimate comfort of having a best friend or therapist who loves you and has your back even when you make a completely terrible mistake or fail miserably.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "03-12",
+      "term": "Reaction formation",
+      "hint": "A defense mechanism where your ego unconsciously switches unacceptable impulses into their exact opposites. Like acting incredibly mean, sarcastic, or distant toward someone at school simply because you have a massive, embarrassing crush on them and don't want anyone to find out.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "03-13",
+      "term": "Displacement",
+      "hint": "Shifting aggressive impulses toward a safer, less threatening target. Like getting completely yelled at by your boss or teacher, holding your anger in, and then coming home and immediately snapping at your completely innocent younger sibling or slamming your bedroom door.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "03-14",
+      "term": "Self-efficacy",
+      "hint": "Your personal belief in your own ability to successfully execute a task or conquer a challenge. Having high confidence that you can absolutely crush your upcoming driver's license test or AP exam because you know you’ve got the skills.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "03-15",
+      "term": "Agreeableness",
+      "hint": "A Big Five personality trait characterized by being cooperative, trustworthy, good-natured, and helpful. Someone with high scores in this trait is the ultimate peacekeeper in the friend group who hates conflict and just wants everyone to get along.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "03-16",
+      "term": "Factor analysis",
+      "hint": "A complex statistical procedure that identifies clusters of related items on a test to discover underlying traits. Like analyzing hundreds of random personality quiz answers to find that they all boil down to a few core traits like extroversion or anxiety.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "03-17",
+      "term": "Reciprocal determinism",
+      "hint": "Albert Bandura's concept that your personality traits, your behavior, and your environment all constantly interact and shape each other. Like your love for gaming (trait) leading you to join an e-sports club (environment), which in turn makes you spend more time playing (behavior).",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "03-18",
+      "term": "Neuroticism",
+      "hint": "A Big Five personality trait that measures emotional instability, anxiety, and moodiness. Someone high in this trait is prone to stressing out over every single minor detail, overthinking a casual text message for hours, and expecting the absolute worst-case scenario.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "03-19",
+      "term": "Yerkes-Dodson Law",
+      "hint": "The principle that performance increases with physiological arousal up to a point, after which performance drops. Like needing a healthy level of pre-test adrenaline to stay focused, but if you enter full-blown, shaking panic mode, your brain completely freezes up.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "03-20",
+      "term": "Approach-avoidance",
+      "hint": "A conflict where a single goal or choice has both highly attractive and highly negative aspects. Like being invited to a massive weekend party that you really want to attend, but knowing your toxic ex will be there making things incredibly awkward.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "03-21",
+      "term": "Experience seeking",
+      "hint": "A sub-trait of sensation seeking where a person actively searches for new, unconventional mental and sensory experiences—like trying bizarre foods, exploring abandoned buildings, or traveling to completely unfamiliar places just for the thrill of the novel vibe.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "03-22",
+      "term": "Homeostasis",
+      "hint": "Your body's internal biological mission to maintain a perfectly stable, balanced state. It’s what triggers you to start sweating automatically when you're roasting hot or shivering when you step out into freezing winter air.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "03-23",
+      "term": "Incentive Theory",
+      "hint": "The motivation theory that we are pulled toward specific actions by external rewards or promises. Like grinding out hours of extra studying not because you love the material, but because your parents promised to let you borrow the car if you get an A.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "03-24",
+      "term": "Broaden-and-build theory",
+      "hint": "The idea that positive emotions (like joy or curiosity) broaden your mindset, allowing you to discover new solutions, build creative skills, and develop stronger relationships that help you thrive later on.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "03-25",
+      "term": "Display rules",
+      "hint": "Cultural expectations about when, where, and how it is appropriate to express emotions. Like forcing a massive smile and saying Thank you so much! when your relative hands you a hideous shirt because you know your parents are watching you.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "03-26",
+      "term": "Facial-feedback hypothesis",
+      "hint": "The psychological rule that your facial expressions can directly influence your emotional state. Literally forcing yourself to smile when you're in a terrible mood can actually trick your brain into feeling a bit happier.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "03-27",
+      "term": "Elicitors",
+      "hint": "The specific environmental events, triggers, or situations that jumpstart an emotional response. Like a jump-scare in a horror movie acting as the trigger that instantly sends your heart racing and makes you scream out loud.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "03-28",
+      "term": "Cognitive label",
+      "hint": "The mental interpretation or name you give to a state of physical arousal. If your heart is racing before a presentation, you can either label it as terrifying stage fright or excited energy, completely changing how you experience the emotion.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "03-29",
+      "term": "General adaptation syndrome",
+      "hint": "Hans Selye's 3-stage model of how the body responds to chronic stress. It explains why you feel an initial shock of panic when finals week hits, manage to survive on pure caffeine for a few days, and then get hit with a brutal cold the second vacation starts.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "03-30",
+      "term": "Tend and befriend theory",
+      "hint": "An evolutionary stress response where people—especially women—help others and seek social support from their community or friend group rather than fighting or fleeing.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "03-31",
+      "term": "Eustress",
+      "hint": "Positive, motivating stress that energizes you to tackle a major challenge. Like the excited, high-stakes adrenaline rush you feel right before stepping onto the stage for a big game, a theater performance, or a highly anticipated competition.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "04-01",
+      "term": "Adverse childhood experiences",
+      "hint": "Highly stressful or traumatic events occurring before age 18—like severe neglect, abuse, or household instability—that can cast a long psychological shadow over a person's long-term health and well-being.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "04-02",
+      "term": "Resistance",
+      "hint": "The second stage of Hans Selye's General Adaptation Syndrome where your body enters full-blown survival mode to battle an ongoing stressor. It’s like the middle of finals week when the initial shock has passed, and you are actively grinding on pure cortisol, adrenaline, and iced coffee—your body is locked on high alert, doing everything it can to adapt and keep you afloat before you inevitably crash.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "04-03",
+      "term": "Resilience",
+      "hint": "The ultimate psychological bounce-back superpower. It’s what allows a person to adapt beautifully and recover quickly even after facing a massive, shattering life tragedy or an overwhelming wave of adversity.",
+      "unit": "5",
+      "topic": "5.2"
+    },
+    {
+      "date": "04-04",
+      "term": "Posttraumatic growth",
+      "hint": "The positive psychological shift, newfound inner strength, and deeper appreciation for life that people can experience after successfully navigating and surviving an intense, world-shaking life crisis",
+      "unit": "5",
+      "topic": "5.2"
+    },
+    {
+      "date": "04-05",
+      "term": "Transcendence",
+      "hint": "One of the six core virtue categories in positive psychology that houses several of your unique signature strengths. These specific character traits—like gratitude, hope, humor, and appreciation of beauty—go completely beyond your daily routine to connect you to a bigger, more meaningful purpose in the universe.",
+      "unit": "5",
+      "topic": "5.2"
+    },
+    {
+      "date": "04-06",
+      "term": "Dysfunction",
+      "hint": "One of the classic Ds of psychological disorders. It’s when a behavioral or emotional pattern becomes so disruptive that it actively sabotages your ability to handle basic, daily life requirements—like keeping up with your schoolwork or maintaining friendships.",
+      "unit": "5",
+      "topic": "5.3"
+    },
+    {
+      "date": "04-07",
+      "term": "Diagnostic and Statistical Manual",
+      "hint": "The ultimate, authoritative diagnostic bible used by psychologists and psychiatrists to look up symptom checklists and officially classify psychological disorders.",
+      "unit": "5",
+      "topic": "5.3"
+    },
+    {
+      "date": "04-08",
+      "term": "Eclectic approach",
+      "hint": "A flexible, customized style of therapy where a clinician refuses to stick to just one school of thought, choosing instead to mix and match the absolute best techniques from various perspectives to help a client.",
+      "unit": "5",
+      "topic": "5.3"
+    },
+    {
+      "date": "04-09",
+      "term": "Diathesis-stress model",
+      "hint": "The theory that a psychological disorder is a two-part recipe: you inherit a silent biological or genetic vulnerability (the predisposition), which only gets activated when an overwhelming amount of environmental stress hits you.",
+      "unit": "5",
+      "topic": "5.3"
+    },
+    {
+      "date": "04-10",
+      "term": "Delusions",
+      "hint": "Deeply fixed, completely false beliefs that a person stubbornly clings to despite absolute, undeniable evidence that they are wrong. Like being entirely convinced that the government is broadcasting thoughts straight into your head or that you are actual royalty.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-11",
+      "term": "Agoraphobia",
+      "hint": "An intense anxiety disorder involving a paralyzing fear of being in public, open, or crowded places where escape might be difficult or embarrassing—often causing individuals to feel completely trapped inside the safety of their own homes.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-12",
+      "term": "Generalized anxiety disorder",
+      "hint": "A psychological condition where your brain’s worry button gets permanently jammed in the on position, causing persistent, unexplained, and severe anxiety about absolutely everything (grades, future, health) for months on end.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-13",
+      "term": "Compulsion",
+      "hint": "The repetitive, ritualistic behaviors or mental routines that a person feels completely driven to perform over and over again to temporarily silence the intense anxiety caused by an obsessive thought—like washing hands exactly twenty times.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-14",
+      "term": "Dissociative amnesia",
+      "hint": "A sudden, profound loss of memory surrounding a highly traumatic event that cannot be blamed on normal forgetfulness or an actual physical injury, like completely blanking out a terrifying accident.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-15",
+      "term": "Antisocial personality disorder",
+      "hint": "A personality disorder characterized by a complete, remorseless lack of conscience and a total disregard for the rights of others—leading to manipulative, deceitful, or reckless behavior without a single shred of guilt or empathy.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-16",
+      "term": "Ataque de nervios",
+      "hint": "A culturally specific psychological syndrome found primarily in Latino populations, involving intense, dramatic emotional outbursts, screaming, and uncontrollable shaking as a direct response to a severe, shocking family crisis.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-17",
+      "term": "Dialectical behavior therapy",
+      "hint": "A specialized type of cognitive-behavioral therapy designed to help individuals manage intense emotional rollercoasters by teaching practical skills in mindfulness, distress tolerance, and healthy relationship habits.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "04-18",
+      "term": "Lithium",
+      "hint": "A naturally occurring mineral that acts as a highly effective, mood-stabilizing medication used to level out the intense, chaotic highs of mania and the crushing lows of depression in individuals with bipolar disorder.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "04-19",
+      "term": "Lobotomy",
+      "hint": "A dark, historic surgical procedure once used to calm uncontrollably violent patients by cutting the nerve pathways connecting the frontal lobes to the rest of the brain, tragically leaving them permanently apathetic.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "04-20",
+      "term": "Electroconvulsive therapy",
+      "hint": "A medical treatment for severe, treatment-resistant depression where brief electrical currents are safely passed through the brain of an anesthetized patient to intentionally trigger a brief seizure and reset brain chemistry.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "04-21",
+      "term": "Systematic desensitization",
+      "hint": "A classic behavioral therapy technique used to conquer phobias by pairing a deep state of relaxation with a step-by-step, gradual exposure hierarchy to your biggest fear until the panic completely evaporates.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "04-22",
+      "term": "Acrophobia",
+      "hint": "The reason you flat-out refuse to ride that one massive roller coaster at the theme park, or why looking down from a high balcony makes your knees turn to jelly.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "04-23",
+      "term": "Sensory Memory",
+      "hint": "The absolute first stage of memory that holds a pristine, perfect snapshot of environmental sights and sounds for just a tiny fraction of a second before it fades completely away.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "04-24",
+      "term": "Longitudinal studies",
+      "hint": "A high-effort research design where scientists track, study, and re-test the exact same group of individuals across a long span of time (often years or decades) to see precisely how people change as they grow older.",
+      "unit": "3",
+      "topic": "3.1"
+    },
+    {
+      "date": "04-25",
+      "term": "Boredom susceptibility",
+      "hint": "A personality trait reflecting an extreme intolerance for repetitive, predictable, or monotonous activities, driving a person to constantly crave high-intensity, novel sensory experiences and fresh environments to stay entertained.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "04-26",
+      "term": "Foot-in-the-door technique",
+      "hint": "A compliance strategy where you get someone to agree to a tiny, effortless request first, making them statistically way more likely to say yes to a much bigger request later. Like asking your friend to help you with just one math problem, and once they say yes, sneakily sliding the entire 20 question homework packet across the table for them to finish.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "04-27",
+      "term": "Glutamate",
+      "hint": "The ultimate excitatory neurotransmitter in the central nervous system that acts as your brain’s gas pedal, ramping up neural firing and playing an indispensable role in learning and long-term memory.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "04-28",
+      "term": "Standard Deviation",
+      "hint": "A statistical measure of how spread out a set of numbers is. If everyone in the class scored a grade between 82% and 86% this number would be incredibly tiny because the scores are so tightly packed together.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "04-29",
+      "term": "Integrity and despair",
+      "hint": "Erik Erikson’s final late-adulthood stage where an elderly person reflects on their entire life journey, feeling either a peaceful sense of fulfillment or an overwhelming ache of regret over missed opportunities.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "04-30",
+      "term": "Halo effect",
+      "hint": "A cognitive bias where your overall impression of a person based on one single positive trait (like their good looks) tricks you into automatically assuming they are also incredibly kind, smart, and trustworthy.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "05-01",
+      "term": "Volley Theory",
+      "hint": "The auditory theory explaining that individual hair cells in the inner ear can alternate firing in rapid, successive groups to achieve a combined high frequency, allowing our brains to perceive intermediate pitch sounds.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "05-02",
+      "term": "Reaction formation",
+      "hint": "The defense mechanism where you act the exact opposite of how you actually feel. A classic example: being mean or overly sarcastic to your crush because you are terrified they will find out you actually like them.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "05-03",
+      "term": "Mesosystem",
+      "hint": "The awkward and terrifying intersection where different parts of your life collide—most perfectly illustrated by the exact moment your parents and your teachers start talking about you at parent-teacher conferences.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "05-04",
+      "term": "Temperance",
+      "hint": "Having the supreme, god-tier self-control to eat just one hot chip out of the bag and then put it away, or successfully stopping yourself from sending that impulsive late-night text.",
+      "unit": "5",
+      "topic": "5.2"
+    },
+    {
+      "date": "05-05",
+      "term": "Thalamus",
+      "hint": "The ultimate traffic cop or sorting center of your brain. It takes all your incoming sensory texts and routes them to the right department—except for smell, which gets its own VIP shortcut pass.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "05-06",
+      "term": "Debriefing",
+      "hint": "The moment at the end of a YouTube or TikTok hidden-camera prank show where the host finally points to the bushes and says, Look, you're on camera! Here's what we were actually doing.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "05-07",
+      "term": "Fixed ratio",
+      "hint": "A reward schedule based on a set number of behaviors. Think of a loyalty stamp card at your favorite boba or coffee shop where you get a free drink after exactly 10 purchases.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "05-08",
+      "term": "Availability Heuristic",
+      "hint": "Judging the safety of something based on the most dramatic memory you have. Like refusing to swim in the ocean because you just watched a movie about sharks, even though you're statistically more likely to be injured by a falling coconut.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "05-09",
+      "term": "Mere exposure effect",
+      "hint": "Hating a new radio or TikTok song when you first hear it, but after hearing it background-playing 50 times in one week, you suddenly find yourself singing along in the shower.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "05-10",
+      "term": "Altruism",
+      "hint": "Pure, unselfish kindness. Like risking your own grade to let your friend copy the homework right before the bell rings, solely out of the goodness of your heart.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "05-11",
+      "term": "Chronological age",
+      "hint": "The literal, unchangeable number of candles on your birthday cake, completely regardless of how mature (or totally childish) you choose to act in real life.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "05-12",
+      "term": "Conscientiousness",
+      "hint": "The Big Five personality trait that defines that one hyper-organized student in your group project who creates a color-coded Google Doc, sets internal deadlines, and essentially carries the entire team.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "05-13",
+      "term": "Positive Skew",
+      "hint": "The shape of a data graph when a test is so brutally hard that almost everyone in the class fails it, except for that one absolute genius who gets a 100%, dragging the graph's tail way out to the right.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "05-14",
+      "term": "Fidelity",
+      "hint": "Letting your yes mean yes in counseling",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "05-15",
+      "term": "Cycling",
+      "hint": "Up and down",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "05-16",
+      "term": "Framing",
+      "hint": "The art of presentation. Telling your parents, I got a 72% on the test, but it was the second-highest grade in the entire class! instead of just saying, Hey, I got a C.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "05-17",
+      "term": "Spacing effect",
+      "hint": "Studying a set of flashcards for 15 minutes every day for a week instead of pulling a panicked, caffeine-fueled 5-hour all-nighter the night before the final.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "05-18",
+      "term": "Visual cliff",
+      "hint": "A famous laboratory glass table setup used to see if infants have developed depth perception, or if they will blindly crawl right over the edge of an apparent drop-off.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "05-19",
+      "term": "Fovea",
+      "hint": "The high-definition VIP zone in the center of your retina. It’s packed completely with cones, giving you the ultra-sharp vision required to read the tiny fine print on your phone screen.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "05-20",
+      "term": "Caffeine",
+      "hint": "The legally addictive, psychoactive liquid gold from Starbucks, Dunkin', or energy drinks that is single-handedly keeping the entire high school student body functional during first period.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "05-21",
+      "term": "Confederates",
+      "hint": "The undercover actors working secretly for a researcher. They pretend to be regular participants in an experiment just to give fake answers and mess with your psychological head.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
       "date": "05-22",
       "term": "brain",
-      "hint": "Your body’s command center",
+      "hint": "A three-pound lump of gray tissue inside your skull that consumes 20% of your body's energy, handles complex overthinking about your social life, and yet goes completely blank the second a test is placed in front of you.",
       "unit": "1",
       "topic": "1.2"
     },
     {
       "date": "05-23",
       "term": "Broca's area",
-      "hint": "Damage here can make speaking difficult",
+      "hint": "The speech muscle control center in your left frontal lobe. If this gets knocked out, you'll know exactly what you want to say in your head, but your mouth won't physically be able to form the words.",
       "unit": "1",
       "topic": "1.4"
     },
     {
       "date": "05-24",
       "term": "Double-Blind",
-      "hint": "Prevents expectations from affecting results",
+      "hint": "An experimental safeguard where neither the person taking the pill nor the person handing it out knows who got the real medicine and who got the fake sugar pill, ensuring total objectiveness.",
       "unit": "0",
       "topic": "0.2"
+    },
+    {
+      "date": "05-25",
+      "term": "Acetylcholine",
+      "hint": "A busy neurotransmitter that has to multitask: it controls your muscle contractions when you walk, and it helps your brain construct memories—like remembering the answer to this hangman game.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "05-26",
+      "term": "Convergence",
+      "hint": "A muscle-driven depth cue that forces your eyeballs to turn slightly inward (and look a little cross-eyed) as you bring your phone closer and closer to your face in the dark.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "05-27",
+      "term": "Metacognition",
+      "hint": "Realizing halfway down a textbook page that your eyes are moving but you haven't processed a single word, or taking a step back to analyze why you are overthinking a text message so much.",
+      "unit": "2",
+      "topic": "2.6"
+    },
+    {
+      "date": "05-28",
+      "term": "Imprinting",
+      "hint": "Fast-track attachment. This is why a newborn baby duckling might spend its whole life following a golden retriever around, simply because it was the first moving object it saw after hatching.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "05-29",
+      "term": "Telegraphic speech",
+      "hint": "The toddler stage of talking where sentences sound like a blunt, character-limited text message with zero grammar: Want juice or Go park.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "05-30",
+      "term": "Social clock",
+      "hint": "The unwritten cultural timeline that pressures people to graduate by 22, land a career by 24, get married by 28, and buy a house by 30—even if you're currently just trying to survive next period's quiz.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "05-31",
+      "term": "Conformity",
+      "hint": "The powerful social urge that makes everyone buy the exact same style of water bottle, wear the same trendy sneakers, and use the exact same slang words just to avoid standing out from the crowd.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "06-01",
+      "term": "Homeostasis",
+      "hint": "Your body's desperate attempt to keep everything stable. Think of it as your internal thermostat trying to cool you down after running a mile in gym class on a hot day.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "06-02",
+      "term": "Eustress",
+      "hint": "The good kind of stress. It’s that nervous but excited feeling you get right before you go on a first date, ride a massive roller coaster, or walk out onto the stage.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "06-03",
+      "term": "Chronosystem",
+      "hint": "How the timing of historical events shapes your life. For example: how growing up in the era of TikTok and smartphones makes your teenage experience completely different from your parents' era of landlines.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "06-04",
+      "term": "Continuous reinforcement",
+      "hint": "Rewarding a behavior every single time it happens. Like getting a Snapchat notification back every single time you send a snap to your best friend.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "06-05",
+      "term": "Aptitude tests",
+      "hint": "A test designed to predict how well you will do in the future. Colleges look at these (like the SAT or ACT) to guess your future academic vibes.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "06-06",
+      "term": "Heuristics",
+      "hint": "Mental shortcuts. Instead of spending hours reading reviews for fifty different restaurants on DoorDash, you just pick the first one that looks good.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "06-07",
+      "term": "Somnambulism",
+      "hint": "The scientific term for walking in your sleep. It's when you wake up in the kitchen at 3AM holding a box of cereal with absolutely no idea how you got there.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "06-08",
+      "term": "Monozygotic Twins",
+      "hint": "Sibling lookalikes who share 100% of their genetic makeup. They are the ultimate candidates for pulling off a class-swapping prank on April Fools' Day.",
+      "unit": "1",
+      "topic": "1.1"
+    },
+    {
+      "date": "06-09",
+      "term": "Hindsight Bias",
+      "hint": "The classic I totally knew that was going to happen phenomenon. You claim you predicted the crazy plot twist in the show's finale, but only after the episode ended.",
+      "unit": "0",
+      "topic": "0.1"
+    },
+    {
+      "date": "06-10",
+      "term": "Extraversion",
+      "hint": "A personality trait where you gain energy from being around others. That one friend who is fully charged by a massive Friday night party while everyone else's social battery is dead.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "06-11",
+      "term": "Tardive dyskinesia",
+      "hint": "A serious medical side effect involving involuntary, uncontrollable facial tics and tongue movements—not to be confused with trying to do a complicated TikTok face filter trend.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "06-12",
+      "term": "Social debt",
+      "hint": "The awkward feeling of psychological obligation. It's the absolute panic you feel when a casual acquaintance buys you an expensive holiday gift and you realize you have to get them something back.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "06-13",
+      "term": "Stereotype lift",
+      "hint": "A sudden boost in your performance that happens when you become aware of a negative stereotype associated with a group you aren't a part of.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "06-14",
+      "term": "Mnemonic devices",
+      "hint": "Memory tricks used to study. You've definitely used these if you've ever said Please Excuse My Dear Aunt Sally to pass an algebra quiz or PEMDAS to survive math class.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "06-15",
+      "term": "Cocktail Party Effect",
+      "hint": "The brain's ability to focus on one voice in a crowded room. Like being in a loud, chaotic school cafeteria but instantly turning around the second someone whispers your name across the room.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "06-16",
+      "term": "Agonists",
+      "hint": "Chemical copycats. These are molecules that mimic a neurotransmitter, acting like a hype-man to unlock receptors and turn up the volume on the brain's signals.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "06-17",
+      "term": "Disorganized attachment",
+      "hint": "A hot-and-cold relationship pattern in childhood where a toddler wants comfort from their parent but simultaneously acts scared or deeply confused when they receive it.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "06-18",
+      "term": "Belief perseverance",
+      "hint": "Realizing you are wrong but refusing to admit it. Like continuing to argue that your favorite sports team is the absolute best in the league even after they lose by 40 points and have a 0-10 record.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "06-19",
+      "term": "Exhaustion phase",
+      "hint": "The final stage of stress adaptation. The exact physical and mental state you are in on a Friday afternoon after surviving a week of three exams, an essay, and sports practices.",
+      "unit": "5",
+      "topic": "5.1"
+    },
+    {
+      "date": "06-20",
+      "term": "Hypervigilance",
+      "hint": "Being on absolute high alert for danger. It’s sitting in the back row scanning every door movement, or jumping every time your phone vibrates because you think your parents found out about your grades.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "06-21",
+      "term": "Hypothesis",
+      "hint": "I think therefore I testA testable prediction. For example: If I sleep with my psychology textbook under my pillow, then I will magically absorb all the information through osmosis.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "06-22",
+      "term": "Ghrelin",
+      "hint": "The absolute gremlin of a stomach hormone. It’s the chemical responsible for making your stomach loudly growl in the middle of a dead-silent testing room because you skipped breakfast.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "06-23",
+      "term": "Retrieval",
+      "hint": "Pulling information out of long-term storage. Trying to grab a concept from your brain’s cloud storage during a quiz, only for your brain to buffer and give you a 404 error code.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "06-24",
+      "term": "Animism",
+      "hint": "Attributing lifelike qualities to non-living objects. Feeling genuinely guilty for throwing a stuffed animal into the closet because you’re secretly worried you'll hurt its feelings.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "06-25",
+      "term": "Histrionic personality disorder",
+      "hint": "A pattern of excessive emotionality and attention-seeking. It's the psychological equivalent of turning absolutely everything into a massive, dramatic production just to make sure all eyes stay on you.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "06-26",
+      "term": "Self-efficacy",
+      "hint": "Your personal belief in your ability to succeed at a specific task. For instance, having high-key confidence that you are going to absolutely crush your driver's license road test on the first try.",
+      "unit": "4",
+      "topic": "4.5"
+    },
+    {
+      "date": "06-27",
+      "term": "Primary reinforcers",
+      "hint": "Rewards that are naturally satisfying and require no learning to love—such as a giant slice of pizza or a cold drink on a scorching summer day.",
+      "unit": "3",
+      "topic": "3.8"
+    },
+    {
+      "date": "06-28",
+      "term": "Implicit memory",
+      "hint": "Memories that are unconscious and automatic. Like typing your phone's six-digit passcode without even looking at the screen, purely through muscle memory.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "06-29",
+      "term": "Top-Down Processing",
+      "hint": "Using context and expectations to understand something. It's how you can easily read a text message full of terrible typos and abbreviations because your brain fills in the blanks based on what you expect.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "06-30",
+      "term": "Phi Phenomenon",
+      "hint": "An illusion of movement created by successive flashing lights. It's why neon arrows at a fast-food drive-thru look like they are moving, even though the bulbs are just blinking on and off.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "07-01",
+      "term": "Synesthesia",
+      "hint": "Blending your senses together. Like hearing a heavy bass drop in a song and literally seeing flashes of bright purple light, or tasting a flavor whenever you hear a specific word.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "07-02",
+      "term": "Trichromatic Theory",
+      "hint": "The idea that your eyes only use three types of color receptors (Red, Green, and Blue) to create every color you see—basically the biological version of the RGB lighting in a PC gaming setup.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "07-03",
+      "term": "Peer Review",
+      "hint": "Sending your scientific paper to a group chat of fellow experts so they can critique your mistakes and roast your methods before you're allowed to publish it.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "07-04",
+      "term": "Deindividuation",
+      "hint": "Losing your self-awareness and personal accountability in a massive crowd. Why you would never scream at the top of your lungs alone in a quiet hallway, but will happily do it in the school stadium student section.",
+      "unit": "4",
+      "topic": "4.3"
+    },
+    {
+      "date": "07-05",
+      "term": "Distress",
+      "hint": "The bad kind of stress that drains your battery. The absolute panic you feel when you look at your calendar and realize you have three major tests, an essay, and a sports game all on the same Thursday.",
+      "unit": "5",
+      "topic": "5.3"
+    },
+    {
+      "date": "07-06",
+      "term": "Olfaction",
+      "hint": "Your sense of smell. The powerful sensory system that lets you detect a fresh batch of chocolate chip cookies from across the house, or serves as an immediate warning sign that someone left a gym bag in the car.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "07-07",
+      "term": "Zone of proximal development",
+      "hint": "The ultimate learning sweet spot. It's when a task or concept is a little too hard to figure out completely by yourself, but totally doable with a little guidance or a solid walkthrough tutorial from a friend.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "07-08",
+      "term": "Shallow encoding",
+      "hint": "Skimming through your vocabulary flashcards while simultaneously scrolling through TikTok, leading to the information bouncing right out of your head because you only processed the surface look of the words.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "07-09",
+      "term": "Resilience",
+      "hint": "Your psychological ability to bounce back from a terrible situation. Like completely failing your first major quiz of the semester but immediately dusting yourself off, learning from your mistakes, and crushing the next one.",
+      "unit": "5",
+      "topic": "5.2"
+    },
+    {
+      "date": "07-10",
+      "term": "Taijin kyofusho",
+      "hint": "A culturally specific anxiety disorder from Japan where an individual is intensely terrified that their own body odor, facial expressions, or gestures will make other people feel deeply uncomfortable or embarrassed.",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "07-11",
+      "term": "Antidepressants",
+      "hint": "Medications designed to boost mood-regulating neurotransmitters like serotonin. Think of them as chemical software patches to help stabilize things when the brain's default emotional settings are struggling.",
+      "unit": "5",
+      "topic": "5.5"
+    },
+    {
+      "date": "07-12",
+      "term": "Dispositional attributions",
+      "hint": "Blaming someone's behavior entirely on their personality instead of their situation. Like assuming a person who accidentally bumped into you in a crowded hallway is an absolute jerk, ignoring that they were shoved by a wave of people.",
+      "unit": "4",
+      "topic": "4.1"
+    },
+    {
+      "date": "07-13",
+      "term": "Reversibility",
+      "hint": "The cognitive stage realization that things can change forms and then go back to how they started. For example, knowing that if you melt a chocolate bar down into a liquid, you can freeze it right back into solid chocolate.",
+      "unit": "3",
+      "topic": "3.4"
+    },
+    {
+      "date": "07-14",
+      "term": "Medulla",
+      "hint": "The absolute most vital part of your brainstem. It handles your automatic survival functions like breathing and your heartbeat—if this part goes down, your entire system goes permanently offline.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "07-15",
+      "term": "Standard Deviation",
+      "hint": "A statistical measure of how spread out a set of numbers is. If everyone in the class scored a grade between 82% and 86% this number would be incredibly tiny because the scores are so tightly packed together.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "07-16",
+      "term": "Word salad",
+      "hint": "Purple elephant blanket tree sky yesterday walking pizza",
+      "unit": "5",
+      "topic": "5.4"
+    },
+    {
+      "date": "07-17",
+      "term": "Attention",
+      "hint": "The mental spotlight you use to focus on incoming information. Extremely difficult to maintain during a long, dry school lecture, but magically infinite when you're deeply investigative-stalking a dramatic thread on social media.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "07-18",
+      "term": "Retroactive interference",
+      "hint": "When new information completely overwrites your old memories. Like memorizing your new second-semester class schedule so well that you literally cannot remember what classes you used to have during those periods last semester.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "07-19",
+      "term": "Threshold",
+      "hint": "The minimum level of stimulation required to trigger a sensory reaction. Like the exact volume a whisper needs to hit before your ears can actually detect it, or the exact amount of annoyance needed to make you snap.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "07-20",
+      "term": "Split-half reliability",
+      "hint": "A consistency check where a teacher compares a student's score on the first half of a test with their score on the second half to make sure the exam is balanced, stable, and fair throughout.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "07-21",
+      "term": "Algorithms",
+      "hint": "A slow, step-by-step, foolproof formula to solve a problem. It guarantees the right answer eventually, unlike your usual method of randomly guessing passwords until you get locked out of your phone.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "07-22",
+      "term": "Morphemes",
+      "hint": "The smallest units of meaning in a language. Not just single letters, but prefixes and suffixes like un- or -ed that completely transform the entire vibe and definition of a base word.",
+      "unit": "3",
+      "topic": "3.5"
+    },
+    {
+      "date": "07-23",
+      "term": "Survey",
+      "hint": "A research tool used to gather self-reported opinions from a large group. Perfect for figuring out what the student body thinks of the new school dress code, assuming people don't just lie on it to look cool.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "07-24",
+      "term": "Vestibular Sense",
+      "hint": "Your sense of balance and head position. Located deep inside your inner ear, it's the reason you can walk a straight line without tipping over, and why spinning in circles makes the entire room feel like it's tilting.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "07-25",
+      "term": "Corpus Callosum",
+      "hint": "The massive highway of nerve fibers connecting the left and right halves of your brain. It's constantly copy-pasting information back and forth so your hands can work together seamlessly to type out a text message.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "07-26",
+      "term": "Hypnogogic Sensations",
+      "hint": "Bizarre, vivid hallucinations that happen right as you are drifting off to sleep. Most famous for that sudden, terrifying sensation that you are falling off a cliff, causing your entire body to violently twitch awake.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "07-27",
+      "term": "Serial position effect",
+      "hint": "The memory phenomenon where you perfectly remember the very first and very last items on a vocabulary list, but completely forget the entire middle section.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "07-28",
+      "term": "Testing effect",
+      "hint": "The proven psychological rule that actively quizzing yourself with flashcards or practice games makes you remember information way better than just passively re-reading the textbook over and over again.",
+      "unit": "2",
+      "topic": "2.6"
+    },
+    {
+      "date": "07-29",
+      "term": "Trust and mistrust",
+      "hint": "Erik Erikson's very first developmental stage in infancy. It's when a baby decides whether the world is a safe, reliable place based entirely on how quickly someone brings them a bottle when they cry.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "07-30",
+      "term": "Regression",
+      "hint": "Coping with stress by retreating to an earlier, more childish stage of development. Like throwing a literal, foot-stomping temper tantrum in your bedroom because your parents said you couldn't hang out with friends this weekend.",
+      "unit": "4",
+      "topic": "4.4"
+    },
+    {
+      "date": "07-31",
+      "term": "Leptin",
+      "hint": "The I'm full hormone. It's the chemical signal released by your fat cells that explicitly tells your brain to step away from the kitchen counter because you've already eaten half a box of pizza.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "08-01",
+      "term": "Display rules",
+      "hint": "Cultural rules about how and when to show emotions. Like smiling and saying I love it! when your relative gives you an incredibly ugly sweater for your birthday because your parents are staring at you.",
+      "unit": "4",
+      "topic": "4.7"
+    },
+    {
+      "date": "08-02",
+      "term": "Confirmation bias",
+      "hint": "Intentionally ignoring every negative review of a video game or movie because you have already decided you really, really want it to be good.",
+      "unit": "4",
+      "topic": "4.2"
+    },
+    {
+      "date": "08-03",
+      "term": "Stimulus discrimination",
+      "hint": "The psychological ability to instantly tell the difference between the chime of your own phone's text notification and someone else's identical notification across the room.",
+      "unit": "3",
+      "topic": "3.7"
+    },
+    {
+      "date": "08-04",
+      "term": "Reuptake",
+      "hint": "The brain's internal recycling system where sending neurons vacuum up leftover neurotransmitters so they can be reused later.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "08-05",
+      "term": "Tip-of-the-tongue phenomenon",
+      "hint": "When you can picture the actor's face, know exactly what other movies they are in, but your brain flat-out refuses to unlock their actual name.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "08-06",
+      "term": "Kinesthesis",
+      "hint": "The bodily sense that allows you to successfully bring a piece of popcorn directly to your mouth without looking, even while staring intently at a movie screen in a pitch-black theater.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "08-07",
+      "term": "Dichromatism",
+      "hint": "A form of color blindness where you only have two functioning color receptors, making choosing a matching outfit a high-stakes gamble without asking a friend first.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "08-08",
+      "term": "Fine motor",
+      "hint": "The precise coordination of small muscles required to perfectly draw a sharp eyeliner wing or text at 90 words per minute, rather than moving your whole arm to throw a ball.",
+      "unit": "3",
+      "topic": "3.2"
+    },
+    {
+      "date": "08-09",
+      "term": "Somatic Nervous System",
+      "hint": "The bodily control network that handles your voluntary movements—like choosing to scroll through social media or tap your foot along to a song during a lecture.",
+      "unit": "1",
+      "topic": "1.2"
+    },
+    {
+      "date": "08-10",
+      "term": "Proactive interference",
+      "hint": "Accidentally writing last year's date on your school papers for the entire month of January because your old memories are blocking your ability to remember the new year.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "08-11",
+      "term": "Pituitary gland",
+      "hint": "The absolute master gland of your body's hormone system, located at the base of the brain, which single-handedly decided to launch you into the chaos of puberty.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "08-12",
+      "term": "Vicarious conditioning",
+      "hint": "Learning a lesson the easy way by watching your older sibling get absolutely grounded for breaking a rule, instantly teaching you never to try it yourself.",
+      "unit": "3",
+      "topic": "3.9"
+    },
+    {
+      "date": "08-13",
+      "term": "Avoidance-avoidance",
+      "hint": "The ultimate lose-lose situation where you have to choose between two equally terrible options, like doing a 3 hour math assignment or cleaning the entire disgusting kitchen.",
+      "unit": "4",
+      "topic": "4.6"
+    },
+    {
+      "date": "08-14",
+      "term": "Personal fable",
+      "hint": "The teenage belief that you are the absolute main character of the universe, that nobody could possibly understand your specific feelings, and that you are completely invincible.",
+      "unit": "3",
+      "topic": "3.6"
+    },
+    {
+      "date": "08-15",
+      "term": "Hippocampus",
+      "hint": "The brain's central processing station for forming new memories. If you can't remember where you left your keys or what you studied last night, this seahorse-shaped structure is struggling.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "08-16",
+      "term": "Hindsight Bias",
+      "hint": "Claiming you knew your friend's toxic relationship was going to end in flames... but only saying it after they break up",
+      "unit": "0",
+      "topic": "0.1"
+    },
+    {
+      "date": "08-17",
+      "term": "Generalizability",
+      "hint": "Can the results of my tiny, weird experiment apply to the rest of the world? Or does it only apply to my specific friend group?",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-18",
+      "term": "Meta-Analysis",
+      "hint": "A study of studies. Basically the academic equivalent of making a tier list of everyone else's tier lists.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-19",
+      "term": "Naturalistic Observation",
+      "hint": "Stalking people in the wild for science. It’s exactly what you do when people-watching at the mall, but with a clipboard.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-20",
+      "term": "Peer Review",
+      "hint": "Getting roasted by other scientists before you're allowed to publish. The academic version of sending this to the group chat for approval before I post it.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-21",
+      "term": "Replication",
+      "hint": "Doing the entire experiment all over again to make sure the first time wasn't just a fluke. Because if you can't duplicate the TikTok dance, did you really learn it?",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-22",
+      "term": "Social Desirability Bias",
+      "hint": "Lying on a survey so you don't look like a terrible person. For example, checking strongly agree when asked if you eat 5 servings of vegetables a day.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-23",
+      "term": "Representative Sample",
+      "hint": "When picking participants, you need a mini-version of the entire population. You can't just survey the AP kids and pretend they speak for the whole school!",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "08-24",
+      "term": "Correlation Coefficient",
+      "hint": "A single number between -1.0 and +1.0 that tells you exactly how much of a situationship two things are in.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "08-25",
+      "term": "Negative Correlation",
+      "hint": "An inverse relationship where as one thing goes up, the other goes down. A classic example: the amount of time you spend scrolling on your phone vs. your test scores.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "08-26",
+      "term": "Variable",
+      "hint": "Anything that can be changed, measured, or controlled in an experiment. Kind of like your mood before and after lunch.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "08-27",
+      "term": "Mean",
+      "hint": "The mathematical average... which is exactly the word you use to describe your teacher when they assign homework over a holiday weekend.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "08-28",
+      "term": "Bimodal Distribution",
+      "hint": "A graph that has two distinct peaks. Kind of like a camel's back, or your energy levels (spiking at exactly 2 PM and 2 AM with nothing in between).",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "08-29",
+      "term": "Range",
+      "hint": "The distance between the highest and lowest scores in a data set. Often perfectly illustrated by the difference between the grade you expected to get and the grade you actually got.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "08-30",
+      "term": "Psychodynamic Perspective",
+      "hint": "The approach where you just blame your unconscious mind and your childhood for everything you do. (Thanks, Freud!)",
+      "unit": "0",
+      "topic": "0.6"
+    },
+    {
+      "date": "08-31",
+      "term": "Cognitive Perspective",
+      "hint": "It's all in your head! The psychological approach that focuses purely on how we think, remember, and process info—basically studying the brain's software.",
+      "unit": "0",
+      "topic": "0.6"
+    },
+    {
+      "date": "09-01",
+      "term": "Psychology",
+      "hint": "The reason you are here",
+      "unit": "0",
+      "topic": "0.1"
+    },
+    {
+      "date": "09-02",
+      "term": "Overconfidence",
+      "hint": "The dangerous phenomenon of thinking you can study for the AP exam the night before and still get a 5.",
+      "unit": "0",
+      "topic": "0.1"
+    },
+    {
+      "date": "09-03",
+      "term": "Confirmation Bias",
+      "hint": "When you only read comments that agree with your opinion and ignore the rest",
+      "unit": "0",
+      "topic": "0.1"
+    },
+    {
+      "date": "09-04",
+      "term": "Case Study",
+      "hint": "Doing an incredibly deep dive on one single person or situation—kind of like investigating your favorite celebrity’s entire dating history.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-05",
+      "term": "Theory",
+      "hint": "A big, overarching idea that organizes facts and explains things. Like the idea that your teachers actually live at the school because you've never seen them anywhere else.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-06",
+      "term": "Hypothesis",
+      "hint": "A testable prediction. Example: If I drink three iced coffees, then I will finish my essay. Time to test it out!",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-07",
+      "term": "Convenience Sample",
+      "hint": "Surveying only the people at your lunch table and pretending their opinions represent the entire school, just because they were easy to reach.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-08",
+      "term": "Control Group",
+      "hint": "The baseline group in an experiment that doesn't get the special treatment. It's like being in the group that just gets tap water while the other gets energy drinks.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-09",
+      "term": "Dependent Variable",
+      "hint": "The outcome you are actually measuring. In the game of school, this is your grade, which relies completely on how much you study.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-10",
+      "term": "Illusory Correlation",
+      "hint": "Believing two things are connected when they totally aren't. Like being convinced that wearing your unwashed lucky jersey is the reason your team won.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-11",
+      "term": "Placebo Efffect",
+      "hint": "Feeling completely wide awake after drinking decaf coffee just because you thought it had caffeine in it.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-12",
+      "term": "Sample",
+      "hint": "The small slice of the population you actually test, because bringing all 8 billion people on Earth into the lab would take way too long.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-13",
+      "term": "Operational Definition",
+      "hint": "Explaining the exact, specific way you are measuring something. Being tired is too vague, but yawning 5 times during 1st period fits this perfectly!",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "09-14",
+      "term": "Experiment",
+      "hint": "The only research method that can actually prove cause and effect. Welcome to the lab!",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-15",
+      "term": "Falsifiability",
+      "hint": "The rule that for a claim to be scientific, there must be a way to prove it wrong. (Sorry, a ghost stole my homework doesn't pass this test).",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-16",
+      "term": "Confederates",
+      "hint": "The undercover actors secretly working for the researcher to trick the real participants. Basically, you're on a hidden camera prank show for science.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-17",
+      "term": "Informed Consent",
+      "hint": "Getting someone's permission before you test them, and letting them know exactly what weird things they are about to do in your study.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-18",
+      "term": "Qualitative Research",
+      "hint": "Data that uses descriptions, interviews, and words instead of numbers. Think of it as the essay section of research.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-19",
+      "term": "Scatterplot",
+      "hint": "A graph with a bunch of dots that looks like someone sneezed on the paper, used to show if two things are related to each other.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-20",
+      "term": "Debriefing",
+      "hint": "Spilling the tea at the end of the experiment. This is when the researcher finally tells the participants what they were actually testing and if they tricked them.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-21",
+      "term": "Likert Scales",
+      "hint": "Those classic questionnaires that ask you to rate things on a scale from Strongly Disagree to Strongly Agree.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-22",
+      "term": "Quantitative Research",
+      "hint": "Research that is all about numbers, measurements, and statistics. Math lovers, this one is for you.",
+      "unit": "0",
+      "topic": "0.4"
+    },
+    {
+      "date": "09-23",
+      "term": "Effect Size",
+      "hint": "A statistical measure that tells you how big or meaningful the difference actually is, not just that a difference exists.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "09-24",
+      "term": "Negative Skew",
+      "hint": "When a few really low scores drag the whole average down. Just like that one missing assignment single-handedly ruining your grade in the class.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "09-25",
+      "term": "Median",
+      "hint": "The very middle number in a sorted data set. The ultimate middle child of statistics!",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "09-26",
+      "term": "Regression Toward the Mean",
+      "hint": "The tendency for extreme scores to return to average over time. Like when you magically bowl a 200 once, but your next three games are back to your usual 85.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-27",
+      "term": "Behavioral Perspective",
+      "hint": "The psychological approach that says you are just a product of your rewards and punishments. Example: getting good grades because your parents pay you for A's.",
+      "unit": "0",
+      "topic": "0.6"
+    },
+    {
+      "date": "09-28",
+      "term": "Percentile Rank",
+      "hint": "A score that tells you what percentage of people you scored higher than. (You definitely want this to be high on your SATs!)",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "09-29",
+      "term": "Random Assignment",
+      "hint": "Sorting participants into the experimental or control group totally by chance, like drawing names out of a hat.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "09-30",
+      "term": "Humanistic Perspective",
+      "hint": "The good vibes only approach to psychology. It focuses on free will and believes everyone has the potential to grow and be their absolute best self.",
+      "unit": "0",
+      "topic": "0.6"
+    },
+    {
+      "date": "10-01",
+      "term": "Dizygotic Twins",
+      "hint": "Sibling duos born at the exact same time but developed from two entirely separate eggs. Genetically speaking, they are no more identical than regular siblings born years apart—essentially sharing the ultimate womb roommate experience.",
+      "unit": "1",
+      "topic": "1.1"
+    },
+    {
+      "date": "10-02",
+      "term": "Eugenics",
+      "hint": "A highly unethical, dark historical movement aimed at improving a population by controlling who is allowed to reproduce. Absolutely banned from modern scientific practice.",
+      "unit": "1",
+      "topic": "1.1"
+    },
+    {
+      "date": "10-03",
+      "term": "Central Nervous System",
+      "hint": "The ultimate biological command center consisting purely of your brain and spinal cord. It makes all the big executive decisions for your body.",
+      "unit": "1",
+      "topic": "1.2"
+    },
+    {
+      "date": "10-04",
+      "term": "Sympathetic Nervous System",
+      "hint": "Your biological fight or flight panic button. It’s what instantly kicks in, racing your heart and sweating your palms, the exact second a teacher says, Clear your desks for a pop quiz.",
+      "unit": "1",
+      "topic": "1.2"
+    },
+    {
+      "date": "10-05",
+      "term": "Motor Neurons",
+      "hint": "The outgoing nerve pathways that carry physical commands from your brain down to your muscles, telling your thumbs exactly when to tap the screen to jump in a video game.",
+      "unit": "1",
+      "topic": "1.2"
+    },
+    {
+      "date": "10-06",
+      "term": "Dopamine",
+      "hint": "The ultimate reward and pleasure chemical. It's the little blast of joy your brain releases every single time you see a notification or a like light up your phone screen.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "10-07",
+      "term": "Myelin Sheath",
+      "hint": "The fatty insulation wrapped around your axons. It works exactly like a high-speed fiber-optic internet cable, ensuring that electrical signals travel rapidly through your nervous system.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "10-08",
+      "term": "Dendrites",
+      "hint": "The branching, tree-like structures on a neuron that act as inbox catchers, eagerly waiting to catch incoming chemical text messages from neighboring cells.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "10-09",
+      "term": "Serotonin",
+      "hint": "A crucial neurotransmitter that heavily influences your mood, sleep, and emotional vibes. Having a low-key shortage of this chemical is closely linked to depression.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "10-10",
+      "term": "Interneurons",
+      "hint": "The internal middle-man neurons located strictly inside your brain and spinal cord that pass information back and forth between sensory inputs and motor outputs.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "10-11",
+      "term": "Amygdala",
+      "hint": "A tiny, almond-shaped structure in the brain that acts as your emotional alarm system. It is responsible for making you violently flinch or scream during a jump-scare in a horror movie.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-12",
+      "term": "Limbic System",
+      "hint": "The brain's emotional headquarters and memory ring. It manages your basic drives, feelings, and memories—essentially controlling your inner daily emotional rollercoaster.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-13",
+      "term": "Contralateral Organization",
+      "hint": "The weirdly cross-wired setup of the human body where the left hemisphere of your brain controls the right side of your body, and the right hemisphere controls your left side.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-14",
+      "term": "Executive Functioning",
+      "hint": "High-level mental skills like planning, focusing, and goal-setting. It’s the voice in your head trying to convince you to do your homework now instead of procrastinating until midnight.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-15",
+      "term": "Cerebellum",
+      "hint": "The little brain at the back of your skull that coordinates balance and coordination. If this structure is struggling or impaired, you'll be stumbling around like you just spun in circles twenty times.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-16",
+      "term": "Cerebral Cortex",
+      "hint": "The wrinkled, outer bark layer of your brain. It handles all your complex thinking, perception, and language processing—making it the actual central processor of your skull's computer.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-17",
+      "term": "Aphasia",
+      "hint": "A language impairment usually caused by left-hemisphere brain damage. It leaves you struggling to physically speak or comprehend words, even though you know exactly what you want to say in your head.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-18",
+      "term": "Somatosensory Cortex",
+      "hint": "The brain strip that registers and processes body touch and movement sensations. It’s why you instantly feel the annoying prick of a needle or the exact spot where a mosquito bit you.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-19",
+      "term": "Plasticity",
+      "hint": "The brain's amazing ability to rewire and modify itself after damage or a new experience. It’s like a software patch that re-routes functions to new areas when a piece of hardware breaks.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-20",
+      "term": "Frontal Lobes",
+      "hint": "The brain region responsible for judgment, personality, and long-term planning. It famously isn't fully developed in teenagers until around age 25, which explains some of your more impulsive weekend decisions.",
+      "unit": "1",
+      "topic": "1.4"
+    },
+    {
+      "date": "10-21",
+      "term": "Consciousness",
+      "hint": "Your immediate awareness of yourself and your surroundings. It's currently active right now as you read this sentence, but it goes completely offline every night when you fall asleep.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-22",
+      "term": "Circadian Rhythm",
+      "hint": "Your body's internal 24-hour biological clock. It gets completely wrecked when you stay up until 4am scrolling through your feed, leading to a brutal wake-up call a few hours later.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-23",
+      "term": "Narcolepsy",
+      "hint": "A sleep disorder characterized by sudden, uncontrollable sleep attacks. A person could be in the middle of a lively conversation or a game, and suddenly drop straight into REM sleep without warning.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-24",
+      "term": "Sleep Spindles",
+      "hint": "Brief bursts of rapid, rhythmic brain-wave activity that happen during NREM-2 sleep. Think of them as your brain doing a quick security pass to make sure outside noises don't wake you up.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-25",
+      "term": "REM Sleep",
+      "hint": "The vivid dream stage of the night where your brain waves look completely awake, but your body muscles are totally paralyzed so you don't accidentally act out your dream of flying.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-26",
+      "term": "Consolidation Theory",
+      "hint": "The idea that sleep is crucial because it acts like the save button for your brain, converting everything you learned during the day into long-term permanent memories.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-27",
+      "term": "Delta Waves",
+      "hint": "The large, slow brain waves associated with deep, heavy, knock-out sleep. If someone tries to wake you up while your brain is producing these, you will be completely groggy and disoriented.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-28",
+      "term": "Sleep Apnea",
+      "hint": "A disorder where a person repeatedly stops breathing during the night, causing them to momentarily wake up, gasp for air, and loudly snore—ruining their sleep quality without them even remembering it.",
+      "unit": "1",
+      "topic": "1.5"
+    },
+    {
+      "date": "10-29",
+      "term": "Sensory Adaptation",
+      "hint": "Getting so used to a constant stimulus that you stop noticing it completely. Like entering a classmate's room and noticing a strong cologne scent, but 10 minutes later, your nose completely ignores it.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "10-30",
+      "term": "Transduction",
+      "hint": "The biological translation process where your sense organs convert physical energy (like light waves or sound vibrations) into electrical neural impulses your brain can actually understand.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "10-31",
+      "term": "Weber’s Law",
+      "hint": "The rule that to notice a difference between two stimuli, they must change by a constant minimum percentage, not a fixed amount. Like easily noticing a 1-pound book added to an empty backpack, but completely missing it if your bag already weighs 40 pounds",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-01",
+      "term": "Sensation",
+      "hint": "Your body's raw hardware capturing data from the world before your brain's software adds any meaning. Like your eyes detecting a pattern of light and dark before you realize it's your crush's silhouette.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-02",
+      "term": "Absolute Threshold",
+      "hint": "The bare minimum level of a stimulus required for you to notice it 50% of the time. Like the absolute quietest volume a text vibration can be in a silent library before you faintly pick it up.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-03",
+      "term": "Retina",
+      "hint": "The specialized screen at the back of your eyeball packed with photoreceptors. It acts exactly like the image sensor inside your phone's camera, capturing the light patterns of the world.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-04",
+      "term": "Opponent-Process Theory",
+      "hint": "The color theory that explains why you see a weird green-and-yellow afterimage after staring at a red-and-blue image for too long. Colors are processed in rival pairs (like red vs. green).",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-05",
+      "term": "Nearsightedness",
+      "hint": "The vision struggle where you can read a text message on your phone perfectly fine, but the writing on the classroom whiteboard looks like a blurry, illegible smudge unless you have your glasses on.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-06",
+      "term": "Cochlea",
+      "hint": "A tiny, snail-shaped structure in your inner ear filled with fluid and hair cells. It's the ultimate translator that turns acoustic bass drops and vocals into electrical signals your brain can rock out to.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-07",
+      "term": "Place Theory",
+      "hint": "The theory explaining how we hear high pitches based on the exact location where hair cells vibrate along the cochlea's membrane. Think of it like hitting different keys on a piano.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-08",
+      "term": "Sensorineural Deafness",
+      "hint": "Hearing loss caused by permanent damage to the cochlea’s delicate hair cells or the auditory nerve. This is the exact condition your parents warn you about when they tell you to turn down the volume in your AirPods.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-09",
+      "term": "Olfaction",
+      "hint": "Your sense of smell. The only sensory VIP shortcut that completely bypasses the thalamus and links directly to your brain's memory center, which is why a specific body spray can instantly remind you of your middle school phase.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-10",
+      "term": "Supertasters",
+      "hint": "People with an extreme density of taste buds who experience flavors on maximum volume. They are the ones who find broccoli brutally bitter and can't handle even a tiny splash of hot sauce on their food.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-11",
+      "term": "Vestibular Sense",
+      "hint": "Your internal balance tracker located inside your inner ear. It tells your brain where your head is in space, and it gets completely wrecked and leaves you dizzy after riding a spinning amusement park ride.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-12",
+      "term": "Gate Control Theory",
+      "hint": "The theory that your spinal cord contains a neurological gateway that either blocks or allows pain signals to pass to the brain. It explains why vigorously rubbing your stubbed toe magically makes it feel a little better.",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "11-13",
+      "term": "Attention",
+      "hint": "The mental spotlight you use to focus on incoming info. It's incredibly hard to maintain when a teacher is talking, but completely infinite when you're deeply investigative-stalking a multi-part drama thread on TikTok.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-14",
+      "term": "Interposition",
+      "hint": "A visual depth cue where one object partially blocks your view of another, letting your brain instantly know that the object in front is closer to you. Like your friend's head blocking your view of the whiteboard.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-15",
+      "term": "Texture Gradient",
+      "hint": "A visual depth cue where things look incredibly sharp, distinct, and detailed close up, but blend into a smooth, blurry, uniform mass the further away they get. Like looking at individual blades of grass at your feet vs. a distant field.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-16",
+      "term": "Selective Attention",
+      "hint": "Focusing your awareness on one specific thing while completely zoning out everything else. It's the superpower that allows you to read a text message while your parents are actively talking to you, causing you to hear absolutely nothing they said.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-17",
+      "term": "Change Blindness",
+      "hint": "Failing to notice an obvious alteration in your environment because your attention was directed elsewhere. Like not noticing your friend got a major haircut over the weekend until they awkwardly point it out to you.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-18",
+      "term": "Proximity",
+      "hint": "The Gestalt grouping rule where your brain automatically assumes things that are physically close to each other belong in the same group. Like assuming two people are dating just because they stand next to each other at their lockers every single day.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-19",
+      "term": "Convergence",
+      "hint": "A physical depth cue where your eye muscles have to turn your eyeballs slightly inward as an object moves closer to your face—making you look hilariously cross-eyed if you try to stare at the tip of your own nose.",
+      "unit": "2",
+      "topic": "2.1"
+    },
+    {
+      "date": "11-20",
+      "term": "Gambler’s Fallacy",
+      "hint": "The mistaken belief that a random streak of events changes the odds of the next one. Like being convinced your coin has to land on heads next because it landed on tails five times in a row, or thinking a win is due after a gaming losing streak.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-21",
+      "term": "Availability Heuristic",
+      "hint": "Making a quick judgment based solely on the most dramatic or recent memory that pops into your head. Like being terrified of a shark attack while swimming in a lake just because you watched a scary ocean movie last night.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-22",
+      "term": "Mental Set",
+      "hint": "The frustrating habit of approaching a problem in one specific way because it worked for you in the past, even when a much easier or more creative solution is staring you right in the face.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-23",
+      "term": "Heuristics",
+      "hint": "Simple, efficient mental shortcuts or rules of thumb. Instead of scrolling through all 500 movie options on Netflix, you just click the first one that has your favorite actor in it.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-24",
+      "term": "Divergent Thinking",
+      "hint": "Brainstorming outside the box to come up with multiple, creative solutions to a single problem. This is exactly what you need when you're trying to figure out ten different excuses for why your assignment is late.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-25",
+      "term": "Sunk-Cost Fallacy",
+      "hint": "Continuing to invest time or money into something that clearly isn't working just because you've already put so much into it. Like sitting through a miserable 3 hour movie or staying in a toxic friendship because of history.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-26",
+      "term": "Prototypes",
+      "hint": "Your brain's ultimate, textbook example of a category. If someone says the word bird, your mind instantly pictures a robin or a sparrow, rather than a penguin or an ostrich.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-27",
+      "term": "Representativeness Heuristic",
+      "hint": "Judging the likelihood of something based on how well it matches your internal stereotype. Like assuming a tall, athletic student must play on the school basketball team, when they actually just enjoy playing chess.",
+      "unit": "2",
+      "topic": "2.2"
+    },
+    {
+      "date": "11-28",
+      "term": "Implicit memory",
+      "hint": "Unconscious, automatic memories that you don't have to actively think about to execute—like the precise muscle coordination required to ride a bicycle or type your password into your phone.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "11-29",
+      "term": "Phonological loop",
+      "hint": "The working memory component that lets you mentally repeat information in a continuous auditory loop inside your head. It’s what you use to keep a temporary 6-diget verification code alive while switching between apps.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "11-30",
+      "term": "Long-term potentiation",
+      "hint": "The biological basis of learning where firing a neural pathway repeatedly strengthens its synapses. It's the actual physical rewiring that happens in your brain when you study flashcards over and over until the facts stick.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "12-01",
+      "term": "Explicit memory",
+      "hint": "Memories you have to intentionally and consciously work to recall. Like trying to remember the specific facts and definitions required to pass your history final, rather than how to ride a bike.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "12-02",
+      "term": "Retrieval",
+      "hint": "Pulling information out of long-term storage. Trying to grab a concept from your brain’s cloud storage during a quiz, only for your brain to buffer and give you a 404 error code.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "12-03",
+      "term": "Visuospatial sketchpad",
+      "hint": "The whiteboard in your working memory where you mentally manipulate images. It’s what you use when you look at a packed car trunk and mentally rearrange the bags to see if they will fit, or when you imagine how your bedroom would look if you moved your bed to the opposite wall.",
+      "unit": "2",
+      "topic": "2.3"
+    },
+    {
+      "date": "12-04",
+      "term": "Massed practice",
+      "hint": "The scientific name for a pure, unadulterated cram session. Pulling a panicked, energy-drink-fueled5-hour all-nighter to learn a whole month's worth of material the exact night before the final exam.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "12-05",
+      "term": "Primacy effect",
+      "hint": "Remembering the very first items on a list perfectly. Like remembering the first two terms your teacher introduced at the beginning of class while completely blanking on everything that followed in the middle of the period.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "12-06",
+      "term": "Mnemonic devices",
+      "hint": "Memory tricks used to study. You've definitely used these if you've ever chanted Please Excuse My Dear Aunt Sally (PEMDAS) to survive math class, or made up a ridiculous acronym to pass a test.",
+      "unit": "2",
+      "topic": "2.4"
+    },
+    {
+      "date": "12-07",
+      "term": "Maintenance rehearsal",
+      "hint": "Repeating information over and over again in your head just to keep it from slipping away. Like repeating a 6-digit verification code continuously while switching between your texting app and your browser.",
+      "unit": "2",
+      "topic": "2.5"
+    },
+    {
+      "date": "12-08",
+      "term": "Alzheimer’s disease",
+      "hint": "A progressive neurological disease that slowly destroys memory and cognitive function, caused by a breakdown of acetylcholine-producing neurons in the brain.",
+      "unit": "2",
+      "topic": "2.5"
+    },
+    {
+      "date": "12-09",
+      "term": "Infantile amnesia",
+      "hint": "The reason you have absolutely zero memories of learning to walk, wearing diapers, or eating baby food before about the age of $3$, because your brain's memory centers weren't fully developed yet.",
+      "unit": "2",
+      "topic": "2.5"
+    },
+    {
+      "date": "12-10",
+      "term": "Context-dependent memory",
+      "hint": "When it's easier to retrieve a memory if you are in the exact same place where you made it. Like walking into the kitchen and completely forgetting why you went there, only to instantly remember once you walk back to your bedroom.",
+      "unit": "2",
+      "topic": "2.6"
+    },
+    {
+      "date": "12-11",
+      "term": "Retrograde amnesia",
+      "hint": "A memory loss condition where you can't recall past events before a brain injury. It’s a classic movie trope where a character gets hit on the head and suddenly wakes up asking, Who am I? Where am I?",
+      "unit": "2",
+      "topic": "2.6"
+    },
+    {
+      "date": "12-12",
+      "term": "Retrieval cues",
+      "hint": "Little mental hooks, smells, or sights that help you unlock a hidden memory. Like catching a whiff of a specific laundry detergent or hearing an old song and instantly getting hit with a wave of specific memories from middle school.",
+      "unit": "2",
+      "topic": "2.6"
+    },
+    {
+      "date": "12-13",
+      "term": "Encoding failure",
+      "hint": "When your brain never actually saved the info in the first place because you weren't paying attention. It’s why you can look at a coin thousands of times but still have no idea which direction the face on it is looking.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "12-14",
+      "term": "Retroactive interference",
+      "hint": "When new information completely overwrites your old memories. Like memorizing your new second-semester class schedule so perfectly that you literally cannot remember what classes you used to have during those periods last semester.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "12-15",
+      "term": "Source amnesia",
+      "hint": "Remembering a juicy piece of gossip or a random fact perfectly, but having absolutely no idea whether you saw it on a TikTok, read it in an article, or heard it from a friend.",
+      "unit": "2",
+      "topic": "2.7"
+    },
+    {
+      "date": "12-16",
+      "term": "Validity",
+      "hint": "Whether a test actually measures what it’s supposed to measure. If your psychology final consists entirely of advanced calculus problems, the test has absolutely zero of this.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-17",
+      "term": "Reliability",
+      "hint": "Total consistency. If you step on a bathroom scale three times in a row and it tells you that you weigh 150 lbs, 150 lbs, and 150 lbs it has high-key consistency—even if the scale is uncalibrated and totally wrong.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-18",
+      "term": "Intelligence",
+      "hint": "The mental capability to learn from experience, solve complex problems, and adapt to brand-new situations—not just how high your GPA is, but how well you navigate life's challenges.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-19",
+      "term": "Stereotype threat",
+      "hint": "The self-confirming anxiety that you will accidentally validate a negative stereotype about your social or cultural group, which ironically causes you to stress out and perform worse on a test.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-20",
+      "term": "Predictive validity",
+      "hint": "How well a test forecasts future performance. For instance, colleges use the SAT or ACT because they believe these tests can accurately predict whether you will succeed or crash and burn during your freshman year.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-21",
+      "term": "Fluid intelligence",
+      "hint": "Your raw, fast-paced ability to reason speedily and think abstractly to solve a brand-new puzzle or logic game. This natural brainpower peaks in your twenties and slowly decreases as you get older.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-22",
+      "term": "Flynn Effect",
+      "hint": "The historical phenomenon where average IQ test scores worldwide have steadily risen with each generation, meaning you are technically working with higher standardized scores than your grandparents did at your age.",
+      "unit": "2",
+      "topic": "2.8"
+    },
+    {
+      "date": "12-23",
+      "term": "Just-Noticeable Difference",
+      "hint": "The smallest difference between two things that you can actually detect. Like turning down your car radio by one tiny notch and your friend not noticing a thing, but turning it down three notches makes them say, Hey, why'd you lower the music?",
+      "unit": "1",
+      "topic": "1.6"
+    },
+    {
+      "date": "12-24",
+      "term": "Substance P",
+      "hint": "The absolute villain of a neurotransmitter responsible for sending pain messages up to your brain. When you stub your pinky toe on the corner of your bed frame, this chemical rushes to deliver the bad news.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "12-25",
+      "term": "Inhibitory Neurotransmitters",
+      "hint": "Brain chemicals that act like neural brakes, chilling your brain out and telling neurons not to fire. They work like the ultimate do not disturb mode for your nervous system.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "12-26",
+      "term": "Depolarization",
+      "hint": "The electrical shift that happens inside a neuron when positive sodium ions rush in, shifting the cell's charge from negative to positive and firing off an action potential message.",
+      "unit": "1",
+      "topic": "1.3"
+    },
+    {
+      "date": "12-27",
+      "term": "Statistical Significance",
+      "hint": "A statistical statement of how likely it is that an experimental result happened due to a real relationship, rather than just pure, random luck or coincidence. Usually marked by a p-value less than 0.05.",
+      "unit": "0",
+      "topic": "0.5"
+    },
+    {
+      "date": "12-28",
+      "term": "Correlation",
+      "hint": "A relationship where two things change together. Like noticing that as the amount of time you spend scrolling through your phone increases, your physics grade simultaneously goes down. (Remember: it doesn't mean one caused the other!)",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "12-29",
+      "term": "Double-Blind",
+      "hint": "An experimental safeguard where neither the person taking the pill nor the person handing it out knows who got the real medicine and who got the fake sugar pill, ensuring total objectiveness.",
+      "unit": "0",
+      "topic": "0.3"
+    },
+    {
+      "date": "12-30",
+      "term": "Generalizability",
+      "hint": "The ability to take the results of a small psychology study done on 20 students and confidently claim that the results apply to all high schoolers across the entire country.",
+      "unit": "0",
+      "topic": "0.2"
+    },
+    {
+      "date": "12-31",
+      "term": "Prosopagnosia",
+      "hint": "The neurological condition known as face blindness. You can look at a person's hair, clothes, and voice to know who they are, but their actual facial features look like an unrecognizable puzzle, even if they are your best friend.",
+      "unit": "1",
+      "topic": "1.6"
     }
   ]
 }
