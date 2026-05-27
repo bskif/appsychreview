@@ -13,12 +13,60 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
-        .stats-board { display: flex; justify-content: space-around; }
+        .stats-board { display: flex; justify-content: space-around; margin-bottom: 10px; }
         .stat-box { text-align: center; }
         .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent); }
         .play-hero { text-align: center; margin: 40px 0; }
         .massive-btn { font-size: 1.5rem; padding: 20px 40px; border-radius: 10px; text-decoration: none; display: inline-block; background-color: var(--accent); color: white;}
         
+        /* Tooltip CSS for Game Modes */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            background: #e1f5fe; 
+            padding: 8px 12px; 
+            border-radius: 5px; 
+            color: #0277bd; 
+            font-weight: bold;
+            cursor: help;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 130%; /* Position above the badge */
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            font-weight: normal;
+            line-height: 1.4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            pointer-events: none; /* Prevents flickering */
+        }
+        /* Little arrow pointing down */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
         /* Scoring Table */
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
         th, td { border-bottom: 1px solid #ddd; padding: 12px; text-align: left; }
@@ -82,19 +130,34 @@
     <div class="container">
         <div class="hero" style="text-align: center; padding: 20px;">
             <h1>🧠 The Daily Psych Challenge</h1>
-            <p>Come back daily to test your knowledge, keep your streak alive, and earn points!</p>
-            <p style="font-size: 0.95rem; color: #e74c3c; margin-top: 15px; font-weight: bold;">⚠️ Heads up! Your points, streaks, and badges are stored locally on this device. Clearing your browser cache or site data will reset your progress!</p>
+            <p>Come back daily to test your knowledge, keep your streak alive, earn points, and collect badges!</p>
         </div>
 
         <div class="schedule-section" style="text-align: center;">
             <h2>🗓️ The Daily Game Rotation</h2>
-            <p style="margin-bottom: 15px;">Every day brings a new way to test your AP Psych knowledge:</p>
+            <p style="margin-bottom: 15px;">Every day brings a new way to test your AP Psych knowledge! <em>(Hover or tap the <strong>(?)</strong> to see how to play):</em></p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                <span style="background: #e1f5fe; padding: 8px 12px; border-radius: 5px; color: #0277bd; font-weight: bold;">Mon & Sat: Psych-Man</span>
-                <span style="background: #e1f5fe; padding: 8px 12px; border-radius: 5px; color: #0277bd; font-weight: bold;">Tue & Sun: The Distractor</span>
-                <span style="background: #e1f5fe; padding: 8px 12px; border-radius: 5px; color: #0277bd; font-weight: bold;">Wed: Anagram Scramble</span>
-                <span style="background: #e1f5fe; padding: 8px 12px; border-radius: 5px; color: #0277bd; font-weight: bold;">Thu: Fact or Fiction</span>
-                <span style="background: #e1f5fe; padding: 8px 12px; border-radius: 5px; color: #0277bd; font-weight: bold;">Fri: Synapse Snap</span>
+                
+                <span class="tooltip">Mon & Sat: Psych-Man <span style="font-size: 0.8rem;">(?)</span>
+                    <span class="tooltiptext">Classic hangman. Guess the term letter by letter before your brain loses all its health!</span>
+                </span>
+                
+                <span class="tooltip">Tue & Sun: The Distractor <span style="font-size: 0.8rem;">(?)</span>
+                    <span class="tooltiptext">A high-speed multiple-choice race. Find the correct term among the fakes before the 20-second clock runs out.</span>
+                </span>
+                
+                <span class="tooltip">Wed: Anagram Scramble <span style="font-size: 0.8rem;">(?)</span>
+                    <span class="tooltiptext">The letters are completely jumbled. Unscramble and type the correct term as fast as you can.</span>
+                </span>
+                
+                <span class="tooltip">Thu: Fact or Fiction <span style="font-size: 0.8rem;">(?)</span>
+                    <span class="tooltiptext">Sudden death! You have 10 seconds to decide if the term matches the definition shown. One wrong move = game over.</span>
+                </span>
+                
+                <span class="tooltip">Fri: Synapse Snap <span style="font-size: 0.8rem;">(?)</span>
+                    <span class="tooltiptext">A memory matching matrix. Find the 4 pairs of terms and definitions. Every mismatch costs you a life!</span>
+                </span>
+
             </div>
         </div>
 
@@ -111,6 +174,10 @@
                 <div class="stat-number" id="hub-best-time">--:--</div>
                 <div>Best Time</div>
             </div>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p style="font-size: 0.9rem; color: #e74c3c; font-weight: bold;">⚠️ Heads up! These scores are stored locally on this device. Clearing your browser cache or site data will reset your progress!</p>
         </div>
 
         <div class="play-hero">
