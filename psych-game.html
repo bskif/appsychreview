@@ -179,7 +179,6 @@
     </footer>
 
     <script>
-        // Start with an empty database, we will fetch it!
         let dbJSON = {}; 
 
         // Core State Variables
@@ -195,7 +194,6 @@
         let selectedCards = []; let matchesFound = 0;
 
         async function initGame() {
-            // Tell the HTML to fetch the separate JSON file
             try {
                 const response = await fetch('psych-game.json');
                 dbJSON = await response.json();
@@ -208,21 +206,52 @@
             }
 
             const urlParams = new URLSearchParams(window.location.search);
-            const urlDate = urlParams.get('date');
-            const today = getTodayMMDD();
+            let fullUrlDate = urlParams.get('date'); 
+            const todayObj = new Date();
+            const todayMMDD = getTodayMMDD();
             const lastPlayed = localStorage.getItem('psychLastPlayed') || "";
 
-            if (urlDate) {
-                loadedDate = urlDate;
-                if (urlDate !== today) {
+            // TIMEGATE SECURITY CHECK
+            if (fullUrlDate) {
+                // If they manually try to put just MM-DD in the URL to bypass the year check
+                if (fullUrlDate.length === 5) {
+                    fullUrlDate = todayObj.getFullYear() + "-" + fullUrlDate;
+                }
+
+                // Check dates at midnight to avoid timezone issues
+                const reqDate = new Date(fullUrlDate + "T00:00:00"); 
+                const todayCompare = new Date(todayObj.getFullYear(), todayObj.getMonth(), todayObj.getDate());
+                
+                // 1. Is it physically in the future?
+                if (reqDate > todayCompare) {
+                    document.getElementById('game-title-display').innerText = "NICE TRY, TIME TRAVELER! 🛑";
+                    document.getElementById('global-hint-container').innerText = "You cannot play puzzles from the future.";
+                    document.getElementById('hint-toggle-block').style.display = "none";
+                    return;
+                }
+
+                // 2. The "Last Year" Loophole
+                const daysOld = Math.floor((todayCompare - reqDate) / (1000 * 60 * 60 * 24));
+                if (daysOld > 200) {
+                    document.getElementById('game-title-display').innerText = "ARCHIVE LOCKED 🔒";
+                    document.getElementById('global-hint-container').innerText = "You can only practice puzzles from the current semester. No digging up last year's puzzles to cheat!";
+                    document.getElementById('hint-toggle-block').style.display = "none";
+                    return;
+                }
+
+                // Extract just the MM-DD for your JSON database
+                loadedDate = fullUrlDate.substring(5, 10);
+                
+                if (loadedDate !== todayMMDD) {
                     isPracticeMode = true;
                     document.getElementById('practice-badge').style.display = 'inline-block';
                 }
             } else {
-                loadedDate = today;
+                loadedDate = todayMMDD;
             }
 
-            if (loadedDate === today && lastPlayed === today) {
+            // Already played today check
+            if (loadedDate === todayMMDD && lastPlayed === todayMMDD && !isPracticeMode) {
                 isPracticeMode = true;
                 const badge = document.getElementById('practice-badge');
                 badge.innerText = "ALREADY PLAYED TODAY (0 Pts)";
@@ -245,19 +274,16 @@
             document.getElementById('hint-text').innerText = hintText;
 
             // DETERMINISTIC GAME ROTATION ENGINE
-            // Distributes your 5 favorite games dynamically across dates cleanly
             const dateDayNumber = parseInt(loadedDate.split('-')[1]) || 1;
             const modes = ["hangman", "anagram", "distractor", "factfiction", "synapsesnap"];
             activeGameMode = modes[dateDayNumber % modes.length];
 
-            // Initialize Selected System Layout
             setupGameView(puzzleData);
             updateVisualStatus();
             startTimer();
         }
 
         function setupGameView(dataObj) {
-            // Hide all views globally first
             document.querySelectorAll('.game-view').forEach(v => v.style.display = 'none');
             document.getElementById('hint-toggle-block').style.display = "block";
 
@@ -276,7 +302,7 @@
                 document.getElementById('game-title-display').innerText = `The Distractor | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
                 document.getElementById('view-distractor').style.display = "block";
                 document.getElementById('global-hint-container').innerHTML = `<strong>Definition:</strong> ${hintText}`;
-                document.getElementById('hint-toggle-block').style.display = "none"; // Already showing definition
+                document.getElementById('hint-toggle-block').style.display = "none";
                 buildDistractorUI();
             } 
             else if (activeGameMode === "factfiction") {
@@ -332,7 +358,7 @@
             if(val === targetWord) {
                 endGame(true);
             } else {
-                lives -= 2; // Penalize guessing errors heavily on open fields
+                lives -= 2;
                 if (lives <= 0) { lives = 0; updateVisualStatus(); endGame(false); }
                 else { alert(`Incorrect formulation! Lose 2 brain sectors. ${lives} sections left.`); updateVisualStatus(); }
             }
@@ -344,13 +370,12 @@
             grid.innerHTML = "";
             let choices = [targetWord];
             
-            // Gather items from local list pool safely
             dbJSON.hangman.forEach(item => {
                 if(item.term.toLowerCase() !== targetWord && choices.length < 4) {
                     choices.push(item.term.toLowerCase());
                 }
             });
-            while(choices.length < 4) { choices.push("placebo effect"); choices.push("schema"); } // Backups
+            while(choices.length < 4) { choices.push("placebo effect"); choices.push("schema"); }
             choices.sort(() => Math.random() - 0.5);
 
             choices.forEach(option => {
@@ -392,11 +417,9 @@
             grid.innerHTML = "";
             let cardPool = [];
 
-            // Add Current item pair
             cardPool.push({ text: targetWord.toUpperCase(), pairId: 1, type: 'term' });
             cardPool.push({ text: hintText, pairId: 1, type: 'def' });
 
-            // Gather elements safely from context history pool
             let indexTracker = 2;
             dbJSON.hangman.forEach(item => {
                 if(item.term.toLowerCase() !== targetWord && indexTracker <= 4) {
@@ -406,7 +429,6 @@
                 }
             });
 
-            // Fill empty cells if DB size small
             while (cardPool.length < 8) {
                 cardPool.push({ text: "RECONSOLIDATION", pairId: indexTracker, type: 'term' });
                 cardPool.push({ text: "The process of stabilizing a memory trace after initial acquisition.", pairId: indexTracker, type: 'def' });
@@ -430,13 +452,11 @@
 
                     if (selectedCards.length === 2) {
                         if (selectedCards[0].dataset.pairId === selectedCards[1].dataset.pairId) {
-                            // Match Found!
                             selectedCards.forEach(c => c.classList.add('matched'));
                             selectedCards = [];
                             matchesFound++;
                             if(matchesFound === 4) { endGame(true); }
                         } else {
-                            // Mismatch configuration
                             lives--;
                             updateVisualStatus();
                             setTimeout(() => {
@@ -525,7 +545,13 @@
                 screen.style.borderColor = "#f5c6cb";
                 title.innerText = "Game Over!";
                 title.style.color = "#721c24";
-                if(!isPracticeMode) { saveLoss(); }
+                
+                if(!isPracticeMode) { 
+                    saveLoss(); 
+                } else {
+                    savePractice(); // Saves history as "practice"
+                }
+                
                 msg.innerText = `The target answer was: "${targetWord.toUpperCase()}". \n ` + (isPracticeMode ? "Practice session complete." : "0 Points. Try again tomorrow!");
                 return;
             }
@@ -534,6 +560,7 @@
             title.style.color = "#155724";
 
             if (isPracticeMode) {
+                savePractice(); // Saves history as "practice"
                 msg.innerText = "Great practice session! (0 Points in Practice Mode)";
             } else {
                 let pointsEarned = 10; let bonusMsg = "";
@@ -572,6 +599,15 @@
             localStorage.setItem('psychLastPlayed', getTodayMMDD());
             history[getTodayMMDD()] = "loss";
             localStorage.setItem('psychHistory', JSON.stringify(history));
+        }
+
+        function savePractice() {
+            let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
+            // Only save "practice" if they haven't officially won or lost this day before
+            if (!history[loadedDate]) {
+                history[loadedDate] = "practice";
+                localStorage.setItem('psychHistory', JSON.stringify(history));
+            }
         }
 
         window.onload = initGame;
