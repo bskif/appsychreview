@@ -180,23 +180,46 @@
                 document.getElementById('zones-container').innerHTML = "<h3 style='text-align:center; color: #e74c3c;'>File Error: Could not load confusingpairs.json</h3>";
             });
 
+        // Smart dropdown builder that splits comma-separated values
         function populateFilters(items) {
-            const units = [...new Set(items.map(i => i.unit))].sort();
+            let unitList = [];
+            
+            items.forEach(i => {
+                if (i.unit) {
+                    // Split units by comma and trim away extra whitespace
+                    const individualUnits = i.unit.toString().split(',').map(u => u.trim());
+                    unitList.push(...individualUnits);
+                }
+            });
+
+            // Keep only unique units and sort them naturally (e.g., 2 before 10)
+            const units = [...new Set(unitList)].sort((a, b) => {
+                return a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'});
+            });
+
             const select = document.getElementById('unit-select');
             units.forEach(u => {
-                const opt = document.createElement('option');
-                opt.value = u;
-                opt.innerText = u;
-                select.appendChild(opt);
+                if (u !== "") {
+                    const opt = document.createElement('option');
+                    opt.value = u;
+                    opt.innerText = u;
+                    select.appendChild(opt);
+                }
             });
         }
 
+        // Smart game filter that checks if selected unit exists inside the list
         function startGame() {
             const unit = document.getElementById('unit-select').value;
             if(unit === 'all') {
                 currentPool = [...allPairs];
             } else {
-                currentPool = allPairs.filter(p => p.unit === unit);
+                currentPool = allPairs.filter(p => {
+                    if (!p.unit) return false;
+                    // Split the array and check if the selected unit matches any item inside
+                    const unitsArray = p.unit.toString().split(',').map(u => u.trim());
+                    return unitsArray.includes(unit);
+                });
             }
             currentPool.sort(() => Math.random() - 0.5);
             nextPair();
