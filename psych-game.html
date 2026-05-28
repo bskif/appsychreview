@@ -232,8 +232,8 @@
 
             <div class="game-over-screen" id="game-over-screen">
                 <h2 id="end-title">Game Complete!</h2>
-                <p id="end-message" style="margin: 15px 0; font-size:1.1rem; font-weight:bold;"></p>
-                <a href="psych-hub.html" class="play-btn" style="background-color: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Return to Hub</a>
+                <div id="end-message" style="margin: 15px 0; font-size:1.1rem;"></div>
+                <a href="psych-hub.html" class="play-btn" style="background-color: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px;">Return to Hub</a>
             </div>
         </div>
     </div>
@@ -246,6 +246,7 @@
         let dbJSON = {}; 
 
         // Core State Variables
+        let currentPuzzleData = null; // Stores full current puzzle object
         let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
         let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
         let activeGameMode = "";
@@ -319,21 +320,20 @@
             }
 
             document.getElementById('date-display').innerText = "Puzzle Date: " + loadedDate;
-            const puzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
+            currentPuzzleData = dbJSON.hangman.find(item => item.date === loadedDate);
 
-            if (!puzzleData) {
+            if (!currentPuzzleData) {
                 document.getElementById('game-title-display').innerText = "ERROR";
                 document.getElementById('global-hint-container').innerText = "No puzzle configured for this date in database.";
                 document.getElementById('hint-toggle-block').style.display = "none";
                 return;
             }
 
-            targetWord = puzzleData.term.toLowerCase();
-            hintText = puzzleData.hint;
+            targetWord = currentPuzzleData.term.toLowerCase();
+            hintText = currentPuzzleData.hint;
             document.getElementById('hint-text').innerText = hintText;
 
             // DETERMINISTIC GAME ROTATION ENGINE (Based on Day of the Week)
-            // Map: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
             const dayOfWeekModes = [
                 "distractor",  // Sunday
                 "hangman",     // Monday
@@ -344,17 +344,16 @@
                 "hangman"      // Saturday
             ];
             
-            // Get the actual Day of the Week from the requested date
             let targetDateObj;
             if (fullUrlDate) {
                 targetDateObj = new Date(fullUrlDate + "T00:00:00");
             } else {
-                targetDateObj = new Date(); // Today
+                targetDateObj = new Date(); 
             }
             
             activeGameMode = dayOfWeekModes[targetDateObj.getDay()];
 
-            setupGameView(puzzleData);
+            setupGameView(currentPuzzleData);
             updateVisualStatus();
             startTimer();
         }
@@ -493,18 +492,39 @@
             grid.innerHTML = "";
             let cardPool = [];
 
+            // Add the daily target word
             cardPool.push({ text: targetWord.toUpperCase(), pairId: 1, type: 'term' });
             cardPool.push({ text: hintText, pairId: 1, type: 'def' });
 
+            // SMART DISTRACTOR SELECTOR
+            let pool = dbJSON.hangman.filter(item => item.term.toLowerCase() !== targetWord);
+            pool.sort(() => Math.random() - 0.5); // Randomize entire pool
+
+            // Categorize by relevance
+            let tier1 = pool.filter(item => item.unit === currentPuzzleData.unit && item.topic === currentPuzzleData.topic);
+            let tier2 = pool.filter(item => item.unit === currentPuzzleData.unit && item.topic !== currentPuzzleData.topic);
+            let tier3 = pool.filter(item => item.unit !== currentPuzzleData.unit);
+
+            let selectedDistractors = [];
+            let addDistractor = (arr) => {
+                arr.forEach(item => {
+                    if(selectedDistractors.length < 3) selectedDistractors.push(item);
+                });
+            };
+            
+            // Fill up our 3 slots prioritizing same topic, then same unit, then random
+            addDistractor(tier1);
+            addDistractor(tier2);
+            addDistractor(tier3);
+
             let indexTracker = 2;
-            dbJSON.hangman.forEach(item => {
-                if(item.term.toLowerCase() !== targetWord && indexTracker <= 4) {
-                    cardPool.push({ text: item.term.toUpperCase(), pairId: indexTracker, type: 'term' });
-                    cardPool.push({ text: item.hint, pairId: indexTracker, type: 'def' });
-                    indexTracker++;
-                }
+            selectedDistractors.forEach(item => {
+                cardPool.push({ text: item.term.toUpperCase(), pairId: indexTracker, type: 'term' });
+                cardPool.push({ text: item.hint, pairId: indexTracker, type: 'def' });
+                indexTracker++;
             });
 
+            // Failsafe in case JSON is tiny
             while (cardPool.length < 8) {
                 cardPool.push({ text: "RECONSOLIDATION", pairId: indexTracker, type: 'term' });
                 cardPool.push({ text: "The process of stabilizing a memory trace after initial acquisition.", pairId: indexTracker, type: 'def' });
@@ -535,7 +555,6 @@
                 card.appendChild(inner);
 
                 card.onclick = () => {
-                    // Prevent clicks during peek or if already flipped
                     if (isPeeking || card.classList.contains('flipped') || card.classList.contains('matched') || selectedCards.length >= 2) return;
                     
                     card.classList.add('flipped');
@@ -565,7 +584,7 @@
         function useFreePeek() {
             if (freePeekUsed || isPeeking) return;
             freePeekUsed = true;
-            isPeeking = true; // Block card clicks while peeking
+            isPeeking = true; 
             
             const peekBtn = document.getElementById('peek-btn');
             peekBtn.innerText = "👀 Free Peek Used (Bonus Lost)";
@@ -577,13 +596,12 @@
 
             setTimeout(() => {
                 allCards.forEach(card => {
-                    // Only flip back if it wasn't one of the actively selected cards before peeking
                     if (!selectedCards.includes(card)) {
                         card.classList.remove('flipped');
                     }
                 });
-                isPeeking = false; // Re-enable clicks
-            }, 3000); // Gives them exactly 3 seconds to scan the board
+                isPeeking = false; 
+            }, 3000); 
         }
 
         /* ================= CORE SYSTEM CONTROL HOOKS ================= */
@@ -655,6 +673,16 @@
             const title = document.getElementById('end-title');
             const msg = document.getElementById('end-message');
 
+            // Constructing the beautiful End Game Message
+            let finalHTML = `<p style="font-size:1.2rem; margin-bottom: 15px;">The target answer was: <strong>"${targetWord.toUpperCase()}"</strong></p>`;
+            
+            // Reveals hint at end of Hangman/Anagram specifically
+            if (activeGameMode === "hangman" || activeGameMode === "anagram") {
+                finalHTML += `<div style="background-color: rgba(255,255,255,0.6); padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 0.95rem; color: #333;">
+                                <strong>Definition:</strong> <em>${hintText}</em>
+                              </div>`;
+            }
+
             if (!isWin) {
                 screen.style.backgroundColor = "#f8d7da";
                 screen.style.borderColor = "#f5c6cb";
@@ -667,7 +695,8 @@
                     savePractice(); 
                 }
                 
-                msg.innerText = `The target answer was: "${targetWord.toUpperCase()}". \n ` + (isPracticeMode ? "Practice session complete." : "0 Points. Try again tomorrow!");
+                finalHTML += `<p style="font-weight:bold;">${isPracticeMode ? "Practice session complete." : "0 Points. Try again tomorrow!"}</p>`;
+                msg.innerHTML = finalHTML;
                 return;
             }
 
@@ -676,23 +705,24 @@
 
             if (isPracticeMode) {
                 savePractice(); 
-                msg.innerText = "Great practice session! (0 Points in Practice Mode)";
+                finalHTML += `<p style="font-weight:bold;">Great practice session! (0 Points in Practice Mode)</p>`;
+                msg.innerHTML = finalHTML;
             } else {
                 let pointsEarned = 10; let bonusMsg = "";
                 
-                // Classic bonuses
-                if (!hintUsed && (activeGameMode === 'hangman' || activeGameMode === 'anagram')) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! "; }
-                if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Score (+5)! "; }
-                if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Speed (+5)! "; }
+                if (!hintUsed && (activeGameMode === 'hangman' || activeGameMode === 'anagram')) { pointsEarned += 5; bonusMsg += "Perfect Recall (+5)! <br>"; }
+                if (lives === 6) { pointsEarned += 5; bonusMsg += "Flawless Score (+5)! <br>"; }
+                if (elapsedSeconds <= 45) { pointsEarned += 5; bonusMsg += "Lightning Speed (+5)! <br>"; }
                 
-                // New Synapse Snap specific No-Peek bonus
                 if (activeGameMode === 'synapsesnap' && !freePeekUsed) {
                     pointsEarned += 5; 
-                    bonusMsg += "No Peek Bonus (+5)! "; 
+                    bonusMsg += "No Peek Bonus (+5)! <br>"; 
                 }
                 
                 saveWin(pointsEarned);
-                msg.innerText = `Earned ${pointsEarned} Points! ${bonusMsg}`;
+                finalHTML += `<p style="font-weight:bold; font-size: 1.2rem; color: #27ae60;">Earned ${pointsEarned} Points!</p>
+                              <p style="font-size:0.95rem; color: #e67e22; font-weight:bold;">${bonusMsg}</p>`;
+                msg.innerHTML = finalHTML;
             }
         }
 
