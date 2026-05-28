@@ -2,8 +2,7 @@
   "confusing_pairs": [
     {
       "id": "1",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Random Assignment",
       "definition_1": "Each participant has equal chance of being placed into any group",
       "term_2": "Random Sample",
@@ -11,8 +10,7 @@
     },
     {
       "id": "2",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Quantitative Data",
       "definition_1": "Deals with numbers- height, weight, time",
       "term_2": "Qualitative Data",
@@ -20,8 +18,7 @@
     },
     {
       "id": "3",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Experimental Group",
       "definition_1": "Group that is tested",
       "term_2": "Control Group",
@@ -29,8 +26,7 @@
     },
     {
       "id": "4",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Independent Variable",
       "definition_1": "What is tested",
       "term_2": "Dependent Variable",
@@ -38,8 +34,7 @@
     },
     {
       "id": "5",
-      "unit": "",
-      "topic": "",
+      "unit": "0, 2",
       "term_1": "Validity",
       "definition_1": "Right scientific measurement tool",
       "term_2": "Reliability",
@@ -47,8 +42,7 @@
     },
     {
       "id": "6",
-      "unit": "",
-      "topic": "",
+      "unit": "0, 3",
       "term_1": "Cross Sectional",
       "definition_1": "Examines multiple like groups at the same time",
       "term_2": "Longitudinal",
@@ -56,8 +50,7 @@
     },
     {
       "id": "7",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Correlation Coefficient (r-value)",
       "definition_1": "Describes strength and direction of relationship between two variables",
       "term_2": "Statistical Significance (p-value)",
@@ -65,8 +58,7 @@
     },
     {
       "id": "8",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Random Selection",
       "definition_1": "Equal likelihood part of sample",
       "term_2": "Random Assignment",
@@ -74,8 +66,7 @@
     },
     {
       "id": "9",
-      "unit": "",
-      "topic": "",
+      "unit": "0",
       "term_1": "Positive Skew",
       "definition_1": "Outliers on the positive (right) side pulled the average (mean) away positively from the median/mode",
       "term_2": "Negative Skew",
@@ -83,8 +74,7 @@
     },
     {
       "id": "10",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Somatic Nervous System",
       "definition_1": "System for voluntary motor movement",
       "term_2": "Autonomic Nervous System",
@@ -92,8 +82,7 @@
     },
     {
       "id": "11",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Sympathetic Nervous System",
       "definition_1": "The flight, fight or freeze response. Automatically accelerates heart rate, breathing, dilates pupils, slows down digestion",
       "term_2": "Parasympathetic Nervous System",
@@ -101,8 +90,7 @@
     },
     {
       "id": "12",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Neurotransmitters",
       "definition_1": "Chemical messengers in the nervous system",
       "term_2": "Hormones",
@@ -110,8 +98,7 @@
     },
     {
       "id": "13",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Agonists",
       "definition_1": "Chemicals which aid neurotransmitters",
       "term_2": "Antagonists",
@@ -119,8 +106,7 @@
     },
     {
       "id": "14",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Broca’s Area",
       "definition_1": "Physical speech production area",
       "term_2": "Wernicke’s Area",
@@ -128,8 +114,7 @@
     },
     {
       "id": "15",
-      "unit": "",
-      "topic": "",
+      "unit": "1, 3",
       "term_1": "Monozygotic Twins",
       "definition_1": "Comes from the same fertilized egg (identical twins)",
       "term_2": "Dizygotic Twins",
@@ -137,8 +122,7 @@
     },
     {
       "id": "16",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Sensory Neurons",
       "definition_1": "Senses/body to brain neurons",
       "term_2": "Motor Neurons",
@@ -148,8 +132,7 @@
     },
     {
       "id": "17",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Assimilation",
       "definition_1": "The process of absorbing new information into an existing schema",
       "term_2": "Accommodation",
@@ -157,8 +140,7 @@
     },
     {
       "id": "18",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Dendrite",
       "definition_1": "Part of neuron which receives info",
       "term_2": "Axon",
@@ -166,8 +148,7 @@
     },
     {
       "id": "19",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Rods",
       "definition_1": "Night and peripheral vision, black, white, and shades of gray",
       "term_2": "Cones",
@@ -175,8 +156,7 @@
     },
     {
       "id": "20",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Bottom-Up Processing",
       "definition_1": "Starts with the sensations and works to make big picture – sensations",
       "term_2": "Top-Down Processing",
@@ -184,8 +164,7 @@
     },
     {
       "id": "21",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Classical Conditioning",
       "definition_1": "Involuntary learning",
       "term_2": "Operant Conditioning",
@@ -193,8 +172,7 @@
     },
     {
       "id": "22",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Primacy Effect",
       "definition_1": "First items remembered in a list",
       "term_2": "Recency Effect",
@@ -202,8 +180,7 @@
     },
     {
       "id": "23",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Implicit Memory",
       "definition_1": "(Also called nondeclarative) skills memory",
       "term_2": "Explicit Memory",
@@ -211,8 +188,7 @@
     },
     {
       "id": "24",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Anterograde Amnesia",
       "definition_1": "Can’t make new memories",
       "term_2": "Retrograde Amnesia",
@@ -220,8 +196,7 @@
     },
     {
       "id": "25",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Algorithms",
       "definition_1": "Step-by-step problem solving method",
       "term_2": "Heuristics",
@@ -229,8 +204,7 @@
     },
     {
       "id": "26",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Recall Memory",
       "definition_1": "No cues – short answers and essays",
       "term_2": "Recognition Memory",
@@ -238,8 +212,7 @@
     },
     {
       "id": "27",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Phonemes",
       "definition_1": "Basic sound units",
       "term_2": "Morphemes",
@@ -247,8 +220,7 @@
     },
     {
       "id": "28",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Representative Heuristic",
       "definition_1": "Obstacle to problem solving basing decisions on stereotypes",
       "term_2": "Availability Heuristic",
@@ -256,8 +228,7 @@
     },
     {
       "id": "29",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Achievement Test",
       "definition_1": "Tests that test what you’ve learned",
       "term_2": "Aptitude Test",
@@ -265,8 +236,7 @@
     },
     {
       "id": "30",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Fluid Intelligence",
       "definition_1": "Intelligence based on logic",
       "term_2": "Crystallized Intelligence",
@@ -274,8 +244,7 @@
     },
     {
       "id": "31",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Internal Locus of Control",
       "definition_1": "You control the environment",
       "term_2": "External Locus of Control",
@@ -283,8 +252,7 @@
     },
     {
       "id": "32",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Intrinsic Motivation",
       "definition_1": "Doing something for personal satisfaction",
       "term_2": "Extrinsic Motivation",
@@ -292,8 +260,7 @@
     },
     {
       "id": "33",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Negative Reinforcement",
       "definition_1": "Strengthens behavior by taking away something you don't like",
       "term_2": "Negative Punishment",
@@ -301,8 +268,7 @@
     },
     {
       "id": "34",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Absolute Threshold",
       "definition_1": "Minimum level of sensation required for detection",
       "term_2": "Difference Threshold",
@@ -310,8 +276,7 @@
     },
     {
       "id": "35",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Generalization",
       "definition_1": "In conditioning, response to similar stimuli",
       "term_2": "Discrimination",
@@ -319,8 +284,7 @@
     },
     {
       "id": "36",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Positive Reinforcement",
       "definition_1": "Strengthens behavior by giving you something you like",
       "term_2": "Positive Punishment",
@@ -328,8 +292,7 @@
     },
     {
       "id": "37",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Collectivist Culture",
       "definition_1": "Family, community is stressed",
       "term_2": "Individualistic Culture",
@@ -337,8 +300,7 @@
     },
     {
       "id": "38",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Foot-in-the-Door",
       "definition_1": "Start small then go big",
       "term_2": "Door-in-the-Face",
@@ -346,8 +308,7 @@
     },
     {
       "id": "39",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Fundamental Attribution Error",
       "definition_1": "Blame a person’s disposition/personality and not consider the situation",
       "term_2": "Actor-Observer Bias",
@@ -355,8 +316,7 @@
     },
     {
       "id": "40",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Self-Esteem",
       "definition_1": "Overall sense of self worth",
       "term_2": "Self-Efficacy",
@@ -366,8 +326,7 @@
     },
     {
       "id": "41",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Obsessive-Compulsive Disorder (OCD)",
       "definition_1": "Intrusive thoughts, anxiety driven obsessions & compulsions, people often recognize their thoughts/behaviors as irrational",
       "term_2": "Obsessive-Compulsive Personality Disorder (OCPD)",
@@ -375,8 +334,7 @@
     },
     {
       "id": "42",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Authoritarian Parenting",
       "definition_1": "Rules & obedience (my way or the highway)",
       "term_2": "Authoritative Parenting",
@@ -384,8 +342,7 @@
     },
     {
       "id": "43",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Emotion Focused Coping",
       "definition_1": "Coping to alleviate stress by avoiding stressor, attending to emotional need",
       "term_2": "Problem Focused Coping",
@@ -393,8 +350,7 @@
     },
     {
       "id": "44",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Mental Set",
       "definition_1": "Keep using one strategy to solve problem",
       "term_2": "Functional Fixedness",
@@ -402,8 +358,7 @@
     },
     {
       "id": "45",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Kinesthetic Sense",
       "definition_1": "Sensing the position and movement of individual body parts",
       "term_2": "Vestibular Sense",
@@ -411,8 +366,7 @@
     },
     {
       "id": "46",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Convergent Thinking",
       "definition_1": "Narrowing available problem solutions to determine the best solution",
       "term_2": "Divergent Thinking",
@@ -420,8 +374,7 @@
     },
     {
       "id": "47",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Proactive Interference",
       "definition_1": "Interference of old info blocking new learning",
       "term_2": "Retroactive Interference",
@@ -429,8 +382,7 @@
     },
     {
       "id": "48",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Normative Social Influence",
       "definition_1": "Influence resulting from a person’s desire to gain approval or avoid disapproval",
       "term_2": "Informational Social Influence",
@@ -438,8 +390,7 @@
     },
     {
       "id": "49",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Hallucinations",
       "definition_1": "Experiencing sensations which are not real",
       "term_2": "Delusions",
@@ -447,8 +398,7 @@
     },
     {
       "id": "50",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Episodic Memory",
       "definition_1": "Memory of one’s own life",
       "term_2": "Semantic Memory",
@@ -456,8 +406,7 @@
     },
     {
       "id": "51",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Peripheral Route Persuasion",
       "definition_1": "Influenced by incidental cues (ex: attractiveness of speaker)",
       "term_2": "Central Route Persuasion",
@@ -465,8 +414,7 @@
     },
     {
       "id": "52",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Anorexia Nervosa",
       "definition_1": "Starvation diet and excessive exercising",
       "term_2": "Bulimia Nervosa",
@@ -474,8 +422,7 @@
     },
     {
       "id": "53",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Social Facilitation",
       "definition_1": "Improved performance on simple or well-learned tasks in the presence of others",
       "term_2": "Social Inhibition",
@@ -485,8 +432,7 @@
     },
     {
       "id": "54",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Conformity",
       "definition_1": "Adjusting behavior to fit in",
       "term_2": "Obedience",
@@ -494,8 +440,7 @@
     },
     {
       "id": "55",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Trichromatic Theory",
       "definition_1": "Theory that color comes from 3 different types of color receptors (R-G-B)",
       "term_2": "Opponent Process Theory",
@@ -503,8 +448,7 @@
     },
     {
       "id": "56",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Group Polarization",
       "definition_1": "Enhancement of groups opinions through discussion with group",
       "term_2": "Groupthink",
@@ -512,8 +456,7 @@
     },
     {
       "id": "57",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Transduction",
       "definition_1": "Turning sensory energy into neural impulse",
       "term_2": "Sensory Adaptation",
@@ -521,8 +464,7 @@
     },
     {
       "id": "58",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Binocular Cues",
       "definition_1": "A depth cue that depends on the use of two eyes",
       "term_2": "Monocular Cues",
@@ -530,8 +472,7 @@
     },
     {
       "id": "59",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Drive Reduction Theory",
       "definition_1": "Motivation theory seeking bodily homeostasis",
       "term_2": "Arousal Theory",
@@ -539,8 +480,7 @@
     },
     {
       "id": "60",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Persistent Depressive Disorder",
       "definition_1": "Mildly depressed mood more often than not for 2 years or more",
       "term_2": "Major Depressive Disorder",
@@ -548,8 +488,7 @@
     },
     {
       "id": "61",
-      "unit": "",
-      "topic": "",
+      "unit": "3",
       "term_1": "Sensorimotor Stage",
       "definition_1": "Birth to about 2. Lack object permanence, explore with senses, stranger anxiety",
       "term_2": "Preoperational Stage",
@@ -557,8 +496,7 @@
     },
     {
       "id": "62",
-      "unit": "",
-      "topic": "",
+      "unit": "4",
       "term_1": "Displacement",
       "definition_1": "Defense mechanism where negative energy cause harm elsewhere",
       "term_2": "Sublimation",
@@ -566,8 +504,7 @@
     },
     {
       "id": "63",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Insomnia",
       "definition_1": "Sleep disorder where one cannot fall/stay asleep",
       "term_2": "Sleep Apnea",
@@ -575,8 +512,7 @@
     },
     {
       "id": "64",
-      "unit": "",
-      "topic": "",
+      "unit": "1, 4",
       "term_1": "Consciousness",
       "definition_1": "Being aware of the immediate sensory environment",
       "term_2": "Conscientiousness",
@@ -584,8 +520,7 @@
     },
     {
       "id": "65",
-      "unit": "",
-      "topic": "",
+      "unit": "1, 4",
       "term_1": "Leptin",
       "definition_1": "Hormone that signals the brain to stop eating (body has enough energy)",
       "term_2": "Grehlin",
@@ -593,8 +528,7 @@
     },
     {
       "id": "66",
-      "unit": "",
-      "topic": "",
+      "unit": "4, 5",
       "term_1": "Id",
       "definition_1": "Basic impulses (sex & aggression) seeking immediate gratification",
       "term_2": "Ego",
@@ -604,8 +538,7 @@
     },
     {
       "id": "67",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Wavelength (Sound)",
       "definition_1": "The physical property of a sound wave that determines pitch (low pitches are long, high pitches are short)",
       "term_2": "Amplitude (Sound)",
@@ -613,8 +546,7 @@
     },
     {
       "id": "68",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Wavelength (Color)",
       "definition_1": "The physical property of a light wave that determines hue (color) (red,long; green,medium; blue, short)",
       "term_2": "Amplitude (Color)",
@@ -622,8 +554,7 @@
     },
     {
       "id": "69",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Myopia (Nearsightedness)",
       "definition_1": "Eye is too long, light focused in front of retina, blurry vision when looking at far away objects",
       "term_2": "Hyperopia (Farsightedness)",
@@ -631,8 +562,7 @@
     },
     {
       "id": "70",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Multiple Sclerosis",
       "definition_1": "Destruction of myelin sheath, causes impaired mobility, paralysis, pain, impacts CNS",
       "term_2": "Myasthenia Gravis",
@@ -640,8 +570,7 @@
     },
     {
       "id": "71",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Inattentional Blindness",
       "definition_1": "Failure to notice something added due to focus on another task",
       "term_2": "Change Blindness",
@@ -649,8 +578,7 @@
     },
     {
       "id": "72",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Dichromatism",
       "definition_1": "Color blindness caused by only 2 working cones leading to difficulty distinguishing between certain colors",
       "term_2": "Monochromatism",
@@ -658,8 +586,7 @@
     },
     {
       "id": "73",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Gambler’s Fallacy",
       "definition_1": "People believe outcome of random event is influenced by previous outcomes",
       "term_2": "Sunk-Cost Fallacy",
@@ -667,8 +594,7 @@
     },
     {
       "id": "74",
-      "unit": "",
-      "topic": "",
+      "unit": "1",
       "term_1": "Sensory Interaction",
       "definition_1": "Process by which different senses influence each other to enhance perception (ex- way taste and smell work together)",
       "term_2": "Synesthesia",
@@ -676,8 +602,7 @@
     },
     {
       "id": "75",
-      "unit": "",
-      "topic": "",
+      "unit": "5",
       "term_1": "Systematic Desensitization",
       "definition_1": "Behavior therapy used to reduce client’s anxiety responses (bad paired with good)",
       "term_2": "Aversion Conditioning",
@@ -685,8 +610,7 @@
     },
     {
       "id": "76",
-      "unit": "",
-      "topic": "",
+      "unit": "2",
       "term_1": "Schema",
       "definition_1": "How our brain organizes information and experiences (a dog, has 4 legs, barks, helps you recognize dogs you’ve never seen before)",
       "term_2": "Prototype",
