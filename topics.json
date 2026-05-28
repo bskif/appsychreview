@@ -2,206 +2,247 @@
   "topics": [
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.1",
       "topic_title": "The Scientific Attitude"
     },
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.2",
       "topic_title": "The Scientific Method"
     },
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.3",
       "topic_title": "Correlation and Experimentation"
     },
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.4",
       "topic_title": "Research Design and Ethics"
     },
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.5",
       "topic_title": "Statistical Reasoning in Everyday Life"
     },
     {
       "unit": "Unit 0",
+      "unit_title": "Scientific Foundations",
       "topic_id": "0.6",
       "topic_title": "The Psychological Perspectives"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.1",
       "topic_title": "Interaction of Heredity and Environment"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.2",
       "topic_title": "Overview of the Nervous System"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.3",
       "topic_title": "The Neuron and Neural Firing"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.4",
       "topic_title": "The Brain"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.5",
       "topic_title": "Sleep"
     },
     {
       "unit": "Unit 1",
+      "unit_title": "Biological Bases of Behavior",
       "topic_id": "1.6",
       "topic_title": "Sensation"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.1",
       "topic_title": "Perception"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.2",
       "topic_title": "Thinking, Problem-Solving, Judgments, and Decision Making"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.3",
       "topic_title": "Introduction to Memory"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.4",
       "topic_title": "Encoding Memories"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.5",
       "topic_title": "Storing Memories"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.6",
       "topic_title": "Retrieving Memories"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.7",
       "topic_title": "Forgetting and Other Memory Challenges"
     },
     {
       "unit": "Unit 2",
+      "unit_title": "Cognition",
       "topic_id": "2.8",
       "topic_title": "Intelligence and Achievement"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.1",
       "topic_title": "Themes and Methods in Developmental Psychology"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.2",
       "topic_title": "Physical Development Across the Lifespan"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.3",
       "topic_title": "Gender and Sexual Orientation"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.4",
       "topic_title": "Cognitive Development Across the Lifespan"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.5",
       "topic_title": "Communication and Language Development"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.6",
       "topic_title": "Social-Emotional Development Across the Lifespan"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.7",
       "topic_title": "Classical Conditioning"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.8",
       "topic_title": "Operant Conditioning"
     },
     {
       "unit": "Unit 3",
+      "unit_title": "Development and Learning",
       "topic_id": "3.9",
       "topic_title": "Social, Cognitive, and Neurological Factors in Learning"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.1",
       "topic_title": "Attribution Theory & Person Perception"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.2",
       "topic_title": "Attitude Formation & Attitude Change"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.3",
       "topic_title": "Psychology of Social Situations"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.4",
       "topic_title": "Psychoanalytic & Humanistic Theories of Personality"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.5",
       "topic_title": "Social-Cognitive & Trait Theories of Personality"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.6",
       "topic_title": "Motivation"
     },
     {
       "unit": "Unit 4",
+      "unit_title": "Social Psychology and Personality",
       "topic_id": "4.7",
       "topic_title": "Emotion"
     },
     {
       "unit": "Unit 5",
+      "unit_title": "Mental and Physical Health",
       "topic_id": "5.1",
       "topic_title": "Introduction to Health Psychology"
     },
     {
       "unit": "Unit 5",
+      "unit_title": "Mental and Physical Health",
       "topic_id": "5.2",
       "topic_title": "Positive Psychology"
     },
     {
       "unit": "Unit 5",
+      "unit_title": "Mental and Physical Health",
       "topic_id": "5.3",
       "topic_title": "Explaining and Classifying Psychological Disorders"
     },
     {
       "unit": "Unit 5",
+      "unit_title": "Mental and Physical Health",
       "topic_id": "5.4",
       "topic_title": "Selection of Categories of Psychological Disorders"
     },
     {
       "unit": "Unit 5",
+      "unit_title": "Mental and Physical Health",
       "topic_id": "5.5",
       "topic_title": "Treatment of Psychological Disorders"
     }
