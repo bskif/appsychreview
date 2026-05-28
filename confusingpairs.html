@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confusing Pairs</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin=\"anonymous\"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
     <style>
@@ -195,21 +195,30 @@
 
         async function loadGameData() {
             try {
-                // 1. Fetch the master topics list to build the dropdown menu dynamically
-                const topicsResponse = await fetch('topics.json');
-                const topicsData = await topicsResponse.json();
-                populateUnitDropdown(topicsData.topics);
-
-                // 2. Fetch the confusing pairs content data
+                // 1. Fetch confusing pairs content data
                 const pairsResponse = await fetch('confusing_pairs.json');
                 const pairsData = await pairsResponse.json();
                 allPairs = pairsData.confusing_pairs || [];
+
+                // 2. Fetch the master topics list to build the dropdown menu dynamically
+                const topicsResponse = await fetch('topics.json');
+                const topicsData = await topicsResponse.json();
+                
+                // Auto-detect if your data layout uses raw numbers ("1") or labels ("Unit 1")
+                let useRawNumber = true;
+                if (allPairs.length > 0 && allPairs[0].unit) {
+                    if (allPairs[0].unit.toString().includes('Unit')) {
+                        useRawNumber = false;
+                    }
+                }
+
+                populateUnitDropdown(topicsData.topics, useRawNumber);
             } catch (error) {
-                console.error("Error running application initialization sequences:", error);
+                console.error("Error loading configuration data records:", error);
             }
         }
 
-        function populateUnitDropdown(topics) {
+        function populateUnitDropdown(topics, useRawNumber) {
             const unitSelect = document.getElementById('unit-select');
             unitSelect.innerHTML = '<option value="all">All Units</option>';
             
@@ -218,7 +227,14 @@
                 if (!seenUnits.has(item.unit)) {
                     seenUnits.add(item.unit);
                     const option = document.createElement('option');
-                    option.value = item.unit; // Stores exact key (e.g., "Unit 1")
+                    
+                    // Match selection value layout cleanly with your JSON mapping formats
+                    if (useRawNumber) {
+                        option.value = item.unit.replace('Unit ', '').trim();
+                    } else {
+                        option.value = item.unit;
+                    }
+                    
                     option.innerText = `${item.unit}: ${item.unit_title}`;
                     unitSelect.appendChild(option);
                 }
@@ -229,19 +245,10 @@
         function startGame() {
             const selectedUnit = document.getElementById('unit-select').value;
             
-            // Filter pairs based on menu selection
             if (selectedUnit === 'all') {
                 gamePairs = [...allPairs];
             } else {
-                gamePairs = allPairs.filter(p => {
-                    if (!p.unit) return false;
-                    const pUnitStr = p.unit.toString().trim().toLowerCase();
-                    const selUnitStr = selectedUnit.toString().trim().toLowerCase();
-                    // Match variations like "1" vs "Unit 1"
-                    return pUnitStr === selUnitStr || 
-                           pUnitStr === selUnitStr.replace('unit', '').trim() ||
-                           selUnitStr === pUnitStr.replace('unit', '').trim();
-                });
+                gamePairs = allPairs.filter(p => p.unit == selectedUnit);
             }
 
             if (gamePairs.length === 0) {
@@ -249,7 +256,6 @@
                 return;
             }
 
-            // Shuffle full set array pool
             gamePairs.sort(() => Math.random() - 0.5);
 
             currentPairIndex = 0;
@@ -274,7 +280,6 @@
             poolContainer.innerHTML = '';
             boardContainer.innerHTML = '';
 
-            // Identify active columns dynamically (handles 2 or 3 columns automatically)
             let columnsData = [
                 { term: pair.term_1, def: pair.definition_1, id: "1" },
                 { term: pair.term_2, def: pair.definition_2, id: "2" }
@@ -283,7 +288,6 @@
                 columnsData.push({ term: pair.term_3, def: pair.definition_3, id: "3" });
             }
 
-            // 1. Build and mix definitions on the board columns
             columnsData.forEach(col => {
                 const zone = document.createElement('div');
                 zone.className = 'drop-zone';
@@ -297,7 +301,6 @@
                 boardContainer.appendChild(zone);
             });
 
-            // 2. Spawn items into standard draggable pool (shuffled order)
             let itemsToSpawn = [...columnsData].sort(() => Math.random() - 0.5);
             itemsToSpawn.forEach(item => {
                 const dragNode = document.createElement('div');
@@ -307,10 +310,8 @@
                 dragNode.innerText = item.term;
                 dragNode.setAttribute('data-target-zone', item.id);
                 
-                // standard desktop drop routing listeners
                 dragNode.ondragstart = dragStart;
 
-                // mobile touchscreen compatibility integration wrappers
                 dragNode.addEventListener('touchstart', handleTouchStart, {passive: false});
                 dragNode.addEventListener('touchmove', handleTouchMove, {passive: false});
                 dragNode.addEventListener('touchend', handleTouchEnd, {passive: false});
@@ -341,7 +342,7 @@
             const item = document.getElementById(id);
             if (item && !item.classList.contains('correct')) {
                 document.getElementById('items-pool').appendChild(item);
-                item.className = "drag-item"; // clear state modifications safely
+                item.className = "drag-item";
             }
         }
 
@@ -358,24 +359,19 @@
         }
 
         function handleDropLogic(item, zone) {
-            // Verify if target drop space belongs inside game-board zones
-            if (!zone.classList.contains('drop-zone')) return;
+            const actualZone = zone.closest('.drop-zone');
+            if (!actualZone) return;
 
-            const expectedId = zone.getAttribute('data-expected');
+            const expectedId = actualZone.getAttribute('data-expected');
             const itemTargetId = item.getAttribute('data-target-zone');
 
             if (expectedId === itemTargetId) {
-                // Correct match sequence path routing
-                zone.appendChild(item);
+                actualZone.appendChild(item);
                 item.className = "drag-item correct";
                 item.draggable = false;
-                
-                // strip active listeners off solved items safely
                 item.onclick = null; 
-                
                 checkBoardCompletion();
             } else {
-                // Incorrect matching assignment path routing
                 totalAttempts++;
                 document.getElementById('score-text').innerText = `Mistakes: ${totalAttempts}`;
                 
@@ -400,7 +396,6 @@
                 currentPairIndex++;
                 loadCurrentPair();
             } else {
-                // Trigger terminal complete sequence
                 document.getElementById('game-ui').style.display = 'none';
                 document.getElementById('end-screen').style.display = 'block';
                 document.getElementById('final-score').innerText = `Total Mistakes: ${totalAttempts}`;
@@ -426,9 +421,10 @@
             }
         }
 
+        // Lock document scrolling on mobile devices during active drag operation
         function handleTouchMove(e) {
             if (!touchDragItem) return;
-            e.preventDefault(); // Lock browser scrolling while operating parts
+            e.preventDefault(); 
             touchDragItem.style.left = e.touches[0].pageX - touchDragItem.offsetWidth / 2 + 'px';
             touchDragItem.style.top = e.touches[0].pageY - touchDragItem.offsetHeight / 2 + 'px';
         }
@@ -436,7 +432,6 @@
         function handleTouchEnd(e) {
             if (!touchDragItem) return;
 
-            // Restore elements layout attributes to locate base targets
             touchDragItem.style.position = 'static';
             touchDragItem.style.zIndex = '1';
             
@@ -446,13 +441,7 @@
             touchDragItem.hidden = false;
 
             if(elemBelow) {
-                // Handle drop location assessment accurately
-                const targetsZone = elemBelow.closest('.drop-zone');
-                if (targetsZone) {
-                    handleDropLogic(touchDragItem, targetsZone);
-                } else {
-                    document.getElementById('items-pool').appendChild(touchDragItem);
-                }
+                handleDropLogic(touchDragItem, elemBelow);
             }
             touchDragItem = null;
         }
