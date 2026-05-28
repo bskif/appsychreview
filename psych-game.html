@@ -80,7 +80,7 @@
         }
         
         .snap-card { 
-            height: 260px; 
+            height: 260px; /* EXTRA Jumbo Height for long descriptions */
             background-color: transparent; 
             perspective: 1000px; 
             cursor: pointer; 
@@ -192,7 +192,7 @@
                 <div class="context-text" id="game-title-display">Loading Active Engine...</div>
                 <div id="global-hint-container" style="font-size:1.2rem; margin:10px auto; font-style:italic; max-width:600px;"></div>
                 <div id="hint-toggle-block">
-                     <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary); padding:10px; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:5px;">👀 Reveal Definition Hint (Forfeits +5 Bonus)</button>
+                     <button id="hint-btn" onclick="revealHint()" style="background-color: var(--primary); padding:10px; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:5px;">👀 Reveal Hint (Forfeits +5 Bonus)</button>
                      <p id="hint-text" style="display: none; font-style: italic; margin-top:10px; color:#555; font-weight:bold;"></p>
                 </div>
             </div>
@@ -223,7 +223,7 @@
             </div>
 
             <div id="view-synapsesnap" class="game-view">
-                <p style="font-weight:bold; color:#7f8c8d; margin-bottom:15px;">Match terms to their definitions! 1 mistake = 1 section lost.</p>
+                <p style="font-weight:bold; color:#7f8c8d; margin-bottom:15px;">Match terms to their descriptions! 1 mistake = 1 section lost.</p>
                 
                 <button id="peek-btn" class="action-btn" onclick="useFreePeek()" style="background-color: #f39c12; margin-bottom: 10px; font-size: 0.95rem;">👀 Free Peek (Forfeits +5 Bonus)</button>
                 
@@ -246,7 +246,7 @@
         let dbJSON = {}; 
 
         // Core State Variables
-        let currentPuzzleData = null; // Stores full current puzzle object
+        let currentPuzzleData = null; 
         let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
         let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
         let activeGameMode = "";
@@ -376,7 +376,7 @@
             else if (activeGameMode === "distractor") {
                 document.getElementById('game-title-display').innerText = `The Distractor | Unit ${dataObj.unit} Topic ${dataObj.topic}`;
                 document.getElementById('view-distractor').style.display = "block";
-                document.getElementById('global-hint-container').innerHTML = `<strong>Definition:</strong> ${hintText}`;
+                document.getElementById('global-hint-container').innerHTML = `<strong>Hint:</strong> ${hintText}`;
                 document.getElementById('hint-toggle-block').style.display = "none";
                 buildDistractorUI();
             } 
@@ -472,12 +472,12 @@
             const promptEl = document.getElementById('ff-prompt');
 
             if (coin) {
-                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches definition: "${hintText}"`;
+                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches description: "${hintText}"`;
             } else {
                 let alternateHint = "A framework that organizes and interprets information.";
                 let altItem = dbJSON.hangman.find(item => item.term.toLowerCase() !== targetWord);
                 if(altItem) alternateHint = altItem.hint;
-                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches definition: "${alternateHint}"`;
+                promptEl.innerHTML = `True or False: <strong>${targetWord.toUpperCase()}</strong> matches description: "${alternateHint}"`;
             }
         }
 
@@ -673,13 +673,11 @@
             const title = document.getElementById('end-title');
             const msg = document.getElementById('end-message');
 
-            // Constructing the beautiful End Game Message
             let finalHTML = `<p style="font-size:1.2rem; margin-bottom: 15px;">The target answer was: <strong>"${targetWord.toUpperCase()}"</strong></p>`;
             
-            // Reveals hint at end of Hangman/Anagram specifically
             if (activeGameMode === "hangman" || activeGameMode === "anagram") {
                 finalHTML += `<div style="background-color: rgba(255,255,255,0.6); padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 0.95rem; color: #333;">
-                                <strong>Definition:</strong> <em>${hintText}</em>
+                                <strong>Hint:</strong> <em>${hintText}</em>
                               </div>`;
             }
 
