@@ -92,6 +92,38 @@
             margin-top: 30px;
             text-align: left;
             font-size: 1.8rem;
+            cursor: pointer; /* Added to indicate clickability */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .unit-header:hover {
+            background-color: #f4f8fb;
+        }
+
+        /* Dropdown Icon Styles */
+        .toggle-icon {
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin-left: 8px;
+            color: #888;
+        }
+
+        .unit-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .unit-content {
+            display: none; /* Hidden by default */
+        }
+
+        .unit-content.active {
+            display: block; /* Visible when clicked */
         }
 
         .topic-header {
@@ -132,7 +164,6 @@
 
         /* --- BACK TO TOP STYLES --- */
         .back-to-top-inline {
-            float: right;
             font-size: 0.9rem;
             color: var(--accent);
             cursor: pointer;
@@ -246,17 +277,8 @@
     <script>
         let allTerms = [];
         let allTopics = [];
+        let dynamicUnitTitles = {}; // Built dynamically from topics.json
         let sortMode = 'alpha'; // default view
-
-        // Updated 2024 AP Psych Unit Titles Dictionary
-        const unitTitles = {
-            "Unit 0": "Science Practices",
-            "Unit 1": "Biological Bases of Behavior",
-            "Unit 2": "Cognition",
-            "Unit 3": "Development and Learning",
-            "Unit 4": "Social Psychology and Personality",
-            "Unit 5": "Mental and Physical Health"
-        };
 
         // Custom Jump Function to account for sticky search bar height
         function jumpToSection(id) {
@@ -268,6 +290,16 @@
             }
         }
 
+        // Accordion Toggle Logic
+        function toggleUnit(unitIdSafe) {
+            const content = document.getElementById('content-' + unitIdSafe);
+            const header = document.getElementById('header-' + unitIdSafe);
+            if (content) {
+                content.classList.toggle('active');
+                if(header) header.classList.toggle('active');
+            }
+        }
+
         // 1. Fetch Data
         Promise.all([
             fetch('terms.json').then(res => res.json()),
@@ -276,6 +308,12 @@
         .then(([termsData, topicsData]) => {
             if(topicsData && topicsData.topics) {
                 allTopics = topicsData.topics;
+                // Dynamically build unit titles from topics.json
+                allTopics.forEach(item => {
+                    if(item.unit && item.unit_title) {
+                        dynamicUnitTitles[item.unit] = item.unit_title;
+                    }
+                });
             }
             if(termsData && termsData.terms) {
                 allTerms = termsData.terms;
@@ -343,7 +381,8 @@
                     
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.innerHTML = `${letter} <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
+                    h2.style.cursor = 'default'; // No accordion logic for A-Z
+                    h2.innerHTML = `<span>${letter}</span> <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
                     section.appendChild(h2);
                     
                     grouped[letter].sort((a,b) => a.term.localeCompare(b.term)).forEach(t => {
@@ -366,7 +405,14 @@
                     grouped[u][top].push(t);
                 });
                 
-                Object.keys(grouped).sort().forEach(unit => {
+                // Sort by logical unit number (0, 1, 2...)
+                const sortedUnits = Object.keys(grouped).sort((a, b) => {
+                    const numA = parseInt(a.replace(/\D/g, '')) || 0;
+                    const numB = parseInt(b.replace(/\D/g, '')) || 0;
+                    return numA - numB;
+                });
+
+                sortedUnits.forEach(unit => {
                     // Process Unit ID for safe HTML anchors
                     const unitIdSafe = unit.replace(/\s+/g, '-');
 
@@ -374,25 +420,46 @@
                     const jumpBtn = document.createElement('a');
                     jumpBtn.className = 'jump-link';
                     jumpBtn.innerText = unit;
-                    jumpBtn.onclick = () => jumpToSection('sec-' + unitIdSafe);
+                    jumpBtn.onclick = () => {
+                        // Expand the unit if it was collapsed
+                        const unitContent = document.getElementById('content-' + unitIdSafe);
+                        const unitHeader = document.getElementById('header-' + unitIdSafe);
+                        if (unitContent && !unitContent.classList.contains('active')) {
+                            unitContent.classList.add('active');
+                            if (unitHeader) unitHeader.classList.add('active');
+                        }
+                        // Then jump to it
+                        jumpToSection('sec-' + unitIdSafe);
+                    };
                     jumpContainer.appendChild(jumpBtn);
 
                     const unitSec = document.createElement('div');
                     unitSec.className = 'glossary-section unit-section';
                     unitSec.id = 'sec-' + unitIdSafe;
                     
-                    // Lookup Unit Title from our dictionary
+                    // Lookup Unit Title from dynamically fetched dictionary
                     let displayUnit = unit;
-                    if (unitTitles[unit]) {
-                        displayUnit = `${unit} - ${unitTitles[unit]}`;
+                    if (dynamicUnitTitles[unit]) {
+                        displayUnit = `${unit}: ${dynamicUnitTitles[unit]}`;
                     }
 
+                    // Create Interactive Header
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.innerHTML = `${displayUnit} <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
+                    h2.id = 'header-' + unitIdSafe;
+                    h2.onclick = () => toggleUnit(unitIdSafe);
+                    h2.innerHTML = `<span>${displayUnit} <span class="toggle-icon">▼</span></span> <span class="back-to-top-inline" onclick="event.stopPropagation(); scrollToTop()">↑ Top</span>`;
                     unitSec.appendChild(h2);
                     
-                    Object.keys(grouped[unit]).sort().forEach(topic => {
+                    // Create Collapsible Content Container
+                    const unitContent = document.createElement('div');
+                    unitContent.className = 'unit-content';
+                    unitContent.id = 'content-' + unitIdSafe;
+
+                    // Sort topics sequentially (e.g. 1.1, 1.2, 1.3...)
+                    const sortedTopics = Object.keys(grouped[unit]).sort((a,b) => parseFloat(a)-parseFloat(b));
+
+                    sortedTopics.forEach(topic => {
                         const topicSec = document.createElement('div');
                         topicSec.className = 'topic-section';
                         
@@ -404,7 +471,7 @@
                         
                         const h3 = document.createElement('h3');
                         h3.className = 'topic-header';
-                        h3.innerHTML = `${topicTitle} <span class="back-to-top-inline" style="font-size: 0.8rem;" onclick="scrollToTop()">↑ Top</span>`;
+                        h3.innerHTML = `${topicTitle} <span class="back-to-top-inline" style="font-size: 0.8rem;" onclick="event.stopPropagation(); scrollToTop()">↑ Top</span>`;
                         topicSec.appendChild(h3);
                         
                         grouped[unit][topic].sort((a,b) => a.term.localeCompare(b.term)).forEach(t => {
@@ -413,8 +480,10 @@
                             item.innerHTML = `<div class="term-title">${t.term}</div><div class="term-def">${t.definition}</div>`;
                             topicSec.appendChild(item);
                         });
-                        unitSec.appendChild(topicSec);
+                        unitContent.appendChild(topicSec);
                     });
+                    
+                    unitSec.appendChild(unitContent);
                     content.appendChild(unitSec);
                 });
             }
@@ -439,6 +508,9 @@
                 // If in Unit mode, check sub-topic wrappers
                 const topicSections = section.querySelectorAll('.topic-section');
                 if (topicSections.length > 0) {
+                    const unitContent = section.querySelector('.unit-content');
+                    const unitHeader = section.querySelector('.unit-header');
+
                     topicSections.forEach(ts => {
                         let topicHasVisible = false;
                         const items = ts.querySelectorAll('.term-item');
@@ -455,6 +527,17 @@
                         });
                         ts.style.display = topicHasVisible ? 'block' : 'none';
                     });
+
+                    // Smart Accordion: Auto-expand units if they contain searched words
+                    if (query.length > 0 && sectionHasVisible && unitContent) {
+                        unitContent.classList.add('active');
+                        if (unitHeader) unitHeader.classList.add('active');
+                    } else if (query.length === 0 && unitContent) {
+                        // Re-collapse when search is completely cleared
+                        unitContent.classList.remove('active');
+                        if (unitHeader) unitHeader.classList.remove('active');
+                    }
+
                 } else {
                     // Alpha mode (no topic wrappers)
                     const items = section.querySelectorAll('.term-item');
