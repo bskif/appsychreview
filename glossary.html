@@ -53,15 +53,29 @@
             flex-wrap: wrap;
         }
 
-        /* --- QUICK JUMP BAR --- */
+        /* --- TOP MENU NAVIGATION --- */
         .quick-jump-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+            max-height: 35vh; /* Prevents menu from covering the whole screen on mobile */
+            overflow-y: auto;
+        }
+
+        /* Alphabetical Layout */
+        .quick-jump-container.alpha-mode {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 8px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #ccc;
+        }
+
+        /* Unit Layout */
+        .quick-jump-container.unit-mode {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
         }
 
         .jump-link {
@@ -84,7 +98,72 @@
             border-color: var(--primary);
         }
 
-        /* --- GLOSSARY CONTENT --- */
+        /* Unit & Topic Top Menu Styles */
+        .top-unit-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-unit-header {
+            background: #f0f8ff;
+            color: var(--primary);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border: 1px solid #d0e8ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .top-unit-header:hover {
+            background: #e0f0ff;
+        }
+
+        .top-unit-toggle-icon {
+            font-size: 0.9rem;
+            color: #888;
+            transition: transform 0.3s;
+        }
+
+        .top-unit-wrapper.active .top-unit-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .top-topic-list {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px 0 8px 15px;
+            border-left: 2px solid var(--accent);
+            margin-left: 10px;
+        }
+
+        .top-unit-wrapper.active .top-topic-list {
+            display: flex;
+        }
+
+        .top-topic-item {
+            background: white;
+            color: #555;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .top-topic-item:hover {
+            background: #f9f9f9;
+            color: var(--primary);
+            border-color: #ddd;
+        }
+
+
+        /* --- GLOSSARY CONTENT (BODY) --- */
         .unit-header {
             color: var(--primary);
             border-bottom: 2px solid var(--accent);
@@ -92,38 +171,11 @@
             margin-top: 30px;
             text-align: left;
             font-size: 1.8rem;
-            cursor: pointer; /* Added to indicate clickability */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.2s;
             padding: 5px;
             border-radius: 4px;
-        }
-
-        .unit-header:hover {
-            background-color: #f4f8fb;
-        }
-
-        /* Dropdown Icon Styles */
-        .toggle-icon {
-            font-size: 1.2rem;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            margin-left: 8px;
-            color: #888;
-        }
-
-        .unit-header.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .unit-content {
-            display: none; /* Hidden by default */
-        }
-
-        .unit-content.active {
-            display: block; /* Visible when clicked */
         }
 
         .topic-header {
@@ -264,7 +316,7 @@
                 <button id="btn-sort-unit" class="nav-btn" style="background-color: #eee; color: #333; margin: 0; padding: 8px 15px;" onclick="setSortMode('unit')">By Unit & Topic</button>
             </div>
 
-            <div id="quick-jump-container" class="quick-jump-container"></div>
+            <div id="quick-jump-container" class="quick-jump-container alpha-mode"></div>
         </div>
 
         <div id="glossary-content">
@@ -287,16 +339,6 @@
                 const searchBarHeight = document.querySelector('.search-container').offsetHeight;
                 const y = el.getBoundingClientRect().top + window.scrollY - searchBarHeight - 20;
                 window.scrollTo({top: y, behavior: 'smooth'});
-            }
-        }
-
-        // Accordion Toggle Logic
-        function toggleUnit(unitIdSafe) {
-            const content = document.getElementById('content-' + unitIdSafe);
-            const header = document.getElementById('header-' + unitIdSafe);
-            if (content) {
-                content.classList.toggle('active');
-                if(header) header.classList.toggle('active');
             }
         }
 
@@ -332,17 +374,20 @@
             sortMode = mode;
             const btnAlpha = document.getElementById('btn-sort-alpha');
             const btnUnit = document.getElementById('btn-sort-unit');
+            const jumpContainer = document.getElementById('quick-jump-container');
             
             if (mode === 'alpha') {
                 btnAlpha.style.backgroundColor = 'var(--primary)';
                 btnAlpha.style.color = 'white';
                 btnUnit.style.backgroundColor = '#eee';
                 btnUnit.style.color = '#333';
+                jumpContainer.className = 'quick-jump-container alpha-mode';
             } else {
                 btnUnit.style.backgroundColor = 'var(--primary)';
                 btnUnit.style.color = 'white';
                 btnAlpha.style.backgroundColor = '#eee';
                 btnAlpha.style.color = '#333';
+                jumpContainer.className = 'quick-jump-container unit-mode';
             }
             
             // Clear search bar on toggle for a fresh view
@@ -350,7 +395,7 @@
             renderGlossary();
         }
 
-        // 3. Render Glossary Content & Quick Jump Bar
+        // 3. Render Glossary Content & Top Menu Bar
         function renderGlossary() {
             const content = document.getElementById('glossary-content');
             const jumpContainer = document.getElementById('quick-jump-container');
@@ -368,20 +413,20 @@
                 });
                 
                 Object.keys(grouped).sort().forEach(letter => {
-                    // Populate Quick Jump Links
+                    // Populate Quick Jump Links (A-Z)
                     const jumpBtn = document.createElement('a');
                     jumpBtn.className = 'jump-link';
                     jumpBtn.innerText = letter;
                     jumpBtn.onclick = () => jumpToSection('sec-' + letter);
                     jumpContainer.appendChild(jumpBtn);
 
+                    // Build Body Sections
                     const section = document.createElement('div');
                     section.className = 'glossary-section';
                     section.id = 'sec-' + letter;
                     
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.style.cursor = 'default'; // No accordion logic for A-Z
                     h2.innerHTML = `<span>${letter}</span> <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
                     section.appendChild(h2);
                     
@@ -413,65 +458,80 @@
                 });
 
                 sortedUnits.forEach(unit => {
-                    // Process Unit ID for safe HTML anchors
+                    // Process IDs for safe HTML anchors
                     const unitIdSafe = unit.replace(/\s+/g, '-');
 
-                    // Populate Quick Jump Links
-                    const jumpBtn = document.createElement('a');
-                    jumpBtn.className = 'jump-link';
-                    jumpBtn.innerText = unit;
-                    jumpBtn.onclick = () => {
-                        // Expand the unit if it was collapsed
-                        const unitContent = document.getElementById('content-' + unitIdSafe);
-                        const unitHeader = document.getElementById('header-' + unitIdSafe);
-                        if (unitContent && !unitContent.classList.contains('active')) {
-                            unitContent.classList.add('active');
-                            if (unitHeader) unitHeader.classList.add('active');
-                        }
-                        // Then jump to it
-                        jumpToSection('sec-' + unitIdSafe);
-                    };
-                    jumpContainer.appendChild(jumpBtn);
-
-                    const unitSec = document.createElement('div');
-                    unitSec.className = 'glossary-section unit-section';
-                    unitSec.id = 'sec-' + unitIdSafe;
-                    
-                    // Lookup Unit Title from dynamically fetched dictionary
+                    // Lookup Unit Title from topics.json
                     let displayUnit = unit;
                     if (dynamicUnitTitles[unit]) {
                         displayUnit = `${unit}: ${dynamicUnitTitles[unit]}`;
                     }
 
-                    // Create Interactive Header
+                    // --- BUILD TOP MENU ACCORDION ---
+                    const topUnitWrapper = document.createElement('div');
+                    topUnitWrapper.className = 'top-unit-wrapper';
+
+                    const topUnitHeader = document.createElement('div');
+                    topUnitHeader.className = 'top-unit-header';
+                    topUnitHeader.innerHTML = `<span>${displayUnit}</span> <span class="top-unit-toggle-icon">▼</span>`;
+                    
+                    const topTopicList = document.createElement('div');
+                    topTopicList.className = 'top-topic-list';
+
+                    topUnitHeader.onclick = () => {
+                        // Toggle sub-menu visibility
+                        topUnitWrapper.classList.toggle('active');
+                        // Jump directly to unit in the body
+                        jumpToSection('sec-' + unitIdSafe);
+                    };
+
+                    topUnitWrapper.appendChild(topUnitHeader);
+
+                    // --- BUILD BODY SECTIONS ---
+                    const unitSec = document.createElement('div');
+                    unitSec.className = 'glossary-section unit-section';
+                    unitSec.id = 'sec-' + unitIdSafe;
+                    
                     const h2 = document.createElement('h2');
                     h2.className = 'unit-header';
-                    h2.id = 'header-' + unitIdSafe;
-                    h2.onclick = () => toggleUnit(unitIdSafe);
-                    h2.innerHTML = `<span>${displayUnit} <span class="toggle-icon">▼</span></span> <span class="back-to-top-inline" onclick="event.stopPropagation(); scrollToTop()">↑ Top</span>`;
+                    h2.innerHTML = `<span>${displayUnit}</span> <span class="back-to-top-inline" onclick="scrollToTop()">↑ Top</span>`;
                     unitSec.appendChild(h2);
-                    
-                    // Create Collapsible Content Container
-                    const unitContent = document.createElement('div');
-                    unitContent.className = 'unit-content';
-                    unitContent.id = 'content-' + unitIdSafe;
 
-                    // Sort topics sequentially (e.g. 1.1, 1.2, 1.3...)
+                    const unitContent = document.createElement('div');
+                    unitContent.className = 'unit-content'; // Flat wrapper (no hidden logic)
+
+                    // Sort topics sequentially
                     const sortedTopics = Object.keys(grouped[unit]).sort((a,b) => parseFloat(a)-parseFloat(b));
 
                     sortedTopics.forEach(topic => {
-                        const topicSec = document.createElement('div');
-                        topicSec.className = 'topic-section';
-                        
+                        // Safe ID for Topic
+                        const topicIdSafe = topic.replace(/\s+/g, '-').replace(/\./g, '-');
+
+                        // Lookup Topic Title
                         let topicTitle = topic;
                         if (allTopics && allTopics.length > 0) {
                             const tObj = allTopics.find(x => x.topic_id === topic);
                             if (tObj) topicTitle = `${tObj.topic_id} ${tObj.topic_title}`;
                         }
+
+                        // --- ADD TO TOP MENU ---
+                        const topTopicItem = document.createElement('div');
+                        topTopicItem.className = 'top-topic-item';
+                        topTopicItem.innerText = topicTitle;
+                        topTopicItem.onclick = (e) => {
+                            e.stopPropagation(); // Prevents parent from collapsing
+                            jumpToSection('sec-topic-' + topicIdSafe);
+                        };
+                        topTopicList.appendChild(topTopicItem);
+
+                        // --- ADD TO BODY ---
+                        const topicSec = document.createElement('div');
+                        topicSec.className = 'topic-section';
+                        topicSec.id = 'sec-topic-' + topicIdSafe;
                         
                         const h3 = document.createElement('h3');
                         h3.className = 'topic-header';
-                        h3.innerHTML = `${topicTitle} <span class="back-to-top-inline" style="font-size: 0.8rem;" onclick="event.stopPropagation(); scrollToTop()">↑ Top</span>`;
+                        h3.innerHTML = `${topicTitle} <span class="back-to-top-inline" style="font-size: 0.8rem;" onclick="scrollToTop()">↑ Top</span>`;
                         topicSec.appendChild(h3);
                         
                         grouped[unit][topic].sort((a,b) => a.term.localeCompare(b.term)).forEach(t => {
@@ -480,37 +540,39 @@
                             item.innerHTML = `<div class="term-title">${t.term}</div><div class="term-def">${t.definition}</div>`;
                             topicSec.appendChild(item);
                         });
+
                         unitContent.appendChild(topicSec);
                     });
                     
+                    topUnitWrapper.appendChild(topTopicList);
+                    jumpContainer.appendChild(topUnitWrapper);
+
                     unitSec.appendChild(unitContent);
                     content.appendChild(unitSec);
                 });
             }
         }
 
-        // 4. Search Filter Logic
+        // 4. Search Filter Logic (Updated for flat body view)
         function filterGlossary() {
             const query = document.getElementById('search-bar').value.toLowerCase();
             const sections = document.querySelectorAll('.glossary-section');
             
-            // Hide the quick jump bar if the student is actively searching 
+            // Hide the top menu if the student is actively typing a search
             const jumpContainer = document.getElementById('quick-jump-container');
             if (query.length > 0) {
                 jumpContainer.style.display = 'none';
             } else {
-                jumpContainer.style.display = 'flex';
+                // Re-display based on active mode
+                jumpContainer.style.display = sortMode === 'alpha' ? 'flex' : 'flex';
             }
 
             sections.forEach(section => {
                 let sectionHasVisible = false;
                 
-                // If in Unit mode, check sub-topic wrappers
+                // Check topic wrappers (if in Unit Mode)
                 const topicSections = section.querySelectorAll('.topic-section');
                 if (topicSections.length > 0) {
-                    const unitContent = section.querySelector('.unit-content');
-                    const unitHeader = section.querySelector('.unit-header');
-
                     topicSections.forEach(ts => {
                         let topicHasVisible = false;
                         const items = ts.querySelectorAll('.term-item');
@@ -527,19 +589,8 @@
                         });
                         ts.style.display = topicHasVisible ? 'block' : 'none';
                     });
-
-                    // Smart Accordion: Auto-expand units if they contain searched words
-                    if (query.length > 0 && sectionHasVisible && unitContent) {
-                        unitContent.classList.add('active');
-                        if (unitHeader) unitHeader.classList.add('active');
-                    } else if (query.length === 0 && unitContent) {
-                        // Re-collapse when search is completely cleared
-                        unitContent.classList.remove('active');
-                        if (unitHeader) unitHeader.classList.remove('active');
-                    }
-
                 } else {
-                    // Alpha mode (no topic wrappers)
+                    // Alpha Mode
                     const items = section.querySelectorAll('.term-item');
                     items.forEach(item => {
                         const text = item.innerText.toLowerCase();
@@ -552,7 +603,7 @@
                     });
                 }
                 
-                // Hide header if nothing is visible under it
+                // Hide entire section header if nothing matched inside it
                 section.style.display = sectionHasVisible ? 'block' : 'none';
             });
         }
