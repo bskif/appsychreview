@@ -33,316 +33,399 @@
         .drop-zone h3 {
             margin: 0 0 10px 0;
             color: var(--primary);
-            pointer-events: none; 
+            font-size: 1.2rem;
             text-align: center;
             width: 100%;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
         }
 
-        /* The Draggable Definition Cards */
-        .draggable {
-            background: var(--white);
-            border: 1px solid #ccc;
-            padding: 12px;
+        .drop-zone.drag-over {
+            background: #dfe6e9;
+            border-color: var(--primary);
+        }
+
+        /* Items to Drag */
+        .items-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            min-height: 50px;
+            padding: 10px;
+            background: #f9f9f9;
             border-radius: 8px;
+            border: 1px dashed #ccc;
+        }
+
+        .drag-item {
+            background: white;
+            border: 2px solid var(--primary);
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
             cursor: grab;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 0.95rem;
-            margin: 5px 0;
-            width: 100%; /* Fill the container */
-            touch-action: none; 
-            text-align: left;
+            font-weight: bold;
+            user-select: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            max-width: 100%;
         }
 
-        .draggable:active {
+        .drag-item:active {
             cursor: grabbing;
-            opacity: 0.8;
-            transform: scale(1.02);
+            transform: scale(0.95);
         }
 
-        .correct-zone {
-            background-color: #d4edda;
-            border-color: #28a745;
-            border-style: solid;
+        .drag-item.correct {
+            background: #2ecc71;
+            border-color: #27ae60;
+            color: white;
+            cursor: default;
         }
 
-        .locked {
-            pointer-events: none; 
-            background-color: #d4edda;
-            border-color: #28a745;
+        .drag-item.incorrect {
+            background: #e74c3c;
+            border-color: #c0392b;
+            color: white;
+            animation: shake 0.3s ease;
         }
 
-        #next-btn {
-            display: none;
+        /* Definition box format inside drop zones */
+        .definition-box {
+            background: #fff;
+            border-left: 5px solid var(--accent);
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #555;
+            text-align: left;
             width: 100%;
-            margin-top: 20px;
-            background-color: var(--primary);
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        #def-pool {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            min-height: 120px;
-            margin-top: 20px;
+        /* Progress & Controls */
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        /* Desktop Layout (side by side when screen space permits) */
+        @media (min-width: 768px) {
+            .pairs-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .drop-zone {
+                flex: 1; /* Assign equal horizontal room */
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
-        <label for="menu-toggle" class="menu-icon">☰</label>
-        <input type="checkbox" id="menu-toggle">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="psych-hub.html">Daily Puzzle</a></li>
-            <li class="dropdown">
-                <a href="#">Study Tools ▾</a>
-                <div class="dropdown-content">
-                    <a href="glossary.html">Glossary</a>
-                    <a href="flashcards.html">Flashcards</a>
-                    <a href="quiz.html">Quiz</a>
-                    <a href="confusingpairs.html">Confusing Pairs</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#">Games ▾</a>
-                <div class="dropdown-content">
-                    <a href="connectionsgame.html">Connections</a>
-                    <a href="boardgame.html">Psych Land</a>
-                    <a href="battleship.html">Cortex Commander</a>
-                    <a href="oddball.html">Oddball</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#">About ▾</a>
-                <div class="dropdown-content">
-                    <a href="about.html">About Me</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <div id="nav-placeholder"></div>
 
-    <div class="container">
-        <h1>⚖️ Confusing Sets</h1>
-        
-        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 600px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-            <strong>Directions:</strong> Closely related vocabulary terms can easily trick you on exam day! Untangle them by dragging each definition block from the bottom pool and dropping it onto its matching psychology term box. Once a set is correctly aligned, it will lock green. Match all definitions in the set to clear it and advance to the next round!
-        </div>
+    <div class="main-content">
+        <div class="container">
+            <div class="game-card">
+                <h1>⚖️ Confusing Pairs</h1>
+                <p>Drag each term into the correct column based on its definition to match the confusing concepts!</p>
 
-        <div style="text-align: center; margin-bottom: 1rem;">
-            <select id="unit-select" onchange="startGame()">
-                <option value="all">All Units</option>
-            </select>
-        </div>
+                <div id="setup-screen">
+                    <h3 style="margin-bottom: 10px;">Select a Unit to Practice:</h3>
+                    <select id="unit-select">
+                        <option value="all">Loading Units...</option>
+                    </select>
+                    <button class="action-btn" style="margin-top: 15px;" onclick="startGame()">Start Game 🚀</button>
+                </div>
 
-        <div class="game-area" style="text-align: left;">
-            <div id="stats" style="text-align: right; color: var(--accent); font-weight: bold; margin-bottom: 10px;">
-                Sets Solved: 0
+                <div id="game-ui" style="display: none;">
+                    <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;" id="progress-text">Pair 1 of X</div>
+                    
+                    <div class="items-pool" id="items-pool" ondragover="allowDrop(event)" ondrop="returnToPool(event)">
+                        </div>
+
+                    <div class="pairs-container" id="pairs-container">
+                        </div>
+
+                    <div class="game-controls">
+                        <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary);" id="score-text">Score: 0</div>
+                        <button class="action-btn" id="next-btn" onclick="nextPair()" disabled>Next Pair ➡️</button>
+                    </div>
+                </div>
+
+                <div id="end-screen" style="display: none; text-align: center;">
+                    <h2>🎉 Unit Complete!</h2>
+                    <p style="font-size: 1.2rem; margin: 15px 0;">You've successfully sorted all confusing pairs for this selection.</p>
+                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent); margin-bottom: 25px;" id="final-score">Final Score: 0</div>
+                    <button class="action-btn" onclick="resetToSetup()">Play Again 🔄</button>
+                </div>
+
             </div>
-
-            <div class="pairs-container" id="zones-container">
-                </div>
-
-            <h4 style="margin-top: 2rem;">Definitions:</h4>
-            <div id="def-pool" ondragover="allowDrop(event)" ondrop="drop(event)">
-                </div>
-
-            <button id="next-btn" onclick="nextPair()">Next Set ➡</button>
         </div>
     </div>
 
     <script>
+        // --- GAME STATE ---
         let allPairs = [];
-        let currentPool = [];
-        let currentSet = null;
-        let solvedCount = 0;
-        let activeZonesCount = 0; 
+        let gamePairs = [];
+        let currentPairIndex = 0;
+        let totalAttempts = 0;
 
-        // 1. Load Data
-        fetch('confusingpairs.json')
-            .then(res => res.json())
-            .then(data => {
-                if(data.confusing_pairs) {
-                    allPairs = data.confusing_pairs;
-                    populateFilters(allPairs);
-                    startGame();
-                } else {
-                    document.getElementById('zones-container').innerHTML = "<h3 style='text-align:center; color: #e74c3c;'>Data Error: Could not find confusing pairs data!</h3>";
-                }
-            })
-            .catch(err => {
-                console.error("Fetch Error:", err);
-                document.getElementById('zones-container').innerHTML = "<h3 style='text-align:center; color: #e74c3c;'>File Error: Could not load confusingpairs.json</h3>";
-            });
+        // Mobile touch tracking variables
+        let touchDragItem = null;
 
-        // Smart dropdown builder that splits comma-separated values
-        function populateFilters(items) {
-            let unitList = [];
+        // --- LOAD EXTERNAL DATA ON PAGE LAUNCH ---
+        window.onload = function() {
+            loadGameData();
+        };
+
+        async function loadGameData() {
+            try {
+                // 1. Fetch confusing pairs content data
+                const pairsResponse = await fetch('confusing_pairs.json');
+                const pairsData = await pairsResponse.json();
+                allPairs = pairsData.confusing_pairs || [];
+
+                // 2. Fetch the master topics list to build the dropdown menu dynamically
+                const topicsResponse = await fetch('topics.json');
+                const topicsData = await topicsResponse.json();
+                
+                populateUnitDropdown(topicsData.topics);
+            } catch (error) {
+                console.error("Error loading configuration data records:", error);
+            }
+        }
+
+        function populateUnitDropdown(topics) {
+            const unitSelect = document.getElementById('unit-select');
+            unitSelect.innerHTML = '<option value="all">All Units</option>';
             
-            items.forEach(i => {
-                if (i.unit) {
-                    // Split units by comma and trim away extra whitespace
-                    const individualUnits = i.unit.toString().split(',').map(u => u.trim());
-                    unitList.push(...individualUnits);
-                }
-            });
-
-            // Keep only unique units and sort them naturally (e.g., 2 before 10)
-            const units = [...new Set(unitList)].sort((a, b) => {
-                return a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'});
-            });
-
-            const select = document.getElementById('unit-select');
-            units.forEach(u => {
-                if (u !== "") {
-                    const opt = document.createElement('option');
-                    opt.value = u;
-                    opt.innerText = u;
-                    select.appendChild(opt);
+            const seenUnits = new Set();
+            topics.forEach(item => {
+                if (!seenUnits.has(item.unit)) {
+                    seenUnits.add(item.unit);
+                    const option = document.createElement('option');
+                    
+                    // Extract just the number/ID part (e.g. "0" from "Unit 0") to match the unit formatting in confusing_pairs.json
+                    const unitValue = item.unit.replace('Unit ', '').trim();
+                    option.value = unitValue;
+                    
+                    option.innerText = `${item.unit}: ${item.unit_title}`;
+                    unitSelect.appendChild(option);
                 }
             });
         }
 
-        // Smart game filter that checks if selected unit exists inside the list
+        // --- GAME INITIALIZATION ---
         function startGame() {
-            const unit = document.getElementById('unit-select').value;
-            if(unit === 'all') {
-                currentPool = [...allPairs];
+            const selectedUnit = document.getElementById('unit-select').value;
+            
+            if (selectedUnit === 'all') {
+                gamePairs = [...allPairs];
             } else {
-                currentPool = allPairs.filter(p => {
+                // Safely handles both single items ("1") and comma-separated multiple unit pairings ("0, 2")
+                gamePairs = allPairs.filter(p => {
                     if (!p.unit) return false;
-                    // Split the array and check if the selected unit matches any item inside
                     const unitsArray = p.unit.toString().split(',').map(u => u.trim());
-                    return unitsArray.includes(unit);
+                    return unitsArray.includes(selectedUnit);
                 });
             }
-            currentPool.sort(() => Math.random() - 0.5);
-            nextPair();
-        }
 
-        // 2. Setup Round
-        function nextPair() {
-            if(currentPool.length === 0) {
-                document.getElementById('zones-container').innerHTML = "<h3 style='text-align:center'>No sets found!</h3>";
+            if (gamePairs.length === 0) {
+                alert("No confusing pairs recorded for this specific selection yet!");
                 return;
             }
 
-            document.getElementById('next-btn').style.display = 'none';
-            const zonesContainer = document.getElementById('zones-container');
-            zonesContainer.innerHTML = ''; 
-            const pool = document.getElementById('def-pool');
-            pool.innerHTML = '';
+            gamePairs.sort(() => Math.random() - 0.5);
 
-            currentSet = currentPool[Math.floor(Math.random() * currentPool.length)];
+            currentPairIndex = 0;
+            totalAttempts = 0;
 
-            let items = [
-                { term: currentSet.term_1, def: currentSet.definition_1, id: "def_1" },
-                { term: currentSet.term_2, def: currentSet.definition_2, id: "def_2" }
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('end-screen').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'block';
+
+            loadCurrentPair();
+        }
+
+        function loadCurrentPair() {
+            const pair = gamePairs[currentPairIndex];
+            document.getElementById('progress-text').innerText = `Pair ${currentPairIndex + 1} of ${gamePairs.length}`;
+            document.getElementById('score-text').innerText = `Mistakes: ${totalAttempts}`;
+            document.getElementById('next-btn').disabled = true;
+
+            const poolContainer = document.getElementById('items-pool');
+            const boardContainer = document.getElementById('pairs-container');
+            
+            poolContainer.innerHTML = '';
+            boardContainer.innerHTML = '';
+
+            let columnsData = [
+                { term: pair.term_1, def: pair.definition_1, id: "1" },
+                { term: pair.term_2, def: pair.definition_2, id: "2" }
             ];
-
-            if (currentSet.term_3 && currentSet.term_3.trim() !== "") {
-                items.push({ 
-                    term: currentSet.term_3, 
-                    def: currentSet.definition_3, 
-                    id: "def_3" 
-                });
+            if (pair.term_3 && pair.term_3.trim() !== "") {
+                columnsData.push({ term: pair.term_3, def: pair.definition_3, id: "3" });
             }
 
-            activeZonesCount = items.length;
-
-            items.forEach((item, index) => {
+            columnsData.forEach(col => {
                 const zone = document.createElement('div');
                 zone.className = 'drop-zone';
-                zone.dataset.correctId = item.id; 
+                zone.id = `zone-${col.id}`;
+                zone.setAttribute('data-expected', col.id);
                 zone.ondragover = allowDrop;
-                zone.ondrop = drop;
-                
-                const h3 = document.createElement('h3');
-                h3.innerText = item.term;
-                zone.appendChild(h3);
+                zone.ondragleave = dragLeave;
+                zone.ondrop = handleDrop;
 
-                zonesContainer.appendChild(zone);
+                zone.innerHTML = `<h3>Concept Slot</h3><div class="definition-box">${col.def}</div>`;
+                boardContainer.appendChild(zone);
             });
 
-            let shuffledItems = [...items].sort(() => Math.random() - 0.5);
+            let itemsToSpawn = [...columnsData].sort(() => Math.random() - 0.5);
+            itemsToSpawn.forEach(item => {
+                const dragNode = document.createElement('div');
+                dragNode.className = 'drag-item';
+                dragNode.draggable = true;
+                dragNode.id = `term-${item.id}`;
+                dragNode.innerText = item.term;
+                dragNode.setAttribute('data-target-zone', item.id);
+                
+                dragNode.ondragstart = dragStart;
 
-            shuffledItems.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'draggable';
-                div.draggable = true;
-                div.innerText = item.def;
-                div.id = item.id;
-                
-                div.ondragstart = drag;
-                div.addEventListener('touchstart', handleTouchStart, {passive: false});
-                div.addEventListener('touchmove', handleTouchMove, {passive: false});
-                div.addEventListener('touchend', handleTouchEnd);
-                
-                pool.appendChild(div);
+                dragNode.addEventListener('touchstart', handleTouchStart, {passive: false});
+                dragNode.addEventListener('touchmove', handleTouchMove, {passive: false});
+                dragNode.addEventListener('touchend', handleTouchEnd, {passive: false});
+
+                poolContainer.appendChild(dragNode);
             });
         }
 
-        // --- Drag and Drop Logic ---
-        function allowDrop(ev) { ev.preventDefault(); }
-        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-        function drop(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            const draggedElement = document.getElementById(data);
-            handleDropLogic(draggedElement, ev.target);
+        // --- DRAG AND DROP ENGINE CORE ---
+        function dragStart(e) {
+            e.dataTransfer.setData("text/plain", e.target.id);
         }
 
-        function handleDropLogic(element, target) {
-            if(!target.classList.contains('drop-zone')) {
-                target = target.closest('.drop-zone');
+        function allowDrop(e) {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('drop-zone')) {
+                e.currentTarget.classList.add('drag-over');
             }
-            if(!target) return; 
+        }
 
-            const correctId = target.dataset.correctId;
+        function dragLeave(e) {
+            e.currentTarget.classList.remove('drag-over');
+        }
+
+        function returnToPool(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData("text/plain");
+            const item = document.getElementById(id);
+            if (item && !item.classList.contains('correct')) {
+                document.getElementById('items-pool').appendChild(item);
+                item.className = "drag-item";
+            }
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const zone = e.currentTarget;
+            zone.classList.remove('drag-over');
+
+            const id = e.dataTransfer.getData("text/plain");
+            const item = document.getElementById(id);
             
-            if(element.id === correctId) {
-                target.appendChild(element); 
-                element.classList.add('locked'); 
-                element.draggable = false;
-                target.classList.add('correct-zone');
-                checkWin();
+            if(!item) return;
+            handleDropLogic(item, zone);
+        }
+
+        function handleDropLogic(item, zone) {
+            const actualZone = zone.closest('.drop-zone');
+            if (!actualZone) return;
+
+            const expectedId = actualZone.getAttribute('data-expected');
+            const itemTargetId = item.getAttribute('data-target-zone');
+
+            if (expectedId === itemTargetId) {
+                actualZone.appendChild(item);
+                item.className = "drag-item correct";
+                item.draggable = false;
+                item.onclick = null; 
+                checkBoardCompletion();
+            } else {
+                totalAttempts++;
+                document.getElementById('score-text').innerText = `Mistakes: ${totalAttempts}`;
+                
+                item.classList.add('incorrect');
+                setTimeout(() => {
+                    item.classList.remove('incorrect');
+                }, 4000);
             }
         }
 
-        function checkWin() {
-            const correctZones = document.querySelectorAll('.correct-zone').length;
+        function checkBoardCompletion() {
+            const pool = document.getElementById('items-pool');
+            const remainingItems = pool.querySelectorAll('.drag-item');
             
-            if(correctZones === activeZonesCount) {
-                solvedCount++;
-                document.getElementById('stats').innerText = `Sets Solved: ${solvedCount}`;
-                document.getElementById('next-btn').style.display = 'block';
+            if (remainingItems.length === 0) {
+                document.getElementById('next-btn').disabled = false;
             }
         }
 
-        // --- Mobile Touch Logic ---
-        let touchDragItem = null;
+        function nextPair() {
+            if (currentPairIndex < gamePairs.length - 1) {
+                currentPairIndex++;
+                loadCurrentPair();
+            } else {
+                document.getElementById('game-ui').style.display = 'none';
+                document.getElementById('end-screen').style.display = 'block';
+                document.getElementById('final-score').innerText = `Total Mistakes: ${totalAttempts}`;
+            }
+        }
 
+        function resetToSetup() {
+            document.getElementById('end-screen').style.display = 'none';
+            document.getElementById('setup-screen').style.display = 'block';
+        }
+
+        // --- MOBILE TOUCH SCREEN ENGINE COMPATIBILITY WRAPPERS ---
         function handleTouchStart(e) {
-            touchDragItem = e.target;
-            touchDragItem.style.opacity = '0.5';
+            if (this.classList.contains('correct')) return;
+            touchDragItem = this;
+            this.style.position = 'absolute';
+            this.style.zIndex = '1000';
+            moveAt(e.touches[0]);
+
+            function moveAt(touch) {
+                touchDragItem.style.left = touch.pageX - touchDragItem.offsetWidth / 2 + 'px';
+                touchDragItem.style.top = touch.pageY - touchDragItem.offsetHeight / 2 + 'px';
+            }
         }
 
+        // Lock document scrolling on mobile devices during active drag operation
         function handleTouchMove(e) {
+            if (!touchDragItem) return;
             e.preventDefault(); 
-            const touch = e.touches[0];
-            touchDragItem.style.position = 'absolute';
-            touchDragItem.style.zIndex = '1000';
-            touchDragItem.style.left = touch.clientX - 50 + 'px';
-            touchDragItem.style.top = touch.clientY - 50 + 'px';
+            touchDragItem.style.left = e.touches[0].pageX - touchDragItem.offsetWidth / 2 + 'px';
+            touchDragItem.style.top = e.touches[0].pageY - touchDragItem.offsetHeight / 2 + 'px';
         }
 
         function handleTouchEnd(e) {
-            touchDragItem.style.opacity = '1';
+            if (!touchDragItem) return;
+
             touchDragItem.style.position = 'static';
             touchDragItem.style.zIndex = '1';
             
@@ -366,10 +449,8 @@
             <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
         </p>
         
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="psychreviewhub" data-color="#FF5F7E" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
-
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 </html>
