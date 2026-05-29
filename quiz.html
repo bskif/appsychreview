@@ -302,16 +302,34 @@
         })
         .catch(error => console.error('Error fetching data:', error));
 
-        // --- FILTER LOGIC ---
+        // --- FILTER LOGIC (Updated to build from topics.json) ---
         function populateUnitDropdown() {
-            const units = [...new Set(allQuestions.map(q => q.unit))].sort();
             const select = document.getElementById('unit-select');
+            const uniqueUnits = {};
             
-            units.forEach(unit => {
-                if(!unit) return;
+            // Extract unique units and descriptive titles directly from topics.json
+            allTopics.forEach(item => {
+                if (item.unit) {
+                    if (!uniqueUnits[item.unit]) {
+                        uniqueUnits[item.unit] = {
+                            value: item.unit,
+                            text: item.unit_title ? `${item.unit}: ${item.unit_title}` : item.unit
+                        };
+                    }
+                }
+            });
+
+            // Sort unit keys sequentially (e.g. Unit 0, Unit 1...)
+            const sortedUnitKeys = Object.keys(uniqueUnits).sort((a, b) => {
+                const numA = parseInt(a.replace(/\D/g, '')) || 0;
+                const numB = parseInt(b.replace(/\D/g, '')) || 0;
+                return numA - numB;
+            });
+
+            sortedUnitKeys.forEach(key => {
                 const option = document.createElement('option');
-                option.value = unit;
-                option.textContent = unit;
+                option.value = uniqueUnits[key].value;
+                option.textContent = uniqueUnits[key].text;
                 select.appendChild(option);
             });
         }
@@ -320,28 +338,31 @@
             const selectedUnit = document.getElementById('unit-select').value;
             const topicSelect = document.getElementById('topic-select');
             
+            // Reset to default
             topicSelect.innerHTML = '<option value="all">All Topics</option>';
 
-            let relevantQuestions = allQuestions;
+            // Filter topics list to find sub-topics belonging to selected unit
+            let relevantTopics = allTopics;
             if (selectedUnit !== 'all') {
-                relevantQuestions = allQuestions.filter(q => q.unit === selectedUnit);
+                relevantTopics = allTopics.filter(t => t.unit === selectedUnit);
             }
 
-            const uniqueTopicIds = [...new Set(relevantQuestions.map(q => q.topic))].sort();
-
-            uniqueTopicIds.forEach(topicId => {
-                if(!topicId) return;
-
-                const topicObj = allTopics.find(t => t.topic_id === topicId);
-                
-                let displayName = topicId; 
-                if(topicObj) {
-                    displayName = `${topicObj.topic_id} ${topicObj.topic_title}`;
+            // Remove duplicates and prepare sorting
+            const uniqueTopicsMap = new Map();
+            relevantTopics.forEach(t => {
+                if (t.topic_id && !uniqueTopicsMap.has(t.topic_id)) {
+                    uniqueTopicsMap.set(t.topic_id, t);
                 }
+            });
 
+            const sortedTopics = Array.from(uniqueTopicsMap.values()).sort((a, b) => {
+                return parseFloat(a.topic_id) - parseFloat(b.topic_id);
+            });
+
+            sortedTopics.forEach(topicObj => {
                 const option = document.createElement('option');
-                option.value = topicId; 
-                option.textContent = displayName;
+                option.value = topicObj.topic_id; 
+                option.textContent = `${topicObj.topic_id} ${topicObj.topic_title}`;
                 topicSelect.appendChild(option);
             });
         }
