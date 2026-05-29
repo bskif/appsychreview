@@ -227,16 +227,34 @@
             document.getElementById('card-def').innerText = "Could not load JSON files.";
         });
 
-        // 2. Populate Dropdowns
+        // 2. Populate Dropdowns (Now fully linked and built from topics.json)
         function populateUnitDropdown() {
-            const units = [...new Set(allTerms.map(t => t.unit))].sort();
             const select = document.getElementById('unit-select');
-            
-            units.forEach(u => {
-                if(!u) return;
+            const uniqueUnits = {};
+
+            // Extract unique units and their descriptive titles directly from topics.json
+            allTopics.forEach(item => {
+                if (item.unit) {
+                    if (!uniqueUnits[item.unit]) {
+                        uniqueUnits[item.unit] = {
+                            value: item.unit,
+                            text: item.unit_title ? `${item.unit}: ${item.unit_title}` : item.unit
+                        };
+                    }
+                }
+            });
+
+            // Sort unit keys logically (e.g. Unit 0, Unit 1...)
+            const sortedUnitKeys = Object.keys(uniqueUnits).sort((a, b) => {
+                const numA = parseInt(a.replace(/\D/g, '')) || 0;
+                const numB = parseInt(b.replace(/\D/g, '')) || 0;
+                return numA - numB;
+            });
+
+            sortedUnitKeys.forEach(key => {
                 const opt = document.createElement('option');
-                opt.value = u;
-                opt.innerText = u;
+                opt.value = uniqueUnits[key].value;
+                opt.innerText = uniqueUnits[key].text;
                 select.appendChild(opt);
             });
         }
@@ -248,34 +266,34 @@
             // Reset to default
             topicSelect.innerHTML = '<option value="all">All Topics</option>';
 
-            // Filter terms to find available topics in this selection
-            let relevantTerms = allTerms;
+            // Filter topics.json to find topics belonging ONLY to the selected unit
+            let relevantTopics = allTopics;
             if(unit !== 'all') {
-                relevantTerms = allTerms.filter(t => t.unit === unit);
+                relevantTopics = allTopics.filter(t => t.unit === unit);
             }
 
-            // Get unique topic IDs from the terms
-            const uniqueTopicIds = [...new Set(relevantTerms.map(t => t.topic))].sort();
-
-            uniqueTopicIds.forEach(id => {
-                if(!id) return;
-                
-                // Lookup Title in allTopics
-                const topicObj = allTopics.find(t => t.topic_id === id);
-                let displayName = id;
-                if(topicObj) {
-                    displayName = `${topicObj.topic_id} ${topicObj.topic_title}`;
+            // Remove any duplicates from the list to be safe, and prepare to sort
+            const uniqueTopicsMap = new Map();
+            relevantTopics.forEach(t => {
+                if (t.topic_id && !uniqueTopicsMap.has(t.topic_id)) {
+                    uniqueTopicsMap.set(t.topic_id, t);
                 }
+            });
 
+            const sortedTopics = Array.from(uniqueTopicsMap.values()).sort((a, b) => {
+                return parseFloat(a.topic_id) - parseFloat(b.topic_id);
+            });
+
+            sortedTopics.forEach(topicObj => {
                 const opt = document.createElement('option');
-                opt.value = id;
-                opt.innerText = displayName;
+                opt.value = topicObj.topic_id;
+                opt.innerText = `${topicObj.topic_id} ${topicObj.topic_title}`;
                 topicSelect.appendChild(opt);
             });
         }
 
         function handleUnitChange() {
-            populateTopicDropdown();
+            populateTopicDropdown(); // Re-link topics dropdown based on new unit
             filterDeck();
         }
 
