@@ -85,9 +85,34 @@
         .cal-loss { background-color: #e74c3c; color: white; border-color: #c0392b; }
         .cal-practice { background-color: #f1c40f; color: #333; border-color: #f39c12; }
         
-        .badge-list { list-style: none; padding: 0; }
-        .badge-list li { padding: 10px; border-bottom: 1px solid #eee; color: #666; }
-        .badge-unlocked { color: var(--primary) !important; font-weight: bold; }
+        /* Trophy Case Grid System */
+        .trophy-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            text-align: center; 
+            margin-top: 20px;
+        }
+        @media(min-width: 600px) { .trophy-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media(min-width: 900px) { .trophy-grid { grid-template-columns: repeat(7, 1fr); } }
+        
+        .badge-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            transition: all 0.4s ease;
+            margin-bottom: 5px;
+        }
+        .badge-locked {
+            filter: grayscale(100%);
+            opacity: 0.3;
+        }
+        .badge-container { display: flex; flex-direction: column; align-items: center; background: transparent; padding: 0; cursor: help;}
+        .badge-title { font-size: 0.85rem; font-weight: bold; color: #2c3e50; }
+        
+        /* Widen the tooltip for badge descriptions */
+        .tooltiptext.badge-tooltip { width: 250px; margin-left: -125px; bottom: 110%; }
+        
     </style>
 </head>
 <body>
@@ -220,11 +245,84 @@
         </div>
 
         <div class="trophy-case">
-            <h2>🏆 Trophy Case (PoC)</h2>
-            <ul class="badge-list">
-                <li id="badge-first">🔒 Absolute Threshold (Play 1 Game)</li>
-                <li id="badge-streak">🔒 Miller's Law (7 Day Streak)</li>
-            </ul>
+            <h2>🏆 Trophy Case</h2>
+            <div class="trophy-grid" id="trophy-grid">
+                
+                <div class="tooltip badge-container">
+                    <img src="images/mlbadge.png" id="badge-millers-law" class="badge-icon badge-locked" alt="Miller's Law">
+                    <div class="badge-title">Miller's Law</div>
+                    <span class="tooltiptext badge-tooltip">Awarded for maintaining a 7-day daily puzzle playing habit. This honors George Miller's discovery that human short-term memory capacity is typically limited to holding 7 ± 2 items at a time.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/ltpbadge.png" id="badge-ltp" class="badge-icon badge-locked" alt="Long-Term Potentiation">
+                    <div class="badge-title">LTP</div>
+                    <span class="tooltiptext badge-tooltip">Unlocked after achieving a massive 14-day daily winning streak. It connects to the neuroscientific process where repetitive cellular activity permanently strengthens the synaptic pathways between neurons.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/crbadge.png" id="badge-cr" class="badge-icon badge-locked" alt="Continuous Reinforcement">
+                    <div class="badge-title">Continuous Reinf.</div>
+                    <span class="tooltiptext badge-tooltip">Awarded for completing a solid month of 30 consecutive days of site activity. This represents B.F. Skinner’s operant conditioning schedule where a target behavior is rewarded every single time it occurs.</span>
+                </div>
+
+                <div class="tooltip badge-container">
+                    <img src="images/atbadge.png" id="badge-at" class="badge-icon badge-locked" alt="Absolute Threshold">
+                    <div class="badge-title">Absolute Threshold</div>
+                    <span class="tooltiptext badge-tooltip">Earned upon reaching your first 50 total accumulated points. It references the psychological boundary where a faint stimulus transitions from imperceptible to actively detectable at least 50% of the time.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/cibadge.png" id="badge-ci" class="badge-icon badge-locked" alt="Crystallized Intelligence">
+                    <div class="badge-title">Crystallized Intel.</div>
+                    <span class="tooltiptext badge-tooltip">Earned upon reaching a cumulative lifetime score of 250 total points. This connects to Raymond Cattell's concept of cognitive knowledge, vocabulary, and skills accumulated through a lifetime.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/sabadge.png" id="badge-sa" class="badge-icon badge-locked" alt="Self-Actualization">
+                    <div class="badge-title">Self-Actualization</div>
+                    <span class="tooltiptext badge-tooltip">Unlocked when you reach the ultimate milestone of 500 total points. It represents the absolute pinnacle of Maslow's Hierarchy of Needs, where an individual fulfills their highest psychological potential.</span>
+                </div>
+
+                <div class="tooltip badge-container">
+                    <img src="images/apbadge.png" id="badge-ap" class="badge-icon badge-locked" alt="Action Potential">
+                    <div class="badge-title">Action Potential</div>
+                    <span class="tooltiptext badge-tooltip">Earned by solving any daily puzzle in under 15 seconds. This rapid processing speed mirrors the brief, all-or-nothing electrical impulse that fires down an axon to transmit neural data.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/autoprocessbadge.png" id="badge-auto" class="badge-icon badge-locked" alt="Automatic Processing">
+                    <div class="badge-title">Automatic Process</div>
+                    <span class="tooltiptext badge-tooltip">Earned by accumulating 10 speed bonuses over your historical gameplay. This references the cognitive phenomenon of effortlessly and unconsciously encoding everyday information without active mental strain.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/dpbadge.png" id="badge-dp" class="badge-icon badge-locked" alt="Distributed Practice">
+                    <div class="badge-title">Distributed Practice</div>
+                    <span class="tooltiptext badge-tooltip">Awarded for playing an archive game on the same day you complete a daily challenge. This utilizes the spacing effect, a proven learning principle showing that breaking up practice over time vastly improves retention.</span>
+                </div>
+
+                <div class="tooltip badge-container">
+                    <img src="images/bcbadge.png" id="badge-bc" class="badge-icon badge-locked" alt="Broca's Champion">
+                    <div class="badge-title">Broca's Champion</div>
+                    <span class="tooltiptext badge-tooltip">Earned by successfully solving an Anagram Scramble puzzle of 10 or more letters without making a mistake. It honors Broca's area, dedicated to language assembly and fluent speech production.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/sdbadge.png" id="badge-sd" class="badge-icon badge-locked" alt="Signal Detection">
+                    <div class="badge-title">Signal Detection</div>
+                    <span class="tooltiptext badge-tooltip">Earned by correctly solving a Fact or Fiction puzzle in 2 seconds or less. This connects to Signal Detection Theory, which explains how the mind separates meaningful target stimuli from confusing background noise.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/pgbadge.png" id="badge-pg" class="badge-icon badge-locked" alt="Phineas Gage">
+                    <div class="badge-title">Phineas Gage</div>
+                    <span class="tooltiptext badge-tooltip">Awarded for winning a game of Psych-Man while down to your very last remaining brain part. This commemorates psychology's most famous medical history anomaly regarding frontal lobe damage.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/selectattentionbadge.png" id="badge-sa-attn" class="badge-icon badge-locked" alt="Selective Attention">
+                    <div class="badge-title">Selective Attention</div>
+                    <span class="tooltiptext badge-tooltip">Earned by correctly solving a Distractor puzzle in 2 seconds or less. This represents the mental faculty required to lock onto a single stream of information while filtering out irrelevant environmental noise.</span>
+                </div>
+                <div class="tooltip badge-container">
+                    <img src="images/hhbadge.png" id="badge-hh" class="badge-icon badge-locked" alt="Hippocampal Hero">
+                    <div class="badge-title">Hippocampal Hero</div>
+                    <span class="tooltiptext badge-tooltip">Earned by completing a game of Synapse Snap with one or fewer mismatched flips. It is named after the hippocampus, the critical brain structure responsible for processing explicit long-term memories.</span>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -247,7 +345,6 @@
             let points = localStorage.getItem('psychPoints') || 0;
             let streak = localStorage.getItem('psychStreak') || 0;
             let lastPlayed = localStorage.getItem('psychLastPlayed') || "";
-            let totalWins = localStorage.getItem('psychTotalWins') || 0;
             let bestTime = localStorage.getItem('psychBestTime'); 
 
             document.getElementById('hub-points').innerText = points;
@@ -268,14 +365,12 @@
                 document.getElementById('played-message').style.display = 'block';
             }
 
-            if (totalWins >= 1) {
-                document.getElementById('badge-first').innerHTML = "✅ Absolute Threshold (Unlocked!)";
-                document.getElementById('badge-first').classList.add('badge-unlocked');
-            }
-            if (streak >= 7) {
-                document.getElementById('badge-streak').innerHTML = "✅ Miller's Law (Unlocked!)";
-                document.getElementById('badge-streak').classList.add('badge-unlocked');
-            }
+            // Unlock Badges Visually
+            let unlockedBadges = JSON.parse(localStorage.getItem('psychBadges')) || [];
+            unlockedBadges.forEach(badgeId => {
+                let img = document.getElementById(badgeId);
+                if(img) img.classList.remove('badge-locked');
+            });
             
             renderCalendar();
         }
