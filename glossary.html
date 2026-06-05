@@ -326,6 +326,7 @@
             
             if (selUnit === 'all') {
                 topicSelect.disabled = true; // Lock topics if no unit is chosen
+                window.scrollTo({top: 0, behavior: 'smooth'});
             } else {
                 topicSelect.disabled = false; // Unlock and populate
                 const unitTopics = allTopics.filter(t => t.unit === selUnit);
@@ -335,16 +336,30 @@
                     option.innerText = `${t.topic_id} - ${t.topic_title}`;
                     topicSelect.appendChild(option);
                 });
+                
+                // Clear search input so terms aren't accidentally hidden when jumping
+                document.getElementById('search-bar').value = '';
+                filterGlossary(); 
+                
+                // Jump to the Unit section
+                const unitIdSafe = selUnit.replace(/\s+/g, '-');
+                // Use a tiny timeout to guarantee DOM is visible before calculating scroll height
+                setTimeout(() => jumpToSection('sec-' + unitIdSafe), 50);
             }
-            
-            // Clear text search when interacting with filters
-            document.getElementById('search-bar').value = '';
-            renderGlossary();
         }
 
         function onTopicFilterChange() {
-            document.getElementById('search-bar').value = '';
-            renderGlossary();
+            const selTopic = document.getElementById('topic-filter').value;
+            
+            if (selTopic !== 'all') {
+                // Clear search input so terms aren't accidentally hidden when jumping
+                document.getElementById('search-bar').value = '';
+                filterGlossary(); 
+                
+                // Jump to the Topic section
+                const topicIdSafe = selTopic.replace(/[^a-zA-Z0-9]/g, '-');
+                setTimeout(() => jumpToSection('sec-topic-' + topicIdSafe), 50);
+            }
         }
 
         // 3. Toggle Sort Mode UI
@@ -373,6 +388,11 @@
                 btnAlpha.style.color = '#333';
                 jumpContainer.style.display = 'none';
                 dropdownContainer.style.display = 'flex';
+                
+                // Reset dropdowns to default when toggling views
+                document.getElementById('unit-filter').value = 'all';
+                document.getElementById('topic-filter').innerHTML = '<option value="all">Select Topic...</option>';
+                document.getElementById('topic-filter').disabled = true;
             }
             
             // Clear search bar on toggle for a fresh view
@@ -426,18 +446,11 @@
 
             // --- UNIT & TOPIC VIEW ---
             } else {
-                const selUnit = document.getElementById('unit-filter').value;
-                const selTopic = document.getElementById('topic-filter').value;
-
-                // Group by Unit -> Topic
+                // Group ALL terms by Unit -> Topic (No longer filtering out sections here)
                 const grouped = {};
                 allTerms.forEach(t => {
                     const u = t.unit || 'Other';
                     const top = t.topic || 'General';
-                    
-                    // Filter logic applies here dynamically
-                    if (selUnit !== 'all' && u !== selUnit) return;
-                    if (selTopic !== 'all' && top !== selTopic) return;
 
                     if(!grouped[u]) grouped[u] = {};
                     if(!grouped[u][top]) grouped[u][top] = [];
@@ -447,7 +460,7 @@
                 const sortedUnits = Object.keys(grouped).sort();
                 
                 if (sortedUnits.length === 0) {
-                     content.innerHTML = "<h3 style='color:#777; margin-top:30px;'>No terms found for this selection.</h3>";
+                     content.innerHTML = "<h3 style='color:#777; margin-top:30px;'>No terms found in database.</h3>";
                      return;
                 }
 
@@ -475,6 +488,10 @@
                     Object.keys(grouped[unit]).sort().forEach(topic => {
                         const topicSec = document.createElement('div');
                         topicSec.className = 'topic-section';
+                        
+                        // Create a safe ID to jump to for the topic
+                        const topicIdSafe = topic.replace(/[^a-zA-Z0-9]/g, '-');
+                        topicSec.id = 'sec-topic-' + topicIdSafe;
                         
                         let topicTitle = topic;
                         if (allTopics && allTopics.length > 0) {
