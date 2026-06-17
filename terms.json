@@ -509,7 +509,7 @@
       "unit": "Unit 0",
       "topic": "0.6",
       "term": "Behavioral Perspective",
-      "definition": "The scientific study of observable behavior, and its explanation by principles of learning (e.g., conditioning, reinforcement)."
+      "definition": "A psychological approach that focuses on observable behaviors and the ways they are learned and shaped through interactions with the environment, especially through conditioning and reinforcement."
     },
     {
       "id": "74",
@@ -3988,1302 +3988,1211 @@
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Altruism",
-      "definition": "Unselfish concern for the welfare of others."
-    },
-    {
-      "id": "571",
-      "unit": "Unit 4",
-      "topic": "4.3",
-      "term": "Attentional variables",
-      "definition": "Factors that determine which parts of a situation a person focuses on."
-    },
-    {
-      "id": "572",
-      "unit": "Unit 4",
-      "topic": "4.3",
-      "term": "Burnout",
-      "definition": "Physical, mental, and emotional exhaustion caused by prolonged stress."
+      "definition": "Helping behavior motivated by a genuine desire to benefit another person without expecting personal gain or reward."
     },
     {
       "id": "573",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Bystander effect",
-      "definition": "The finding that a person is less likely to help when others are present."
+      "term": "Bystander Effect",
+      "definition": "The tendency for individuals to be less likely to help someone in need when other people are present."
     },
     {
       "id": "574",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Central Route to Persuasion",
-      "definition": "Persuasion focusing on logic, facts, and the content of the message."
+      "definition": "A method of persuasion in which people carefully analyze and think about the quality of the arguments being presented before forming an attitude or making a decision."
     },
     {
       "id": "575",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Collectivism",
-      "definition": "Prioritizing group goals and identity over personal ones."
+      "definition": "A cultural orientation that emphasizes group goals, cooperation, and the needs of the community or family over individual desires."
     },
     {
       "id": "576",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Conformity",
-      "definition": "Adjusting behavior or thinking to match a group standard."
+      "definition": "The act of changing one’s behavior, attitudes, or beliefs to match those of a group or social norm."
     },
     {
       "id": "577",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Deindividuation",
-      "definition": "The loss of self-awareness and self-restraint in anonymous group situations."
+      "definition": "A state in which individuals lose self-awareness and personal accountability in a group, making them more likely to act in ways they normally would not."
     },
     {
       "id": "578",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Diffusion of responsibility",
-      "definition": "Feeling less responsible for taking action when others are present."
+      "term": "Diffusion of Responsibility",
+      "definition": "The tendency for individuals to feel less personally responsible for taking action when other people are present."
     },
     {
       "id": "579",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Door-in-the-face technique",
-      "definition": "Following an initial large, rejected request with a smaller, more reasonable one."
+      "term": "Door-in-the-Face Technique",
+      "definition": "A persuasion strategy in which a large request is made first and likely rejected, followed by a smaller request that is more likely to be accepted."
     },
     {
       "id": "580",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "False consensus effect",
-      "definition": "Overestimating the degree to which others share our beliefs and behaviors."
+      "term": "False Consensus Effect",
+      "definition": "The tendency to overestimate how much other people share our beliefs, attitudes, values, and behaviors."
     },
     {
       "id": "581",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Foot-in-the-door technique",
-      "definition": "Getting someone to agree to a large request by first getting them to agree to a small one."
+      "term": "Foot-in-the-Door Technique",
+      "definition": "A persuasion strategy in which a person first agrees to a small request, making them more likely to agree to a larger related request later."
     },
     {
       "id": "582",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Group polarization",
-      "definition": "The tendency for a group's existing beliefs to strengthen after discussion."
+      "term": "Group Polarization",
+      "definition": "The tendency for group discussion to strengthen the initial attitudes of group members, leading them to make more extreme decisions or judgments than they would individually."
     },
     {
       "id": "583",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Groupthink",
-      "definition": "When the desire for group harmony overrides realistic appraisal of alternatives."
+      "definition": "A phenomenon in which a desire for group harmony and conformity leads members to suppress dissenting opinions and make flawed or irrational decisions."
     },
     {
       "id": "584",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Halo effect",
-      "definition": "When our overall positive impression of a person influences our feelings about their specific traits."
+      "term": "Halo Effect",
+      "definition": "A cognitive bias in which an overall positive impression of a person influences perceptions of their other traits, leading to overly favorable judgments."
     },
     {
       "id": "585",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Individualism",
-      "definition": "Prioritizing personal goals and identity over group goals."
+      "definition": "A cultural orientation that emphasizes personal independence, individual goals, and self-reliance over group goals or social obligations."
     },
     {
       "id": "586",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Industrial-organizational (I/O) psychologists",
-      "definition": "Psychologists who apply psychological principles to the workplace."
+      "term": "Industrial-Organizational Psychologists",
+      "definition": "Psychologists who study behavior in workplaces to improve employee productivity, selection, training, and overall organizational effectiveness."
     },
     {
       "id": "587",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Informational social influence",
-      "definition": "Conforming because we believe others have more accurate information."
+      "term": "Informational Social Influence",
+      "definition": "The tendency to conform because we believe others have accurate information, especially in ambiguous or uncertain situations."
     },
     {
       "id": "588",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Multiculturalism",
-      "definition": "The presence of several distinct cultural groups within a society."
+      "definition": "The recognition, acceptance, and appreciation of cultural diversity within a society, along with the belief that different cultural perspectives should be respected and valued."
     },
     {
       "id": "589",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Normative social influence",
-      "definition": "Conforming to gain approval or avoid being disliked by a group."
+      "term": "Normative Social Influence",
+      "definition": "The tendency to conform in order to be liked, accepted, or approved of by others, even if we do not privately agree with the group."
     },
     {
       "id": "590",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Obedience",
-      "definition": "Changing behavior in response to a direct order from an authority figure."
+      "definition": "A form of social influence in which individuals follow direct commands or orders from an authority figure."
     },
     {
       "id": "591",
       "unit": "Unit 4",
       "topic": "4.3",
       "term": "Peripheral Route to Persuasion",
-      "definition": "Persuasion based on incidental cues like attractiveness or celebrity endorsement."
+      "definition": "A method of persuasion in which people are influenced by superficial cues such as attractiveness, emotion, or credibility of the source rather than the quality of the arguments."
     },
     {
       "id": "592",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Prosocial behavior",
-      "definition": "Any action intended to help others."
-    },
-    {
-      "id": "593",
-      "unit": "Unit 4",
-      "topic": "4.3",
-      "term": "Situational variables",
-      "definition": "Environmental factors that influence how a person reacts in a social setting."
+      "term": "Prosocial Behavior",
+      "definition": "oluntary actions intended to benefit others, such as helping, sharing, or cooperating."
     },
     {
       "id": "594",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social debt",
-      "definition": "The feeling of being obligated to return a favor or service."
+      "term": "Social Debt",
+      "definition": "A psychological feeling of obligation to return a favor or repay someone after receiving help or a benefit, often influencing future behavior in social interactions."
     },
     {
       "id": "595",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social facilitation",
-      "definition": "Improved performance on simple or well-learned tasks when others are watching."
+      "term": "Social Facilitation",
+      "definition": "The tendency for people to perform better on simple or well-practiced tasks when others are present, but worse on difficult or unfamiliar tasks."
     },
     {
       "id": "596",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social influence theory",
-      "definition": "The study of how individuals' thoughts and behaviors are influenced by others."
+      "term": "Social Influence Theory",
+      "definition": "A theory that explains how individuals’ thoughts, feelings, and behaviors are shaped by the real or imagined presence of others through processes such as conformity, obedience, and persuasion."
     },
     {
       "id": "597",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social loafing",
-      "definition": "Exerting less effort when working in a group than when working alone."
+      "term": "Social Loafing",
+      "definition": "The tendency for individuals to put in less effort when working in a group compared to when working alone, especially when individual contributions are not easily identified."
     },
     {
       "id": "598",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social norms",
-      "definition": "Understood rules for accepted and expected behavior in a group."
+      "term": "Social Norms",
+      "definition": "Unwritten rules and expectations about how people should behave in specific situations or within a group."
     },
     {
       "id": "599",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social reciprocity norm",
-      "definition": "The expectation that people will help those who have helped them."
+      "term": "Social Reciprocity Norm",
+      "definition": "The expectation that people should respond to positive actions with positive actions, such as returning favors, kindness, or help received from others."
     },
     {
       "id": "600",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social responsibility norm",
-      "definition": "The expectation that people will help those who are dependent on them."
+      "term": "Social Responsibility Norm",
+      "definition": "The expectation that people should help those who are in need or dependent on others, even when there is no obvious personal benefit for doing so."
     },
     {
       "id": "601",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Social traps",
-      "definition": "Situations where individuals' self-interest leads to mutually destructive behavior."
+      "term": "Social Traps",
+      "definition": "Situations in which actions that benefit individuals in the short term lead to negative consequences for the group or society in the long term."
     },
     {
       "id": "602",
       "unit": "Unit 4",
       "topic": "4.3",
-      "term": "Superordinate goals",
-      "definition": "Shared goals that override differences and require cooperation."
+      "term": "Superordinate Goals",
+      "definition": "Shared goals that require cooperation between groups to achieve, often reducing conflict and increasing positive relationships among group members."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "term": "Spotlight Effect",
+      "definition": "The tendency to overestimate how much other people notice and pay attention to our appearance, actions, or mistakes."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "term": "Social Inhibition",
+      "definition": "The tendency for the presence of others to reduce performance on difficult, complex, or unfamiliar tasks."
     },
     {
       "id": "603",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Denial",
-      "definition": "Refusing to believe or even perceive painful realities."
+      "definition": "A defense mechanism in which a person refuses to acknowledge or accept a painful reality, thought, or feeling."
     },
     {
       "id": "604",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Displacement",
-      "definition": "Shifting aggressive impulses toward a less threatening object or person."
-    },
-    {
-      "id": "605",
-      "unit": "Unit 4",
-      "topic": "4.4",
-      "term": "Ego defense mechanisms",
-      "definition": "Unconscious tactics that reduce anxiety by distorting reality."
+      "definition": "A defense mechanism in which a person redirects emotions, especially frustration or anger, from the original source to a safer or less threatening target."
     },
     {
       "id": "606",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Humanistic psychology",
-      "definition": "Focuses on personal growth, free will, and self-actualization."
-    },
-    {
-      "id": "607",
-      "unit": "Unit 4",
-      "topic": "4.4",
-      "term": "Preconscious mind",
-      "definition": "Information that is not currently conscious but can be easily recalled."
+      "term": "Humanistic Psychology",
+      "definition": "A perspective that emphasizes human potential, free will, and the natural drive toward growth, self-actualization, and personal fulfillment."
     },
     {
       "id": "608",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Projection",
-      "definition": "Attributing one's own threatening impulses to others."
+      "definition": "A defense mechanism in which a person attributes their own unacceptable thoughts, feelings, or motives to another person."
     },
     {
       "id": "609",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Projective tests",
-      "definition": "Personality tests using ambiguous stimuli to reveal inner dynamics."
+      "term": "Projective Tests",
+      "definition": "Personality assessments that present ambiguous stimuli, such as images or words, and require individuals to interpret them, revealing unconscious thoughts and feelings."
     },
     {
       "id": "610",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Psychodynamic theory",
-      "definition": "Focuses on the unconscious mind and childhood experiences in shaping personality."
+      "term": "Psychodynamic Theory",
+      "definition": "A psychological perspective that emphasizes unconscious drives, early childhood experiences, and internal conflicts as key influences on behavior and personality."
     },
     {
       "id": "611",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Rationalization",
-      "definition": "Creating self-justifying explanations to hide real reasons for actions."
+      "definition": "A defense mechanism in which a person creates logical or socially acceptable explanations for behaviors or events that are actually driven by unconscious or unacceptable motives"
     },
     {
       "id": "612",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Reaction formation",
-      "definition": "Switching unacceptable impulses into their opposites."
+      "term": "Reaction Formation",
+      "definition": "A defense mechanism in which a person behaves in a way that is opposite to their true feelings or impulses in order to hide them from themselves or others."
     },
     {
       "id": "613",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Regression",
-      "definition": "Retreating to a more infantile or comfortable stage of development."
+      "definition": "A defense mechanism in which a person reverts to earlier, more childlike patterns of behavior when faced with stress or anxiety."
     },
     {
       "id": "614",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Repression",
-      "definition": "Banishing anxiety-arousing thoughts and memories from consciousness."
+      "definition": "A defense mechanism in which distressing thoughts, memories, or impulses are unconsciously pushed out of conscious awareness."
     },
     {
       "id": "615",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Self-actualizing tendency",
-      "definition": "The innate drive to maintain and enhance the human organism."
+      "term": "Self-Actualizing Tendency",
+      "definition": "According to humanistic psychology, the innate drive to grow, develop, and reach one’s full potential."
     },
     {
       "id": "616",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Sublimation",
-      "definition": "Channeling unacceptable impulses into socially acceptable activities."
+      "definition": "A defense mechanism in which socially unacceptable impulses are redirected into socially acceptable or productive activities."
     },
     {
       "id": "617",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Unconditional regard",
-      "definition": "Total acceptance toward another person."
+      "term": "Unconditional Positive Regard",
+      "definition": "According to Carl Rogers, accepting and valuing a person without judgment or conditions, regardless of their behavior or feelings."
     },
     {
       "id": "618",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Unconscious mind",
-      "definition": "A reservoir of mostly unacceptable thoughts, wishes, and feelings."
+      "term": "Id",
+      "definition": "The primitive and unconscious part of personality that operates on the pleasure principle, seeking immediate gratification of basic drives and desires."
     },
     {
       "id": "619",
       "unit": "Unit 4",
       "topic": "4.4",
-      "term": "Unconscious processes",
-      "definition": "Mental activities below the level of conscious awareness that influence behavior."
+      "term": "Ego",
+      "definition": "The rational part of personality that operates on the reality principle, balancing the demands of the id, superego, and the real world."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Superego",
+      "definition": "The part of personality that represents internalized moral standards and ideals, guiding behavior according to a sense of right and wrong."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Conscious",
+      "definition": "The level of awareness that contains thoughts, perceptions, and feelings that a person is actively aware of at a given moment."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Preconscious",
+      "definition": "The level of awareness containing information that is not currently in conscious thought but can be easily brought into awareness when needed."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Unconscious",
+      "definition": "In Freud’s theory, the part of the mind that contains thoughts, memories, desires, and conflicts that are outside of conscious awareness but still influence behavior."
     },
     {
       "id": "620",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Agreeableness",
-      "definition": "Trait characterized by being cooperative, trustworthy, and good-natured."
-    },
-    {
-      "id": "621",
-      "unit": "Unit 4",
-      "topic": "4.5",
-      "term": "Big Five theory",
-      "definition": "A model consisting of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism."
+      "definition": "A personality trait in the Big Five model that reflects how cooperative, compassionate, trusting, and friendly a person is toward others."
     },
     {
       "id": "622",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Conscientiousness",
-      "definition": "Trait characterized by organization, responsibility, and discipline."
+      "definition": "A Big Five personality trait that reflects how organized, responsible, dependable, and goal-oriented a person is."
     },
     {
       "id": "623",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Emotional Stability",
-      "definition": "The degree to which one is calm, secure, and self-satisfied (low Neuroticism)."
+      "term": "Neuroticism",
+      "definition": "A Big Five personality trait that reflects emotional instability and the tendency to experience anxiety, moodiness, sadness, and negative emotions."
     },
     {
       "id": "624",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Extraversion",
-      "definition": "Trait characterized by sociability, energy, and talkativeness."
+      "definition": "A Big Five personality trait that reflects sociability, assertiveness, talkativeness, and a tendency to gain energy from interacting with others."
     },
     {
       "id": "625",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Factor analysis",
-      "definition": "A statistical procedure used to identify clusters of related personality items."
+      "term": "Factor Analysis",
+      "definition": "A statistical method used to identify clusters of related variables, helping psychologists discover underlying traits (such as personality factors) that explain patterns in data."
     },
     {
       "id": "626",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Openness to experience",
-      "definition": "Trait characterized by curiosity, imagination, and independence."
-    },
-    {
-      "id": "627",
-      "unit": "Unit 4",
-      "topic": "4.5",
-      "term": "Personality inventories",
-      "definition": "Questionnaires designed to gauge a wide range of feelings and behaviors."
+      "term": "Openness to Experience",
+      "definition": "A Big Five personality trait that reflects curiosity, creativity, imagination, and a willingness to try new ideas and experiences."
     },
     {
       "id": "628",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Reciprocal determinism",
-      "definition": "The interacting influences of behavior, internal cognition, and environment."
+      "term": "Reciprocal Determinism",
+      "definition": "The idea that a person’s behavior is shaped by the interaction between their thoughts, their environment, and their actions, and each of these factors also influences the others."
     },
     {
       "id": "629",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Self-concept",
-      "definition": "All our thoughts and feelings about ourselves in answer to Who am I?"
+      "term": "Self-Concept",
+      "definition": "An individual’s overall understanding and perception of themselves, including beliefs about their abilities, traits, and identity."
     },
     {
       "id": "630",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Self-efficacy",
-      "definition": "One's belief in their ability to succeed in a specific task."
+      "term": "Self-Efficacy",
+      "definition": "A person’s belief in their ability to successfully perform a specific task or handle a particular situation."
     },
     {
       "id": "631",
       "unit": "Unit 4",
       "topic": "4.5",
-      "term": "Self-esteem",
-      "definition": "One's overall sense of self-worth or value."
-    },
-    {
-      "id": "632",
-      "unit": "Unit 4",
-      "topic": "4.5",
-      "term": "Social-cognitive theory",
-      "definition": "Behavior is influenced by the interaction between traits and social context."
-    },
-    {
-      "id": "633",
-      "unit": "Unit 4",
-      "topic": "4.5",
-      "term": "Trait theories",
-      "definition": "Descriptions of personality based on stable and enduring behavior patterns."
+      "term": "Self-Esteem",
+      "definition": "A person’s overall sense of self-worth or personal value."
     },
     {
       "id": "634",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Adventure seeking",
-      "definition": "Seeking excitement through travel or non-dangerous novel experiences."
+      "term": "Adventure Seeking",
+      "definition": "A component of sensation seeking characterized by a desire for exciting, novel, and physically stimulating experiences."
     },
     {
       "id": "635",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Approach-approach conflicts",
-      "definition": "Choosing between two desirable options."
+      "term": "Approach-Approach",
+      "definition": "A motivational conflict that occurs when a person must choose between two desirable outcomes."
     },
     {
       "id": "636",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Approach-avoidance conflicts",
-      "definition": "A single option that has both positive and negative qualities."
+      "term": "Approach-Avoidance",
+      "definition": "A motivational conflict that occurs when a single goal or option has both positive and negative aspects, creating mixed feelings about pursuing it."
     },
     {
       "id": "637",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Arousal theory",
-      "definition": "People are motivated to maintain an optimal level of alertness."
+      "term": "Arousal Theory",
+      "definition": "A theory of motivation that suggests people are motivated to maintain an optimal level of alertness or stimulation, seeking activities that increase or decrease arousal as needed."
     },
     {
       "id": "638",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Avoidance-avoidance conflicts",
-      "definition": "Choosing between two undesirable options."
+      "term": "Avoidance-Avoidance",
+      "definition": "A motivational conflict that occurs when a person must choose between two undesirable outcomes."
     },
     {
       "id": "639",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Boredom susceptibility",
-      "definition": "A low tolerance for routine or repetitive tasks."
+      "term": "Boredom Susceptibility",
+      "definition": "A component of sensation seeking characterized by an intolerance for repetitive or monotonous experiences and a desire for novelty and change."
     },
     {
       "id": "640",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Disinhibition",
-      "definition": "Seeking release through social extroversion and lack of restraint."
+      "definition": "A component of sensation seeking characterized by a preference for uninhibited, spontaneous, or socially stimulating experiences that provide excitement and arousal."
     },
     {
       "id": "641",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Drive-reduction theory",
-      "definition": "Physiological needs create tension that motivates an organism to satisfy the need."
+      "term": "Drive-Reduction Theory",
+      "definition": "A theory of motivation that proposes people are motivated to reduce internal states of tension, or drives, by satisfying biological needs and restoring homeostasis."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "term": "Experience Seeking",
+      "definition": "A component of sensation seeking characterized by a desire for novel experiences through activities such as travel, art, music, or unconventional lifestyles."
     },
     {
       "id": "642",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Extrinsic motivation",
-      "definition": "The desire to perform a behavior to receive external rewards or avoid punishment."
+      "term": "Extrinsic Motivation",
+      "definition": "Motivation to engage in a behavior in order to obtain external rewards or avoid punishment."
     },
     {
       "id": "643",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Ghrelin",
-      "definition": "A hormone secreted by an empty stomach that signals hunger."
+      "definition": "A hormone produced mainly in the stomach that stimulates hunger and signals the brain to increase food intake"
     },
     {
       "id": "644",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Homeostasis",
-      "definition": "The maintenance of a steady internal state."
+      "definition": "The body’s tendency to maintain a stable internal environment by regulating physiological conditions such as temperature, hunger, and hydration."
     },
     {
       "id": "645",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Hypothalamus",
-      "definition": "The brain region that controls hunger, thirst, and body temperature."
+      "definition": "A small brain structure that helps regulate essential body functions such as hunger, thirst, body temperature, and hormone release by controlling the endocrine system"
     },
     {
       "id": "646",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Incentive theory",
-      "definition": "Behavior is motivated by a desire for external rewards."
+      "term": "Incentive Theory",
+      "definition": "A theory of motivation that suggests behavior is driven by the desire to obtain rewards or avoid punishments from the environment."
     },
     {
       "id": "647",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Instincts",
-      "definition": "Complex, unlearned behaviors that are rigidly patterned throughout a species."
+      "definition": "Inborn, automatic behaviors that are biologically determined and do not require learning."
     },
     {
       "id": "648",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Intrinsic motivation",
-      "definition": "The desire to perform a behavior for its own internal satisfaction."
+      "term": "Intrinsic Motivation",
+      "definition": "Motivation to engage in a behavior because it is personally rewarding or enjoyable, rather than for external rewards or pressures."
     },
     {
       "id": "649",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Leptin",
-      "definition": "A hormone secreted by fat cells that signals satiety (fullness)."
-    },
-    {
-      "id": "650",
-      "unit": "Unit 4",
-      "topic": "4.6",
-      "term": "Lewin’s motivational conflicts theory",
-      "definition": "Describes internal conflicts between different types of goals."
-    },
-    {
-      "id": "651",
-      "unit": "Unit 4",
-      "topic": "4.6",
-      "term": "Optimal level of arousal",
-      "definition": "The perfect amount of stress or excitement needed for peak performance."
+      "definition": "A hormone produced by fat cells that helps regulate hunger and body weight by signaling to the brain that the body has enough stored energy"
     },
     {
       "id": "652",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Pituitary gland",
-      "definition": "The master gland that regulates growth and other endocrine glands."
+      "term": "Pituitary Gland",
+      "definition": "A small gland often called the “master gland” because it releases hormones that control other endocrine glands and regulate growth, metabolism, and reproduction"
     },
     {
       "id": "653",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Self-determination theory",
-      "definition": "Motivation is based on the needs for competence, autonomy, and relatedness."
+      "term": "Self-Determination Theory",
+      "definition": "A theory of motivation that emphasizes the role of autonomy, competence, and relatedness in fostering intrinsic motivation and psychological well-being."
     },
     {
       "id": "654",
       "unit": "Unit 4",
       "topic": "4.6",
-      "term": "Sensation-seeking theory",
-      "definition": "Motivation to seek out novel, complex, and intense experiences."
-    },
-    {
-      "id": "655",
-      "unit": "Unit 4",
-      "topic": "4.6",
-      "term": "Thrill seeking",
-      "definition": "Seeking excitement through risky physical activities."
+      "term": "Sensation-Seeking Theory",
+      "definition": "A theory of motivation that describes the tendency to seek varied, novel, and intense experiences, even when they involve risk."
     },
     {
       "id": "656",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Yerkes-Dodson Law",
-      "definition": "The principle that performance increases with arousal only up to a certain point."
+      "definition": "A theory of arousal and performance that states performance improves with increased arousal up to an optimal point, after which further arousal leads to a decline in performance."
     },
     {
       "id": "657",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Affect",
-      "definition": "The experience or expression of emotion or mood."
+      "definition": "The experience or expression of emotion, including feelings and mood states."
     },
     {
       "id": "658",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Cognitive appraisal",
-      "definition": "The mental interpretation of a situation that determines the emotional response."
+      "term": "Cognitive Appraisal",
+      "definition": "The process of evaluating and interpreting a situation in order to determine its emotional significance and how one should respond."
     },
     {
       "id": "659",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Cognitive label",
-      "definition": "The name or interpretation assigned to a physical state of arousal."
+      "term": "Cognitive Label",
+      "definition": "The interpretation or identification of a physiological arousal state that helps determine which emotion is being experienced."
     },
     {
       "id": "660",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Display rules",
-      "definition": "Cultural norms that regulate the expression of emotions."
+      "term": "Display Rules",
+      "definition": "Cultural norms that dictate how and when emotions should be expressed in different social situations."
     },
     {
       "id": "661",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Elicitors",
-      "definition": "Specific triggers that cause an emotional response."
+      "definition": "Events, stimuli, or situations that trigger or cause an emotional response."
     },
     {
       "id": "662",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Facial-feedback hypothesis",
-      "definition": "The idea that facial expressions can influence emotional experiences."
+      "term": "Facial-Feedback Hypothesis",
+      "definition": "The theory that facial expressions can influence emotional experiences, suggesting that expressing an emotion on the face can help generate or intensify that emotion."
     },
     {
-      "id": "663",
+      "id": "",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Internal and external factors",
-      "definition": "The biological and environmental causes of an emotional state."
+      "term": "James-Lange Theory",
+      "definition": "A theory of emotion that proposes that physiological arousal occurs first, and the emotional experience results from the interpretation of that arousal."
     },
     {
-      "id": "664",
+      "id": "",
       "unit": "Unit 4",
       "topic": "4.7",
-      "term": "Physiological vs cognitive experiences",
-      "definition": "The difference between physical arousal and the mental processing of an emotion."
+      "term": "Cannon-Bard Theory",
+      "definition": "A theory of emotion that proposes that physiological arousal and the conscious experience of emotion occur simultaneously and independently."
+    },
+    {
+      "id": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "term": "Two-Factor Theory",
+      "definition": "A theory of emotion that proposes that emotion is the result of physiological arousal and a cognitive label that interprets that arousal."
     },
     {
       "id": "665",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Adverse childhood experiences (ACEs)",
-      "definition": "Potentially traumatic events occurring in childhood (0-17 years) that can have long-lasting effects on health and well-being."
+      "term": "Adverse Childhood Experiences",
+      "definition": "Potentially traumatic events that occur during childhood, such as abuse, neglect, or household dysfunction, that can have lasting effects on physical health, mental health, and development."
     },
     {
       "id": "666",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Alarm reaction phase",
-      "definition": "The first stage of GAS where the sympathetic nervous system is suddenly activated (heart rate zooms, blood diverted to muscles)."
+      "term": "Alarm Stage",
+      "definition": "The first stage of General Adaptation Syndrome in which the body recognizes a stressor and activates the fight-or-flight response."
     },
     {
       "id": "667",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Distress",
-      "definition": "A negative form of stress that occurs when a person feels unable to cope with demands, often leading to fatigue or health issues."
+      "definition": "A negative form of stress that results from overwhelming or harmful demands and can impair functioning and well-being."
     },
     {
       "id": "668",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Emotion-focused coping",
-      "definition": "Attempting to alleviate stress by avoiding or ignoring a stressor and attending to emotional needs related to one's stress reaction."
+      "term": "Emotion-Focused Coping",
+      "definition": "A coping strategy that involves managing emotional responses to a stressor rather than changing the stressor itself."
     },
     {
       "id": "669",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Eustress",
-      "definition": "A positive form of stress that results from a challenge and can lead to increased focus, motivation, and performance."
+      "definition": "A positive form of stress that enhances motivation, performance, or well-being."
     },
     {
       "id": "670",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Exhaustion phase",
-      "definition": "The third stage of GAS where the body’s resources are depleted, making the individual more vulnerable to illness or collapse."
+      "term": "Exhaustion Stage",
+      "definition": "The final stage of General Adaptation Syndrome in which prolonged stress depletes the body’s resources, reducing its ability to cope effectively."
     },
     {
       "id": "671",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Flight-flight-freeze response",
+      "term": "Fight Flight Freeze Response",
       "definition": "An involuntary physiological reaction to a perceived harmful event, attack, or threat to survival."
     },
     {
       "id": "672",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "General adaptation syndrome (GAS)",
-      "definition": "Hans Selye's concept of the body's adaptive response to stress in three phases: alarm, resistance, and exhaustion."
+      "term": "General Adaptation Syndrome",
+      "definition": "A three-stage pattern of physiological response to stress that includes alarm, resistance, and exhaustion."
     },
     {
       "id": "673",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Health psychology",
-      "definition": "A subfield of psychology that provides psychology's contribution to behavioral medicine, focusing on how biological, social, and psychological factors influence health and illness."
+      "term": "Health Psychology",
+      "definition": "The branch of psychology that studies how biological, psychological, and social factors influence health, illness, and overall well-being."
     },
     {
       "id": "674",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Hypertension",
-      "definition": "High blood pressure; a physical condition often exacerbated by chronic psychological stress."
+      "definition": "A condition characterized by chronically elevated blood pressure, increasing the risk of cardiovascular disease and other health problems."
     },
     {
       "id": "675",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Immune suppression",
-      "definition": "The weakening of the body's ability to fight off infection, often caused by the release of stress hormones like cortisol."
+      "term": "Immune Suppression",
+      "definition": "A reduction in the activity or effectiveness of the immune system, making the body more vulnerable to illness and infection."
     },
     {
       "id": "676",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Problem-focused coping",
-      "definition": "Attempting to alleviate stress directly by changing the stressor or the way we interact with that stressor."
+      "term": "Problem-Focused Coping",
+      "definition": "A coping strategy that involves addressing or changing the source of stress to reduce its impact."
     },
     {
       "id": "677",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Resistance phase",
-      "definition": "The second stage of GAS where temperature, blood pressure, and respiration remain high, and the body attempts to cope with the stressor."
+      "term": "Resistance Stage",
+      "definition": "The second stage of General Adaptation Syndrome in which the body adapts to a stressor and continues to cope while remaining physiologically activated."
     },
     {
       "id": "678",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Stress",
-      "definition": "The process by which we perceive and respond to certain events, called stressors, that we appraise as threatening or challenging."
+      "definition": "The physiological and psychological response to demands or challenges that threaten or exceed an individual’s ability to cope."
     },
     {
       "id": "679",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Stressors",
-      "definition": "Specific events or chronic pressures that place demands on a person or threaten their well-being."
+      "definition": "Events, situations, or stimuli that trigger a physiological or psychological stress response."
     },
     {
       "id": "680",
       "unit": "Unit 5",
       "topic": "5.1",
-      "term": "Tend-and-befriend theory",
-      "definition": "Under stress, people (especially women) often provide support to others (tend) and bond with and seek support from others (befriend)."
+      "term": "Tend and Befriend Theory",
+      "definition": "A theory suggesting that, in response to stress, people may cope by seeking social support and protecting or nurturing others rather than relying solely on the fight-or-flight response."
     },
     {
       "id": "681",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Courage",
-      "definition": "Emotional strengths that involve the exercise of will to accomplish goals in the face of opposition."
+      "definition": "A signature strength in positive psychology characterized by persistence, bravery, and the willingness to act despite fear or adversity."
     },
     {
       "id": "682",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Gratitude",
-      "definition": "A felt sense of wonder, thankfulness, and appreciation for life and the benefits received from others."
+      "definition": "A positive emotional response that involves recognizing and appreciating the benefits, kindness, or support received from others."
     },
     {
       "id": "683",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Happiness",
-      "definition": "A state of mind or feeling characterized by contentment, love, satisfaction, pleasure, or joy."
+      "definition": "A general state of well-being characterized by positive emotions, life satisfaction, and a sense of fulfillment."
     },
     {
       "id": "684",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Humanity",
-      "definition": "Interpersonal strengths that involve tending and befriending others."
+      "definition": "A signature strength in positive psychology that involves caring, valuing close relationships, and showing kindness and compassion toward others."
     },
     {
       "id": "685",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Justice",
-      "definition": "Civic strengths that underlie healthy community life."
+      "definition": "A signature strength in positive psychology that involves fairness, treating others equally, and contributing to the well-being of the community or society."
     },
     {
       "id": "686",
       "unit": "Unit 5",
       "topic": "5.2",
-      "term": "Positive emotions",
-      "definition": "Feelings such as joy, pride, and relief that contribute to an individual's sense of well-being."
-    },
-    {
-      "id": "687",
-      "unit": "Unit 5",
-      "topic": "5.2",
-      "term": "Positive objective experiences",
-      "definition": "Observable positive life circumstances, such as educational attainment or stable relationships."
+      "term": "Positive Emotions",
+      "definition": "Pleasant emotional states such as joy, gratitude, interest, and contentment that contribute to well-being and life satisfaction."
     },
     {
       "id": "688",
       "unit": "Unit 5",
       "topic": "5.2",
-      "term": "Positive psychology",
-      "definition": "The scientific study of human flourishing, with the goals of discovering and promoting strengths and virtues that help individuals and communities to thrive."
-    },
-    {
-      "id": "689",
-      "unit": "Unit 5",
-      "topic": "5.2",
-      "term": "Positive subjective experiences",
-      "definition": "Internal states like happiness, joy, and satisfaction with life."
+      "term": "Positive Psychology",
+      "definition": "A branch of psychology that focuses on the study of strengths, positive emotions, and factors that contribute to happiness, well-being, and human flourishing."
     },
     {
       "id": "690",
       "unit": "Unit 5",
       "topic": "5.2",
-      "term": "Posttraumatic growth",
-      "definition": "Positive psychological changes as a result of struggling with extremely challenging circumstances and life crises."
+      "term": "Posttraumatic Growth",
+      "definition": "Positive psychological change that can occur as a result of struggling with highly challenging or traumatic life experiences."
     },
     {
       "id": "691",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Resilience",
-      "definition": "The personal strength that helps most people cope with stress and recover from adversity and even trauma."
-    },
-    {
-      "id": "692",
-      "unit": "Unit 5",
-      "topic": "5.2",
-      "term": "Signature strengths",
-      "definition": "Character strengths that are most essential to who an individual is and that they use most naturally."
+      "definition": "The ability to adapt, recover, and maintain functioning in the face of stress, adversity, or trauma."
     },
     {
       "id": "693",
       "unit": "Unit 5",
       "topic": "5.2",
-      "term": "Subjective well-being",
-      "definition": "Self-perceived happiness or satisfaction with life."
+      "term": "Subjective Well-Being",
+      "definition": "A person’s self-reported evaluation of their own happiness and life satisfaction, including the balance of positive and negative emotions."
     },
     {
       "id": "694",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Temperance",
-      "definition": "Strengths that protect against excess (e.g., forgiveness, humility, prudence)."
+      "definition": "A signature strength in positive psychology that involves self-control, moderation, and the ability to regulate impulses and behaviors."
     },
     {
       "id": "695",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Transcendence",
-      "definition": "Strengths that forge connections to the larger universe and provide meaning (e.g., gratitude, hope)."
-    },
-    {
-      "id": "696",
-      "unit": "Unit 5",
-      "topic": "5.2",
-      "term": "Virtues",
-      "definition": "Core characteristics valued by moral philosophers and religious thinkers throughout history (e.g., wisdom, courage)."
-    },
-    {
-      "id": "697",
-      "unit": "Unit 5",
-      "topic": "5.2",
-      "term": "Well-being",
-      "definition": "A positive state of mental, emotional, and social functioning, characterized by life satisfaction, resilience, and a sense of purpose"
+      "definition": "A signature strength in positive psychology that involves appreciating beauty, finding meaning, and feeling a connection to something larger than oneself."
     },
     {
       "id": "698",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Wisdom",
-      "definition": "A character strength involving the acquisition and use of knowledge."
+      "definition": "A signature strength in positive psychology characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding."
     },
     {
       "id": "699",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Ageism",
-      "definition": "Prejudice or discrimination on the basis of a person's age."
+      "definition": "Prejudice, discrimination, or stereotyping based on a person’s age."
     },
     {
       "id": "700",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Behavioral perspective",
-      "definition": "The view that psychological disorders are a result of learned behaviors through conditioning and observation."
+      "term": "Behavioral Perspective",
+      "definition": "An approach that explains psychological disorders as the result of learned behaviors acquired through conditioning and environmental influences."
     },
     {
       "id": "701",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Biological perspective",
-      "definition": "The view that psychological disorders have physical causes that can be diagnosed, treated, and often cured."
+      "term": "Biological Perspective",
+      "definition": "An approach that explains psychological disorders as the result of genetic, neurological, biochemical, or other physiological factors."
     },
     {
       "id": "702",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Biopsychosocial model",
-      "definition": "An integrated approach that incorporates biological, psychological, and social-cultural levels of analysis."
+      "term": "Biopsychosocial Model",
+      "definition": "An approach that explains health and behavior as the result of interactions among biological, psychological, and social factors."
     },
     {
       "id": "703",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Cognitive perspective",
-      "definition": "The view that disorders are caused by maladaptive or irrational thought patterns."
+      "term": "Cognitive Perspective",
+      "definition": "An approach that explains psychological disorders as the result of maladaptive thought patterns, beliefs, and ways of interpreting experiences."
     },
     {
       "id": "704",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Cultural/societal norms",
-      "definition": "The rules and expectations of behavior within a specific social group."
+      "term": "Social Norms",
+      "definition": "Shared expectations or rules within a group or culture that guide and influence appropriate behavior."
     },
     {
       "id": "705",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Diagnostic and Statistical Manual of Mental Disorders (DSM)",
-      "definition": "The American Psychiatric Association's system for classifying and diagnosing psychological disorders."
+      "definition": "The primary manual used by mental health professionals to classify and diagnose mental disorders based on standardized criteria."
     },
     {
       "id": "706",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Diathesis-stress model",
-      "definition": "The theory that a disorder results from a combination of a genetic predisposition (diathesis) and stressful life events."
+      "term": "Diathesis-Stress Model",
+      "definition": "A model that explains mental disorders as the result of the interaction between a biological or psychological predisposition and stressful life experiences."
     },
     {
       "id": "707",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Discrimination",
-      "definition": "Unjustifiable negative behavior toward a group and its members."
+      "definition": "Unjustified negative behavior or unequal treatment toward individuals based on their membership in a particular group."
     },
     {
       "id": "708",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Distress",
-      "definition": "Subjective feelings of pain, anxiety, or sorrow that accompany psychological disorders."
+      "definition": "A state of significant emotional discomfort or suffering that is often used as a criterion for identifying psychological disorders because it impairs daily functioning."
     },
     {
       "id": "709",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Dysfunction",
-      "definition": "Behavior that interferes with daily life and the ability to function effectively in society."
+      "definition": "A criterion for psychological disorders referring to thoughts, emotions, or behaviors that interfere with a person’s ability to function effectively in daily life."
     },
     {
       "id": "710",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Eclectic approach",
-      "definition": "An approach to psychotherapy that, depending on the client’s problems, uses techniques from various forms of therapy."
+      "term": "Eclectic Approach",
+      "definition": "An approach to treatment that combines techniques and principles from multiple psychological perspectives or therapies based on the individual’s needs."
     },
     {
       "id": "711",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Evolutionary perspective",
-      "definition": "The view that certain behaviors associated with disorders may have been adaptive for survival in our ancestors."
+      "term": "Evolutionary Perspective",
+      "definition": "An approach that explains psychological disorders as behaviors or traits that may have developed because they provided adaptive advantages during human evolution."
     },
     {
       "id": "712",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Humanistic perspective",
-      "definition": "The view that disorders arise when people are prevented from achieving self-actualization or their true potential."
+      "term": "Humanistic Perspective",
+      "definition": "An approach that explains psychological disorders as the result of barriers to personal growth, self-acceptance, or the fulfillment of one’s potential."
     },
     {
       "id": "713",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "International Classification of Mental Disorders (ICD)",
-      "definition": "The World Health Organization's system for classifying diseases and health problems, including mental disorders."
-    },
-    {
-      "id": "714",
-      "unit": "Unit 5",
-      "topic": "5.3",
-      "term": "Maladaptive learned associations",
-      "definition": "Learned behaviors or thoughts that are dysfunctional or harmful to the individual."
+      "definition": "A diagnostic system developed by the World Health Organization that classifies diseases and health conditions, including mental and behavioral disorders, using standardized criteria."
     },
     {
       "id": "715",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Psychodynamic perspective",
-      "definition": "The view that disorders result from unconscious conflicts and early childhood experiences."
+      "term": "Psychodynamic Perspective",
+      "definition": "An approach that explains psychological disorders as the result of unconscious conflicts, unresolved childhood experiences, and internal psychological processes."
     },
     {
       "id": "716",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Racism",
-      "definition": "Prejudice, discrimination, or antagonism directed against someone of a different race based on the belief that one's own race is superior."
+      "definition": "Prejudice, discrimination, or unequal treatment directed toward individuals or groups based on race or ethnicity."
     },
     {
       "id": "717",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Sexism",
-      "definition": "Prejudice, stereotyping, or discrimination, typically against women, on the basis of sex."
+      "definition": "Prejudice, discrimination, or stereotyping based on a person’s sex or gender."
     },
     {
       "id": "718",
       "unit": "Unit 5",
       "topic": "5.3",
-      "term": "Sociocultural perspective",
-      "definition": "The view that social and cultural factors (e.g., poverty, norms) contribute to the development of psychological disorders."
+      "term": "Sociocultural Perspective",
+      "definition": "An approach that explains psychological disorders as the result of social and cultural factors, such as norms, expectations, and environmental influences."
     },
     {
       "id": "719",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Stigma",
-      "definition": "A mark of disgrace associated with a particular circumstance, quality, or person, often applied to mental illness."
+      "definition": "A negative label or stereotype attached to individuals with psychological disorders that can lead to prejudice and discrimination."
+    },
+    {
+      "id": "",
+      "unit": "Unit 5",
+      "topic": "5.3",
+      "term": "Deviation from Social Norms",
+      "definition": "A criterion for identifying psychological disorders in which an individual’s thoughts, emotions, or behaviors significantly differ from culturally accepted expectations or rules of behavior."
     },
     {
       "id": "720",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Acrophobia",
-      "definition": "Fear of heights."
+      "definition": "An anxiety disorder characterized by an intense and irrational fear of heights."
     },
     {
       "id": "721",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Agoraphobia",
-      "definition": "Fear or avoidance of situations, such as crowds or wide-open places, where one has felt loss of control and panic."
+      "definition": "An anxiety disorder characterized by an intense fear of situations where escape might be difficult or help unavailable, often leading to avoidance of open or crowded places."
     },
     {
       "id": "722",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Anorexia nervosa",
-      "definition": "An eating disorder in which a person maintains a starvation diet despite being significantly underweight."
+      "term": "Anorexia Nervosa",
+      "definition": "An eating disorder characterized by severe restriction of food intake, an intense fear of gaining weight, and a distorted body image leading to significantly low body weight."
     },
     {
       "id": "723",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Antisocial personality disorder",
-      "definition": "A personality disorder in which a person exhibits a lack of conscience for wrongdoing, even toward friends and family members."
+      "term": "Antisocial Personality Disorder",
+      "definition": "A personality disorder characterized by a persistent pattern of disregard for, and violation of, the rights of others, often involving deceitfulness, impulsivity, and lack of remorse."
     },
     {
       "id": "724",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Anxiety disorders",
-      "definition": "Psychological disorders characterized by distressing, persistent anxiety or maladaptive behaviors that reduce anxiety."
+      "term": "Anxiety Disorders",
+      "definition": "A group of psychological disorders characterized by excessive fear, anxiety, or avoidance that interferes with daily functioning."
     },
     {
       "id": "725",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Arachnophobia",
-      "definition": "Fear of spiders."
+      "definition": "An anxiety disorder characterized by an intense and irrational fear of spiders."
     },
     {
       "id": "726",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Ataque de nervios",
-      "definition": "A cultural syndrome found primarily among Latino populations, involving intense emotional upset and physical symptoms similar to a panic attack."
+      "term": "Ataque de Nervios",
+      "definition": "A culture-bound syndrome most commonly seen in Latin American cultures, characterized by episodes of intense emotional distress, including shouting, crying, trembling, and sometimes aggression or dissociation in response to stressful events."
     },
     {
       "id": "727",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Attention-deficit/hyperactivity disorder (ADHD)",
-      "definition": "A psychological disorder marked by extreme inattention and/or hyperactivity and impulsivity."
+      "term": "Attention-Deficit/Hyperactivity Disorder (ADHD)",
+      "definition": "A neurodevelopmental disorder characterized by persistent patterns of inattention, hyperactivity, and impulsivity that interfere with functioning or development."
     },
     {
       "id": "728",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Autism Spectrum Disorder (ASD)",
-      "definition": "A disorder that appears in childhood and is marked by significant deficiencies in communication and social interaction, and by rigidly fixated interests and repetitive behaviors."
+      "definition": "A neurodevelopmental disorder characterized by persistent difficulties in social communication and interaction, along with restricted or repetitive patterns of behavior, interests, or activities."
     },
     {
       "id": "729",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Avoidant personality disorder",
-      "definition": "Characterized by social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation."
-    },
-    {
-      "id": "730",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Bipolar disorders",
-      "definition": "Disorders in which a person alternates between the hopelessness and lethargy of depression and the overexcited state of mania."
+      "term": "Avoidant Personality Disorder",
+      "definition": "A personality disorder characterized by extreme social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation, leading to avoidance of social interactions despite a desire for connection."
     },
     {
       "id": "731",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Bipolar I Disorder",
-      "definition": "A type of bipolar disorder marked by full manic episodes and usually major depressive episodes."
+      "definition": "A mood disorder characterized by at least one full manic episode, which may be preceded or followed by hypomanic or major depressive episodes."
     },
     {
       "id": "732",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Bipolar II Disorder",
-      "definition": "A type of bipolar disorder marked by hypomanic episodes and major depressive episodes."
+      "definition": "A mood disorder characterized by at least one hypomanic episode and at least one major depressive episode, without the presence of a full manic episode."
+    },
+    {
+      "id": "",
+      "unit": "Unit 5",
+      "topic": "5.4",
+      "term": "Hypomania",
+      "definition": "A period of elevated mood, increased energy, and heightened activity that is less severe than full mania and does not significantly impair functioning or require hospitalization."
     },
     {
       "id": "733",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Borderline personality disorder",
-      "definition": "Characterized by instability in interpersonal relationships, self-image, and affects, and marked impulsivity."
+      "term": "Borderline Personality Disorder",
+      "definition": "A personality disorder characterized by instability in mood, self-image, and relationships, along with impulsive behavior and intense fear of abandonment."
     },
     {
       "id": "734",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Bulimia nervosa",
-      "definition": "An eating disorder in which a person alternates binge eating with purging or fasting."
+      "term": "Bulimia Nervosa",
+      "definition": "An eating disorder characterized by recurrent episodes of binge eating followed by compensatory behaviors such as vomiting, fasting, or excessive exercise to prevent weight gain."
     },
     {
       "id": "735",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Catatonic stupor",
-      "definition": "An immobile, expressionless, coma-like state associated with schizophrenia."
+      "term": "Catatonic Stupor",
+      "definition": "A state associated with catatonia in which an individual is immobile, unresponsive, and may appear awake but does not react to external stimuli."
     },
     {
       "id": "736",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Cluster A (odd or eccentric cluster)",
-      "definition": "A group of personality disorders including Paranoid, Schizoid, and Schizotypal."
+      "term": "Cluster A Personality Disorders",
+      "definition": "A group of personality disorders characterized by odd or eccentric thinking and behavior, including paranoid, schizoid, and schizotypal personality disorders."
     },
     {
       "id": "737",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Cluster B (dramatic, emotional, or erratic cluster)",
-      "definition": "A group of personality disorders including Antisocial, Borderline, Histrionic, and Narcissistic."
+      "term": "Cluster B Personality Disorders",
+      "definition": "A group of personality disorders characterized by dramatic, emotional, or erratic behavior, including antisocial, borderline, histrionic, and narcissistic personality disorders."
     },
     {
       "id": "738",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Cluster C (anxious or fearful cluster)",
-      "definition": "A group of personality disorders including Avoidant, Dependent, and Obsessive-Compulsive."
+      "term": "Cluster C Personality Disorders",
+      "definition": "A group of personality disorders characterized by anxious or fearful thinking and behavior, including avoidant, dependent, and obsessive-compulsive personality disorders."
     },
     {
       "id": "739",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Compulsions",
-      "definition": "Repetitive behaviors or mental acts that an individual feels driven to perform in response to an obsession."
+      "definition": "Repetitive behaviors or mental acts performed in response to obsessive thoughts, often aimed at reducing anxiety or preventing a feared event."
     },
     {
       "id": "740",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cycling",
-      "definition": "The transition between different mood states (mania and depression) in bipolar disorder."
+      "definition": "The pattern of alternating between episodes of mania, hypomania, and depression in mood disorders such as bipolar I and bipolar II disorder."
     },
     {
       "id": "741",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions",
-      "definition": "False beliefs, often of persecution or grandeur, that may accompany psychotic disorders."
+      "definition": "Strongly held false beliefs that persist despite clear evidence to the contrary, commonly associated with psychotic disorders."
     },
     {
       "id": "742",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Delusions of grandeur",
-      "definition": "Beliefs that you are much more important, powerful, or wealthy than you actually are."
+      "term": "Delusions of Grandeur",
+      "definition": "False beliefs in which a person thinks they have exceptional power, importance, fame, or identity that is not supported by reality."
     },
     {
       "id": "743",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Delusions of persecution",
-      "definition": "Beliefs that others are out to get you or are plotting against you."
+      "term": "Delusions of Persecution",
+      "definition": "False beliefs that one is being harmed, harassed, or targeted by others, despite lack of evidence."
     },
     {
       "id": "744",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Dependent personality disorder",
-      "definition": "Characterized by a pervasive and excessive need to be taken care of that leads to submissive and clinging behavior."
-    },
-    {
-      "id": "745",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Depression",
-      "definition": "A state of low mood and aversion to activity that can affect a person's thoughts, behavior, feelings, and sense of well-being."
+      "term": "Dependent Personality Disorder",
+      "definition": "A personality disorder characterized by excessive need to be taken care of, leading to submissive and clinging behavior, and fear of separation or being alone."
     },
     {
       "id": "746",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Depressive disorders",
-      "definition": "A category of disorders characterized by persistent feelings of sadness and a loss of interest in activities."
-    },
-    {
-      "id": "747",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Disorganized motor behavior",
-      "definition": "Unpredictable or inappropriate physical movement, ranging from childlike silliness to violent agitation."
+      "term": "Depressive Disorders",
+      "definition": "A group of mood disorders characterized by persistent feelings of sadness, loss of interest or pleasure, and related cognitive and physical symptoms that impair functioning."
     },
     {
       "id": "748",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Disorganized speech",
-      "definition": "Speech that is incoherent and lacks a logical progression, sometimes referred to as word salad."
-    },
-    {
-      "id": "749",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Disorganized thinking",
-      "definition": "Fragmented or distorted thought processes, often visible through speech patterns in schizophrenia."
-    },
-    {
-      "id": "750",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Dissociation",
-      "definition": "A disconnection between a person's thoughts, memories, feelings, actions, or sense of who they are."
+      "term": "Disorganized Speech",
+      "definition": "A symptom of schizophrenia involving incoherent, illogical, or fragmented speech patterns that make it difficult for others to understand the person’s thoughts."
     },
     {
       "id": "751",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Dissociative amnesia",
-      "definition": "A disorder characterized by an inability to recall important personal information, usually of a traumatic or stressful nature."
+      "term": "Dissociative Amnesia",
+      "definition": "A dissociative disorder characterized by an inability to recall important personal information, typically related to traumatic or stressful events, that is inconsistent with ordinary forgetting."
+    },
+    {
+      "id": "",
+      "unit": "Unit 5",
+      "topic": "5.4",
+      "term": "Fugue",
+      "definition": "Unexpected travel away from one’s home or usual environment, accompanied by amnesia for one’s identity or past, sometimes including the assumption of a new identity."
     },
     {
       "id": "752",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Dissociative disorders",
-      "definition": "Disorders in which conscious awareness becomes separated from previous memories, thoughts, and feelings."
+      "term": "Dissociative Disorders",
+      "definition": "A group of psychological disorders characterized by disruptions or breakdowns in memory, identity, consciousness, or perception of reality."
     },
     {
       "id": "753",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Dissociative identity disorder",
-      "definition": "A rare dissociative disorder in which a person exhibits two or more distinct and alternating personalities."
+      "term": "Dissociative Identity Disorder",
+      "definition": "A dissociative disorder characterized by the presence of two or more distinct identity states that control a person’s behavior, along with gaps in memory between these identities."
     },
     {
       "id": "754",
       "unit": "Unit 5",
       "topic": "5.4",
-      "term": "Dopamine hypothesis",
-      "definition": "The theory that schizophrenia results from excessive activity of the neurotransmitter dopamine."
-    },
-    {
-      "id": "755",
-      "unit": "Unit 5",
-      "topic": "5.4",
-      "term": "Emotional detachment",
-      "definition": "An inability to connect with others on an emotional level, common in PTSD."
+      "term": "Dopamine Hypothesis",
+      "definition": "A theory suggesting that schizophrenia and related psychotic symptoms are associated with excessive dopamine activity in certain brain pathways."
     },
     {
       "id": "756",
@@ -5367,7 +5276,7 @@
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Mania",
-      "definition": "A hyperactive, wildly optimistic state in which dangerously poor judgment is common."
+      "definition": "A state of abnormally elevated mood, energy, and activity levels that can include impulsivity, decreased need for sleep, and impaired judgment, often significantly disrupting functioning."
     },
     {
       "id": "768",
