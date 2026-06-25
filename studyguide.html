@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Guides by Unit - Psych Review Hub</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hub-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hub-header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hub-header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* --- TWO-COLUMN RESPONSIVE LAYOUT FOR ADS --- */
+        .hub-layout-bridge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .hub-main-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sidebar-ad-aside {
+            width: 300px;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .ad-wrapper-sidebar {
+            width: 300px;
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+            position: sticky;
+            top: 20px; /* Keeps the ad unit sticky as students scroll long unit cards */
+        }
+
+        /* Grid layout mirroring home page structure */
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        /* Clean Unit Card design */
+        .unit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Alternate top accent colors across the cards */
+        .unit-card:nth-child(even) {
+            border-top-color: var(--accent);
+        }
+
+        .unit-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .unit-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Interactive topic link items inside cards */
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-list li {
+            margin: 0;
+        }
+
+        .topic-list a {
+            display: block;
+            padding: 10px 14px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            color: #444;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        /* Subtle shift and color change when hovering over a topic */
+        .topic-list a:hover {
+            background-color: #f0f4f8;
+            color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding-left: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand"><a href="index.html">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="active">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="studyguide.html" class="active">Study Guides</a>
+                    <a href="glossary.html">Glossary</a>
+                    <a href="flashcards.html">Flashcards</a>
+                    <a href="quiz.html">Quiz</a>
+                    <a href="confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame.html">Connections</a>
+                    <a href="boardgame.html">Psych Land</a>
+                    <a href="battleship.html">Cortex Commander</a>
+                    <a href="oddball.html">Oddball</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">🥤 Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="hub-container">
+        
+        <div class="hub-header">
+            <h1>AP Psychology Study Guides</h1>
+            <p>Select a topic page below to review concepts, terms, and core frameworks.</p>
+        </div>
+
+        <div class="hub-layout-bridge">
+
+            <div class="hub-main-content">
+                <div class="unit-grid">
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 0: Scientific Foundations</div>
+                            <p class="unit-desc">Master the foundational methodologies, ethical standard criteria, and basic data interpretation required for psychological research.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic0.1.html">0.1 The Scientific Attitude</a></li>
+                            <li><a href="overviews/topic0.2.html">0.2 The Scientific Method</a></li>
+                            <li><a href="overviews/topic0.3.html">0.3 Correlation and Experimentation</a></li>
+                            <li><a href="overviews/topic0.4.html">0.4 Research Design and Ethics</a></li>
+                            <li><a href="overviews/topic0.5.html">0.5 Statistical Reasoning in Everyday Life</a></li>
+                            <li><a href="overviews/topic0.6.html">0.6 The Psychological Perspectives</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 1: Biological Bases of Behavior</div>
+                            <p class="unit-desc">Explore how genetics, nervous system pathways, biochemistry, and biological sleep patterns build our mental architecture.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic1.1.html">1.1 Interaction of Heredity and Environment</a></li>
+                            <li><a href="overviews/topic1.2.html">1.2 Overview of the Nervous System</a></li>
+                            <li><a href="overviews/topic1.3.html">1.3 The Neuron and Neural Firing</a></li>
+                            <li><a href="overviews/topic1.4.html">1.4 The Brain</a></li>
+                            <li><a href="overviews/topic1.5.html">1.5 Sleep</a></li>
+                            <li><a href="overviews/topic1.6.html">1.6 Sensation</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 2: Cognition</div>
+                            <p class="unit-desc">Examine how your mind selects, interprets, and stores sensory inputs, resolves problems, and measures intelligence.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic2.1.html">2.1 Perception</a></li>
+                            <li><a href="overviews/topic2.2.html">2.2 Thinking, Problem-Solving, Judgments, & Decisions</a></li>
+                            <li><a href="overviews/topic2.3.html">2.3 Introduction to Memory</a></li>
+                            <li><a href="overviews/topic2.4.html">2.4 Encoding Memories</a></li>
+                            <li><a href="overviews/topic2.5.html">2.5 Storing Memories</a></li>
+                            <li><a href="overviews/topic2.6.html">2.6 Retrieving Memories</a></li>
+                            <li><a href="overviews/topic2.7.html">2.7 Forgetting & Other Memory Challenges</a></li>
+                            <li><a href="overviews/topic2.8.html">2.8 Intelligence and Achievement</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 3: Development & Learning</div>
+                            <p class="unit-desc">Trace physical, cognitive, and social development shifts over the life course alongside behavioral conditioning mechanisms.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic3.1.html">3.1 Themes & Methods in Developmental Psych</a></li>
+                            <li><a href="overviews/topic3.2.html">3.2 Physical Development Across the Lifespan</a></li>
+                            <li><a href="overviews/topic3.3.html">3.3 Gender & Sexual Orientation</a></li>
+                            <li><a href="overviews/topic3.4.html">3.4 Cognitive Development Across the Lifespan</a></li>
+                            <li><a href="overviews/topic3.5.html">3.5 Communication & Language Development</a></li>
+                            <li><a href="overviews/topic3.6.html">3.6 Social-Emotional Development Across the Lifespan</a></li>
+                            <li><a href="overviews/topic3.7.html">3.7 Classical Conditioning</a></li>
+                            <li><a href="overviews/topic3.8.html">3.8 Operant Conditioning</a></li>
+                            <li><a href="overviews/topic3.9.html">3.9 Social, Cognitive, & Neurological Learning Factors</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 4: Social Psychology & Personality</div>
+                            <p class="unit-desc">Unpack how peer groups adjust our perspective while charting personality frameworks, deep motivation, and human emotion.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic4.1.html">4.1 Attribution Theory & Person Perception</a></li>
+                            <li><a href="overviews/topic4.2.html">4.2 Attitude Formation & Attitude Change</a></li>
+                            <li><a href="overviews/topic4.3.html">4.3 Psychology of Social Situations</a></li>
+                            <li><a href="overviews/topic4.4.html">4.4 Psychoanalytic & Humanistic Personality Theories</a></li>
+                            <li><a href="overviews/topic4.5.html">4.5 Social-Cognitive & Trait Personality Theories</a></li>
+                            <li><a href="overviews/topic4.6.html">4.6 Motivation</a></li>
+                            <li><a href="overviews/topic4.7.html">4.7 Emotion</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unit-card">
+                        <div>
+                            <div class="unit-title">Unit 5: Mental & Physical Health</div>
+                            <p class="unit-desc">Investigate psychopathology diagnoses, clinical classification criteria, clinical therapies, and proactive positive wellness strategies.</p>
+                        </div>
+                        <ul class="topic-list">
+                            <li><a href="overviews/topic5.1.html">5.1 Introduction to Health Psychology</a></li>
+                            <li><a href="overviews/topic5.2.html">5.2 Positive Psychology</a></li>
+                            <li><a href="overviews/topic5.3.html">5.3 Explaining & Classifying Psychological Disorders</a></li>
+                            <li><a href="overviews/topic5.4.html">5.4 Selection of Categories of Psychological Disorders</a></li>
+                            <li><a href="overviews/topic5.5.html">5.5 Treatment of Psychological Disorders</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sidebar-ad-aside ad-under-review">
+                <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+                <div class="ad-wrapper-sidebar">
+                    <div style="color: #ccc; font-size: 0.9rem;">[300x250 Ad Unit Placeholder]</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        
+        <p style="margin-bottom: 15px;">
+            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+        
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#ffdd00" data-text="🥤 Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+    </footer>
+
+</body>
+</html>
