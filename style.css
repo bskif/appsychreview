@@ -255,3 +255,9 @@ footer a:hover {
     color: #1a5276;
     text-decoration: underline;
 }
+
+/* --- ADSENSE SAFETY TOGGLE --- */
+/* Hides ad containers entirely while under review to prevent awkward blank spaces */
+.ad-under-review {
+    display: none !important;
+}
