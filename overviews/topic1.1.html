@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Topic 1.1: Interaction of Heredity and Environment - Psych Review Hub</title>
     
-    <!-- Google AdSense Global Code Snippet -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
-    <!-- Pointing up one level to find style.css in the root folder -->
     <link rel="stylesheet" href="../style.css">
     <style>
         /* --- STYLING MATCHED TO PRIVACY/TERMS PAGES --- */
@@ -84,6 +82,34 @@
             font-style: italic;
         }
 
+        /* --- IMAGE & CAPTION LAYOUT STYLES --- */
+        .image-container {
+            margin: 30px auto;
+            text-align: center;
+            max-width: 100%;
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .blog-container .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 0;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
         /* --- TWO-COLUMN LAYOUT WITH SIDEBAR --- */
         .blog-layout-bridge {
             display: flex;
@@ -114,7 +140,6 @@
         }
 
         /* --- REVIEW SAFETY BLOCK --- */
-        /* Keeps the layout perfectly centered until AdSense is approved */
         .ad-under-review {
             display: none !important;
         }
@@ -129,8 +154,7 @@
 </head>
 <body>
 
-    <!-- ADJUSTED NAVIGATION BAR LINKS -->
-<nav>
+    <nav>
         <div class="nav-brand"><a href="../index.html">Psych Review Hub</a></div>
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
@@ -169,10 +193,8 @@
         </ul>
     </nav>
 
-    <!-- TWO-COLUMN REFACTORING -->
     <div class="blog-layout-bridge">
         
-        <!-- MAIN CONTENT AREA -->
         <div class="blog-container" style="flex: 1; min-width: 300px; max-width: 780px;">
             <h1>Unit 1: Biological Bases of Behavior</h1>
             <h3 style="color: #666; margin-top: 5px; margin-bottom: 15px; font-weight: 500;">Topic 1.1: Interaction of Heredity and Environment</h3>
@@ -214,6 +236,12 @@
                 <li><strong>Monozygotic Twins</strong>: These are identical twins formed when a single fertilized egg splits into two embryos, resulting in twins who share nearly all of the same genetic material. Because their DNA is identical, any differences between them are typically attributed to their environment.</li>
                 <li><strong>Dizygotic Twins</strong>: These are fraternal twins formed when two separate eggs are fertilized by two different sperm cells, resulting in twins who share about 50% of their genetic material (just like standard siblings).</li>
             </ul>
+
+            <div class="image-container">
+                <img src="../images/identical_twins.jpg" alt="Identical Monozygotic Twins" class="blog-image">
+                <p class="image-caption">Identical (monozygotic) twins share 100% of their genetic configuration, offering researchers a natural baseline to separate genetic traits from external environmental impacts. Image courtesy of Wikimedia Commons.</p>
+            </div>
+
             <p>By comparing <strong>Monozygotic Twins</strong> raised in the same household against those who were separated at birth and raised in entirely different environments, psychologists can calculate <strong>Heritability</strong>. This is a measure of how much differences in a trait among individuals in a population are due to genetic variation.</p>
 
             <h2>4. Don't Trip Up! (Common Misconceptions)</h2>
@@ -237,19 +265,15 @@
             </ul>
         </div>
 
-        <!-- AD CONTENT AREA -->
-        <!-- Note: Simply delete the "ad-under-review" class below on approval day! -->
         <div class="sidebar-ad-aside ad-under-review">
             <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
             <div class="ad-wrapper-sidebar">
-                <!-- Paste your manual 300x250 or 300x600 AdSense script right here -->
                 <div style="color: #ccc; font-size: 0.9rem;">[300x250 Ad Unit Placeholder]</div>
             </div>
         </div>
 
     </div>
 
-    <!-- ADJUSTED FOOTER LINKS -->
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
         
@@ -261,7 +285,6 @@
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
 
-    <!-- Simple Analytics Script tracking stays globally intact -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
