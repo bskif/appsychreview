@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Topic 0.3: Correlation and Experimentation - Psych Review Hub</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- STYLING MATCHED TO PRIVACY/TERMS PAGES --- */
+        .blog-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .blog-container h1 {
+            text-align: left;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .blog-container h2 {
+            margin-top: 35px;
+            font-size: 1.25rem;
+            color: var(--primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .blog-container h3 {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .blog-container p, .blog-container li {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .blog-container ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .blog-container a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .blog-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- CALLOUT BOXES FOR MISCONCEPTIONS --- */
+        .blog-container blockquote {
+            background: #fdfaf2;
+            border-left: 4px solid #5F7FFF;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .blog-container blockquote p {
+            margin-bottom: 0;
+            color: #444;
+        }
+
+        /* --- AAQ FRQ CALLOUT BOX --- */
+        .aaq-callout {
+            background: #f0f7f4;
+            border-left: 4px solid #2b9348;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .aaq-callout h4 {
+            color: #1a5e31;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .aaq-callout p, .aaq-callout li {
+            color: #2b4d36;
+            font-size: 1rem;
+        }
+
+        .aaq-callout ul {
+            margin-bottom: 0; 
+        }
+
+        .update-date {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* --- TWO-COLUMN LAYOUT WITH SIDEBAR --- */
+        .blog-layout-bridge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .sidebar-ad-aside {
+            width: 300px;
+            flex-shrink: 0;
+            margin-top: 20px;
+        }
+
+        .ad-wrapper-sidebar {
+            width: 300px;
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+        
+        .video-responsive {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* --- REVIEW SAFETY BLOCK --- */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 600px) {
+            .blog-container {
+                padding: 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand"><a href="../index.html">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../psych-hub.html">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="../studyguide.html">Study Guides</a>
+                    <a href="../glossary.html">Glossary</a>
+                    <a href="../flashcards.html">Flashcards</a>
+                    <a href="../quiz.html">Quiz</a>
+                    <a href="../confusingpairs.html">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="../connectionsgame.html">Connections</a>
+                    <a href="../boardgame.html">Psych Land</a>
+                    <a href="../battleship.html">Cortex Commander</a>
+                    <a href="../oddball.html">Oddball</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="../about.html">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">🥤 Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="blog-layout-bridge">
+        
+        <div class="blog-container" style="flex: 1; min-width: 300px; max-width: 780px;">
+            <h1>Unit 0: Science Practices</h1>
+            <h3 style="color: #666; margin-top: 5px; margin-bottom: 15px; font-weight: 500;">Topic 0.3: Correlation and Experimentation</h3>
+            <div class="update-date">Last Updated: June 29, 2026</div>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+            <h2>The Big Picture: Tracking Variables and Finding Causes</h2>
+            <p>In psychology, a <strong>Variable</strong> is anything that can vary and is feasible and ethical to measure (like hours of sleep, levels of stress, or test scores). Once researchers decide what variables they want to study, they must choose a research method. Broadly, these fall into two categories: <strong>Non-Experimental Methodology</strong> (where we simply observe variables to see if they are related) and experiments (where we actively manipulate variables to prove cause and effect). Let's look at the strengths and weaknesses of both.</p>
+
+            <h2>1. Predicting Behavior: Correlation</h2>
+            <p>When naturalistic observations and surveys reveal that one trait or behavior accompanies another, we say the two correlate. A <strong>Correlation</strong> is a measure of the extent to which two variables change together, and thus of how well either variable predicts the other. To visualize this, researchers plot the data on a <strong>Scatterplot</strong>, a graphed cluster of dots where the slope suggests the direction of the relationship.</p>
+            <p>Correlations come in two forms:</p>
+            <ul>
+                <li><strong>Positive Correlation:</strong> Two variables move in the <em>same</em> direction. Example: As the number of hours spent studying <em>increases</em>, GPA also <em>increases</em>.</li>
+                <li><strong>Negative Correlation:</strong> Two variables move in <em>opposite</em> directions. Example: As the number of school absences <em>increases</em>, a student's GPA <em>decreases</em>.</li>
+            </ul>
+            <p>Researchers measure the strength of this relationship using a <strong>Correlation Coefficient</strong>, a statistical number ranging from -1.0 to +1.0. The closer the number is to 1.0 (positive or negative), the stronger the relationship.</p>
+
+            <h3>The Two Traps of Correlation</h3>
+            <p>While correlations are great for making predictions, they are plagued by two logical traps that prevent us from claiming causation:</p>
+            <ul>
+                <li><strong>The Directionality Problem:</strong> Even if A and B are correlated, we don't know if A causes B, or if B causes A. (Does playing violent video games cause aggression, or do aggressive kids naturally prefer violent video games?)</li>
+                <li><strong>The Third Variable Problem:</strong> An unmeasured, outside variable might be responsible for the observed relationship between two other variables. For example, ice cream sales and sunburns have a strong positive correlation. Does eating ice cream cause sunburns? No. The hidden third variable—the hot summer sun—is causing both!</li>
+            </ul>
+
+            <h2>2. Illusions and Regressions</h2>
+            <p>Sometimes, we perceive correlations that don't exist at all. An <strong>Illusory Correlation</strong> occurs when we believe a relationship exists between two things, but in reality, there is none (like believing that people act crazy during a full moon). We remember the times the crazy behavior happened during a full moon because it confirms our bias, but we forget all the times it didn't.</p>
+            <p>We are also easily fooled by a statistical phenomenon called <strong>Regression Toward the Mean</strong>. This is the tendency for extreme or unusual scores to naturally fall back (regress) toward their average over time. For example, if a student guesses blindly on a test and gets an incredibly lucky 100%, their score on the next test will likely regress back down toward their normal average of an 80%. If they wore "lucky socks" during the first test and didn't during the second, they might form an illusory correlation, failing to realize the drop was just a mathematical regression to the mean.</p>
+
+            <h2>3. Isolating Cause and Effect: The Experiment</h2>
+            <p>To definitively prove that one variable causes a change in another, researchers must move beyond observation and conduct an <strong>Experiment</strong>. This is a research method in which an investigator actively manipulates one or more factors to observe the effect on some behavior or mental process.</p>
+            
+            <h3>The Anatomy of an Experiment</h3>
+            <p>A true experiment requires several specific structural components:</p>
+            <ul>
+                <li><strong>Independent Variable (IV):</strong> The factor that the experimenter manipulates or changes. This is the presumed "cause."</li>
+                <li><strong>Dependent Variable (DV):</strong> The outcome factor; the variable that is measured to see if it changed in response to the IV. This is the presumed "effect."</li>
+                <li><strong>Experimental Group:</strong> The group of participants exposed to the treatment (the actual independent variable).</li>
+                <li><strong>Control Group:</strong> The group that is NOT exposed to the treatment. They serve as a baseline for comparison.</li>
+            </ul>
+
+            <h3>Controlling the Environment</h3>
+            <p>To ensure the experiment is valid, researchers must eliminate any <strong>Confounding Variables</strong>—factors other than the independent variable that might accidentally produce an effect. The ultimate weapon against confounding participant variables is <strong>Random Assignment</strong>: assigning participants to the experimental and control groups by chance. If you are testing a new study technique, randomly assigning students ensures that the naturally "smart" kids or the "lazy" kids are evenly distributed between both groups, balancing them out.</p>
+            
+            <p>Experiments must also account for the <strong>Placebo Effect</strong>—a phenomenon where a participant experiences real changes simply because they <em>expect</em> the treatment to work. To control for this, the control group is often given a <strong>Placebo</strong> (a fake pill or dummy treatment). To make sure expectations don't ruin the data, researchers use a <strong>Single-Blind Procedure</strong> (participants don't know which group they are in) or the gold-standard <strong>Double-Blind Procedure</strong> (neither the participants nor the researchers handing out the pills know who is in which group).</p>
+
+            <p>Finally, for an experiment to be truly scientific, the hypothesis must possess <strong>Falsifiability</strong>. This means the theory must be structured in a way that it is capable of being proven false by the data. If a theory can twist any outcome to mean "I was right," it isn't science!</p>
+
+            <h2>4. AP Science Practice Focus: Methods and Conclusions</h2>
+            <p>The AP Psychology Exam heavily tests your ability to deconstruct experimental design. The College Board outlines three specific Science Practices for this topic:</p>
+            <ul>
+                <li><strong>Practice 2.A (Identify the Design):</strong> You must be able to read a scenario and correctly determine if the researcher is using a correlational design or an experimental design based on whether they are just observing data or actively manipulating a variable.</li>
+                <li><strong>Practice 2.B (Identify the Variables):</strong> You must be able to read a paragraph and explicitly identify the Independent Variable, the Dependent Variable, and any potential Confounding Variables.</li>
+                <li><strong>Practice 2.C (Evaluate Conclusions):</strong> This tests your ability to explain how the research method affects the conclusions. If the study was a correlation, you must point out that the researcher <em>cannot</em> claim causation due to third variables!</li>
+            </ul>
+
+            <div class="aaq-callout">
+                <h4>📝 The AAQ Exam Connection</h4>
+                <p>The concepts of experimentation and correlation are the beating heart of the <strong>Article Analysis Question (AAQ)</strong> FRQ. Here is exactly how these terms will appear on your test:</p>
+                <ul>
+                    <li><strong>Part A (Identify the Method):</strong> You will need to explicitly state if the study is a correlational study or an experiment. (Hint: Look for active manipulation and random assignment—if they exist, it's an experiment!)</li>
+                    <li><strong>Part B (Identify Variables):</strong> You will frequently be asked to identify the Independent Variable or Dependent Variable, and provide the exact operational definition the researchers used to measure it.</li>
+                    <li><strong>Part F (Support/Refute a Hypothesis):</strong> You might be asked to look at a scatterplot or a correlation coefficient and explain how that data supports or refutes the researcher's original claim.</li>
+                </ul>
+            </div>
+
+            <h2>5. Don't Trip Up! (Common Misconceptions)</h2>
+            <blockquote>
+                <p>⚠️ <strong>Correlation does NOT equal Causation:</strong> This is the most tested concept in all of AP Psychology. Just because two variables move together does not mean one caused the other. The <em>only</em> way to prove causation is through a controlled experiment.</p>
+            </blockquote>
+            <blockquote>
+                <p>⚠️ <strong>Random Sample vs. Random Assignment:</strong> Do not swap these! A <strong>Random Sample</strong> happens *first*—it is how you gather people from the population to take your survey or join your study (Generalizability). <strong>Random Assignment</strong> happens *second*—it is how you divide that sample into the experimental and control groups (Isolating Cause and Effect).</p>
+            </blockquote>
+
+            <h2>6. Level Up Your Score: Interactive Review</h2>
+            <p>Ensure these critical research methods are locked in by practicing with our review tools:</p>
+            <ul>
+                <li><strong>Flashcard Drill:</strong> Head to our <a href="../flashcards.html">Flashcards</a> and review the "Unit 0" deck to master the differences between IVs, DVs, and confounding variables.</li>
+                <li><strong>Confusing Pairs:</strong> Try out <a href="../confusingpairs.html">Confusing Pairs</a> to ensure you can perfectly distinguish between Single-Blind and Double-Blind procedures.</li>
+                <li><strong>Unit 0 Quiz:</strong> Verify your understanding of scatterplots, correlations, and experimental design with our <a href="../quiz.html">adaptive quiz</a>.</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-ad-aside ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-sidebar">
+                <div style="color: #ccc; font-size: 0.9rem;">[300x250 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        
+        <p style="margin-bottom: 15px;">
+            <a href="../privacy_2.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="../terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+        
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>
