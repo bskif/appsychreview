@@ -4323,1390 +4323,1411 @@
       "id": "618",
       "unit": "Unit 4",
       "topic": "4.4",
+      "term": "Self-Concept",
+      "definition": "In humanistic psychology, the organized set of beliefs and perceptions a person has about themselves, including their traits, abilities, and identity."
+    },
+    {
+      "id": "619",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Real Self",
+      "definition": "In humanistic psychology, a person's actual thoughts, feelings, behaviors, and characteristics as they currently exist."
+    },
+    {
+      "id": "620",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "term": "Ideal Self",
+      "definition": "In humanistic psychology, the person one aspires to be—the image of oneself that reflects personal goals, values, and aspirations."
+    },
+    {
+      "id": "621",
+      "unit": "Unit 4",
+      "topic": "4.4",
       "term": "Sublimation",
       "definition": "A defense mechanism in which socially unacceptable impulses are redirected into socially acceptable or productive activities."
     },
     {
-      "id": "619",
+      "id": "622",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Unconditional Positive Regard",
       "definition": "According to Carl Rogers, accepting and valuing a person without judgment or conditions, regardless of their behavior or feelings."
     },
     {
-      "id": "620",
+      "id": "623",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Id",
       "definition": "The primitive and unconscious part of personality that operates on the pleasure principle, seeking immediate gratification of basic drives and desires."
     },
     {
-      "id": "621",
+      "id": "624",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Ego",
       "definition": "The rational part of personality that operates on the reality principle, balancing the demands of the id, superego, and the real world."
     },
     {
-      "id": "622",
+      "id": "625",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Superego",
       "definition": "The part of personality that represents internalized moral standards and ideals, guiding behavior according to a sense of right and wrong."
     },
     {
-      "id": "623",
+      "id": "626",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Conscious",
       "definition": "The level of awareness that contains thoughts, perceptions, and feelings that a person is actively aware of at a given moment."
     },
     {
-      "id": "624",
+      "id": "627",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Preconscious",
       "definition": "The level of awareness containing information that is not currently in conscious thought but can be easily brought into awareness when needed."
     },
     {
-      "id": "625",
+      "id": "628",
       "unit": "Unit 4",
       "topic": "4.4",
       "term": "Unconscious",
       "definition": "In Freud’s theory, the part of the mind that contains thoughts, memories, desires, and conflicts that are outside of conscious awareness but still influence behavior."
     },
     {
-      "id": "626",
+      "id": "629",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Agreeableness",
       "definition": "A personality trait in the Big Five model that reflects how cooperative, compassionate, trusting, and friendly a person is toward others."
     },
     {
-      "id": "627",
+      "id": "630",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Conscientiousness",
       "definition": "A Big Five personality trait that reflects how organized, responsible, dependable, and goal-oriented a person is."
     },
     {
-      "id": "628",
+      "id": "631",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Neuroticism",
       "definition": "A Big Five personality trait that reflects emotional instability and the tendency to experience anxiety, moodiness, sadness, and negative emotions."
     },
     {
-      "id": "629",
+      "id": "632",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Extraversion",
       "definition": "A Big Five personality trait that reflects sociability, assertiveness, talkativeness, and a tendency to gain energy from interacting with others."
     },
     {
-      "id": "630",
+      "id": "633",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Factor Analysis",
       "definition": "A statistical method used to identify clusters of related variables, helping psychologists discover underlying traits (such as personality factors) that explain patterns in data."
     },
     {
-      "id": "631",
+      "id": "634",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Openness to Experience",
       "definition": "A Big Five personality trait that reflects curiosity, creativity, imagination, and a willingness to try new ideas and experiences."
     },
     {
-      "id": "632",
+      "id": "635",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Reciprocal Determinism",
       "definition": "The idea that a person’s behavior is shaped by the interaction between their thoughts, their environment, and their actions, and each of these factors also influences the others."
     },
     {
-      "id": "633",
+      "id": "636",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Self-Concept",
       "definition": "An individual’s overall understanding and perception of themselves, including beliefs about their abilities, traits, and identity."
     },
     {
-      "id": "634",
+      "id": "637",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Self-Efficacy",
       "definition": "A person’s belief in their ability to successfully perform a specific task or handle a particular situation."
     },
     {
-      "id": "635",
+      "id": "638",
       "unit": "Unit 4",
       "topic": "4.5",
       "term": "Self-Esteem",
       "definition": "A person’s overall sense of self-worth or personal value."
     },
     {
-      "id": "636",
+      "id": "639",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Adventure Seeking",
       "definition": "A component of sensation seeking characterized by a desire for exciting, novel, and physically stimulating experiences."
     },
     {
-      "id": "637",
+      "id": "640",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Approach-Approach",
       "definition": "A motivational conflict that occurs when a person must choose between two desirable outcomes."
     },
     {
-      "id": "638",
+      "id": "641",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Approach-Avoidance",
       "definition": "A motivational conflict that occurs when a single goal or option has both positive and negative aspects, creating mixed feelings about pursuing it."
     },
     {
-      "id": "639",
+      "id": "642",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Arousal Theory",
       "definition": "A theory of motivation that suggests people are motivated to maintain an optimal level of alertness or stimulation, seeking activities that increase or decrease arousal as needed."
     },
     {
-      "id": "640",
+      "id": "643",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Avoidance-Avoidance",
       "definition": "A motivational conflict that occurs when a person must choose between two undesirable outcomes."
     },
     {
-      "id": "641",
+      "id": "644",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Boredom Susceptibility",
       "definition": "A component of sensation seeking characterized by an intolerance for repetitive or monotonous experiences and a desire for novelty and change."
     },
     {
-      "id": "642",
+      "id": "645",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Disinhibition",
       "definition": "A component of sensation seeking characterized by a preference for uninhibited, spontaneous, or socially stimulating experiences that provide excitement and arousal."
     },
     {
-      "id": "643",
+      "id": "646",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Drive-Reduction Theory",
       "definition": "A theory of motivation that proposes people are motivated to reduce internal states of tension, or drives, by satisfying biological needs and restoring homeostasis."
     },
     {
-      "id": "644",
+      "id": "647",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Experience Seeking",
       "definition": "A component of sensation seeking characterized by a desire for novel experiences through activities such as travel, art, music, or unconventional lifestyles."
     },
     {
-      "id": "645",
+      "id": "648",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Extrinsic Motivation",
       "definition": "Motivation to engage in a behavior in order to obtain external rewards or avoid punishment."
     },
     {
-      "id": "646",
+      "id": "649",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Ghrelin",
       "definition": "A hormone produced mainly in the stomach that stimulates hunger and signals the brain to increase food intake"
     },
     {
-      "id": "647",
+      "id": "650",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Homeostasis",
       "definition": "The body’s tendency to maintain a stable internal environment by regulating physiological conditions such as temperature, hunger, and hydration."
     },
     {
-      "id": "648",
+      "id": "651",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Hypothalamus",
       "definition": "A small brain structure that helps regulate essential body functions such as hunger, thirst, body temperature, and hormone release by controlling the endocrine system"
     },
     {
-      "id": "649",
+      "id": "652",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Incentive Theory",
       "definition": "A theory of motivation that suggests behavior is driven by the desire to obtain rewards or avoid punishments from the environment."
     },
     {
-      "id": "650",
+      "id": "653",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Instincts",
       "definition": "Inborn, automatic behaviors that are biologically determined and do not require learning."
     },
     {
-      "id": "651",
+      "id": "654",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Intrinsic Motivation",
       "definition": "Motivation to engage in a behavior because it is personally rewarding or enjoyable, rather than for external rewards or pressures."
     },
     {
-      "id": "652",
+      "id": "655",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Leptin",
       "definition": "A hormone produced by fat cells that helps regulate hunger and body weight by signaling to the brain that the body has enough stored energy"
     },
     {
-      "id": "653",
+      "id": "656",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Pituitary Gland",
       "definition": "A small gland often called the “master gland” because it releases hormones that control other endocrine glands and regulate growth, metabolism, and reproduction"
     },
     {
-      "id": "654",
+      "id": "657",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Self-Determination Theory",
       "definition": "A theory of motivation that emphasizes the role of autonomy, competence, and relatedness in fostering intrinsic motivation and psychological well-being."
     },
     {
-      "id": "655",
+      "id": "658",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Sensation-Seeking Theory",
       "definition": "A theory of motivation that describes the tendency to seek varied, novel, and intense experiences, even when they involve risk."
     },
     {
-      "id": "656",
+      "id": "659",
       "unit": "Unit 4",
       "topic": "4.6",
       "term": "Yerkes-Dodson Law",
       "definition": "A theory of arousal and performance that states performance improves with increased arousal up to an optimal point, after which further arousal leads to a decline in performance."
     },
     {
-      "id": "657",
+      "id": "660",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Affect",
       "definition": "The experience or expression of emotion, including feelings and mood states."
     },
     {
-      "id": "658",
+      "id": "661",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Cognitive Appraisal",
       "definition": "The process of evaluating and interpreting a situation in order to determine its emotional significance and how one should respond."
     },
     {
-      "id": "659",
+      "id": "662",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Cognitive Label",
       "definition": "The interpretation or identification of a physiological arousal state that helps determine which emotion is being experienced."
     },
     {
-      "id": "660",
+      "id": "663",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Display Rules",
       "definition": "Cultural norms that dictate how and when emotions should be expressed in different social situations."
     },
     {
-      "id": "661",
+      "id": "664",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Elicitors",
       "definition": "Events, stimuli, or situations that trigger or cause an emotional response."
     },
     {
-      "id": "662",
+      "id": "665",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Facial-Feedback Hypothesis",
       "definition": "The theory that facial expressions can influence emotional experiences, suggesting that expressing an emotion on the face can help generate or intensify that emotion."
     },
     {
-      "id": "663",
+      "id": "666",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "James-Lange Theory",
       "definition": "A theory of emotion that proposes that physiological arousal occurs first, and the emotional experience results from the interpretation of that arousal."
     },
     {
-      "id": "664",
+      "id": "667",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Cannon-Bard Theory",
       "definition": "A theory of emotion that proposes that physiological arousal and the conscious experience of emotion occur simultaneously and independently."
     },
     {
-      "id": "665",
+      "id": "668",
       "unit": "Unit 4",
       "topic": "4.7",
       "term": "Two-Factor Theory",
       "definition": "A theory of emotion that proposes that emotion is the result of physiological arousal and a cognitive label that interprets that arousal."
     },
     {
-      "id": "666",
+      "id": "669",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Adverse Childhood Experiences",
       "definition": "Potentially traumatic events that occur during childhood, such as abuse, neglect, or household dysfunction, that can have lasting effects on physical health, mental health, and development."
     },
     {
-      "id": "667",
+      "id": "670",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Alarm Stage",
       "definition": "The first stage of General Adaptation Syndrome in which the body recognizes a stressor and activates the fight-or-flight response."
     },
     {
-      "id": "668",
+      "id": "671",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Distress",
       "definition": "A negative form of stress that results from overwhelming or harmful demands and can impair functioning and well-being."
     },
     {
-      "id": "669",
+      "id": "672",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Emotion-Focused Coping",
       "definition": "A coping strategy that involves managing emotional responses to a stressor rather than changing the stressor itself."
     },
     {
-      "id": "670",
+      "id": "673",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Eustress",
       "definition": "A positive form of stress that enhances motivation, performance, or well-being."
     },
     {
-      "id": "671",
+      "id": "674",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Exhaustion Stage",
       "definition": "The final stage of General Adaptation Syndrome in which prolonged stress depletes the body’s resources, reducing its ability to cope effectively."
     },
     {
-      "id": "672",
+      "id": "675",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Fight Flight Freeze Response",
       "definition": "An involuntary physiological reaction to a perceived harmful event, attack, or threat to survival."
     },
     {
-      "id": "673",
+      "id": "676",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "General Adaptation Syndrome",
       "definition": "A three-stage pattern of physiological response to stress that includes alarm, resistance, and exhaustion."
     },
     {
-      "id": "674",
+      "id": "677",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Health Psychology",
       "definition": "The branch of psychology that studies how biological, psychological, and social factors influence health, illness, and overall well-being."
     },
     {
-      "id": "675",
+      "id": "678",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Hypertension",
       "definition": "A condition characterized by chronically elevated blood pressure, increasing the risk of cardiovascular disease and other health problems."
     },
     {
-      "id": "676",
+      "id": "679",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Immune Suppression",
       "definition": "A reduction in the activity or effectiveness of the immune system, making the body more vulnerable to illness and infection."
     },
     {
-      "id": "677",
+      "id": "680",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Problem-Focused Coping",
       "definition": "A coping strategy that involves addressing or changing the source of stress to reduce its impact."
     },
     {
-      "id": "678",
+      "id": "681",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Resistance Stage",
       "definition": "The second stage of General Adaptation Syndrome in which the body adapts to a stressor and continues to cope while remaining physiologically activated."
     },
     {
-      "id": "679",
+      "id": "682",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Stress",
       "definition": "The physiological and psychological response to demands or challenges that threaten or exceed an individual’s ability to cope."
     },
     {
-      "id": "680",
+      "id": "683",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Stressors",
       "definition": "Events, situations, or stimuli that trigger a physiological or psychological stress response."
     },
     {
-      "id": "681",
+      "id": "684",
       "unit": "Unit 5",
       "topic": "5.1",
       "term": "Tend and Befriend Theory",
       "definition": "A theory suggesting that, in response to stress, people may cope by seeking social support and protecting or nurturing others rather than relying solely on the fight-or-flight response."
     },
     {
-      "id": "682",
+      "id": "685",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Courage",
       "definition": "A signature strength in positive psychology characterized by persistence, bravery, and the willingness to act despite fear or adversity."
     },
     {
-      "id": "683",
+      "id": "686",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Gratitude",
       "definition": "A positive emotional response that involves recognizing and appreciating the benefits, kindness, or support received from others."
     },
     {
-      "id": "684",
+      "id": "687",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Happiness",
       "definition": "A general state of well-being characterized by positive emotions, life satisfaction, and a sense of fulfillment."
     },
     {
-      "id": "685",
+      "id": "688",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Humanity",
       "definition": "A signature strength in positive psychology that involves caring, valuing close relationships, and showing kindness and compassion toward others."
     },
     {
-      "id": "686",
+      "id": "689",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Justice",
       "definition": "A signature strength in positive psychology that involves fairness, treating others equally, and contributing to the well-being of the community or society."
     },
     {
-      "id": "687",
+      "id": "690",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive Emotions",
       "definition": "Pleasant emotional states such as joy, gratitude, interest, and contentment that contribute to well-being and life satisfaction."
     },
     {
-      "id": "688",
+      "id": "691",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Positive Psychology",
       "definition": "A branch of psychology that focuses on the study of strengths, positive emotions, and factors that contribute to happiness, well-being, and human flourishing."
     },
     {
-      "id": "689",
+      "id": "692",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Posttraumatic Growth",
       "definition": "Positive psychological change that can occur as a result of struggling with highly challenging or traumatic life experiences."
     },
     {
-      "id": "690",
+      "id": "693",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Resilience",
       "definition": "The ability to adapt, recover, and maintain functioning in the face of stress, adversity, or trauma."
     },
     {
-      "id": "691",
+      "id": "694",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Subjective Well-Being",
       "definition": "A person’s self-reported evaluation of their own happiness and life satisfaction, including the balance of positive and negative emotions."
     },
     {
-      "id": "692",
+      "id": "695",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Temperance",
       "definition": "A signature strength in positive psychology that involves self-control, moderation, and the ability to regulate impulses and behaviors."
     },
     {
-      "id": "693",
+      "id": "696",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Transcendence",
       "definition": "A signature strength in positive psychology that involves appreciating beauty, finding meaning, and feeling a connection to something larger than oneself."
     },
     {
-      "id": "694",
+      "id": "697",
       "unit": "Unit 5",
       "topic": "5.2",
       "term": "Wisdom",
       "definition": "A signature strength in positive psychology characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding."
     },
     {
-      "id": "695",
+      "id": "698",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Ageism",
       "definition": "Prejudice, discrimination, or stereotyping based on a person’s age."
     },
     {
-      "id": "696",
+      "id": "699",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Behavioral Perspective",
       "definition": "An approach that explains psychological disorders as the result of learned behaviors acquired through conditioning and environmental influences."
     },
     {
-      "id": "697",
+      "id": "700",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Biological Perspective",
       "definition": "An approach that explains psychological disorders as the result of genetic, neurological, biochemical, or other physiological factors."
     },
     {
-      "id": "698",
+      "id": "701",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Biopsychosocial Model",
       "definition": "An approach that explains health and behavior as the result of interactions among biological, psychological, and social factors."
     },
     {
-      "id": "699",
+      "id": "702",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Cognitive Perspective",
       "definition": "An approach that explains psychological disorders as the result of maladaptive thought patterns, beliefs, and ways of interpreting experiences."
     },
     {
-      "id": "700",
+      "id": "703",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Social Norms",
       "definition": "Shared expectations or rules within a group or culture that guide and influence appropriate behavior."
     },
     {
-      "id": "701",
+      "id": "704",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Diagnostic and Statistical Manual of Mental Disorders (DSM)",
       "definition": "The primary manual used by mental health professionals to classify and diagnose mental disorders based on standardized criteria."
     },
     {
-      "id": "702",
+      "id": "705",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Diathesis-Stress Model",
       "definition": "A model that explains mental disorders as the result of the interaction between a biological or psychological predisposition and stressful life experiences."
     },
     {
-      "id": "703",
+      "id": "706",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Discrimination",
       "definition": "Unjustified negative behavior or unequal treatment toward individuals based on their membership in a particular group."
     },
     {
-      "id": "704",
+      "id": "707",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Distress",
       "definition": "A state of significant emotional discomfort or suffering that is often used as a criterion for identifying psychological disorders because it impairs daily functioning."
     },
     {
-      "id": "705",
+      "id": "708",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Dysfunction",
       "definition": "A criterion for psychological disorders referring to thoughts, emotions, or behaviors that interfere with a person’s ability to function effectively in daily life."
     },
     {
-      "id": "706",
+      "id": "709",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Eclectic Approach",
       "definition": "An approach to treatment that combines techniques and principles from multiple psychological perspectives or therapies based on the individual’s needs."
     },
     {
-      "id": "707",
+      "id": "710",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Evolutionary Perspective",
       "definition": "An approach that explains psychological disorders as behaviors or traits that may have developed because they provided adaptive advantages during human evolution."
     },
     {
-      "id": "708",
+      "id": "711",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Humanistic Perspective",
       "definition": "An approach that explains psychological disorders as the result of barriers to personal growth, self-acceptance, or the fulfillment of one’s potential."
     },
     {
-      "id": "709",
+      "id": "712",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "International Classification of Mental Disorders (ICD)",
       "definition": "A diagnostic system developed by the World Health Organization that classifies diseases and health conditions, including mental and behavioral disorders, using standardized criteria."
     },
     {
-      "id": "710",
+      "id": "713",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Psychodynamic Perspective",
       "definition": "An approach that explains psychological disorders as the result of unconscious conflicts, unresolved childhood experiences, and internal psychological processes."
     },
     {
-      "id": "711",
+      "id": "714",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Racism",
       "definition": "Prejudice, discrimination, or unequal treatment directed toward individuals or groups based on race or ethnicity."
     },
     {
-      "id": "712",
+      "id": "715",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Sexism",
       "definition": "Prejudice, discrimination, or stereotyping based on a person’s sex or gender."
     },
     {
-      "id": "713",
+      "id": "716",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Sociocultural Perspective",
       "definition": "An approach that explains psychological disorders as the result of social and cultural factors, such as norms, expectations, and environmental influences."
     },
     {
-      "id": "714",
+      "id": "717",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Stigma",
       "definition": "A negative label or stereotype attached to individuals with psychological disorders that can lead to prejudice and discrimination."
     },
     {
-      "id": "715",
+      "id": "718",
       "unit": "Unit 5",
       "topic": "5.3",
       "term": "Deviation from Social Norms",
       "definition": "A criterion for identifying psychological disorders in which an individual’s thoughts, emotions, or behaviors significantly differ from culturally accepted expectations or rules of behavior."
     },
     {
-      "id": "716",
+      "id": "719",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Acrophobia",
       "definition": "An anxiety disorder characterized by an intense and irrational fear of heights."
     },
     {
-      "id": "717",
+      "id": "720",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Agoraphobia",
       "definition": "An anxiety disorder characterized by an intense fear of situations where escape might be difficult or help unavailable, often leading to avoidance of open or crowded places."
     },
     {
-      "id": "718",
+      "id": "721",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Anorexia Nervosa",
       "definition": "An eating disorder characterized by severe restriction of food intake, an intense fear of gaining weight, and a distorted body image leading to significantly low body weight."
     },
     {
-      "id": "719",
+      "id": "722",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Antisocial Personality Disorder",
       "definition": "A personality disorder characterized by a persistent pattern of disregard for, and violation of, the rights of others, often involving deceitfulness, impulsivity, and lack of remorse."
     },
     {
-      "id": "720",
+      "id": "723",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Anxiety Disorders",
       "definition": "A group of psychological disorders characterized by excessive fear, anxiety, or avoidance that interferes with daily functioning."
     },
     {
-      "id": "721",
+      "id": "724",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Arachnophobia",
       "definition": "An anxiety disorder characterized by an intense and irrational fear of spiders."
     },
     {
-      "id": "722",
+      "id": "725",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Ataque de Nervios",
       "definition": "A culture-bound syndrome most commonly seen in Latin American cultures, characterized by episodes of intense emotional distress, including shouting, crying, trembling, and sometimes aggression or dissociation in response to stressful events."
     },
     {
-      "id": "723",
+      "id": "726",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Attention-Deficit/Hyperactivity Disorder (ADHD)",
       "definition": "A neurodevelopmental disorder characterized by persistent patterns of inattention, hyperactivity, and impulsivity that interfere with functioning or development."
     },
     {
-      "id": "724",
+      "id": "727",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Autism Spectrum Disorder (ASD)",
       "definition": "A neurodevelopmental disorder characterized by persistent difficulties in social communication and interaction, along with restricted or repetitive patterns of behavior, interests, or activities."
     },
     {
-      "id": "725",
+      "id": "728",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Avoidant Personality Disorder",
       "definition": "A personality disorder characterized by extreme social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation, leading to avoidance of social interactions despite a desire for connection."
     },
     {
-      "id": "726",
+      "id": "729",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Bipolar I Disorder",
       "definition": "A mood disorder characterized by at least one full manic episode, which may be preceded or followed by hypomanic or major depressive episodes."
     },
     {
-      "id": "727",
+      "id": "730",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Bipolar II Disorder",
       "definition": "A mood disorder characterized by at least one hypomanic episode and at least one major depressive episode, without the presence of a full manic episode."
     },
     {
-      "id": "728",
+      "id": "731",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hypomania",
       "definition": "A period of elevated mood, increased energy, and heightened activity that is less severe than full mania and does not significantly impair functioning or require hospitalization."
     },
     {
-      "id": "729",
+      "id": "732",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Borderline Personality Disorder",
       "definition": "A personality disorder characterized by instability in mood, self-image, and relationships, along with impulsive behavior and intense fear of abandonment."
     },
     {
-      "id": "730",
+      "id": "733",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Bulimia Nervosa",
       "definition": "An eating disorder characterized by recurrent episodes of binge eating followed by compensatory behaviors such as vomiting, fasting, or excessive exercise to prevent weight gain."
     },
     {
-      "id": "731",
+      "id": "734",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Catatonic Stupor",
       "definition": "A state associated with catatonia in which an individual is immobile, unresponsive, and may appear awake but does not react to external stimuli."
     },
     {
-      "id": "732",
+      "id": "735",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cluster A Personality Disorders",
       "definition": "A group of personality disorders characterized by odd or eccentric thinking and behavior, including paranoid, schizoid, and schizotypal personality disorders."
     },
     {
-      "id": "733",
+      "id": "736",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cluster B Personality Disorders",
       "definition": "A group of personality disorders characterized by dramatic, emotional, or erratic behavior, including antisocial, borderline, histrionic, and narcissistic personality disorders."
     },
     {
-      "id": "734",
+      "id": "737",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cluster C Personality Disorders",
       "definition": "A group of personality disorders characterized by anxious or fearful thinking and behavior, including avoidant, dependent, and obsessive-compulsive personality disorders."
     },
     {
-      "id": "735",
+      "id": "738",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Compulsions",
       "definition": "Repetitive behaviors or mental acts performed in response to obsessive thoughts, often aimed at reducing anxiety or preventing a feared event."
     },
     {
-      "id": "736",
+      "id": "739",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Cycling",
       "definition": "The pattern of alternating between episodes of mania, hypomania, and depression in mood disorders such as bipolar I and bipolar II disorder."
     },
     {
-      "id": "737",
+      "id": "740",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions",
       "definition": "Strongly held false beliefs that persist despite clear evidence to the contrary, commonly associated with psychotic disorders."
     },
     {
-      "id": "738",
+      "id": "741",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions of Grandeur",
       "definition": "False beliefs in which a person thinks they have exceptional power, importance, fame, or identity that is not supported by reality."
     },
     {
-      "id": "739",
+      "id": "742",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Delusions of Persecution",
       "definition": "False beliefs that one is being harmed, harassed, or targeted by others, despite lack of evidence."
     },
     {
-      "id": "740",
+      "id": "743",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dependent Personality Disorder",
       "definition": "A personality disorder characterized by excessive need to be taken care of, leading to submissive and clinging behavior, and fear of separation or being alone."
     },
     {
-      "id": "741",
+      "id": "744",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Depressive Disorders",
       "definition": "A group of mood disorders characterized by persistent feelings of sadness, loss of interest or pleasure, and related cognitive and physical symptoms that impair functioning."
     },
     {
-      "id": "742",
+      "id": "745",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Disorganized Speech",
       "definition": "A symptom of schizophrenia involving incoherent, illogical, or fragmented speech patterns that make it difficult for others to understand the person’s thoughts."
     },
     {
-      "id": "743",
+      "id": "746",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociative Amnesia",
       "definition": "A dissociative disorder characterized by an inability to recall important personal information, typically related to traumatic or stressful events, that is inconsistent with ordinary forgetting."
     },
     {
-      "id": "744",
+      "id": "747",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Fugue",
       "definition": "Unexpected travel away from one’s home or usual environment, accompanied by amnesia for one’s identity or past, sometimes including the assumption of a new identity."
     },
     {
-      "id": "745",
+      "id": "748",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociative Disorders",
       "definition": "A group of psychological disorders characterized by disruptions or breakdowns in memory, identity, consciousness, or perception of reality."
     },
     {
-      "id": "746",
+      "id": "749",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dissociative Identity Disorder",
       "definition": "A dissociative disorder characterized by the presence of two or more distinct identity states that control a person’s behavior, along with gaps in memory between these identities."
     },
     {
-      "id": "747",
+      "id": "750",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Dopamine Hypothesis",
       "definition": "A theory suggesting that schizophrenia and related psychotic symptoms are associated with excessive dopamine activity in certain brain pathways."
     },
     {
-      "id": "748",
+      "id": "751",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Flashbacks",
       "definition": "Vivid, intrusive experiences in which a person feels as though they are reliving a traumatic event"
     },
     {
-      "id": "749",
+      "id": "752",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Flat Affect",
       "definition": "A negative symptom of schizophrenia characterized by little or no outward expression of emotion through facial expressions, tone of voice, or gestures."
     },
     {
-      "id": "750",
+      "id": "753",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Generalized Anxiety Disorder",
       "definition": "An anxiety disorder in which a person is continually tense, apprehensive, and in a state of autonomic nervous system arousal."
     },
     {
-      "id": "751",
+      "id": "754",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hallucinations",
       "definition": "A positive symptom of schizophrenia involving false sensory experiences, such as hearing voices or seeing things that are not actually present."
     },
     {
-      "id": "752",
+      "id": "755",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Histrionic Personality Disorder",
       "definition": "A personality disorder characterized by excessive emotionality, attention-seeking behavior, and a strong desire to be the center of attention."
     },
     {
-      "id": "753",
+      "id": "756",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hoarding Disorder",
       "definition": "A disorder characterized by persistent difficulty discarding possessions, regardless of their value, resulting in excessive clutter that interferes with daily living."
     },
     {
-      "id": "754",
+      "id": "757",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Hypervigilance",
       "definition": "A state of heightened alertness and constant scanning for potential threats, commonly associated with Post-Traumatic Stress Disorder."
     },
     {
-      "id": "755",
+      "id": "758",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Major Depressive Disorder",
       "definition": "A depressive disorder characterized by persistent depressed mood or loss of interest or pleasure, along with other symptoms that significantly impair daily functioning for at least two weeks."
     },
     {
-      "id": "756",
+      "id": "759",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Mania",
       "definition": "A state of abnormally elevated mood, energy, and activity levels that can include impulsivity, decreased need for sleep, and impaired judgment, often significantly disrupting functioning."
     },
     {
-      "id": "757",
+      "id": "760",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Narcissistic Personality Disorder",
       "definition": "A personality disorder characterized by an inflated sense of self-importance, a need for excessive admiration, and a lack of empathy for others."
     },
     {
-      "id": "758",
+      "id": "761",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Negative Symptoms",
       "definition": "Symptoms of schizophrenia involving a reduction or loss of normal behaviors or emotional functioning, such as flat affect, reduced speech, or lack of motivation."
     },
     {
-      "id": "759",
+      "id": "762",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Neurodevelopmental Disorders",
       "definition": "A group of disorders that begin during childhood and involve impairments in cognitive, behavioral, social, or motor functioning due to atypical brain development."
     },
     {
-      "id": "760",
+      "id": "763",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Obsessions",
       "definition": "Persistent, intrusive, and unwanted thoughts, urges, or images that cause anxiety or distress, commonly associated with obsessive-compulsive disorder."
     },
     {
-      "id": "761",
+      "id": "764",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Obsessive Compulsive Disorder",
       "definition": "A disorder characterized by recurring obsessions and/or compulsions that are time-consuming and significantly interfere with daily functioning."
     },
     {
-      "id": "762",
+      "id": "765",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Obsessive Compulsive Personality Disorder",
       "definition": "A personality disorder characterized by a pervasive pattern of perfectionism, rigid orderliness, and a need for control that interferes with flexibility and relationships."
     },
     {
-      "id": "763",
+      "id": "766",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Panic Attack",
       "definition": "A sudden episode of intense fear or discomfort that peaks quickly and includes physical symptoms such as rapid heartbeat, shortness of breath, dizziness, or chest pain."
     },
     {
-      "id": "764",
+      "id": "767",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Paranoid Personality Disorder",
       "definition": "A personality disorder characterized by a pervasive distrust and suspicion of others, interpreting their motives as malicious without sufficient evidence."
     },
     {
-      "id": "765",
+      "id": "768",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Persistent Depressive Disorder",
       "definition": "A chronic form of depression characterized by a depressed mood lasting for at least two years, along with other symptoms such as low energy, low self-esteem, and feelings of hopelessness."
     },
     {
-      "id": "766",
+      "id": "769",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Personality Disorders",
       "definition": "A group of psychological disorders characterized by long-term, inflexible patterns of thinking, feeling, and behaving that deviate from cultural expectations and impair functioning or relationships."
     },
     {
-      "id": "767",
+      "id": "770",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Positive Symptoms",
       "definition": "Symptoms of schizophrenia that involve the presence of abnormal experiences or behaviors, such as hallucinations, delusions, and disorganized speech."
     },
     {
-      "id": "768",
+      "id": "771",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Posttraumatic Stress Disorder",
       "definition": "A trauma- and stressor-related disorder that develops after exposure to a traumatic event and is characterized by symptoms such as flashbacks, avoidance, hypervigilance, and intrusive memories."
     },
     {
-      "id": "769",
+      "id": "772",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Schizoid Personality Disorder",
       "definition": "A personality disorder characterized by a persistent pattern of detachment from social relationships and a limited range of emotional expression in interpersonal settings."
     },
     {
-      "id": "770",
+      "id": "773",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Schizophrenic Spectrum Disorders",
       "definition": "A group of related psychotic disorders characterized by disruptions in thinking, perception, emotions, and behavior, including conditions such as schizophrenia, schizoaffective disorder, and brief psychotic disorder."
     },
     {
-      "id": "771",
+      "id": "774",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Schizotypal Personality Disorder",
       "definition": "A personality disorder characterized by odd beliefs, eccentric behavior, and discomfort in close relationships, often accompanied by unusual perceptual experiences."
     },
     {
-      "id": "772",
+      "id": "775",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Social Anxiety Disorder",
       "definition": "An anxiety disorder characterized by intense fear or anxiety in social situations due to concerns about being judged, embarrassed, or scrutinized by others."
     },
     {
-      "id": "773",
+      "id": "776",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Specific Phobia",
       "definition": "An anxiety disorder characterized by an intense, irrational fear of a specific object or situation that leads to avoidance and significant distress."
     },
     {
-      "id": "774",
+      "id": "777",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Taijin Kyofusho",
       "definition": "A culture-bound syndrome most commonly seen in Japan, characterized by an intense fear of offending or embarrassing others through one’s appearance, body odor, or behavior in social situations."
     },
     {
-      "id": "775",
+      "id": "778",
       "unit": "Unit 5",
       "topic": "5.4",
       "term": "Word Salad",
       "definition": "A symptom of schizophrenia involving disorganized speech in which words and phrases are strung together incoherently, making communication unintelligible."
     },
     {
-      "id": "776",
+      "id": "779",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Active Listening",
       "definition": "A core technique in Humanistic Psychology where the therapist carefully listens, reflects, and clarifies the client’s thoughts and feelings to show empathy and help the client feel understood and accepted."
     },
     {
-      "id": "777",
+      "id": "780",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Antianxiety Drugs",
       "definition": "Medications (such as Zoloft, Prozac, and Paxil) that reduce symptoms of anxiety by calming the central nervous system."
     },
     {
-      "id": "778",
+      "id": "781",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Antidepressants",
       "definition": "Medications that help reduce symptoms of depression and some anxiety disorders by altering the activity of neurotransmitters involved in mood regulation."
     },
     {
-      "id": "779",
+      "id": "782",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Antipsychotic Medications",
       "definition": "Medications used to reduce symptoms such as hallucinations and delusions primarily by affecting dopamine activity in the brain."
     },
     {
-      "id": "780",
+      "id": "783",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Applied Behavior Analysis",
       "definition": "A therapy based on principles of learning that uses reinforcement and other behavioral techniques to increase helpful behaviors and reduce harmful or disruptive behaviors."
     },
     {
-      "id": "781",
+      "id": "784",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Aversion Therapies",
       "definition": "A behavioral therapy that reduces unwanted behaviors by pairing them with an unpleasant stimulus to create a negative association."
     },
     {
-      "id": "782",
+      "id": "785",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Biofeedback",
       "definition": "A therapeutic technique that uses electronic monitoring to help individuals gain voluntary control over physiological processes such as heart rate, muscle tension, or breathing."
     },
     {
-      "id": "783",
+      "id": "786",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive Restructuring",
       "definition": "A cognitive therapy technique that helps individuals identify, challenge, and replace irrational or negative thought patterns with more realistic and adaptive thoughts."
     },
     {
-      "id": "784",
+      "id": "787",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive Therapies",
       "definition": "A group of therapies that treat psychological disorders by helping individuals identify and change maladaptive patterns of thinking that influence emotions and behavior."
     },
     {
-      "id": "785",
+      "id": "788",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive Triad",
       "definition": "A concept in cognitive therapy describing the pattern of negative thoughts about oneself, the world, and the future that contributes to depression."
     },
     {
-      "id": "786",
+      "id": "789",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cognitive-Behavioral Therapies",
       "definition": "A group of therapies that treat psychological disorders by changing both maladaptive thought patterns and the behaviors that maintain them."
     },
     {
-      "id": "787",
+      "id": "790",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Maladaptive Thinking",
       "definition": "Thought patterns that are inaccurate, overly negative, or unrealistic and that contribute to emotional distress or psychological disorders."
     },
     {
-      "id": "788",
+      "id": "791",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Cultural Humility",
       "definition": "An ongoing approach in therapy that involves self-reflection, openness, and respect for a client’s cultural background, recognizing that the therapist is always learning from the client’s lived experience."
     },
     {
-      "id": "789",
+      "id": "792",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Dialectical Behavior Therapy",
       "definition": "A type of cognitive-behavioral therapy that combines acceptance and change strategies to help individuals regulate emotions, improve relationships, and reduce self-destructive behaviors."
     },
     {
-      "id": "790",
+      "id": "793",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Dream Interpretation",
       "definition": "A psychodynamic therapy technique that involves analyzing the content of dreams to uncover unconscious thoughts, desires, or conflicts."
     },
     {
-      "id": "791",
+      "id": "794",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Electroconvulsive Therapy",
       "definition": "A biomedical treatment for severe psychological disorders, especially depression, that involves applying controlled electrical currents to the brain to trigger a brief seizure and relieve symptoms."
     },
     {
-      "id": "792",
+      "id": "795",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Evidence Based Interventions",
       "definition": "Treatments or therapeutic approaches that have been scientifically tested and shown through research to be effective for specific psychological disorders."
     },
     {
-      "id": "793",
+      "id": "796",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Exposure Therapies",
       "definition": "A behavioral therapy that gradually and safely exposes individuals to feared objects or situations to reduce anxiety and avoidance over time."
     },
     {
-      "id": "794",
+      "id": "797",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Fear Hierarchies",
       "definition": "A ranked list of feared situations or stimuli, ordered from least to most anxiety-provoking, used to guide gradual exposure during exposure therapy."
     },
     {
-      "id": "795",
+      "id": "798",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Fidelity",
       "definition": "An ethical principle requiring psychologists to build trusting professional relationships, keep promises, and uphold responsibilities to clients, colleagues, and society."
     },
     {
-      "id": "796",
+      "id": "799",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Free Association",
       "definition": "A psychoanalytic technique in which clients are encouraged to freely express thoughts, feelings, and memories without censoring them, allowing unconscious conflicts to be explored."
     },
     {
-      "id": "797",
+      "id": "800",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Group Therapy",
       "definition": "A form of psychotherapy in which a therapist works with several clients at the same time, allowing individuals to share experiences, provide support, and develop social skills."
     },
     {
-      "id": "798",
+      "id": "801",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Hypnosis",
       "definition": "A therapeutic technique involving a focused state of attention and increased suggestibility that can be used to help individuals manage symptoms, explore thoughts, or modify behaviors."
     },
     {
-      "id": "799",
+      "id": "802",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Integrity",
       "definition": "An ethical principle requiring psychologists to promote accuracy, honesty, and truthfulness in their professional work, research, and interactions with others."
     },
     {
-      "id": "800",
+      "id": "803",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Lesioning",
       "definition": "A biological treatment technique that involves destroying or removing specific areas of brain tissue to study or alter the effects of brain activity."
     },
     {
-      "id": "801",
+      "id": "804",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Lithium",
       "definition": "A mood-stabilizing medication commonly used to treat bipolar disorder by reducing the severity of manic episodes and helping prevent mood swings."
     },
     {
-      "id": "802",
+      "id": "805",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Lobotomy",
       "definition": "A psychosurgical procedure once used to calm uncontrollably emotional or violent patients by cutting the nerves connecting the frontal lobes to the emotion-controlling centers of the inner brain."
     },
     {
-      "id": "803",
+      "id": "806",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Nonmaleficence",
       "definition": "An ethical principle requiring psychologists to avoid causing harm and to protect the well-being, safety, and rights of clients and research participants."
     },
     {
-      "id": "804",
+      "id": "807",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Person Centered Therapy",
       "definition": "A humanistic therapy developed by Carl Rogers that emphasizes empathy, unconditional positive regard, and genuineness to help clients achieve personal growth and self-actualization."
     },
     {
-      "id": "805",
+      "id": "808",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Psychodynamic Therapies",
       "definition": "A group of therapies based on ideas that focus on exploring unconscious thoughts, unresolved conflicts, and early life experiences to improve psychological functioning."
     },
     {
-      "id": "806",
+      "id": "809",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Psychosurgery",
       "definition": "A biological treatment that involves surgically altering brain tissue to treat severe psychological disorders when other treatments have not been effective."
     },
     {
-      "id": "807",
+      "id": "810",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Psychotropic Medication",
       "definition": "Medications that affect brain chemistry and behavior by altering the activity of neurotransmitters to treat psychological disorders such as depression, anxiety, or schizophrenia."
     },
     {
-      "id": "808",
+      "id": "811",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Rational Emotive Behavior Therapy",
       "definition": "A cognitive therapy developed by Albert Ellis that helps individuals identify and challenge irrational beliefs to replace them with healthier, more realistic thoughts."
     },
     {
-      "id": "809",
+      "id": "812",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Respect For People’s Rights And Dignity",
       "definition": "An ethical principle requiring psychologists to respect the privacy, confidentiality, autonomy, and cultural differences of all individuals while protecting their rights and welfare."
     },
     {
-      "id": "810",
+      "id": "813",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Systematic Desensitization",
       "definition": "A behavioral therapy technique that combines gradual exposure to a feared stimulus with relaxation techniques to reduce anxiety and develop a new response to the fear."
     },
     {
-      "id": "811",
+      "id": "814",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Tardive Dyskinesia",
       "definition": "A movement disorder characterized by involuntary, repetitive muscle movements that can develop as a side effect of long-term use of antipsychotic medications."
     },
     {
-      "id": "812",
+      "id": "815",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Therapeutic Alliance",
       "definition": "The collaborative, trusting relationship between a therapist and client that supports effective treatment and positive therapeutic outcomes."
     },
     {
-      "id": "813",
+      "id": "816",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Transcranial Magnetic Stimulation",
       "definition": "A biological treatment that uses magnetic pulses to stimulate specific areas of the brain, often to treat depression when other treatments have not been effective."
     },
     {
-      "id": "814",
+      "id": "817",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Token Economies",
       "definition": "An operant conditioning procedure in which people earn a token of some sort for exhibiting a desired behavior and can later exchange the tokens for various privileges or treats."
     },
     {
-      "id": "815",
+      "id": "818",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Unconditional Positive Regard",
       "definition": "A therapist’s complete acceptance, empathy, and nonjudgmental support of a client, regardless of the client’s thoughts, feelings, or behaviors."
     },
     {
-      "id": "816",
+      "id": "819",
       "unit": "Unit 5",
       "topic": "5.5",
       "term": "Deinstitutionalization",
