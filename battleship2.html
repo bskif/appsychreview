@@ -120,8 +120,13 @@
             border: 1px solid rgba(0,68,136,0.06);
         }
 
-        /* Subtle rotating radar sweep behind the enemy panel only */
-        .enemy-panel::before {
+        /* Subtle rotating radar sweep behind the enemy waters grid only.
+           Anchored to the grid itself (which already clips overflow) so it
+           can never render outside the 10x10 grid's own bounds. */
+        .enemy-panel .ocean-grid {
+            position: relative;
+        }
+        .enemy-panel .ocean-grid::before {
             content: '';
             position: absolute;
             top: 50%; left: 50%;
@@ -133,7 +138,10 @@
             pointer-events: none;
             z-index: 0;
         }
-        .enemy-panel .ocean-grid { position: relative; z-index: 1; }
+        .enemy-panel .ocean-grid .cell {
+            position: relative;
+            z-index: 1;
+        }
 
         @keyframes radarSpin {
             from { transform: rotate(0deg); }
@@ -225,7 +233,7 @@
                 grid-template-columns: repeat(10, 25px);
                 grid-template-rows: repeat(10, 25px);
             }
-            .enemy-panel::before { display: none; }
+            .enemy-panel .ocean-grid::before { display: none; }
         }
 
         .cell {
@@ -302,7 +310,7 @@
 
         /* Terminal-style log console */
         .terminal-frame {
-            margin-top: 22px;
+            margin: 22px auto 0;
             width: 90%;
             max-width: 640px;
             border-radius: 10px;
