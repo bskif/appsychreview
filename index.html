@@ -104,6 +104,51 @@
             background-color: #0056b3;
         }
 
+        /* Toggle: flip this off once ad units are live */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 20px auto 30px;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        .how-to-use {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 750px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .how-to-use h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .how-to-use p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -155,6 +200,13 @@
             
             <div class="welcome-msg">
                 Welcome to the ultimate AP Psychology review resource! Whether you are cramming for a unit test or preparing for the big exam in May, we have exactly what you need to succeed. Dive into our comprehensive database featuring <strong>819 key terms</strong>, <strong>783 AP-style quiz questions</strong>, and hundreds of unique practice sets across our Confusing Pairs, Connections, and Oddball games. Start reviewing below to lock in that 5!
+            </div>
+        </div>
+
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
             </div>
         </div>
 
@@ -247,6 +299,11 @@
                 </div>
                 <a href="oddball.html" class="play-btn">Play Oddball</a>
             </div>
+        </div>
+
+        <div class="how-to-use">
+            <h2>How to Use This Site</h2>
+            <p>Most students get the best results by working through these tools in order. Start with the <strong>Study Guides</strong> to build a solid understanding of each unit, then use the <strong>Glossary</strong> or <strong>Flashcards</strong> to lock in vocabulary. Once a unit feels solid, test yourself with the <strong>Quiz</strong> for instant feedback and detailed explanations on every question. In the weeks before the exam, switch flashcards and quizzes over to "All Units" mode instead of a single unit &mdash; mixing units together (rather than drilling one at a time) is one of the most well-supported study strategies for long-term retention, and it mirrors how the real AP exam jumps between topics. The games are built for the same purpose in a lower-pressure format, so use them whenever you want a break from straight review without losing study time.</p>
         </div>
 
         <div class="ad-under-review" style="text-align: center; margin: 60px auto 20px auto;">
