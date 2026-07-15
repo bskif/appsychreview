@@ -441,6 +441,32 @@
             box-shadow: 0 8px 20px rgba(0,68,136,0.45);
         }
 
+        /* --- AD PLACEHOLDER (matches topic-page pattern) ---
+           Full-width banner below the game rather than a sidebar: keeps the
+           battlefield grid's fixed width intact and stays well clear of the
+           clickable Enemy Waters cells to avoid accidental-click issues. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the topic pages: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
     </style>
 </head>
 <body>
@@ -541,6 +567,13 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+<div class="ad-banner-outer ad-under-review">
+    <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+    <div class="ad-wrapper-banner">
+        <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
     </div>
 </div>
 
