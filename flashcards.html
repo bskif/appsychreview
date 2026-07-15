@@ -104,6 +104,49 @@
             margin-top: 5px;
             padding: 8px;
         }
+
+        /* Toggle: flip this off once ad units are live */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 600px;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -189,6 +232,18 @@
         <div style="text-align:center; margin-top: 10px;">
             <button class="nav-btn" style="background-color: #3498db; font-size: 0.9rem;" id="mode-toggle-btn" onclick="toggleCardMode()">🔄 View: Term First</button>
             <button class="nav-btn" style="background-color: #7f8c8d; font-size: 0.9rem;" onclick="resetDeck()">↺ Reset Deck</button>
+        </div>
+
+        <div class="study-tips">
+            <h3>💡 Getting the Most Out of Flashcards</h3>
+            <p>Use <strong>Mark as Known</strong> aggressively &mdash; the goal is to shrink your deck down to the terms you're actually struggling with, not to flip through everything on autopilot. Try switching to <strong>Definition First</strong> mode occasionally too; being handed a definition and recalling the term is closer to how AP Psych questions actually work than the reverse. And as you get closer to the exam, study by mixing units together instead of one at a time &mdash; interleaved practice like that is consistently shown to build stronger long-term recall than reviewing a single unit in isolation.</p>
+        </div>
+
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
         </div>
     </div>
 
