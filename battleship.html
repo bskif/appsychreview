@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- NAVY THEME STYLES --- */
+        /* --- NAVY / HUD THEME STYLES --- */
         :root {
             --water: #004488;
             --grid-line: #0055aa;
@@ -16,10 +16,20 @@
             --hit-red: #d90429;
             --miss-white: rgba(255,255,255,0.3);
             --ui-bg: #f0f2f5;
+
+            /* Extended palette for the game visuals only */
+            --water-deep: #001f3f;
+            --water-mid: #0a5aa8;
+            --water-light: #2a8fe0;
+            --steel-1: #a8b2c0;
+            --steel-2: #5a6572;
+            --steel-dark: #2b323d;
+            --hud-glow: rgba(56, 189, 248, 0.45);
+            --hud-font: 'Courier New', Consolas, monospace;
         }
 
         body {
-            background-color: #eef2f5;
+            background: radial-gradient(circle at 50% -10%, #f2f7fc 0%, #e6edf6 45%, #d9e3f0 100%);
         }
 
         .game-container {
@@ -31,25 +41,59 @@
             margin: 0 auto;
         }
 
+        .game-container > h1 {
+            font-family: var(--hud-font);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--water-deep);
+            text-shadow: 0 2px 0 rgba(255,255,255,0.6), 0 0 18px rgba(10,90,168,0.25);
+            margin-bottom: 4px;
+        }
+
         /* --- SETUP SCREEN --- */
         #setup-screen {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+            padding: 32px 30px 26px;
+            border-radius: 14px;
+            box-shadow: 0 16px 34px rgba(0,40,80,0.14), 0 2px 6px rgba(0,40,80,0.08);
             text-align: center;
             max-width: 500px;
             width: 90%;
             margin-top: 30px;
+            border: 1px solid rgba(0,68,136,0.08);
+            overflow: hidden;
         }
-        
+
+        #setup-screen::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--water-deep), var(--water-light), var(--water-deep));
+            background-size: 200% 100%;
+            animation: hueDrift 6s linear infinite;
+        }
+
+        @keyframes hueDrift {
+            0% { background-position: 0% 0; }
+            100% { background-position: 200% 0; }
+        }
+
         select {
-            padding: 10px;
+            padding: 11px 14px;
             font-size: 1rem;
             width: 100%;
             margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 8px;
+            border: 1px solid #ccd6e0;
+            background: #fff;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        select:focus {
+            outline: none;
+            border-color: var(--water-light);
+            box-shadow: 0 0 0 3px rgba(42,143,224,0.2);
         }
 
         /* --- BATTLEFIELD UI --- */
@@ -68,13 +112,106 @@
 
         .grid-container {
             text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, #ffffff, #f2f6fa);
+            border-radius: 14px;
+            padding: 16px 16px 14px;
+            box-shadow: 0 10px 24px rgba(0,40,80,0.12);
+            border: 1px solid rgba(0,68,136,0.06);
+        }
+
+        /* Subtle rotating radar sweep behind the enemy waters grid only.
+           Anchored to the grid itself (which already clips overflow) so it
+           can never render outside the 10x10 grid's own bounds. */
+        .enemy-panel .ocean-grid {
+            position: relative;
+        }
+        .enemy-panel .ocean-grid::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 220px; height: 220px;
+            margin: -110px 0 0 -110px;
+            background: conic-gradient(from 0deg, rgba(42,143,224,0.18), transparent 25%);
+            border-radius: 50%;
+            animation: radarSpin 4s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .enemy-panel .ocean-grid .cell {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes radarSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .grid-title {
+            font-family: var(--hud-font);
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--water-deep);
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hud-status {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(0,68,136,0.08);
+            font-family: var(--hud-font);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        #enemy-status.hud-status { color: #375a7f; }
+
+        .health-bar-wrap {
+            width: 100%;
+            max-width: 220px;
+            margin: 8px auto 0;
+        }
+        .health-bar-label {
+            font-family: var(--hud-font);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: #375a7f;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+        .health-bar-track {
+            width: 100%;
+            height: 12px;
+            border-radius: 6px;
+            background: #e2e8f0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+        .health-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width .4s ease, background .4s ease;
+        }
+        .health-bar-fill.health-ok {
+            background: linear-gradient(90deg, #2fbf71, #27a35e);
+        }
+        .health-bar-fill.health-warn {
+            background: linear-gradient(90deg, #f5b942, #e0972a);
+        }
+        .health-bar-fill.health-crit {
+            background: linear-gradient(90deg, var(--hit-red), #8c0021);
+            animation: healthPulse 1s ease-in-out infinite;
+        }
+        @keyframes healthPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
 
         /* THE GRIDS */
@@ -84,35 +221,56 @@
             grid-template-rows: repeat(10, 30px);
             gap: 1px;
             background-color: var(--grid-line);
-            border: 4px solid #333;
+            border: 4px solid var(--steel-dark);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: inset 0 0 24px rgba(0,0,0,0.35), 0 8px 18px rgba(0,20,40,0.25);
+            /* Without this, a block-level grid stretches to fill whatever
+               container it's in (e.g. the fixed-width setup screen),
+               leaving leftover space filled with the blue grid background.
+               fit-content keeps it locked to its real 10x10 size. */
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
+
         /* Responsive Grid for Mobile */
         @media (max-width: 700px) {
             .ocean-grid {
                 grid-template-columns: repeat(10, 25px);
                 grid-template-rows: repeat(10, 25px);
             }
+            .enemy-panel .ocean-grid::before { display: none; }
         }
 
         .cell {
-            background-color: var(--water);
+            background:
+                radial-gradient(circle at 30% 30%, var(--water-light) 0%, var(--water-mid) 55%, var(--water-deep) 100%);
             position: relative;
             cursor: crosshair;
+            transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
         }
 
         /* Player Grid - Show Ships */
         .my-cell.ship {
-            background-color: var(--ship-gray);
-            border: 1px solid #444;
+            background: linear-gradient(135deg, var(--steel-1) 0%, var(--steel-2) 55%, var(--steel-dark) 100%);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.35), inset 0 -3px 4px rgba(0,0,0,0.45);
         }
 
         /* Enemy Grid - Hover Effect */
         .enemy-cell:hover {
-            background-color: #005599;
+            filter: brightness(1.25);
+            transform: scale(1.08);
+            box-shadow: 0 0 10px var(--hud-glow);
+            z-index: 2;
         }
         .enemy-cell.shot {
             cursor: not-allowed;
+        }
+        .enemy-cell.shot:hover {
+            transform: none;
+            filter: none;
+            box-shadow: none;
         }
 
         /* Hit/Miss Markers */
@@ -120,43 +278,103 @@
             content: '';
             position: absolute;
             top: 50%; left: 50%;
-            width: 70%; height: 70%;
-            background: var(--hit-red);
+            width: 72%; height: 72%;
+            background: radial-gradient(circle, #fff3b0 0%, var(--hit-red) 45%, #6d0016 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 5px red;
+            box-shadow: 0 0 10px 3px rgba(217,4,41,0.65);
+            animation: hitPop .35s ease-out;
+        }
+        @keyframes hitPop {
+            0%   { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+            65%  { transform: translate(-50%, -50%) scale(1.25); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .miss::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 12%; height: 12%;
+            border: 2px solid rgba(255,255,255,0.85);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: missRipple .55s ease-out forwards;
+        }
+        @keyframes missRipple {
+            0%   { width: 12%; height: 12%; opacity: 1; }
+            100% { width: 95%; height: 95%; opacity: 0; }
         }
         .miss::after {
             content: '';
             position: absolute;
             top: 50%; left: 50%;
-            width: 40%; height: 40%;
-            background: white;
+            width: 38%; height: 38%;
+            background: rgba(255,255,255,0.75);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0.6;
         }
 
-        /* Log Console */
+        /* Terminal-style log console */
+        .terminal-frame {
+            margin: 22px auto 0;
+            width: 90%;
+            max-width: 640px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.3);
+        }
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: #1c1c1c;
+        }
+        .terminal-header .dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .terminal-header .dot.red { background: #ff5f56; }
+        .terminal-header .dot.yellow { background: #ffbd2e; }
+        .terminal-header .dot.green { background: #27c93f; }
+        .terminal-header .terminal-title {
+            margin-left: auto;
+            font-family: var(--hud-font);
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            color: #8a8a8a;
+        }
+
         .log-console {
-            margin-top: 20px;
-            background: #333;
-            color: #0f0;
-            font-family: monospace;
-            padding: 10px;
+            margin-top: 0;
+            background: #0c0f0d;
+            background-image: repeating-linear-gradient(
+                0deg,
+                rgba(255,255,255,0.025) 0px,
+                rgba(255,255,255,0.025) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            color: #3ef07a;
+            font-family: var(--hud-font);
+            padding: 10px 12px;
             height: 100px;
             overflow-y: scroll;
-            width: 90%;
-            border-radius: 5px;
+            width: 100%;
+            border-radius: 0;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            box-shadow: inset 0 0 18px rgba(0,0,0,0.5);
         }
 
         /* --- MODAL --- */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,10,22,0.82);
+            backdrop-filter: blur(3px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -166,15 +384,20 @@
             z-index: 200;
         }
         .game-card {
-            background: white;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 12px;
             max-width: 500px;
             width: 90%;
             text-align: center;
             border: 4px solid var(--water);
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
             transition: border-color 0.3s;
+            animation: modalPop .28s ease-out;
+        }
+        @keyframes modalPop {
+            0%   { transform: scale(0.86) translateY(12px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
         }
         .options-grid {
             display: grid;
@@ -184,27 +407,86 @@
         }
         button.game-btn {
             padding: 12px;
-            border: 1px solid #ccc;
-            background: #f8f9fa;
+            border: 1px solid #dbe2ea;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #ffffff, #eef2f6);
             cursor: pointer;
             font-weight: bold;
             color: #333;
+            transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
         }
-        button.game-btn:hover { background: #e2e6ea; }
+        button.game-btn:hover {
+            background: linear-gradient(180deg, #ffffff, #e3f0fb);
+            border-color: var(--water-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,68,136,0.18);
+        }
 
         .feedback-btn {
-            background-color: var(--water);
+            background: linear-gradient(180deg, var(--water-light), var(--water));
             color: white;
             border: none;
             padding: 10px 25px;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
             margin-top: 15px;
+            box-shadow: 0 6px 16px rgba(0,68,136,0.35);
+            transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
         }
         .feedback-btn:hover {
-            background-color: #003366;
+            background: linear-gradient(180deg, var(--water-mid), #003366);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,68,136,0.45);
+        }
+
+        /* --- AD PLACEHOLDER (matches topic-page pattern) ---
+           Full-width banner below the game rather than a sidebar: keeps the
+           battlefield grid's fixed width intact and stays well clear of the
+           clickable Enemy Waters cells to avoid accidental-click issues. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the topic pages: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--water);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--water-deep);
+        }
+        .study-tips p {
+            margin-bottom: 0;
         }
 
     </style>
@@ -254,7 +536,7 @@
     <h1>⚓ Cortex Commander</h1>
 
     <div id="setup-screen">
-        <h3>Mission Briefing</h3>
+        <h3>📋 Mission Briefing</h3>
         <p style="font-size: 1.05rem; text-align: left; line-height: 1.5; color: #444; margin-bottom: 20px; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--water); border-radius: 4px;">
             <strong>Rules of Engagement:</strong> Select your review unit and deploy your fleet. To attack, click a coordinate on the Enemy Waters grid. You will be prompted with a psychology term—answer correctly to lock your weapons and fire! If you miss the question, your weapons misfire and you lose your turn. Sink all 5 enemy ships before they sink yours to win!
         </p>
@@ -279,24 +561,46 @@
     <div id="game-ui">
         
         <div class="battlefield">
-            <div class="grid-container">
-                <div class="grid-title">My Fleet</div>
+            <div class="grid-container player-panel">
+                <div class="grid-title">🛳️ My Fleet</div>
                 <div id="player-grid" class="ocean-grid"></div>
-                <div id="player-health" style="margin-top:5px; color:var(--hit-red); font-weight:bold;">Health: 100%</div>
+                <div class="health-bar-wrap">
+                    <div class="health-bar-label">🛡️ Fleet Health <span id="player-health-pct">100%</span></div>
+                    <div class="health-bar-track"><div class="health-bar-fill health-ok" id="player-health-fill" style="width:100%;"></div></div>
+                </div>
             </div>
 
-            <div class="grid-container">
-                <div class="grid-title">Enemy Waters</div>
+            <div class="grid-container enemy-panel">
+                <div class="grid-title">🎯 Enemy Waters</div>
                 <div id="enemy-grid" class="ocean-grid"></div>
-                <div id="enemy-status" style="margin-top:5px; color:#666;">Targeting System: READY</div>
+                <div id="enemy-status" class="hud-status">Targeting System: READY</div>
+                <div class="hud-status" style="margin-top:6px;">🎯 Ships Sunk: <span id="enemy-sunk-count">0/5</span></div>
             </div>
         </div>
 
-        <div class="log-console" id="game-log">
-            <div>> System Initialized...</div>
-            <div>> Waiting for coordinates...</div>
+        <div class="terminal-frame">
+            <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="terminal-title">SONAR LOG</span>
+            </div>
+            <div class="log-console" id="game-log">
+                <div>> System Initialized...</div>
+                <div>> Waiting for coordinates...</div>
+            </div>
         </div>
 
+    </div>
+</div>
+
+<div class="study-tips">
+    <h3>💡 Getting the Most Out of Cortex Commander</h3>
+    <p>Cortex Commander pulls questions from the same term bank as our Flashcards and Glossary &mdash; the same terms that show up bolded throughout our Topic Overview pages &mdash; so it's a good way to test whether concepts have actually stuck, not just whether you can recognize a definition. Filter by unit while you're still learning a topic, then switch to "All Units" once you want a real cumulative gut-check before the exam. Watch each round's hit/miss log on both sides too: it's a quick way to spot which unit's terms are consistently tripping you up. If one keeps sinking your ships, it's worth revisiting that term in context on its Topic Overview page, not just re-drilling the definition in isolation.</p>
+</div>
+
+<div class="ad-banner-outer ad-under-review">
+    <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+    <div class="ad-wrapper-banner">
+        <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
     </div>
 </div>
 
@@ -439,6 +743,33 @@
     function renderGameGrids() {
         renderGrid(document.getElementById('player-grid'), playerGridState, true); // True = show ships
         renderGrid(document.getElementById('enemy-grid'), enemyGridState, false);  // False = hide ships
+        updateFleetStatus();
+    }
+
+    // --- FLEET HEALTH / STATUS ---
+    function updateFleetStatus() {
+        // Player fleet health bar, driven by actual hits taken on playerShips
+        const totalPlayerCells = playerShips.reduce((sum, s) => sum + s.coords.length, 0);
+        const hitPlayerCells = playerShips.reduce((sum, s) => sum + s.hits, 0);
+        const healthPct = totalPlayerCells > 0
+            ? Math.round(100 * (totalPlayerCells - hitPlayerCells) / totalPlayerCells)
+            : 100;
+
+        const fill = document.getElementById('player-health-fill');
+        const pctLabel = document.getElementById('player-health-pct');
+        if (fill) {
+            fill.style.width = healthPct + '%';
+            fill.classList.remove('health-ok', 'health-warn', 'health-crit');
+            if (healthPct > 60) fill.classList.add('health-ok');
+            else if (healthPct > 30) fill.classList.add('health-warn');
+            else fill.classList.add('health-crit');
+        }
+        if (pctLabel) pctLabel.innerText = healthPct + '%';
+
+        // Enemy ships sunk counter (doesn't reveal positions, just count)
+        const sunkCount = enemyShips.filter(s => s.sunk).length;
+        const sunkLabel = document.getElementById('enemy-sunk-count');
+        if (sunkLabel) sunkLabel.innerText = `${sunkCount}/${SHIPS.length}`;
     }
 
     function renderGrid(container, gridData, showShips) {
