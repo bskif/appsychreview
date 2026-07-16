@@ -159,6 +159,53 @@
                 font-size: 1rem;
             }
         }
+
+        /* --- AD PLACEHOLDER (matches site pattern) ---
+           Sits below the whole game card, clear of the term buttons and
+           nav controls to avoid accidental-click risk. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent, #5F7FFF);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -253,6 +300,18 @@
                 <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
                 <button class="action-btn" onclick="resetToSetup()">Play Again</button>
             </div>
+        </div>
+    </div>
+
+    <div class="study-tips">
+        <h3>💡 Getting the Most Out of Oddball</h3>
+        <p>Oddball is built to test <em>why</em> three terms belong together, not just whether you recognize a definition &mdash; that's exactly the kind of reasoning the AP exam rewards when it asks you to apply a concept to a new example rather than just define it. Filter by unit while you're still learning new material, then switch to "All Units Mixed" once you want a cumulative challenge closer to test day. Always read the explanation before moving on, even after a correct guess &mdash; sometimes the term you picked and the real oddball look similar for entirely different reasons, and that's the distinction worth catching. If a unit keeps giving you trouble here, that's a good signal it's worth another pass in Flashcards or the Glossary.</p>
+    </div>
+
+    <div class="ad-banner-outer ad-under-review">
+        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+        <div class="ad-wrapper-banner">
+            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
         </div>
     </div>
 
