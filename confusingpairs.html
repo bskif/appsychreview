@@ -88,6 +88,53 @@
             min-height: 120px;
             margin-top: 20px;
         }
+
+        /* --- AD PLACEHOLDER (matches site pattern) ---
+           Sits below the whole game area, clear of the drag-and-drop
+           zones and definition pool to avoid accidental-drop confusion. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -157,6 +204,18 @@
             </div>
 
             <button id="next-btn" onclick="nextPair()">Next Set ➡</button>
+        </div>
+    </div>
+
+    <div class="study-tips">
+        <h3>💡 Getting the Most Out of Confusing Pairs</h3>
+        <p>This game exists because some of the most commonly mixed-up terms on the AP exam look similar on paper but mean something different in context &mdash; that's exactly what each drop zone is testing you on. Filter by unit while you're still building initial understanding, then switch to "All Units" once you want practice untangling terms across categories, since cross-unit mix-ups are often where students actually lose points. If a set keeps tripping you up, try reading every definition in the pool first and predicting which term each one matches <em>before</em> you start dragging &mdash; getting it right on the first try matters far less than being able to explain why the wording points to one term over the other.</p>
+    </div>
+
+    <div class="ad-banner-outer ad-under-review">
+        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+        <div class="ad-wrapper-banner">
+            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
         </div>
     </div>
 
