@@ -147,6 +147,53 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* --- AD PLACEHOLDER (matches site pattern) ---
+           Sits below the whole puzzle, clear of the grid tiles and
+           Submit/Shuffle buttons to avoid accidental-click risk. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto 0;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -218,6 +265,18 @@
         
         <div style="margin-top: 20px;">
             <button class="action-btn" onclick="loadNewGame()" style="border-color: var(--accent); color: var(--accent);">Next Puzzle</button>
+        </div>
+    </div>
+
+    <div class="study-tips">
+        <h3>💡 Getting the Most Out of Connections</h3>
+        <p>Connections is less about recalling a definition and more about recognizing how concepts relate to each other &mdash; which lines up well with how AP Psych actually tests you, since the exam often asks you to distinguish between similar-sounding terms rather than define them in isolation. Filter by unit while a topic is still fresh so the puzzle stays tied to what you're currently covering, then try "Mixed Units" once you want a tougher, more exam-realistic challenge. Pay attention to the distractors designed to fit more than one category; figuring out why a term doesn't belong is usually more useful than solving the easy group first. And if you get a "one away," treat it as information about which term you're misreading, not just a wrong guess.</p>
+    </div>
+
+    <div class="ad-banner-outer ad-under-review">
+        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+        <div class="ad-wrapper-banner">
+            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
         </div>
     </div>
 
