@@ -81,6 +81,7 @@
         .cal-day:hover { transform: scale(1.05); }
         .cal-empty { background-color: transparent; border: none; pointer-events: none; }
         .cal-future { opacity: 0.4; pointer-events: none; }
+        .cal-locked { opacity: 0.4; pointer-events: none; }
         .cal-win { background-color: #2ecc71; color: white; border-color: #27ae60; }
         .cal-loss { background-color: #e74c3c; color: white; border-color: #c0392b; }
         .cal-practice { background-color: #f1c40f; color: #333; border-color: #f39c12; }
@@ -112,7 +113,54 @@
         
         /* Widen the tooltip for badge descriptions */
         .tooltiptext.badge-tooltip { width: 250px; margin-left: -125px; bottom: 110%; }
-        
+
+        /* --- AD PLACEHOLDER (matches site pattern) ---
+           Two slots: one between the scoring table and the archive (well
+           clear of the Play Today button), one at the very bottom. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -229,13 +277,25 @@
             </table>
         </div>
 
+        <div class="study-tips">
+            <h3>💡 Getting the Most Out of the Daily Challenge</h3>
+            <p>The daily habit is where this page really earns its keep &mdash; each puzzle only takes a minute or two, but showing up for it consistently is what builds streaks and, more importantly, keeps low-stakes retrieval practice part of your routine instead of only cramming before a test. Puzzles roughly follow the pace of a typical AP Psych school year, moving through units in order as the year progresses and mixing in review questions over breaks and summer, so what you see here should generally line up with what you're covering in class. Miss a day or fall behind? The Practice Archive below lets you replay any puzzle from the last 90 days in Practice Mode; it won't count for streak or points, but the review value is exactly the same. Don't skip past the Trophy Case tooltips either &mdash; every badge is actually named after a real psychology concept (Miller's Law, Long-Term Potentiation, Signal Detection Theory, and more), so hovering to read what each one references is a quick, painless way to pick up extra vocabulary along the way.</p>
+        </div>
+
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+
         <div class="archive-section">
             <h2>📅 Practice Archive</h2>
             <p style="margin-bottom: 15px;">Click a past date to replay it in Practice Mode (0 Points). <br>
             <strong style="color:#2ecc71;">Green = Won</strong> | <strong style="color:#e74c3c;">Red = Lost</strong> | <strong style="color:#f1c40f;">Yellow = Practice Only</strong></p>
             
             <div class="calendar-header">
-                <button onclick="changeMonth(-1)">&#9664; Prev</button>
+                <button id="cal-prev-btn" onclick="changeMonth(-1)">&#9664; Prev</button>
                 <h3 id="month-name" style="margin: 0;">Month Year</h3>
                 <button onclick="changeMonth(1)">Next &#9654;</button>
             </div>
@@ -330,6 +390,13 @@
         </div>
     </div>
 
+    <div class="ad-banner-outer ad-under-review">
+        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+        <div class="ad-wrapper-banner">
+            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+        </div>
+    </div>
+
     <footer>
         <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
         
@@ -362,7 +429,7 @@
             }
 
             const today = new Date();
-            const todayStr = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            const todayStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
             
             if (lastPlayed === todayStr) {
                 document.getElementById('play-today-btn').style.display = 'none';
@@ -381,9 +448,22 @@
 
         // --- 2. VISUAL CALENDAR LOGIC ---
         let currentCalDate = new Date(); 
+        // Keep this in sync with MAX_PRACTICE_LOOKBACK_DAYS in psych-game.html
+        const MAX_LOOKBACK_DAYS = 90;
 
         function changeMonth(dir) {
-            currentCalDate.setMonth(currentCalDate.getMonth() + dir);
+            const proposed = new Date(currentCalDate);
+            proposed.setMonth(proposed.getMonth() + dir);
+
+            if (dir < 0) {
+                const cutoffDate = new Date();
+                cutoffDate.setDate(cutoffDate.getDate() - MAX_LOOKBACK_DAYS);
+                const beforeCutoff = proposed.getFullYear() < cutoffDate.getFullYear() ||
+                    (proposed.getFullYear() === cutoffDate.getFullYear() && proposed.getMonth() < cutoffDate.getMonth());
+                if (beforeCutoff) return; // Already at the earliest navigable month
+            }
+
+            currentCalDate = proposed;
             renderCalendar();
         }
 
@@ -399,6 +479,19 @@
             const daysInMonth = new Date(year, month + 1, 0).getDate();
             
             const today = new Date();
+            const cutoffDate = new Date();
+            cutoffDate.setDate(cutoffDate.getDate() - MAX_LOOKBACK_DAYS);
+            cutoffDate.setHours(0, 0, 0, 0);
+
+            const prevBtn = document.getElementById('cal-prev-btn');
+            if (prevBtn) {
+                const atCutoffMonth = (year < cutoffDate.getFullYear()) ||
+                    (year === cutoffDate.getFullYear() && month <= cutoffDate.getMonth());
+                prevBtn.disabled = atCutoffMonth;
+                prevBtn.style.opacity = atCutoffMonth ? '0.4' : '1';
+                prevBtn.style.cursor = atCutoffMonth ? 'not-allowed' : 'pointer';
+            }
+
             const calDiv = document.getElementById('calendar-days');
             calDiv.innerHTML = ""; 
 
@@ -409,11 +502,14 @@
             for (let day = 1; day <= daysInMonth; day++) {
                 let cellDate = new Date(year, month, day);
                 let isFuture = cellDate > today;
+                let isTooOld = cellDate < cutoffDate;
                 
-                // Format matching DB "MM-DD"
+                // MM-DD still drives the puzzle-content URL param
                 let dateStr = String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
                 
-                // Format to pass full year via URL for Timegate Security
+                // Full year-aware date: history is now keyed on this, so a
+                // day's completion status doesn't collide with the same
+                // calendar date in a different year.
                 let fullDateStr = year + '-' + dateStr;
                 
                 let extraClass = "";
@@ -422,11 +518,15 @@
                 if (isFuture) {
                     extraClass = "cal-future";
                     clickAction = ""; 
-                } else if (history[dateStr] === "win") {
+                } else if (isTooOld) {
+                    // Beyond the practice lookback window (see psych-game.html)
+                    extraClass = "cal-locked";
+                    clickAction = "";
+                } else if (history[fullDateStr] === "win") {
                     extraClass = "cal-win";
-                } else if (history[dateStr] === "loss") {
+                } else if (history[fullDateStr] === "loss") {
                     extraClass = "cal-loss";
-                } else if (history[dateStr] === "practice") {
+                } else if (history[fullDateStr] === "practice") {
                     extraClass = "cal-practice"; // Highlights yellow
                 }
 
