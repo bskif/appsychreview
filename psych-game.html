@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Play Psych Challenge</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <style>
         .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -62,6 +65,54 @@
         .snap-card-back::-webkit-scrollbar { width: 5px; }
         .snap-card-back::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
         .snap-card.matched .snap-card-back { background-color: #2ecc71; color: white; border-color: #27ae60; }
+
+        /* --- AD PLACEHOLDER (matches site pattern) ---
+           Single slot below the entire game area: every game mode here
+           (keyboard, anagram input, distractor/fact-fiction buttons,
+           memory grid) is interactive, so there's no safe spot above it. */
+        .ad-banner-outer {
+            width: 90%;
+            max-width: 728px;
+            margin: 30px auto;
+        }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
+        .ad-under-review {
+            display: none !important;
+        }
+
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 30px auto 0;
+            max-width: 650px;
+            width: 90%;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+        .study-tips p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -169,15 +220,36 @@
         </div>
     </div>
 
+    <div class="study-tips">
+        <h3>💡 Getting the Most Out of Today's Challenge</h3>
+        <p>Try to hold off on the hint button for at least 10&ndash;15 seconds of genuine recall before tapping it &mdash; revealing it early is an easy habit to fall into, but it forfeits the +5 Perfect Recall bonus every time. The five modes reward different skills, so play to them: Hangman and Anagram Scramble reward accuracy, Fact or Fiction and The Distractor reward speed (a couple of badges specifically require answering in 2 seconds or less), and Synapse Snap rewards memory without peeking. And if you've already finished today's puzzle, don't feel locked out &mdash; Practice Mode on any day within the last 90 days carries zero pressure, which makes it a genuinely good way to actually learn a term you missed instead of just moving past it.</p>
+    </div>
+
+    <div class="ad-banner-outer ad-under-review">
+        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+        <div class="ad-wrapper-banner">
+            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; Psych Review Hub</p>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+        
+        <p style="margin-bottom: 15px;">
+            <a href="privacy.html" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+        
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
     </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <script>
         let dbJSON = {}; 
         let currentPuzzleData = null; 
         let targetWord = ""; let hintText = ""; let guessedLetters = []; let lives = 6;
-        let isPracticeMode = false; let hintUsed = false; let loadedDate = "";
+        let isPracticeMode = false; let hintUsed = false; let loadedDate = ""; let loadedFullDate = "";
         let activeGameMode = "";
         let timerInterval; let elapsedSeconds = 0;
         let ffCorrectAnswer = true;
@@ -217,6 +289,7 @@
             }
 
             const todayMMDD = String(todayObj.getMonth() + 1).padStart(2, '0') + '-' + String(todayObj.getDate()).padStart(2, '0');
+            const todayFullDate = todayObj.getFullYear() + '-' + String(todayObj.getMonth() + 1).padStart(2, '0') + '-' + String(todayObj.getDate()).padStart(2, '0');
             const lastPlayed = localStorage.getItem('psychLastPlayed') || "";
 
             if (fullUrlDate) {
@@ -234,17 +307,38 @@
                     return;
                 }
 
+                // Puzzle content is keyed by MM-DD only and repeats every
+                // year, so without a cutoff a student could jump back a
+                // full year to see today's puzzle already "spoiled" under
+                // a past date. Capping how far back practice mode reaches
+                // (well under 365 days) closes that off entirely.
+                const MAX_PRACTICE_LOOKBACK_DAYS = 90;
+                const daysSinceRequested = Math.round((todayCompare - reqDate) / (1000 * 60 * 60 * 24));
+
+                if (daysSinceRequested > MAX_PRACTICE_LOOKBACK_DAYS) {
+                    document.getElementById('game-title-display').innerText = "PUZZLE ARCHIVED 🗄️";
+                    document.getElementById('global-hint-container').innerText = `Practice mode only covers the last ${MAX_PRACTICE_LOOKBACK_DAYS} days. This one's outside that window.`;
+                    document.getElementById('hint-toggle-block').style.display = "none";
+                    return;
+                }
+
+                // loadedDate (MM-DD) still drives puzzle content lookup below,
+                // untouched. loadedFullDate (with year) drives history/streak
+                // tracking so replaying the same calendar day from a past
+                // year is never mistaken for "today".
                 loadedDate = fullUrlDate.substring(5, 10);
+                loadedFullDate = fullUrlDate;
                 
-                if (loadedDate !== todayMMDD) {
+                if (loadedFullDate !== todayFullDate) {
                     isPracticeMode = true;
                     document.getElementById('practice-badge').style.display = 'inline-block';
                 }
             } else {
                 loadedDate = todayMMDD;
+                loadedFullDate = todayFullDate;
             }
 
-            if (loadedDate === todayMMDD && lastPlayed === todayMMDD && !isPracticeMode) {
+            if (loadedFullDate === todayFullDate && lastPlayed === todayFullDate && !isPracticeMode) {
                 isPracticeMode = true;
                 const badge = document.getElementById('practice-badge');
                 badge.innerText = "ALREADY PLAYED TODAY (0 Pts)";
@@ -588,6 +682,36 @@
             return `${month}-${day}`;
         }
 
+        function getTodayFullDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function getYesterdayFullDate() {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yyyy = yesterday.getFullYear();
+            const mm = String(yesterday.getMonth() + 1).padStart(2, '0');
+            const dd = String(yesterday.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        // Streak now tracks consecutive calendar days played (win OR loss),
+        // not consecutive wins. It only continues if yesterday's full date
+        // matches your last-played date; any gap resets it to 1, since
+        // today's play always counts as at least day one of a new streak.
+        function getUpdatedStreak() {
+            const lastPlayed = localStorage.getItem('psychLastPlayed') || "";
+            const currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
+            if (lastPlayed === getYesterdayFullDate()) {
+                return currentStreak + 1;
+            }
+            return 1;
+        }
+
         function endGame(isWin) {
             clearInterval(timerInterval);
             document.getElementById('hint-toggle-block').style.display = 'none';
@@ -654,12 +778,12 @@
             
             if (elapsedSeconds < 15) awardBadge('badge-ap', 'Action Potential');
             
-            let todayMMDD = getTodayMMDD();
+            let todayFull = getTodayFullDate();
             if (isPracticeMode) {
-                localStorage.setItem('psychLastPracticeDate', todayMMDD);
-                if (localStorage.getItem('psychLastPlayed') === todayMMDD) awardBadge('badge-dp', 'Distributed Practice');
+                localStorage.setItem('psychLastPracticeDate', todayFull);
+                if (localStorage.getItem('psychLastPlayed') === todayFull) awardBadge('badge-dp', 'Distributed Practice');
             } else {
-                if (localStorage.getItem('psychLastPracticeDate') === todayMMDD) awardBadge('badge-dp', 'Distributed Practice');
+                if (localStorage.getItem('psychLastPracticeDate') === todayFull) awardBadge('badge-dp', 'Distributed Practice');
             }
 
             if (activeGameMode === 'hangman' && lives === 1) awardBadge('badge-pg', 'Phineas Gage');
@@ -682,7 +806,7 @@
                 msg.innerHTML = finalHTML;
             } else {
                 let totalPoints = parseInt(localStorage.getItem('psychPoints') || 0) + pointsEarned;
-                let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0) + 1;
+                let currentStreak = getUpdatedStreak();
                 
                 if (currentStreak >= 7) awardBadge('badge-millers-law', "Miller's Law");
                 if (currentStreak >= 14) awardBadge('badge-ltp', "Long-Term Potentiation");
@@ -692,7 +816,7 @@
                 if (totalPoints >= 500) awardBadge('badge-sa', "Self-Actualization");
 
                 localStorage.setItem('psychBadges', JSON.stringify(earnedBadges));
-                saveWin(pointsEarned);
+                saveWin(pointsEarned, currentStreak);
                 
                 if (newBadgesUnlocked.length > 0) {
                      finalHTML += `<div style="background-color: #ffd700; color: #8a6d3b; padding: 10px; border-radius: 5px; margin: 10px 0; font-weight: bold;">
@@ -705,9 +829,8 @@
             }
         }
 
-        function saveWin(pointsEarned) {
+        function saveWin(pointsEarned, newStreak) {
             let currentPoints = parseInt(localStorage.getItem('psychPoints') || 0);
-            let currentStreak = parseInt(localStorage.getItem('psychStreak') || 0);
             let totalWins = parseInt(localStorage.getItem('psychTotalWins') || 0);
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
             let currentBest = localStorage.getItem('psychBestTime');
@@ -717,26 +840,29 @@
             }
 
             localStorage.setItem('psychPoints', currentPoints + pointsEarned);
-            localStorage.setItem('psychStreak', currentStreak + 1);
+            localStorage.setItem('psychStreak', newStreak);
             localStorage.setItem('psychTotalWins', totalWins + 1);
-            localStorage.setItem('psychLastPlayed', getTodayMMDD());
+            localStorage.setItem('psychLastPlayed', getTodayFullDate());
             
-            history[getTodayMMDD()] = "win";
+            history[getTodayFullDate()] = "win";
             localStorage.setItem('psychHistory', JSON.stringify(history));
         }
 
         function saveLoss() {
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
-            localStorage.setItem('psychStreak', 0); 
-            localStorage.setItem('psychLastPlayed', getTodayMMDD());
-            history[getTodayMMDD()] = "loss";
+            // A loss still counts as playing today, so the day-streak
+            // continues as long as yesterday was played too — only a
+            // genuinely missed day resets it now, not a loss.
+            localStorage.setItem('psychStreak', getUpdatedStreak());
+            localStorage.setItem('psychLastPlayed', getTodayFullDate());
+            history[getTodayFullDate()] = "loss";
             localStorage.setItem('psychHistory', JSON.stringify(history));
         }
 
         function savePractice() {
             let history = JSON.parse(localStorage.getItem('psychHistory')) || {};
-            if (!history[loadedDate]) {
-                history[loadedDate] = "practice";
+            if (!history[loadedFullDate]) {
+                history[loadedFullDate] = "practice";
                 localStorage.setItem('psychHistory', JSON.stringify(history));
             }
         }
