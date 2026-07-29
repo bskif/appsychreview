@@ -8,6 +8,10 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
+        .quiz-page-wrap {
+            max-width: 800px;
+        }
+
         .quiz-container {
             max-width: 650px;
             margin: 0 auto;
@@ -188,29 +192,38 @@
 
         /* --- Sets Mode: two-column layout ---
              Default (individual mode) keeps today's stacked, single-column
-             look untouched. Adding .mode-sets switches to a side-by-side
-             layout with a sticky stimulus panel. */
-        .quiz-columns.mode-sets {
+             look untouched. Everything below cascades from ONE class,
+             .mode-sets, toggled on the page wrapper — including widening
+             both container levels, since the two-column layout needs real
+             room and the original 800px/650px caps were sized only for a
+             single stacked column. */
+        .quiz-page-wrap.mode-sets {
+            max-width: 1100px;
+        }
+        .quiz-page-wrap.mode-sets .quiz-container {
+            max-width: 1000px;
+        }
+        .quiz-page-wrap.mode-sets .quiz-columns {
             display: flex;
             align-items: flex-start;
             gap: 24px;
             text-align: left;
         }
-        .quiz-columns.mode-sets .stimulus-col {
+        .quiz-page-wrap.mode-sets .stimulus-col {
             flex: 0 0 40%;
             position: sticky;
             top: 90px;
         }
-        .quiz-columns.mode-sets .answer-col {
+        .quiz-page-wrap.mode-sets .answer-col {
             flex: 1;
             min-width: 0;
         }
 
         @media (max-width: 700px) {
-            .quiz-columns.mode-sets {
+            .quiz-page-wrap.mode-sets .quiz-columns {
                 flex-direction: column;
             }
-            .quiz-columns.mode-sets .stimulus-col {
+            .quiz-page-wrap.mode-sets .stimulus-col {
                 position: static;
                 flex-basis: auto;
                 width: 100%;
@@ -316,7 +329,7 @@
         </ul>
     </nav>
 
-    <div class="container" style="max-width: 800px; margin: 0 auto; padding-top: 20px;">
+    <div class="container quiz-page-wrap" id="quiz-page-wrap" style="margin: 0 auto; padding-top: 20px;">
         <h1 style="text-align: center;">📝 Multiple Choice Quiz</h1>
 
         <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 650px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
@@ -600,7 +613,7 @@
                 return;
             }
 
-            document.getElementById('quiz-columns').classList.remove('mode-sets');
+            document.getElementById('quiz-page-wrap').classList.remove('mode-sets');
 
             const selectedUnit = document.getElementById('unit-select').value;
             const selectedTopic = document.getElementById('topic-select').value;
@@ -682,7 +695,7 @@
                 });
             });
 
-            document.getElementById('quiz-columns').classList.add('mode-sets');
+            document.getElementById('quiz-page-wrap').classList.add('mode-sets');
             document.getElementById('setup-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
 
