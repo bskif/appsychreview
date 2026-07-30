@@ -650,6 +650,7 @@
             score = 0;
             currentQuestionIndex = 0;
             loadQuestion();
+            scrollToQuizTop();
         }
 
         // 2b. START QUIZ (SETS MODE)
@@ -702,6 +703,7 @@
             score = 0;
             currentQuestionIndex = 0;
             loadQuestion();
+            scrollToQuizTop();
         }
 
         // 3. LOAD QUESTION
@@ -828,6 +830,17 @@
         }
 
         // 5. GO TO NEXT QUESTION
+        // Scrolls so the top of the quiz box lands near the top of the
+        // viewport, so a new question is immediately visible instead of
+        // requiring a manual scroll-up after reading an explanation below.
+        function scrollToQuizTop() {
+            const target = document.getElementById('quiz-page-wrap');
+            if (!target) return;
+            const yOffset = -20;
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
         function goToNextQuestion() {
             currentQuestionIndex++;
             if (currentQuestionIndex < quizQueue.length) {
@@ -835,6 +848,7 @@
             } else {
                 showResults();
             }
+            scrollToQuizTop();
         }
 
         function showResults() {
