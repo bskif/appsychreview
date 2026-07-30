@@ -286,6 +286,80 @@
         .study-tips p {
             margin-bottom: 0;
         }
+
+        /* --- Sample Questions Mode (static, always-visible content) --- */
+        .sample-intro {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .sample-question {
+            text-align: left;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            background: #fcfcfc;
+        }
+        .sample-q-header {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .sample-context {
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--accent);
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            font-style: italic;
+            color: #555;
+            border-radius: 4px;
+            font-size: 0.92rem;
+        }
+        .sample-q-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        .sample-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .sample-option {
+            border: 2px solid #e9ecef;
+            background: #f8f9fa;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        .sample-correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            font-weight: bold;
+        }
+        .sample-explanation {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-size: 0.92rem;
+            color: #333;
+            line-height: 1.5;
+        }
+        .sample-cta {
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -344,6 +418,7 @@
                 <div class="mode-toggle">
                     <button id="mode-btn-individual" class="active" onclick="switchMode('individual')">Individual Questions</button>
                     <button id="mode-btn-sets" onclick="switchMode('sets')">Question Sets</button>
+                    <button id="mode-btn-sample" onclick="switchMode('sample')">Sample Questions</button>
                 </div>
 
                 <div id="individual-setup">
@@ -389,8 +464,161 @@
                     <div class="sets-note">Each question set includes content questions from the selected unit, plus general science-practice questions (research methods, ethics, and other skills) that show up throughout the course.</div>
                 </div>
 
+                <div id="sample-setup" style="display:none;">
+                    <p class="sample-intro">A worked preview of the quiz &mdash; one Unit 0 (science practice) pair plus two questions from every content unit, with the correct answer and full explanation already shown. Switch to <strong>Individual Questions</strong> or <strong>Question Sets</strong> above for the full interactive quiz with all 783 questions.</p>
+                    <div id="sample-questions-list">
+<div class="sample-question">
+                    <div class="sample-q-header">Sample Question 1 &mdash; Unit 0</div>
+                    
+                    <div class="sample-q-text">After the school basketball team lost the championship game, a fan claimed, I knew they were going to lose all along because of their weak defense. This fan is demonstrating which error in thinking?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Hindsight Bias</div>
+                        <div class="sample-option">Overconfidence</div>
+                        <div class="sample-option">Confirmation Bias</div>
+                        <div class="sample-option">Sampling Bias</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Hindsight Bias. Hindsight bias is the tendency to believe, after learning an outcome, that one would have foreseen it (the I knew it all along phenomenon). The fan claiming they knew the outcome after the game ended fits this perfectly. Overconfidence is being more certain than correct, confirmation bias is seeking information that supports existing beliefs, and sampling bias is a flawed sampling process that produces an unrepresentative sample.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 2 &mdash; Unit 0</div>
+                    
+                    <div class="sample-q-text">A researcher is conducting a study on political beliefs. She only interviews people she knows agree with her and ignores data from opposition groups. Which obstacle to critical thinking is she displaying?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Confirmation Bias</div>
+                        <div class="sample-option">Hindsight Bias</div>
+                        <div class="sample-option">Skepticism</div>
+                        <div class="sample-option">Humility</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Confirmation Bias. Confirmation bias occurs when a person seeks out or only pays attention to information that confirms their preconceptions while ignoring contradictory evidence. Hindsight bias is predicting outcomes after they happen, skepticism is maintaining a doubting attitude, and humility is the willingness to accept when one is wrong.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 3 &mdash; Unit 1</div>
+                    
+                    <div class="sample-q-text">Identical twins Thomas and James were separated at birth and raised in different countries. Despite this, they both developed a specific phobia of snakes and share nearly identical personality traits. This scenario best supports the influence of:</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Heredity</div>
+                        <div class="sample-option">Nurture</div>
+                        <div class="sample-option">Sensory adaptation</div>
+                        <div class="sample-option">Plasticity</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Heredity. Identical twins share 100% of their genes. Because they were raised in different environments (separated at birth), their shared phobia and nearly identical personality traits strongly suggest the influence of genetics (heredity) over their upbringing (nurture). Sensory adaptation is a reduction in sensitivity to a constant stimulus, and plasticity refers to the brain's ability to change and adapt.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 4 &mdash; Unit 1</div>
+                    
+                    <div class="sample-q-text">Researchers find that a specific gene increases the risk of depression, but only in individuals who experience high levels of stress during childhood. This finding highlights the concept of:</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Interaction of Heredity and Environment</div>
+                        <div class="sample-option">Natural selection</div>
+                        <div class="sample-option">Eugenics</div>
+                        <div class="sample-option">All-or-nothing principle</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Interaction of Heredity and Environment. This finding perfectly illustrates how our genetics (the specific gene) and our environment (childhood stress) work together to influence behavior and mental health. Natural selection is the evolutionary process where traits that aid survival are passed down, eugenics is the controversial practice of selectively breeding humans, and the all-or-nothing principle refers to how a neuron either fires completely or does not fire at all.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 5 &mdash; Unit 2</div>
+                    
+                    <div class="sample-q-text">While watching a basketball game, Sarah is so focused on the players in white jerseys that she fails to notice a person in a gorilla suit walking across the court. This best illustrates:</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Inattentional blindness</div>
+                        <div class="sample-option">Change blindness</div>
+                        <div class="sample-option">Selective attention</div>
+                        <div class="sample-option">The cocktail party effect</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Inattentional blindness. Inattentional blindness is failing to see visible objects when our attention is directed elsewhere, such as focusing so hard on the white shirts that you miss the gorilla. Change blindness is failing to notice a change in the environment, selective attention is the actual focusing of conscious awareness on a stimulus, and the cocktail party effect is hearing your name in a crowded room.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 6 &mdash; Unit 2</div>
+                    
+                    <div class="sample-q-text">Which Gestalt principle best explains why most people report seeing a circle and a rectangle in the image above?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Closure</div>
+                        <div class="sample-option">Figure and ground</div>
+                        <div class="sample-option">Proximity</div>
+                        <div class="sample-option">Similarity</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct Answer: Closure. This principle explains our tendency to fill in the gaps of a disconnected or incomplete figure to perceive a whole, recognizable shape. In an image of a circle and a rectangle made of broken lines, your brain automatically ignores the gaps and closes the shapes to identify them as a circle and a rectangle rather than a collection of random, unrelated lines.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 7 &mdash; Unit 3</div>
+                    
+                    <div class="sample-q-text">A researcher follows a group of infants from birth until age 20 to see how their temperament changes. This study best addresses which developmental theme?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Stability and change</div>
+                        <div class="sample-option">Nature and nurture</div>
+                        <div class="sample-option">Discontinuous development</div>
+                        <div class="sample-option">Continuous development</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Stability and change. The debate over stability and change examines whether early personality traits persist through life or if we become different persons as we age. Following infants to age 20 to track temperament directly studies this. Nature and nurture looks at genetics vs. environment, and continuous/discontinuous looks at whether development is a slow, gradual process or distinct stages.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 8 &mdash; Unit 3</div>
+                    
+                    <div class="sample-q-text">If a psychologist argues that a child’s personality is shaped entirely by their upbringing and environment rather than their DNA, they are taking a side in which debate?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Nature and nurture</div>
+                        <div class="sample-option">Continuous development</div>
+                        <div class="sample-option">Lifespan development</div>
+                        <div class="sample-option">Chronological development</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Nature and nurture. The nature vs. nurture debate focuses on the relative contributions of genetic inheritance (nature/DNA) and environmental factors (nurture/upbringing) to human development. Arguing that upbringing is entirely responsible is taking the nurture side. The other options refer to the speed, stages, or timeline of development rather than the root causes.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 9 &mdash; Unit 4</div>
+                    
+                    <div class="sample-q-text">Sarah fails her math test. If she has a pessimistic explanatory style, how is she most likely to explain this failure?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; I’m just not a math person; I’m never going to be good at anything academic.</div>
+                        <div class="sample-option">The teacher made that test way too hard for anyone to pass.</div>
+                        <div class="sample-option">I didn't study enough for this specific test because I was busy with work.</div>
+                        <div class="sample-option">I was feeling sick that day, so I couldn't focus properly.</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: I’m just not a math person; I’m never going to be good at anything academic. A pessimistic explanatory style attributes failures to internal (I'm not a math person), stable (never going to be good), and global (anything academic) factors. The other options attribute the failure to external (the teacher), unstable (didn't study enough), or specific (feeling sick) factors.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 10 &mdash; Unit 4</div>
+                    
+                    <div class="sample-q-text">When David sees a driver cut him off, he yells that the driver is reckless and selfish. Five minutes later, David cuts someone else off but blames it on being late for a job interview. This illustrates:</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; The actor/observer bias</div>
+                        <div class="sample-option">The self-fulfilling prophecy</div>
+                        <div class="sample-option">Self-efficacy</div>
+                        <div class="sample-option">Internal locus of control</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: The actor/observer bias. The actor/observer bias is the tendency to attribute one's own actions to external causes (being late for an interview) while attributing others' actions to internal, dispositional causes (they are reckless and selfish). Self-fulfilling prophecy is a belief that causes itself to come true, self-efficacy is belief in one's own abilities, and internal locus of control is believing you control your fate.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 11 &mdash; Unit 5</div>
+                    
+                    <div class="sample-q-text">While hiking, Jonas spots a bear on the trail. His heart rate immediately spikes, his digestion slows, and he breaks into a sweat. According to the General Adaptation Syndrome, Jonas is currently in which stage?</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Alarm reaction phase</div>
+                        <div class="sample-option">Resistance phase</div>
+                        <div class="sample-option">Exhaustion phase</div>
+                        <div class="sample-option">Immunosuppression phase</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Alarm reaction phase. According to Hans Selye's General Adaptation Syndrome (GAS), the alarm reaction is the first phase of the stress response. During this stage, your sympathetic nervous system is suddenly activated, mobilizing your body's resources (spiking heart rate, sweating) to meet the immediate threat. The resistance phase is the second stage where the body attempts to cope with the stressor, and the exhaustion phase is the final stage where reserves are depleted.</div>
+                </div>
+                <div class="sample-question">
+                    <div class="sample-q-header">Sample Question 12 &mdash; Unit 5</div>
+                    
+                    <div class="sample-q-text">Rather than studying for a difficult final exam, Marcus decides to play video games to distract himself from his anxiety about failing. This behavior is an example of:</div>
+                    <div class="sample-options">
+                        <div class="sample-option sample-correct">&#10003; Emotion-focused coping</div>
+                        <div class="sample-option">Problem-focused coping</div>
+                        <div class="sample-option">Biofeedback</div>
+                        <div class="sample-option">The flight-flight-freeze response</div>
+                    </div>
+                    <div class="sample-explanation"><strong>Explanation:</strong> Correct: Emotion-focused coping. Emotion-focused coping involves attempting to alleviate stress by avoiding or ignoring a stressor and attending to emotional needs related to the stress reaction. Marcus is ignoring the actual problem (the test) and instead distracting himself with video games to manage his feelings of anxiety. Problem-focused coping would involve directly tackling the stressor (e.g., actually sitting down to study), and biofeedback is a technique used to gain control over involuntary bodily functions.</div>
+                </div>
+                    </div>
+                    <div class="sample-cta">
+                        <button class="nav-btn" onclick="switchMode('individual')">Try the Full Quiz &rarr;</button>
+                    </div>
+                </div>
+
                 <br><br>
-                <button class="nav-btn" onclick="startQuiz()">Start Quiz</button>
+                <button id="start-quiz-btn" class="nav-btn" onclick="startQuiz()">Start Quiz</button>
             </div>
 
             <div id="quiz-screen" style="display:none;">
@@ -458,8 +686,12 @@
             quizMode = mode;
             document.getElementById('individual-setup').style.display = (mode === 'individual') ? 'block' : 'none';
             document.getElementById('sets-setup').style.display = (mode === 'sets') ? 'block' : 'none';
+            document.getElementById('sample-setup').style.display = (mode === 'sample') ? 'block' : 'none';
             document.getElementById('mode-btn-individual').classList.toggle('active', mode === 'individual');
             document.getElementById('mode-btn-sets').classList.toggle('active', mode === 'sets');
+            document.getElementById('mode-btn-sample').classList.toggle('active', mode === 'sample');
+            // Sample mode is a static preview, not a quiz to start
+            document.getElementById('start-quiz-btn').style.display = (mode === 'sample') ? 'none' : 'inline-block';
         }
 
         // Groups all set-tagged questions by their setid.
@@ -478,6 +710,11 @@
         }
 
         // 1. FETCH DATA CONCURRENTLY
+        // The Sample Questions panel above is static HTML baked into the
+        // page (that's what gives the page real, crawlable content on
+        // load) -- but Individual Questions and Question Sets mode pull
+        // live from quiz.json/topics.json, so new questions added there
+        // show up automatically without ever touching this file again.
         Promise.all([
             fetch('quiz.json').then(res => res.json()),
             fetch('topics.json').then(res => res.json())
