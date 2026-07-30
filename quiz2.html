@@ -336,7 +336,7 @@
             <strong>Directions:</strong> Test your knowledge by configuring a custom practice quiz. Select a specific unit, drill down into an individual topic, and choose your target number of questions. Submit your answers to reveal detailed breakdowns and interactive explanations for every question!
         </div>
 
-        <div class="quiz-container">
+        <div class="quiz-container" id="quiz-container">
             
             <div id="setup-screen" class="setup-screen">
                 <h3>Configure Quiz</h3>
@@ -834,7 +834,7 @@
         // viewport, so a new question is immediately visible instead of
         // requiring a manual scroll-up after reading an explanation below.
         function scrollToQuizTop() {
-            const target = document.getElementById('quiz-page-wrap');
+            const target = document.getElementById('quiz-container');
             if (!target) return;
             const yOffset = -20;
             const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
