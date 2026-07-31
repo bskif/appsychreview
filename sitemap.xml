@@ -1,77 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Main pages -->
-  <url><loc>https://appsychreviewhub.com/</loc></url>
-  <url><loc>https://appsychreviewhub.com/psych-hub.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/about.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/privacy.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/terms.html</loc></url>
-
-  <!-- Study tools -->
-  <url><loc>https://appsychreviewhub.com/studyguide.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/glossary.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/flashcards.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/quiz.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/confusingpairs.html</loc></url>
-
-  <!-- Games -->
-  <url><loc>https://appsychreviewhub.com/connectionsgame.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/boardgame.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/battleship.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/oddball.html</loc></url>
-
-  <!-- Unit 0: Scientific Foundations -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.5.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic0.6.html</loc></url>
-
-  <!-- Unit 1: Biological Bases of Behavior -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.5.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic1.6.html</loc></url>
-
-  <!-- Unit 2: Cognition -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.5.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.6.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.7.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic2.8.html</loc></url>
-
-  <!-- Unit 3: Development & Learning -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.5.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.6.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.7.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.8.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic3.9.html</loc></url>
-
-  <!-- Unit 4: Social Psychology -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.5.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.6.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic4.7.html</loc></url>
-
-  <!-- Unit 5: Mental Health -->
-  <url><loc>https://appsychreviewhub.com/overviews/topic5.1.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic5.2.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic5.3.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic5.4.html</loc></url>
-  <url><loc>https://appsychreviewhub.com/overviews/topic5.5.html</loc></url>
-
+<!--  Main pages  -->
+<url>
+<loc>https://appsychreviewhub.com/</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/psych-hub</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/psych-game</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/about</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/privacy</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/terms</loc>
+</url>
+<!--  Study Tools  -->
+<url>
+<loc>https://appsychreviewhub.com/studyguide</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/glossary</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/flashcards</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/quiz</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/confusingpairs</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/confusingpairs-guide</loc>
+</url>
+<!--  Games  -->
+<url>
+<loc>https://appsychreviewhub.com/connectionsgame</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/boardgame</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/battleship</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/oddball</loc>
+</url>
+<!--  Unit Overview Pages  -->
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.5</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic0.6</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.5</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic1.6</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.5</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.6</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.7</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic2.8</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.5</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.6</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.7</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.8</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic3.9</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.5</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.6</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic4.7</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic5.1</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic5.2</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic5.3</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic5.4</loc>
+</url>
+<url>
+<loc>https://appsychreviewhub.com/overviews/topic5.5</loc>
+</url>
 </urlset>
