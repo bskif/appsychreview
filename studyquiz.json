@@ -1,0 +1,633 @@
+{
+  "quiz": [
+    {
+      "id": "1",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "question": "Before taking her first psychology exam, Priya says, I don't even need to study, I already understand all of this perfectly. She then fails the exam. Priya's statement before the exam is best explained by:",
+      "options": [
+        "Overconfidence",
+        "Hindsight Bias",
+        "Humility",
+        "Perceiving Order in Random Events"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Overconfidence. Overconfidence is the tendency to overestimate the accuracy of one's own knowledge and judgments, which is exactly what Priya does before the exam. Hindsight bias would only apply after Priya knew the outcome and claimed she saw it coming, humility is the willingness to admit one might be wrong, and perceiving order in random events involves finding patterns in meaningless data, not overrating one's own ability."
+    },
+    {
+      "id": "2",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "question": "After a psychology study finds that sleep-deprived people perform worse on memory tests, a student remarks, Well, obviously, everyone already knew that would happen. This student's reaction demonstrates:",
+      "options": [
+        "Hindsight Bias",
+        "Overconfidence",
+        "Confirmation Bias",
+        "Curiosity"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Hindsight Bias. Hindsight bias, or the I knew it all along phenomenon, occurs when a known outcome seems like it was obvious or predictable after the fact. Overconfidence is being more certain than correct about one's own judgments before an outcome is known, confirmation bias involves selectively seeking evidence that supports a prior belief, and curiosity is a core part of the scientific attitude rather than a cognitive bias."
+    },
+    {
+      "id": "3",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "question": "A political blogger only reads news sources that align with his existing views and dismisses any article that challenges his position as fake news without evaluating its evidence. This behavior best illustrates:",
+      "options": [
+        "Confirmation Bias",
+        "Hindsight Bias",
+        "Overconfidence",
+        "Critical Thinking"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Confirmation Bias. Confirmation bias is the tendency to search for and favor information that supports one's preconceptions while ignoring or dismissing contradictory evidence, which matches the blogger's selective reading habits. Hindsight bias applies only after an outcome is known, overconfidence refers to overestimating the accuracy of one's beliefs rather than filtering evidence, and critical thinking is the opposite of this behavior since it requires fairly evaluating evidence regardless of source."
+    },
+    {
+      "id": "4",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "question": "A team of researchers wants to determine the overall effect of exercise on mood by statistically combining the results of 50 previously published studies on the topic. This process is called a:",
+      "options": [
+        "Meta-Analysis",
+        "Replication",
+        "Peer Review",
+        "Case Study"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Meta-Analysis. A meta-analysis is a statistical technique that combines and analyzes the results of multiple independent studies to determine an overall trend, exactly as described here. Replication involves repeating a single study to confirm its findings, peer review involves other experts evaluating a study before publication, and a case study involves an in-depth look at just one individual or group rather than combining many studies."
+    },
+    {
+      "id": "5",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "question": "A developmental psychologist spends 18 months closely following a single set of conjoined twins, documenting extensive details about their cognitive development, family dynamics, and daily routines. Which research method is being used?",
+      "options": [
+        "Case Study",
+        "Survey",
+        "Naturalistic Observation",
+        "Meta-Analysis"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Case Study. A case study is a descriptive technique in which one individual or group is studied in depth in the hope of revealing universal principles, which fits the researcher's in-depth focus on a single set of twins. A survey gathers self-reported data from a broader sample, naturalistic observation involves watching behavior unfold without close, individualized documentation of one subject, and a meta-analysis combines results from multiple existing studies rather than generating new in-depth data on one case."
+    },
+    {
+      "id": "6",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "question": "On an anonymous survey about exercise habits, many participants report exercising far more often than they actually do because they want to appear healthy and disciplined to the researcher. This is best explained by:",
+      "options": [
+        "Social Desirability Bias",
+        "Experimenter Bias",
+        "Sampling Bias",
+        "Hindsight Bias"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Social Desirability Bias. Social desirability bias is the tendency to answer survey questions in a way that makes the respondent look good to others, which explains why participants overstate their exercise habits. Experimenter bias involves the researcher's own expectations skewing results, sampling bias involves a flawed process for selecting participants, and hindsight bias involves believing an outcome was predictable only after learning it, none of which describe participants misrepresenting themselves to look good."
+    },
+    {
+      "id": "7",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "question": "A college professor wants to study study habits among all undergraduates nationwide but only surveys the 30 students in his own Monday morning lecture because it is quick and easy. This is an example of a:",
+      "options": [
+        "Convenience Sample",
+        "Random Sample",
+        "Representative Sample",
+        "Meta-Analysis"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Convenience Sample. A convenience sample consists of participants selected because they are easy to access, such as the professor simply using the students already in his own class. A random sample gives every member of the population an equal chance of being chosen, a representative sample accurately reflects the characteristics of the larger population, and a meta-analysis combines the results of multiple existing studies rather than describing how participants were selected."
+    },
+    {
+      "id": "8",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "question": "Because a study on new medication was conducted using only participants from one small, homogeneous town, the results could not be confidently applied to people in other regions or from different backgrounds. This study is lacking:",
+      "options": [
+        "Generalizability",
+        "Falsifiability",
+        "Peer Review",
+        "Replication"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Generalizability. Generalizability is the ability to apply research findings from a sample to the larger population, which is lost when a sample doesn't accurately reflect that population's diversity. Falsifiability refers to whether a hypothesis could possibly be proven wrong, peer review refers to expert evaluation of a study before publication, and replication refers to repeating a study to confirm its results, none of which describe the sample-to-population problem in this scenario."
+    },
+    {
+      "id": "9",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "question": "A researcher finds that as the number of hours teenagers spend on social media increases, their reported hours of sleep decreases. This relationship is best described as a:",
+      "options": [
+        "Negative Correlation",
+        "Positive Correlation",
+        "Illusory Correlation",
+        "Confounding Variable"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Negative Correlation. A negative correlation occurs when two variables move in opposite directions, such as social media use going up while sleep hours go down. A positive correlation would mean both variables increase or decrease together, an illusory correlation is a perceived relationship that doesn't actually exist, and a confounding variable is an outside factor that could produce an effect, not a description of how two measured variables relate to each other."
+    },
+    {
+      "id": "10",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "question": "Data show that towns with more churches also tend to have more bars per capita. A researcher wrongly concludes that religion causes people to drink more. What is the researcher most likely overlooking?",
+      "options": [
+        "The Third Variable Problem (population size affects both)",
+        "Regression Toward the Mean",
+        "The Placebo Effect",
+        "Random Assignment"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The Third Variable Problem. Both the number of churches and the number of bars are most likely driven by a hidden third variable, town population, since larger towns simply have more of both. Regression toward the mean applies to extreme scores drifting back toward average over repeated measurements, the placebo effect applies to expectations affecting outcomes in an experiment, and random assignment is a procedure used to form experimental groups, none of which explain this correlational mix-up."
+    },
+    {
+      "id": "11",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "question": "A gambler notices that he tends to win more when he wears his lucky hat and becomes convinced the hat is bringing him good luck, even though he ignores the many times he wore the hat and lost. This is an example of:",
+      "options": [
+        "Illusory Correlation",
+        "The Directionality Problem",
+        "Falsifiability",
+        "Regression Toward the Mean"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Illusory Correlation. An illusory correlation occurs when someone believes a relationship exists between two things when in reality there is none, which happens here because the gambler only remembers the wins that confirm his belief. The directionality problem concerns not knowing which of two truly correlated variables causes the other, falsifiability concerns whether a hypothesis could be proven wrong, and regression toward the mean concerns extreme scores drifting back to average, none of which match this pattern of selectively remembering confirming evidence."
+    },
+    {
+      "id": "12",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "question": "A psychologist wants to know if a new mindfulness app reduces anxiety. She randomly assigns 60 participants to either use the app daily for a month or do nothing different, then measures each participant's anxiety score at the end of the month. In this experiment, the dependent variable is:",
+      "options": [
+        "The participants' anxiety scores at the end of the month",
+        "Whether participants used the mindfulness app",
+        "The number of participants in each group",
+        "The length of the study (one month)"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The participants' anxiety scores at the end of the month. The dependent variable is the outcome that is measured to see if it changed in response to the treatment, which here is the anxiety score. Whether participants used the app is the independent variable, since that is what the researcher manipulated, while the number of participants and the length of the study are procedural details of the experiment rather than a measured outcome."
+    },
+    {
+      "id": "13",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "question": "In a study testing a new pain reliever, neither the participants nor the researchers administering the pills know who is receiving the real medication versus a fake, inactive pill until after the results are recorded. This procedure is called a:",
+      "options": [
+        "Double-Blind Procedure",
+        "Single-Blind Procedure",
+        "Naturalistic Observation",
+        "Meta-Analysis"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Double-Blind Procedure. A double-blind procedure is the gold-standard design in which neither the participants nor the researchers handing out the treatment know who is in which group, controlling for both participant expectations and experimenter bias. A single-blind procedure only keeps this information from participants, not researchers, while naturalistic observation and meta-analysis are unrelated non-experimental and statistical methods, not procedures for controlling expectations within an experiment."
+    },
+    {
+      "id": "14",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "question": "A researcher records the exact number of minutes it takes each participant to solve a puzzle, allowing her to calculate an average completion time across the whole sample. This is an example of:",
+      "options": [
+        "Quantitative Research",
+        "Qualitative Research",
+        "Informed Assent",
+        "A Likert Scale"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Quantitative Research. Quantitative research translates the social world into numbers that can be treated mathematically, such as recording completion times in minutes to calculate an average. Qualitative research instead focuses on non-numerical data like subjective experiences or feelings, informed assent refers to a minor's agreement to participate in a study, and a Likert scale is a specific survey tool for rating agreement, not the general category this scenario represents."
+    },
+    {
+      "id": "15",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "question": "Before beginning a new study on memory, a team of researchers must first submit their research proposal to a university committee that reviews it to ensure the study is ethical and protects participants' rights and safety. This committee is called the:",
+      "options": [
+        "Institutional Review Board (IRB)",
+        "Peer Review Committee",
+        "American Psychological Association (APA)",
+        "Debriefing Panel"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Institutional Review Board (IRB). The IRB is the committee that reviews research proposals before any data is collected to ensure they are ethical and protect the rights, safety, and well-being of participants. Peer review instead evaluates studies after they are conducted, before publication, the APA is the professional organization that outlines ethical guidelines rather than a review committee for individual studies, and debriefing panel is not a real term used to describe a proposal-approval committee."
+    },
+    {
+      "id": "16",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "question": "A researcher knows exactly which participants provided which survey responses, but promises that this information will never be shared publicly or connected to their names in any report. This ethical guideline is best described as:",
+      "options": [
+        "Confidentiality",
+        "Anonymity",
+        "Informed Consent",
+        "Protection from Harm"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Confidentiality. Confidentiality means the researcher does know who the participants are but ethically promises to keep that information a secret from the public. Anonymity, by contrast, means not even the researcher knows who the participants are, informed consent involves giving participants enough information to voluntarily agree to join a study, and protection from harm involves preventing undue physical or psychological damage, neither of which describes keeping known identities private."
+    },
+    {
+      "id": "17",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "question": "In a study on conformity, an actor secretly working for the research team pretends to be a regular participant and deliberately gives an obviously wrong answer to see how it influences the real participants. This actor is known as a:",
+      "options": [
+        "Confederate",
+        "Confounding Variable",
+        "Case Study Subject",
+        "Control Group Member"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Confederate. A confederate is an actor who secretly works for the researcher while pretending to be a regular participant, which is exactly the role this person plays in influencing the real participants. A confounding variable is an outside factor that could affect the results rather than a person, a case study subject is someone studied in depth for their own individual traits, and a control group member simply does not receive the treatment, neither of which describes someone deliberately planted to deceive other participants."
+    },
+    {
+      "id": "18",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "question": "After a study involving deception ends, the researcher sits down with each participant to fully explain the true purpose of the study and reveal any deceptions that were used, making sure everyone leaves feeling okay. This process is called:",
+      "options": [
+        "Debriefing",
+        "Informed Consent",
+        "Random Assignment",
+        "Peer Review"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Debriefing. Debriefing is the post-experimental explanation of a study's true purpose and any deceptions used, required whenever deception is part of a study so participants leave feeling okay. Informed consent happens before a study begins rather than after, random assignment is the process of sorting participants into experimental groups, and peer review is the evaluation of a study by outside experts before publication, none of which describe this after-the-fact explanation."
+    },
+    {
+      "id": "19",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "question": "A teacher records the test scores of an entire class and calculates that the exact middle score, with half the class scoring above and half scoring below, is an 82. This value is called the:",
+      "options": [
+        "Median",
+        "Mean",
+        "Mode",
+        "Percentile Rank"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Median. The median is the exact middle score in a distribution, with half the scores falling above it and half below, which matches this description. The mean is the arithmetic average found by adding all scores and dividing by the number of scores, the mode is the most frequently occurring score, and percentile rank is the percentage of scores falling below a specific score, none of which describe the single middle value in an ordered dataset."
+    },
+    {
+      "id": "20",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "question": "Two students, Jordan and Casey, both have a mean test average of 85%. Jordan's individual scores were 84, 85, and 86, while Casey's individual scores were 65, 85, and 105. Which measure best captures the difference in consistency between these two students' performances?",
+      "options": [
+        "Standard Deviation",
+        "Mean",
+        "Median",
+        "Percentile Rank"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Standard Deviation. Standard deviation measures how spread out data are from the mean, using every score in the dataset, so it would reveal that Jordan's scores are tightly clustered while Casey's are widely spread even though their means are identical. The mean is identical for both students and therefore doesn't capture the difference, the median only reflects the middle score rather than overall spread, and percentile rank compares one score to others rather than measuring consistency within a single student's scores."
+    },
+    {
+      "id": "21",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "question": "A student learns that her score on a national exam placed her in the 95th percentile. What does this tell her?",
+      "options": [
+        "She scored higher than 95% of the people who took the exam",
+        "She answered exactly 95% of the questions correctly",
+        "She is in the top 5% by age group only",
+        "Her raw score was a 95 out of 100"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: She scored higher than 95% of the people who took the exam. Percentile rank is the percentage of scores that fall below a specific score in a distribution, so being in the 95th percentile means she outperformed 95% of test-takers, regardless of her raw score. It does not mean she got 95% of the questions correct, it is not limited specifically to an age-group comparison unless stated, and it says nothing about her literal raw score being a 95."
+    },
+    {
+      "id": "22",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "question": "A new studying technique is tested on one million students and is found to raise test scores by an average of just 0.02 points, a difference so tiny it has almost no real-world impact. Even though the massive sample size makes this result statistically significant, its practical importance is best measured by looking at the:",
+      "options": [
+        "Effect Size",
+        "Standard Deviation",
+        "Range",
+        "Percentile Rank"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Effect Size. Effect size measures how strong or meaningful a relationship or difference actually is, which reveals that a statistically significant result can still be practically useless if the effect size is extremely small, as in this example. Standard deviation measures the spread of scores within a dataset, range measures the difference between the highest and lowest scores, and percentile rank compares one score to the rest of a distribution, none of which capture the real-world importance of an experimental result."
+    },
+    {
+      "id": "23",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "question": "A psychology class takes an easy quiz where almost everyone scores a 95 or higher, except for one student who was absent and received a zero, which pulls the class mean well below the median. This distribution is best described as having a:",
+      "options": [
+        "Negative Skew",
+        "Positive Skew",
+        "Bimodal Distribution",
+        "Normal Distribution"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Negative Skew. A negative skew occurs when a few unusually low scores create a long tail to the left, pulling the mean below the median, which matches the single zero score dragging down this class average. A positive skew instead involves unusually high scores pulling the mean above the median, a bimodal distribution has two separate peaks rather than a single stretched tail, and a normal distribution has the mean, median, and mode all aligned at the center, none of which fit a single extreme low outlier."
+    },
+    {
+      "id": "24",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A psychologist explains a patient's panic attacks by pointing to an overactive amygdala and an inherited imbalance of neurotransmitters like GABA. Which perspective is this psychologist using?",
+      "options": [
+        "Biological",
+        "Behavioral",
+        "Cognitive",
+        "Humanistic"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Biological. The biological perspective links genetic, neural, and hormonal processes to behavior, which matches the focus on the amygdala and neurotransmitter levels. The behavioral perspective would instead focus on observable, learned responses to the environment, the cognitive perspective would focus on thought patterns, and the humanistic perspective would focus on personal growth and self-actualization, none of which involve explaining behavior through brain chemistry."
+    },
+    {
+      "id": "25",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A therapist believes her client's fear of abandonment stems from unresolved, unconscious conflicts related to a parent's frequent absences during early childhood. This explanation is rooted in the:",
+      "options": [
+        "Psychodynamic Perspective",
+        "Cognitive Perspective",
+        "Biological Perspective",
+        "Behavioral Perspective"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Psychodynamic Perspective. The psychodynamic perspective studies how unconscious drives and childhood conflicts influence current behavior, which fits the explanation rooted in early, unresolved parental absence. The cognitive perspective would instead focus on the client's conscious thought patterns, the biological perspective would look at brain and genetic factors, and the behavioral perspective would focus on learned, observable responses, none of which involve unconscious childhood conflicts."
+    },
+    {
+      "id": "26",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A psychologist argues that humans evolved a strong fear of snakes and spiders because ancestors who avoided these dangers were more likely to survive and pass on their genes. This explanation reflects the:",
+      "options": [
+        "Evolutionary Perspective",
+        "Humanistic Perspective",
+        "Sociocultural Perspective",
+        "Psychodynamic Perspective"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Evolutionary Perspective. The evolutionary perspective uses the principles of natural selection to explain behavior, focusing on traits that promoted the survival and reproduction of ancestors, which matches this explanation of an inherited fear response. The humanistic perspective would instead focus on personal growth and free will, the sociocultural perspective would focus on cultural influence, and the psychodynamic perspective would focus on unconscious drives, none of which involve natural selection across generations."
+    },
+    {
+      "id": "27",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A counselor believes her client feels unfulfilled because their restrictive work environment is blocking their natural drive toward personal growth and self-actualization. This explanation reflects the:",
+      "options": [
+        "Humanistic Perspective",
+        "Behavioral Perspective",
+        "Biological Perspective",
+        "Evolutionary Perspective"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Humanistic Perspective. The humanistic perspective emphasizes the growth potential of healthy people and the individual's inherent drive toward personal growth, free will, and self-actualization, exactly as described in this counselor's explanation. The behavioral perspective focuses instead on learned, observable responses, the biological perspective focuses on physical body processes, and the evolutionary perspective focuses on inherited survival traits, none of which center on blocked self-actualization."
+    },
+    {
+      "id": "28",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A researcher explains that students from a culture that heavily emphasizes academic achievement experience more test-related stress because of the intense societal pressure and community expectations placed on them. This explanation reflects the:",
+      "options": [
+        "Sociocultural Perspective",
+        "Cognitive Perspective",
+        "Psychodynamic Perspective",
+        "Biological Perspective"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sociocultural Perspective. The sociocultural perspective studies how situations and cultures affect behavior and thinking, which matches this explanation centered on cultural pressure and community expectations. The cognitive perspective would instead focus on the individual's thought patterns, the psychodynamic perspective would focus on unconscious childhood conflicts, and the biological perspective would focus on brain and genetic factors, none of which center on cultural or societal influence."
+    },
+    {
+      "id": "29",
+      "setid": "",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "question": "A student believes that failing one quiz means she is a complete failure who will never succeed at anything. A psychologist explains her resulting anxiety is caused by this irrational, catastrophic thought pattern rather than by the quiz itself. This explanation reflects the:",
+      "options": [
+        "Cognitive Perspective",
+        "Behavioral Perspective",
+        "Evolutionary Perspective",
+        "Sociocultural Perspective"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cognitive Perspective. The cognitive perspective focuses on how people think, perceive, and interpret situations, emphasizing the role of mental processes in behavior, which matches an explanation centered on an irrational thought pattern. The behavioral perspective would instead focus on learned, observable responses to the environment, the evolutionary perspective would focus on inherited survival traits, and the sociocultural perspective would focus on cultural pressures, none of which center on an individual's internal thought distortions."
+    },
+    {
+      "id": "30",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "question": "A student inherits genes that make her more likely to develop excellent musical ability, but because her family never exposes her to instruments or lessons, this potential never fully develops. This scenario best illustrates the concept of a:",
+      "options": [
+        "Genetic Predisposition",
+        "Heritability Estimate",
+        "Family Study",
+        "Twin Study"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Genetic Predisposition. A genetic predisposition is an increased likelihood of developing a particular trait based on a person's genetic makeup, but as this example shows, that potential still requires the right environment to be expressed. Heritability instead measures how much variation across a population is due to genetics, a family study examines how often a trait appears among relatives, and a twin study compares identical and fraternal twins, none of which describe one individual's unexpressed genetic potential."
+    },
+    {
+      "id": "31",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "question": "Researchers find that severe childhood stress can cause certain genes related to mood regulation to become switched off, even though the underlying DNA sequence itself never changes. This process is best described as:",
+      "options": [
+        "Epigenetics",
+        "Natural Selection",
+        "Eugenics",
+        "Heritability"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Epigenetics. Epigenetics is the study of how environmental factors, like stress, can influence the expression of genes without altering the underlying DNA sequence, exactly as described in this scenario. Natural selection describes how survival-promoting traits get passed down across generations, eugenics is the controversial and unethical practice of selectively mating people for desired traits, and heritability measures genetic contribution to trait variation across a population, none of which describe genes being switched on or off by environmental stress."
+    },
+    {
+      "id": "32",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "question": "An evolutionary psychologist explains that humans commonly crave high-calorie, high-energy foods because ancestors who sought out these calorie-dense foods were more likely to survive periods of famine and pass down their genes. This principle, first proposed by Charles Darwin, is called:",
+      "options": [
+        "Natural Selection",
+        "Epigenetics",
+        "Heritability",
+        "Eugenics"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Natural Selection. Natural selection is the principle that traits leading to increased survival and reproduction are more likely to be passed on to future generations, which explains why a preference for calorie-dense food became common. Epigenetics involves environmental factors altering gene expression rather than which traits get passed down through survival, heritability measures genetic contribution to variation within a population, and eugenics is the unethical practice of selectively breeding for desired traits, none of which describe this survival-driven inheritance principle."
+    },
+    {
+      "id": "33",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "question": "Twin A and Twin B formed when a single fertilized egg split into two separate embryos, giving them nearly identical genetic material. What type of twins are Twin A and Twin B?",
+      "options": [
+        "Monozygotic Twins",
+        "Dizygotic Twins",
+        "Adopted Siblings",
+        "Fraternal Twins"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Monozygotic Twins. Monozygotic twins form when a single fertilized egg splits into two embryos, resulting in twins who share nearly all of the same genetic material, exactly as described here. Dizygotic twins and fraternal twins (which are the same thing) instead form from two separate eggs fertilized by two different sperm, sharing only about 50% of their genes, and adopted siblings share an environment but no biological relatedness at all, none of which match a single split egg."
+    },
+    {
+      "id": "34",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "question": "A pianist consciously decides to move her fingers across the keys to play a specific song. Which division of the nervous system directly carries this voluntary command to her skeletal muscles?",
+      "options": [
+        "Somatic Nervous System",
+        "Autonomic Nervous System",
+        "Parasympathetic Nervous System",
+        "Central Nervous System"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Somatic Nervous System. The somatic nervous system controls the body's skeletal muscles for voluntary movements, exactly like the deliberate finger movements needed to play the piano. The autonomic and parasympathetic nervous systems instead govern involuntary functions like heartbeat and digestion, and while the central nervous system originates the decision, it is the somatic nervous system that specifically carries the command out to the skeletal muscles."
+    },
+    {
+      "id": "35",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "question": "A student doesn't consciously think about digesting her lunch or regulating her heartbeat while she takes a nap; these processes simply happen automatically in the background. Which division of the nervous system is responsible for this automatic regulation?",
+      "options": [
+        "Autonomic Nervous System",
+        "Somatic Nervous System",
+        "Central Nervous System",
+        "Sympathetic Nervous System Only"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Autonomic Nervous System. The autonomic nervous system automatically regulates involuntary body functions such as heartbeat, breathing, and digestion, exactly like the background processes occurring while the student naps. The somatic nervous system instead governs voluntary skeletal muscle movement, the central nervous system refers only to the brain and spinal cord, and the sympathetic nervous system is just one half of the autonomic system, specifically the half activated during stress rather than restful states like napping."
+    },
+    {
+      "id": "36",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "question": "While hiking, a woman suddenly encounters a rattlesnake. Her heart immediately races, her pupils dilate, and her digestion slows as her body prepares to react to the danger. Which system is responsible for this reaction?",
+      "options": [
+        "Sympathetic Nervous System",
+        "Parasympathetic Nervous System",
+        "Somatic Nervous System",
+        "Central Nervous System"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sympathetic Nervous System. The sympathetic nervous system activates the body's fight-or-flight response during stress or danger, increasing heart rate, dilating pupils, and slowing digestion to prepare for action, exactly as described in this encounter with the snake. The parasympathetic nervous system instead calms the body down after a threat has passed, the somatic nervous system governs voluntary skeletal movement, and the central nervous system refers broadly to the brain and spinal cord rather than this specific stress response."
+    },
+    {
+      "id": "37",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "question": "A person is fully relaxed on the couch, breathing slowly, with a low resting heart rate, and easily digesting a recent meal. Which system is primarily active during this state?",
+      "options": [
+        "Parasympathetic Nervous System",
+        "Sympathetic Nervous System",
+        "Somatic Nervous System",
+        "Central Nervous System Only"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Parasympathetic Nervous System. The parasympathetic nervous system promotes rest-and-digest functions such as a slow heart rate, calm breathing, and normal digestion, exactly matching this relaxed couch scenario. The sympathetic nervous system instead produces the opposite fight-or-flight activation during stress, the somatic nervous system governs voluntary skeletal muscle movement rather than internal regulation, and while the central nervous system is always involved in processing signals, it is not the specific division responsible for producing this calm, rest-and-digest state."
+    }
+  ]
+}
