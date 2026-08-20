@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Quiz - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/quiz">
@@ -154,11 +154,12 @@
         /* --- Mode Toggle --- */
         .mode-toggle {
             display: flex;
+            flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 15px;
         }
         .mode-toggle button {
-            flex: 1;
+            flex: 1 1 calc(50% - 4px);
             padding: 10px;
             border-radius: 6px;
             border: 2px solid #e9ecef;
@@ -172,6 +173,12 @@
             background: var(--accent);
             border-color: var(--accent);
             color: white;
+        }
+
+        @media (min-width: 601px) {
+            .mode-toggle button {
+                flex: 1;
+            }
         }
 
         .sets-note {
@@ -419,6 +426,7 @@
                 <div class="mode-toggle">
                     <button id="mode-btn-individual" class="active" onclick="switchMode('individual')">Individual Questions</button>
                     <button id="mode-btn-sets" onclick="switchMode('sets')">Question Sets</button>
+                    <button id="mode-btn-studyguide" onclick="switchMode('studyguide')">Study Guide Questions</button>
                     <button id="mode-btn-sample" onclick="switchMode('sample')">Sample Questions</button>
                 </div>
 
@@ -463,6 +471,22 @@
                     </select>
 
                     <div class="sets-note">Each question set includes content questions from the selected unit, plus general science-practice questions (research methods, ethics, and other skills) that show up throughout the course.</div>
+                </div>
+
+                <div id="studyguide-setup" style="display:none;">
+                    <p>Practice the exact review questions from a specific Study Guide topic page.</p>
+
+                    <label for="studyguide-unit-select">Unit:</label>
+                    <select id="studyguide-unit-select" onchange="handleStudyGuideUnitChange()">
+                        <option value="all">All Units</option>
+                    </select>
+
+                    <label for="studyguide-topic-select">Topic:</label>
+                    <select id="studyguide-topic-select">
+                        <option value="all">All Topics</option>
+                    </select>
+
+                    <div class="sets-note">These are the same "Quick Check" questions found at the bottom of each Study Guide worksheet — pick the topic you just studied to check your understanding.</div>
                 </div>
 
                 <div id="sample-setup" style="display:none;">
@@ -687,9 +711,11 @@
             quizMode = mode;
             document.getElementById('individual-setup').style.display = (mode === 'individual') ? 'block' : 'none';
             document.getElementById('sets-setup').style.display = (mode === 'sets') ? 'block' : 'none';
+            document.getElementById('studyguide-setup').style.display = (mode === 'studyguide') ? 'block' : 'none';
             document.getElementById('sample-setup').style.display = (mode === 'sample') ? 'block' : 'none';
             document.getElementById('mode-btn-individual').classList.toggle('active', mode === 'individual');
             document.getElementById('mode-btn-sets').classList.toggle('active', mode === 'sets');
+            document.getElementById('mode-btn-studyguide').classList.toggle('active', mode === 'studyguide');
             document.getElementById('mode-btn-sample').classList.toggle('active', mode === 'sample');
             // Sample mode is a static preview, not a quiz to start
             document.getElementById('start-quiz-btn').style.display = (mode === 'sample') ? 'none' : 'inline-block';
@@ -740,6 +766,25 @@
             }
         })
         .catch(error => console.error('Error fetching data:', error));
+
+        // Study Guide Questions mode pulls from its own file (studyquiz.json)
+        // rather than quiz.json, since it's a separate, smaller pool of
+        // per-topic "Quick Check" questions that mirror what's printed at
+        // the bottom of each Study Guide worksheet. Fetched independently
+        // (own try/catch) so a missing or not-yet-created studyquiz.json
+        // never breaks Individual Questions, Question Sets, or Sample
+        // Questions mode -- the Study Guide tab just won't have data yet.
+        let allStudyQuestions = [];
+        fetch('studyquiz.json')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.quiz && data.quiz.length > 0) {
+                    allStudyQuestions = data.quiz;
+                    populateStudyGuideUnitDropdown();
+                    populateStudyGuideTopicDropdown();
+                }
+            })
+            .catch(error => console.error('Error fetching studyquiz.json (Study Guide tab will be empty until this file exists):', error));
 
         // --- FILTER LOGIC (Updated to build from topics.json) ---
         function populateUnitDropdown() {
@@ -810,6 +855,74 @@
             populateTopicDropdown();
         }
 
+        // Study Guide Questions mode: dropdowns are built directly from
+        // whatever topics/units actually appear in studyquiz.json (same
+        // approach as populateSetsUnitDropdown), so the tab naturally
+        // grows as more topics get Study Guide questions added over time
+        // rather than needing this file edited each time. Topic/unit
+        // display titles are still pulled from topics.json when available.
+        function populateStudyGuideUnitDropdown() {
+            const select = document.getElementById('studyguide-unit-select');
+            select.innerHTML = '<option value="all">All Units</option>';
+
+            const unitTitleLookup = {};
+            allTopics.forEach(t => {
+                if (t.unit && !(t.unit in unitTitleLookup)) {
+                    unitTitleLookup[t.unit] = t.unit_title || '';
+                }
+            });
+
+            const uniqueUnits = new Set();
+            allStudyQuestions.forEach(q => { if (q.unit) uniqueUnits.add(q.unit); });
+
+            const sortedUnits = Array.from(uniqueUnits).sort((a, b) => {
+                const numA = parseInt(a.replace(/\D/g, '')) || 0;
+                const numB = parseInt(b.replace(/\D/g, '')) || 0;
+                return numA - numB;
+            });
+
+            sortedUnits.forEach(u => {
+                const option = document.createElement('option');
+                option.value = u;
+                option.textContent = unitTitleLookup[u] ? `${u}: ${unitTitleLookup[u]}` : u;
+                select.appendChild(option);
+            });
+        }
+
+        function populateStudyGuideTopicDropdown() {
+            const selectedUnit = document.getElementById('studyguide-unit-select').value;
+            const topicSelect = document.getElementById('studyguide-topic-select');
+            topicSelect.innerHTML = '<option value="all">All Topics</option>';
+
+            const topicTitleLookup = {};
+            allTopics.forEach(t => {
+                if (t.topic_id && !(t.topic_id in topicTitleLookup)) {
+                    topicTitleLookup[t.topic_id] = t.topic_title || '';
+                }
+            });
+
+            let relevantQuestions = allStudyQuestions;
+            if (selectedUnit !== 'all') {
+                relevantQuestions = allStudyQuestions.filter(q => q.unit === selectedUnit);
+            }
+
+            const uniqueTopics = new Set();
+            relevantQuestions.forEach(q => { if (q.topic) uniqueTopics.add(q.topic); });
+
+            const sortedTopics = Array.from(uniqueTopics).sort((a, b) => parseFloat(a) - parseFloat(b));
+
+            sortedTopics.forEach(topicId => {
+                const option = document.createElement('option');
+                option.value = topicId;
+                option.textContent = topicTitleLookup[topicId] ? `${topicId} ${topicTitleLookup[topicId]}` : topicId;
+                topicSelect.appendChild(option);
+            });
+        }
+
+        function handleStudyGuideUnitChange() {
+            populateStudyGuideTopicDropdown();
+        }
+
         // Only lists units that actually have at least one tagged question
         // set right now, so students never land on an empty result while
         // sets are still being added unit by unit.
@@ -848,6 +961,10 @@
         function startQuiz() {
             if (quizMode === 'sets') {
                 startQuizSets();
+                return;
+            }
+            if (quizMode === 'studyguide') {
+                startQuizStudyGuide();
                 return;
             }
 
@@ -935,6 +1052,40 @@
             });
 
             document.getElementById('quiz-page-wrap').classList.add('mode-sets');
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'block';
+
+            score = 0;
+            currentQuestionIndex = 0;
+            loadQuestion();
+            scrollToQuizTop();
+        }
+
+        // 2c. START QUIZ (STUDY GUIDE MODE)
+        // Loads every question tagged with the selected topic (and unit,
+        // if narrowed) rather than a count-limited pool -- these Study
+        // Guide sets are the small "Quick Check" batches from a single
+        // worksheet, so the whole point is taking all of them together.
+        function startQuizStudyGuide() {
+            document.getElementById('quiz-page-wrap').classList.remove('mode-sets');
+
+            const selectedUnit = document.getElementById('studyguide-unit-select').value;
+            const selectedTopic = document.getElementById('studyguide-topic-select').value;
+
+            let pool = allStudyQuestions.filter(q => {
+                const matchUnit = (selectedUnit === 'all') || (q.unit === selectedUnit);
+                const matchTopic = (selectedTopic === 'all') || (q.topic === selectedTopic);
+                return matchUnit && matchTopic;
+            });
+
+            if (pool.length === 0) {
+                alert("No Study Guide questions found for this topic yet! More are being added over time.");
+                return;
+            }
+
+            pool.sort(() => Math.random() - 0.5);
+            quizQueue = pool;
+
             document.getElementById('setup-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
 
