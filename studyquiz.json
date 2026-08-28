@@ -628,6 +628,601 @@
       "image": "",
       "context": "",
       "explanation": "Correct: Parasympathetic Nervous System. The parasympathetic nervous system promotes rest-and-digest functions such as a slow heart rate, calm breathing, and normal digestion, exactly matching this relaxed couch scenario. The sympathetic nervous system instead produces the opposite fight-or-flight activation during stress, the somatic nervous system governs voluntary skeletal muscle movement rather than internal regulation, and while the central nervous system is always involved in processing signals, it is not the specific division responsible for producing this calm, rest-and-digest state."
+    },
+    {
+      "id": "38",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "When a neuron receives a signal, it uses this branch-like structure to receive incoming messages from other neurons. This structure is called the:",
+      "options": [
+        "Dendrite",
+        "Axon",
+        "Soma",
+        "Myelin Sheath"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Dendrite. Dendrites are the branch-like extensions of a neuron that receive incoming signals from other neurons and transmit them toward the cell body, acting as the neuron's ears. The axon instead carries impulses away from the cell body, the soma is the cell body that processes information after it arrives from the dendrites, and the myelin sheath is the fatty insulation around the axon, none of which are the first structure to receive an incoming signal."
+    },
+    {
+      "id": "39",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "A student believes that shouting loudly at a friend should cause her auditory neurons to fire a much bigger and more powerful electrical signal than a soft whisper would. Why is this belief incorrect?",
+      "options": [
+        "Neurons follow the All-or-Nothing Principle, firing at full strength every time or not at all",
+        "Neurons only fire when a person is consciously paying attention to a stimulus",
+        "Louder sounds always fail to reach the neuron's firing threshold",
+        "Only motor neurons, not sensory neurons, are capable of generating an action potential"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Neurons follow the All-or-Nothing Principle, firing at full strength every time or not at all. According to the all-or-nothing principle, a neuron either fires with a full-strength action potential or doesn't fire at all; intensity is instead communicated through the number of neurons firing and how frequently they fire, not through a single bigger signal. Neurons can fire without conscious attention, a loud sound would actually be more likely, not less likely, to reach threshold, and sensory neurons are just as capable of generating action potentials as motor neurons."
+    },
+    {
+      "id": "40",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "A patient with Parkinson's disease has abnormally low levels of a neurotransmitter that plays a major role in movement, motivation, and reward. Which neurotransmitter is deficient in this patient?",
+      "options": [
+        "Dopamine",
+        "GABA",
+        "Norepinephrine",
+        "Endorphins"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Dopamine. Dopamine is involved in movement, motivation, reward, and pleasure, and is specifically linked to disorders such as Parkinson's disease and schizophrenia. GABA is the brain's primary inhibitory neurotransmitter tied to anxiety and sleep regulation, norepinephrine relates to alertness and the stress response, and endorphins relate to pain control and pleasure, none of which are the specific neurotransmitter implicated in Parkinson's disease."
+    },
+    {
+      "id": "41",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "Naloxone (Narcan) binds to opioid receptor sites without activating them, physically blocking opioid molecules from docking there and immediately reversing an overdose. Naloxone is best classified as an:",
+      "options": [
+        "Antagonist",
+        "Agonist",
+        "Stimulant",
+        "Hallucinogen"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Antagonist. An antagonist binds to a receptor site but does not activate it, instead blocking the natural neurotransmitter or drug from getting in and doing its job, exactly as Naloxone does when reversing an opioid overdose. An agonist instead activates a receptor to mimic a neurotransmitter's effects, and stimulant and hallucinogen are broad drug category classifications based on their overall effect on the nervous system, not descriptions of this specific receptor-blocking mechanism."
+    },
+    {
+      "id": "42",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "A patient taking an antidepressant experiences elevated mood because the drug blocks the transporters on the sending neuron responsible for reabsorbing serotonin, leaving more of it available in the synapse. This mechanism is known as:",
+      "options": [
+        "Reuptake Inhibition",
+        "Antagonism",
+        "Depolarization",
+        "The All-or-Nothing Principle"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Reuptake Inhibition. Reuptake inhibitors block the transporters on the sending neuron that normally reabsorb neurotransmitters, leaving a flood of chemical in the synapse to repeatedly stimulate the receiving neuron, exactly as SSRIs do with serotonin. Antagonism instead involves blocking a receptor site directly rather than blocking reabsorption, depolarization describes sodium ions flooding into a neuron during firing, and the all-or-nothing principle describes how action potentials fire at full strength, neither of which describes this reabsorption-blocking mechanism."
+    },
+    {
+      "id": "43",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "question": "A college student regularly drinks alcohol, which slows down her central nervous system activity, impairs her coordination, and reduces her reaction time. Alcohol is best classified as a:",
+      "options": [
+        "Depressant",
+        "Stimulant",
+        "Hallucinogen",
+        "Opioid"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Depressant. Depressants are psychoactive drugs that slow down activity in the central nervous system, reducing arousal and bodily functions, exactly matching alcohol's effects on coordination and reaction time described here. Stimulants instead increase central nervous system activity, hallucinogens alter perception and can cause hallucinations, and opioids primarily reduce pain and produce pleasure by acting on opioid receptors, none of which describe alcohol's slowing effect on the nervous system."
+    },
+    {
+      "id": "44",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "A patient suffers severe damage to the very base of his brainstem, resulting in an inability to regulate his own heartbeat, breathing, and blood pressure without life support. Which structure was most likely damaged?",
+      "options": [
+        "Medulla",
+        "Cerebellum",
+        "Amygdala",
+        "Thalamus"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Medulla. The medulla, located at the absolute base of the brainstem, controls life-sustaining autonomic functions such as heartbeat, breathing, and blood pressure, exactly matching the deficits described. The cerebellum instead coordinates voluntary movement and balance, the amygdala is linked to fear and aggression, and the thalamus routes sensory information, none of which directly regulate these core survival functions."
+    },
+    {
+      "id": "45",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "A man is bitten by a dog as a child and, from then on, experiences intense, automatic fear whenever he sees any dog, even friendly ones. Which limbic structure is most heavily linked to this raw fear response?",
+      "options": [
+        "Amygdala",
+        "Hippocampus",
+        "Thalamus",
+        "Pons"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Amygdala. The amygdala consists of two neural clusters heavily linked to raw emotions, particularly fear and aggression, exactly matching this automatic fear response to dogs. The hippocampus instead processes and stores explicit factual memories rather than driving emotional reactions, the thalamus routes sensory information to higher brain regions, and the pons helps coordinate automatic movement and sleep, none of which generate this raw fear response."
+    },
+    {
+      "id": "46",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "After a severe brain injury, a patient can still recall events and skills from before the accident but is completely unable to form any new factual memories going forward. Which structure was most likely damaged?",
+      "options": [
+        "Hippocampus",
+        "Amygdala",
+        "Cerebellum",
+        "Occipital Lobe"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Hippocampus. The hippocampus is critical for the processing and storage of explicit, conscious memories, and damage to it results in an inability to form new factual memories, a condition known as anterograde amnesia, exactly matching this patient's symptoms. The amygdala instead processes fear and aggression rather than factual memory storage, the cerebellum processes implicit muscle memories, and the occipital lobe processes visual information, none of which explain this specific loss of new factual memory formation."
+    },
+    {
+      "id": "47",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "A structure sitting on top of the brainstem receives incoming information from all the senses except smell and routes that data to the appropriate higher brain regions for further processing. This structure is the:",
+      "options": [
+        "Thalamus",
+        "Hypothalamus",
+        "Pons",
+        "Amygdala"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Thalamus. The thalamus is the brain's central sensory control center, located on top of the brainstem, and it receives information from all the senses except smell before routing it to higher brain regions, exactly matching this description. The hypothalamus instead regulates maintenance drives rather than routing sensory data, the pons coordinates automatic movement and sleep, and the amygdala processes fear and aggression, none of which serve as the central sensory relay station."
+    },
+    {
+      "id": "48",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "A patient can understand language perfectly and knows exactly what she wants to say, but after a stroke, she physically cannot produce coherent speech. Damage to which brain area, located in the left frontal lobe, best explains this deficit?",
+      "options": [
+        "Broca's Area",
+        "Wernicke's Area",
+        "The Somatosensory Cortex",
+        "The Occipital Lobe"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Broca's Area. Broca's area, located in the left frontal lobe, directs the muscle movements involved in speech production, and damage there causes Broca's (expressive) aphasia, in which a person knows what they want to say but cannot physically produce the words. Wernicke's area, by contrast, is involved in language comprehension and its damage causes fluent but nonsensical speech, while the somatosensory cortex and occipital lobe deal with touch sensation and vision, not speech production."
+    },
+    {
+      "id": "49",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "question": "A person who has been blind since birth shows unusually strong touch and hearing abilities. Brain scans reveal that her occipital lobe, normally dedicated to vision, has been recruited to help process this touch and sound information instead. This reorganization is best explained by:",
+      "options": [
+        "Neuroplasticity",
+        "Contralateral Organization",
+        "The Reticular Activating System",
+        "The 10% Myth"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Neuroplasticity. Neuroplasticity is the brain's ability to change, reorganize, and build new neural pathways throughout life, and one classic example is the occipital lobe being recruited to enhance touch or hearing in someone who is blind, exactly as described. Contralateral organization instead refers to each hemisphere controlling the opposite side of the body, the reticular activating system regulates alertness and sleep-wake cycles, and the 10% myth is a false claim about brain usage, none of which explain this functional reorganization of brain tissue."
+    },
+    {
+      "id": "50",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "While drifting off to sleep, a man suddenly experiences a vivid sensation of falling and his body jerks, snapping him back awake. This experience is best described as a:",
+      "options": [
+        "Hypnagogic Sensation",
+        "REM Rebound",
+        "Night Terror",
+        "Sleep Spindle"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Hypnagogic Sensation. Hypnagogic sensations are vivid, dreamlike experiences such as falling or seeing flashes of light that occur during the brief window of NREM stage 1, exactly matching this sudden falling sensation and jerk. REM rebound involves increased REM sleep after deprivation, night terrors involve intense fear during deep NREM sleep, and sleep spindles are bursts of brain activity during NREM stage 2, none of which describe this specific light-sleep falling sensation."
+    },
+    {
+      "id": "51",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "An EEG recording of a sleeping participant shows brief bursts of rapid brain activity believed to play a role in memory consolidation and protecting sleep from outside disturbances. This pattern indicates the participant is in:",
+      "options": [
+        "NREM Stage 2",
+        "NREM Stage 1",
+        "NREM Stage 3",
+        "REM Sleep"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: NREM Stage 2. NREM stage 2 is characterized by sleep spindles, brief bursts of rapid brain activity believed to play a crucial role in memory consolidation and protecting sleep from disturbances, exactly matching this description. NREM stage 1 instead involves slower theta waves and hypnagogic sensations, NREM stage 3 involves slow delta waves, and REM sleep involves active, wakefulness-like brain waves, none of which are defined by sleep spindles."
+    },
+    {
+      "id": "52",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "During a specific stage of sleep, a sleeper's EEG shows fast, active brain waves nearly identical to being awake, yet his skeletal muscles are completely paralyzed and unable to move. This seemingly contradictory combination is why this stage is often called:",
+      "options": [
+        "REM Sleep",
+        "NREM Stage 1",
+        "NREM Stage 2",
+        "The Restoration Stage"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Paradoxical (REM Sleep). REM sleep is often considered paradoxical because its EEG shows active brain waves similar to wakefulness, yet the skeletal body remains completely relaxed and immobilized, exactly matching this scenario. NREM stage 1 and stage 2 both show much slower brain activity rather than wake-like activity, and the restoration stage is not the term used to describe this contradictory pattern, which is specifically tied to REM sleep."
+    },
+    {
+      "id": "53",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "A psychologist explains that dreams are not hidden messages from the unconscious mind, but are instead simply the brain's attempt to make sense of random neural signals fired by the brainstem during REM sleep. This explanation reflects the:",
+      "options": [
+        "Activation-Synthesis Theory",
+        "Consolidation Theory",
+        "Restoration Theory of Sleep",
+        "Freud's Psychoanalytic Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Activation-Synthesis Theory. The activation-synthesis theory suggests that dreams are simply the brain's attempt to make sense of random neural activity occurring during sleep, with the brainstem firing random signals that higher brain regions synthesize into a story, exactly matching this explanation. The consolidation theory instead explains memory storage rather than dream content, the restoration theory explains the purpose of sleep for physical repair, and Freud's psychoanalytic dream theory is explicitly outside the scope of the AP exam and focuses on hidden unconscious meaning rather than random neural firing."
+    },
+    {
+      "id": "54",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "A man's wife reports that he repeatedly stops breathing for several seconds throughout the night, followed by a gasping momentary awakening, leaving him exhausted despite spending eight hours in bed. Which disorder is most consistent with this description?",
+      "options": [
+        "Sleep Apnea",
+        "Narcolepsy",
+        "Insomnia",
+        "Night Terrors"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sleep Apnea. Sleep apnea is a dangerous condition marked by temporary cessations of breathing during sleep and repeated momentary awakenings, which often leaves individuals completely exhausted during the day, exactly matching this description. Narcolepsy instead involves sudden daytime sleep attacks rather than nighttime breathing interruptions, insomnia involves trouble falling or staying asleep, and night terrors involve episodes of intense fear during deep sleep, none of which describe repeated breathing cessations."
+    },
+    {
+      "id": "55",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "question": "A young girl suddenly sits up screaming in intense fear during the deepest stage of her NREM sleep, but the next morning she has no memory of the episode at all. This is best classified as a:",
+      "options": [
+        "Night Terror",
+        "Nightmare",
+        "Hypnagogic Sensation",
+        "REM Rebound"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Night Terror. Night terrors involve sudden episodes of intense fear, screaming, and high arousal during deep NREM sleep, typically leaving little to no recall of the event upon waking, exactly matching this scenario. A nightmare instead occurs during REM sleep and is usually remembered upon waking, a hypnagogic sensation occurs briefly while first falling asleep in NREM stage 1, and REM rebound refers to a compensatory increase in REM sleep, none of which match this specific deep-sleep fear episode with no memory."
+    },
+    {
+      "id": "56",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "With her eyes completely closed, a dancer can still accurately sense the exact position and movement of her arms, legs, and fingers as she performs a routine. This ability relies primarily on her:",
+      "options": [
+        "Kinesthetic Sense",
+        "Vestibular Sense",
+        "Gustation",
+        "Olfaction"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Kinesthetic Sense. The kinesthetic sense is the system for sensing the position and movement of individual body parts, with receptors located in the muscles, joints, and tendons, exactly matching the dancer's ability to sense her limb positions with her eyes closed. The vestibular sense instead governs overall balance and head/body position via the inner ear rather than individual limb tracking, and gustation and olfaction refer to taste and smell, both entirely unrelated to sensing body part position."
+    },
+    {
+      "id": "57",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "Years of exposure to loud concerts permanently damages the delicate hair cells inside a musician's cochlea, resulting in significant, irreversible hearing loss even though his eardrum and middle ear bones are completely intact. This type of hearing loss is called:",
+      "options": [
+        "Sensorineural Deafness",
+        "Conduction Deafness",
+        "Somatosensation Loss",
+        "Gate Control Failure"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sensorineural Deafness. Sensorineural deafness is usually more serious and permanent, resulting from damage to the cochlea's hair cells or the auditory nerve itself, exactly matching this musician's hearing loss from damaged hair cells. Conduction deafness instead results from damage to the mechanical structures like the eardrum or middle ear bones, which are intact here, while somatosensation loss and gate control failure are not real terms used to describe hearing loss."
+    },
+    {
+      "id": "58",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "A sound engineer determines that a very high-pitched tone stimulates a highly specific location toward the beginning of the cochlea's membrane. Which theory of pitch perception best explains how this high pitch is being detected?",
+      "options": [
+        "Place Theory",
+        "Frequency Theory",
+        "Volley Theory",
+        "Opponent-Process Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Place Theory. Place theory links the pitch we hear with the exact place where the cochlea's membrane is stimulated, and it best explains how high-pitched tones are detected, exactly matching this scenario. Frequency theory instead explains pitch through the rate of nerve impulses matching a tone's frequency and works best for low pitches, volley theory explains pitches in between what place and frequency theory can each explain alone, and opponent-process theory explains color vision rather than pitch, none of which best fit this high-pitch, location-specific scenario."
+    },
+    {
+      "id": "59",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "After stubbing her toe, a woman instinctively rubs the area and reports that doing so genuinely makes the pain feel less intense. Which theory of pain best explains why rubbing an injury can reduce the perceived pain?",
+      "options": [
+        "Gate Control Theory",
+        "Opponent-Process Theory",
+        "Place Theory",
+        "Weber's Law"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Gate Control Theory. Gate control theory proposes that the spinal cord contains a neurological gate that can block or let through pain signals depending on other sensory input, which is part of why rubbing an injury can genuinely make it hurt less, exactly matching this scenario. Opponent-process theory instead explains color vision, place theory explains pitch perception, and Weber's Law explains the percentage needed to notice a difference between stimuli, none of which explain this pain-reduction phenomenon."
+    },
+    {
+      "id": "60",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "Unlike every other sense, which travels through the thalamus before reaching higher brain regions, this particular sense bypasses the thalamus entirely and goes directly to the olfactory bulb, which connects closely to the limbic system, explaining why it triggers such vivid emotional memories. This sense is:",
+      "options": [
+        "Smell (Olfaction)",
+        "Taste (Gustation)",
+        "Vision",
+        "Hearing (Audition)"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Smell (Olfaction). Smell bypasses the sensory switchboard of the thalamus and goes directly to the olfactory bulb, which is closely connected to the limbic system, explaining why smells often trigger vivid emotional memories, exactly matching this description. Taste, vision, and hearing all route through the thalamus like the other senses, making smell uniquely different in this regard."
+    },
+    {
+      "id": "61",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "A researcher determines the softest possible whisper a participant can detect exactly half the time in a silent room. She is measuring the participant's:",
+      "options": [
+        "Absolute Threshold",
+        "Difference Threshold",
+        "Weber's Law",
+        "Sensory Adaptation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Absolute Threshold. The absolute threshold is the minimum amount of stimulus energy required to detect a particular stimulus 50% of the time, exactly matching this measurement of the faintest detectable whisper. The difference threshold instead measures the smallest detectable change between two existing stimuli, Weber's Law describes that difference as a constant percentage, and sensory adaptation refers to decreasing sensitivity to an unchanging stimulus over time, none of which describe detecting a single stimulus's minimum intensity."
+    },
+    {
+      "id": "62",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "A person holding a 5-pound bag can easily notice when 1 pound is added, but a person holding a 100-pound bag cannot notice that same 1-pound addition. This phenomenon, where a constant percentage rather than a constant amount is needed to notice a difference, is called:",
+      "options": [
+        "Weber's Law",
+        "Sensory Adaptation",
+        "Absolute Threshold",
+        "Sensory Interaction"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Weber's Law. Weber's Law states that to be perceived as different, two stimuli must differ by a constant minimum percentage rather than a constant amount, exactly explaining why the same 1-pound addition is noticeable on a light load but not a heavy one. Sensory adaptation instead describes diminishing sensitivity to an unchanging stimulus over time, absolute threshold describes detecting a single faint stimulus, and sensory interaction describes one sense influencing another, none of which explain this percentage-based detection rule."
+    },
+    {
+      "id": "63",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "A photographer walks from a bright, sunlit sidewalk into a dark movie theater and needs several minutes before he can see the seats around him clearly. Which retinal receptor is primarily responsible for this dark adaptation process?",
+      "options": [
+        "Rods",
+        "Cones",
+        "The Iris",
+        "The Lens"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Rods. Rods are retinal receptors highly sensitive to dim light, necessary for peripheral and twilight vision, and they play a key role in light and dark adaptation, exactly explaining why the eyes need time to adjust in a dark theater. Cones instead function in daylight or well-lit conditions and detect fine detail and color, the iris simply controls the size of the pupil opening, and the lens focuses images on the retina, none of which are specifically responsible for adapting to darkness."
+    },
+    {
+      "id": "64",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "A graphic designer can distinguish extremely fine details and vibrant colors while working under bright studio lighting, thanks to receptors concentrated near the center of her retina. Which receptor is she primarily relying on?",
+      "options": [
+        "Cones",
+        "Rods",
+        "The Cornea",
+        "The Pupil"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cones. Cones are retinal receptor cells concentrated near the center of the retina (the fovea) that function in daylight or well-lit conditions and detect fine detail and color, exactly matching this designer's ability to see fine detail and color under bright lighting. Rods instead are used for dim light and peripheral vision rather than color or fine detail, the cornea is the outer protective layer that bends light, and the pupil is simply the opening through which light enters, none of which detect fine detail and color themselves."
+    },
+    {
+      "id": "65",
+      "setid": "",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "question": "After staring at a bright green square for 30 seconds and then looking at a blank white wall, a viewer sees a reddish afterimage in the same shape. Which theory of color vision best explains this specific afterimage effect?",
+      "options": [
+        "Opponent-Process Theory",
+        "Young-Helmholtz Trichromatic Theory",
+        "Frequency Theory",
+        "Volley Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Opponent-Process Theory. Opponent-process theory proposes that opposing retinal processes, such as red-green, enable color vision and explains afterimages, exactly matching this reddish afterimage appearing after staring at green. The trichromatic theory instead explains color perception at the level of the three cone types rather than afterimages specifically, and frequency theory and volley theory both explain pitch perception in hearing rather than color vision, none of which account for this red-green afterimage effect."
+    },
+    {
+      "id": "66",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "Standing in the pitch-black hallway of a house she has never visited before, a woman must feel the texture of the wall and the edge of a doorframe, slowly piecing these raw sensory clues together to figure out the layout of the space. This is an example of:",
+      "options": [
+        "Bottom-Up Processing",
+        "Top-Down Processing",
+        "Perceptual Set",
+        "Change Blindness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Bottom-Up Processing. Bottom-up processing starts with raw, incoming sensory data and builds up piece by piece to form a complete perception, exactly matching this woman feeling her way through an unfamiliar space without any prior expectations to guide her. Top-down processing instead relies on prior knowledge and expectations to interpret a scene quickly, perceptual set is a specific predisposition to perceive something a certain way, and change blindness involves failing to notice a difference between two scenes, none of which describe building a perception from scratch using only raw sensory clues."
+    },
+    {
+      "id": "67",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "Right before walking down a hallway, a woman is told by a friend that the space is haunted. As she walks, she interprets every small creak in the floorboards and every shifting shadow as evidence of something sinister. This mental predisposition to interpret a stimulus in a certain way is called:",
+      "options": [
+        "Perceptual Set",
+        "Schema",
+        "Selective Attention",
+        "Sensory Interaction"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Perceptual Set. A perceptual set is a mental predisposition to perceive something a certain way based on recent experiences or expectations, exactly matching how the friend's warning primed the woman to interpret ordinary creaks and shadows as sinister. A schema is the broader mental framework built from lifelong past experience rather than one immediate, recent expectation, selective attention involves focusing on one stimulus while ignoring others, and sensory interaction involves one sense influencing another, none of which describe this immediate, expectation-driven interpretation."
+    },
+    {
+      "id": "68",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "At a loud, crowded party, a woman is able to completely tune out the music and dozens of overlapping conversations to focus entirely on what her friend directly in front of her is saying. This ability is known as:",
+      "options": [
+        "Selective Attention (The Cocktail Party Effect)",
+        "Inattentional Blindness",
+        "Change Blindness",
+        "Perceptual Constancy"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Selective Attention (The Cocktail Party Effect). Selective attention is the brain's ability to focus awareness on one particular stimulus while filtering out competing surrounding stimuli, famously demonstrated by the ability to focus on one conversation in a loud, crowded room. Inattentional blindness instead describes missing something entirely because attention is elsewhere, change blindness describes failing to notice a difference between two scenes, and perceptual constancy describes perceiving stable properties of an object despite a changing retinal image, none of which describe successfully tuning into one specific stimulus."
+    },
+    {
+      "id": "69",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "In the famous invisible gorilla study, participants who were asked to carefully count the number of basketball passes in a video frequently failed to notice a person in a gorilla suit walk directly through the middle of the scene. This failure to notice an unexpected object because attention was focused elsewhere is called:",
+      "options": [
+        "Inattentional Blindness",
+        "Change Blindness",
+        "Perceptual Set",
+        "The Phi Phenomenon"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Inattentional Blindness. Inattentional blindness is the failure to notice a fully visible but unexpected object because attention was locked onto something else, exactly matching participants missing the gorilla while counting passes. Change blindness instead involves failing to notice a difference between two separate versions of a scene rather than missing something within one continuous view, perceptual set is a predisposition to interpret a stimulus a certain way, and the phi phenomenon is an illusion of motion between blinking lights, none of which describe missing an object hidden in plain sight during one continuous scene."
+    },
+    {
+      "id": "70",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "During a free kick, a spectator's brain automatically perceives the defenders as a single unified wall because they are standing shoulder-to-shoulder, tightly packed together in the same physical space. This Gestalt principle is called:",
+      "options": [
+        "Proximity",
+        "Similarity",
+        "Continuity",
+        "Closure"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Proximity. The Gestalt principle of proximity describes the brain's tendency to group objects that are physically close together into a single unit, exactly matching the tightly packed defenders being perceived as one unified wall. Similarity instead groups elements based on shared visual features like color or shape rather than physical closeness, continuity involves perceiving smooth, continuous lines rather than abrupt ones, and closure involves mentally completing a gap in an image, none of which describe grouping based purely on physical distance."
+    },
+    {
+      "id": "71",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "As a baseball flies closer and closer to a catcher's face, his eyes physically turn inward to keep tracking it, and his brain uses the resulting muscle strain to help judge exactly how close the ball is. This binocular depth cue is called:",
+      "options": [
+        "Convergence",
+        "Retinal Disparity",
+        "Relative Size",
+        "Texture Gradient"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Convergence. Convergence is a binocular depth cue based on the muscular sensation of the eyes turning inward as an object gets closer, exactly matching the catcher's eyes tracking the incoming ball. Retinal disparity instead relies on comparing the differing images from each eye rather than tracking muscle strain, and relative size and texture gradient are both monocular cues requiring only one eye, none of which involve this inward eye-turning sensation."
+    },
+    {
+      "id": "72",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "question": "In a photograph of a gravel road, the individual pebbles near the bottom of the frame look sharp, distinct, and highly detailed, while the same pebbles farther up the road blur together into a smooth, indistinct surface. This monocular depth cue is called:",
+      "options": [
+        "Texture Gradient",
+        "Relative Clarity",
+        "Relative Size",
+        "Interposition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Texture Gradient. Texture gradient is a monocular depth cue in which coarse, detailed textures appear closer while smooth, indistinct textures signal greater distance, exactly matching the detailed pebbles up close blurring into smoothness farther away. Relative clarity instead is specifically about haziness from atmospheric interference rather than surface texture detail, relative size involves comparing two similarly sized objects' retinal images, and interposition involves one object blocking another, none of which describe this gradual shift in surface detail."
     }
   ]
 }
