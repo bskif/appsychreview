@@ -83,6 +83,94 @@
             font-style: italic;
         }
 
+        /* --- GUIDED NOTES DROPDOWN --- */
+        .guided-notes-block {
+            margin: 20px 0 30px 0;
+        }
+
+        .notes-dropdown {
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            background: #f6f8ff;
+            overflow: hidden;
+        }
+
+        .notes-dropdown summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 14px 20px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .notes-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .notes-dropdown summary::after {
+            content: '▾';
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .notes-dropdown[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .notes-group {
+            padding: 4px 20px 0 20px;
+        }
+
+        .notes-group:last-of-type {
+            padding-bottom: 4px;
+        }
+
+        .notes-group-label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin: 10px 0 6px 0;
+        }
+
+        .notes-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .notes-options a {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 6px;
+            background: var(--accent);
+            color: white !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+        }
+
+        .notes-options a:hover {
+            opacity: 0.88;
+            text-decoration: none !important;
+        }
+
+        .notes-options-note {
+            width: 100%;
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin: 0 0 16px 0;
+            padding: 0 20px;
+        }
+
         /* --- TWO-COLUMN LAYOUT WITH SIDEBAR --- */
         .blog-layout-bridge {
             display: flex;
@@ -177,6 +265,30 @@
             <h1>Unit 1: Biological Bases of Behavior</h1>
             <h3 style="color: #666; margin-top: 5px; margin-bottom: 15px; font-weight: 500;">Topic 1.6: Sensation</h3>
             <div class="update-date">Last Updated: July 19, 2026</div>
+
+            <div class="guided-notes-block">
+                <details class="notes-dropdown">
+                    <summary>📥 Get Guided Notes for This Topic</summary>
+
+                    <div class="notes-group">
+                        <p class="notes-group-label">Part 1: Thresholds &amp; Vision</p>
+                        <div class="notes-options">
+                            <a href="https://appsychreviewhub.com/studyguides/topic1.6a.pdf" target="_blank" rel="noopener">📄 Download PDF</a>
+                            <a href="https://docs.google.com/document/d/1hD2RXDjRdPTzZq95sfVbSdPIPzNEN50FmYSx2DtITLo/edit?usp=sharing" target="_blank" rel="noopener">📝 Open Google Doc</a>
+                        </div>
+                    </div>
+
+                    <div class="notes-group">
+                        <p class="notes-group-label">Part 2: Hearing &amp; Other Senses</p>
+                        <div class="notes-options">
+                            <a href="https://appsychreviewhub.com/studyguides/topic1.6b.pdf" target="_blank" rel="noopener">📄 Download PDF</a>
+                            <a href="https://docs.google.com/document/d/1en6EbBtLbP0PB54Z6eDPkpZgAxM3Gunz4wCT8cAUU6Y/edit?usp=sharing" target="_blank" rel="noopener">📝 Open Google Doc</a>
+                        </div>
+                    </div>
+
+                    <p class="notes-options-note">Google Docs open as view-only &mdash; click File &rarr; Make a copy to edit your own version.</p>
+                </details>
+            </div>
             
             <!-- TOP NAVIGATION BAR -->
             <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 30px 0; padding-bottom: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem;">
