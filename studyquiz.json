@@ -1223,6 +1223,1162 @@
       "image": "",
       "context": "",
       "explanation": "Correct: Texture Gradient. Texture gradient is a monocular depth cue in which coarse, detailed textures appear closer while smooth, indistinct textures signal greater distance, exactly matching the detailed pebbles up close blurring into smoothness farther away. Relative clarity instead is specifically about haziness from atmospheric interference rather than surface texture detail, relative size involves comparing two similarly sized objects' retinal images, and interposition involves one object blocking another, none of which describe this gradual shift in surface detail."
+    },
+    {
+      "id": "73",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "When asked to picture a dog, most people immediately imagine an animal like a Labrador rather than a rare, unusual breed. The Labrador represents the:",
+      "options": [
+        "Prototype",
+        "Concept",
+        "Schema",
+        "Algorithm"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Prototype. A prototype is the most typical, best example of a concept that comes to mind first, exactly matching why a Labrador, rather than a rare breed, comes to mind for most people. A concept is the broader mental category of dog itself rather than the specific best example, a schema is a wider mental framework built from many experiences, and an algorithm is a step-by-step problem-solving procedure, none of which describe this single, most typical example."
+    },
+    {
+      "id": "74",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "A toddler who has only ever seen dogs points at a cow and confidently says Doggie! because it also has four legs and a tail. After his parents explain that cows moo instead of bark, he creates an entirely new mental category just for cows. This adjustment is called:",
+      "options": [
+        "Accommodation",
+        "Assimilation",
+        "Convergent Thinking",
+        "Priming"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Accommodation. Accommodation occurs when an existing schema must be modified, or an entirely new one created, to make sense of new information, exactly matching the toddler creating a brand new category for cows once his dog schema no longer fit. Assimilation instead involves easily fitting new information into an existing schema without needing to change it, while convergent thinking and priming are unrelated concepts involving narrowing down to one correct answer and unconscious memory activation, respectively."
+    },
+    {
+      "id": "75",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "Instead of trying every possible number on his lock, a man decides to first guess his own birthday, reasoning that it's a quick, likely guess even though it isn't guaranteed to be correct. This fast, efficient rule of thumb strategy is called a:",
+      "options": [
+        "Heuristic",
+        "Algorithm",
+        "Mental Set",
+        "Executive Function"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Heuristic. A heuristic is a simple, efficient mental shortcut or rule of thumb that is fast but does not guarantee a correct solution, exactly matching this man's quick guess based on his birthday rather than an exhaustive systematic search. An algorithm instead is the slower, step-by-step approach that does guarantee a solution, a mental set is a bias toward using a strategy that worked in the past, and executive functions are the broader higher-level cognitive processes underlying all problem-solving, not this specific shortcut strategy."
+    },
+    {
+      "id": "76",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "Meeting a new coworker who is quiet, wears glasses, and enjoys reading during breaks, a man immediately assumes she must work in the IT department rather than in sales, simply because she matches his mental image of a typical IT employee. This judgment is best explained by the:",
+      "options": [
+        "Representativeness Heuristic",
+        "Availability Heuristic",
+        "Gambler's Fallacy",
+        "Functional Fixedness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Representativeness Heuristic. The representativeness heuristic involves judging a situation based on how well it matches a prototype or stereotype, exactly matching this man's assumption based on the coworker fitting his mental image of a typical IT worker. The availability heuristic instead involves judgment based on how easily an example comes to mind from memory, the gambler's fallacy involves misjudging random independent events, and functional fixedness involves being stuck using an object only in its traditional way, none of which involve matching a person to a stereotype."
+    },
+    {
+      "id": "77",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "Despite finding a movie boring and poorly made within the first 20 minutes, a couple decides to sit through the entire painful two-hour film, reasoning that they already paid $15 each for their tickets and don't want that money to go to waste. This decision reflects the:",
+      "options": [
+        "Sunk-Cost Fallacy",
+        "Gambler's Fallacy",
+        "Mental Set",
+        "Functional Fixedness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sunk-Cost Fallacy. The sunk-cost fallacy is the tendency to continue an endeavor because of previously invested time or money, even when future costs outweigh future benefits, exactly matching the couple staying for a bad movie because of their already-spent ticket cost. The gambler's fallacy instead involves misjudging random, independent events rather than financial investment, and mental set and functional fixedness are both unrelated problem-solving roadblocks rather than financial decision-making biases."
+    },
+    {
+      "id": "78",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "During a brainstorming session, a team is asked to generate as many different possible uses for an ordinary brick as they can think of, with no single right answer being sought. This kind of open-ended thinking is called:",
+      "options": [
+        "Divergent Thinking",
+        "Convergent Thinking",
+        "Mental Set",
+        "Functional Fixedness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Divergent Thinking. Divergent thinking involves exploring many different possible solutions to a problem, exactly matching this open-ended brainstorming exercise seeking as many uses for a brick as possible. Convergent thinking instead involves narrowing down multiple possibilities to find one single correct answer, which is the opposite of this exercise, while mental set and functional fixedness are both roadblocks that limit creative thinking rather than descriptions of this expansive brainstorming style."
+    },
+    {
+      "id": "79",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "question": "Needing to prop open a heavy door but lacking an official doorstop, a man struggles for several minutes without realizing that the thick hardcover book sitting right next to him on the shelf would work perfectly. His inability to see this book as anything other than something to read is an example of:",
+      "options": [
+        "Functional Fixedness",
+        "Mental Set",
+        "Gambler's Fallacy",
+        "Sunk-Cost Fallacy"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Functional Fixedness. Functional fixedness is a cognitive bias that limits a person to using an object only in its traditional way, exactly matching the man's inability to see the book as a usable doorstop rather than only as something meant for reading. A mental set instead involves rigidly repeating an old problem-solving strategy rather than being fixated on one object's traditional purpose, and the gambler's fallacy and sunk-cost fallacy are both unrelated biases involving probability misjudgment and financial investment, respectively."
+    },
+    {
+      "id": "80",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "While distracted and staring at his phone, a man is asked by his friend, Are you even listening to me? Despite not consciously paying attention, he is able to accurately repeat his friend's last sentence word for word because the sound briefly lingered in his memory. This type of sensory memory is called:",
+      "options": [
+        "Echoic Memory",
+        "Iconic Memory",
+        "Working Memory",
+        "Episodic Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Echoic Memory. Echoic memory is the brief sensory storage of auditory information, lasting a few seconds, which explains why a person can replay and repeat the last few words someone said even when they weren't consciously listening. Iconic memory instead holds visual information rather than sound, working memory involves actively manipulating information already brought into conscious awareness, and episodic memory is a long-term memory of personal events, none of which describe this brief lingering auditory trace."
+    },
+    {
+      "id": "81",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "To remember a new phone number just long enough to dial it, a man repeats the digits to himself over and over in his head. Which component of working memory is he relying on?",
+      "options": [
+        "Phonological Loop",
+        "Visuospatial Sketchpad",
+        "Central Executive",
+        "Echoic Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Phonological Loop. The phonological loop is the component of working memory that handles auditory rehearsal, such as repeating a phone number to yourself, exactly matching this man's strategy for remembering the digits. The visuospatial sketchpad instead handles visual and spatial information rather than sound, the central executive directs attention and manages these sub-systems but doesn't do the actual rehearsal itself, and echoic memory is a brief sensory memory store lasting only a few seconds rather than an active rehearsal system."
+    },
+    {
+      "id": "82",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "A student effortlessly remembers exactly what she ate for breakfast that morning and the specific route she walked to get to school, despite never having deliberately tried to memorize either detail. This is best described as:",
+      "options": [
+        "Automatic Processing",
+        "Effortful Processing",
+        "Semantic Encoding",
+        "Structural Encoding"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Automatic Processing. Automatic processing is the unconscious encoding of incidental information, like breakfast or a daily route, that skips the line and enters memory without any deliberate effort, exactly matching this scenario. Effortful processing instead requires deliberate attention and conscious work, and semantic and structural encoding both describe specific ways of engaging with information's meaning or appearance during effortful study, not this incidental, effortless memory formation."
+    },
+    {
+      "id": "83",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "While studying for her AP Psychology exam, a student has to deliberately focus, pay close attention, and consciously work to memorize dense vocabulary terms. This type of deliberate, conscious encoding is called:",
+      "options": [
+        "Effortful Processing",
+        "Automatic Processing",
+        "Sensory Memory",
+        "Procedural Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Effortful Processing. Effortful processing requires deliberate attention and conscious work to encode information, exactly matching this student's deliberate focus while memorizing dense vocabulary terms for her exam. Automatic processing instead encodes incidental information without any conscious effort, sensory memory is the very brief initial holding pen for raw stimuli, and procedural memory is an unconscious long-term memory of physical skills, none of which describe this deliberate, conscious study effort."
+    },
+    {
+      "id": "84",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "Rather than simply memorizing a vocabulary word's spelling or sound, a student connects the word's actual meaning to a personal memory from her own life, creating an unusually strong and durable memory for that term. This deep encoding strategy is called:",
+      "options": [
+        "Semantic Encoding",
+        "Structural Encoding",
+        "Phonemic Encoding",
+        "Automatic Processing"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Semantic Encoding. Semantic encoding requires thinking about what a word actually means and connecting it to one's own life, creating the strongest, most durable memories, exactly matching this student's strategy of linking the word's meaning to a personal experience. Structural and phonemic encoding are both shallow methods focused on appearance or sound rather than meaning, and automatic processing describes unconscious, effortless encoding rather than this deep, deliberate, meaning-based strategy."
+    },
+    {
+      "id": "85",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "A woman can vividly and consciously recall the specific details of her 10th birthday party, including who attended and what cake was served, and can easily describe this event to others. This type of memory is called:",
+      "options": [
+        "Episodic Memory",
+        "Semantic Memory",
+        "Procedural Memory",
+        "Prospective Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Episodic Memory. Episodic memory is a type of explicit memory consisting of memories of personal experiences and specific events, exactly matching this woman's vivid, describable recollection of her own birthday party. Semantic memory instead consists of general facts and knowledge rather than personal experiences, procedural memory is an unconscious memory of physical skills, and prospective memory is remembering to do something in the future, none of which describe this specific personal-event recall."
+    },
+    {
+      "id": "86",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "question": "Before going to bed, a man makes a mental note to remember to take his vitamins the following morning. This type of memory, focused on remembering to perform a future action rather than recalling the past, is called:",
+      "options": [
+        "Prospective Memory",
+        "Episodic Memory",
+        "Semantic Memory",
+        "Procedural Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Prospective Memory. Prospective memory is specifically the memory of remembering to do something in the future, exactly matching the man's intention to remember his vitamins the next morning rather than recalling something from his past. Episodic and semantic memory both involve recalling past personal events or facts rather than future intentions, and procedural memory involves unconscious physical skills, none of which describe this forward-looking type of memory."
+    },
+    {
+      "id": "87",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "question": "Instead of trying to memorize a 10-digit phone number as ten separate, isolated digits, a woman groups them into three smaller units, like 555-867-5309, making the number far easier to remember. This strategy is called:",
+      "options": [
+        "Chunking",
+        "The Method of Loci",
+        "Massed Practice",
+        "The Serial Position Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Chunking. Chunking is a strategy that involves grouping individual, isolated pieces of information into larger, more meaningful units, exactly matching how the phone number's ten digits become three manageable chunks. The method of loci instead involves associating information with physical locations rather than grouping digits together, massed practice refers to cramming all studying into one session, and the serial position effect refers to remembering the beginning and end of a list, none of which describe this specific grouping strategy."
+    },
+    {
+      "id": "88",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "question": "To memorize the colors of the rainbow in order, a student uses the acronym ROY G. BIV, where each letter represents the first letter of a color. This memory aid, which organizes information in a quirky and memorable way, is called a:",
+      "options": [
+        "Mnemonic Device",
+        "Hierarchy",
+        "The Method of Loci",
+        "Distributed Practice"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Mnemonic Device. Mnemonic devices are memory aids that help organize information in a quirky, meaningful, or highly visual way, such as using an acronym like ROY G. BIV to remember the colors of the rainbow in order. A hierarchy instead organizes information in broad-to-specific levels rather than through a catchy acronym, the method of loci is a specific type of mnemonic device using physical locations, and distributed practice refers to spacing out study sessions over time, none of which describe this acronym-based memory trick."
+    },
+    {
+      "id": "89",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "question": "Instead of cramming the night before her exam, a student studies her vocabulary flashcards for just 20 minutes every single day over the course of two weeks leading up to the test. This strategy of spreading out study sessions over time is called:",
+      "options": [
+        "Distributed Practice",
+        "Massed Practice",
+        "The Method of Loci",
+        "Chunking"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Distributed Practice. Distributed practice involves spreading study sessions out over a longer period of time rather than cramming, exactly matching this student's strategy of studying for 20 minutes daily over two weeks. Massed practice instead involves cramming all studying into one single session, and the method of loci and chunking are both unrelated encoding strategies involving spatial association and grouping information, respectively, rather than describing how study time is spaced out."
+    },
+    {
+      "id": "90",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "question": "A researcher finds that students who studied vocabulary in short sessions spread out over two weeks scored significantly higher on a final exam than students who crammed the same total number of study hours into one night. This resulting improvement in long-term retention, caused by spacing out study sessions, is best described as:",
+      "options": [
+        "The Spacing Effect",
+        "Distributed Practice",
+        "Massed Practice",
+        "The Serial Position Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The Spacing Effect. The spacing effect is the psychological outcome or improved long-term retention that results from using distributed practice, exactly matching these students scoring higher after spacing out their study sessions. Distributed practice is instead the strategy or action itself of spacing out study time, not the resulting outcome, massed practice is cramming, the opposite strategy, and the serial position effect describes better recall of a list's beginning and end, unrelated to this spacing-based retention improvement."
+    },
+    {
+      "id": "91",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "question": "A friend recites a 15-item grocery list out loud, and a woman later realizes she has almost completely forgotten items 6 through 10, the ones recited in the middle of the list. According to the Serial Position Effect, why did she likely forget these specific items?",
+      "options": [
+        "They had already faded from short-term memory but weren't rehearsed long enough to reach long-term memory",
+        "The middle items were spoken in a much quieter, harder-to-hear tone of voice",
+        "Middle items are always semantically encoded, making them less memorable than the other items",
+        "Massed practice specifically targets and erases only the middle portion of any memorized list"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: They had already faded from short-term memory but weren't rehearsed long enough to reach long-term memory. The middle items of a list are the hardest to recall because they are no longer fresh enough to benefit from the recency effect, yet they also didn't receive enough rehearsal time to fully benefit from the primacy effect and transfer into long-term memory, leaving them lost in between. There's no indication the middle items were spoken more quietly, semantic encoding actually creates the strongest memories rather than weaker ones, and massed practice describes a cramming study strategy, not a mechanism that selectively erases middle list items."
+    },
+    {
+      "id": "92",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "question": "Rather than simply repeating a new AP Psychology vocabulary word over and over, a student thinks about what the term actually means and connects it to a specific personal experience from her own life. This deeper strategy, which builds strong neural connections for long-term storage, is called:",
+      "options": [
+        "Elaborative Rehearsal",
+        "Maintenance Rehearsal",
+        "Massed Practice",
+        "Sensory Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Elaborative Rehearsal. Elaborative rehearsal involves actively thinking about the meaning of new information and connecting it to existing knowledge, exactly matching this student linking a vocabulary term's meaning to her own personal experience, which builds strong, lasting neural connections. Maintenance rehearsal instead involves simple, meaningless repetition that only keeps information in short-term memory, massed practice refers to cramming all studying into one session, and sensory memory is a brief initial holding pen for raw stimuli, none of which describe this deep, meaning-based connection."
+    },
+    {
+      "id": "93",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "question": "A college student has absolutely no memory of his very first birthday party, not because the memory faded away, but because his hippocampus simply wasn't developed enough at that young age to properly store the explicit memory in the first place. This inability to recall very early childhood events is called:",
+      "options": [
+        "Infantile Amnesia",
+        "Retrograde Amnesia",
+        "Anterograde Amnesia",
+        "HSAM"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Infantile Amnesia. Infantile amnesia describes the universal inability to remember very early life events because the hippocampus isn't fully developed until around age 3 or 4, meaning the memories were never properly stored in the first place, exactly matching this student's lack of memory of his first birthday. Retrograde and anterograde amnesia both describe memory loss resulting from later injury or trauma rather than early developmental limitations, and HSAM describes an unusually powerful memory ability, the opposite of this scenario."
+    },
+    {
+      "id": "94",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "question": "After a severe head injury, a man can no longer recall his own childhood, his wedding day, or even his own name, yet doctors confirm he is still fully capable of learning and remembering new information from this point forward. This specific inability to recall memories from before the injury is called:",
+      "options": [
+        "Retrograde Amnesia",
+        "Anterograde Amnesia",
+        "Infantile Amnesia",
+        "HSAM"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Retrograde Amnesia. Retrograde amnesia is a type of memory loss where a person cannot recall events that occurred before the injury, losing their past while still being able to form new memories moving forward, exactly matching this man's inability to remember his own past despite his intact ability to learn new things. Anterograde amnesia instead involves being unable to form new memories after an injury while past memories remain intact, the opposite pattern, infantile amnesia is a normal developmental limitation rather than injury-related, and HSAM describes exceptional rather than impaired memory."
+    },
+    {
+      "id": "95",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "question": "Famously documented in the case of Patient H.M., whose hippocampus was surgically removed, a specific type of amnesia leaves old memories completely intact, but makes a person unable to form any brand new long-term memories going forward, meaning they might meet the same doctor over and over as if for the very first time. This is:",
+      "options": [
+        "Anterograde Amnesia",
+        "Retrograde Amnesia",
+        "Infantile Amnesia",
+        "Highly Superior Autobiographical Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Anterograde Amnesia. Anterograde amnesia is a type of memory loss where a person cannot form new long-term explicit memories after an injury, though their past memories remain intact, famously documented in the case of Patient H.M. and exactly matching this repeated meeting for the first time scenario. Retrograde amnesia instead involves losing memories from before the injury while still being able to form new ones, the opposite pattern, infantile amnesia is a normal developmental limitation, and HSAM describes an exceptionally powerful memory ability rather than an impairment."
+    },
+    {
+      "id": "96",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "question": "A woman in the early stages of a progressive, fatal neurological disease struggles to remember what she had for breakfast that same morning, yet she can still vividly recall detailed memories from her childhood many decades ago. Her disease typically attacks recent memories before older, more deeply consolidated ones. This disease is:",
+      "options": [
+        "Alzheimer's Disease",
+        "Retrograde Amnesia",
+        "Anterograde Amnesia",
+        "Infantile Amnesia"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Alzheimer's Disease. Alzheimer's disease is a progressive, fatal neurological disorder that destroys brain cells and typically attacks the brain areas involved in recent memory first, meaning recent memories are lost before older, deeply consolidated ones, exactly matching this woman's pattern of forgetting breakfast while retaining childhood memories. Retrograde and anterograde amnesia are both typically caused by a sudden injury rather than a progressive disease, and infantile amnesia refers to a normal developmental limitation in early childhood, none of which describe this gradual, disease-driven memory decline."
+    },
+    {
+      "id": "97",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "question": "Taking a fill-in-the-blank test with no word bank provided, a student must generate each vocabulary term entirely from her own memory, without any answer choices to jog her recognition. This type of retrieval is called:",
+      "options": [
+        "Recall",
+        "Recognition",
+        "State-Dependent Memory",
+        "Mood-Congruent Memory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Recall. Recall requires generating previously learned information entirely from scratch with almost no cues, exactly matching this fill-in-the-blank format where the student must produce each term from memory without any options to choose from. Recognition instead would apply if answer choices were provided, like a multiple-choice test, and state-dependent memory and mood-congruent memory both relate to internal physiological or emotional cues affecting retrieval, not the format of the test itself."
+    },
+    {
+      "id": "98",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "question": "A student takes a multiple-choice exam and finds that seeing the four possible answer choices printed on the page makes it much easier to identify the correct one than if she had to write the answer from memory alone. This easier retrieval process is called:",
+      "options": [
+        "Recognition",
+        "Recall",
+        "Context-Dependent Memory",
+        "Metacognition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Recognition. Recognition is a much easier memory process because the information is already sitting right in front of a person, requiring them only to identify it as previously learned, exactly matching this student identifying the correct answer among the four multiple-choice options. Recall instead would require generating the answer entirely from scratch with no options provided, and context-dependent memory and metacognition are both unrelated concepts involving environmental retrieval cues and self-awareness of knowledge, respectively."
+    },
+    {
+      "id": "99",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "question": "A student who drank three cups of coffee while studying for her exam finds she actually performs better on the test if she also has caffeine in her system during the exam itself, since her brain encoded the vocabulary alongside that internal caffeine rush. This phenomenon is called:",
+      "options": [
+        "State-Dependent Memory",
+        "Context-Dependent Memory",
+        "Mood-Congruent Memory",
+        "Recognition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: State-Dependent Memory. State-dependent memory means a person will better recall information if they are in the same internal, physiological state as when they learned it, exactly matching how this student's caffeine level during studying was encoded alongside the vocabulary and helps her recall it later. Context-dependent memory instead refers to matching the external physical environment rather than an internal physiological state, mood-congruent memory refers specifically to matching emotional states, and recognition refers to a type of retrieval cue availability, none of which describe this internal, physiological state-matching effect."
+    },
+    {
+      "id": "100",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "question": "While feeling deeply sad after a difficult breakup, a woman finds that her mind keeps drifting toward every other embarrassing or depressing memory from her past, almost as if her current emotion is a magnet attracting only similarly toned memories. This specific type of state-dependent memory is called:",
+      "options": [
+        "Mood-Congruent Memory",
+        "Context-Dependent Memory",
+        "Recall",
+        "Metacognition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Mood-Congruent Memory. Mood-congruent memory is a specific type of state-dependent memory tied to emotions, in which a current mood, like sadness, acts like a magnet for other memories that match that same emotional tone, exactly matching this woman's flood of sad memories during her breakup. Context-dependent memory instead refers to matching the external physical environment rather than emotional state, and recall and metacognition are both unrelated concepts involving retrieval difficulty and self-awareness of knowledge, respectively."
+    },
+    {
+      "id": "101",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "question": "A researcher finds that students who actively quiz themselves on course material score significantly higher on a final exam than students who spend the exact same amount of time simply rereading their notes. This scientifically proven finding, that active self-testing improves long-term memory more than passive rereading, is called:",
+      "options": [
+        "The Testing Effect",
+        "Retrieval Practice",
+        "The Spacing Effect",
+        "Metacognition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The Testing Effect. The testing effect is the scientifically proven finding that actively testing yourself on material improves long-term memory significantly more than simply re-studying or re-reading, exactly matching these students' improved exam performance after self-quizzing. Retrieval practice instead is the strategy or action of self-testing itself rather than the resulting outcome, the spacing effect refers to the benefit gained from distributing study sessions over time rather than testing itself, and metacognition refers to awareness of one's own knowledge, none of which name this specific testing-related outcome."
+    },
+    {
+      "id": "102",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "question": "Despite seeing thousands of pennies throughout his life, a man realizes he cannot accurately draw one from memory, including the exact placement of the words and imagery. This is because he never put in the effortful processing needed to encode those specific details in the first place. This type of forgetting is called:",
+      "options": [
+        "Encoding Failure",
+        "Storage Decay",
+        "Retrieval Failure",
+        "Repression"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Encoding Failure. Encoding failure occurs when information never actually made it into long-term memory in the first place, exactly matching this man's inability to draw a penny since he never encoded its specific visual details despite seeing thousands of them. Storage decay instead involves memories fading after being successfully stored, retrieval failure involves being unable to access a memory that was successfully stored, and repression is the psychodynamic idea of unconsciously blocking painful memories, none of which describe information that was never encoded to begin with."
+    },
+    {
+      "id": "103",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "question": "A researcher famous for studying memory found that people lose a massive amount of newly learned information very quickly right after learning it, unless they actively rehearse it, but the rate of forgetting then levels off significantly over time. This famous finding is best known as the:",
+      "options": [
+        "Forgetting Curve (Ebbinghaus)",
+        "Testing Effect",
+        "Misinformation Effect",
+        "Serial Position Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Forgetting Curve (Ebbinghaus). Herman Ebbinghaus discovered that if information isn't actively rehearsed, forgetting occurs rapidly right after initial learning but then levels off over time, a pattern known as the forgetting curve, exactly matching this scenario. The testing effect instead describes the memory benefit of active self-quizzing, the misinformation effect describes memory distortion from post-event information, and the serial position effect describes better recall of a list's beginning and end, none of which describe this specific rapid-then-leveling-off forgetting pattern."
+    },
+    {
+      "id": "104",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "question": "After recently changing his computer password, a man keeps accidentally typing his old, familiar password out of habit, even though he consciously knows it no longer works. This is best explained by:",
+      "options": [
+        "Proactive Interference",
+        "Retroactive Interference",
+        "Source Amnesia",
+        "Reconsolidation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Proactive Interference. Proactive interference occurs when older information interferes with the ability to remember newer information, exactly matching how this man's old password keeps blocking his ability to correctly type his newly created one. Retroactive interference instead is the opposite pattern, where newer information blocks older information, and source amnesia and reconsolidation are both unrelated concepts involving forgetting the origin of a memory and the alteration of a memory upon retrieval, respectively."
+    },
+    {
+      "id": "105",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "question": "A police officer asks a witness, How fast were the cars going when they smashed into each other? instead of using a more neutral word like bumped. As a result, the witness later recalls the crash as being far more severe and the cars going much faster than they actually were. This phenomenon, exposed by psychologist Elizabeth Loftus, is called:",
+      "options": [
+        "The Misinformation Effect",
+        "Source Amnesia",
+        "Imagination Inflation",
+        "Repression"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The Misinformation Effect. The misinformation effect is the tendency for post-event information, such as a leading question using the word smashed, to distort a person's memory of the original event, exactly matching this witness's inflated memory of the crash's severity. Source amnesia instead involves forgetting where a memory came from rather than the content of the memory itself being altered, imagination inflation involves imagining a fake event to create false confidence in it, and repression involves unconsciously blocking painful memories, none of which describe this leading-question-driven distortion."
+    },
+    {
+      "id": "106",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "question": "A man excitedly tells his friend a hilarious joke, only for his friend to point out that he was actually the one who told that exact same joke to the man just the day before. The man accurately remembered the joke's content but had completely forgotten where or from whom he originally learned it. This is called:",
+      "options": [
+        "Source Amnesia",
+        "The Misinformation Effect",
+        "Retroactive Interference",
+        "Reconsolidation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Source Amnesia. Source amnesia occurs when a person accurately remembers information but completely forgets where, when, or how they learned it, exactly matching this man correctly remembering the joke's content while completely forgetting his friend was the original source. The misinformation effect instead involves the actual content of a memory being distorted by post-event information, retroactive interference involves newer information blocking recall of older information, and reconsolidation involves a retrieved memory being altered before restorage, none of which describe forgetting a memory's specific source while retaining its content."
+    },
+    {
+      "id": "107",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "A 70-year-old retired professor cannot solve brand new abstract logic puzzles as quickly as he once could in his youth, but he possesses an enormous vocabulary and a vast, accumulated knowledge base built over his entire lifetime that continues to grow. This type of intelligence is called:",
+      "options": [
+        "Crystallized Intelligence",
+        "Fluid Intelligence",
+        "Stereotype Threat",
+        "Norming"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Crystallized Intelligence. Crystallized intelligence is accumulated knowledge and vocabulary that continues to grow as a person ages, exactly matching this professor's enormous vocabulary and vast knowledge base built over his lifetime. Fluid intelligence instead refers to the ability to quickly solve new problems, which peaks in young adulthood and declines, the opposite of what's being described here, while stereotype threat and norming are both unrelated concepts involving performance anxiety around stereotypes and establishing test standards, respectively."
+    },
+    {
+      "id": "108",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "A student takes the SAT, a test specifically designed not to measure what she has already learned, but instead to predict her future capacity and potential ability to succeed and learn new material in college. This type of test is called an:",
+      "options": [
+        "Aptitude Test",
+        "Achievement Test",
+        "Reliability Test",
+        "Norming Sample"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Aptitude Test. Aptitude tests are designed to predict future ability or capacity to learn a new skill, exactly matching how the SAT is meant to forecast a student's potential for future college success rather than measure past learning. Achievement tests instead are designed to reflect what a person has already learned or mastered in a specific subject, the opposite of an aptitude test's purpose, while reliability test and norming sample are not types of tests themselves but rather psychometric concepts used to evaluate any test's quality."
+    },
+    {
+      "id": "109",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "A psychologist wants to confirm that her new depression questionnaire truly measures the actual psychological concept of depression, rather than accidentally measuring something unrelated like general life stress or anxiety. Evaluating whether a test accurately captures the right underlying concept is called checking its:",
+      "options": [
+        "Construct Validity",
+        "Predictive Validity",
+        "Test-Retest Reliability",
+        "Split-Half Reliability"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Construct Validity. Construct validity evaluates whether a test accurately measures the specific underlying concept it claims to measure, exactly matching this psychologist's effort to confirm her questionnaire truly captures depression rather than something else entirely, like stress. Predictive validity instead evaluates whether a test accurately predicts future performance or outcomes rather than whether it captures the right concept in the present, and test-retest and split-half reliability both measure the consistency of scores rather than whether the test is measuring the correct concept."
+    },
+    {
+      "id": "110",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "A researcher measures intelligence by using a tape measure to record the exact circumference of each participant's head, getting the exact same precise measurement every single time she repeats the process on the same person. However, head circumference has absolutely nothing to do with actual intelligence. This test is best described as:",
+      "options": [
+        "Reliable but Not Valid",
+        "Valid but Not Reliable",
+        "Both Reliable and Valid",
+        "Neither Reliable nor Valid"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Reliable but Not Valid. This test is reliable because it produces the exact same, stable, and consistent measurement every time it's repeated on the same person, but it is entirely invalid because head circumference does not actually measure intelligence at all, meaning it fails to measure what it claims to measure. It cannot be valid but unreliable, since it does produce consistent results, and it cannot be both reliable and valid or neither, since consistency (reliability) and accuracy of measurement (validity) are two separate qualities, and this test only satisfies one of them."
+    },
+    {
+      "id": "111",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "Researchers observe that the average IQ scores of entire populations have steadily risen generation after generation over the past century, likely due to improvements in nutrition, healthcare, and access to education rather than any actual genetic change in human intelligence. This observed global rise in IQ scores over time is called the:",
+      "options": [
+        "Flynn Effect",
+        "Stereotype Lift",
+        "Growth Mindset",
+        "Testing Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Flynn Effect. The Flynn effect is the global, observed rise in average IQ scores over generations, attributed to improved nutrition, healthcare, and educational access rather than genetic changes, exactly matching this scenario. Stereotype lift instead refers to improved performance due to awareness of a positive group stereotype, growth mindset refers to the belief that intelligence can be developed through effort, and the testing effect refers to the memory benefit of active self-testing, none of which describe this generational rise in average IQ."
+    },
+    {
+      "id": "112",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "Before taking a challenging exam, a student is reminded that people from his particular demographic group are stereotypically known for excelling on this type of test, and this awareness alone actually boosts his confidence and improves his performance. This phenomenon is called:",
+      "options": [
+        "Stereotype Lift",
+        "Stereotype Threat",
+        "The Flynn Effect",
+        "A Growth Mindset"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Stereotype Lift. Stereotype lift is the opposite of stereotype threat, occurring when performance improves due to awareness of a positive stereotype about one's group, exactly matching this student's boosted confidence and performance after being reminded of a positive stereotype. Stereotype threat instead describes underperformance due to awareness of a negative stereotype, the Flynn effect describes generational IQ score increases, and a growth mindset describes a belief about the changeability of intelligence, none of which describe this positive-stereotype-induced performance boost."
+    },
+    {
+      "id": "113",
+      "setid": "",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "question": "After failing his first calculus test, a student says, I'm just naturally bad at math, and no amount of studying is ever going to change that, so there's no point in trying harder. This belief that intelligence and ability are fixed, static traits is called a:",
+      "options": [
+        "Fixed Mindset",
+        "Growth Mindset",
+        "Stereotype Threat",
+        "Stereotype Lift"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Fixed Mindset. A fixed mindset, coined by Carol Dweck, is the belief that intelligence is static and unchangeable, exactly matching this student's assumption that his math ability can never improve no matter how much effort he puts in. A growth mindset instead is the belief that intelligence can be developed through effort, failure, and persistence, the opposite of this student's outlook, and stereotype threat and stereotype lift are both unrelated concepts involving performance changes due to group-based stereotype awareness rather than personal beliefs about the nature of intelligence."
+    },
+    {
+      "id": "114",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "question": "Researchers debate whether a person's outgoing personality is primarily the result of an inherited genetic temperament or the result of being raised in a warm, socially encouraging household. This classic developmental debate is called:",
+      "options": [
+        "Nature vs. Nurture",
+        "Continuous vs. Discontinuous Development",
+        "Stability vs. Change",
+        "Cross-Sectional vs. Longitudinal"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Nature vs. Nurture. The nature vs. nurture debate examines how much of our behavior is driven by genetic inheritance and biology (nature) versus environment, experiences, and learning (nurture), exactly matching this debate about the outgoing personality's origin. Continuous vs. discontinuous development instead concerns whether growth happens gradually or in distinct stages, stability vs. change concerns whether traits persist over the lifespan, and cross-sectional vs. longitudinal are research methods rather than thematic debates, none of which describe this genetics-versus-environment question."
+    },
+    {
+      "id": "115",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "question": "One theorist argues that a child's vocabulary grows smoothly and gradually, adding a few new words every single day in tiny incremental steps. Another theorist argues that language ability instead develops in sudden, distinct leaps, remaining flat for a while before abruptly jumping to a whole new level of ability. This disagreement best reflects the idea of:",
+      "options": [
+        "Continuous vs. Discontinuous Development",
+        "Nature vs. Nurture",
+        "Stability vs. Change",
+        "Cross-Sectional vs. Longitudinal Research"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Continuous vs. Discontinuous Development Debate. This debate examines whether development happens gradually and smoothly (continuous) or in distinct, abrupt stages with clear shifts (discontinuous), exactly matching the disagreement between gradual daily word growth and sudden ability leaps. The nature vs. nurture debate instead concerns genetics versus environment, the stability vs. change debate concerns whether traits persist over the lifespan, and cross-sectional vs. longitudinal are research methods rather than a debate about the pattern of growth itself."
+    },
+    {
+      "id": "116",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "question": "To study how memory changes with age, a team of researchers tests the exact same group of participants' memory abilities when they are 20 years old, waits two decades, tests that identical group again at 40, and plans to test them once more when they turn 60. This expensive and lengthy research method is called a:",
+      "options": [
+        "Longitudinal Study",
+        "Cross-Sectional Study",
+        "Meta-Analysis",
+        "Survey"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Longitudinal Study. A longitudinal study follows the same individuals over a long period of time to observe changes, exactly matching these researchers testing the identical group of participants at ages 20, 40, and 60. A cross-sectional study instead compares different groups of people of different ages at one single point in time rather than tracking the same individuals for decades, and a meta-analysis and survey are both unrelated research methods involving combining prior study results and gathering self-reported data, respectively."
+    },
+    {
+      "id": "117",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "question": "A researcher wants fast, immediate results on how problem-solving ability differs across the lifespan, and doesn't have the time, funding, or many years required to track one single group of people as they age. Which research method would best fit her needs?",
+      "options": [
+        "Cross-Sectional Study",
+        "Longitudinal Study",
+        "Case Study",
+        "Correlational Study Only"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cross-Sectional Study. A cross-sectional study is fast, cheap, and gives immediate results by comparing individuals of different ages at one single point in time, exactly matching this researcher's need for quick results without years of tracking. A longitudinal study instead requires following the same individuals over a long period of time, which would not fit her time and funding constraints, and a case study and a purely correlational study are both different research approaches that don't specifically address comparing different ages quickly."
+    },
+    {
+      "id": "118",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "question": "Regardless of their culture or country of origin, virtually all human infants crawl before they walk, and no amount of practice or special training can make a baby walk months earlier than their body is biologically ready for. This natural, predictable, biologically driven process of development is called:",
+      "options": [
+        "Maturation",
+        "A Critical Period",
+        "A Sensitive Period",
+        "A Teratogen"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Maturation. Maturation is the natural, biologically driven process of physical and cognitive development that unfolds over a predictable timeline, independent of experience or training, exactly matching this universal crawling-before-walking pattern. A critical period instead refers to a rigid window of time in which a specific skill must develop or be permanently lost, a sensitive period refers to an optimal but flexible learning window, and a teratogen is a harmful environmental substance rather than a natural developmental process."
+    },
+    {
+      "id": "119",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "question": "A pregnant woman is warned by her doctor that consuming alcohol during pregnancy can cross the placental barrier and cause severe, permanent birth defects and cognitive impairments in her developing baby. Alcohol, in this context, is best classified as a:",
+      "options": [
+        "Teratogen",
+        "Reflex",
+        "Secondary Sex Characteristic",
+        "Critical Period"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Teratogen. A teratogen is a harmful environmental substance or agent, such as alcohol, nicotine, specific drugs, or infections, that can cross the placental barrier and cause severe birth defects, exactly matching this description of alcohol's dangerous effects on the developing fetus. A reflex instead is an inborn, automatic response in an already-born infant, a secondary sex characteristic is a non-reproductive trait that emerges during puberty, and a critical period is a rigid developmental time window, none of which describe a harmful prenatal substance."
+    },
+    {
+      "id": "120",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "question": "The moment a nurse gently strokes a newborn's cheek, the baby automatically turns her head toward the touch and opens her mouth, searching for a food source, without ever having been taught this behavior. This inborn, automatic survival response is called the:",
+      "options": [
+        "Rooting Reflex",
+        "Visual Cliff Response",
+        "Imprinting Response",
+        "Gross Motor Response"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Rooting Reflex. The rooting reflex is a classic example of an inborn, automatic response in which an infant turns their head toward a stimulus and opens their mouth to search for food when their cheek is touched, exactly matching this newborn's behavior. The visual cliff response instead relates to infant depth perception testing, imprinting is a rapid attachment-forming behavior seen in some non-human animals, and gross motor response is not a specific reflex term, none of which describe this specific cheek-touch feeding response."
+    },
+    {
+      "id": "121",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "question": "Children who are exposed to a second language before the age of seven tend to become fluent with a native-like accent far more easily than adults who begin learning that same language later in life, though adults can still learn it with significantly more effort. This optimal but flexible window for language acquisition is called a:",
+      "options": [
+        "Sensitive Period",
+        "Critical Period",
+        "Maturation Period",
+        "Puberty Window"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sensitive Period. A sensitive period is a flexible window of time when the brain is highly responsive to certain environmental experiences, making learning much easier, such as acquiring a primary or second language, while still allowing the skill to be learned later in life with more effort, exactly matching this language-learning scenario. A critical period instead is a rigid, now or never window where a missed opportunity means the ability may never develop normally, which doesn't match adults still being able to learn the language later, and maturation period and puberty window are not the specific terms used for this language-learning window."
+    },
+    {
+      "id": "122",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "question": "During puberty, a teenage boy's testes fully mature and become capable of producing sperm, directly enabling his biological ability to reproduce. This physical change is best classified as a:",
+      "options": [
+        "Primary Sex Characteristic",
+        "Secondary Sex Characteristic",
+        "Reflex",
+        "Teratogen"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Primary Sex Characteristic. Primary sex characteristics are the internal reproductive organs and external anatomical structures directly involved in reproduction, such as the testes maturing to full functionality, exactly matching this boy's development. Secondary sex characteristics instead are non-reproductive physical traits like voice deepening or body hair growth that emerge due to hormonal shifts but aren't directly required for reproduction, and reflex and teratogen are unrelated concepts involving automatic infant responses and harmful prenatal substances, respectively."
+    },
+    {
+      "id": "123",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "A toddler who has an existing mental framework for dog sees a horse for the very first time and, without changing his understanding at all, confidently calls it a big dog. This process of fitting new information into an existing mental framework is called:",
+      "options": [
+        "Assimilation",
+        "Accommodation",
+        "Object Permanence",
+        "Scaffolding"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Assimilation. Assimilation involves integrating new information into an existing schema without changing it, exactly matching this toddler fitting the horse into his existing dog schema. Accommodation instead involves changing or creating a new schema entirely to fit new information, which isn't happening here since he didn't adjust his understanding, and object permanence and scaffolding are both unrelated concepts involving a specific Piagetian milestone and Vygotskian teaching support, respectively."
+    },
+    {
+      "id": "124",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "A 4-year-old boy excitedly wraps up his own favorite toy truck as a birthday present for his mother, genuinely assuming she will love it exactly as much as he does, without considering that she might prefer something else entirely. This inability to see a situation from another person's point of view is called:",
+      "options": [
+        "Egocentrism",
+        "Animism",
+        "Conservation",
+        "Reversibility"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Egocentrism. Egocentrism is the inability to see a situation from another person's point of view, causing a child to assume everyone sees, hears, and feels exactly what they do, exactly matching this boy assuming his mother will love his own favorite toy just as much as he does. Animism instead involves believing inanimate objects have feelings, and conservation and reversibility are both separate preoperational limitations involving understanding quantity and reversing sequences of events, none of which describe this specific perspective-taking failure."
+    },
+    {
+      "id": "125",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "A researcher pours the exact same amount of juice into a short, wide glass and a tall, skinny glass in front of a 5-year-old child, and the child confidently insists the tall glass contains more juice simply because the liquid line appears higher. This child's mistaken belief demonstrates a lack of:",
+      "options": [
+        "Conservation",
+        "Reversibility",
+        "Object Permanence",
+        "Theory of Mind"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Conservation. A lack of conservation means a child does not understand that quantity remains the same even if the appearance changes, exactly matching this child's mistaken belief that the taller glass has more juice simply because the liquid line looks higher. Reversibility instead involves the inability to mentally reverse a sequence of events rather than misjudging quantity based on appearance, and object permanence and theory of mind are both separate milestones involving object existence and understanding others' perspectives, none of which describe this specific quantity-judgment error."
+    },
+    {
+      "id": "126",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "A 9-year-old girl can now easily understand that if 4 + 3 = 7, then 7 - 3 must equal 4, successfully performing this mental math operation involving concrete numbers. According to Piaget, which stage does this reasoning ability place her in?",
+      "options": [
+        "Concrete Operational Stage",
+        "Preoperational Stage",
+        "Sensorimotor Stage",
+        "Formal Operational Stage"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Concrete Operational Stage. In the concrete operational stage, children finally grasp conservation and reversibility, meaning they can easily perform mental math operations involving concrete numbers, exactly matching this girl's ability to reverse the addition and subtraction problem. The preoperational stage instead would still involve a lack of reversibility, making this specific reasoning impossible, the sensorimotor stage is a much earlier stage focused on object permanence, and the formal operational stage involves abstract rather than purely concrete reasoning, none of which match this specific concrete number reversal skill."
+    },
+    {
+      "id": "127",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "While a child is learning to read, her older brother, who reads at a much higher level, patiently helps her sound out difficult words and understand the story. According to Vygotsky, the older brother is functioning as a:",
+      "options": [
+        "More Knowledgeable Other (MKO)",
+        "Zone of Proximal Development",
+        "Schema",
+        "Reflex"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: More Knowledgeable Other (MKO). The more knowledgeable other is anyone who has a better understanding or higher ability level than the learner with respect to a particular task, which can be an adult, a more advanced peer, or even a computer program, exactly matching the older brother's role in helping his sister read. The zone of proximal development instead refers to the learning sweet spot itself rather than the helper, and schema and reflex are both unrelated concepts involving mental frameworks and automatic infant responses."
+    },
+    {
+      "id": "128",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "A child cannot yet ride a bike completely alone, but she can successfully ride it with her father holding onto the back of the seat for support and balance. According to Vygotsky, this sweet spot between what she can do independently and what she can only achieve with guidance is called the:",
+      "options": [
+        "Zone of Proximal Development",
+        "Scaffolding",
+        "Sensorimotor Stage",
+        "Critical Period"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Zone of Proximal Development. The zone of proximal development is the sweet spot between what a learner can do independently and what they can only achieve with guidance, exactly matching this child's ability to ride only with her father's supportive help. Scaffolding instead refers to the specific supportive assistance provided within this zone, rather than the zone itself, and the sensorimotor stage and critical period are both unrelated concepts involving a specific Piagetian developmental stage and a rigid developmental time window."
+    },
+    {
+      "id": "129",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "question": "As adults move into their later years, they generally maintain a large and stable vocabulary and continue accumulating general knowledge and facts, even as their ability to quickly solve brand-new, unfamiliar logic puzzles noticeably declines. Which type of intelligence remains stable or even increases throughout late adulthood?",
+      "options": [
+        "Crystallized Intelligence",
+        "Fluid Intelligence",
+        "General Intelligence (g)",
+        "Formal Operational Thought"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Crystallized Intelligence. Crystallized intelligence, our accumulated knowledge, vocabulary, and facts, remains relatively stable and actually increases throughout late adulthood, exactly matching this description of a stable vocabulary and continued knowledge accumulation despite declining novel problem-solving speed. Fluid intelligence instead is the ability to reason quickly and abstractly, which tends to peak in early adulthood and slowly wane with age, the opposite pattern, while general intelligence (g) and formal operational thought are broader concepts not specifically tied to this particular late-adulthood cognitive pattern."
+    },
+    {
+      "id": "130",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "question": "The prefix un- doesn't form a complete word on its own, but it carries clear, standalone meaning, transforming happy into unhappy by adding the concept of not. This smallest unit of meaning within a language is called a:",
+      "options": [
+        "Morpheme",
+        "Phoneme",
+        "Syntax",
+        "Grammar"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Morpheme. A morpheme is the smallest unit of meaning within a language, including standalone words as well as meaningful fragments like prefixes and suffixes, exactly matching how the prefix un- carries the standalone meaning of not. A phoneme instead is the smallest unit of sound rather than meaning, syntax is the grammatical rules for word order and sentence structure, and grammar is the comprehensive system governing the entire language structure, none of which describe this specific meaningful fragment."
+    },
+    {
+      "id": "131",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "question": "A 3-month-old baby lying in her crib makes soft, repetitive, vowel-like sounds such as oo and ahh simply out of comfort and satisfaction, with no actual consonant sounds involved yet. This earliest vocal milestone in language development is called:",
+      "options": [
+        "Cooing",
+        "Babbling",
+        "Telegraphic Speech",
+        "One-Word Speech"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cooing. Cooing is the earliest vocal milestone, occurring around 2 to 4 months and characterized by soft, repetitive, vowel-like sounds that typically reflect comfort, satisfaction, or pleasure, exactly matching this baby's oo and ahh sounds. Babbling instead comes later and involves alternating consonant-vowel combinations like ba-ba, telegraphic speech and one-word speech are both much later stages involving actual word usage, none of which describe this earliest, purely vowel-based vocal stage."
+    },
+    {
+      "id": "132",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "question": "A 7-month-old baby is now rapidly repeating consonant-vowel combinations like da-da-da and ba-ba-ba over and over, practicing the physical mechanics of speech using sounds pulled from languages spoken all around the world, not just her own household's language yet. This stage of language development is called:",
+      "options": [
+        "Babbling",
+        "Cooing",
+        "One-Word Speech",
+        "Telegraphic Speech"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Babbling. Babbling, occurring around 4 to 10 months, is when infants begin rapidly producing alternating consonant-vowel combinations, initially including sounds from global languages before narrowing to the phonemes heard in the household, exactly matching this baby's repetitive da-da-da and ba-ba-ba sounds. Cooing instead is the earlier stage limited to vowel-like sounds without consonants, and one-word speech and telegraphic speech are both later stages involving actual word usage, none of which match this consonant-vowel practice stage."
+    },
+    {
+      "id": "133",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "question": "At around 24 months old, a toddler demands want cookie and later states daddy go, stripping away all non-essential filler words like articles and prepositions in favor of an abbreviated, highly efficient statement. This stage of language development is called:",
+      "options": [
+        "Telegraphic Speech",
+        "One-Word Speech",
+        "Babbling",
+        "Overgeneralization"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Telegraphic Speech. Telegraphic speech, occurring around 24 months, is early two-word communication where toddlers speak in abbreviated statements containing only essential root words, primarily nouns and verbs, exactly matching this toddler's want cookie and daddy go. One-word speech instead involves a single isolated word rather than two-word combinations, babbling is an earlier pre-word consonant-vowel stage, and overgeneralization is a grammatical error rather than a stage of speech development, none of which match this specific two-word telegram-style stage."
+    },
+    {
+      "id": "134",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "question": "A young child confidently declares, I goed to the park yesterday and saw three mouses, incorrectly applying the standard past-tense -ed rule and the standard plural rule to two irregular words that don't actually follow those patterns. This language learning error is called:",
+      "options": [
+        "Overgeneralization",
+        "Telegraphic Speech",
+        "Babbling",
+        "Egocentrism"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Overgeneralization. Overgeneralization, sometimes called overregularization, occurs when a child takes a standard grammatical rule and applies it too broadly to irregular words that don't follow the guideline, exactly matching this child's incorrect goed and mouses. Telegraphic speech instead refers to abbreviated two-word statements rather than a rule-application error, babbling is a much earlier pre-word vocal stage, and egocentrism is an unrelated Piagetian concept involving an inability to see another's perspective, none of which describe this specific grammatical overextension error."
+    },
+    {
+      "id": "135",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "A child's father experiences a stressful, demanding schedule after his company implements a strict new overtime policy, and this added stress indirectly makes him more irritable and less patient with his son at home, even though the son has never even visited his father's workplace. This indirect environmental influence is called the:",
+      "options": [
+        "Exosystem",
+        "Microsystem",
+        "Mesosystem",
+        "Macrosystem"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Exosystem. The exosystem includes external environmental settings or institutions that indirectly affect a person's development even though the individual is not directly involved in them, such as a parent's workplace policies, exactly matching how the father's new overtime policy indirectly affects his son despite the son never being at that workplace. The microsystem instead involves direct daily interactions, the mesosystem involves connections between direct environments, and the macrosystem involves broad cultural values, none of which describe this specific indirect institutional influence."
+    },
+    {
+      "id": "136",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "During the Strange Situation procedure, a toddler clings desperately to her mother, becomes intensely distressed when separated, but then pushes her mother away angrily upon reunion while still clearly desperate for closeness, showing an unpredictable mix of neediness and resistance. This specific insecure attachment style is called:",
+      "options": [
+        "Anxious Attachment",
+        "Avoidant Attachment",
+        "Secure Attachment",
+        "Disorganized Attachment"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Anxious Attachment. Anxious attachment is an insecure pattern marked by a strong, needy desire for extreme closeness mixed with an intense, pervasive fear of rejection or abandonment, resulting in relational instability, exactly matching this toddler's desperate clinginess combined with angry resistance upon reunion. Avoidant attachment instead involves emotional distance and self-reliance rather than clingy neediness, secure attachment involves easy comfort-seeking without this instability, and disorganized attachment lacks any coherent strategy at all, which is different from this specific needy-but-resistant pattern."
+    },
+    {
+      "id": "137",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "A set of parents maintains high expectations for their children's behavior and achievement, but they also explain their reasoning behind household rules, listen to their children's opinions, and offer plenty of warmth and emotional support. This parenting style, which encourages independence and personal responsibility, is called:",
+      "options": [
+        "Authoritative Parenting",
+        "Authoritarian Parenting",
+        "Permissive Parenting",
+        "Insecure Parenting"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Authoritative Parenting. Authoritative parenting is a highly successful style characterized by high expectations combined with warmth, emotional support, and open, democratic communication, exactly matching these parents' combination of high standards and explained reasoning alongside warmth. Authoritarian parenting instead demands absolute obedience without discussion or warmth, permissive parenting offers warmth but very few behavioral demands, and insecure parenting is not a recognized parenting style category, none of which match this balanced, communicative approach."
+    },
+    {
+      "id": "138",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "A 16-year-old girl believes that no one, not even her own parents, could possibly understand the intensity and uniqueness of her personal heartbreak after a breakup, convinced that her emotional experience is entirely unlike anything anyone else has ever felt. This cognitive distortion, common during adolescence, is called the:",
+      "options": [
+        "Personal Fable",
+        "Imaginary Audience",
+        "Identity Moratorium",
+        "Adverse Childhood Experience"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Personal Fable. The personal fable is the deep belief that one's internal thoughts, feelings, and life experiences are completely unique, special, and invulnerable, leading to the idea that others cannot truly understand them, exactly matching this girl's conviction that no one could understand her uniquely intense heartbreak. The imaginary audience instead involves believing others are watching and judging rather than believing one's feelings are uniquely special, and identity moratorium and adverse childhood experience are unrelated concepts involving active identity exploration and childhood trauma, respectively."
+    },
+    {
+      "id": "139",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "According to Erikson, a young child who is encouraged to plan and lead her own games during playtime develops confidence and leadership skills, while a child who is heavily restricted from taking any charge may develop a sense of inadequacy. This stage is called:",
+      "options": [
+        "Initiative vs. Guilt",
+        "Autonomy vs. Shame and Doubt",
+        "Industry vs. Inferiority",
+        "Generativity vs. Stagnation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Initiative vs. Guilt. In the initiative vs. guilt stage, children begin to assert power, plan tasks, and take charge through play, with encouragement creating leadership confidence while heavy restrictions foster inadequacy, exactly matching this child's experience leading her own games. Autonomy vs. shame and doubt is the earlier toddlerhood stage about basic self-control tasks, industry vs. inferiority is the later middle childhood stage about academic and social skill mastery, and generativity vs. stagnation is the middle adulthood stage about societal contribution, none of which match this early childhood leadership conflict."
+    },
+    {
+      "id": "140",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "question": "A 30-year-old woman feels significant social pressure and personal anxiety because she has not yet gotten married or had children, since her culture holds a shared, unspoken expectation that these milestones should typically happen by a certain age. This culturally shared timetable for major life milestones is called the:",
+      "options": [
+        "Social Clock",
+        "Chronosystem",
+        "Emerging Adulthood",
+        "Personal Fable"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Social Clock. The social clock is a culturally shared expectation or prescriptive timetable for when major milestones, such as marrying or having children, are supposed to happen, influencing whether individuals judge themselves to be on time, exactly matching this woman's anxiety about not meeting her culture's expected timeline. The chronosystem instead refers to the broader dimension of historical time in Bronfenbrenner's model rather than a specific milestone timetable, and emerging adulthood and personal fable are unrelated concepts involving a specific life stage and an adolescent cognitive distortion, respectively."
     }
   ]
 }
