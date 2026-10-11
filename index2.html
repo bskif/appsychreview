@@ -127,8 +127,6 @@
             letter-spacing: 0.6px;
         }
 
-        .tile-b { transform: translateY(22px); }
-
         .tile-c {
             grid-column: 1 / 3;
             background: var(--primary);
@@ -409,6 +407,41 @@
             margin-bottom: 0;
         }
 
+        /* ===== AP EXAM COUNTDOWN ===== */
+        .countdown-band {
+            display: none; /* shown by the script once the date is read */
+            background: var(--primary);
+            color: white;
+            padding: 36px 0;
+        }
+
+        .countdown-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .countdown-number {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 4.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .countdown-sub {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            margin-top: 4px;
+            max-width: 460px;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (min-width: 821px) {
             /* Slight zig-zag so the grid isn't machine-perfect. Remove these
@@ -425,7 +458,6 @@
         @media (max-width: 600px) {
             .hero-band { padding: 38px 0 76px; }
             .hero-copy h1 { font-size: 2.2rem; }
-            .tile-b { transform: none; }
             .tools-grid, .games-grid { grid-template-columns: 1fr; }
             .tools-grid .menu-card.featured {
                 grid-column: span 1;
@@ -437,6 +469,8 @@
             .featured-badge { left: 50%; transform: translateX(-50%); }
             .announce-item { flex-wrap: wrap; }
             .announce-date { margin-left: auto; }
+            .countdown-inner { flex-direction: column; gap: 10px; text-align: center; }
+            .countdown-number { font-size: 3.4rem; }
         }
 
     </style>
@@ -620,6 +654,16 @@
         </div>
     </section>
 
+    <section class="countdown-band" id="countdown-band">
+        <div class="inner countdown-inner">
+            <div class="countdown-number" id="countdown-number"></div>
+            <div>
+                <div class="countdown-label" id="countdown-label"></div>
+                <div class="countdown-sub" id="countdown-sub"></div>
+            </div>
+        </div>
+    </section>
+
     <div class="container" style="margin-top: 50px;">
         <div class="how-to-use">
             <h2>How to Use This Site</h2>
@@ -648,6 +692,45 @@
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <script>
+        // ===== AP EXAM COUNTDOWN =====
+        // UPDATE THIS ONE LINE each year once College Board posts the
+        // AP Psychology exam date. Format: YYYY-MM-DD
+        const AP_PSYCH_EXAM_DATE = '2027-05-14';
+
+        (function () {
+            const band = document.getElementById('countdown-band');
+            const parts = (AP_PSYCH_EXAM_DATE || '').split('-').map(Number);
+            if (parts.length !== 3 || parts.some(isNaN)) return; // bad/missing date: stay hidden
+
+            const exam = new Date(parts[0], parts[1] - 1, parts[2]);
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const days = Math.round((exam - today) / 86400000);
+
+            const num = document.getElementById('countdown-number');
+            const label = document.getElementById('countdown-label');
+            const sub = document.getElementById('countdown-sub');
+
+            if (days > 1) {
+                num.textContent = days;
+                label.textContent = 'days until the AP Psychology exam';
+                sub.textContent = 'Every review session counts. Pick a tool above and get one in today.';
+            } else if (days === 1) {
+                num.textContent = '1';
+                label.textContent = 'day until the AP Psychology exam';
+                sub.textContent = 'Final stretch. Review lightly, rest well, and trust your prep.';
+            } else if (days === 0) {
+                num.textContent = '\u{1F9E0}';
+                label.textContent = "It's exam day. Good luck!";
+                sub.textContent = 'You have put in the work. Go show what you know.';
+            } else {
+                num.textContent = '\u{1F393}';
+                label.textContent = 'Congratulations on a great year!';
+                sub.textContent = "Thanks for studying with Psych Review Hub. Next year's exam date will be posted here once it's announced.";
+            }
+            band.style.display = 'block';
+        })();
+
         // Loads announcements.json and renders the 3 most recent entries.
         // Add a new announcement any time by appending one object to that
         // file's "announcements" array -- no HTML editing required.
