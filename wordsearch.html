@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Word Search - Psych Review Hub</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @page { margin: 0.5in; }
+
+        .container.ws-page { max-width: 1040px; }
+
+        .ws-intro {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 12px 18px;
+            border-radius: 4px;
+            color: #444;
+            line-height: 1.55;
+            margin: 0 auto 22px;
+            max-width: 760px;
+            font-size: 0.97rem;
+        }
+
+        /* ===== SETUP ===== */
+        .ws-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 26px 28px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .ws-card h3 { margin: 0 0 16px; color: var(--primary); }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 20px;
+            text-align: left;
+        }
+
+        .setup-grid label {
+            display: block;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .setup-grid select {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .setup-grid .full { grid-column: 1 / -1; }
+
+        .pool-info {
+            font-size: 0.88rem;
+            color: #777;
+            margin: 14px 0 0;
+            text-align: left;
+        }
+
+        .setup-actions { margin-top: 20px; text-align: center; }
+
+        .btn-main {
+            padding: 12px 34px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .btn-main:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
+
+        .load-error {
+            display: none;
+            color: #c0392b;
+            margin-top: 12px;
+            font-size: 0.92rem;
+        }
+
+        /* ===== PUZZLE SCREEN ===== */
+        #puzzle-area { display: none; scroll-margin-top: 16px; }
+
+        .ws-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .ws-stats {
+            display: flex;
+            gap: 16px;
+            align-items: baseline;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .ws-stats .timer { font-family: 'Courier New', monospace; color: #666; }
+
+        .ws-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+        .ws-actions button { margin: 0; padding: 8px 14px; font-size: 0.9rem; }
+        .btn-gray { background-color: #95a5a6; }
+        .btn-gray:hover { background-color: #7f8c8d; }
+        .btn-print { background-color: var(--primary); }
+        .btn-print:hover { background-color: #1a252f; }
+
+        .ws-status {
+            min-height: 1.4em;
+            margin: 0 0 12px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .ws-status.note { color: #8a6d3b; font-weight: normal; font-size: 0.92rem; }
+
+        .ws-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .ws-grid-wrap {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 10px;
+            flex: 0 0 auto;
+            max-width: 100%;
+        }
+
+        #ws-grid {
+            --cell: min(32px, calc((100vw - 76px) / var(--n)));
+            display: grid;
+            grid-template-columns: repeat(var(--n), var(--cell));
+            width: calc(var(--cell) * var(--n));
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: pointer;
+        }
+
+        .ws-cell {
+            width: var(--cell);
+            height: var(--cell);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            border: 0.5px solid #e8edf2;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            font-size: calc(var(--cell) * 0.56);
+            color: var(--primary);
+        }
+
+        .ws-cell.sel { background: #aed6f9; }
+        .ws-cell.revealed { background: #ffe29a; }
+        .ws-cell.f0 { background: #ffd9a8; }
+        .ws-cell.f1 { background: #c9f0c9; }
+        .ws-cell.f2 { background: #cfe3ff; }
+        .ws-cell.f3 { background: #f5c6e6; }
+        .ws-cell.f4 { background: #fff1a8; }
+        .ws-cell.f5 { background: #d5ccff; }
+        .ws-cell.f6 { background: #c4f1ef; }
+        .ws-cell.f7 { background: #ffc9c9; }
+
+        .ws-list-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 16px 20px;
+            flex: 1 1 250px;
+            min-width: 240px;
+            text-align: left;
+        }
+
+        .ws-list-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        #word-list { list-style: none; margin: 0; padding: 0; }
+
+        #word-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #333;
+        }
+        #word-list li:last-child { border-bottom: none; }
+        #word-list li .mark { display: inline-block; width: 1.4em; color: #999; }
+        #word-list li.done { color: #27ae60; }
+        #word-list li.done .text { text-decoration: line-through; }
+        #word-list li.done .mark { color: #27ae60; }
+        #word-list li .answer { display: none; font-weight: bold; color: #27ae60; }
+        #word-list li.done .answer { display: block; padding-left: 1.4em; text-decoration: none; }
+        #word-list li.shown { color: #8a6d3b; }
+        #word-list li.shown .answer { display: block; padding-left: 1.4em; color: #8a6d3b; }
+        #word-list li .len { color: #999; font-size: 0.82rem; }
+
+        .ws-hint { font-size: 0.82rem; color: #888; margin: 12px 0 0; }
+
+        /* ===== TIPS + AD (matches the other tool pages) ===== */
+        .study-tips {
+            background-color: #eef5f9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 36px auto 0;
+            max-width: 760px;
+            border-radius: 4px;
+            text-align: left;
+            color: #444;
+            line-height: 1.6;
+        }
+        .study-tips h3 { margin-top: 0; margin-bottom: 8px; font-size: 1.05rem; color: var(--primary); }
+        .study-tips p { margin-bottom: 0; }
+
+        /* Toggle: flip this off once ad units are live */
+        .ad-under-review { display: none !important; }
+
+        .ad-banner-outer { width: 90%; max-width: 728px; margin: 30px auto 0; }
+        .ad-wrapper-banner {
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px dashed #ccc;
+        }
+
+        @media (max-width: 600px) {
+            .setup-grid { grid-template-columns: 1fr; }
+            .ws-card { padding: 20px 18px; }
+            .ws-toolbar { flex-direction: column; align-items: stretch; }
+        }
+
+        /* ===== PRINT LAYOUTS =====
+           Built from the current puzzle when you press a Print button. The
+           'printing' class only exists while the print dialog is open, so
+           pressing Ctrl+P on the setup screen never prints a blank page. */
+        .print-root { display: none; }
+
+        @media print {
+            body.printing { background: #fff; }
+            body.printing > *:not(.print-root) { display: none !important; }
+            body.printing .print-root { display: block !important; }
+            body.print-key-mode #print-puzzle { display: none; }
+            body.print-puzzle-mode #print-key { display: none; }
+
+            .print-sheet {
+                color: #000;
+                font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            }
+            .print-sheet h1 {
+                text-align: left;
+                font-size: 20pt;
+                margin: 0 0 2pt;
+                color: #000;
+            }
+            .print-sub { font-size: 11pt; color: #444; margin: 0 0 8pt; }
+            .print-nameline {
+                display: flex;
+                justify-content: space-between;
+                font-size: 11pt;
+                margin: 6pt 0 10pt;
+            }
+            .print-grid {
+                border-collapse: collapse;
+                table-layout: fixed;
+                width: var(--pg);
+                margin: 0 auto 10pt;
+            }
+            .print-grid td {
+                text-align: center;
+                vertical-align: middle;
+                padding: 0;
+                line-height: 1;
+                height: calc(var(--pg) / var(--n));
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+                font-size: calc(var(--pg) / var(--n) * 0.55);
+                color: #000;
+            }
+            .print-key .print-grid td { color: #aaa; }
+            .print-key .print-grid td.k {
+                background: #d6d6d6;
+                color: #000;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-h2 {
+                font-size: 12pt;
+                margin: 8pt 0 4pt;
+                color: #000;
+                border: none;
+                padding: 0;
+            }
+            .print-note { font-size: 9pt; color: #555; margin: 0 0 6pt; font-style: italic; }
+            .print-words {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                column-count: 3;
+                column-gap: 18pt;
+                font-size: 11pt;
+            }
+            .print-words.defs { column-count: 2; font-size: 9.5pt; }
+            .print-words li { break-inside: avoid; margin-bottom: 4pt; line-height: 1.3; }
+            .print-foot { font-size: 8pt; color: #777; margin-top: 8pt; text-align: right; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+        <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="psych-hub">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="studyguide">Study Guides</a>
+                    <a href="glossary">Glossary</a>
+                    <a href="flashcards">Flashcards</a>
+                    <a href="quiz">Quiz</a>
+                    <a href="confusingpairs">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame">Connections</a>
+                    <a href="boardgame">Psych Land</a>
+                    <a href="battleship">Cortex Commander</a>
+                    <a href="oddball">Oddball</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">🥤 Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container ws-page">
+        <h1>🔤 Word Search</h1>
+
+        <div class="ws-intro">
+            Build a word search from AP Psychology key terms. Drag across the letters to circle a word, or print the puzzle (and a separate answer key) as a handout. Spaces, hyphens, and punctuation are removed in the grid, so "Long-Term Potentiation" is hidden as LONGTERMPOTENTIATION.
+        </div>
+
+        <div id="setup-card" class="ws-card">
+            <h3>Set Up Your Puzzle</h3>
+            <div class="setup-grid">
+                <div>
+                    <label for="unit-select">Unit</label>
+                    <select id="unit-select" onchange="handleUnitChange()">
+                        <option value="all">All Units</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="topic-select">Topic</label>
+                    <select id="topic-select" onchange="updatePoolInfo()">
+                        <option value="all">All Topics</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="size-select">Grid size</label>
+                    <select id="size-select" onchange="syncWordCounts(); updatePoolInfo()">
+                        <option value="12">Small (12 x 12)</option>
+                        <option value="15" selected>Medium (15 x 15)</option>
+                        <option value="20">Large (20 x 20)</option>
+                        <option value="25">Extra large (25 x 25)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="count-select">Words to find</label>
+                    <select id="count-select" onchange="updatePoolInfo()">
+                        <option value="8">8 words</option>
+                        <option value="12" selected>12 words</option>
+                        <option value="16">16 words</option>
+                        <option value="20">20 words</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="diff-select">Difficulty</label>
+                    <select id="diff-select">
+                        <option value="easy">Easy: across and down</option>
+                        <option value="medium" selected>Medium: adds diagonals</option>
+                        <option value="hard">Hard: adds backwards words</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mode-select">Word list shows</label>
+                    <select id="mode-select">
+                        <option value="terms" selected>The terms</option>
+                        <option value="defs">Definitions (find the term)</option>
+                    </select>
+                </div>
+            </div>
+            <p class="pool-info" id="pool-info">Loading terms...</p>
+            <div class="setup-actions">
+                <button class="btn-main" id="generate-btn" onclick="generatePuzzle()" disabled>Generate Puzzle</button>
+            </div>
+            <div class="load-error" id="load-error">Could not load the term list. Please refresh the page and try again.</div>
+        </div>
+
+        <div id="puzzle-area">
+            <div class="ws-toolbar">
+                <div class="ws-stats">
+                    <span id="found-count" aria-live="polite">Found 0/0</span>
+                    <span class="timer" id="timer">00:00</span>
+                </div>
+                <div class="ws-actions">
+                    <button class="btn-gray" onclick="showSetup()">Change Settings</button>
+                    <button onclick="generatePuzzle(true)">New Puzzle</button>
+                    <button class="btn-gray" onclick="revealAnswers()">Reveal Answers</button>
+                    <button class="btn-print" onclick="doPrint('puzzle')">Print Puzzle</button>
+                    <button class="btn-print" onclick="doPrint('key')">Print Answer Key</button>
+                </div>
+            </div>
+
+            <div class="ws-status" id="ws-status" aria-live="polite"></div>
+
+            <div class="ws-layout">
+                <div class="ws-grid-wrap">
+                    <div id="ws-grid" aria-label="Word search grid"></div>
+                </div>
+                <div class="ws-list-card">
+                    <h3 id="list-title">Find these terms</h3>
+                    <ul id="word-list"></ul>
+                    <p class="ws-hint">Click and drag across the letters. Words can run in any direction allowed by the difficulty you chose.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="study-tips">
+            <h3>💡 Getting the Most Out of Word Search</h3>
+            <p>Word searches pull from the same term bank as our Flashcards and Glossary, so each puzzle doubles as vocabulary review. For the most benefit, switch the word list to <strong>Definitions</strong>: you have to recall the term from its definition first, and only then hunt for it in the grid, which is much stronger practice than matching words you can already see. Start with a single topic while you are learning it, then move to a whole unit as the exam approaches. Teachers can print the puzzle and a separate answer key for a quick warm-up or sub-plan handout.</p>
+        </div>
+
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="print-root">
+        <div id="print-puzzle" class="print-sheet"></div>
+        <div id="print-key" class="print-sheet print-key"></div>
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+
+        <p style="margin-bottom: 15px;">
+            <a href="privacy" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+            <a href="terms" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+        </p>
+
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤"  data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+    </footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+    <script>
+        // ===== PURE LOGIC START (no page/DOM access, so it can be tested on its own) =====
+        // Directions are [rowStep, colStep].
+        const DIRS = {
+            easy:   [[0, 1], [1, 0]],
+            medium: [[0, 1], [1, 0], [1, 1], [-1, 1]],
+            hard:   [[0, 1], [1, 0], [1, 1], [-1, 1], [0, -1], [-1, 0], [-1, -1], [1, -1]]
+        };
+
+        // Most words that reliably fit per grid size (crowded grids start failing beyond this).
+        const MAX_WORDS = { 12: 12, 15: 16, 20: 20, 25: 20 };
+        function maxWordsFor(size) { return MAX_WORDS[size] || 12; }
+
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // "Wavelength (vision)" -> WAVELENGTH, "Broca's Area" -> BROCASAREA
+        function toSearchWord(term) {
+            return String(term || '')
+                .replace(/\(.*?\)/g, '')
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^A-Za-z]/g, '')
+                .toUpperCase();
+        }
+
+        // Terms usable at this grid size: 4+ letters, fits the grid, no duplicate hidden words.
+        function getPool(terms, unit, topic, size) {
+            const seen = new Set();
+            const pool = [];
+            let matching = 0;
+            terms.forEach(t => {
+                if (unit !== 'all' && t.unit !== unit) return;
+                if (topic !== 'all' && t.topic !== topic) return;
+                matching++;
+                const norm = toSearchWord(t.term);
+                if (norm.length < 4 || norm.length > size) return;
+                if (seen.has(norm)) return;
+                seen.add(norm);
+                pool.push({ term: t.term, def: t.definition || '', norm: norm });
+            });
+            return { pool: pool, matching: matching };
+        }
+
+        function emptyBoard(n) {
+            return Array.from({ length: n }, () => Array(n).fill(''));
+        }
+
+        function findSpot(board, word, dirs, n) {
+            const L = word.length;
+            const options = [];
+            dirs.forEach(([dr, dc]) => {
+                for (let r = 0; r < n; r++) {
+                    for (let c = 0; c < n; c++) {
+                        const er = r + dr * (L - 1), ec = c + dc * (L - 1);
+                        if (er < 0 || er >= n || ec < 0 || ec >= n) continue;
+                        let ok = true;
+                        for (let i = 0; i < L; i++) {
+                            const ch = board[r + dr * i][c + dc * i];
+                            if (ch && ch !== word[i]) { ok = false; break; }
+                        }
+                        if (ok) options.push([r, c, dr, dc]);
+                    }
+                }
+            });
+            if (!options.length) return null;
+            return options[Math.floor(Math.random() * options.length)];
+        }
+
+        // Places up to `want` words (longest first), swapping in spare terms if one won't fit,
+        // then fills the empty cells with letters drawn from the placed words.
+        function buildBoard(pool, n, want, diff) {
+            const dirs = DIRS[diff] || DIRS.medium;
+            const board = emptyBoard(n);
+            const placed = [];
+            const byLen = (a, b) => b.norm.length - a.norm.length;
+
+            const candidates = shuffle(pool.slice());
+            const queue = candidates.slice(0, want).sort(byLen);
+            const reserve = candidates.slice(want);
+
+            while (queue.length) {
+                const w = queue.shift();
+                const spot = findSpot(board, w.norm, dirs, n);
+                if (spot) {
+                    const [r, c, dr, dc] = spot;
+                    const cells = [];
+                    for (let i = 0; i < w.norm.length; i++) {
+                        board[r + dr * i][c + dc * i] = w.norm[i];
+                        cells.push({ r: r + dr * i, c: c + dc * i });
+                    }
+                    placed.push({ term: w.term, def: w.def, norm: w.norm, cells: cells });
+                } else if (reserve.length) {
+                    queue.push(reserve.shift());
+                    queue.sort(byLen);
+                }
+            }
+
+            const letters = placed.map(w => w.norm).join('') || 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for (let r = 0; r < n; r++) {
+                for (let c = 0; c < n; c++) {
+                    if (!board[r][c]) board[r][c] = letters[Math.floor(Math.random() * letters.length)];
+                }
+            }
+            return { board: board, placed: placed };
+        }
+
+        // Snaps a drag from (sr,sc) toward (er,ec) onto the nearest of the 8 straight lines.
+        function snapSelection(sr, sc, er, ec, n) {
+            const dx = ec - sc, dy = er - sr;
+            if (dx === 0 && dy === 0) return [{ r: sr, c: sc }];
+            const k = Math.round(Math.atan2(dy, dx) / (Math.PI / 4));
+            const ux = Math.round(Math.cos(k * Math.PI / 4));
+            const uy = Math.round(Math.sin(k * Math.PI / 4));
+            const len = Math.round((dx * ux + dy * uy) / (ux * ux + uy * uy));
+            const cells = [];
+            for (let i = 0; i <= len; i++) {
+                const r = sr + uy * i, c = sc + ux * i;
+                if (r < 0 || r >= n || c < 0 || c >= n) break;
+                cells.push({ r: r, c: c });
+            }
+            return cells;
+        }
+
+        // A selection counts if it spells an unfound word forwards or backwards.
+        function findMatchingWord(placed, letters) {
+            const rev = letters.split('').reverse().join('');
+            return placed.find(w => !w.found && (w.norm === letters || w.norm === rev));
+        }
+
+        // Definitions would give the answer away if they repeat the term, so blank it out.
+        function maskTerm(def, term) {
+            const base = String(term || '').replace(/\(.*?\)/g, '').trim();
+            if (!base) return def;
+            const escaped = base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            return def.replace(new RegExp(escaped, 'gi'), '_____');
+        }
+        // ===== PURE LOGIC END =====
+
+        // ---------- Page state ----------
+        let allTerms = [], allTopics = [];
+        let N = 15, grid = [], placed = [], settings = null, dataLoaded = false;
+        let timerId = null, startTime = 0, finalTime = '', foundCount = 0, finished = false;
+        let selecting = false, selStart = null, selCells = [];
+
+        const gridEl = document.getElementById('ws-grid');
+
+        Promise.all([
+            fetch('terms.json').then(res => res.json()),
+            fetch('topics.json').then(res => res.json())
+        ]).then(([termsData, topicsData]) => {
+            allTopics = (topicsData && topicsData.topics) || [];
+            allTerms = (termsData && termsData.terms) || [];
+            populateUnitDropdown();
+            populateTopicDropdown();
+            dataLoaded = true;
+            syncWordCounts();
+            updatePoolInfo();
+        }).catch(() => {
+            document.getElementById('pool-info').textContent = '';
+            document.getElementById('load-error').style.display = 'block';
+        });
+
+        function populateUnitDropdown() {
+            const select = document.getElementById('unit-select');
+            const units = {};
+            allTopics.forEach(item => {
+                if (item.unit && !units[item.unit]) {
+                    units[item.unit] = item.unit_title ? `${item.unit}: ${item.unit_title}` : item.unit;
+                }
+            });
+            Object.keys(units).sort((a, b) => (parseInt(a.replace(/\D/g, '')) || 0) - (parseInt(b.replace(/\D/g, '')) || 0))
+                .forEach(key => {
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    opt.textContent = units[key];
+                    select.appendChild(opt);
+                });
+        }
+
+        function populateTopicDropdown() {
+            const unit = document.getElementById('unit-select').value;
+            const select = document.getElementById('topic-select');
+            select.innerHTML = '<option value="all">All Topics</option>';
+            const map = new Map();
+            allTopics.filter(t => unit === 'all' || t.unit === unit).forEach(t => {
+                if (t.topic_id && !map.has(t.topic_id)) map.set(t.topic_id, t);
+            });
+            Array.from(map.values()).sort((a, b) => parseFloat(a.topic_id) - parseFloat(b.topic_id)).forEach(t => {
+                const opt = document.createElement('option');
+                opt.value = t.topic_id;
+                opt.textContent = `${t.topic_id} ${t.topic_title}`;
+                select.appendChild(opt);
+            });
+        }
+
+        function handleUnitChange() {
+            populateTopicDropdown();
+            updatePoolInfo();
+        }
+
+        // Disables word-count options that can't fit the chosen grid, and clamps the selection.
+        function syncWordCounts() {
+            const cap = maxWordsFor(parseInt(document.getElementById('size-select').value));
+            const sel = document.getElementById('count-select');
+            let best = null;
+            Array.from(sel.options).forEach(o => {
+                const v = parseInt(o.value);
+                o.disabled = v > cap;
+                if (v <= cap) best = o;
+            });
+            if (parseInt(sel.value) > cap && best) sel.value = best.value;
+        }
+
+        function updatePoolInfo() {
+            const unit = document.getElementById('unit-select').value;
+            const topic = document.getElementById('topic-select').value;
+            const size = parseInt(document.getElementById('size-select').value);
+            const want = parseInt(document.getElementById('count-select').value);
+            const r = getPool(allTerms, unit, topic, size);
+            const el = document.getElementById('pool-info');
+            const btn = document.getElementById('generate-btn');
+
+            if (r.matching === 0) {
+                el.textContent = 'No terms found for this selection.';
+            } else if (r.pool.length === 0) {
+                el.textContent = `${r.matching} terms match, but none fit a ${size} x ${size} grid (many are long, multi-word terms). Try a larger grid or a broader selection.`;
+            } else {
+                const note = r.pool.length < want ? ` Your puzzle will have ${r.pool.length} words.` : '';
+                el.textContent = `${r.matching} terms match this selection; ${r.pool.length} are usable at this grid size.${note} (Terms under 4 letters or too long for the grid are skipped.)`;
+            }
+            btn.disabled = !dataLoaded || r.pool.length === 0;
+        }
+
+        function selectedText(id) {
+            const sel = document.getElementById(id);
+            return sel.options[sel.selectedIndex].textContent;
+        }
+
+        // ---------- Generate / display ----------
+        function generatePuzzle(reuse) {
+            if (!reuse || !settings) {
+                settings = {
+                    unit: document.getElementById('unit-select').value,
+                    topic: document.getElementById('topic-select').value,
+                    size: parseInt(document.getElementById('size-select').value),
+                    want: parseInt(document.getElementById('count-select').value),
+                    diff: document.getElementById('diff-select').value,
+                    mode: document.getElementById('mode-select').value,
+                    unitLabel: selectedText('unit-select'),
+                    topicLabel: selectedText('topic-select')
+                };
+            }
+
+            const r = getPool(allTerms, settings.unit, settings.topic, settings.size);
+            if (r.pool.length === 0) {
+                alert('No usable terms for this combination. Try a larger grid or a different topic.');
+                return;
+            }
+
+            N = settings.size;
+            const built = buildBoard(r.pool, N, settings.want, settings.diff);
+            grid = built.board;
+            placed = built.placed;
+            foundCount = 0;
+            finished = false;
+
+            renderGrid();
+            renderList();
+            updateFoundCount();
+
+            const status = document.getElementById('ws-status');
+            if (placed.length < settings.want) {
+                status.className = 'ws-status note';
+                status.textContent = `Only ${placed.length} of the ${settings.want} words you asked for were available or would fit in this grid.`;
+            } else {
+                status.className = 'ws-status';
+                status.textContent = '';
+            }
+
+            document.getElementById('setup-card').style.display = 'none';
+            const area = document.getElementById('puzzle-area');
+            area.style.display = 'block';
+            startTimer();
+            area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function showSetup() {
+            stopTimer();
+            document.getElementById('puzzle-area').style.display = 'none';
+            document.getElementById('setup-card').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderGrid() {
+            gridEl.style.setProperty('--n', N);
+            let html = '';
+            for (let r = 0; r < N; r++) {
+                for (let c = 0; c < N; c++) {
+                    html += `<div class="ws-cell">${grid[r][c]}</div>`;
+                }
+            }
+            gridEl.innerHTML = html;
+        }
+
+        function cellEl(r, c) { return gridEl.children[r * N + c]; }
+
+        function esc(s) {
+            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function renderList() {
+            const defs = settings.mode === 'defs';
+            document.getElementById('list-title').textContent = defs ? 'Find the term that matches each definition' : 'Find these terms';
+            const order = placed.slice().sort((a, b) => a.norm.localeCompare(b.norm));
+            order.forEach((w, i) => { w.listIndex = i; });
+            const items = order.map(w => {
+                const cls = w.found ? 'done' : (w.revealed ? 'shown' : '');
+                const mark = w.found ? '\u2714' : (defs ? (w.listIndex + 1) + '.' : '\u2610');
+                const body = defs
+                    ? `${esc(maskTerm(w.def, w.term))} <span class="len">(${w.norm.length} letters)</span>`
+                    : esc(w.term);
+                const answer = defs ? `<span class="answer">\u2192 ${esc(w.term)}</span>` : '';
+                return `<li class="${cls}"><span class="mark">${mark}</span><span class="text">${body}</span>${answer}</li>`;
+            });
+            document.getElementById('word-list').innerHTML = items.join('');
+        }
+
+        function updateFoundCount() {
+            document.getElementById('found-count').textContent = `Found ${foundCount}/${placed.length}`;
+        }
+
+        // ---------- Timer ----------
+        function fmtTime(ms) {
+            const s = Math.floor(ms / 1000);
+            return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+        }
+        function tick() { document.getElementById('timer').textContent = fmtTime(Date.now() - startTime); }
+        function startTimer() {
+            clearInterval(timerId);
+            startTime = Date.now();
+            tick();
+            timerId = setInterval(tick, 1000);
+        }
+        function stopTimer() {
+            if (timerId) { clearInterval(timerId); timerId = null; }
+        }
+
+        // ---------- Selecting words ----------
+        function pointToCell(e) {
+            const rect = gridEl.getBoundingClientRect();
+            const cw = rect.width / N;
+            const c = Math.min(N - 1, Math.max(0, Math.floor((e.clientX - rect.left) / cw)));
+            const r = Math.min(N - 1, Math.max(0, Math.floor((e.clientY - rect.top) / cw)));
+            return { r: r, c: c };
+        }
+
+        function paintSelection(cells) {
+            selCells.forEach(p => cellEl(p.r, p.c).classList.remove('sel'));
+            selCells = cells;
+            selCells.forEach(p => cellEl(p.r, p.c).classList.add('sel'));
+        }
+
+        gridEl.addEventListener('pointerdown', e => {
+            if (finished) return;
+            e.preventDefault();
+            selecting = true;
+            selStart = pointToCell(e);
+            if (gridEl.setPointerCapture && e.pointerId !== undefined) gridEl.setPointerCapture(e.pointerId);
+            paintSelection([selStart]);
+        });
+
+        gridEl.addEventListener('pointermove', e => {
+            if (!selecting) return;
+            const end = pointToCell(e);
+            paintSelection(snapSelection(selStart.r, selStart.c, end.r, end.c, N));
+        });
+
+        function endSelection() {
+            if (!selecting) return;
+            selecting = false;
+            const cells = selCells.slice();
+            paintSelection([]);
+            if (cells.length < 2) return;
+            const letters = cells.map(p => grid[p.r][p.c]).join('');
+            const word = findMatchingWord(placed, letters);
+            if (word) markFound(word, cells);
+        }
+
+        gridEl.addEventListener('pointerup', endSelection);
+        gridEl.addEventListener('pointercancel', () => { selecting = false; paintSelection([]); });
+
+        function markFound(word, cells) {
+            word.found = true;
+            const color = 'f' + (foundCount % 8);
+            cells.forEach(p => {
+                const el = cellEl(p.r, p.c);
+                el.className = 'ws-cell ' + color;
+            });
+            foundCount++;
+            renderList();
+            updateFoundCount();
+            if (placed.every(w => w.found)) {
+                finished = true;
+                stopTimer();
+                finalTime = fmtTime(Date.now() - startTime);
+                const status = document.getElementById('ws-status');
+                status.className = 'ws-status';
+                status.textContent = `\uD83C\uDF89 You found all ${placed.length} words in ${finalTime}!`;
+            }
+        }
+
+        function revealAnswers() {
+            if (finished) return;
+            placed.forEach(w => {
+                if (!w.found) {
+                    w.revealed = true;
+                    w.cells.forEach(p => cellEl(p.r, p.c).classList.add('revealed'));
+                }
+            });
+            finished = true;
+            stopTimer();
+            renderList();
+            const status = document.getElementById('ws-status');
+            status.className = 'ws-status note';
+            status.textContent = 'Answers revealed. Press New Puzzle to try another.';
+        }
+
+        // ---------- Printing ----------
+        function dirText(diff) {
+            if (diff === 'easy') return 'across and down';
+            if (diff === 'medium') return 'across, down, and diagonally';
+            return 'in any direction, including backwards';
+        }
+
+        function printGrid(isKey, pg) {
+            const solution = new Set();
+            placed.forEach(w => w.cells.forEach(p => solution.add(p.r + ',' + p.c)));
+            let h = `<table class="print-grid" style="--n:${N}; --pg:${pg}in;">`;
+            for (let r = 0; r < N; r++) {
+                h += '<tr>';
+                for (let c = 0; c < N; c++) {
+                    const k = isKey && solution.has(r + ',' + c) ? ' class="k"' : '';
+                    h += `<td${k}>${grid[r][c]}</td>`;
+                }
+                h += '</tr>';
+            }
+            return h + '</table>';
+        }
+
+        function printLabel() {
+            const parts = [];
+            parts.push(settings.unit === 'all' ? 'All Units' : settings.unitLabel);
+            if (settings.topic !== 'all') parts.push(settings.topicLabel);
+            return parts.join(' \u2014 ');
+        }
+
+        function buildPrintSheets() {
+            const defs = settings.mode === 'defs';
+            const pg = defs ? 5.4 : 6.4;
+            const order = placed.slice().sort((a, b) => a.norm.localeCompare(b.norm));
+
+            const puzzleList = defs
+                ? '<ul class="print-words defs">' + order.map((w, i) =>
+                    `<li>${i + 1}. ${esc(maskTerm(w.def, w.term))} (${w.norm.length} letters)</li>`).join('') + '</ul>'
+                : '<ul class="print-words">' + order.map(w => `<li>\u2610 ${esc(w.term)}</li>`).join('') + '</ul>';
+
+            const keyList = defs
+                ? '<ul class="print-words">' + order.map((w, i) => `<li>${i + 1}. ${esc(w.term)}</li>`).join('') + '</ul>'
+                : '<ul class="print-words">' + order.map(w => `<li>${esc(w.term)}</li>`).join('') + '</ul>';
+
+            const foot = '<div class="print-foot">Psych Review Hub \u00B7 appsychreviewhub.com</div>';
+
+            document.getElementById('print-puzzle').innerHTML =
+                `<h1>AP Psychology Word Search</h1>
+                 <p class="print-sub">${esc(printLabel())}</p>
+                 <div class="print-nameline"><span>Name: ______________________________</span><span>Date: ______________</span></div>
+                 ${printGrid(false, pg)}
+                 <h2 class="print-h2">${defs ? 'Find the term that matches each definition' : 'Find these terms'}</h2>
+                 <p class="print-note">Words are hidden ${dirText(settings.diff)}. Spaces, hyphens, and punctuation are removed in the grid.</p>
+                 ${puzzleList}${foot}`;
+
+            document.getElementById('print-key').innerHTML =
+                `<h1>Word Search: Answer Key</h1>
+                 <p class="print-sub">${esc(printLabel())}</p>
+                 ${printGrid(true, pg)}
+                 <h2 class="print-h2">Terms</h2>
+                 ${keyList}${foot}`;
+        }
+
+        function doPrint(which) {
+            if (!placed.length) return;
+            buildPrintSheets();
+            document.body.classList.add('printing', 'print-' + which + '-mode');
+            window.print();
+        }
+
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('printing', 'print-puzzle-mode', 'print-key-mode');
+        });
+    </script>
+
+</body>
+</html>
