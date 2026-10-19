@@ -1083,7 +1083,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Broca’s Area",
-      "definition": "A region of the left frontal lobe that is involved in speech production and language expression; damage to this area can cause difficulty speaking fluently (Broca’s aphasia)"
+      "definition": "A region of the left frontal lobe that is involved in speech production and language expression; damage to this area can cause difficulty speaking fluently"
     },
     {
       "id": "156",
@@ -1314,7 +1314,7 @@
       "unit": "Unit 1",
       "topic": "1.4",
       "term": "Wernicke’s Area",
-      "definition": "A region of the left temporal lobe involved in language comprehension; damage to this area can result in fluent but meaningless speech and difficulty understanding language (Wernicke’s aphasia)"
+      "definition": "A region of the left temporal lobe involved in language comprehension; damage to this area can result in fluent but meaningless speech and difficulty understanding language"
     },
     {
       "id": "189",
