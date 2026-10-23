@@ -1,6 +1,13 @@
 {
   "announcements": [
     {
+      "date": "2026-10-23",
+      "tag": "NEW",
+      "title": "New Game Available!",
+      "blurb": "Interactive word search game now live! Click here (or use the Games menu) to create a puzzle based on Unit, Topic, or mixed. Available to print as well!",
+      "link": "wordsearch"
+    },
+    {
       "date": "2026-10-12",
       "tag": "NEW",
       "title": "Unit 2 Study Guides Ready!",
