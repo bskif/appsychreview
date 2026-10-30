@@ -412,6 +412,1158 @@
       "topic": "5.2",
       "answer": "Wisdom",
       "clue": "A signature strength in positive psychology characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "80",
+      "answer": "Eugenics",
+      "clue": "The controversial practice of trying to improve the human species by encouraging reproduction among people with desirable inherited traits",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "81",
+      "answer": "Evolutionary",
+      "clue": "A perspective that studies how behavior and mental processes developed through adaptations that aided survival and reproduction",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "83",
+      "answer": "Heredity",
+      "clue": "The passing of characteristics from parents to offspring through genes",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "92",
+      "answer": "Heritability",
+      "clue": "A measure of how much of the variation in a trait among individuals in a population is due to genetic differences",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "84",
+      "answer": "Natural Selection",
+      "clue": "The principle that traits that boost reproduction and survival are most likely to be passed on to later generations",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "85",
+      "answer": "Nature",
+      "clue": "The influence of genes and other inherited characteristics on personality, physical growth, and social interactions",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "86",
+      "answer": "Nurture",
+      "clue": "The influence of environmental factors such as family, culture, and experience on development",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "88",
+      "answer": "Monozygotic",
+      "clue": "Describes identical twins that form when a single fertilized egg splits into two embryos and share nearly all of their genetic material",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "89",
+      "answer": "Dizygotic",
+      "clue": "Describes fraternal twins that form when two separate eggs are fertilized by different sperm and share about 50% of their genetic material",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "90",
+      "answer": "DNA",
+      "clue": "The molecule that carries the genetic instructions for the development, functioning, and inheritance of traits in living organisms",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s2",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "91",
+      "answer": "Epigenetics",
+      "clue": "The study of how environmental factors can switch gene expression on or off without changing the underlying code",
+      "title": "Heredity and Environment"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "93",
+      "answer": "Autonomic",
+      "clue": "The _____ nervous system automatically regulates involuntary body functions such as heartbeat, breathing, and digestion",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "94",
+      "answer": "Central",
+      "clue": "The _____ nervous system consists of the brain and spinal cord and coordinates the body’s responses",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "95",
+      "answer": "Parasympathetic",
+      "clue": "This branch of the system that regulates involuntary functions calms the body and conserves energy through “rest-and-digest” functions after stress",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "96",
+      "answer": "Peripheral",
+      "clue": "The _____ nervous system is made up of the nerve fibers that connect the brain and spinal cord to the rest of the body",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "97",
+      "answer": "Somatic",
+      "clue": "The _____ nervous system controls the body’s skeletal muscles, producing voluntary movements",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "termid": "98",
+      "answer": "Sympathetic",
+      "clue": "This branch of the system that regulates involuntary functions activates the “fight-or-flight” response during stress or danger, increasing alertness",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "122",
+      "answer": "Interneurons",
+      "clue": "Cells located in the brain and spinal cord that sit between incoming and outgoing pathways, connecting them and helping process information",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "139",
+      "answer": "Sensory Neurons",
+      "clue": "Afferent cells that carry incoming information from the body’s receptors to the brain and spinal cord",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s3",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "134",
+      "answer": "Reflex Arc",
+      "clue": "The neural pathway that produces an automatic, rapid response to a stimulus, such as pulling your hand away from a hot stove",
+      "title": "The Nervous System"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "145",
+      "answer": "Soma",
+      "clue": "The neuron’s cell body, which contains the nucleus and acts as the cell’s life-support center",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "146",
+      "answer": "Dendrites",
+      "clue": "Branch-like extensions of a neuron that receive incoming signals from other neurons",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "147",
+      "answer": "Axon",
+      "clue": "The long, slender extension of a neuron that carries electrical impulses away from the cell body",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "148",
+      "answer": "Axon Terminal",
+      "clue": "The end of a neuron’s long extension, where neurotransmitters are released into the synapse",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "149",
+      "answer": "Myelin Sheath",
+      "clue": "A fatty insulating layer that speeds up the transmission of electrical impulses along a neuron",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "116",
+      "answer": "Glial Cells",
+      "clue": "Nervous system helpers that support, nourish, and protect neurons",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "136",
+      "answer": "Resting Potential",
+      "clue": "The stable, negative electrical charge of a neuron when it is inactive, maintained by the balance of ions inside and outside the cell",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "109",
+      "answer": "Depolarization",
+      "clue": "The process in which a neuron becomes less negative inside as sodium ions enter the cell, making it more likely to fire",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "100",
+      "answer": "Action Potential",
+      "clue": "A brief electrical impulse that travels along a neuron, allowing it to send a signal to other neurons, muscles, or glands",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "135",
+      "answer": "Refractory Period",
+      "clue": "A time of inactivity after a neuron has fired, during which it cannot fire again until it resets",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "105",
+      "answer": "All-or-Nothing",
+      "clue": "The principle that a neuron either responds with a full-strength signal or does not respond",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s4",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "143",
+      "answer": "Firing Threshold",
+      "clue": "The level of electrical charge a neuron must reach in order to generate a signal",
+      "title": "The Neuron and Neural Firing"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "157",
+      "answer": "Cerebral Cortex",
+      "clue": "The brain’s outer layer, responsible for higher-level functions such as thinking, perceiving, language, memory, and voluntary movement",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "164",
+      "answer": "Frontal Lobes",
+      "clue": "Region behind the forehead involved in decision-making, planning, reasoning, personality, and voluntary movement",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "176",
+      "answer": "Parietal Lobes",
+      "clue": "Region at the top rear of the brain that processes touch, temperature, and pain and supports spatial awareness",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "175",
+      "answer": "Occipital Lobes",
+      "clue": "Region at the back of the brain that is primarily responsible for processing visual information",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "186",
+      "answer": "Temporal Lobes",
+      "clue": "Region on the sides of the brain involved in processing auditory information, language comprehension, and memory",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "173",
+      "answer": "Motor Cortex",
+      "clue": "A strip at the rear of the brain’s front region that sends out commands for voluntary movements",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "159",
+      "answer": "Corpus Callosum",
+      "clue": "A thick band of neural fibers that connects the left and right hemispheres, allowing communication between them",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "155",
+      "answer": "Broca’s Area",
+      "clue": "Language region in the left front part of the brain that is involved in speech production; damage can make speaking fluently difficult",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "188",
+      "answer": "Wernicke’s Area",
+      "clue": "Language region on the left side of the brain involved in comprehension; damage can produce fluent but meaningless speech",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "152",
+      "answer": "Aphasia",
+      "clue": "A language disorder caused by damage to language-related regions of the brain, impairing speaking, understanding, reading, or writing",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "179",
+      "answer": "Plasticity",
+      "clue": "The brain’s ability to change and reorganize itself by forming new neural connections in response to learning, experience, or injury",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s5",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "170",
+      "answer": "Lesion",
+      "clue": "A region of damaged or destroyed tissue, often studied to understand the function of the affected part of the brain",
+      "title": "The Brain: Cortex, Language, and Research"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "213",
+      "answer": "Absolute Threshold",
+      "clue": "The minimum stimulus energy needed to detect a particular stimulus 50 percent of the time",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "268",
+      "answer": "Weber’s Law",
+      "clue": "The principle that the just noticeable difference between two stimuli is a constant proportion of the original stimulus intensity",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "262",
+      "answer": "Transduction",
+      "clue": "The conversion of physical energy such as light, sound, or pressure into neural signals that the brain can interpret",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "255",
+      "answer": "Sensory Adaptation",
+      "clue": "Diminished sensitivity to a constant, unchanging stimulus over time, freeing the brain to focus on changes in the environment",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "260",
+      "answer": "Synesthesia",
+      "clue": "A phenomenon in which stimulating one pathway involuntarily triggers an experience in another, such as seeing colors when hearing music",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "232",
+      "answer": "Gustation",
+      "clue": "Technical term for taste; it detects chemicals in food through receptor cells on the tongue",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "242",
+      "answer": "Olfaction",
+      "clue": "Technical term for smell; it detects airborne chemical molecules through receptors in the nose",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "246",
+      "answer": "Pheromones",
+      "clue": "Chemical signals released by an animal that affect the behavior of other animals of the same species",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "236",
+      "answer": "Kinesthesis",
+      "clue": "The system that tracks the position and movement of your body parts through receptors in muscles, tendons, and joints",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "264",
+      "answer": "Vestibular Sense",
+      "clue": "The inner-ear system for balance and posture, detecting changes in head movement and spatial orientation",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "231",
+      "answer": "Gate Control Theory",
+      "clue": "The idea that pain signals pass through a spinal-cord checkpoint that can be opened or closed by other input or by messages from the brain",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s6",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "259",
+      "answer": "Supertasters",
+      "clue": "People with a higher-than-average number of tongue receptors, making them especially sensitive to bitter flavors",
+      "title": "Sensation: Principles and the Other Senses"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "99",
+      "answer": "Acetylcholine",
+      "clue": "A neurotransmitter that enables communication between neurons and muscles and also plays an important role in learning and memory",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "111",
+      "answer": "Dopamine",
+      "clue": "A neurotransmitter involved in movement, motivation, reward, and pleasure, and linked to Parkinson’s disease and schizophrenia",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "140",
+      "answer": "Serotonin",
+      "clue": "A neurotransmitter involved in mood, sleep, appetite, and emotional regulation, with low levels often linked to depression",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "130",
+      "answer": "Norepinephrine",
+      "clue": "A neurotransmitter and hormone involved in alertness, arousal, attention, and the body’s stress response",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "114",
+      "answer": "GABA",
+      "clue": "The brain’s primary inhibitory neurotransmitter, which reduces neural activity and helps regulate anxiety, sleep, and muscle tension",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "117",
+      "answer": "Glutamate",
+      "clue": "The brain’s primary excitatory neurotransmitter, involved in learning, memory, and neural communication",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "112",
+      "answer": "Endorphins",
+      "clue": "Natural, opiate-like neurotransmitters linked to pain control and to pleasure; literally “morphine within”",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "132",
+      "answer": "Oxytocin",
+      "clue": "A hormone involved in social bonding, trust, childbirth, and breastfeeding",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "125",
+      "answer": "Melatonin",
+      "clue": "A hormone that helps regulate sleep and the body’s circadian rhythms",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "123",
+      "answer": "Leptin",
+      "clue": "A hormone made by fat cells that signals the brain that the body has enough stored energy, helping regulate hunger and body weight",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "115",
+      "answer": "Ghrelin",
+      "clue": "A hormone produced mainly in the stomach that stimulates hunger and signals the brain to increase food intake",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s7",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "102",
+      "answer": "Adrenaline",
+      "clue": "A hormone released during stress that increases heart rate, breathing, blood pressure, and energy as part of the fight-or-flight response",
+      "title": "Chemical Messengers"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "151",
+      "answer": "Amygdala",
+      "clue": "An almond-shaped structure deep in the brain involved in processing fear and aggression and in forming emotional memories",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "168",
+      "answer": "Hippocampus",
+      "clue": "A structure that is important for forming new memories and helps with learning and spatial navigation",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "169",
+      "answer": "Hypothalamus",
+      "clue": "A small structure that regulates hunger, thirst, and body temperature and controls hormone release through the endocrine system",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "187",
+      "answer": "Thalamus",
+      "clue": "The brain’s main relay station, receiving sensory information and sending it to the outer layer of the brain for processing",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "156",
+      "answer": "Cerebellum",
+      "clue": "A structure at the back of the brain that coordinates balance, movement, and fine motor skills and is involved in motor learning",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "172",
+      "answer": "Medulla",
+      "clue": "A structure at the base of the brain, just above the spinal cord, that controls vital involuntary functions such as breathing and blood pressure",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "180",
+      "answer": "Pons",
+      "clue": "A bridge-like structure that helps regulate sleep, breathing, and arousal and relays communication between different parts of the brain",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "154",
+      "answer": "Brain Stem",
+      "clue": "The oldest and innermost structure, connecting the spinal cord to higher regions and controlling basic life-sustaining functions",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "178",
+      "answer": "Pituitary Gland",
+      "clue": "The endocrine system’s “master” organ, which releases hormones that control other hormone-producing organs and regulate growth, metabolism, and reproduction",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "171",
+      "answer": "Limbic System",
+      "clue": "A network of structures deep in the brain involved in emotion, motivation, and memory",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "183",
+      "answer": "Reward Center",
+      "clue": "A group of brain structures activated by pleasurable experiences that reinforce behaviors through dopamine release",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s8",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "181",
+      "answer": "Prefrontal Cortex",
+      "clue": "The forward-most part of the brain’s front region, responsible for judgment, planning, and processing new memories",
+      "title": "Brain Parts"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "225",
+      "answer": "Cornea",
+      "clue": "The transparent, curved outer layer of the eye that helps focus incoming light and protects the eye",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "234",
+      "answer": "Iris",
+      "clue": "The colored part of the eye that regulates how much light enters by changing the size of the eye’s central opening",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "249",
+      "answer": "Pupil",
+      "clue": "The adjustable opening in the center of the eye’s colored ring that controls how much light gets in",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "237",
+      "answer": "Lens",
+      "clue": "The transparent structure that changes shape to help focus images on the back of the eye",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "250",
+      "answer": "Retina",
+      "clue": "The light-sensitive layer at the back of the eye that contains photoreceptor cells and converts light into neural signals sent to the brain",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "228",
+      "answer": "Fovea",
+      "clue": "The tiny central pit at the back of the eye where vision is sharpest, responsible for fine detail and color perception",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "251",
+      "answer": "Rods",
+      "clue": "Photoreceptor cells that are highly sensitive to light and allow vision in low-light conditions but do not detect color",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "224",
+      "answer": "Cones",
+      "clue": "Photoreceptor cells responsible for color vision and fine detail, functioning best in bright light",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "219",
+      "answer": "Blind Spot",
+      "clue": "The point where visual information exits the eye; no receptor cells are found there, so nothing is detected",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "244",
+      "answer": "Optic Nerve",
+      "clue": "The cable of fibers that carries visual information from the back of the eye to the brain for processing",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "214",
+      "answer": "Accommodation",
+      "clue": "The process by which the eye adjusts its focus for near or far objects by changing the shape of its transparent focusing structure",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "263",
+      "answer": "Trichromatic",
+      "clue": "The _____ theory proposes that color vision depends on three types of receptors sensitive to red, green, and blue light, with other colors made from combinations",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s9",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "243",
+      "answer": "Opponent-Process",
+      "clue": "The _____ theory proposes that color vision is controlled by opposing pairs (red-green, blue-yellow, black-white), so activating one color inhibits the other",
+      "title": "Vision"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "222",
+      "answer": "Cochlea",
+      "clue": "A fluid-filled, snail-shaped structure in the inner ear that converts sound vibrations into neural signals for the brain",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "218",
+      "answer": "Basilar Membrane",
+      "clue": "A flexible strip inside the inner ear’s snail-shaped structure that vibrates in response to sound waves and stimulates the receptors that convert sound into neural signals",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "233",
+      "answer": "Hair Cells",
+      "clue": "Receptors in the inner ear that detect sound vibrations and convert them into neural impulses sent to the brain",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "247",
+      "answer": "Place Theory",
+      "clue": "The theory that links the pitch we hear with the location in the inner ear that is stimulated by the sound",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "229",
+      "answer": "Frequency Theory",
+      "clue": "The theory that the rate of nerve impulses traveling up the auditory nerve matches the vibration rate of a tone, enabling us to sense its pitch",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "265",
+      "answer": "Volley Theory",
+      "clue": "The theory that groups of auditory neurons fire in rapid succession to transmit sounds, especially high-pitched ones that single neurons cannot fire fast enough to encode",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "258",
+      "answer": "Sound Localization",
+      "clue": "The ability to pinpoint where a noise comes from by using differences in timing and intensity at each ear",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "223",
+      "answer": "Conduction",
+      "clue": "_____ deafness is hearing loss caused by damage to the mechanical system that carries sound waves to the inner ear",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "254",
+      "answer": "Sensorineural",
+      "clue": "_____ deafness is hearing loss caused by damage to the inner ear or auditory nerve, often resulting in permanent impairment",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "217",
+      "answer": "Amplitude",
+      "clue": "The height or intensity of a sound wave, which determines how loud the sound is",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s10",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "266",
+      "answer": "Wavelength",
+      "clue": "The distance between successive peaks of a sound wave, which is related to the pitch we hear",
+      "title": "Hearing"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "82",
+      "answer": "Predisposition",
+      "clue": "A genetic _____ is an increased likelihood of developing a particular disease or trait based on a person’s genetic makeup",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "129",
+      "answer": "Neurons",
+      "clue": "Specialized nerve cells that transmit information throughout the body using electrical and chemical signals",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "144",
+      "answer": "Tolerance",
+      "clue": "The diminishing effect of a drug with regular use of the same dose, requiring the user to take larger and larger doses",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "103",
+      "answer": "Agonists",
+      "clue": "Chemicals that bind to receptors and turn them on, increasing or mimicking the effects of a neurotransmitter",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "184",
+      "answer": "Somatosensory Cortex",
+      "clue": "Area at the front of the parietal lobes that registers and processes body touch and movement sensations",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "185",
+      "answer": "Split Brain Research",
+      "clue": "Studies of individuals whose corpus callosum has been severed to reduce severe epilepsy, showing that the hemispheres can function independently",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "177",
+      "answer": "PET Scan",
+      "clue": "A brain imaging technique that uses a radioactive tracer to measure activity and energy use in different areas of the brain",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "termid": "189",
+      "answer": "Activation-Synthesis",
+      "clue": "The theory that dreams are the brain’s attempt to make sense of random neural firing during sleep",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "termid": "211",
+      "answer": "Somnambulism",
+      "clue": "A sleep disorder in which a person walks or performs other complex behaviors while still asleep, usually during deep NREM Stage 3 sleep",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "248",
+      "answer": "Prosopagnosia",
+      "clue": "A neurological condition in which a person cannot recognize or distinguish faces despite normal vision",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "220",
+      "answer": "Blindsight",
+      "clue": "A condition in which a person can respond to a visual stimulus without consciously experiencing it",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s11",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "256",
+      "answer": "Sensory Interaction",
+      "clue": "The principle that one channel of perception can influence another, as when the smell of food alters its taste",
+      "title": "Unit 1 Review: Part 1"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "termid": "87",
+      "answer": "Twin Studies",
+      "clue": "Research that compares identical and fraternal pairs of siblings born at the same time to gauge the relative influence of genes and environment",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "126",
+      "answer": "Motor Neurons",
+      "clue": "Efferent cells that carry outgoing information from the brain and spinal cord to the muscles and glands",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "137",
+      "answer": "Reuptake",
+      "clue": "The process by which neurotransmitters are reabsorbed by the sending cell, clearing the synapse and regulating signal strength",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "106",
+      "answer": "Antagonists",
+      "clue": "Chemicals that bind to receptors and block or reduce the effects of a neurotransmitter",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "127",
+      "answer": "Multiple Sclerosis",
+      "clue": "A disease in which the immune system damages the insulating layer around nerve fibers, disrupting communication between the brain and the body",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "153",
+      "answer": "Association Areas",
+      "clue": "Regions of the cerebral cortex that are not involved in primary movement or sensory processing but in higher mental processes",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "termid": "162",
+      "answer": "Executive Functioning",
+      "clue": "Cognitive processes that include working memory, flexible thinking, and self-control",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "termid": "199",
+      "answer": "Night Terrors",
+      "clue": "A disorder involving sudden episodes of intense fear, screaming, and high arousal during deep NREM stages, with little to no recall afterward",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "termid": "209",
+      "answer": "Sleep Apnea",
+      "clue": "A disorder marked by temporary pauses in breathing overnight and repeated momentary awakenings",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "termid": "193",
+      "answer": "Consolidation Theory",
+      "clue": "The theory that REM and deep NREM stages help stabilize and strengthen newly formed memories for long-term storage",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "termid": "245",
+      "answer": "Phantom Limb Syndrome",
+      "clue": "A condition in which a person feels sensations, including pain, in a body part that has been amputated, due to continued brain representation of it",
+      "title": "Unit 1 Review: Part 2"
+    },
+    {
+      "setid": "u1s12",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "termid": "150",
+      "answer": "Withdrawal",
+      "clue": "The discomfort and distress that follow discontinuing an addictive drug or behavior",
+      "title": "Unit 1 Review: Part 2"
     }
   ]
 }
