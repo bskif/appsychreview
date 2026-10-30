@@ -561,8 +561,19 @@
             return Object.keys(counts).sort((a, b) => counts[b] - counts[a] || (a < b ? -1 : 1))[0];
         }
 
+        // A puzzle's name: its own "title" (from any row in the set) if there is one,
+        // otherwise the title of the topic that most of its answers come from.
+        function setTitle(id) {
+            const entries = setsById[id] || [];
+            for (let i = 0; i < entries.length; i++) {
+                const t = entries[i].title && String(entries[i].title).trim();
+                if (t) return t;
+            }
+            return topicTitle[mainTopic(entries)] || '';
+        }
+
         function setLabel(id) {
-            const p = parseSetId(id), t = topicTitle[mainTopic(setsById[id])];
+            const p = parseSetId(id), t = setTitle(id);
             return (p ? 'Puzzle ' + p.n : id) + (t ? ': ' + t : '');
         }
 
@@ -642,7 +653,7 @@
             };
             finished = false; revealCount = 0; hlEls = [];
             const p = parseSetId(id);
-            const t = topicTitle[mainTopic(entries)];
+            const t = setTitle(id);
             document.getElementById('puzzle-title').textContent = (p ? entries[0].unit + ' \u00B7 Puzzle ' + p.n : id) + (t ? ': ' + t : '');
             renderGrid(); renderClues(); updateStats();
 
