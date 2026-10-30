@@ -1,0 +1,417 @@
+{
+  "crossword": [
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Behavioral",
+      "clue": "A psychological approach that focuses on observable behaviors and the ways they are learned and shaped through interactions with the environment, especially through conditioning and reinforcement"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Biological",
+      "clue": "A branch of psychology that links _____ (genetic, neural, hormonal) and psychological processes"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Biopsychosocial",
+      "clue": "An integrated approach that incorporates biological, psychological, and social-cultural levels of analysis"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Cognitive",
+      "clue": "A psychological approach that focuses on how people think, perceive, remember, and solve problems, emphasizing the role of mental processes in behavior"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Humanistic",
+      "clue": "A perspective that emphasizes the growth potential of healthy people and the individual's potential for personal growth"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Psychodynamic",
+      "clue": "A branch of psychology that studies how unconscious drives and conflicts influence behavior, and uses that information to treat people with psychological disorders"
+    },
+    {
+      "setid": "u0s1",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "answer": "Sociocultural",
+      "clue": "The study of how situations and cultures affect our behavior and thinking"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "answer": "EEG",
+      "clue": "This scan lets researchers monitor sleep stages by recording the brain's electrical activity"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Alpha Waves",
+      "clue": "Relatively slow brain waves that are most common when a person is awake but relaxed and calm, often occurring just before falling asleep"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Circadian Rhythm",
+      "clue": "The body’s internal biological clock that regulates the sleep-wake cycle and other physiological processes on a roughly 24-hour schedule"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Delta Waves",
+      "clue": "Very slow, high-amplitude brain waves that occur primarily during deep NREM Stage 3 sleep"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Insomnia",
+      "clue": "A sleep disorder characterized by persistent difficulty falling asleep, staying asleep, or getting restful sleep despite adequate opportunity to do so"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Narcolepsy",
+      "clue": "A sleep disorder characterized by sudden, uncontrollable sleep attacks during waking hours, often including rapid entry into REM sleep and possible loss of muscle control"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "REM Rebound",
+      "clue": "An increase in REM sleep that occurs after a person is deprived of REM sleep, causing the body to spend more time in REM during subsequent sleep cycles"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Restoration",
+      "clue": "The theory that sleep serves to repair and rejuvenate the body and brain, helping restore energy, support growth, and maintain overall physical and mental functioning"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Sleep",
+      "clue": "A naturally recurring state of rest characterized by reduced consciousness, slowed bodily functions, and brain activity that supports restoration, memory consolidation, and overall health"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Sleep Spindles",
+      "clue": "Brief bursts of rapid brain activity that occur during NREM Stage 2 sleep and are believed to play a role in memory consolidation and protecting sleep from external disturbances"
+    },
+    {
+      "setid": "u1s1",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "answer": "Theta Waves",
+      "clue": "Slow brain waves that are typically seen during light sleep (especially NREM Stage 1 and 2) and are also associated with deep relaxation and early stages of sleep"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Encoding",
+      "clue": "The process of converting sensory input into a form that can be stored and later retrieved from memory"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Explicit",
+      "clue": "Memory of facts and experiences that can be consciously recalled and described, including episodic and semantic memory"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Implicit",
+      "clue": "A type of long-term memory that operates without conscious awareness, influencing skills, habits, and learned behaviors (like tying your shoes or typing)"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Phonological Loop",
+      "clue": "A component of working memory that temporarily stores and rehearses verbal and auditory information, such as spoken words or sounds"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Retrieval",
+      "clue": "The process of accessing and bringing stored information from long-term memory into conscious awareness"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Semantic",
+      "clue": "A type of long-term memory that stores general knowledge, facts, concepts, and meanings about the world, independent of personal experience"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Sensory",
+      "clue": "The very brief storage of _____ information (such as sights or sounds) that lasts only a fraction of a second to a few seconds before it is either processed further or forgotten"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Shallow Encoding",
+      "clue": "The process of encoding information based on superficial features such as appearance or sound, rather than meaning, which typically leads to weaker memory retention"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Storage",
+      "clue": "The stage of memory in which encoded information is held and preserved in the brain over time"
+    },
+    {
+      "setid": "u2s1",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "answer": "Working",
+      "clue": "A limited-capacity memory system that temporarily holds and actively processes information needed for tasks such as learning, reasoning, and problem-solving"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Babbling",
+      "clue": "A stage of early language development in which infants (around 4–10 months) begin producing repetitive consonant-vowel sounds like “ba-ba” or “da-da,” practicing speech-like sounds"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Cooing",
+      "clue": "An early stage of language development in infants (around 2–4 months) characterized by soft, vowel-like sounds such as “oo” and “ah,” often reflecting pleasure and comfort"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Grammar",
+      "clue": "The set of rules in a language that governs how words are structured and combined to form meaningful sentences, including syntax and word usage"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Morphemes",
+      "clue": "The smallest units of meaning in a language, including whole words or parts of words (like prefixes and suffixes) that carry meaning, such as “un-” or “-ed.”"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "One-Word Speech",
+      "clue": "A stage of language development in which children use single words to express complete ideas or sentences, such as saying “milk” to mean “I want milk.”"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Overgeneralization",
+      "clue": "A language learning error in which children apply grammatical rules too broadly, such as saying “goed” instead of “went” or “mouses” instead of “mice.”"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Phonemes",
+      "clue": "The smallest units of sound in a language that can be combined to form words and can change meaning when altered (e.g., changing the “b” in “bat” to “c” creates “cat”)"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Semantics",
+      "clue": "The part of language that deals with meaning, including how words and sentences convey ideas and how context affects interpretation"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Syntax",
+      "clue": "The set of rules that governs the order and arrangement of words in a sentence to create meaningful and grammatically correct statements"
+    },
+    {
+      "setid": "u3s1",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "answer": "Telegraphic Speech",
+      "clue": "Early language use (around age 2) in which children speak in short, simple sentences that include only essential words, usually nouns and verbs (e.g., “want cookie” instead of “I want a cookie”)"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Conscious",
+      "clue": "The level of awareness that contains thoughts, perceptions, and feelings that a person is actively aware of at a given moment"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Denial",
+      "clue": "A defense mechanism in which a person refuses to acknowledge or accept a painful reality, thought, or feeling"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Displacement",
+      "clue": "A defense mechanism in which a person redirects emotions, especially frustration or anger, from the original source to a safer or less threatening target"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Ego",
+      "clue": "The rational part of personality that operates on the reality principle, balancing the demands of the id, superego, and the real world"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Projection",
+      "clue": "A defense mechanism in which a person attributes their own unacceptable thoughts, feelings, or motives to another person"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Reaction Formation",
+      "clue": "A defense mechanism in which a person behaves in a way that is opposite to their true feelings or impulses in order to hide them from themselves or others"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Real Self",
+      "clue": "In humanistic psychology, a person's actual thoughts, feelings, behaviors, and characteristics as they currently exist"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Repression",
+      "clue": "A defense mechanism in which distressing thoughts, memories, or impulses are unconsciously pushed out of conscious awareness"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Self-Concept",
+      "clue": "In humanistic psychology, the organized set of beliefs and perceptions a person has about themselves, including their traits, abilities, and identity"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Superego",
+      "clue": "The part of personality that represents internalized moral standards and ideals, guiding behavior according to a sense of right and wrong"
+    },
+    {
+      "setid": "u4s1",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "answer": "Unconscious",
+      "clue": "In Freud’s theory, the part of the mind that contains thoughts, memories, desires, and conflicts that are outside of conscious awareness but still influence behavior"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Courage",
+      "clue": "A signature strength in positive psychology characterized by persistence, bravery, and the willingness to act despite fear or adversity"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Gratitude",
+      "clue": "A positive emotional response that involves recognizing and appreciating the benefits, kindness, or support received from others"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Happiness",
+      "clue": "A general state of well-being characterized by positive emotions, life satisfaction, and a sense of fulfillment"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Humanity",
+      "clue": "A signature strength in positive psychology that involves caring, valuing close relationships, and showing kindness and compassion toward others"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Justice",
+      "clue": "A signature strength in positive psychology that involves fairness, treating others equally, and contributing to the well-being of the community or society"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Positive Emotions",
+      "clue": "Pleasant emotional states such as joy, gratitude, interest, and contentment that contribute to well-being and life satisfaction"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Positive Psychology",
+      "clue": "A branch of psychology that focuses on the study of strengths, positive emotions, and factors that contribute to happiness, well-being, and human flourishing"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Temperance",
+      "clue": "A signature strength in positive psychology that involves self-control, moderation, and the ability to regulate impulses and behaviors"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Transcendence",
+      "clue": "A signature strength in positive psychology that involves appreciating beauty, finding meaning, and feeling a connection to something larger than oneself"
+    },
+    {
+      "setid": "u5s1",
+      "unit": "Unit 5",
+      "topic": "5.2",
+      "answer": "Wisdom",
+      "clue": "A signature strength in positive psychology characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding"
+    }
+  ]
+}
