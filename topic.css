@@ -56,12 +56,13 @@ a:focus-visible, summary:focus-visible {
 .crumbs .sep { color: #7a8a96; margin: 0 7px; }
 .crumbs .here { color: #5a6b78; }
 .crumbs .crumb-next a { color: #2672a8; }
+.crumbs .crumb-next a + a { margin-left: 18px; }
 
 .guide-hero-grid {
     display: grid;
     grid-template-columns: 1.35fr 1fr;
     gap: 40px;
-    align-items: end;
+    align-items: center;
 }
 
 .guide-hero h1 {
@@ -106,6 +107,10 @@ a:focus-visible, summary:focus-visible {
     margin: 0 0 14px;
 }
 .notes-actions { display: flex; flex-direction: column; gap: 8px; }
+.notes-group-label { font-weight: bold; font-size: 0.88rem; color: var(--primary); margin: 12px 0 6px; }
+.notes-group-label:first-of-type { margin-top: 0; }
+.notes-actions.row { flex-direction: row; }
+.notes-actions.row a { flex: 1; padding: 9px 8px; font-size: 0.92rem; }
 .notes-card .notes-fine {
     font-size: 0.8rem;
     color: #888;
@@ -216,6 +221,8 @@ a:focus-visible, summary:focus-visible {
     font-weight: 600;
     margin: 0 0 6px;
 }
+/* Sub-section heading inside a numbered section */
+.guide-article h3.sub { font-size: 1.3rem; line-height: 1.25; margin: 2rem 0 0.5rem; }
 
 .guide-article p {
     font-size: 1.05rem;
@@ -285,23 +292,37 @@ a:focus-visible, summary:focus-visible {
 .guide-article .ct-bar p { color: rgba(255,255,255,0.86); }
 .guide-article .ct-bar p strong { color: white; background: none; }
 
-/* ===== BIAS LIST ===== */
-.bias-list { margin: 18px 0 8px; border-top: 1px solid var(--hair); }
-.bias {
+/* ===== DEFINITION LIST (term | definition rows) ===== */
+.def-list { margin: 18px 0 8px; border-top: 1px solid var(--hair); }
+.def {
     display: grid;
     grid-template-columns: 190px 1fr;
     gap: 22px;
     padding: 18px 0;
     border-bottom: 1px solid var(--hair);
 }
-.bias dt {
+.def dt {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.25;
     color: var(--primary);
 }
-.bias dd { margin: 0; font-size: 1.02rem; line-height: 1.65; color: #3d4852; }
+.def dd { margin: 0; font-size: 1.02rem; line-height: 1.65; color: #3d4852; }
+.def dt .alt {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: #6b7b87;
+    margin-top: 2px;
+}
+/* Nested list (e.g. parts inside the inner ear) */
+.def-list.nested { margin: 14px 0 4px; border-top: 0; background: var(--panel-blue); border-radius: 10px; padding: 2px 16px; }
+.def-list.nested .def { grid-template-columns: 120px 1fr; gap: 16px; padding: 12px 0; }
+.def-list.nested .def:last-child { border-bottom: 0; }
+.def-list.nested dt { font-size: 1.05rem; }
+.def-list.nested dd { font-size: 0.97rem; }
 
 /* ===== AP PRACTICE PANEL ===== */
 .pill {
@@ -324,6 +345,47 @@ a:focus-visible, summary:focus-visible {
     margin: 18px 0 22px;
 }
 
+/* ===== SHORT "DON'T TRIP UP" CALLOUT ===== */
+.callout {
+    background: var(--panel-warm);
+    border-left: 5px solid var(--warm);
+    border-radius: 10px;
+    padding: 16px 22px 2px;
+    margin: 20px 0;
+}
+.guide-article .callout p { font-size: 1rem; line-height: 1.65; }
+
+/* ===== FIGURES & VIDEO ===== */
+.media { margin: 32px auto; max-width: 560px; text-align: center; }
+.media img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #dde5ea;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+.media .video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #dde5ea;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+.media .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.media figcaption {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #5a6670;
+    font-style: italic;
+    margin-top: 12px;
+    padding: 0 12px;
+}
+.media figcaption strong { font-style: normal; color: var(--primary); }
+
 /* ===== MISCONCEPTION COMPARE ===== */
 .trip {
     background: var(--panel-warm);
@@ -344,6 +406,67 @@ a:focus-visible, summary:focus-visible {
 .guide-article .cmp h3 { font-size: 1.25rem; }
 .guide-article .cmp p { font-size: 0.98rem; line-height: 1.6; }
 
+/* ===== KEY TERMS ===== */
+.key-terms {
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    padding: 20px 24px 22px;
+    margin: 12px 0 4px;
+}
+.guide-article .key-terms p { font-size: 0.98rem; color: #55626d; margin-bottom: 14px; }
+.term-chips {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.term-chips li {
+    background: var(--warm-soft);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+.guide-article .key-terms a.term-link {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+}
+.guide-article .key-terms a.term-link:hover { color: white; text-decoration: none; }
+
+.term-count { font-weight: 700; color: var(--primary); }
+.term-columns {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    column-count: 3;
+    column-gap: 28px;
+}
+.term-columns li {
+    break-inside: avoid;
+    font-size: 0.93rem;
+    line-height: 1.35;
+    color: var(--primary);
+    font-weight: 600;
+    padding: 5px 0 5px 12px;
+    border-bottom: 1px solid var(--hair);
+    position: relative;
+}
+.term-columns li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.82em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--warm);
+}
+
 /* ===== REVIEW LINKS ===== */
 .review-grid {
     display: grid;
@@ -351,6 +474,7 @@ a:focus-visible, summary:focus-visible {
     gap: 14px;
     margin: 18px 0 4px;
 }
+.review-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .guide-article a.review-card {
     display: block;
     background: white;
@@ -442,7 +566,7 @@ a:focus-visible, summary:focus-visible {
     .guide-hero-grid { grid-template-columns: 1fr; gap: 26px; }
     .guide-hero h1 { font-size: 2.3rem; }
     .pillars, .review-grid, .compare { grid-template-columns: 1fr; }
-    .bias { grid-template-columns: 1fr; gap: 6px; }
+    .def { grid-template-columns: 1fr; gap: 6px; }
 }
 
 @media (max-width: 600px) {
@@ -451,4 +575,8 @@ a:focus-visible, summary:focus-visible {
     .pager { grid-template-columns: 1fr 1fr; }
     .pager-toc { grid-column: 1 / -1; order: 3; }
     .practice, .trip, .ct-bar { padding-left: 18px; padding-right: 18px; }
+    .term-columns { column-count: 2; column-gap: 18px; }
+    .review-grid.cols-2 { grid-template-columns: 1fr; }
+    .def-list.nested { padding: 2px 12px; }
+    .def-list.nested .def { grid-template-columns: 1fr; gap: 4px; }
 }
