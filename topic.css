@@ -355,6 +355,52 @@ a:focus-visible, summary:focus-visible {
 }
 .guide-article .callout p { font-size: 1rem; line-height: 1.65; }
 
+/* ===== PLAIN LISTS ===== */
+.guide-article ul.plain, .guide-article ol.plain { margin: 0 0 1.2rem; padding-left: 1.4rem; }
+.guide-article ul.plain li, .guide-article ol.plain li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #3d4852;
+    margin-bottom: 0.5rem;
+    padding-left: 4px;
+}
+.guide-article ol.plain li::marker { color: var(--warm); font-weight: 700; }
+.guide-article ul.plain li::marker { color: var(--warm); }
+
+/* Example line inside a definition */
+.def dd .ex { display: block; margin-top: 8px; color: #55626d; font-size: 0.97rem; }
+
+/* Rows inside the tinted practice panel */
+.practice .def-list { border-top-color: rgba(44, 62, 80, 0.14); margin: 8px 0 12px; }
+.practice .def { border-bottom-color: rgba(44, 62, 80, 0.14); }
+.practice .def:last-child { border-bottom: 0; }
+
+/* ===== TIP CALLOUT (blue variant) ===== */
+.callout.tip { background: var(--panel-blue); border-left-color: var(--accent); }
+
+/* ===== AAQ EXAM CONNECTION ===== */
+.aaq-callout {
+    background: var(--primary);
+    border-radius: 14px;
+    padding: 24px 28px 14px;
+    margin: 28px 0;
+}
+.guide-article .aaq-callout h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin: 0 0 10px;
+}
+.guide-article .aaq-callout p { color: rgba(255,255,255,0.88); font-size: 1rem; line-height: 1.65; }
+.guide-article .aaq-callout p strong { color: white; background: none; }
+.guide-article .aaq-callout em { color: rgba(255,255,255,0.95); }
+.aaq-callout .def-list { border-top-color: rgba(255,255,255,0.18); margin: 14px 0 16px; }
+.aaq-callout .def { border-bottom-color: rgba(255,255,255,0.18); padding: 14px 0; }
+.aaq-callout .def:last-child { border-bottom: 0; }
+.aaq-callout .def dt { color: white; font-size: 1.1rem; }
+.aaq-callout .def dt .alt { color: rgba(255,255,255,0.7); }
+.aaq-callout .def dd { color: rgba(255,255,255,0.88); font-size: 1rem; }
+.aaq-callout .def dd strong { color: white; background: none; }
+
 /* ===== FIGURES & VIDEO ===== */
 .media { margin: 32px auto; max-width: 560px; text-align: center; }
 .media img {
@@ -438,6 +484,7 @@ a:focus-visible, summary:focus-visible {
 }
 .guide-article .key-terms a.term-link:hover { color: white; text-decoration: none; }
 
+[data-terms-list]:empty { display: none; }
 .term-count { font-weight: 700; color: var(--primary); }
 .term-columns {
     list-style: none;
