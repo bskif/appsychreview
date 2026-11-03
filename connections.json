@@ -153,7 +153,7 @@
         "Fundamental Attribution",
         "Self-Serving Bias",
         "Actor-Observer",
-        "Halo Effect"
+        "Just-World Phenomenon"
       ]
     },
     {
@@ -210,7 +210,7 @@
       "difficulty": "2",
       "category": "Personality Disorders",
       "terms": [
-        "Boderline",
+        "Borderline",
         "Antisocial",
         "Narcissistic",
         "Schizotypal"
@@ -328,7 +328,7 @@
       "id": "28",
       "unit": "Unit 0",
       "difficulty": "1",
-      "category": "Measures of Central Tendency",
+      "category": "Basic Statistical Measures",
       "terms": [
         "Mean",
         "Median",
@@ -398,14 +398,14 @@
     },
     {
       "id": "34",
-      "unit": "Unit 3",
+      "unit": "Unit 4",
       "difficulty": "1",
       "category": "Freudian Concepts",
       "terms": [
         "Id",
         "Ego",
         "Superego",
-        "Defense mechanisms"
+        "Unconscious"
       ]
     },
     {
@@ -424,7 +424,7 @@
       "id": "36",
       "unit": "Unit 0",
       "difficulty": "2",
-      "category": "Descriptive Statistics",
+      "category": "Graphs & Data Displays",
       "terms": [
         "Histogram",
         "Bar graph",
@@ -590,7 +590,7 @@
     },
     {
       "id": "50",
-      "unit": "Unit 5",
+      "unit": "Unit 4",
       "difficulty": "4",
       "category": "Humanistic Psychology",
       "terms": [
@@ -667,7 +667,7 @@
       "category": "Hearing Structures",
       "terms": [
         "Cochlea",
-        "Basilar Membrance",
+        "Basilar Membrane",
         "Auditory Nerve",
         "Inner Ear"
       ]
@@ -694,6 +694,654 @@
         "Self-Fulfilling Prophecy",
         "Stereotypes",
         "Prejudice"
+      ]
+    },
+    {
+      "id": "59",
+      "unit": "Unit 0",
+      "difficulty": "1",
+      "category": "Cognitive Biases",
+      "terms": [
+        "Hindsight bias",
+        "Overconfidence",
+        "Confirmation bias",
+        "Perceiving order in random events"
+      ]
+    },
+    {
+      "id": "60",
+      "unit": "Unit 0",
+      "difficulty": "1",
+      "category": "Scientific Attitude",
+      "terms": [
+        "Curiosity",
+        "Skepticism",
+        "Humility",
+        "Critical thinking"
+      ]
+    },
+    {
+      "id": "61",
+      "unit": "Unit 0",
+      "difficulty": "2",
+      "category": "Sampling Terms",
+      "terms": [
+        "Population",
+        "Sample",
+        "Random sample",
+        "Representative sample"
+      ]
+    },
+    {
+      "id": "62",
+      "unit": "Unit 0",
+      "difficulty": "3",
+      "category": "Research Biases",
+      "terms": [
+        "Experimenter bias",
+        "Social desirability bias",
+        "Self-report bias",
+        "Sampling bias"
+      ]
+    },
+    {
+      "id": "63",
+      "unit": "Unit 0",
+      "difficulty": "1",
+      "category": "Experimental Components",
+      "terms": [
+        "Independent variable",
+        "Dependent variable",
+        "Experimental group",
+        "Control group"
+      ]
+    },
+    {
+      "id": "64",
+      "unit": "Unit 0",
+      "difficulty": "3",
+      "category": "Controlling Bias in Experiments",
+      "terms": [
+        "Single-blind procedure",
+        "Double-blind procedure",
+        "Placebo",
+        "Random assignment"
+      ]
+    },
+    {
+      "id": "65",
+      "unit": "Unit 0",
+      "difficulty": "2",
+      "category": "Distribution Shapes",
+      "terms": [
+        "Normal curve",
+        "Positive skew",
+        "Negative skew",
+        "Bimodal distribution"
+      ]
+    },
+    {
+      "id": "66",
+      "unit": "Unit 0",
+      "difficulty": "3",
+      "category": "Evaluating Scientific Claims",
+      "terms": [
+        "Replication",
+        "Peer review",
+        "Meta-analysis",
+        "Falsifiability"
+      ]
+    },
+    {
+      "id": "67",
+      "unit": "Unit 0",
+      "difficulty": "3",
+      "category": "Inferential Statistics Terms",
+      "terms": [
+        "Inferential statistics",
+        "Statistical significance",
+        "Effect size",
+        "p-value"
+      ]
+    },
+    {
+      "id": "68",
+      "unit": "Unit 0",
+      "difficulty": "1",
+      "category": "Psychological Perspectives",
+      "terms": [
+        "Biological",
+        "Behavioral",
+        "Sociocultural",
+        "Evolutionary"
+      ]
+    },
+    {
+      "id": "69",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Reflex Arc Pathway",
+      "terms": [
+        "Sensory neuron",
+        "Interneuron",
+        "Motor neuron",
+        "Spinal cord"
+      ]
+    },
+    {
+      "id": "70",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Neurological Conditions",
+      "terms": [
+        "Multiple sclerosis",
+        "Myasthenia gravis",
+        "Aphasia",
+        "Prosopagnosia"
+      ]
+    },
+    {
+      "id": "71",
+      "unit": "Unit 1",
+      "difficulty": "1",
+      "category": "Basic Tastes",
+      "terms": [
+        "Sweet",
+        "Sour",
+        "Bitter",
+        "Umami"
+      ]
+    },
+    {
+      "id": "72",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Body Senses",
+      "terms": [
+        "Touch",
+        "Pain",
+        "Kinesthesis",
+        "Vestibular sense"
+      ]
+    },
+    {
+      "id": "73",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Retinal Cells",
+      "terms": [
+        "Rods",
+        "Cones",
+        "Bipolar cells",
+        "Ganglion cells"
+      ]
+    },
+    {
+      "id": "74",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Brain Waves",
+      "terms": [
+        "Alpha waves",
+        "Beta waves",
+        "Theta waves",
+        "Delta waves"
+      ]
+    },
+    {
+      "id": "75",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Genetics Terms",
+      "terms": [
+        "DNA",
+        "Heredity",
+        "Heritability",
+        "Epigenetics"
+      ]
+    },
+    {
+      "id": "76",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Cortex Regions",
+      "terms": [
+        "Motor cortex",
+        "Somatosensory cortex",
+        "Prefrontal cortex",
+        "Association areas"
+      ]
+    },
+    {
+      "id": "77",
+      "unit": "Unit 1",
+      "difficulty": "3",
+      "category": "Brain Hemispheres",
+      "terms": [
+        "Corpus callosum",
+        "Contralateral organization",
+        "Hemispheric specialization",
+        "Split-brain research"
+      ]
+    },
+    {
+      "id": "78",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Sympathetic Nervous System Effects",
+      "terms": [
+        "Pupils dilate",
+        "Heart rate increases",
+        "Digestion slows",
+        "Breathing quickens"
+      ]
+    },
+    {
+      "id": "79",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Parasympathetic Nervous System Effects",
+      "terms": [
+        "Pupils constrict",
+        "Heart rate decreases",
+        "Digestion resumes",
+        "Breathing slows"
+      ]
+    },
+    {
+      "id": "80",
+      "unit": "Unit 1",
+      "difficulty": "2",
+      "category": "Stimulant Examples",
+      "terms": [
+        "Caffeine",
+        "Nicotine",
+        "Cocaine",
+        "Methamphetamine"
+      ]
+    },
+    {
+      "id": "81",
+      "unit": "Unit 2",
+      "difficulty": "2",
+      "category": "Attention Phenomena",
+      "terms": [
+        "Cocktail party effect",
+        "Inattentional blindness",
+        "Change blindness",
+        "Selective attention"
+      ]
+    },
+    {
+      "id": "82",
+      "unit": "Unit 2",
+      "difficulty": "2",
+      "category": "Perceptual Constancies",
+      "terms": [
+        "Size constancy",
+        "Shape constancy",
+        "Color constancy",
+        "Lightness constancy"
+      ]
+    },
+    {
+      "id": "83",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Test Reliability & Validity",
+      "terms": [
+        "Test-retest reliability",
+        "Split-half reliability",
+        "Construct validity",
+        "Predictive validity"
+      ]
+    },
+    {
+      "id": "84",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Intelligence Testing Concepts",
+      "terms": [
+        "Mental age",
+        "Chronological age",
+        "Standardization",
+        "Norming"
+      ]
+    },
+    {
+      "id": "85",
+      "unit": "Unit 2",
+      "difficulty": "2",
+      "category": "Effective Study Strategies",
+      "terms": [
+        "Distributed practice",
+        "Retrieval practice",
+        "Elaborative rehearsal",
+        "Chunking"
+      ]
+    },
+    {
+      "id": "86",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Causes of Forgetting",
+      "terms": [
+        "Encoding failure",
+        "Proactive interference",
+        "Retroactive interference",
+        "Retrieval failure"
+      ]
+    },
+    {
+      "id": "87",
+      "unit": "Unit 2",
+      "difficulty": "3",
+      "category": "Organizing Knowledge",
+      "terms": [
+        "Concepts",
+        "Prototypes",
+        "Schemas",
+        "Hierarchies"
+      ]
+    },
+    {
+      "id": "88",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Marcia's Identity Statuses",
+      "terms": [
+        "Identity achievement",
+        "Identity moratorium",
+        "Identity foreclosure",
+        "Identity diffusion"
+      ]
+    },
+    {
+      "id": "89",
+      "unit": "Unit 3",
+      "difficulty": "4",
+      "category": "Bronfenbrenner's Systems",
+      "terms": [
+        "Microsystem",
+        "Mesosystem",
+        "Exosystem",
+        "Macrosystem"
+      ]
+    },
+    {
+      "id": "90",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Puberty Milestones",
+      "terms": [
+        "Menarche",
+        "Spermarche",
+        "Primary sex characteristics",
+        "Secondary sex characteristics"
+      ]
+    },
+    {
+      "id": "91",
+      "unit": "Unit 3",
+      "difficulty": "2",
+      "category": "Newborn Reflexes",
+      "terms": [
+        "Rooting",
+        "Sucking",
+        "Grasping",
+        "Moro"
+      ]
+    },
+    {
+      "id": "92",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Preoperational Features",
+      "terms": [
+        "Egocentrism",
+        "Animism",
+        "Pretend play",
+        "Mental symbols"
+      ]
+    },
+    {
+      "id": "93",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Classical Conditioning Processes",
+      "terms": [
+        "Acquisition",
+        "Spontaneous recovery",
+        "Stimulus generalization",
+        "Stimulus discrimination"
+      ]
+    },
+    {
+      "id": "94",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Adolescent Thinking",
+      "terms": [
+        "Imaginary audience",
+        "Personal fable",
+        "Abstract thinking",
+        "Hypothetical thinking"
+      ]
+    },
+    {
+      "id": "95",
+      "unit": "Unit 3",
+      "difficulty": "2",
+      "category": "Studying Development",
+      "terms": [
+        "Continuous development",
+        "Discontinuous development",
+        "Cross-sectional studies",
+        "Longitudinal studies"
+      ]
+    },
+    {
+      "id": "96",
+      "unit": "Unit 3",
+      "difficulty": "3",
+      "category": "Early Development Concepts",
+      "terms": [
+        "Critical periods",
+        "Sensitive periods",
+        "Imprinting",
+        "Maturation"
+      ]
+    },
+    {
+      "id": "97",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Personal Control & Outlook",
+      "terms": [
+        "Internal locus of control",
+        "External locus of control",
+        "Optimistic explanatory style",
+        "Pessimistic explanatory style"
+      ]
+    },
+    {
+      "id": "98",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Social Comparison Terms",
+      "terms": [
+        "Upward social comparison",
+        "Downward social comparison",
+        "Relative deprivation",
+        "Social comparison"
+      ]
+    },
+    {
+      "id": "99",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Attitudes & Beliefs",
+      "terms": [
+        "Cognitive dissonance",
+        "Belief perseverance",
+        "Implicit attitudes",
+        "Mere exposure effect"
+      ]
+    },
+    {
+      "id": "100",
+      "unit": "Unit 4",
+      "difficulty": "2",
+      "category": "Group Behavior",
+      "terms": [
+        "Group polarization",
+        "Groupthink",
+        "Deindividuation",
+        "Social loafing"
+      ]
+    },
+    {
+      "id": "101",
+      "unit": "Unit 4",
+      "difficulty": "2",
+      "category": "Helping Behavior",
+      "terms": [
+        "Altruism",
+        "Bystander effect",
+        "Diffusion of responsibility",
+        "Prosocial behavior"
+      ]
+    },
+    {
+      "id": "102",
+      "unit": "Unit 4",
+      "difficulty": "4",
+      "category": "Sensation-Seeking Dimensions",
+      "terms": [
+        "Adventure seeking",
+        "Experience seeking",
+        "Disinhibition",
+        "Boredom susceptibility"
+      ]
+    },
+    {
+      "id": "103",
+      "unit": "Unit 4",
+      "difficulty": "3",
+      "category": "Theories of Emotion",
+      "terms": [
+        "James-Lange theory",
+        "Cannon-Bard theory",
+        "Two-factor theory",
+        "Facial-feedback hypothesis"
+      ]
+    },
+    {
+      "id": "104",
+      "unit": "Unit 5",
+      "difficulty": "3",
+      "category": "Coping & Resilience",
+      "terms": [
+        "Problem-focused coping",
+        "Emotion-focused coping",
+        "Resilience",
+        "Posttraumatic growth"
+      ]
+    },
+    {
+      "id": "105",
+      "unit": "Unit 5",
+      "difficulty": "3",
+      "category": "Character Strengths",
+      "terms": [
+        "Wisdom",
+        "Courage",
+        "Humanity",
+        "Justice"
+      ]
+    },
+    {
+      "id": "106",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Well-Being Concepts",
+      "terms": [
+        "Happiness",
+        "Subjective well-being",
+        "Gratitude",
+        "Positive emotions"
+      ]
+    },
+    {
+      "id": "107",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Mood Disorders",
+      "terms": [
+        "Major depressive disorder",
+        "Persistent depressive disorder",
+        "Bipolar I disorder",
+        "Bipolar II disorder"
+      ]
+    },
+    {
+      "id": "108",
+      "unit": "Unit 5",
+      "difficulty": "3",
+      "category": "PTSD Symptoms",
+      "terms": [
+        "Flashbacks",
+        "Hypervigilance",
+        "Nightmares",
+        "Emotional numbing"
+      ]
+    },
+    {
+      "id": "109",
+      "unit": "Unit 5",
+      "difficulty": "3",
+      "category": "Dissociative Disorders",
+      "terms": [
+        "Dissociative amnesia",
+        "Dissociative identity disorder",
+        "Dissociative fugue",
+        "Depersonalization disorder"
+      ]
+    },
+    {
+      "id": "110",
+      "unit": "Unit 5",
+      "difficulty": "4",
+      "category": "Cognitive Therapy Concepts",
+      "terms": [
+        "Cognitive triad",
+        "Maladaptive thinking",
+        "Cognitive restructuring",
+        "Automatic thoughts"
+      ]
+    },
+    {
+      "id": "111",
+      "unit": "Unit 5",
+      "difficulty": "2",
+      "category": "Therapy Types",
+      "terms": [
+        "Psychodynamic therapy",
+        "Person-centered therapy",
+        "Group therapy",
+        "Family therapy"
+      ]
+    },
+    {
+      "id": "112",
+      "unit": "Unit 5",
+      "difficulty": "4",
+      "category": "OCD & Related Terms",
+      "terms": [
+        "Obsessions",
+        "Compulsions",
+        "Hoarding disorder",
+        "Obsessive-compulsive disorder"
       ]
     }
   ]
