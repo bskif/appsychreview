@@ -6,7 +6,9 @@
       "term_1": "Random Assignment",
       "definition_1": "Each participant has equal chance of being placed into any group",
       "term_2": "Random Sample",
-      "definition_2": "Process of choosing the research participants from the population & happens before assignment"
+      "definition_2": "Process of choosing the research participants from the population & happens before assignment",
+      "explanation": "These get confused because both involve \"randomness\" in a study's design, but they happen at different stages. Random sampling is about <em>who gets chosen</em> to participate at all, pulled from the wider population before the study even starts. Random assignment is about <em>where they go</em> once they're already in the study, sorting existing participants into groups.",
+      "quick_tip": "sampling comes first (population → study), assignment comes second (study → groups)."
     },
     {
       "id": "2",
@@ -14,7 +16,9 @@
       "term_1": "Quantitative Data",
       "definition_1": "Deals with numbers- height, weight, time",
       "term_2": "Qualitative Data",
-      "definition_2": "Deals with descriptions- color, smell, taste"
+      "definition_2": "Deals with descriptions- color, smell, taste",
+      "explanation": "The confusion usually comes from not realizing that \"quantitative\" and \"qualitative\" describe the <em>type of data</em>, not the quality of the research. Quantitative data is anything you can put a number on — height, reaction time, test scores. Qualitative data is descriptive and non-numeric — color, mood, an open-ended interview response.",
+      "quick_tip": "<strong>quant</strong>itative = <strong>quant</strong>ity (numbers); qualitative = qualities (descriptions)."
     },
     {
       "id": "3",
@@ -22,7 +26,9 @@
       "term_1": "Experimental Group",
       "definition_1": "Group that is tested",
       "term_2": "Control Group",
-      "definition_2": "Group receives nothing/placebo"
+      "definition_2": "Group receives nothing/placebo",
+      "explanation": "Students often assume \"control\" means the group researchers have more control over, but it actually refers to what that group receives. The experimental group gets the treatment being tested; the control group gets nothing, or a placebo, so researchers have a baseline for comparison.",
+      "quick_tip": "without the control group, you have nothing to compare your results <em>against</em> — it \"controls\" for outside factors."
     },
     {
       "id": "4",
@@ -30,7 +36,9 @@
       "term_1": "Independent Variable",
       "definition_1": "What is tested",
       "term_2": "Dependent Variable",
-      "definition_2": "What is measured"
+      "definition_2": "What is measured",
+      "explanation": "This pair trips people up because both variables are part of the same experiment, so it's easy to blur which one the researcher is actually changing. The independent variable is what the researcher manipulates; the dependent variable is what gets measured as a result.",
+      "quick_tip": "the dependent variable \"depends\" on the independent variable — it's the outcome, not the cause."
     },
     {
       "id": "5",
@@ -38,7 +46,9 @@
       "term_1": "Validity",
       "definition_1": "Right scientific measurement tool",
       "term_2": "Reliability",
-      "definition_2": "Consistent measurement tool"
+      "definition_2": "Consistent measurement tool",
+      "explanation": "These sound like synonyms in everyday speech, but in research methods they measure two different things. Reliability is about <em>consistency</em> — would you get the same result if you measured again? Validity is about <em>accuracy</em> — are you actually measuring what you claim to be measuring? A bathroom scale that's off by 10 lbs but gives the same wrong number every time is reliable but not valid.",
+      "quick_tip": "reliability = repeatable, validity = right."
     },
     {
       "id": "6",
@@ -46,7 +56,9 @@
       "term_1": "Cross Sectional",
       "definition_1": "Examines multiple like groups at the same time",
       "term_2": "Longitudinal",
-      "definition_2": "One group over time"
+      "definition_2": "One group over time",
+      "explanation": "Both are ways of studying change over time, so students mix up which one actually follows the <em>same</em> people. A cross-sectional study compares different age groups all at once, at a single point in time. A longitudinal study follows one group of people repeatedly, over years or even decades.",
+      "quick_tip": "longitudinal takes the \"long\" road — one group, tracked over a long stretch of time."
     },
     {
       "id": "7",
@@ -54,7 +66,9 @@
       "term_1": "Correlation Coefficient (r-value)",
       "definition_1": "Describes strength and direction of relationship between two variables",
       "term_2": "Statistical Significance (p-value)",
-      "definition_2": "Likelihood relationship is not due to chance"
+      "definition_2": "Likelihood relationship is not due to chance",
+      "explanation": "Both show up together on correlation questions, which makes them feel like the same statistic when they're actually answering different questions. The correlation coefficient (r-value) describes the strength and direction of a relationship between two variables. Statistical significance (p-value) tells you how likely it is that relationship happened by chance rather than reflecting a real effect.",
+      "quick_tip": "r-value asks \"how strong?\", p-value asks \"how likely is this real?\""
     },
     {
       "id": "8",
@@ -62,7 +76,9 @@
       "term_1": "Random Selection",
       "definition_1": "Equal likelihood part of sample",
       "term_2": "Random Assignment",
-      "definition_2": "Equal likelihood in either control or experimental group"
+      "definition_2": "Equal likelihood in either control or experimental group",
+      "explanation": "This is easy to mix up with random assignment because the wording is nearly identical, but random selection is really just another name for random sampling — choosing who's included in the study out of the broader population. Random assignment happens after that, sorting the people already selected into experimental or control groups.",
+      "quick_tip": "selection picks who's <em>in</em> the study; assignment decides which <em>group</em> they land in."
     },
     {
       "id": "9",
@@ -70,7 +86,9 @@
       "term_1": "Positive Skew",
       "definition_1": "Outliers on the positive (right) side pulled the average (mean) away positively from the median/mode",
       "term_2": "Negative Skew",
-      "definition_2": "Outliers on the negative (left) side pulled the average (mean) away negatively from the median/mode"
+      "definition_2": "Outliers on the negative (left) side pulled the average (mean) away negatively from the median/mode",
+      "explanation": "The confusion is usually about which direction the tail is actually pointing, since \"positive\" and \"negative\" don't refer to good or bad here. A positive skew has its tail stretching toward the higher (positive/right) values, pulling the mean up above the median. A negative skew has its tail stretching toward the lower (negative/left) values, pulling the mean down below the median.",
+      "quick_tip": "the skew is named for the direction of the <em>tail</em>, not where most of the data sits."
     },
     {
       "id": "10",
@@ -78,7 +96,9 @@
       "term_1": "Somatic Nervous System",
       "definition_1": "System for voluntary motor movement",
       "term_2": "Autonomic Nervous System",
-      "definition_2": "System for involuntary processes"
+      "definition_2": "System for involuntary processes",
+      "explanation": "Both are branches of the peripheral nervous system, which makes them easy to lump together as \"the same thing.\" The somatic nervous system controls voluntary movement — the muscles you consciously choose to move. The autonomic nervous system controls involuntary processes — heart rate, digestion, breathing — that run automatically without you thinking about them.",
+      "quick_tip": "somatic = \"so, I'm moving on purpose\"; autonomic runs on <em>auto</em>-pilot."
     },
     {
       "id": "11",
@@ -86,7 +106,9 @@
       "term_1": "Sympathetic Nervous System",
       "definition_1": "The flight, fight or freeze response. Automatically accelerates heart rate, breathing, dilates pupils, slows down digestion",
       "term_2": "Parasympathetic Nervous System",
-      "definition_2": "Calms you down after a stressful event; rest and digest"
+      "definition_2": "Calms you down after a stressful event; rest and digest",
+      "explanation": "Both are subdivisions of the autonomic nervous system, which is exactly why students remember \"autonomic\" and forget which branch does what. The sympathetic system revs you up for fight-or-flight — heart rate up, digestion pauses. The parasympathetic system calms you back down — rest-and-digest, heart rate drops.",
+      "quick_tip": "para<em>sympathetic</em> sounds soft — think \"paradise,\" resting on a beach."
     },
     {
       "id": "12",
@@ -94,7 +116,9 @@
       "term_1": "Neurotransmitters",
       "definition_1": "Chemical messengers in the nervous system",
       "term_2": "Hormones",
-      "definition_2": "Chemical messengers in the endocrine system (blood)"
+      "definition_2": "Chemical messengers in the endocrine system (blood)",
+      "explanation": "Both are chemical messengers, so the overlap in function makes them feel interchangeable. Neurotransmitters carry messages across the tiny gap between neurons, within the nervous system. Hormones travel through the bloodstream instead, released by the endocrine system, and tend to act more slowly and broadly across the whole body.",
+      "quick_tip": "neuro<strong>transmitters</strong> transmit locally between neurons; hormones ride the bloodstream."
     },
     {
       "id": "13",
@@ -102,7 +126,9 @@
       "term_1": "Agonists",
       "definition_1": "Chemicals which aid neurotransmitters",
       "term_2": "Antagonists",
-      "definition_2": "Chemicals which work against neurotransmitters"
+      "definition_2": "Chemicals which work against neurotransmitters",
+      "explanation": "The Greek-sounding roots don't offer much of a hint, so students often guess at which one helps and which one blocks. Agonists are chemicals that aid or mimic a neurotransmitter's effect. Antagonists are chemicals that block or work against a neurotransmitter's effect.",
+      "quick_tip": "an ant<strong>agon</strong>ist is \"against\" the neurotransmitter — think of an antagonist in a story working against the hero."
     },
     {
       "id": "14",
@@ -110,7 +136,9 @@
       "term_1": "Broca’s Area",
       "definition_1": "Physical speech production area",
       "term_2": "Wernicke’s Area",
-      "definition_2": "Part of the brain that comprehends speech"
+      "definition_2": "Part of the brain that comprehends speech",
+      "explanation": "Both areas are damaged in different types of aphasia, so their functions blend together in memory. Broca's area handles physical speech <em>production</em> — damage here means halting, effortful speech. Wernicke's area handles speech <em>comprehension</em> — damage here means fluent but meaningless speech.",
+      "quick_tip": "<strong>B</strong>roca's = <strong>b</strong>roken speech (production); <strong>W</strong>ernicke's = <strong>w</strong>ords don't make sense (comprehension)."
     },
     {
       "id": "15",
@@ -118,7 +146,9 @@
       "term_1": "Monozygotic Twins",
       "definition_1": "Comes from the same fertilized egg (identical twins)",
       "term_2": "Dizygotic Twins",
-      "definition_2": "Comes from two separate eggs (fraternal twins)"
+      "definition_2": "Comes from two separate eggs (fraternal twins)",
+      "explanation": "Both terms describe twins, so it's easy to forget which prefix means \"same\" and which means \"different.\" Monozygotic twins come from a single fertilized egg that splits — genetically identical. Dizygotic twins come from two separate eggs fertilized separately — genetically no more similar than regular siblings.",
+      "quick_tip": "mono = one egg (identical); di = two eggs (fraternal)."
     },
     {
       "id": "16",
@@ -128,7 +158,9 @@
       "term_2": "Motor Neurons",
       "definition_2": "Brain to body neurons",
       "term_3": "Interneurons",
-      "definition_3": "Cells in spinal cord/brain responsible for reflex arc"
+      "definition_3": "Cells in spinal cord/brain responsible for reflex arc",
+      "explanation": "All three are types of neurons, so the direction each one carries information is the detail that actually distinguishes them. Sensory neurons carry information from the senses and body up to the brain. Motor neurons carry commands from the brain back out to the body. Interneurons sit in between, in the spinal cord and brain, connecting the two and enabling quick reflexes.",
+      "quick_tip": "sensory in, motor out, inter in the middle."
     },
     {
       "id": "17",
@@ -136,7 +168,9 @@
       "term_1": "Assimilation",
       "definition_1": "The process of absorbing new information into an existing schema",
       "term_2": "Accommodation",
-      "definition_2": "The process of adjusting old schemas or developing new ones to incorporate new information"
+      "definition_2": "The process of adjusting old schemas or developing new ones to incorporate new information",
+      "explanation": "Both are part of Piaget's theory of how schemas change, so it's easy to blur which direction the adjustment goes. Assimilation is fitting new information into an existing schema without changing the schema itself. Accommodation is changing or creating a schema because the new information doesn't fit the old one.",
+      "quick_tip": "assimilation <em>absorbs</em> into what's already there; accommodation <em>alters</em> what's already there."
     },
     {
       "id": "18",
@@ -144,7 +178,9 @@
       "term_1": "Dendrite",
       "definition_1": "Part of neuron which receives info",
       "term_2": "Axon",
-      "definition_2": "Part of neuron which sends info"
+      "definition_2": "Part of neuron which sends info",
+      "explanation": "Both are parts of a neuron, so remembering which end does the receiving and which does the sending takes a deliberate mental hook. Dendrites receive incoming signals from other neurons. The axon sends the signal onward, away from the cell body.",
+      "quick_tip": "<strong>d</strong>endrites <strong>d</strong>etect (receive); axon exits (sends)."
     },
     {
       "id": "19",
@@ -152,7 +188,9 @@
       "term_1": "Rods",
       "definition_1": "Night and peripheral vision, black, white, and shades of gray",
       "term_2": "Cones",
-      "definition_2": "Day, detailed, and color vision"
+      "definition_2": "Day, detailed, and color vision",
+      "explanation": "Both are photoreceptors in the retina, so their names alone don't hint at what each one specializes in. Rods handle night and peripheral vision, only seeing in black, white, and shades of gray. Cones handle daytime, detailed, and color vision.",
+      "quick_tip": "<strong>r</strong>ods = <strong>r</strong>ough vision in the dark; cones = color in daylight."
     },
     {
       "id": "20",
@@ -160,7 +198,9 @@
       "term_1": "Bottom-Up Processing",
       "definition_1": "Starts with the sensations and works to make big picture – sensations",
       "term_2": "Top-Down Processing",
-      "definition_2": "Breaks down big picture into details – perception"
+      "definition_2": "Breaks down big picture into details – perception",
+      "explanation": "Both describe directions information can flow during perception, so the \"up\" and \"down\" are what actually need to stick. Bottom-up processing starts with raw sensory details and builds up to the big picture. Top-down processing starts with expectations or existing knowledge and uses that to interpret the details.",
+      "quick_tip": "bottom-up builds from the ground (senses) up; top-down starts from the brain's expectations and works down."
     },
     {
       "id": "21",
@@ -168,7 +208,9 @@
       "term_1": "Classical Conditioning",
       "definition_1": "Involuntary learning",
       "term_2": "Operant Conditioning",
-      "definition_2": "Voluntary learning"
+      "definition_2": "Voluntary learning",
+      "explanation": "Both are forms of learning, so it's easy to lose track of which one involves a choice and which one doesn't. Classical conditioning is involuntary learning, where a neutral stimulus becomes linked to an automatic response. Operant conditioning is voluntary learning, where behavior is shaped by its consequences (reinforcement or punishment).",
+      "quick_tip": "classical = involuntary, reflexive; operant = voluntary, consequence-driven."
     },
     {
       "id": "22",
@@ -176,7 +218,9 @@
       "term_1": "Primacy Effect",
       "definition_1": "First items remembered in a list",
       "term_2": "Recency Effect",
-      "definition_2": "Last items remembered in a list"
+      "definition_2": "Last items remembered in a list",
+      "explanation": "Both effects describe which items from a list get remembered best, so \"first\" and \"last\" are the whole ballgame here. The primacy effect is better recall for items at the <em>beginning</em> of a list. The recency effect is better recall for items at the <em>end</em> of a list.",
+      "quick_tip": "primacy = prime position, first; recency = most recent, last."
     },
     {
       "id": "23",
@@ -184,7 +228,9 @@
       "term_1": "Implicit Memory",
       "definition_1": "(Also called nondeclarative) skills memory",
       "term_2": "Explicit Memory",
-      "definition_2": "(Also called declarative) fact-based memory"
+      "definition_2": "(Also called declarative) fact-based memory",
+      "explanation": "Both are types of long-term memory, so the kind of knowledge each one stores is the actual distinguishing feature. Implicit (nondeclarative) memory covers skills and habits you don't consciously think about, like riding a bike. Explicit (declarative) memory covers facts and events you can consciously state.",
+      "quick_tip": "you can ex<strong>plicit</strong>ly <em>explain</em> explicit memories; implicit memories are more \"just do it.\""
     },
     {
       "id": "24",
@@ -192,7 +238,9 @@
       "term_1": "Anterograde Amnesia",
       "definition_1": "Can’t make new memories",
       "term_2": "Retrograde Amnesia",
-      "definition_2": "Can’t remember old memories"
+      "definition_2": "Can’t remember old memories",
+      "explanation": "Both are types of amnesia, so the direction of the memory loss — forward or backward in time — is what actually distinguishes them. Anterograde amnesia means the person can't form new memories going forward. Retrograde amnesia means the person can't recall memories from before the injury.",
+      "quick_tip": "<strong>a</strong>nterograde = <strong>a</strong>fter the injury, can't make new ones; retrograde = memory goes \"backward,\" lost old ones."
     },
     {
       "id": "25",
@@ -200,7 +248,9 @@
       "term_1": "Algorithms",
       "definition_1": "Step-by-step problem solving method",
       "term_2": "Heuristics",
-      "definition_2": "Rule-of-thumb problem solving method"
+      "definition_2": "Rule-of-thumb problem solving method",
+      "explanation": "Both are problem-solving strategies, so which one guarantees a correct answer and which one just estimates is the key distinction. Algorithms are step-by-step methods that are slower but guaranteed to produce a correct solution. Heuristics are mental shortcuts, or \"rules of thumb,\" that are faster but not always accurate.",
+      "quick_tip": "algorithm = a formula that always works; heuristic = a guess that usually works."
     },
     {
       "id": "26",
@@ -208,7 +258,9 @@
       "term_1": "Recall Memory",
       "definition_1": "No cues – short answers and essays",
       "term_2": "Recognition Memory",
-      "definition_2": "Some hints – multiple choice"
+      "definition_2": "Some hints – multiple choice",
+      "explanation": "The confusion here is that both are ways of retrieving memory, so it's easy to blur them into one concept. The real difference is whether you're given a cue. Recall means pulling information from memory with no options in front of you — a short-answer or essay question. Recognition means picking the right answer out of choices already shown to you — multiple choice.",
+      "quick_tip": "recognition gives you options to <em>recognize</em>; recall leaves you with a blank page."
     },
     {
       "id": "27",
@@ -216,7 +268,9 @@
       "term_1": "Phonemes",
       "definition_1": "Basic sound units",
       "term_2": "Morphemes",
-      "definition_2": "Basic units of meaning"
+      "definition_2": "Basic units of meaning",
+      "explanation": "Both are units of language, so which one is about sound and which is about meaning is the actual distinction. Phonemes are the smallest units of <em>sound</em> in a language. Morphemes are the smallest units of <em>meaning</em> in a language, like a root word or a prefix.",
+      "quick_tip": "phoneme sounds like \"phone\" — think sound; morpheme carries meaning."
     },
     {
       "id": "28",
@@ -224,7 +278,9 @@
       "term_1": "Representative Heuristic",
       "definition_1": "Obstacle to problem solving basing decisions on stereotypes",
       "term_2": "Availability Heuristic",
-      "definition_2": "Obstacle to problem solving basing decisions on available info"
+      "definition_2": "Obstacle to problem solving basing decisions on available info",
+      "explanation": "Both are heuristics (mental shortcuts) that lead to biased judgments, so what each one is actually basing the shortcut on is the real distinction. The representativeness heuristic judges likelihood based on how closely something matches a stereotype or prototype. The availability heuristic judges likelihood based on how easily examples come to mind.",
+      "quick_tip": "representative = does it \"look the part\"?; availability = what's \"available\" in memory right now?"
     },
     {
       "id": "29",
@@ -232,7 +288,9 @@
       "term_1": "Achievement Test",
       "definition_1": "Tests that test what you’ve learned",
       "term_2": "Aptitude Test",
-      "definition_2": "Tests your potential"
+      "definition_2": "Tests your potential",
+      "explanation": "Both are types of standardized tests, so what each one is actually trying to predict or measure is the key difference. Achievement tests measure what you've already learned. Aptitude tests measure your potential to learn or perform in the future.",
+      "quick_tip": "achievement looks <em>backward</em> at what you've achieved; aptitude looks <em>forward</em> at your potential."
     },
     {
       "id": "30",
@@ -240,7 +298,9 @@
       "term_1": "Fluid Intelligence",
       "definition_1": "Intelligence based on logic",
       "term_2": "Crystallized Intelligence",
-      "definition_2": "Acquired knowledge based on life experiences"
+      "definition_2": "Acquired knowledge based on life experiences",
+      "explanation": "Both are types of intelligence in the fluid/crystallized model, so which one relies on raw reasoning versus accumulated knowledge is the key detail. Fluid intelligence is the ability to reason and solve novel problems on the spot, largely independent of prior knowledge. Crystallized intelligence is accumulated knowledge and skills built up through life experience, which tends to hold steady or grow with age.",
+      "quick_tip": "fluid = flexible, in-the-moment reasoning; crystallized = knowledge that's \"set\" from experience."
     },
     {
       "id": "31",
@@ -248,7 +308,9 @@
       "term_1": "Internal Locus of Control",
       "definition_1": "You control the environment",
       "term_2": "External Locus of Control",
-      "definition_2": "Environment controls you"
+      "definition_2": "Environment controls you",
+      "explanation": "Both describe where someone believes control over their life comes from, so \"internal\" and \"external\" are easy to swap under pressure. Internal locus of control is the belief that you control your own outcomes. External locus of control is the belief that outside forces (luck, other people, fate) control your outcomes.",
+      "quick_tip": "internal = control comes from <em>inside</em> you; external = control comes from <em>outside</em> forces."
     },
     {
       "id": "32",
@@ -256,7 +318,9 @@
       "term_1": "Intrinsic Motivation",
       "definition_1": "Doing something for personal satisfaction",
       "term_2": "Extrinsic Motivation",
-      "definition_2": "Doing something for rewards"
+      "definition_2": "Doing something for rewards",
+      "explanation": "Both describe why someone does something, so the source of the motivation — internal satisfaction versus outside reward — is the key distinction. Intrinsic motivation is doing something for the internal, personal satisfaction of it. Extrinsic motivation is doing something to earn an external reward or avoid punishment.",
+      "quick_tip": "<strong>in</strong>trinsic comes from <strong>in</strong>side; extrinsic comes from an <em>external</em> reward."
     },
     {
       "id": "33",
@@ -264,7 +328,9 @@
       "term_1": "Negative Reinforcement",
       "definition_1": "Strengthens behavior by taking away something you don't like",
       "term_2": "Negative Punishment",
-      "definition_2": "Weakens behavior by taking away something you do like"
+      "definition_2": "Weakens behavior by taking away something you do like",
+      "explanation": "Students often assume \"negative\" means \"bad,\" so both sound like punishment — that's the trap. \"Negative\" here just means <em>taking something away</em>, and what matters is whether the behavior increases or decreases afterward. Negative reinforcement removes something unpleasant to strengthen a behavior (fastening your seatbelt to stop the annoying beeping). Negative punishment removes something desirable to weaken a behavior (losing phone privileges).",
+      "quick_tip": "reinforcement always increases behavior, punishment always decreases it — \"negative\" only ever describes the removal, never the outcome."
     },
     {
       "id": "34",
@@ -272,7 +338,9 @@
       "term_1": "Absolute Threshold",
       "definition_1": "Minimum level of sensation required for detection",
       "term_2": "Difference Threshold",
-      "definition_2": "Minimum level of sensation required to detect a change"
+      "definition_2": "Minimum level of sensation required to detect a change",
+      "explanation": "Both are thresholds related to detecting stimuli, so it's easy to blur what exactly is being detected. Absolute threshold is the minimum stimulation needed to notice a stimulus at all, at least half the time. Difference threshold is the minimum amount a stimulus has to change before you notice the <em>change</em>.",
+      "quick_tip": "absolute threshold detects <em>something</em>; difference threshold detects a <em>change</em> in something already there."
     },
     {
       "id": "35",
@@ -280,7 +348,9 @@
       "term_1": "Generalization",
       "definition_1": "In conditioning, response to similar stimuli",
       "term_2": "Discrimination",
-      "definition_2": "Responds to only the conditioned stimulus"
+      "definition_2": "Responds to only the conditioned stimulus",
+      "explanation": "Both describe how conditioned responses spread (or don't) to similar stimuli, so which direction that spread goes is the key detail. Generalization is responding the same way to stimuli that are merely similar to the original conditioned stimulus. Discrimination is learning to respond only to the exact original stimulus, not similar ones.",
+      "quick_tip": "generalization broadens the response; discrimination narrows it back down."
     },
     {
       "id": "36",
@@ -288,7 +358,9 @@
       "term_1": "Positive Reinforcement",
       "definition_1": "Strengthens behavior by giving you something you like",
       "term_2": "Positive Punishment",
-      "definition_2": "Weakens behavior by giving you something you don't like"
+      "definition_2": "Weakens behavior by giving you something you don't like",
+      "explanation": "Same trap as negative reinforcement/punishment, but flipped: \"positive\" doesn't mean good here, it means <em>adding</em> something. Positive reinforcement adds something desirable to strengthen a behavior. Positive punishment adds something undesirable to weaken a behavior.",
+      "quick_tip": "positive = something is <em>added</em>; whether it's reinforcement or punishment still depends on if the behavior goes up or down."
     },
     {
       "id": "37",
@@ -296,7 +368,9 @@
       "term_1": "Collectivist Culture",
       "definition_1": "Family, community is stressed",
       "term_2": "Individualistic Culture",
-      "definition_2": "Uniqueness of individual stressed"
+      "definition_2": "Uniqueness of individual stressed",
+      "explanation": "Both describe cultural values, so which one prioritizes the group and which prioritizes the person is the actual distinction. Collectivist cultures emphasize family, community, and group harmony over individual needs. Individualistic cultures emphasize personal uniqueness, independence, and individual achievement.",
+      "quick_tip": "collectivist = the <em>collective</em> (group) comes first; individualistic = the <em>individual</em> comes first."
     },
     {
       "id": "38",
@@ -304,7 +378,9 @@
       "term_1": "Foot-in-the-Door",
       "definition_1": "Start small then go big",
       "term_2": "Door-in-the-Face",
-      "definition_2": "Start big to get small"
+      "definition_2": "Start big to get small",
+      "explanation": "Both are persuasion techniques that use a two-step request, so the order of the steps — small-then-big or big-then-small — is what actually separates them. Foot-in-the-door starts with a small request to gain agreement, then follows with a bigger one. Door-in-the-face starts with a large request expected to be refused, then follows with a smaller, more reasonable one.",
+      "quick_tip": "foot-in-the-door starts small and builds up; door-in-the-face starts big, then backs down."
     },
     {
       "id": "39",
@@ -312,7 +388,9 @@
       "term_1": "Fundamental Attribution Error",
       "definition_1": "Blame a person’s disposition/personality and not consider the situation",
       "term_2": "Actor-Observer Bias",
-      "definition_2": "When its others you blame the person’s disposition, when it’s yourself you blame the situation"
+      "definition_2": "When its others you blame the person’s disposition, when it’s yourself you blame the situation",
+      "explanation": "Both are biases about how we explain behavior, so whose behavior is being judged — someone else's or your own — is the key detail. The fundamental attribution error is blaming someone else's <em>disposition</em> (personality) while overlooking the situation they were in. Actor-observer bias goes a step further: blaming other people's disposition, but blaming <em>your own</em> behavior on the situation instead.",
+      "quick_tip": "fundamental attribution error is about judging <em>others</em>; actor-observer bias adds the flip side — judging <em>yourself</em> differently than you judge others."
     },
     {
       "id": "40",
@@ -322,7 +400,9 @@
       "term_2": "Self-Efficacy",
       "definition_2": "Level of one’s confidence regarding ability to perform a task/skill",
       "term_3": "Self-Concept",
-      "definition_3": "Description and evaluation of who one is as an individual"
+      "definition_3": "Description and evaluation of who one is as an individual",
+      "explanation": "All three \"self\" terms sound interchangeable, so which one is about worth, which is about confidence, and which is about identity is the real distinction. Self-esteem is your overall sense of self-worth. Self-efficacy is your confidence in your ability to perform a specific task or skill. Self-concept is your broader description and evaluation of who you are as a person.",
+      "quick_tip": "self-esteem = how much you value yourself; self-efficacy = how capable you feel at a task; self-concept = your overall sense of identity."
     },
     {
       "id": "41",
@@ -330,7 +410,9 @@
       "term_1": "Obsessive-Compulsive Disorder (OCD)",
       "definition_1": "Intrusive thoughts, anxiety driven obsessions & compulsions, people often recognize their thoughts/behaviors as irrational",
       "term_2": "Obsessive-Compulsive Personality Disorder (OCPD)",
-      "definition_2": "Perfectionism, control, and rigidity, no intrusive thoughts, but worry about order and rules, stubborn"
+      "definition_2": "Perfectionism, control, and rigidity, no intrusive thoughts, but worry about order and rules, stubborn",
+      "explanation": "The shared name is the whole problem here — students assume one is just a \"milder version\" of the other, but they're structurally different disorders. OCD involves intrusive, unwanted thoughts that the person usually recognizes as irrational, paired with compulsions done to relieve anxiety. OCPD is a personality disorder built around rigid perfectionism and control, with no intrusive thoughts — the person typically doesn't see their rigidity as a problem at all.",
+      "quick_tip": "OCD feels distressing and unwanted to the person experiencing it; OCPD usually feels justified."
     },
     {
       "id": "42",
@@ -338,7 +420,9 @@
       "term_1": "Authoritarian Parenting",
       "definition_1": "Rules & obedience (my way or the highway)",
       "term_2": "Authoritative Parenting",
-      "definition_2": "Balanced approach, give and take parenting"
+      "definition_2": "Balanced approach, give and take parenting",
+      "explanation": "Both parenting styles sound similar because of the shared \"author-\" root, so the amount of flexibility involved is what actually separates them. Authoritarian parenting is strict, rule-based, and low on give-and-take (\"my way or the highway\"). Authoritative parenting is a balanced style, with clear expectations but also warmth and negotiation.",
+      "quick_tip": "authorit<strong>arian</strong> is rigid, like a dictator<strong>ian</strong>; authorit<strong>ative</strong> still has authority, but balanced with warmth."
     },
     {
       "id": "43",
@@ -346,7 +430,9 @@
       "term_1": "Emotion Focused Coping",
       "definition_1": "Coping to alleviate stress by avoiding stressor, attending to emotional need",
       "term_2": "Problem Focused Coping",
-      "definition_2": "Attempt to alleviate stress directly by changing stressor"
+      "definition_2": "Attempt to alleviate stress directly by changing stressor",
+      "explanation": "Both are ways of coping with stress, so what's actually being targeted — the emotion or the problem itself — is the key distinction. Emotion-focused coping tries to manage the emotional reaction to a stressor, sometimes by avoiding it. Problem-focused coping tries to directly change or remove the stressor itself.",
+      "quick_tip": "emotion-focused deals with how you <em>feel</em> about the problem; problem-focused deals with the <em>problem</em> itself."
     },
     {
       "id": "44",
@@ -354,7 +440,9 @@
       "term_1": "Mental Set",
       "definition_1": "Keep using one strategy to solve problem",
       "term_2": "Functional Fixedness",
-      "definition_2": "Person sees objects only in their traditional use and fails to recognize other functions"
+      "definition_2": "Person sees objects only in their traditional use and fails to recognize other functions",
+      "explanation": "Both describe getting stuck in a rigid way of thinking, so the specific type of \"stuck\" is what needs to stay clear. Mental set is continuing to use a strategy that worked before, even when it no longer fits the new problem. Functional fixedness is only being able to see an object's traditional use, missing other possible functions.",
+      "quick_tip": "mental set is stuck on a <em>method</em>; functional fixedness is stuck on an <em>object's</em> normal use."
     },
     {
       "id": "45",
@@ -362,7 +450,9 @@
       "term_1": "Kinesthetic Sense",
       "definition_1": "Sensing the position and movement of individual body parts",
       "term_2": "Vestibular Sense",
-      "definition_2": "Our sense of body movement and position that enables our sense of balance related to head movement"
+      "definition_2": "Our sense of body movement and position that enables our sense of balance related to head movement",
+      "explanation": "Both senses deal with the body's physical position, which makes them feel like the same sense described twice. Kinesthetic sense tracks the position and movement of individual body parts, like knowing where your arm is without looking. Vestibular sense tracks overall balance and head movement, using structures in the inner ear.",
+      "quick_tip": "kinesthetic = individual body <em>parts</em>; vestibular = overall <em>balance</em>."
     },
     {
       "id": "46",
@@ -370,7 +460,9 @@
       "term_1": "Convergent Thinking",
       "definition_1": "Narrowing available problem solutions to determine the best solution",
       "term_2": "Divergent Thinking",
-      "definition_2": "Expanding number of possible problem solutions"
+      "definition_2": "Expanding number of possible problem solutions",
+      "explanation": "Both describe directions of thinking during problem-solving, so \"narrowing\" versus \"expanding\" is the whole distinction. Convergent thinking narrows down multiple possibilities to find the single best answer. Divergent thinking expands outward, generating many possible solutions or ideas.",
+      "quick_tip": "con<strong>verge</strong>nt thinking converges (narrows) toward one answer; divergent thinking diverges (spreads) into many."
     },
     {
       "id": "47",
@@ -378,7 +470,9 @@
       "term_1": "Proactive Interference",
       "definition_1": "Interference of old info blocking new learning",
       "term_2": "Retroactive Interference",
-      "definition_2": "New info blocking recall of old learning"
+      "definition_2": "New info blocking recall of old learning",
+      "explanation": "Both are subtypes of long-term memory, so what kind of content each one stores is the real distinguishing detail. Episodic memory stores personal experiences and events from your own life. Semantic memory stores general facts and learned knowledge about the world, independent of when or where you learned it.",
+      "quick_tip": "episodic = episodes from your <em>own life</em>; semantic = general <em>facts</em>, like a dictionary."
     },
     {
       "id": "48",
@@ -386,7 +480,9 @@
       "term_1": "Normative Social Influence",
       "definition_1": "Influence resulting from a person’s desire to gain approval or avoid disapproval",
       "term_2": "Informational Social Influence",
-      "definition_2": "Influence resulting from one’s willingness to accept others’ opinions"
+      "definition_2": "Influence resulting from one’s willingness to accept others’ opinions",
+      "explanation": "Both describe why people conform, so the split feels arbitrary until you ask <em>what's motivating the conformity</em>. Normative influence is about wanting to be liked or avoid standing out — you go along even if you privately disagree. Informational influence is about wanting to be right — you go along because you genuinely believe others have better information than you.",
+      "quick_tip": "normative = fitting in, informational = figuring it out."
     },
     {
       "id": "49",
@@ -394,7 +490,9 @@
       "term_1": "Hallucinations",
       "definition_1": "Experiencing sensations which are not real",
       "term_2": "Delusions",
-      "definition_2": "Having wild ideas/beliefs not grounded in reality"
+      "definition_2": "Having wild ideas/beliefs not grounded in reality",
+      "explanation": "Both are symptoms that can appear in psychotic disorders, so which sense is affected — perception or belief — is what separates them. Hallucinations are sensing things that aren't actually there (seeing, hearing, feeling something unreal). Delusions are false beliefs held despite clear evidence against them.",
+      "quick_tip": "hallucinations are false <em>perceptions</em>; delusions are false <em>beliefs</em>."
     },
     {
       "id": "50",
@@ -402,7 +500,9 @@
       "term_1": "Episodic Memory",
       "definition_1": "Memory of one’s own life",
       "term_2": "Semantic Memory",
-      "definition_2": "Memory of learned material"
+      "definition_2": "Memory of learned material",
+      "explanation": "Both are types of interference that disrupt memory, so which direction the disruption flows — old blocking new, or new blocking old — is the key detail. Proactive interference is old information getting in the way of learning new information. Retroactive interference is newly learned information disrupting recall of older information.",
+      "quick_tip": "<strong>pro</strong>active pushes <em>forward</em>, old blocking new; <strong>retro</strong>active reaches <em>backward</em>, new blocking old."
     },
     {
       "id": "51",
@@ -410,7 +510,9 @@
       "term_1": "Peripheral Route Persuasion",
       "definition_1": "Influenced by incidental cues (ex: attractiveness of speaker)",
       "term_2": "Central Route Persuasion",
-      "definition_2": "Focus on arguments and facts of argument or advertisement"
+      "definition_2": "Focus on arguments and facts of argument or advertisement",
+      "explanation": "Both are routes to persuasion in the Elaboration Likelihood Model, so which one focuses on the message and which focuses on surface cues is the key distinction. Peripheral route persuasion is influenced by incidental cues, like the attractiveness or credibility of the speaker, rather than the argument itself. Central route persuasion is influenced by the actual facts, logic, and quality of the argument.",
+      "quick_tip": "central route sticks to the <em>center</em> of the argument (the facts); peripheral route is swayed by things on the <em>edges</em> (looks, delivery)."
     },
     {
       "id": "52",
@@ -418,7 +520,9 @@
       "term_1": "Anorexia Nervosa",
       "definition_1": "Starvation diet and excessive exercising",
       "term_2": "Bulimia Nervosa",
-      "definition_2": "Binge eating followed by vomiting, laxative use, fasting or excessive exercise"
+      "definition_2": "Binge eating followed by vomiting, laxative use, fasting or excessive exercise",
+      "explanation": "Both are eating disorders, so the specific behavior pattern — restriction versus a binge-purge cycle — is the key distinction. Anorexia nervosa involves severe food restriction and excessive exercise to lose weight. Bulimia nervosa involves cycles of binge eating followed by compensating behaviors like vomiting, laxative use, or excessive exercise.",
+      "quick_tip": "anorexia is about <em>restricting</em> intake; bulimia is a cycle of <em>bingeing, then compensating</em>."
     },
     {
       "id": "53",
@@ -428,7 +532,9 @@
       "term_2": "Social Inhibition",
       "definition_2": "Diminished performance on simple or well-learned tasks in the presence of others",
       "term_3": "Social Loafing",
-      "definition_3": "Exert less effort in a group setting"
+      "definition_3": "Exert less effort in a group setting",
+      "explanation": "All three describe how the presence of others affects performance, so whether performance goes up, down, or the effort itself just drops is what separates them. Social facilitation is improved performance on simple, well-learned tasks when others are watching. Social inhibition is the opposite: worse performance on those same simple tasks around others. Social loafing is exerting less individual effort specifically in a group setting.",
+      "quick_tip": "facilitation and inhibition are about performance going up or down while being watched; loafing is about effort dropping while working <em>with</em> others."
     },
     {
       "id": "54",
@@ -436,7 +542,9 @@
       "term_1": "Conformity",
       "definition_1": "Adjusting behavior to fit in",
       "term_2": "Obedience",
-      "definition_2": "Compliance with an order or request"
+      "definition_2": "Compliance with an order or request",
+      "explanation": "Both describe going along with others, so the presence (or absence) of a direct order is the key distinction. Conformity is adjusting your own behavior or beliefs to match a group, with no direct order involved. Obedience is complying specifically with a command or order from an authority figure.",
+      "quick_tip": "conformity is peer pressure; obedience is following <em>orders</em>."
     },
     {
       "id": "55",
@@ -444,7 +552,9 @@
       "term_1": "Trichromatic Theory",
       "definition_1": "Theory that color comes from 3 different types of color receptors (R-G-B)",
       "term_2": "Opponent Process Theory",
-      "definition_2": "Theory that color comes from 3 sets of opposing retinal processes (red-green, blue-yellow, white-black)"
+      "definition_2": "Theory that color comes from 3 sets of opposing retinal processes (red-green, blue-yellow, white-black)",
+      "explanation": "Both theories try to explain how humans perceive color, which makes it tempting to treat them as competing rather than complementary. Trichromatic theory says color vision comes from three types of cone receptors (red, green, blue). Opponent-process theory says color is processed in three opposing pairs (red-green, blue-yellow, white-black), which explains afterimages.",
+      "quick_tip": "trichromatic explains the <em>receptors</em>; opponent-process explains what happens <em>after</em>, in the brain."
     },
     {
       "id": "56",
@@ -452,7 +562,9 @@
       "term_1": "Group Polarization",
       "definition_1": "Enhancement of groups opinions through discussion with group",
       "term_2": "Groupthink",
-      "definition_2": "Thinking that occurs when desire for harmony in group overrides realistic alternatives"
+      "definition_2": "Thinking that occurs when desire for harmony in group overrides realistic alternatives",
+      "explanation": "Both describe how group discussion can distort decision-making, so whether opinions get stronger or a group avoids realistic options entirely is the key difference. Group polarization is a group's existing opinions becoming more extreme after discussing them together. Groupthink is a group prioritizing harmony and agreement so much that it overrides realistic, critical thinking.",
+      "quick_tip": "polarization pushes opinions <em>further</em>; groupthink suppresses <em>disagreement</em> altogether."
     },
     {
       "id": "57",
@@ -460,7 +572,9 @@
       "term_1": "Transduction",
       "definition_1": "Turning sensory energy into neural impulse",
       "term_2": "Sensory Adaptation",
-      "definition_2": "Getting used to sensation"
+      "definition_2": "Getting used to sensation",
+      "explanation": "Both are processes involved in how we experience sensation, so it's easy to conflate \"converting\" a stimulus with \"getting used to\" one. Transduction is converting raw physical energy (light, sound) into a neural signal the brain can use. Sensory adaptation is the brain tuning out a constant, unchanging stimulus over time, like no longer noticing a scent after a few minutes.",
+      "quick_tip": "trans<strong>duct</strong>ion is the <em>conversion</em> step; adaptation is <em>getting used to</em> something already converted."
     },
     {
       "id": "58",
@@ -468,7 +582,9 @@
       "term_1": "Binocular Cues",
       "definition_1": "A depth cue that depends on the use of two eyes",
       "term_2": "Monocular Cues",
-      "definition_2": "A depth cue that is available to either eye"
+      "definition_2": "A depth cue that is available to either eye",
+      "explanation": "Both are types of depth cues, so students often can't recall which one needs two eyes and which works with just one. Binocular cues require both eyes working together to judge depth. Monocular cues work with just a single eye.",
+      "quick_tip": "<strong>bi</strong>nocular = <strong>two</strong> eyes; <strong>mono</strong>cular = <strong>one</strong> eye."
     },
     {
       "id": "59",
@@ -476,7 +592,9 @@
       "term_1": "Drive Reduction Theory",
       "definition_1": "Motivation theory seeking bodily homeostasis",
       "term_2": "Arousal Theory",
-      "definition_2": "Motivation theory seeking ideal level of stimulation"
+      "definition_2": "Motivation theory seeking ideal level of stimulation",
+      "explanation": "Both are motivation theories, so which one is about restoring balance and which is about seeking excitement is the key distinction. Drive reduction theory says we're motivated to reduce internal tension and return the body to homeostasis (like eating when hungry). Arousal theory says we're motivated to seek out an <em>optimal</em> level of stimulation, sometimes increasing arousal rather than reducing it (like riding a rollercoaster).",
+      "quick_tip": "drive reduction seeks <em>less</em> tension; arousal theory seeks the <em>right amount</em> of stimulation, which can mean seeking more."
     },
     {
       "id": "60",
@@ -484,7 +602,9 @@
       "term_1": "Persistent Depressive Disorder",
       "definition_1": "Mildly depressed mood more often than not for 2 years or more",
       "term_2": "Major Depressive Disorder",
-      "definition_2": "2 or more weeks of depressive symptoms"
+      "definition_2": "2 or more weeks of depressive symptoms",
+      "explanation": "Both are depressive disorders, so duration and severity — the actual diagnostic criteria — are what separate them. Persistent depressive disorder is a milder, chronic depressed mood lasting two years or more. Major depressive disorder involves more intense symptoms, but only needs to last two or more weeks to qualify.",
+      "quick_tip": "persistent depressive disorder trades <em>severity for length</em>; major depressive disorder trades <em>length for severity</em>."
     },
     {
       "id": "61",
@@ -492,7 +612,9 @@
       "term_1": "Sensorimotor Stage",
       "definition_1": "Birth to about 2. Lack object permanence, explore with senses, stranger anxiety",
       "term_2": "Preoperational Stage",
-      "definition_2": "End of sensorimotor stage to about 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation"
+      "definition_2": "End of sensorimotor stage to about 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation",
+      "explanation": "Both are early stages in Piaget's theory of cognitive development, so which milestone belongs to which stage takes some sorting out. The sensorimotor stage (birth to about 2) is defined by exploring the world through senses and motor actions, before object permanence develops. The preoperational stage (about 2 to 6-7) is defined by pretend play and language, but still lacking logical operations like conservation.",
+      "quick_tip": "sensorimotor = senses and motor skills first; preoperational comes next, but before (\"pre-\") logical operations."
     },
     {
       "id": "62",
@@ -500,7 +622,9 @@
       "term_1": "Displacement",
       "definition_1": "Defense mechanism where negative energy cause harm elsewhere",
       "term_2": "Sublimation",
-      "definition_2": "Defense mech where negative energy is harnessed in socially acceptable manner"
+      "definition_2": "Defense mech where negative energy is harnessed in socially acceptable manner",
+      "explanation": "Both are Freudian defense mechanisms that redirect negative energy, so where that energy actually ends up is the key distinction. Displacement redirects negative feelings toward a safer, unrelated target (yelling at a sibling instead of a boss). Sublimation redirects that same negative energy into a socially acceptable or even productive outlet, like exercise or art.",
+      "quick_tip": "displacement just moves the energy somewhere else; sublimation channels it into something <em>constructive</em>."
     },
     {
       "id": "63",
@@ -508,7 +632,9 @@
       "term_1": "Insomnia",
       "definition_1": "Sleep disorder where one cannot fall/stay asleep",
       "term_2": "Sleep Apnea",
-      "definition_2": "Sleep disorder when one stops breathing"
+      "definition_2": "Sleep disorder when one stops breathing",
+      "explanation": "Both are sleep disorders, so the specific mechanism behind each one is the detail that actually separates them on an exam. Insomnia is difficulty falling or staying asleep. Sleep apnea is a physical disorder where breathing repeatedly stops during sleep.",
+      "quick_tip": "insomnia is about <em>can't sleep</em>; apnea is about <em>can't breathe</em> while asleep."
     },
     {
       "id": "64",
@@ -516,15 +642,19 @@
       "term_1": "Consciousness",
       "definition_1": "Being aware of the immediate sensory environment",
       "term_2": "Conscientiousness",
-      "definition_2": "Big 5 personality trait measuring timeliness, dependability, accountability etc."
+      "definition_2": "Big 5 personality trait measuring timeliness, dependability, accountability etc.",
+      "explanation": "These are pure spelling look-alikes, sharing most of their letters, which is really the entire source of confusion. Consciousness is your awareness of your immediate surroundings and internal state. Conscientiousness is a Big Five personality trait describing dependability, organization, and follow-through.",
+      "quick_tip": "consciousness is about <em>awareness</em>; conscientiousness is about being <em>careful and responsible</em> — notice the extra \"enti\" in the middle."
     },
     {
       "id": "65",
       "unit": "1, 4",
       "term_1": "Leptin",
       "definition_1": "Hormone that signals the brain to stop eating (body has enough energy)",
-      "term_2": "Grehlin",
-      "definition_2": "Hormone that signals the brain to feel hungry and stimulates food intake"
+      "term_2": "Ghrelin",
+      "definition_2": "Hormone that signals the brain to feel hungry and stimulates food intake",
+      "explanation": "Both are hormones that regulate hunger, working in opposite directions, which is exactly what makes them easy to swap. Leptin signals the brain that the body has enough energy stored, reducing appetite. Ghrelin signals the brain that it's time to eat, increasing appetite.",
+      "quick_tip": "leptin makes you feel <em>less</em> hungry (think \"let up\" on eating); ghrelin makes your stomach <em>growl</em>."
     },
     {
       "id": "66",
@@ -534,7 +664,9 @@
       "term_2": "Ego",
       "definition_2": "Mediator between id and superego. Reality",
       "term_3": "Superego",
-      "definition_3": "Ideals and morals; perfectionism"
+      "definition_3": "Ideals and morals; perfectionism",
+      "explanation": "All three are parts of Freud's model of personality, so which one wants, which one balances, and which one judges is the real distinction. The id is made up of basic, unconscious impulses (like sex and aggression) demanding immediate gratification. The ego is the mediator between the id's demands and reality. The superego holds our internalized morals and ideals, often pushing toward perfectionism.",
+      "quick_tip": "id wants it now, superego says you shouldn't, ego negotiates a realistic middle ground."
     },
     {
       "id": "67",
@@ -542,7 +674,9 @@
       "term_1": "Wavelength (Sound)",
       "definition_1": "The physical property of a sound wave that determines pitch (low pitches are long, high pitches are short)",
       "term_2": "Amplitude (Sound)",
-      "definition_2": "The physical property of a sound wave that determines loudness (loud are tall, soft are short)"
+      "definition_2": "The physical property of a sound wave that determines loudness (loud are tall, soft are short)",
+      "explanation": "Both describe physical properties of sound waves, so it's easy to forget which one controls pitch and which one controls loudness. Wavelength determines pitch — long wavelengths sound low, short wavelengths sound high. Amplitude determines loudness — tall waves are loud, short waves are soft.",
+      "quick_tip": "wavelength = pitch (long/low, short/high); amplitude = volume (tall/loud, short/soft)."
     },
     {
       "id": "68",
@@ -550,7 +684,9 @@
       "term_1": "Wavelength (Color)",
       "definition_1": "The physical property of a light wave that determines hue (color) (red,long; green,medium; blue, short)",
       "term_2": "Amplitude (Color)",
-      "definition_2": "The physical property of a light wave that determines brightness (tall = bright, short = dull)"
+      "definition_2": "The physical property of a light wave that determines brightness (tall = bright, short = dull)",
+      "explanation": "This is the visual-light version of the sound-wave pair above, so the two easily get merged into one concept covering \"waves\" in general. Wavelength determines hue (color) — red has a long wavelength, blue/violet a short one. Amplitude determines brightness — a taller wave looks brighter.",
+      "quick_tip": "same rule as sound — wavelength decides <em>which</em> quality (color/pitch), amplitude decides <em>how much</em> (bright/loud)."
     },
     {
       "id": "69",
@@ -558,7 +694,9 @@
       "term_1": "Myopia (Nearsightedness)",
       "definition_1": "Eye is too long, light focused in front of retina, blurry vision when looking at far away objects",
       "term_2": "Hyperopia (Farsightedness)",
-      "definition_2": "Eye is too short, light focused behind retina, blurry vision when looking at close object"
+      "definition_2": "Eye is too short, light focused behind retina, blurry vision when looking at close object",
+      "explanation": "Both are refractive vision problems, and the \"near\" and \"far\" in their common names get mixed up under exam pressure. Myopia (nearsightedness) happens when the eye is too long, so light focuses in front of the retina, blurring distant objects. Hyperopia (farsightedness) happens when the eye is too short, so light focuses behind the retina, blurring close objects.",
+      "quick_tip": "my<strong>o</strong>pia — the \"o\" looks like a close-up zero, blurry far away; hyperopia lets you see far."
     },
     {
       "id": "70",
@@ -566,7 +704,9 @@
       "term_1": "Multiple Sclerosis",
       "definition_1": "Destruction of myelin sheath, causes impaired mobility, paralysis, pain, impacts CNS",
       "term_2": "Myasthenia Gravis",
-      "definition_2": "Acetylcholine blocked, causes poor motor control and paralysis, impacts PNS"
+      "definition_2": "Acetylcholine blocked, causes poor motor control and paralysis, impacts PNS",
+      "explanation": "Both are neurological/autoimmune conditions that impair movement, so the specific mechanism is what separates them on a question. Multiple sclerosis destroys the myelin sheath insulating neurons, impacting the central nervous system. Myasthenia gravis blocks acetylcholine at the junction between nerve and muscle, impacting the peripheral nervous system.",
+      "quick_tip": "MS attacks the <em>insulation</em> (myelin) in the CNS; MG blocks the <em>chemical signal</em> (acetylcholine) in the PNS."
     },
     {
       "id": "71",
@@ -574,7 +714,9 @@
       "term_1": "Inattentional Blindness",
       "definition_1": "Failure to notice something added due to focus on another task",
       "term_2": "Change Blindness",
-      "definition_2": "Failure to notice a change in a scene"
+      "definition_2": "Failure to notice a change in a scene",
+      "explanation": "Both describe failing to notice something visually, so what exactly goes unnoticed is the detail that separates them. Inattentional blindness is failing to notice something new that appears, because attention is focused elsewhere. Change blindness is failing to notice a change to something already in the scene.",
+      "quick_tip": "inattentional blindness misses something <em>new</em>; change blindness misses a <em>change</em> to what's already there."
     },
     {
       "id": "72",
@@ -582,7 +724,9 @@
       "term_1": "Dichromatism",
       "definition_1": "Color blindness caused by only 2 working cones leading to difficulty distinguishing between certain colors",
       "term_2": "Monochromatism",
-      "definition_2": "Rare color blindness caused by only 1 working set of cones (or none) leading to perception of shades of gray"
+      "definition_2": "Rare color blindness caused by only 1 working set of cones (or none) leading to perception of shades of gray",
+      "explanation": "Both are forms of color blindness, so the number of working cone types — the actual distinguishing detail — is easy to overlook. Dichromatism means only two of the three cone types work, causing difficulty distinguishing certain colors. Monochromatism means only one (or zero) cone types work, causing vision in shades of gray only.",
+      "quick_tip": "<strong>di</strong> = two cones working; <strong>mono</strong> = one (or none), full grayscale."
     },
     {
       "id": "73",
@@ -590,7 +734,9 @@
       "term_1": "Gambler’s Fallacy",
       "definition_1": "People believe outcome of random event is influenced by previous outcomes",
       "term_2": "Sunk-Cost Fallacy",
-      "definition_2": "People continue invest time, money, effort into something because they have already invested"
+      "definition_2": "People continue invest time, money, effort into something because they have already invested",
+      "explanation": "Both are reasoning errors involving past events influencing present decisions, so the type of past-focused thinking is the key difference. The gambler's fallacy is believing a random event's outcome is influenced by previous outcomes (a coin is \"due\" for heads). The sunk-cost fallacy is continuing to invest in something because of what's already been invested, even when it's not paying off.",
+      "quick_tip": "gambler's fallacy misjudges <em>odds</em>; sunk-cost fallacy misjudges <em>past investment</em>."
     },
     {
       "id": "74",
@@ -598,7 +744,9 @@
       "term_1": "Sensory Interaction",
       "definition_1": "Process by which different senses influence each other to enhance perception (ex- way taste and smell work together)",
       "term_2": "Synesthesia",
-      "definition_2": "Neurological condition where stimulation of one sense involuntarily triggers another unrelated sense (ex- a person may see colors when they hear music)"
+      "definition_2": "Neurological condition where stimulation of one sense involuntarily triggers another unrelated sense (ex- a person may see colors when they hear music)",
+      "explanation": "Both describe senses interacting in unusual ways, so it's tempting to treat one as just a stronger version of the other. Sensory interaction is senses working together normally to shape perception, like smell affecting taste. Synesthesia is a rarer neurological condition where stimulating one sense involuntarily triggers a completely different, unrelated sense, like seeing colors when hearing music.",
+      "quick_tip": "sensory interaction is <em>normal</em> teamwork between senses; synesthesia is an <em>atypical</em> crossover."
     },
     {
       "id": "75",
@@ -606,7 +754,9 @@
       "term_1": "Systematic Desensitization",
       "definition_1": "Behavior therapy used to reduce client’s anxiety responses (bad paired with good)",
       "term_2": "Aversion Conditioning",
-      "definition_2": "Behavior therapy in which an aversive stimulus is paired to elicit an undesirable response (bad with bad)"
+      "definition_2": "Behavior therapy in which an aversive stimulus is paired to elicit an undesirable response (bad with bad)",
+      "explanation": "Both are behavior therapies that use conditioning to change a response, so whether the goal is to reduce anxiety or eliminate a bad habit is the key distinction. Systematic desensitization pairs a feared stimulus with relaxation, gradually reducing anxiety (bad paired with good). Aversive conditioning pairs an unwanted behavior with an unpleasant stimulus, to eliminate that behavior (bad paired with bad).",
+      "quick_tip": "systematic desensitization pairs bad with <em>good</em> to calm you down; aversive conditioning pairs bad with <em>bad</em> to stop a behavior."
     },
     {
       "id": "76",
@@ -616,7 +766,9 @@
       "term_2": "Prototype",
       "definition_2": "Best example or first one that comes to mind (you own a Lab, the prototype when thinking about a dog is Lab)",
       "term_3": "Perceptual Set",
-      "definition_3": "Expectation influences perception (when walking past a dog park, you hear rustling in bushes, you expect a dog to pop but it could be a cat or raccoon)"
+      "definition_3": "Expectation influences perception (when walking past a dog park, you hear rustling in bushes, you expect a dog to pop but it could be a cat or raccoon)",
+      "explanation": "All three describe mental shortcuts for organizing information, so which one is the \"container,\" the \"best example,\" and the \"expectation\" is what needs to stay distinct. A schema is the overall mental framework for organizing information about a concept. A prototype is the single best or most typical example within that schema. A perceptual set is an expectation, built from schemas, that shapes how you interpret new sensory information.",
+      "quick_tip": "schema = the whole file folder; prototype = the best example inside it; perceptual set = expecting to see that example before you even look."
     }
   ]
 }
