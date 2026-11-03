@@ -1,372 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Quiz - Psych Review Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/quiz">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .quiz-page-wrap {
-            max-width: 800px;
+        /* Only styles unique to the quiz live here. The hero, stat tiles and buttons come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, select:focus-visible {
+            outline: 3px solid var(--accent); outline-offset: 2px;
         }
+
+        /* ===== HERO compacts once a quiz is running (setup screen hidden) ===== */
+        body:has(#setup-screen[style*="none"]) .page-hero { padding: 22px 0 62px; }
+        body:has(#setup-screen[style*="none"]) .page-hero .page-lede,
+        body:has(#setup-screen[style*="none"]) .page-hero .hero-stats { display: none; }
+        body:has(#setup-screen[style*="none"]) .page-hero-grid { grid-template-columns: 1fr; }
+        body:has(#setup-screen[style*="none"]) .page-hero h1 { margin: 0; font-size: 2.2rem; }
+        body:has(#setup-screen[style*="none"]) .container.over-hero { margin-top: 14px; }
+
+        /* ===== PAGE + QUIZ CARD ===== */
+        .container.quiz-page-wrap { max-width: 800px; margin-bottom: 0; padding: 0 1rem; }
 
         .quiz-container {
             max-width: 650px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px 32px 32px;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.09);
             text-align: center;
         }
 
-        /* Setup Screen */
+        /* ===== SETUP SCREEN ===== */
+        .setup-screen h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); margin: 0 0 16px; }
+        .setup-screen p { color: #555; margin: 4px 0 6px; }
         .setup-screen label {
-            display: block;
-            text-align: left;
-            font-weight: bold;
-            margin-top: 15px;
-            color: #555;
+            display: block; text-align: left; font-weight: bold; margin-top: 14px; color: #555; font-size: 0.92rem;
         }
+        .setup-screen select { padding: 10px; font-size: 1rem; margin: 5px 0 6px 0; width: 100%; }
 
-        .setup-screen select {
-            padding: 10px;
-            font-size: 1rem;
-            margin: 5px 0 15px 0;
-            width: 100%;
-        }
-
-        /* --- Question Display Areas --- */
-        .question-context {
-            background-color: #f9f9f9;
-            border-left: 4px solid var(--accent);
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-style: italic;
-            color: #555;
-            display: none;
-            border-radius: 4px;
-            line-height: 1.6;
-        }
-
-        .question-image {
-            max-width: 100%;
-            max-height: 300px;
-            margin: 0 auto 20px auto;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            display: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .question-text {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* --- Options --- */
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .option-btn {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: left;
-        }
-
-        .option-btn:hover {
-            background: #e2e6ea;
-            border-color: #ced4da;
-        }
-
-        .correct {
-            background-color: #d4edda !important;
-            border-color: #c3e6cb !important;
-            color: #155724 !important;
-        }
-        
-        .incorrect {
-            background-color: #f8d7da !important;
-            border-color: #f5c6cb !important;
-            color: #721c24 !important;
-        }
-
-        /* --- Explanation Box --- */
-        .explanation-box {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin-top: 25px;
-            border-radius: 5px;
-            text-align: left;
-            display: none; /* Hidden until answer is selected */
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .explanation-box h4 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .next-btn-container {
-            margin-top: 25px;
-            display: none; /* Hidden until answer is selected */
-        }
-
-        /* Score & Progress */
-        .stats-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            font-weight: bold;
-            color: #666;
-        }
-
-        .results-screen {
-            display: none;
-        }
-        .score-display {
-            font-size: 3rem;
-            color: var(--accent);
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        /* --- Mode Toggle --- */
-        .mode-toggle {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
+        /* mode picker: four tab cards */
+        .mode-toggle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
         .mode-toggle button {
-            flex: 1 1 calc(50% - 4px);
-            padding: 10px;
-            border-radius: 6px;
-            border: 2px solid #e9ecef;
-            background: #f8f9fa;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            color: #555;
+            margin: 0; padding: 12px 8px 10px; border-radius: 10px; border: 2px solid #dbe6ee;
+            background: var(--panel-blue); color: var(--primary) !important; font-weight: bold; font-size: 0.9rem;
+            line-height: 1.25; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px;
         }
-        .mode-toggle button.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        @media (min-width: 601px) {
-            .mode-toggle button {
-                flex: 1;
-            }
-        }
+        .mode-toggle button .mode-ico { font-size: 1.4rem; line-height: 1; }
+        .mode-toggle button:hover { background: #e4f0fa; border-color: var(--accent); }
+        .mode-toggle button.active { background: var(--accent); border-color: var(--accent); color: white !important; }
 
         .sets-note {
-            font-size: 0.9rem;
-            color: #666;
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-top: 10px;
-            text-align: left;
+            font-size: 0.92rem; color: #444; background: var(--panel-blue); border-left: 5px solid var(--accent);
+            padding: 12px 16px; border-radius: 10px; margin-top: 14px; text-align: left; line-height: 1.55;
         }
 
-        .set-position-badge {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: bold;
-        }
+        .setup-actions { margin-top: 24px; text-align: center; }
+        #start-quiz-btn { padding: 13px 40px; font-size: 1.1rem; font-weight: bold; }
 
-        /* --- Sets Mode: two-column layout ---
-             Default (individual mode) keeps today's stacked, single-column
-             look untouched. Everything below cascades from ONE class,
-             .mode-sets, toggled on the page wrapper — including widening
-             both container levels, since the two-column layout needs real
-             room and the original 800px/650px caps were sized only for a
-             single stacked column. */
-        .quiz-page-wrap.mode-sets {
-            max-width: 1100px;
-        }
-        .quiz-page-wrap.mode-sets .quiz-container {
-            max-width: 1000px;
-        }
-        .quiz-page-wrap.mode-sets .quiz-columns {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
-            text-align: left;
-        }
-        .quiz-page-wrap.mode-sets .stimulus-col {
-            flex: 0 0 40%;
-            position: sticky;
-            top: 90px;
-        }
-        .quiz-page-wrap.mode-sets .answer-col {
-            flex: 1;
-            min-width: 0;
-        }
+        /* ===== QUESTION AREA ===== */
+        .restart-row { text-align: right; margin-bottom: 8px; }
+        .btn-gray { background-color: #95a5a6; padding: 6px 14px; font-size: 0.85rem; margin: 0; }
+        .btn-gray:hover { background-color: #7f8c8d; }
 
+        .stats-bar {
+            display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+            margin-bottom: 8px; font-weight: bold; color: #555;
+        }
+        .progress-track { height: 8px; background: #e6ecf0; border-radius: 8px; overflow: hidden; margin-bottom: 22px; }
+        #progress-fill { height: 100%; width: 0; background: var(--accent); border-radius: 8px; transition: width 0.35s ease; }
+        .set-position-badge { font-size: 0.85rem; color: #2672a8; font-weight: bold; }
+
+        .question-context {
+            background: var(--panel-blue); border-left: 5px solid var(--accent); padding: 16px 18px; margin-bottom: 20px;
+            text-align: left; color: #3d4852; display: none; border-radius: 10px; line-height: 1.65; font-size: 0.98rem;
+        }
+        .question-image {
+            max-width: 100%; max-height: 300px; margin: 0 auto 20px auto; border-radius: 8px;
+            border: 1px solid #dde5ea; display: none; box-shadow: 0 4px 6px rgba(0,0,0,0.08); background: white;
+        }
+        .question-text { font-size: 1.2rem; line-height: 1.5; margin-bottom: 22px; color: #2b3a46; font-weight: 700; text-align: left; }
+
+        .options-grid { display: grid; grid-template-columns: 1fr; gap: 12px; counter-reset: opt; }
+        .option-btn {
+            background: #f8f9fa; border: 2px solid #e1e8ed; padding: 14px 16px; border-radius: 10px;
+            font-size: 1rem; line-height: 1.45; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.1s;
+            text-align: left; margin: 0; display: flex; align-items: flex-start; gap: 14px;
+        }
+        /* A, B, C, D badges come from CSS, so the script's answer-matching is untouched */
+        .option-btn::before {
+            counter-increment: opt; content: counter(opt, upper-alpha);
+            flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%; background: white; border: 2px solid #cfd9e0;
+            color: var(--primary); font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center;
+        }
+        .option-btn:hover { background: #eaf3fa; border-color: var(--accent); }
+
+        .correct { background-color: #d4edda !important; border-color: #b7dfc2 !important; color: #155724 !important; }
+        .incorrect { background-color: #f8d7da !important; border-color: #f1b9bf !important; color: #721c24 !important; }
+        .correct::before, .incorrect::before { border-color: currentColor; background: transparent; color: inherit; }
+
+        .explanation-box {
+            background: var(--panel-blue); border-left: 5px solid var(--accent); padding: 18px 20px; margin-top: 22px;
+            border-radius: 10px; text-align: left; display: none; font-size: 1rem; color: #333; line-height: 1.6;
+        }
+        .explanation-box h4 { margin-top: 0; margin-bottom: 8px; font-size: 1.1rem; font-family: var(--font-display); }
+        .next-btn-container { margin-top: 22px; display: none; text-align: center; }
+
+        /* ===== RESULTS ===== */
+        .results-screen { display: none; padding: 10px 0 6px; }
+        .results-screen h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--primary); margin: 0; }
+        .score-display { font-family: var(--font-display); font-size: 4.2rem; color: var(--accent); font-weight: 700; margin: 14px 0 6px; line-height: 1; }
+        #feedback-msg { font-size: 1.15rem; color: #555; margin: 0 0 24px; }
+
+        /* ===== SETS MODE: two columns. One class (.mode-sets) on the wrapper drives it. ===== */
+        .quiz-page-wrap.mode-sets { max-width: 1100px; }
+        .quiz-page-wrap.mode-sets .quiz-container { max-width: 1000px; }
+        .quiz-page-wrap.mode-sets .quiz-columns { display: flex; align-items: flex-start; gap: 24px; text-align: left; }
+        .quiz-page-wrap.mode-sets .stimulus-col { flex: 0 0 40%; position: sticky; top: 90px; }
+        .quiz-page-wrap.mode-sets .answer-col { flex: 1; min-width: 0; }
         @media (max-width: 700px) {
-            .quiz-page-wrap.mode-sets .quiz-columns {
-                flex-direction: column;
-            }
-            .quiz-page-wrap.mode-sets .stimulus-col {
-                position: static;
-                flex-basis: auto;
-                width: 100%;
-            }
+            .quiz-page-wrap.mode-sets .quiz-columns { flex-direction: column; }
+            .quiz-page-wrap.mode-sets .stimulus-col { position: static; flex-basis: auto; width: 100%; }
         }
 
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 600px) {
-            .quiz-container {
-                padding: 15px;
-            }
-            .option-btn {
-                padding: 12px;
-                font-size: 0.95rem;
-            }
-            .question-text {
-                font-size: 1.15rem;
-            }
-        }
-
-        /* Toggle: flip this off once ad units are live */
-        .ad-under-review {
-            display: none !important;
-        }
-
-        .ad-banner-outer {
-            width: 90%;
-            max-width: 728px;
-            margin: 30px auto 0;
-        }
-        .ad-wrapper-banner {
-            width: 100%;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
-
-        .study-tips {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 15px 20px;
-            margin: 30px auto 0;
-            max-width: 650px;
-            border-radius: 4px;
-            text-align: left;
-            color: #444;
-            line-height: 1.6;
-        }
-        .study-tips h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            color: var(--primary);
-        }
-        .study-tips p {
-            margin-bottom: 0;
-        }
-
-        /* --- Sample Questions Mode (static, always-visible content) --- */
-        .sample-intro {
-            font-size: 0.95rem;
-            color: #555;
-            text-align: left;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+        /* ===== SAMPLE QUESTIONS (static, always-visible content) ===== */
+        .sample-intro { font-size: 0.97rem; color: #555; text-align: left; margin-bottom: 20px; line-height: 1.6; }
         .sample-question {
-            text-align: left;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 18px;
-            background: #fcfcfc;
+            text-align: left; border: 1px solid #e6ecf0; border-radius: 12px; padding: 20px 22px; margin-bottom: 18px; background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         .sample-q-header {
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            display: inline-block; font-size: 0.75rem; font-weight: bold; color: white; background: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
         }
         .sample-context {
-            background-color: #f9f9f9;
-            border-left: 4px solid var(--accent);
-            padding: 10px 14px;
-            margin-bottom: 12px;
-            font-style: italic;
-            color: #555;
-            border-radius: 4px;
-            font-size: 0.92rem;
+            background: var(--panel-blue); border-left: 5px solid var(--accent); padding: 12px 16px; margin-bottom: 12px;
+            color: #444; border-radius: 10px; font-size: 0.95rem; line-height: 1.6;
         }
-        .sample-q-text {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-        .sample-options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-        .sample-option {
-            border: 2px solid #e9ecef;
-            background: #f8f9fa;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            color: #444;
-        }
-        .sample-correct {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-            color: #155724;
-            font-weight: bold;
-        }
+        .sample-q-text { font-weight: 700; color: #2b3a46; margin-bottom: 12px; font-size: 1.05rem; line-height: 1.5; }
+        .sample-options { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 14px; }
+        .sample-option { border: 2px solid #e1e8ed; background: #f8f9fa; padding: 10px 14px; border-radius: 10px; font-size: 0.97rem; color: #444; }
+        .sample-correct { background-color: #d4edda; border-color: #b7dfc2; color: #155724; font-weight: bold; }
         .sample-explanation {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 12px 15px;
-            border-radius: 5px;
-            font-size: 0.92rem;
-            color: #333;
-            line-height: 1.5;
+            background: var(--panel-blue); border-left: 5px solid var(--accent); padding: 14px 16px; border-radius: 10px;
+            font-size: 0.95rem; color: #333; line-height: 1.6;
         }
-        .sample-cta {
-            text-align: center;
-            margin-top: 10px;
+        .sample-cta { text-align: center; margin-top: 10px; }
+
+        .quiz-tips { max-width: 650px; margin: 40px auto 0; }
+
+        /* Toggle: flip this off once ad units are live */
+        .ad-under-review { display: none !important; }
+
+        @media (max-width: 600px) {
+            /* phones: get students to the setup card right away */
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            .quiz-container { padding: 22px 16px 24px; }
+            .mode-toggle { grid-template-columns: 1fr 1fr; }
+            .option-btn { padding: 12px; font-size: 0.97rem; }
+            .question-text { font-size: 1.12rem; }
+            .score-display { font-size: 3.4rem; }
         }
     </style>
 </head>
@@ -397,6 +202,7 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -412,23 +218,34 @@
         </ul>
     </nav>
 
-    <div class="container quiz-page-wrap" id="quiz-page-wrap" style="margin: 0 auto; padding-top: 20px;">
-        <h1 style="text-align: center;">📝 Multiple Choice Quiz</h1>
-
-        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 650px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-            <strong>Directions:</strong> Test your knowledge by configuring a custom practice quiz. Select a specific unit, drill down into an individual topic, and choose your target number of questions. Submit your answers to reveal detailed breakdowns and interactive explanations for every question!
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Multiple Choice Quiz</h1>
+                    <p class="page-lede">Build a custom practice quiz: pick a unit, drill into a single topic, and choose how many questions you want. Every answer comes with a detailed explanation.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong id="stat-questions" class="q-count">817</strong><span>Questions</span></div>
+                    <div class="stat-tile tile-half"><strong id="stat-topics">40</strong><span>Topics</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Instant feedback and an explanation for every answer</strong></div>
+                </div>
+            </div>
         </div>
+    </header>
+
+    <main class="container quiz-page-wrap over-hero" id="quiz-page-wrap">
 
         <div class="quiz-container" id="quiz-container">
-            
+
             <div id="setup-screen" class="setup-screen">
-                <h3>Configure Quiz</h3>
+                <h2>Configure Quiz</h2>
 
                 <div class="mode-toggle">
-                    <button id="mode-btn-individual" class="active" onclick="switchMode('individual')">Individual Questions</button>
-                    <button id="mode-btn-sets" onclick="switchMode('sets')">Question Sets</button>
-                    <button id="mode-btn-studyguide" onclick="switchMode('studyguide')">Study Guide Questions</button>
-                    <button id="mode-btn-sample" onclick="switchMode('sample')">Sample Questions</button>
+                    <button id="mode-btn-individual" class="active" onclick="switchMode('individual')"><span class="mode-ico">🎲</span>Individual Questions</button>
+                    <button id="mode-btn-sets" onclick="switchMode('sets')"><span class="mode-ico">🧩</span>Question Sets</button>
+                    <button id="mode-btn-studyguide" onclick="switchMode('studyguide')"><span class="mode-ico">📋</span>Study Guide Questions</button>
+                    <button id="mode-btn-sample" onclick="switchMode('sample')"><span class="mode-ico">👀</span>Sample Questions</button>
                 </div>
 
                 <div id="individual-setup">
@@ -487,11 +304,11 @@
                         <option value="all">All Topics</option>
                     </select>
 
-                    <div class="sets-note">These are the same "Quick Check" questions found at the bottom of each Study Guide worksheet — pick the topic you just studied to check your understanding.</div>
+                    <div class="sets-note">These are the same "Quick Check" questions found at the bottom of each Study Guide worksheet. Pick the topic you just studied to check your understanding.</div>
                 </div>
 
                 <div id="sample-setup" style="display:none;">
-                    <p class="sample-intro">A worked preview of the quiz &mdash; one Unit 0 (science practice) pair plus two questions from every content unit, with the correct answer and full explanation already shown. Switch to <strong>Individual Questions</strong> or <strong>Question Sets</strong> above for the full interactive quiz with all 783 questions.</p>
+                    <p class="sample-intro">A worked preview of the quiz: one Unit 0 (science practice) pair plus two questions from every content unit, with the correct answer and full explanation already shown. Switch to <strong>Individual Questions</strong> or <strong>Question Sets</strong> above for the full interactive quiz with all <span class="q-count">817</span> questions.</p>
                     <div id="sample-questions-list">
 <div class="sample-question">
                     <div class="sample-q-header">Sample Question 1 &mdash; Unit 0</div>
@@ -643,14 +460,15 @@
                     </div>
                 </div>
 
-                <br><br>
-                <button id="start-quiz-btn" class="nav-btn" onclick="startQuiz()">Start Quiz</button>
+                <div class="setup-actions">
+                    <button id="start-quiz-btn" class="nav-btn" onclick="startQuiz()">Start Quiz</button>
+                </div>
             </div>
 
             <div id="quiz-screen" style="display:none;">
-                
-                <div style="text-align: right; margin-bottom: 10px;">
-                    <button class="nav-btn" style="background-color: #95a5a6; padding: 6px 12px; font-size: 0.85rem;" onclick="location.reload()">↺ Restart Quiz</button>
+
+                <div class="restart-row">
+                    <button class="nav-btn btn-gray" onclick="location.reload()">↺ Restart Quiz</button>
                 </div>
 
                 <div class="stats-bar">
@@ -658,6 +476,7 @@
                     <span id="set-position-badge" class="set-position-badge" style="display:none;"></span>
                     <span id="score-text">Score: 0</span>
                 </div>
+                <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
 
                 <div class="quiz-columns" id="quiz-columns">
                     <div class="stimulus-col">
@@ -679,15 +498,14 @@
                 <h2>Quiz Complete!</h2>
                 <div class="score-display" id="final-score">0/0</div>
                 <p id="feedback-msg">Great job!</p>
-                <br>
                 <button class="nav-btn" onclick="location.reload()">Take Another Quiz</button>
             </div>
 
         </div>
 
-        <div class="study-tips">
+        <div class="tip-box quiz-tips">
             <h3>💡 Getting the Most Out of This Quiz</h3>
-            <p>Filter by unit while you're first learning material, then switch to "All Units" as your exam gets closer &mdash; cumulative practice does a much better job preparing you for how the real AP exam mixes topics together than only drilling one unit at a time. Always read the explanation after answering, even on questions you got right; AP Psych rewards being able to apply a concept to a new scenario, not just recognize a definition, and the explanations are where that skill actually gets built. With 783 questions in the pool, retaking the quiz with a different unit or topic combination will keep giving you fresh material. Once you're comfortable with individual questions, try switching to <strong>Question Sets</strong> mode &mdash; it practices stimulus-based questions grouped around a single study or scenario, exactly how a chunk of the real exam is structured.</p>
+            <p>Filter by unit while you're first learning material, then switch to "All Units" as your exam gets closer, since cumulative practice does a much better job preparing you for how the real AP exam mixes topics together than only drilling one unit at a time. Always read the explanation after answering, even on questions you got right; AP Psych rewards being able to apply a concept to a new scenario, not just recognize a definition, and the explanations are where that skill actually gets built. With <span class="q-count">817</span> questions in the pool, retaking the quiz with a different unit or topic combination will keep giving you fresh material. Once you're comfortable with individual questions, try switching to <strong>Question Sets</strong> mode: it practices stimulus-based questions grouped around a single study or scenario, exactly how a chunk of the real exam is structured.</p>
         </div>
 
         <div class="ad-banner-outer ad-under-review">
@@ -697,7 +515,7 @@
             </div>
         </div>
 
-    </div>
+    </main>
 
     <script>
         let allQuestions = [];
@@ -755,6 +573,9 @@
 
                 if(quizData && quizData.quiz && quizData.quiz.length > 0) {
                     allQuestions = quizData.quiz;
+                    document.querySelectorAll('.q-count').forEach(function (el) { el.textContent = allQuestions.length.toLocaleString(); });
+                    const statTopics = document.getElementById('stat-topics');
+                    if (statTopics) statTopics.textContent = new Set(allQuestions.map(function (q) { return q.topic; })).size;
                     populateUnitDropdown();
                     populateTopicDropdown();
                     populateSetsUnitDropdown();
@@ -1106,6 +927,8 @@
             document.getElementById('next-btn-container').style.display = 'none';
             
             document.getElementById('progress-text').textContent = `Question ${currentQuestionIndex + 1}/${quizQueue.length}`;
+            const progressFill = document.getElementById('progress-fill');
+            if (progressFill) progressFill.style.width = (currentQuestionIndex / quizQueue.length * 100) + '%';
 
             const badge = document.getElementById('set-position-badge');
             if (quizMode === 'sets' && currentQ._setPosition) {
@@ -1258,7 +1081,7 @@
         }
     </script>
 
-     <footer>
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
@@ -1279,6 +1102,5 @@
 </footer>
 
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
 </body>
 </html>
