@@ -18,7 +18,7 @@
       "term_2": "Qualitative Data",
       "definition_2": "Deals with descriptions- color, smell, taste",
       "explanation": "The confusion usually comes from not realizing that \"quantitative\" and \"qualitative\" describe the <em>type of data</em>, not the quality of the research. Quantitative data is anything you can put a number on — height, reaction time, test scores. Qualitative data is descriptive and non-numeric — color, mood, an open-ended interview response.",
-      "quick_tip": "<strong>quant</strong>itative = <strong>quant</strong>ity (numbers); qualitative = qualities (descriptions)."
+      "quick_tip": "<strong>quant</strong>itative = <strong>quant</strong>ity (numbers); <strong>qualit</strong>ative = <strong>qualit</strong>ies (descriptions)."
     },
     {
       "id": "3",
@@ -138,7 +138,7 @@
       "term_2": "Wernicke’s Area",
       "definition_2": "Part of the brain that comprehends speech",
       "explanation": "Both areas are damaged in different types of aphasia, so their functions blend together in memory. Broca's area handles physical speech <em>production</em> — damage here means halting, effortful speech. Wernicke's area handles speech <em>comprehension</em> — damage here means fluent but meaningless speech.",
-      "quick_tip": "<strong>B</strong>roca's = <strong>b</strong>roken speech (production); <strong>W</strong>ernicke's = <strong>w</strong>ords don't make sense (comprehension)."
+      "quick_tip": "<strong>B</strong>roca's = <strong>b</strong>roken speech production; <strong>W</strong>ernicke's = <strong>w</strong>hat did you say? (comprehension)."
     },
     {
       "id": "15",
@@ -170,7 +170,7 @@
       "term_2": "Accommodation",
       "definition_2": "The process of adjusting old schemas or developing new ones to incorporate new information",
       "explanation": "Both are part of Piaget's theory of how schemas change, so it's easy to blur which direction the adjustment goes. Assimilation is fitting new information into an existing schema without changing the schema itself. Accommodation is changing or creating a schema because the new information doesn't fit the old one.",
-      "quick_tip": "assimilation <em>absorbs</em> into what's already there; accommodation <em>alters</em> what's already there."
+      "quick_tip": "as<strong>s</strong>imilation uses the <strong>s</strong>ame schema; a<strong>cc</strong>ommodation <strong>c</strong>hanges the concept."
     },
     {
       "id": "18",
@@ -190,7 +190,7 @@
       "term_2": "Cones",
       "definition_2": "Day, detailed, and color vision",
       "explanation": "Both are photoreceptors in the retina, so their names alone don't hint at what each one specializes in. Rods handle night and peripheral vision, only seeing in black, white, and shades of gray. Cones handle daytime, detailed, and color vision.",
-      "quick_tip": "<strong>r</strong>ods = <strong>r</strong>ough vision in the dark; cones = color in daylight."
+      "quick_tip": "<strong>r</strong>ods = <strong>r</strong>ough vision in the dark; <strong>c</strong>ones = <strong>c</strong>olor in daylight."
     },
     {
       "id": "20",
@@ -230,7 +230,7 @@
       "term_2": "Explicit Memory",
       "definition_2": "(Also called declarative) fact-based memory",
       "explanation": "Both are types of long-term memory, so the kind of knowledge each one stores is the actual distinguishing feature. Implicit (nondeclarative) memory covers skills and habits you don't consciously think about, like riding a bike. Explicit (declarative) memory covers facts and events you can consciously state.",
-      "quick_tip": "you can ex<strong>plicit</strong>ly <em>explain</em> explicit memories; implicit memories are more \"just do it.\""
+      "quick_tip": "you can <strong>ex</strong>plain <strong>ex</strong>plicit memories; implicit memories are more \"just do it.\""
     },
     {
       "id": "24",
@@ -471,8 +471,8 @@
       "definition_1": "Interference of old info blocking new learning",
       "term_2": "Retroactive Interference",
       "definition_2": "New info blocking recall of old learning",
-      "explanation": "Both are subtypes of long-term memory, so what kind of content each one stores is the real distinguishing detail. Episodic memory stores personal experiences and events from your own life. Semantic memory stores general facts and learned knowledge about the world, independent of when or where you learned it.",
-      "quick_tip": "episodic = episodes from your <em>own life</em>; semantic = general <em>facts</em>, like a dictionary."
+      "explanation": "Both are types of memory interference, where what you already know and what you're trying to learn get in each other's way, so the <em>direction</em> of the interference is the key distinction. Proactive interference is old information blocking new learning, like your old locker combination popping into your head while you try to memorize a new one. Retroactive interference is new information blocking recall of old learning, like learning the new combination and then being unable to remember the old one.",
+      "quick_tip": "<strong>p</strong>roactive <strong>p</strong>rocures the <strong>p</strong>ast; <strong>r</strong>etroactive <strong>r</strong>emembers the <strong>r</strong>ecent."
     },
     {
       "id": "48",
@@ -544,7 +544,7 @@
       "term_2": "Obedience",
       "definition_2": "Compliance with an order or request",
       "explanation": "Both describe going along with others, so the presence (or absence) of a direct order is the key distinction. Conformity is adjusting your own behavior or beliefs to match a group, with no direct order involved. Obedience is complying specifically with a command or order from an authority figure.",
-      "quick_tip": "conformity is peer pressure; obedience is following <em>orders</em>."
+      "quick_tip": "conformity is peer pressure; obedience is following orders."
     },
     {
       "id": "55",
@@ -574,7 +574,7 @@
       "term_2": "Sensory Adaptation",
       "definition_2": "Getting used to sensation",
       "explanation": "Both are processes involved in how we experience sensation, so it's easy to conflate \"converting\" a stimulus with \"getting used to\" one. Transduction is converting raw physical energy (light, sound) into a neural signal the brain can use. Sensory adaptation is the brain tuning out a constant, unchanging stimulus over time, like no longer noticing a scent after a few minutes.",
-      "quick_tip": "trans<strong>duct</strong>ion is the <em>conversion</em> step; adaptation is <em>getting used to</em> something already converted."
+      "quick_tip": "transduction is the conversion step; adaptation is getting used to something already converted."
     },
     {
       "id": "58",
@@ -612,7 +612,7 @@
       "term_1": "Sensorimotor Stage",
       "definition_1": "Birth to about 2. Lack object permanence, explore with senses, stranger anxiety",
       "term_2": "Preoperational Stage",
-      "definition_2": "End of sensorimotor stage to about 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation",
+      "definition_2": "About 2 to 6-7. Pretend play. Animism. Egocentrism. Lack reversibility and conservation",
       "explanation": "Both are early stages in Piaget's theory of cognitive development, so which milestone belongs to which stage takes some sorting out. The sensorimotor stage (birth to about 2) is defined by exploring the world through senses and motor actions, before object permanence develops. The preoperational stage (about 2 to 6-7) is defined by pretend play and language, but still lacking logical operations like conservation.",
       "quick_tip": "sensorimotor = senses and motor skills first; preoperational comes next, but before (\"pre-\") logical operations."
     },
@@ -624,7 +624,7 @@
       "term_2": "Sublimation",
       "definition_2": "Defense mech where negative energy is harnessed in socially acceptable manner",
       "explanation": "Both are Freudian defense mechanisms that redirect negative energy, so where that energy actually ends up is the key distinction. Displacement redirects negative feelings toward a safer, unrelated target (yelling at a sibling instead of a boss). Sublimation redirects that same negative energy into a socially acceptable or even productive outlet, like exercise or art.",
-      "quick_tip": "displacement just moves the energy somewhere else; sublimation channels it into something <em>constructive</em>."
+      "quick_tip": "displacement just moves the energy somewhere else; sublimation channels it into something constructive."
     },
     {
       "id": "63",
@@ -696,7 +696,7 @@
       "term_2": "Hyperopia (Farsightedness)",
       "definition_2": "Eye is too short, light focused behind retina, blurry vision when looking at close object",
       "explanation": "Both are refractive vision problems, and the \"near\" and \"far\" in their common names get mixed up under exam pressure. Myopia (nearsightedness) happens when the eye is too long, so light focuses in front of the retina, blurring distant objects. Hyperopia (farsightedness) happens when the eye is too short, so light focuses behind the retina, blurring close objects.",
-      "quick_tip": "my<strong>o</strong>pia — the \"o\" looks like a close-up zero, blurry far away; hyperopia lets you see far."
+      "quick_tip": "myopia (nearsighted) sees <em>near</em> things clearly and far things blur; hyperopia (farsighted) sees <em>far</em> things clearly and near things blur."
     },
     {
       "id": "70",
