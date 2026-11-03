@@ -65,7 +65,7 @@
         .locked::before { content: '✓'; color: #28a745; font-weight: bold; }
 
         .tip-panel {
-            display: none; margin-top: 20px; background: #f4f8fb; border-left: 5px solid var(--accent); border-radius: 10px;
+            display: none; margin-top: 22px; background: #f4f8fb; border-left: 5px solid var(--accent); border-radius: 10px;
             padding: 14px 18px; font-size: 0.98rem; line-height: 1.6; color: #2f3b45;
         }
         .tip-pill {
@@ -181,7 +181,7 @@
                 <p class="cp-loading">Loading sets...</p>
             </div>
 
-            <h4 class="pool-label">Definitions</h4>
+            <h4 class="pool-label" id="pool-label">Definitions</h4>
             <div id="def-pool" ondragover="allowDrop(event)" ondrop="drop(event)">
             </div>
 
@@ -307,6 +307,9 @@
             document.getElementById('next-btn').style.display = 'none';
             const tipPanel = document.getElementById('tip-panel');
             if (tipPanel) tipPanel.style.display = 'none';
+            const poolLabel = document.getElementById('pool-label'), poolBox = document.getElementById('def-pool');
+            if (poolLabel) poolLabel.style.display = '';
+            if (poolBox) poolBox.style.display = '';
             const zonesContainer = document.getElementById('zones-container');
             zonesContainer.innerHTML = ''; 
             const pool = document.getElementById('def-pool');
@@ -410,6 +413,10 @@
             if (!set || !set.quick_tip) { panel.style.display = 'none'; return; }
             document.getElementById('tip-text').innerHTML = set.quick_tip;
             document.getElementById('tip-link').href = 'confusingpairs-guide#set-' + set.id;
+            // the definitions box is empty once a set is solved, so the tip takes its place
+            const poolLabel = document.getElementById('pool-label'), poolBox = document.getElementById('def-pool');
+            if (poolLabel) poolLabel.style.display = 'none';
+            if (poolBox) poolBox.style.display = 'none';
             panel.style.display = 'block';
         }
 
