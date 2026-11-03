@@ -2,198 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connections - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/connectionsgame">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .game-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 20px;
+        /* Only styles unique to Connections live here. The hero, stat tiles and tip box come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, select:focus-visible, .grid-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+        .container.cn-main { max-width: 760px; padding: 0 1rem; margin-bottom: 0; }
+        .cn-card { background: white; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); padding: 24px 26px 28px; text-align: center; }
+
+        .cn-toolbar { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; text-align: left; }
+        .cn-toolbar label { display: block; font-weight: bold; color: #555; font-size: 0.9rem; margin-bottom: 5px; }
+        .cn-toolbar select { margin: 0; min-width: 220px; padding: 10px; }
+        .status-bar { display: flex; align-items: center; gap: 10px; color: #555; font-weight: bold; font-size: 0.95rem; }
+        #mistakes-display { display: inline-flex; gap: 7px; align-items: center; }
+        .mistake-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--primary); display: inline-block; transition: background 0.3s, transform 0.3s; }
+        .mistake-dot.used { background: #d5dde3; transform: scale(0.8); }
+
+        /* message bar (replaces pop-up alerts) */
+        .game-message {
+            display: none; margin: 0 0 14px; padding: 11px 16px; border-radius: 10px; font-weight: bold; font-size: 1rem; text-align: center;
         }
-        .controls-area {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        select {
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 300px;
-        }
-        .status-bar {
-            margin: 15px 0;
-            font-size: 1.2rem;
-            color: #555;
-        }
-        .mistake-dot { color: #e74c3c; font-size: 1.5rem; }
-        
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-top: 20px;
-        }
+        .game-message.show { display: block; animation: cn-pop 0.25s ease-out; }
+        .msg-info { background: var(--panel-blue); color: #2672a8; }
+        .msg-oneaway { background: #fff6d6; color: #7a5d00; }
+        .msg-win { background: #d4edda; color: #155724; }
+        .msg-lose { background: #f8d7da; color: #721c24; }
+        @keyframes cn-pop { from { transform: translateY(-4px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+        /* ===== Board ===== */
+        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 4px; }
+        .grid-container > h3 { grid-column: 1 / -1; color: #777; font-weight: normal; margin: 30px 0; }
 
         .grid-item {
-            background-color: #f1f3f5;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            min-height: 80px;
-            user-select: none;
-            color: #333; 
+            background-color: #f1f5f8; border: 2px solid #dde5ea; border-radius: 10px; padding: 18px 8px; font-weight: bold; cursor: pointer;
+            transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s; display: flex; align-items: center; justify-content: center;
+            text-transform: uppercase; font-size: 0.88rem; line-height: 1.25; min-height: 80px; user-select: none; color: #2c3e50; word-break: break-word;
         }
-
-        .grid-item.selected {
-            background-color: #5c6c7d;
-            color: white;
-            border-color: #5c6c7d;
-        }
+        .grid-item:hover { background-color: #e4eef6; border-color: #b9cfe0; }
+        .grid-item.selected { background-color: var(--primary); color: white; border-color: var(--primary); transform: scale(0.98); }
+        .grid-item.shake { animation: cn-shake 0.4s; }
+        @keyframes cn-shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
 
         .solved-row {
-            grid-column: 1 / -1;
-            border-radius: 8px;
-            padding: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: popIn 0.5s ease-out;
+            grid-column: 1 / -1; border-radius: 10px; padding: 15px; font-weight: bold; text-transform: uppercase; display: flex;
+            flex-direction: column; justify-content: center; align-items: center; animation: popIn 0.5s ease-out;
         }
-        
-        .solved-row .category-title {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .solved-row .category-terms {
-            font-size: 0.85rem;
-            font-weight: normal;
-        }
+        .solved-row .category-title { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 5px; letter-spacing: 0.3px; }
+        .solved-row .category-terms { font-size: 0.82rem; font-weight: normal; }
+        @keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
+        /* Category colors (the classic four, in the order you solve them) */
+        .color-0 { background-color: #fce181; border: 2px solid #fce181; color: #333; }
+        .color-1 { background-color: #b5e5a4; border: 2px solid #b5e5a4; color: #333; }
+        .color-2 { background-color: #a8c8f9; border: 2px solid #a8c8f9; color: #333; }
+        .color-3 { background-color: #d1b3ff; border: 2px solid #d1b3ff; color: #333; }
 
-        /* Category Colors */
-        .color-0 { background-color: #fce181; border: 2px solid #fce181; color: #333;} 
-        .color-1 { background-color: #b5e5a4; border: 2px solid #b5e5a4; color: #333;} 
-        .color-2 { background-color: #a8c8f9; border: 2px solid #a8c8f9; color: #333;} 
-        .color-3 { background-color: #d1b3ff; border: 2px solid #d1b3ff; color: #333;} 
-
-        .btn-row {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap; 
-        }
-        
+        .btn-row { margin-top: 22px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .action-btn {
-            padding: 12px 25px;
-            font-size: 1rem;
-            border: 2px solid #333;
-            background: white;
-            color: #333; 
-            cursor: pointer;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.2s;
+            padding: 11px 24px; font-size: 1rem; border: 2px solid var(--primary); background: white; color: var(--primary); cursor: pointer;
+            border-radius: 25px; font-weight: bold; transition: background 0.2s, color 0.2s; margin: 0;
         }
-        .action-btn:hover {
-            background: #eee;
-        }
-        .submit-btn {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        .submit-btn:hover {
-            background: #3730a3;
-        }
+        .action-btn:hover { background: var(--panel-blue); transform: none; }
+        .submit-btn { background: var(--accent); color: white; border-color: var(--accent); }
+        .submit-btn:hover { background: #2980b9; border-color: #2980b9; }
+        .next-row { margin-top: 18px; }
+        .next-row .action-btn { border-color: var(--accent); color: var(--accent); }
+        .next-row .action-btn:hover { background: var(--accent); color: white; }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        .cn-tips { margin: 28px auto 0; max-width: 700px; }
+        .ad-under-review { display: none !important; }
+
         @media (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 8px;
-            }
-            .grid-item {
-                padding: 15px 5px;
-                font-size: 0.8rem;
-                min-height: 60px;
-            }
-            .action-btn {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* --- AD PLACEHOLDER (matches site pattern) ---
-           Sits below the whole puzzle, clear of the grid tiles and
-           Submit/Shuffle buttons to avoid accidental-click risk. */
-        .ad-banner-outer {
-            width: 90%;
-            max-width: 728px;
-            margin: 30px auto 0;
-        }
-        .ad-wrapper-banner {
-            width: 100%;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
-
-        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
-        .ad-under-review {
-            display: none !important;
-        }
-
-        .study-tips {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 15px 20px;
-            margin: 30px auto 0;
-            max-width: 650px;
-            width: 90%;
-            border-radius: 4px;
-            text-align: left;
-            color: #444;
-            line-height: 1.6;
-        }
-        .study-tips h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            color: var(--primary);
-        }
-        .study-tips p {
-            margin-bottom: 0;
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            .cn-card { padding: 18px 14px 22px; }
+            .cn-toolbar { flex-direction: column; align-items: stretch; }
+            .cn-toolbar select { width: 100%; min-width: 0; }
+            .grid-container { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .grid-item { padding: 14px 6px; font-size: 0.8rem; min-height: 62px; }
+            .action-btn { padding: 10px 16px; font-size: 0.92rem; }
         }
     </style>
 </head>
@@ -224,6 +123,7 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -238,49 +138,67 @@
             </li>
         </ul>
     </nav>
-    
-    <div class="container game-container">
-        <h1>🔗 Connections</h1>
-        
-        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 600px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-            <strong>Directions:</strong> Link related psychological concepts together! Select exactly four items that share an underlying theme or category, then click submit. Watch out for tricky distractors designed to fit into multiple groupings. You have four remaining mistakes before the full board is revealed.
-        </div>
 
-        <div class="controls-area">
-            <select id="unit-select" onchange="loadNewGame()">
-                <option value="all">Mixed Units</option>
-            </select>
-            <div class="status-bar">
-                Mistakes remaining: <span id="mistakes-display">⚫ ⚫ ⚫ ⚫</span>
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Connections</h1>
+                    <p class="page-lede">Link related psychological concepts together! Select exactly four items that share an underlying theme or category, then click submit. Watch out for tricky distractors designed to fit into multiple groupings. You have four remaining mistakes before the full board is revealed.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong id="stat-cats">58</strong><span>Categories</span></div>
+                    <div class="stat-tile tile-half"><strong id="stat-units">6</strong><span>Units</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Find the four groups hiding in sixteen terms</strong></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container cn-main over-hero">
+
+        <div class="cn-card">
+            <div class="cn-toolbar">
+                <div>
+                    <label for="unit-select">Unit</label>
+                    <select id="unit-select" onchange="loadNewGame()">
+                        <option value="all">Mixed Units</option>
+                    </select>
+                </div>
+                <div class="status-bar">
+                    Mistakes remaining: <span id="mistakes-display"></span>
+                </div>
+            </div>
+
+            <div id="game-message" class="game-message" role="status" aria-live="polite"></div>
+
+            <div class="grid-container" id="grid">
+                <h3>Loading puzzle...</h3>
+            </div>
+
+            <div class="btn-row">
+                <button class="action-btn" onclick="shuffleGrid()">Shuffle</button>
+                <button class="action-btn" onclick="deselectAll()">Deselect All</button>
+                <button class="action-btn submit-btn" onclick="submitSelection()">Submit</button>
+            </div>
+
+            <div class="next-row">
+                <button class="action-btn" onclick="loadNewGame()">Next Puzzle</button>
             </div>
         </div>
 
-        <div class="grid-container" id="grid">
-            <h3 style="grid-column: 1 / -1; color: #777;">Loading puzzle...</h3>
+        <div class="tip-box cn-tips">
+            <h3>💡 Getting the Most Out of Connections</h3>
+            <p>Connections is less about recalling a definition and more about recognizing how concepts relate to each other, which lines up well with how AP Psych actually tests you, since the exam often asks you to distinguish between similar-sounding terms rather than define them in isolation. Filter by unit while a topic is still fresh so the puzzle stays tied to what you're currently covering, then try "Mixed Units" once you want a tougher, more exam-realistic challenge. Pay attention to the distractors designed to fit more than one category; figuring out why a term doesn't belong is usually more useful than solving the easy group first. And if you get a "one away," treat it as information about which term you're misreading, not just a wrong guess.</p>
         </div>
 
-        <div class="btn-row">
-            <button class="action-btn" onclick="shuffleGrid()">Shuffle</button>
-            <button class="action-btn" onclick="deselectAll()">Deselect All</button>
-            <button class="action-btn submit-btn" onclick="submitSelection()">Submit</button>
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
         </div>
-        
-        <div style="margin-top: 20px;">
-            <button class="action-btn" onclick="loadNewGame()" style="border-color: var(--accent); color: var(--accent);">Next Puzzle</button>
-        </div>
-    </div>
-
-    <div class="study-tips">
-        <h3>💡 Getting the Most Out of Connections</h3>
-        <p>Connections is less about recalling a definition and more about recognizing how concepts relate to each other &mdash; which lines up well with how AP Psych actually tests you, since the exam often asks you to distinguish between similar-sounding terms rather than define them in isolation. Filter by unit while a topic is still fresh so the puzzle stays tied to what you're currently covering, then try "Mixed Units" once you want a tougher, more exam-realistic challenge. Pay attention to the distractors designed to fit more than one category; figuring out why a term doesn't belong is usually more useful than solving the easy group first. And if you get a "one away," treat it as information about which term you're misreading, not just a wrong guess.</p>
-    </div>
-
-    <div class="ad-banner-outer ad-under-review">
-        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
-        <div class="ad-wrapper-banner">
-            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
-        </div>
-    </div>
+    </main>
 
     <script>
         let allData = [];
@@ -290,6 +208,21 @@
         let solvedGroups = []; 
         let mistakes = 0;
         const MAX_MISTAKES = 4;
+
+        // Non-blocking message bar (replaces the old alert() popups)
+        let msgTimer = null;
+        function showMessage(text, kind, sticky) {
+            const bar = document.getElementById('game-message');
+            if (!bar) return;
+            clearTimeout(msgTimer);
+            bar.textContent = text;
+            bar.className = 'game-message show msg-' + (kind || 'info');
+            if (!sticky) msgTimer = setTimeout(hideMessage, 2500);
+        }
+        function hideMessage() {
+            const bar = document.getElementById('game-message');
+            if (bar) bar.className = 'game-message';
+        }
 
         // FETCH DATA WITH BULLETPROOF ERROR HANDLING
         fetch('connections.json')
@@ -301,6 +234,9 @@
                         // Filter out any accidentally empty entries in the JSON array
                         allData = data.connections.filter(item => item !== null && typeof item === 'object');
                         
+                        const sc = document.getElementById('stat-cats'), su = document.getElementById('stat-units');
+                        if (sc) sc.textContent = allData.length;
+                        if (su) su.textContent = new Set(allData.map(d => d.unit).filter(u => u)).size;
                         populateFilters();
                         loadNewGame();
                     } else {
@@ -332,6 +268,7 @@
         }
 
         function loadNewGame() {
+            hideMessage();
             mistakes = 0;
             solvedGroups = [];
             selectedItems = [];
@@ -345,9 +282,21 @@
                 return;
             }
 
-            // Randomly select 4 categories
-            let shuffledPool = [...pool].sort(() => 0.5 - Math.random());
-            currentPuzzle = shuffledPool.slice(0, 4);
+            // Randomly select 4 categories, avoiding any two that share the same term
+            // (identical tiles belonging to different groups can't be solved)
+            let picked = null;
+            for (let attempt = 0; attempt < 100 && !picked; attempt++) {
+                const candidate = [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
+                const seen = new Set();
+                let clash = false;
+                candidate.forEach(g => (g?.terms || []).forEach(t => {
+                    const k = String(t).trim().toLowerCase();
+                    if (seen.has(k)) clash = true;
+                    seen.add(k);
+                }));
+                if (!clash) picked = candidate;
+            }
+            currentPuzzle = picked || [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
 
             // Prepare grid items safely
             gridItems = [];
@@ -416,7 +365,10 @@
                 if (selectedItems.includes(item)) div.classList.add('selected');
                 
                 div.innerText = item.term;
+                div.tabIndex = 0;
+                div.setAttribute('role', 'button');
                 div.onclick = () => toggleSelect(item, div);
+                div.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSelect(item, div); } };
                 
                 grid.appendChild(div);
             });
@@ -442,7 +394,7 @@
 
         function submitSelection() {
             if (selectedItems.length !== 4) {
-                alert("Select exactly 4 terms!");
+                showMessage("Select exactly 4 terms first.", 'info');
                 return;
             }
 
@@ -456,7 +408,7 @@
                 selectedItems = [];
                 
                 if (solvedGroups.length === 4) {
-                    setTimeout(() => alert("Puzzle Solved! Great job! 🎉"), 300);
+                    showMessage("Puzzle solved! Great job! 🎉", 'win', true);
                 }
                 renderBoard();
             } else {
@@ -468,14 +420,15 @@
                 groupIndices.forEach(x => counts[x] = (counts[x] || 0) + 1);
                 const isOneAway = Object.values(counts).includes(3);
 
+                document.querySelectorAll('.grid-item.selected').forEach(el => el.classList.add('shake'));
                 selectedItems = []; // clear selection on mistake
                 setTimeout(() => renderBoard(), 400);
 
-                if(isOneAway) setTimeout(() => alert("One away..."), 400);
+                if(isOneAway) showMessage("One away...", 'oneaway');
 
                 if(mistakes >= MAX_MISTAKES) {
                     setTimeout(() => {
-                        alert("Game Over! Better luck next time.");
+                        showMessage("Game over! Here are the four groups.", 'lose', true);
                         solvedGroups = [0, 1, 2, 3]; // Reveal all
                         renderBoard();
                     }, 500);
@@ -486,15 +439,14 @@
         function updateMistakesUI() {
             const remaining = MAX_MISTAKES - mistakes;
             let html = '';
-            for(let i=0; i<MAX_MISTAKES; i++) {
-                if(i < remaining) html += '<span class="mistake-dot">⚫</span> ';
-                else html += '<span class="mistake-dot" style="opacity:0.2">⚫</span> ';
+            for (let i = 0; i < MAX_MISTAKES; i++) {
+                html += '<span class="mistake-dot' + (i < remaining ? '' : ' used') + '"></span>';
             }
             document.getElementById('mistakes-display').innerHTML = html;
         }
     </script>
 
-     <footer>
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
