@@ -104,7 +104,7 @@
       "unit": "1",
       "oddball": "Oxytocin",
       "related1": "Dopamine",
-      "related2": "Seratonin",
+      "related2": "Serotonin",
       "related3": "Acetylcholine",
       "explanation": "Oxytocin is the oddball because it is a hormone produced by the endocrine system. Dopamine, serotonin, and acetylcholine are all neurotransmitters that transmit signals between neurons in the nervous system."
     },
@@ -112,7 +112,7 @@
       "id": "13",
       "unit": "1",
       "oddball": "Breathing slows",
-      "related1": "Increased heartrate",
+      "related1": "Increased heart rate",
       "related2": "Decreased digestion",
       "related3": "Pupils Dilate",
       "explanation": "Breathing slows is the oddball because it is associated with the parasympathetic nervous system, which calms the body. Increased heart rate, decreased digestion, and dilated pupils are all responses caused by the sympathetic nervous system during arousal or stress."
@@ -276,7 +276,7 @@
       "oddball": "Retroactive Interference",
       "related1": "Synesthesia",
       "related2": "Prosopagnosia",
-      "related3": "Blind Sight",
+      "related3": "Blindsight",
       "explanation": "Retroactive interference is the oddball because it is a memory phenomenon where new information interferes with the recall of previously learned information. Synesthesia, prosopagnosia, and blindsight are all perceptual or neurological conditions that involve unusual ways the brain processes sensory information."
     },
     {
@@ -383,7 +383,7 @@
       "unit": "2",
       "oddball": "Intuition",
       "related1": "Functional Fixedness",
-      "related2": "Belief Perseverence",
+      "related2": "Belief Perseverance",
       "related3": "Confirmation Bias",
       "explanation": "Intuition is the oddball because it refers to quick, automatic thinking or “gut feelings.” Functional fixedness, belief perseverance, and confirmation bias are all ways thinking can become biased or limited."
     },
@@ -418,7 +418,7 @@
       "id": "47",
       "unit": "2",
       "oddball": "Fluid Intelligence",
-      "related1": "Crystalized Intelligence",
+      "related1": "Crystallized Intelligence",
       "related2": "Grows over time",
       "related3": "Knowledge",
       "explanation": "Fluid intelligence is the oddball because it involves solving new problems and reasoning quickly, independent of prior knowledge. Crystallized intelligence, knowledge, and “grows over time” are all connected because crystallized intelligence increases as people gain experience and learned information."
@@ -613,15 +613,6 @@
       "explanation": "Chunking is the oddball because it is a memory strategy for organizing information into meaningful groups. The others are all related to spreading learning over time or improving retention through repeated exposure."
     },
     {
-      "id": "69",
-      "unit": "3",
-      "oddball": "Conventional Stage",
-      "related1": "Sensorimotor Stage",
-      "related2": "Preoperational Stage",
-      "related3": "Formal Operational Stage",
-      "explanation": "The conventional stage is the oddball because it is part of Kohlberg’s theory of moral development. The sensorimotor, preoperational, and formal operational stages are all part of Piaget’s theory of cognitive development."
-    },
-    {
       "id": "70",
       "unit": "3",
       "oddball": "Conservation",
@@ -653,7 +644,7 @@
       "unit": "3",
       "oddball": "Authoritative",
       "related1": "Assimilation",
-      "related2": "Accomodation",
+      "related2": "Accommodation",
       "related3": "Schemas",
       "explanation": "Authoritative is the oddball because it is a parenting style. Assimilation, accommodation, and schemas are all part of Piaget’s cognitive development theory."
     },
@@ -680,7 +671,7 @@
       "unit": "3",
       "oddball": "Concrete",
       "related1": "Lack of conservation",
-      "related2": "Lack of Object Permanance",
+      "related2": "Lack of Object Permanence",
       "related3": "Sensorimotor",
       "explanation": "Concrete is the oddball because it refers to the concrete operational stage, where conservation is developed. Lack of conservation and lack of object permanence are both characteristics of earlier stages (preoperational and sensorimotor)."
     },
@@ -761,7 +752,7 @@
       "unit": "3",
       "oddball": "Menarche",
       "related1": "Wide hips",
-      "related2": "Englarged breasts",
+      "related2": "Enlarged breasts",
       "related3": "Pubic hair",
       "explanation": "Menarche is the oddball because it refers specifically to the first menstrual cycle during puberty. Wide hips, enlarged breasts, and pubic hair are all secondary sex characteristics that develop during female puberty."
     },
@@ -881,24 +872,6 @@
       "related2": "Reinforcement",
       "related3": "Punishment",
       "explanation": "Neutral stimulus is the oddball because it is part of classical conditioning before learning occurs. The others are operant conditioning concepts that modify behavior."
-    },
-    {
-      "id": "99",
-      "unit": "4",
-      "oddball": "Hierarchy of Needs",
-      "related1": "Repression",
-      "related2": "Projection",
-      "related3": "Deindividuation",
-      "explanation": "The hierarchy of needs is the oddball because it is a motivational theory developed by Abraham Maslow describing levels of human needs from basic survival to self-actualization. Repression and projection are defense mechanisms from Sigmund Freud’s psychoanalytic theory, and deindividuation is a social psychology concept related to loss of self-awareness in groups."
-    },
-    {
-      "id": "100",
-      "unit": "4",
-      "oddball": "Instinct",
-      "related1": "Drive Reduction",
-      "related2": "Yerkes-Dodson Law",
-      "related3": "Optimal Arousal",
-      "explanation": "Instinct is the oddball because it refers to innate, biologically driven behaviors. Drive reduction theory, the Yerkes-Dodson law, and optimal arousal theory all explain motivation in terms of internal arousal levels and how people are motivated to maintain balance or performance efficiency."
     },
     {
       "id": "101",
@@ -1068,7 +1041,7 @@
       "oddball": "Free Association",
       "related1": "Flooding",
       "related2": "Exposure Therapy",
-      "related3": "Systemic Desensitization",
+      "related3": "Systematic Desensitization",
       "explanation": "Free association is the oddball because it is a psychoanalytic technique developed by Freud in which clients say whatever comes to mind. Flooding, exposure therapy, and systematic desensitization are all behavioral therapies used to reduce anxiety and phobias through exposure to feared stimuli."
     },
     {
@@ -1087,7 +1060,7 @@
       "related1": "Schizoid",
       "related2": "Histrionic",
       "related3": "Dependent",
-      "explanation": "Mania is the oddball because it is a mood state characterized by elevated mood, high energy, and impulsive behavior (often associated with bipolar disorder). Schizoid, borderline, and dependent are all personality disorders from the DSM that involve long-term patterns of thinking, feeling, and behavior rather than short-term mood episodes."
+      "explanation": "Mania is the oddball because it is a mood state characterized by elevated mood, high energy, and impulsive behavior (often associated with bipolar disorder). Schizoid, histrionic, and dependent are all personality disorders from the DSM that involve long-term patterns of thinking, feeling, and behavior rather than short-term mood episodes."
     },
     {
       "id": "122",
@@ -1141,7 +1114,466 @@
       "related1": "Optimism",
       "related2": "Resilience",
       "related3": "Growth Mindset",
-      "explanation": "Learned helplessness is the oddball because it involves a passive belief that one has no control over outcomes after repeated failure or stress. Eustress, resilience, and growth mindset are all positive psychology concepts that focus on adaptive coping, persistence, and viewing challenges as opportunities for growth."
+      "explanation": "Learned helplessness is the oddball because it involves a passive belief that one has no control over outcomes after repeated failure or stress. Optimism, resilience, and growth mindset are all positive psychology concepts that focus on adaptive coping, persistence, and viewing challenges as opportunities for growth."
+    },
+    {
+      "id": "128",
+      "unit": "0",
+      "oddball": "Curiosity",
+      "related1": "Hindsight Bias",
+      "related2": "Overconfidence",
+      "related3": "Confirmation Bias",
+      "explanation": "Curiosity is the oddball because it is one of the elements of the scientific attitude. Hindsight bias, overconfidence, and confirmation bias are all flaws in intuition that the scientific attitude is designed to guard against."
+    },
+    {
+      "id": "129",
+      "unit": "0",
+      "oddball": "Population",
+      "related1": "Random Sample",
+      "related2": "Convenience Sample",
+      "related3": "Representative Sample",
+      "explanation": "Population is the oddball because it is the entire group a researcher wants to learn about. Random, convenience, and representative samples all describe the smaller subset that is actually chosen from that population."
+    },
+    {
+      "id": "130",
+      "unit": "0",
+      "oddball": "Random Sample",
+      "related1": "Social Desirability Bias",
+      "related2": "Self-Report Bias",
+      "related3": "Experimenter Bias",
+      "explanation": "Random sample is the oddball because it is a sampling technique that helps make results generalizable. Social desirability bias, self-report bias, and experimenter bias are all sources of bias that can distort research results."
+    },
+    {
+      "id": "131",
+      "unit": "0",
+      "oddball": "Experimenter Bias",
+      "related1": "Single-Blind Procedure",
+      "related2": "Double-Blind Procedure",
+      "related3": "Placebo",
+      "explanation": "Experimenter bias is the oddball because it is a problem in which a researcher's expectations influence the results. Single-blind procedures, double-blind procedures, and placebos are all tools used to keep expectations from affecting the outcome."
+    },
+    {
+      "id": "132",
+      "unit": "0",
+      "oddball": "Negative Correlation",
+      "related1": "Third Variable Problem",
+      "related2": "Directionality Problem",
+      "related3": "Illusory Correlation",
+      "explanation": "Negative correlation is the oddball because it describes a type of relationship in which one variable rises as the other falls. The others are all problems or errors in thinking about correlations."
+    },
+    {
+      "id": "133",
+      "unit": "0",
+      "oddball": "Confounding Variable",
+      "related1": "Independent Variable",
+      "related2": "Dependent Variable",
+      "related3": "Experimental Group",
+      "explanation": "Confounding variable is the oddball because it is an unplanned factor that can mix up the results of an experiment. The independent variable, dependent variable, and experimental group are all deliberate parts of an experiment's design."
+    },
+    {
+      "id": "134",
+      "unit": "0",
+      "oddball": "Qualitative Research",
+      "related1": "Mean",
+      "related2": "Standard Deviation",
+      "related3": "Correlation Coefficient",
+      "explanation": "Qualitative research is the oddball because it collects descriptive, non-numerical information such as interviews or observations. The mean, standard deviation, and correlation coefficient are all numerical statistics."
+    },
+    {
+      "id": "135",
+      "unit": "0",
+      "oddball": "Range",
+      "related1": "Positive Skew",
+      "related2": "Negative Skew",
+      "related3": "Bimodal Distribution",
+      "explanation": "Range is the oddball because it is a number that tells you how spread out the data are. Positive skew, negative skew, and bimodal distribution are all shapes a distribution of scores can take."
+    },
+    {
+      "id": "136",
+      "unit": "0",
+      "oddball": "Inferential Statistics",
+      "related1": "Mean",
+      "related2": "Range",
+      "related3": "Standard Deviation",
+      "explanation": "Inferential statistics is the oddball because it uses data from a sample to draw conclusions about a larger population. The mean, range, and standard deviation are all descriptive statistics that summarize the data in hand."
+    },
+    {
+      "id": "137",
+      "unit": "0",
+      "oddball": "Biopsychosocial Perspective",
+      "related1": "Psychodynamic Perspective",
+      "related2": "Humanistic Perspective",
+      "related3": "Sociocultural Perspective",
+      "explanation": "The biopsychosocial perspective is the oddball because it combines biological, psychological, and sociocultural levels of analysis into one integrated approach. The others are each a single perspective with its own focus."
+    },
+    {
+      "id": "138",
+      "unit": "0",
+      "oddball": "Naturalistic Observation",
+      "related1": "Random Assignment",
+      "related2": "Control Group",
+      "related3": "Independent Variable",
+      "explanation": "Naturalistic observation is the oddball because it is a descriptive method in which researchers watch behavior without changing anything. Random assignment, a control group, and an independent variable are all features of an experiment."
+    },
+    {
+      "id": "139",
+      "unit": "0",
+      "oddball": "Replication",
+      "related1": "Case Study",
+      "related2": "Survey",
+      "related3": "Naturalistic Observation",
+      "explanation": "Replication is the oddball because it means repeating a study to see whether the results hold up. A case study, a survey, and naturalistic observation are all descriptive research methods."
+    },
+    {
+      "id": "140",
+      "unit": "1",
+      "oddball": "Olfaction",
+      "related1": "Sweet",
+      "related2": "Bitter",
+      "related3": "Umami",
+      "explanation": "Olfaction is the oddball because it is the sense of smell. Sweet, bitter, and umami are all basic tastes detected by receptors on the tongue."
+    },
+    {
+      "id": "141",
+      "unit": "1",
+      "oddball": "Basilar Membrane",
+      "related1": "Hammer",
+      "related2": "Anvil",
+      "related3": "Stirrup",
+      "explanation": "Basilar membrane is the oddball because it is a structure inside the cochlea of the inner ear. The hammer, anvil, and stirrup are the three tiny bones of the middle ear."
+    },
+    {
+      "id": "142",
+      "unit": "1",
+      "oddball": "Aphasia",
+      "related1": "Corpus Callosum",
+      "related2": "Contralateral Organization",
+      "related3": "Hemispheric Specialization",
+      "explanation": "Aphasia is the oddball because it is a language impairment caused by damage to the brain. The corpus callosum, contralateral organization, and hemispheric specialization are all concepts about how the two halves of the brain are connected and divide their work."
+    },
+    {
+      "id": "143",
+      "unit": "1",
+      "oddball": "Natural Selection",
+      "related1": "Twin Studies",
+      "related2": "Monozygotic Twins",
+      "related3": "Dizygotic Twins",
+      "explanation": "Natural selection is the oddball because it is an evolutionary process in which helpful traits become more common over generations. Twin studies, monozygotic twins, and dizygotic twins are all part of the research used to separate genetic and environmental influences."
+    },
+    {
+      "id": "144",
+      "unit": "1",
+      "oddball": "GABA",
+      "related1": "Leptin",
+      "related2": "Ghrelin",
+      "related3": "Melatonin",
+      "explanation": "GABA is the oddball because it is a neurotransmitter, the brain's main inhibitory chemical messenger. Leptin, ghrelin, and melatonin are all hormones released into the bloodstream."
+    },
+    {
+      "id": "145",
+      "unit": "1",
+      "oddball": "Reuptake",
+      "related1": "Depolarization",
+      "related2": "Resting Potential",
+      "related3": "Refractory Period",
+      "explanation": "Reuptake is the oddball because it is the process of a neurotransmitter being reabsorbed by the sending neuron at the synapse. Depolarization, resting potential, and the refractory period are all electrical events in a neuron's firing cycle."
+    },
+    {
+      "id": "146",
+      "unit": "1",
+      "oddball": "Sleep Apnea",
+      "related1": "Jet Lag",
+      "related2": "Shift Work",
+      "related3": "Circadian Rhythm",
+      "explanation": "Sleep apnea is the oddball because it is a sleep disorder in which breathing repeatedly stops during sleep. Jet lag, shift work, and circadian rhythm are all tied to the body's internal clock."
+    },
+    {
+      "id": "147",
+      "unit": "1",
+      "oddball": "Cerebellum",
+      "related1": "Executive Functioning",
+      "related2": "Higher-Order Thinking",
+      "related3": "Prefrontal Cortex",
+      "explanation": "Cerebellum is the oddball because it coordinates balance and movement. Executive functioning, higher-order thinking, and the prefrontal cortex are all tied to planning and complex thinking in the frontal lobes."
+    },
+    {
+      "id": "148",
+      "unit": "2",
+      "oddball": "Encoding Failure",
+      "related1": "Context Dependent Memory",
+      "related2": "State Dependent Memory",
+      "related3": "Priming",
+      "explanation": "Encoding failure is the oddball because it is a reason information is never stored, so it cannot be recalled. Context-dependent memory, state-dependent memory, and priming are all examples of how cues or surroundings influence the retrieval of stored information."
+    },
+    {
+      "id": "149",
+      "unit": "2",
+      "oddball": "Perceptual Set",
+      "related1": "Size Constancy",
+      "related2": "Shape Constancy",
+      "related3": "Color Constancy",
+      "explanation": "Perceptual set is the oddball because it is a mental tendency to perceive things a certain way based on expectations. Size, shape, and color constancy are all ways we perceive objects as unchanging even when the sensory input changes."
+    },
+    {
+      "id": "150",
+      "unit": "2",
+      "oddball": "Mnemonic Devices",
+      "related1": "Concepts",
+      "related2": "Prototypes",
+      "related3": "Schemas",
+      "explanation": "Mnemonic devices is the oddball because it refers to memory aids used to remember information. Concepts, prototypes, and schemas are all mental structures we use to organize knowledge."
+    },
+    {
+      "id": "151",
+      "unit": "2",
+      "oddball": "Flynn Effect",
+      "related1": "Mental Age",
+      "related2": "Chronological Age",
+      "related3": "IQ",
+      "explanation": "Flynn effect is the oddball because it describes the rise in average intelligence test scores across generations. Mental age, chronological age, and IQ are all connected to how intelligence was originally measured and scored."
+    },
+    {
+      "id": "152",
+      "unit": "2",
+      "oddball": "Spacing Effect",
+      "related1": "Primacy Effect",
+      "related2": "Recency Effect",
+      "related3": "Serial Position Effect",
+      "explanation": "Spacing effect is the oddball because it is about how spreading study sessions over time improves retention. Primacy effect, recency effect, and serial position effect are all about how an item's position in a list affects how well it is remembered."
+    },
+    {
+      "id": "153",
+      "unit": "2",
+      "oddball": "Creativity",
+      "related1": "Gambler's Fallacy",
+      "related2": "Sunk-Cost Fallacy",
+      "related3": "Framing",
+      "explanation": "Creativity is the oddball because it is the ability to produce new and valuable ideas. The gambler's fallacy, sunk-cost fallacy, and framing are all ways that decision making can be biased."
+    },
+    {
+      "id": "154",
+      "unit": "2",
+      "oddball": "Forgetting Curve",
+      "related1": "Misinformation Effect",
+      "related2": "Imagination Inflation",
+      "related3": "Constructive Memory",
+      "explanation": "Forgetting curve is the oddball because it shows how quickly memory fades over time. Misinformation effect, imagination inflation, and constructive memory are all ways memories can be distorted or rebuilt inaccurately."
+    },
+    {
+      "id": "155",
+      "unit": "3",
+      "oddball": "Imaginary Audience",
+      "related1": "Identity Achievement",
+      "related2": "Identity Moratorium",
+      "related3": "Identity Foreclosure",
+      "explanation": "Imaginary audience is the oddball because it is the adolescent belief that everyone is watching and judging you. Identity achievement, moratorium, and foreclosure are all identity statuses in Marcia's theory."
+    },
+    {
+      "id": "156",
+      "unit": "3",
+      "oddball": "Formal Operational Stage",
+      "related1": "Preconventional Morality",
+      "related2": "Conventional Morality",
+      "related3": "Postconventional Morality",
+      "explanation": "Formal operational stage is the oddball because it is a stage of cognitive development from Piaget's theory. The others are the three levels of moral reasoning in Kohlberg's theory."
+    },
+    {
+      "id": "157",
+      "unit": "3",
+      "oddball": "Extinction",
+      "related1": "Fixed Ratio Schedule",
+      "related2": "Variable Ratio Schedule",
+      "related3": "Variable Interval Schedule",
+      "explanation": "Extinction is the oddball because it is the gradual weakening of a learned response when reinforcement stops. The others are all schedules that describe when reinforcement is delivered."
+    },
+    {
+      "id": "158",
+      "unit": "3",
+      "oddball": "Spontaneous Recovery",
+      "related1": "Latent Learning",
+      "related2": "Cognitive Maps",
+      "related3": "Insight Learning",
+      "explanation": "Spontaneous recovery is the oddball because it is the reappearance of a weakened conditioned response in classical conditioning. Latent learning, cognitive maps, and insight learning are all examples of cognitive learning that happens without direct reinforcement."
+    },
+    {
+      "id": "159",
+      "unit": "3",
+      "oddball": "Acquisition",
+      "related1": "Modeling",
+      "related2": "Imitation",
+      "related3": "Vicarious Reinforcement",
+      "explanation": "Acquisition is the oddball because it is the initial stage of classical conditioning when a response is first learned. Modeling, imitation, and vicarious reinforcement are all parts of observational learning."
+    },
+    {
+      "id": "160",
+      "unit": "3",
+      "oddball": "Object Permanence",
+      "related1": "Animism",
+      "related2": "Egocentrism",
+      "related3": "Pretend Play",
+      "explanation": "Object permanence is the oddball because it is a milestone of the sensorimotor stage. Animism, egocentrism, and pretend play are all characteristics of the preoperational stage."
+    },
+    {
+      "id": "161",
+      "unit": "3",
+      "oddball": "Menopause",
+      "related1": "Menarche",
+      "related2": "Spermarche",
+      "related3": "Secondary Sex Characteristics",
+      "explanation": "Menopause is the oddball because it marks the end of fertility in adulthood. Menarche, spermarche, and secondary sex characteristics are all part of puberty."
+    },
+    {
+      "id": "162",
+      "unit": "4",
+      "oddball": "Cognitive Dissonance",
+      "related1": "Dispositional Attribution",
+      "related2": "Situational Attribution",
+      "related3": "Fundamental Attribution Error",
+      "explanation": "Cognitive dissonance is the oddball because it is the discomfort people feel when their attitudes and behavior conflict. The others are all concepts about how people explain the causes of behavior."
+    },
+    {
+      "id": "163",
+      "unit": "4",
+      "oddball": "Bystander Effect",
+      "related1": "Social Facilitation",
+      "related2": "Social Inhibition",
+      "related3": "Social Loafing",
+      "explanation": "Bystander effect is the oddball because it is the tendency to help less when other people are present. Social facilitation, social inhibition, and social loafing are all about how other people's presence changes a person's performance or effort on a task."
+    },
+    {
+      "id": "164",
+      "unit": "4",
+      "oddball": "Reciprocal Determinism",
+      "related1": "Self-Actualization",
+      "related2": "Unconditional Positive Regard",
+      "related3": "Self-Concept",
+      "explanation": "Reciprocal determinism is the oddball because it is a social-cognitive idea that thoughts, behavior, and environment all influence one another. The others are central concepts in the humanistic perspective."
+    },
+    {
+      "id": "165",
+      "unit": "4",
+      "oddball": "Self-Efficacy",
+      "related1": "Displacement",
+      "related2": "Sublimation",
+      "related3": "Rationalization",
+      "explanation": "Self-efficacy is the oddball because it is a person's belief in their own ability to succeed, an idea from the social-cognitive perspective. Displacement, sublimation, and rationalization are all defense mechanisms from the psychodynamic perspective."
+    },
+    {
+      "id": "166",
+      "unit": "4",
+      "oddball": "Homeostasis",
+      "related1": "Autonomy",
+      "related2": "Competence",
+      "related3": "Relatedness",
+      "explanation": "Homeostasis is the oddball because it is the body's drive to keep internal conditions balanced. Autonomy, competence, and relatedness are the three psychological needs described by self-determination theory."
+    },
+    {
+      "id": "167",
+      "unit": "4",
+      "oddball": "Extrinsic Motivation",
+      "related1": "Approach-Approach Conflict",
+      "related2": "Avoidance-Avoidance Conflict",
+      "related3": "Approach-Avoidance Conflict",
+      "explanation": "Extrinsic motivation is the oddball because it is the desire to do something for an outside reward or to avoid punishment. The others are all types of motivational conflict."
+    },
+    {
+      "id": "168",
+      "unit": "4",
+      "oddball": "Display Rules",
+      "related1": "James-Lange Theory",
+      "related2": "Cannon-Bard Theory",
+      "related3": "Two-Factor Theory",
+      "explanation": "Display rules is the oddball because it refers to cultural norms about how and when emotions should be expressed. The others are all theories that explain how emotions arise."
+    },
+    {
+      "id": "169",
+      "unit": "4",
+      "oddball": "Halo Effect",
+      "related1": "Upward Social Comparison",
+      "related2": "Downward Social Comparison",
+      "related3": "Relative Deprivation",
+      "explanation": "Halo effect is the oddball because it is forming an overall impression of a person from one positive trait. The others all involve judging yourself by comparing your situation to other people's."
+    },
+    {
+      "id": "170",
+      "unit": "5",
+      "oddball": "Problem-Focused Coping",
+      "related1": "Alarm Stage",
+      "related2": "Resistance Stage",
+      "related3": "Exhaustion Stage",
+      "explanation": "Problem-focused coping is the oddball because it is a way of dealing with stress by tackling its source. Alarm, resistance, and exhaustion are the three stages of the general adaptation syndrome."
+    },
+    {
+      "id": "171",
+      "unit": "5",
+      "oddball": "Schizophrenia",
+      "related1": "Dissociative Identity Disorder",
+      "related2": "Dissociative Amnesia",
+      "related3": "Dissociative Fugue",
+      "explanation": "Schizophrenia is the oddball because it is a psychotic disorder involving a loss of contact with reality, such as hallucinations and delusions. The others are dissociative disorders in which a person's memory or sense of identity is disrupted."
+    },
+    {
+      "id": "172",
+      "unit": "5",
+      "oddball": "Active Listening",
+      "related1": "Free Association",
+      "related2": "Dream Interpretation",
+      "related3": "Psychodynamic Therapies",
+      "explanation": "Active listening is the oddball because it is a technique of person-centered (humanistic) therapy. Free association, dream interpretation, and psychodynamic therapies are all connected to the psychodynamic approach."
+    },
+    {
+      "id": "173",
+      "unit": "5",
+      "oddball": "Token Economy",
+      "related1": "Cognitive Triad",
+      "related2": "Maladaptive Thinking",
+      "related3": "Cognitive Restructuring",
+      "explanation": "Token economy is the oddball because it is a behavioral technique that uses rewards to shape behavior. The cognitive triad, maladaptive thinking, and cognitive restructuring are all central ideas in cognitive therapy."
+    },
+    {
+      "id": "174",
+      "unit": "5",
+      "oddball": "Electroconvulsive Therapy",
+      "related1": "Antipsychotic Medications",
+      "related2": "Antidepressants",
+      "related3": "Antianxiety Drugs",
+      "explanation": "Electroconvulsive therapy is the oddball because it treats disorders with brief electrical stimulation of the brain. The others are all psychotropic medications."
+    },
+    {
+      "id": "175",
+      "unit": "5",
+      "oddball": "DSM",
+      "related1": "Diathesis-Stress Model",
+      "related2": "Biopsychosocial Model",
+      "related3": "Eclectic Approach",
+      "explanation": "DSM is the oddball because it is a manual used to classify and diagnose psychological disorders. The others are all frameworks for explaining the causes of disorders or approaches to treating them."
+    },
+    {
+      "id": "176",
+      "unit": "5",
+      "oddball": "Subjective Well-Being",
+      "related1": "Wisdom",
+      "related2": "Courage",
+      "related3": "Justice",
+      "explanation": "Subjective well-being is the oddball because it is a person's overall sense of how satisfying their life is. Wisdom, courage, and justice are all character strengths studied in positive psychology."
+    },
+    {
+      "id": "177",
+      "unit": "5",
+      "oddball": "Panic Attack",
+      "related1": "Obsessions",
+      "related2": "Compulsions",
+      "related3": "Obsessive Compulsive Disorder",
+      "explanation": "Panic attack is the oddball because it is a sudden surge of intense fear that peaks within minutes. Obsessions, compulsions, and obsessive compulsive disorder are all part of the same pattern of unwanted thoughts and repetitive behaviors."
+    },
+    {
+      "id": "178",
+      "unit": "5",
+      "oddball": "Transcranial Magnetic Stimulation",
+      "related1": "Psychosurgery",
+      "related2": "Lesioning",
+      "related3": "Lobotomy",
+      "explanation": "Transcranial magnetic stimulation is the oddball because it stimulates the brain with magnetic pulses and does not require surgery. Psychosurgery, lesioning, and lobotomy all involve surgically cutting or destroying brain tissue."
     }
   ]
 }
