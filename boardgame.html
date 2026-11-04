@@ -2,226 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Psych Land</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psych Land - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/boardgame">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        /* --- GENERAL LAYOUT --- */
-        body {
-            background-color: #f0f8ff;
-        }
+        /* Only styles unique to Psych Land live here. The hero, stat tiles and tip box come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-        .game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+        /* hero compacts once the game starts */
+        body:has(#game-ui[style*="block"]) .page-hero { padding: 22px 0 62px; }
+        body:has(#game-ui[style*="block"]) .page-hero .page-lede,
+        body:has(#game-ui[style*="block"]) .page-hero .hero-stats { display: none; }
+        body:has(#game-ui[style*="block"]) .page-hero-grid { grid-template-columns: 1fr; }
+        body:has(#game-ui[style*="block"]) .page-hero h1 { margin: 0; font-size: 2.2rem; }
+        body:has(#game-ui[style*="block"]) .container.over-hero { margin-top: 14px; }
 
-        /* --- THE BOARD WRAPPER --- */
-        .board-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border-radius: 15px;
-            overflow: hidden;
-            background: white;
-        }
+        .container.pl-main { max-width: 1040px; padding: 0 1rem; margin-bottom: 0; }
 
-        #game-board-img {
-            width: 100%;
-            display: block;
-            pointer-events: none;
-        }
-
-        /* --- PLAYER PIECES --- */
-        .player-piece {
-            font-size: 2rem;
-            position: absolute;
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            z-index: 50;
-            transform: translate(-50%, -70%);
-            filter: drop-shadow(0px 5px 3px rgba(0,0,0,0.5));
-            pointer-events: none;
-        }
-
-        .p1 { z-index: 54; }
-        .p2 { filter: hue-rotate(210deg); z-index: 53; margin-left: 5px; } 
-        .p3 { filter: hue-rotate(100deg); z-index: 52; margin-top: 5px; }
-        .p4 { filter: hue-rotate(50deg);  z-index: 51; margin-left: 5px; margin-top: 5px; }
-
-        /* --- SPECIAL MARKERS --- */
-        .special-marker {
-            position: absolute;
-            font-size: 1.5rem;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            pointer-events: none;
-            opacity: 0.8;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, -50%); }
-            50% { transform: translate(-50%, -65%); }
-        }
-
-        /* --- UI ELEMENTS --- */
-        .sticky-controls {
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-            background: rgba(255,255,255,0.95);
-            padding: 10px 25px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            border: 1px solid #ddd;
-        }
-
-        /* --- MODAL STYLES --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 200;
-        }
-        
-        #feedback-modal { z-index: 300; }
-
-        .game-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            border: 8px solid #333; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        /* Standard Game Button */
-        .game-btn {
-            padding: 12px;
-            border: 2px solid #ccc;
-            background: #fff;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.2s;
-        }
-        .game-btn:hover { background: #eee; transform: translateY(-2px); }
-
-        /* Fancy Feedback Button (Fixed Style) */
-        .feedback-btn {
-            background-color: var(--accent) !important;
-            color: white !important;
-            border: none;
-            padding: 10px 25px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        .feedback-btn:hover {
-            background-color: #2980b9 !important;
-            transform: scale(1.05);
-        }
-
-        /* Setup Screen */
+        /* ===== SETUP ===== */
         #setup-screen {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 90%;
-            margin-bottom: 20px;
+            background: white; padding: 30px 32px 32px; border-radius: 14px; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+            max-width: 680px; margin: 0 auto 24px;
         }
-        select {
-            padding: 10px;
-            width: 100%;
-            margin-bottom: 15px;
-        }
-        
-        .active-turn {
-            border-bottom: 3px solid var(--accent);
-            color: var(--accent);
-            font-weight: bold;
-        }
+        #setup-screen h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); margin: 0 0 14px; }
+        .rules { font-size: 1rem; line-height: 1.6; color: #3d4852; background: var(--panel-blue); padding: 16px 20px; border-left: 5px solid var(--accent); border-radius: 10px; margin-bottom: 22px; }
+        .rules p { margin: 0 0 12px; }
+        .rules p.modes { margin: 0; font-size: 0.97rem; color: #4d5a65; border-top: 1px solid #d0e0ec; padding-top: 12px; }
+        .rules strong { color: var(--primary); }
+        #setup-screen label { display: block; font-weight: bold; color: #555; font-size: 0.92rem; margin-bottom: 5px; }
+        #setup-screen select { padding: 10px; width: 100%; margin: 0 0 16px; }
+        #start-btn { width: 100%; margin: 6px 0 0; padding: 14px; font-size: 1.1rem; font-weight: bold; }
+        #start-btn:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
+        #load-error { display: none; margin-top: 12px; color: #c0392b; font-size: 0.95rem; text-align: center; }
 
-        /* --- AD PLACEHOLDER (matches site pattern) ---
-           Sits below the whole game, clear of the Draw Card button and
-           board so there's no accidental-click risk. */
-        .ad-banner-outer {
-            width: 90%;
-            max-width: 728px;
-            margin: 30px auto 0;
+        /* ===== GAME ===== */
+        #game-ui { width: 100%; }
+        .sticky-controls {
+            position: sticky; top: 10px; z-index: 100; background: #fff; padding: 10px 14px 10px 24px; border-radius: 50px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13); display: flex; align-items: center; justify-content: space-between; gap: 20px; border: 1px solid #e6ecf0;
         }
-        .ad-wrapper-banner {
-            width: 100%;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
+        #status-text { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--primary); }
+        #draw-btn { margin: 0; padding: 10px 24px; border-radius: 30px; font-weight: bold; }
+        #draw-btn:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
 
-        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
-        .ad-under-review {
-            display: none !important;
-        }
+        #score-board { text-align: center; margin: 14px 0; color: #555; font-size: 0; }   /* font-size 0 hides the " | " separators the script adds */
+        #score-board span { font-size: 0.95rem; display: inline-block; padding: 5px 14px; margin: 0 4px; border-radius: 20px; background: #eef2f5; color: #55626d; font-weight: 600; }
+        #score-board span.active-turn { background: var(--accent); color: white; border: 0; }
 
-        .study-tips {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 15px 20px;
-            margin: 30px auto 0;
-            max-width: 650px;
-            width: 90%;
-            border-radius: 4px;
-            text-align: left;
-            color: #444;
-            line-height: 1.6;
+        .board-wrapper {
+            position: relative; width: 100%; max-width: 1000px; margin: 14px auto 0; box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            border-radius: 16px; overflow: hidden; background: white;
         }
-        .study-tips h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            color: var(--primary);
+        #game-board-img { width: 100%; display: block; pointer-events: none; }
+
+        .player-piece {
+            font-size: clamp(1.1rem, 3.4vw, 2rem); position: absolute; transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); z-index: 50;
+            transform: translate(-50%, -70%); filter: drop-shadow(0px 5px 3px rgba(0,0,0,0.5)); pointer-events: none;
         }
-        .study-tips p {
-            margin-bottom: 0;
+        .p1 { z-index: 54; }
+        .p2 { filter: hue-rotate(210deg) drop-shadow(0px 5px 3px rgba(0,0,0,0.5)); z-index: 53; margin-left: 5px; }
+        .p3 { filter: hue-rotate(100deg) drop-shadow(0px 5px 3px rgba(0,0,0,0.5)); z-index: 52; margin-top: 5px; }
+        .p4 { filter: hue-rotate(50deg) drop-shadow(0px 5px 3px rgba(0,0,0,0.5)); z-index: 51; margin-left: 5px; margin-top: 5px; }
+
+        .special-marker {
+            position: absolute; font-size: clamp(0.85rem, 2.3vw, 1.5rem); transform: translate(-50%, -50%); z-index: 10; pointer-events: none;
+            opacity: 0.85; animation: bounce 2s infinite;
+        }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, -65%); } }
+
+        /* ===== MODALS ===== */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30,42,54,0.78); display: none; justify-content: center; align-items: center; z-index: 200; }
+        #feedback-modal { z-index: 300; }
+        .game-card {
+            background: white; padding: 28px 30px 26px; border-radius: 16px; max-width: 520px; width: 90%; text-align: center;
+            border: 6px solid var(--primary); box-shadow: 0 14px 32px rgba(0,0,0,0.45); max-height: 90vh; overflow-y: auto;
+        }
+        .game-card h2 { font-family: var(--font-display); margin: 0; }
+        #card-def { font-size: 1.15rem; line-height: 1.55; margin: 20px 0; color: #333; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+        .game-btn {
+            padding: 14px 12px; border: 2px solid #d5dfe6; background: #f8fafb; border-radius: 10px; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.1s; margin: 0; line-height: 1.3;
+        }
+        .game-btn:hover { background: #eaf3fa; border-color: var(--accent); transform: translateY(-2px); }
+        #feedback-msg { text-align: left; }
+        .feedback-btn {
+            background-color: var(--accent) !important; color: white !important; border: none; padding: 11px 32px; font-weight: bold; border-radius: 50px;
+            cursor: pointer; font-size: 1rem; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .feedback-btn:hover { background-color: #2980b9 !important; transform: scale(1.05); }
+
+        .pl-tips { margin: 34px auto 0; max-width: 700px; }
+        .ad-under-review { display: none !important; }
+
+        @media (max-width: 600px) {
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            #setup-screen { padding: 22px 18px 24px; }
+            .sticky-controls { padding: 8px 10px 8px 16px; gap: 10px; }
+            #status-text { font-size: 1rem; }
+            #draw-btn { padding: 9px 16px; font-size: 0.92rem; }
+            .game-card { padding: 22px 18px 20px; }
+            .options-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-  <nav>
+<nav>
         <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
@@ -246,6 +144,7 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -261,76 +160,88 @@
         </ul>
     </nav>
 
-    <div class="container game-container">
-        <h1>🧠 Psych Land</h1>
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Psych Land</h1>
+                    <p class="page-lede">A board game for your brain. Draw a card, pick the term that matches the definition, and race your classmates (or the computer) to the end of the board.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong id="stat-terms">819</strong><span>Terms in play</span></div>
+                    <div class="stat-tile tile-half"><strong id="stat-spaces">104</strong><span>Spaces</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Play solo against the computer, or pass one device between 2 to 4 players</strong></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container pl-main over-hero">
 
         <div id="setup-screen">
-            <h3>Expedition Briefing</h3>
-            
-            <div style="font-size: 1.05rem; text-align: left; line-height: 1.5; color: #444; margin-bottom: 20px; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-                <p style="margin: 0 0 12px 0;">
-                    <strong>Rules of the Road:</strong> Select your player count and review unit. On your turn, click "Draw Card" to roll for 1-5 spaces. You will be prompted with a psychology definition—select the correct term to move forward! If you answer incorrectly, you stay put and lose your turn. Watch out for Synaptic Gaps (⚡) that surge you forward and Brain Freezes (❄️) that make you skip a turn. First to the end wins!
-                </p>
-                <p style="margin: 0; font-size: 0.98rem; color: #555; border-top: 1px solid #d0e0ec; padding-top: 10px;">
-                    🎮 <strong>Play Modes:</strong> Test your knowledge solo by flying past an automated computer bot, or select 2-4 players to face off against your classmates using a single device—just pass the computer around when your turn pops up!
-                </p>
+            <h2>Expedition Briefing</h2>
+
+            <div class="rules">
+                <p><strong>Rules of the Road:</strong> Select your player count and review unit. On your turn, click "Draw Card" to roll for 1-5 spaces. You will be prompted with a psychology definition: select the correct term to move forward! If you answer incorrectly, you stay put and lose your turn. Watch out for Synaptic Gaps (⚡) that surge you forward and Brain Freezes (❄️) that make you skip a turn. First to the end wins!</p>
+                <p class="modes">🎮 <strong>Play Modes:</strong> Test your knowledge solo by flying past an automated computer bot, or select 2-4 players to face off against your classmates using a single device: just pass the computer around when your turn pops up!</p>
             </div>
-            
-            <label style="display:block; text-align:left;">Number of Players:</label>
+
+            <label for="player-count">Number of Players</label>
             <select id="player-count">
                 <option value="1">1 Player (vs Computer)</option>
                 <option value="2">2 Players</option>
                 <option value="3">3 Players</option>
                 <option value="4">4 Players</option>
             </select>
-            
-            <label style="display:block; text-align:left;">Review Content:</label>
+
+            <label for="unit-select">Review Content</label>
             <select id="unit-select">
                 <option value="all">All Units</option>
             </select>
 
-            <button class="nav-btn" onclick="initGame()">Start Game</button>
+            <button class="nav-btn" id="start-btn" onclick="initGame()" disabled>Start Game</button>
+            <div id="load-error">Couldn't load the game's questions. Please refresh the page and try again.</div>
         </div>
 
-        <div id="game-ui" style="display:none; width: 100%;">
-            
+        <div id="game-ui" style="display:none;">
+
             <div class="sticky-controls">
-                <div id="status-text" style="font-weight:bold; font-size: 1.1rem;">Player 1's Turn</div>
-                <button class="nav-btn" id="draw-btn" style="padding: 8px 20px;" onclick="drawCard()">🃏 Draw Card</button>
+                <div id="status-text">Player 1's Turn</div>
+                <button class="nav-btn" id="draw-btn" onclick="drawCard()">🃏 Draw Card</button>
             </div>
 
-            <div id="score-board" style="text-align:center; margin: 15px 0; color:#555;"></div>
+            <div id="score-board"></div>
 
             <div class="board-wrapper" id="board-area">
-                <img id="game-board-img" src="board.png" alt="Game Board">
-                </div>
+                <img id="game-board-img" src="board.png" alt="Psych Land game board">
+            </div>
         </div>
-    </div>
 
-    <div class="study-tips">
-        <h3>💡 Getting the Most Out of Psych Land</h3>
-        <p>Psych Land pulls from the same term bank as our other review tools, so every trip around the board doubles as real content review, not just a party game. Filter by unit while you're still learning new material so the questions match what you're currently covering in class, then switch to "All Units" once you want a mixed, cumulative test closer to the exam. If you're playing with classmates instead of solo against the Computer, try having whoever answers explain <em>why</em> the correct term fits the definition before moving on &mdash; talking it through out loud tends to make it stick far better than just guessing and rolling again. And don't stress about the Synaptic Gaps and Brain Freezes scattered on the board; they're random, so the real test of your knowledge is always the question in between.</p>
-    </div>
-
-    <div class="ad-banner-outer ad-under-review">
-        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
-        <div class="ad-wrapper-banner">
-            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+        <div class="tip-box pl-tips">
+            <h3>💡 Getting the Most Out of Psych Land</h3>
+            <p>Psych Land pulls from the same term bank as our other review tools, so every trip around the board doubles as real content review, not just a party game. Filter by unit while you're still learning new material so the questions match what you're currently covering in class, then switch to "All Units" once you want a mixed, cumulative test closer to the exam. If you're playing with classmates instead of solo against the Computer, try having whoever answers explain <em>why</em> the correct term fits the definition before moving on: talking it through out loud tends to make it stick far better than just guessing and rolling again. And don't stress about the Synaptic Gaps and Brain Freezes scattered on the board; they're random, so the real test of your knowledge is always the question in between.</p>
         </div>
-    </div>
 
-    <div class="modal-overlay" id="card-modal">
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="card-modal" role="dialog" aria-modal="true" aria-labelledby="card-move-title">
         <div class="game-card" id="card-content">
             <h2 id="card-move-title" style="color: var(--primary);">Question</h2>
-            <p id="card-def" style="font-size: 1.2rem; margin: 20px 0;">Definition...</p>
+            <p id="card-def">Definition...</p>
             <div class="options-grid" id="card-options"></div>
         </div>
     </div>
 
-    <div class="modal-overlay" id="feedback-modal">
+    <div class="modal-overlay" id="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
         <div class="game-card" id="feedback-card" style="border-color: var(--primary);">
             <h2 id="feedback-title" style="color: var(--primary);">Title</h2>
-            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0; text-align: left; line-height: 1.5;">Message goes here.</p>
+            <p id="feedback-msg" style="font-size: 1.1rem; margin: 20px 0; line-height: 1.5;">Message goes here.</p>
             <button class="feedback-btn" onclick="closeFeedback()">Continue</button>
         </div>
     </div>
@@ -351,25 +262,39 @@
         let feedbackCallback = null;
         let feedbackTimer = null;
 
-        // 1. Load Data
-        fetch('terms.json')
-            .then(res => res.json())
-            .then(data => {
-                if (data.terms) {
-                    allTerms = data.terms;
-                    const units = [...new Set(allTerms.map(t => t.unit))].sort();
-                    const select = document.getElementById('unit-select');
-                    units.forEach(u => {
-                        const opt = document.createElement('option');
-                        opt.value = u;
-                        opt.innerText = u;
-                        select.appendChild(opt);
-                    });
-                } else {
-                    alert("Terms data not found in terms.json!");
-                }
-            })
-            .catch(err => console.error("Error loading JSON:", err));
+        // 1. Load Data (terms.json supplies the questions; topics.json only supplies friendly unit names)
+        Promise.all([
+            fetch('terms.json').then(res => res.json()),
+            fetch('topics.json').then(res => res.json()).catch(() => null)
+        ])
+        .then(([data, topicsData]) => {
+            if (!data || !data.terms || data.terms.length === 0) throw new Error('terms.json had no terms');
+            allTerms = data.terms;
+
+            const unitNames = {};
+            ((topicsData && topicsData.topics) || []).forEach(t => { if (t.unit && t.unit_title) unitNames[t.unit] = t.unit_title; });
+
+            const units = [...new Set(allTerms.map(t => t.unit))].sort();
+            const select = document.getElementById('unit-select');
+            units.forEach(u => {
+                const opt = document.createElement('option');
+                opt.value = u;
+                opt.innerText = unitNames[u] ? u + ': ' + unitNames[u] : u;
+                select.appendChild(opt);
+            });
+
+            const st = document.getElementById('stat-terms');
+            if (st) st.textContent = allTerms.length.toLocaleString();
+            const ss = document.getElementById('stat-spaces');
+            if (ss) ss.textContent = COORDINATES.length;
+            const startBtn = document.getElementById('start-btn');
+            if (startBtn) startBtn.disabled = false;
+        })
+        .catch(err => {
+            console.error("Error loading JSON:", err);
+            const le = document.getElementById('load-error');
+            if (le) le.style.display = 'block';
+        });
 
         // 2. Init Game
         function initGame() {
@@ -436,6 +361,8 @@
             
             feedbackCallback = callback;
             document.getElementById('feedback-modal').style.display = 'flex';
+            const cont = document.querySelector('#feedback-modal .feedback-btn');
+            if (cont) cont.focus();
         }
 
         function closeFeedback() {
@@ -473,16 +400,25 @@
 
             const correct = pool[Math.floor(Math.random() * pool.length)];
             
+            // Some terms are defined in more than one topic, so never offer the same answer text twice
+            const usedText = new Set([correct.term.toLowerCase()]);
+            const freshOnly = list => list.filter(t => {
+                const k = t.term.toLowerCase();
+                if (usedText.has(k)) return false;
+                usedText.add(k);
+                return true;
+            });
+
             let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
             sameTopicTerms.sort(() => Math.random() - 0.5);
 
-            let distractors = sameTopicTerms.slice(0, 3);
+            let distractors = freshOnly(sameTopicTerms).slice(0, 3);
 
             if (distractors.length < 3) {
                 let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
                 otherTerms.sort(() => Math.random() - 0.5);
                 let needed = 3 - distractors.length;
-                distractors = [...distractors, ...otherTerms.slice(0, needed)];
+                distractors = [...distractors, ...freshOnly(otherTerms).slice(0, needed)];
             }
             
             let options = [...distractors, correct].sort(() => Math.random() - 0.5);
@@ -621,11 +557,12 @@
                  </span>`
             ).join(' | ');
 
+            document.getElementById('draw-btn').disabled = p.isBot;
             if(p.isBot) setTimeout(drawCard, 1000);
         }
     </script>
 
-     <footer>
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
