@@ -5,207 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oddball - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/oddball">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .game-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+        /* Only styles unique to Oddball live here. The hero, stat tiles and tip box come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-        /* --- SETUP SCREEN --- */
-        #setup-screen {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        #setup-screen select {
-            width: 100%;
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+        /* hero compacts once a round is running */
+        body:has(#setup-screen[style*="none"]) .page-hero { padding: 22px 0 62px; }
+        body:has(#setup-screen[style*="none"]) .page-hero .page-lede,
+        body:has(#setup-screen[style*="none"]) .page-hero .hero-stats { display: none; }
+        body:has(#setup-screen[style*="none"]) .page-hero-grid { grid-template-columns: 1fr; }
+        body:has(#setup-screen[style*="none"]) .page-hero h1 { margin: 0; font-size: 2.2rem; }
+        body:has(#setup-screen[style*="none"]) .container.over-hero { margin-top: 14px; }
 
-        /* --- GAME UI --- */
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            border-bottom: 2px solid #f1f3f5;
-            padding-bottom: 10px;
-        }
+        .container.od-main { max-width: 780px; padding: 0 1rem; margin-bottom: 0; }
+        .od-card { background: white; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); padding: 30px 32px 30px; text-align: center; }
 
-        .grid-2x2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 20px 0;
-        }
+        /* ===== SETUP ===== */
+        #setup-screen { max-width: 520px; margin: 0 auto; text-align: left; }
+        #setup-screen h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); margin: 0 0 16px; text-align: left; }
+        #setup-screen label { display: block; font-weight: bold; color: #555; font-size: 0.92rem; margin-bottom: 5px; }
+        #setup-screen select { width: 100%; padding: 11px 14px; margin: 0 0 20px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc; }
+        #start-btn { width: 100%; margin: 4px 0 0; padding: 14px; font-size: 1.1rem; font-weight: bold; border-radius: 50px; }
+        #start-btn:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
+        #load-error, #setup-msg { display: none; margin-top: 14px; color: #c0392b; font-size: 0.95rem; text-align: center; }
 
+        /* ===== ROUND ===== */
+        .status-bar { display: flex; justify-content: space-between; font-weight: bold; color: #55626d; margin-bottom: 8px; font-size: 1.05rem; }
+        .progress-track { height: 8px; background: #e6ecf0; border-radius: 8px; overflow: hidden; margin-bottom: 22px; }
+        #progress-fill { height: 100%; width: 0; background: var(--accent); border-radius: 8px; transition: width 0.35s ease; }
+        .od-question { font-family: var(--font-display); font-size: 1.6rem; color: var(--primary); margin: 0 0 18px; }
+
+        .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
         .term-btn {
-            padding: 25px 15px;
-            font-size: 1.2rem;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            background: #fdfdfd;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 26px 16px; font-size: 1.15rem; font-weight: 600; line-height: 1.3; border: 2px solid #dbe4ea; border-radius: 12px; background: #f8fafb; color: #2c3e50;
+            cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; box-shadow: 0 3px 6px rgba(0,0,0,0.05); margin: 0; min-height: 86px;
         }
+        .term-btn:hover:not(:disabled) { background: #eaf3fa; border-color: var(--accent); transform: translateY(-2px); }
+        .term-btn.correct { background-color: #2ecc71 !important; color: white !important; border-color: #27ae60; transform: scale(1.02); box-shadow: 0 4px 15px rgba(46,204,113,0.4); }
+        .term-btn.incorrect { background-color: #e74c3c !important; color: white !important; border-color: #c0392b; opacity: 0.85; }
+        .term-btn:disabled { cursor: default; }
 
-        .term-btn:hover:not(:disabled) {
-            background: #eee;
-            transform: translateY(-2px);
-        }
-
-        .term-btn.correct {
-            background-color: #2ecc71 !important;
-            color: white !important;
-            border-color: #27ae60;
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
-        }
-
-        .term-btn.incorrect {
-            background-color: #e74c3c !important;
-            color: white !important;
-            border-color: #c0392b;
-            opacity: 0.8;
-        }
-
-        .term-btn:disabled {
-            cursor: default;
-        }
-
-        /* --- EXPLANATION BOX --- */
         #explanation-box {
-            display: none;
-            background-color: #f0f8ff;
-            border-left: 5px solid var(--accent, #5F7FFF);
-            padding: 20px;
-            margin-top: 25px;
-            text-align: left;
-            font-size: 1.1rem;
-            border-radius: 0 8px 8px 0;
-            animation: fadeIn 0.5s ease;
+            display: none; background: var(--panel-blue); border-left: 5px solid var(--accent); padding: 18px 22px; margin-top: 22px; text-align: left;
+            font-size: 1.05rem; line-height: 1.65; color: #333; border-radius: 10px; animation: fadeIn 0.5s ease;
         }
+        #explanation-box strong { color: var(--primary); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .nav-controls { display: flex; justify-content: space-between; gap: 12px; margin-top: 26px; }
+        .action-btn { padding: 11px 28px; border: none; background-color: var(--accent); color: white; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: bold; margin: 0; transition: background 0.2s; }
+        .action-btn:hover:not(:disabled) { background-color: #2980b9; transform: none; }
+        .action-btn:disabled { background-color: #bdc3c7; cursor: not-allowed; }
+        .btn-quiet { background-color: transparent; color: #55626d; border: 2px solid #cfd9e0; font-size: 0.9rem; padding: 8px 20px; }
+        .btn-quiet:hover:not(:disabled) { background-color: var(--panel-blue); }
+        .round-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #eef2f5; }
 
-        /* --- NAVIGATION --- */
-        .nav-controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
+        /* ===== END SCREEN ===== */
+        #end-screen { display: none; text-align: center; padding: 10px 0 6px; }
+        #end-screen h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--primary); margin: 0; }
+        .final-score-display { font-family: var(--font-display); font-size: 3.6rem; color: var(--accent); font-weight: 700; margin: 14px 0 6px; line-height: 1; }
+        .end-msg { font-size: 1.1rem; color: #55626d; margin: 10px 0 22px; }
+        #missed-recap { text-align: left; margin: 8px 0 24px; }
+        #missed-recap h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--primary); margin: 0 0 12px; }
+        #missed-recap .perfect { text-align: center; font-weight: bold; color: #27ae60; font-size: 1.1rem; }
+        .missed-item { background: var(--panel-blue); border-left: 5px solid var(--accent); border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+        .missed-head { font-size: 1rem; color: #333; margin-bottom: 6px; line-height: 1.5; }
+        .missed-head strong { color: var(--primary); }
+        .missed-group { color: #666; }
+        .missed-expl { font-size: 0.95rem; color: #3d4852; line-height: 1.6; }
 
-        .action-btn {
-            padding: 10px 25px;
-            border: none;
-            background-color: var(--accent, #5F7FFF);
-            color: white;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
-        .action-btn:hover:not(:disabled) {
-            background-color: #3b5bdb;
-        }
-        .action-btn:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
+        .od-tips { margin: 34px auto 0; max-width: 700px; }
+        .ad-under-review { display: none !important; }
 
-        /* --- END SCREEN --- */
-        #end-screen {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .final-score-display {
-            font-size: 3rem;
-            color: var(--accent);
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
-            .grid-2x2 {
-                grid-template-columns: 1fr;
-            }
-            .term-btn {
-                padding: 15px 10px;
-                font-size: 1rem;
-            }
-            .status-bar {
-                font-size: 1rem;
-            }
-        }
-
-        /* --- AD PLACEHOLDER (matches site pattern) ---
-           Sits below the whole game card, clear of the term buttons and
-           nav controls to avoid accidental-click risk. */
-        .ad-banner-outer {
-            width: 90%;
-            max-width: 728px;
-            margin: 30px auto 0;
-        }
-        .ad-wrapper-banner {
-            width: 100%;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
-
-        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
-        .ad-under-review {
-            display: none !important;
-        }
-
-        .study-tips {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent, #5F7FFF);
-            padding: 15px 20px;
-            margin: 30px auto 0;
-            max-width: 650px;
-            width: 90%;
-            border-radius: 4px;
-            text-align: left;
-            color: #444;
-            line-height: 1.6;
-        }
-        .study-tips h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            color: var(--primary);
-        }
-        .study-tips p {
-            margin-bottom: 0;
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            .od-card { padding: 22px 16px 24px; }
+            .grid-2x2 { grid-template-columns: 1fr; gap: 10px; }
+            .term-btn { padding: 16px 12px; font-size: 1.02rem; min-height: 0; }
+            .od-question { font-size: 1.35rem; }
+            .nav-controls .action-btn { padding: 10px 18px; }
         }
     </style>
 </head>
@@ -236,6 +125,7 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -251,27 +141,41 @@
         </ul>
     </nav>
 
-    <div class="container" style="max-width: 800px; margin: 0 auto; padding-top: 20px;">
-        <h1 style="text-align: center;">🔍 Oddball</h1>
-        
-        <div style="font-size: 1.02rem; text-align: left; line-height: 1.5; color: #444; max-width: 600px; margin: 0 auto 20px auto; background-color: #eef5f9; padding: 15px; border-left: 4px solid var(--accent); border-radius: 4px;">
-            <strong>Directions:</strong> One of these things isn't like the other! Review the four psychology terms presented in each set. Three of them share a specific underlying connection, but one is an oddball that doesn't belong. Select the oddball to advance and reveal the explanation!
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Oddball</h1>
+                    <p class="page-lede">One of these things isn't like the other! Review the four psychology terms presented in each set. Three of them share a specific underlying connection, but one is an oddball that doesn't belong. Select the oddball to advance and reveal the explanation!</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong id="stat-sets">127</strong><span>Sets</span></div>
+                    <div class="stat-tile tile-half"><strong id="stat-units">6</strong><span>Units</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Pick the oddball, then learn why it doesn't belong</strong></div>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="game-container" style="margin-top: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <main class="container od-main over-hero">
+
+        <div class="od-card">
             <div id="setup-screen">
-                <label style="display:block; text-align:left; font-weight:bold;">Select Unit to Review:</label>
+                <h2>Choose a Unit</h2>
+                <label for="unit-select">Select Unit to Review</label>
                 <select id="unit-select">
                     <option value="all">All Units Mixed (Full Review)</option>
-                    <option value="Unit 0">Unit 0 - Scientific Foundations</option>
-                    <option value="Unit 1">Unit 1 - Biological Bases of Behavior</option>
-                    <option value="Unit 2">Unit 2 - Cognition</option>
-                    <option value="Unit 3">Unit 3 - Development and Learning</option>
-                    <option value="Unit 4">Unit 4 - Social Psychology and Personality</option>
-                    <option value="Unit 5">Unit 5 - Mental and Physical Health</option>
+                    <option value="Unit 0">Unit 0: Scientific Foundations</option>
+                    <option value="Unit 1">Unit 1: Biological Bases of Behavior</option>
+                    <option value="Unit 2">Unit 2: Cognition</option>
+                    <option value="Unit 3">Unit 3: Development and Learning</option>
+                    <option value="Unit 4">Unit 4: Social Psychology and Personality</option>
+                    <option value="Unit 5">Unit 5: Mental and Physical Health</option>
                 </select>
 
-                <button class="action-btn" style="width: 100%; margin-top: 10px;" onclick="startGame()">Start Game</button>
+                <button class="action-btn" id="start-btn" onclick="startGame()" disabled>Start Game</button>
+                <div id="load-error">Couldn't load the Oddball sets. Please refresh the page and try again.</div>
+                <div id="setup-msg"></div>
             </div>
 
             <div id="game-ui" style="display: none;">
@@ -279,45 +183,47 @@
                     <span id="question-counter">Set 1 of 10</span>
                     <span id="score-counter">Score: 0</span>
                 </div>
-                
-                <h2 style="margin-bottom: 20px;">Which term is the oddball?</h2>
-                
+                <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+
+                <h2 class="od-question">Which term is the oddball?</h2>
+
                 <div class="grid-2x2" id="terms-grid"></div>
 
-                <div id="explanation-box"></div>
+                <div id="explanation-box" aria-live="polite"></div>
 
                 <div class="nav-controls">
                     <button class="action-btn" id="prev-btn" onclick="prevQuestion()">⬅️ Previous</button>
                     <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next ➡️</button>
                 </div>
-                
-                <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
-                    <button class="action-btn" style="background-color: #95a5a6; font-size: 0.9rem; padding: 8px 20px;" onclick="resetToSetup()">🔄 Start New Set</button>
+
+                <div class="round-footer">
+                    <button class="action-btn btn-quiet" onclick="resetToSetup()">🔄 Start New Set</button>
                 </div>
             </div>
 
             <div id="end-screen">
-                <h1>🎉 Unit Complete!</h1>
+                <h2>🎉 Round Complete!</h2>
                 <div class="final-score-display" id="final-score-text">0/0</div>
-                <p style="font-size: 1.2rem; margin: 20px 0;">You've finished all the Oddball sets for this selection.</p>
+                <p class="end-msg">You've finished this round of Oddball sets. Play again for a fresh mix.</p>
+                <div id="missed-recap"></div>
                 <button class="action-btn" onclick="resetToSetup()">Play Again</button>
             </div>
         </div>
-    </div>
 
-    <div class="study-tips">
-        <h3>💡 Getting the Most Out of Oddball</h3>
-        <p>Oddball is built to test <em>why</em> three terms belong together, not just whether you recognize a definition &mdash; that's exactly the kind of reasoning the AP exam rewards when it asks you to apply a concept to a new example rather than just define it. Filter by unit while you're still learning new material, then switch to "All Units Mixed" once you want a cumulative challenge closer to test day. Always read the explanation before moving on, even after a correct guess &mdash; sometimes the term you picked and the real oddball look similar for entirely different reasons, and that's the distinction worth catching. If a unit keeps giving you trouble here, that's a good signal it's worth another pass in Flashcards or the Glossary.</p>
-    </div>
-
-    <div class="ad-banner-outer ad-under-review">
-        <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
-        <div class="ad-wrapper-banner">
-            <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+        <div class="tip-box od-tips">
+            <h3>💡 Getting the Most Out of Oddball</h3>
+            <p>Oddball is built to test <em>why</em> three terms belong together, not just whether you recognize a definition: that's exactly the kind of reasoning the AP exam rewards when it asks you to apply a concept to a new example rather than just define it. Filter by unit while you're still learning new material, then switch to "All Units Mixed" once you want a cumulative challenge closer to test day. Always read the explanation before moving on, even after a correct guess: sometimes the term you picked and the real oddball look similar for entirely different reasons, and that's the distinction worth catching. If a unit keeps giving you trouble here, that's a good signal it's worth another pass in Flashcards or the Glossary.</p>
         </div>
-    </div>
 
-     <footer>
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
@@ -344,22 +250,48 @@
         let activeQuestionSets = [];
         let activeQuestionIndex = 0;
         let cumulativeScore = 0;
-        let selectedAnswersTracking = []; 
+        let selectedAnswersTracking = [];
 
-        // Load targeted data pool file profiles from oddball.json on window startup
+        function escapeHtml(s) {
+            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        function showSetupMsg(text) {
+            const el = document.getElementById('setup-msg');
+            if (el) { el.textContent = text; el.style.display = 'block'; }
+        }
+
+        // Load the Oddball sets from oddball.json when the page opens
         window.addEventListener('DOMContentLoaded', () => {
             fetch('oddball.json')
                 .then(res => res.json())
                 .then(data => {
-                    // Safe parser to handle your specific oddball.json array structure
                     masterOddballData = Array.isArray(data) ? data : (data.oddball || data.questions || []);
+                    if (masterOddballData.length === 0) throw new Error('oddball.json had no sets');
+
+                    // set counts: hero tiles, and the numbers in the unit menu
+                    const units = {};
+                    masterOddballData.forEach(item => { const k = String(item.unit).trim(); units[k] = (units[k] || 0) + 1; });
+                    const sets = document.getElementById('stat-sets'), uni = document.getElementById('stat-units');
+                    if (sets) sets.textContent = masterOddballData.length;
+                    if (uni) uni.textContent = Object.keys(units).length;
+                    Array.from(document.getElementById('unit-select').options).forEach(o => {
+                        const count = o.value === 'all' ? masterOddballData.length : (units[o.value.replace('Unit ', '').trim()] || 0);
+                        o.textContent = o.textContent + ' (' + count + ' sets)';
+                    });
+
+                    const startBtn = document.getElementById('start-btn');
+                    if (startBtn) startBtn.disabled = false;
                 })
-                .catch(err => console.error("Error loading designated oddball data matrix file profile:", err));
+                .catch(err => {
+                    console.error("Error loading oddball.json:", err);
+                    const le = document.getElementById('load-error');
+                    if (le) le.style.display = 'block';
+                });
         });
 
         function startGame() {
             if (!masterOddballData || masterOddballData.length === 0) {
-                alert("The oddball problem file is currently loading. Give it a split second and click again!");
+                showSetupMsg("The sets are still loading. Give it a second and try again.");
                 return;
             }
 
@@ -373,7 +305,7 @@
             });
 
             if (filteredSets.length === 0) {
-                alert("No handcrafted Oddball questions were found matching this selected Unit pool filter in your oddball.json file!");
+                showSetupMsg("No Oddball sets were found for this unit yet. Try another unit.");
                 return;
             }
 
@@ -397,6 +329,8 @@
             cumulativeScore = 0;
             selectedAnswersTracking = Array(activeQuestionSets.length).fill(null);
 
+            const sm = document.getElementById('setup-msg');
+            if (sm) sm.style.display = 'none';
             document.getElementById('setup-screen').style.display = 'none';
             document.getElementById('end-screen').style.display = 'none';
             document.getElementById('game-ui').style.display = 'block';
@@ -410,6 +344,8 @@
             // Render text updates onto dashboard markers
             document.getElementById('question-counter').innerText = `Set ${activeQuestionIndex + 1} of ${activeQuestionSets.length}`;
             document.getElementById('score-counter').innerText = `Score: ${cumulativeScore}`;
+            const progressFill = document.getElementById('progress-fill');
+            if (progressFill) progressFill.style.width = (activeQuestionIndex / activeQuestionSets.length * 100) + '%';
 
             const gridContainer = document.getElementById('terms-grid');
             const expBox = document.getElementById('explanation-box');
@@ -455,7 +391,7 @@
                 selectedBtn.classList.add('incorrect');
                 // Expose where target correct element value is mapped
                 buttons.forEach(b => {
-                    if (b.innerText === currentSetData.correctValue) {
+                    if (b.textContent === currentSetData.correctValue) {
                         b.classList.add('correct');
                     }
                 });
@@ -476,7 +412,7 @@
 
             buttons.forEach((b, idx) => {
                 b.disabled = true;
-                const matchesTargetValue = (b.innerText === currentSetData.correctValue);
+                const matchesTargetValue = (b.textContent === currentSetData.correctValue);
                 
                 if (matchesTargetValue) {
                     b.classList.add('correct');
@@ -526,6 +462,21 @@
         function showFinalRecapSummary() {
             document.getElementById('game-ui').style.display = 'none';
             document.getElementById('final-score-text').innerText = `${cumulativeScore} / ${activeQuestionSets.length}`;
+
+            // sets to review: everything answered wrong, with the oddball and the group it didn't belong to
+            const recap = document.getElementById('missed-recap');
+            if (recap) {
+                const missed = activeQuestionSets.filter((s, i) =>
+                    selectedAnswersTracking[i] !== null && s.options[selectedAnswersTracking[i]] !== s.correctValue);
+                if (missed.length === 0) {
+                    recap.innerHTML = '<p class="perfect">Perfect round! You spotted every oddball.</p>';
+                } else {
+                    recap.innerHTML = '<h3>Sets to review</h3>' + missed.map(s =>
+                        '<div class="missed-item"><div class="missed-head"><strong>' + escapeHtml(s.correctValue) + '</strong> was the oddball. ' +
+                        '<span class="missed-group">The other three: ' + s.options.filter(o => o !== s.correctValue).map(escapeHtml).join(', ') + '</span></div>' +
+                        '<div class="missed-expl">' + escapeHtml(s.explanation) + '</div></div>').join('');
+                }
+            }
             document.getElementById('end-screen').style.display = 'block';
         }
 
