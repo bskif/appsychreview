@@ -102,6 +102,17 @@
         .qborder.right .qt { writing-mode: vertical-rl; }
         .qborder .qt.clipped::after { background: rgba(0,0,0,0.5); color: #ffd54a; }
 
+        /* ===== drag and drop ===== */
+        .qtray-item, .qslot.filled:not(.locked), .qinsp-preview .qtile { cursor: grab; }
+        .qinsp-preview { touch-action: none; }
+        .qghost { position: fixed; z-index: 10000; pointer-events: none; opacity: 0.95; scale: 1.05; box-shadow: 0 16px 34px rgba(0,0,0,0.38); transition: none !important; cursor: grabbing; }
+        .drag-src { opacity: 0.35; }
+        body.qdragging { cursor: grabbing; user-select: none; -webkit-user-select: none; }
+        .qslot.drop-ok { border-color: var(--accent); background: rgba(52,152,219,0.28); }
+        .qslot.drop-no { outline: 3px solid #e74c3c; outline-offset: -3px; }
+        .qtray.drop-tray { outline: 3px dashed var(--accent); outline-offset: -3px; }
+        .qinsp-drag { font-size: 0.8rem; color: #7a8a96; margin: 10px 0 0; line-height: 1.45; }
+
         /* ===== tray ===== */
         .qtray { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: #f1f5f8; border-radius: 12px; min-height: 72px; }
         .qtray-item { width: var(--tray); height: var(--tray); cursor: pointer; border-radius: 10px; touch-action: manipulation; }
@@ -245,7 +256,7 @@
 
         <div class="tip-box qg-tips">
             <h3>&#128161; Getting the Most Out of Piece of Mind</h3>
-            <p>Piece of Mind is a quilt-style matching game that uses the same term bank as the other review tools, so every finished quilt doubles as a quick pass through real vocabulary. Start in Guided mode to learn how the edges work, then move to Standard once you can place tiles without hints, and try Advanced when you want the extra challenge of rotating them. Short text is great for speed, while Long text adds the extra detail that often decides between two similar terms. On a phone, the Small board is the easiest to read; use the zoom buttons or the Selected tile panel to read tight text. When you finish, read the study list at the bottom: every pair on your quilt links to its topic, so the terms you hesitated on are easy to review.</p>
+            <p>Piece of Mind is a quilt-style matching game that uses the same term bank as the other review tools, so every finished quilt doubles as a quick pass through real vocabulary. Start in Guided mode to learn how the edges work, then move to Standard once you can place tiles without hints, and try Advanced when you want the extra challenge of rotating them. Short text is great for speed, while Long text adds the extra detail that often decides between two similar terms. On a phone, the Small board is the easiest to read; use the zoom buttons or the Selected tile panel to read tight text, and drag the tile from that panel onto the board if you like. When you finish, read the study list at the bottom: every pair on your quilt links to its topic, so the terms you hesitated on are easy to review.</p>
         </div>
 
         <div class="ad-banner-outer ad-under-review">
@@ -577,6 +588,7 @@ function resetBoard() {
     msg('Board reset. Same tiles, fresh start.');
     startTimer();
     render();
+    requestAnimationFrame(ensureBoardVisible);
 }
 
 // ---------- timer, finish ----------
@@ -741,7 +753,7 @@ function renderInspector() {
     box.appendChild(h);
     if (!sel) {
         const p = el('p', 'qinsp-empty');
-        p.textContent = 'Tap any tile to read all four of its edges here in plain, upright text. Then tap an empty spot on the board to place it.';
+        p.textContent = 'Tap any tile to read all four of its edges here in plain, upright text. Then tap an empty spot on the board to place it, or drag the tile there.';
         box.appendChild(p);
         const tip = el('p', 'qinsp-mode');
         tip.textContent = MODES[G.mode].help;
@@ -777,6 +789,11 @@ function renderInspector() {
     const ds = el('button', 'qbtn'); ds.id = 'q-deselect'; ds.textContent = 'Done';
     btns.appendChild(ds);
     box.appendChild(btns);
+    if (!sel.locked) {
+        const dh = el('p', 'qinsp-drag');
+        dh.textContent = 'Tip: drag the tile onto an empty spot, or tap a spot to place it.';
+        box.appendChild(dh);
+    }
 }
 
 function updateStatus() {
@@ -864,6 +881,134 @@ function render() {
     requestAnimationFrame(fitAll);
 }
 
+// ---------- drag and drop ----------
+// Mouse/pen: drag any movable tile (tray, board, or the Selected tile panel).
+// Touch: drag from the Selected tile panel only, so swiping over the tray or board still scrolls the page.
+let drag = null;
+const DRAG_THRESHOLD = 7;
+
+function dragSourceFor(target, e) {
+    const pv = target.closest('.qinsp-preview');
+    if (pv) {
+        const t = G.selected && G.tileMap[G.selected.id];
+        return t && !t.locked ? { id: t.id, el: pv } : null;
+    }
+    if (e.pointerType === 'touch') return null;
+    const item = target.closest('.qtray-item');
+    if (item) return { id: item.dataset.tid, el: item };
+    const slot = target.closest('.qslot.filled');
+    if (slot) {
+        const id = G.grid[+slot.dataset.r][+slot.dataset.c];
+        const t = id && G.tileMap[id];
+        if (t && !t.locked) return { id, el: slot };
+    }
+    return null;
+}
+
+function clearDropMarks() {
+    document.querySelectorAll('.qslot.drop-ok, .qslot.drop-no, .qtray.drop-tray').forEach(n => n.classList.remove('drop-ok', 'drop-no', 'drop-tray'));
+}
+
+function dropTargetAt(x, y) {
+    const under = document.elementFromPoint(x, y);
+    if (!under) return null;
+    const slot = under.closest && under.closest('.qslot');
+    if (slot) return { kind: 'slot', r: +slot.dataset.r, c: +slot.dataset.c, el: slot };
+    if (under.closest && under.closest('#qtray-wrap')) return { kind: 'tray', el: $('qtray') };
+    return null;
+}
+
+function updateDropMarks() {
+    if (!drag || !drag.active) return;
+    clearDropMarks();
+    const t = G.tileMap[drag.id];
+    const target = dropTargetAt(drag.x, drag.y);
+    if (!target) return;
+    if (target.kind === 'slot') target.el.classList.add(G.grid[target.r][target.c] ? 'drop-no' : 'drop-ok');
+    else if (target.kind === 'tray' && t.pos) target.el.classList.add('drop-tray');
+}
+
+function startDrag(e) {
+    drag.active = true;
+    const t = G.tileMap[drag.id];
+    const S = parseFloat($('qboard').style.getPropertyValue('--s')) || 120;
+    const ghost = tileEl(t, S);
+    ghost.classList.add('qghost');
+    document.body.appendChild(ghost);
+    drag.ghost = ghost; drag.size = S;
+    fitAll();
+    drag.el.classList.add('drag-src');
+    document.body.classList.add('qdragging');
+    try { drag.el.setPointerCapture(drag.pointerId); } catch (err) { }
+    drag.scrollV = 0; drag.edgeSince = null;
+    const loop = () => {
+        if (!drag || !drag.active) return;
+        if (drag.scrollV && drag.edgeSince && performance.now() - drag.edgeSince > 350) { window.scrollBy({ top: drag.scrollV, left: 0, behavior: 'instant' }); updateDropMarks(); }
+        drag.raf = requestAnimationFrame(loop);
+    };
+    drag.raf = requestAnimationFrame(loop);
+}
+
+function moveDrag(e) {
+    drag.x = e.clientX; drag.y = e.clientY;
+    drag.ghost.style.left = (e.clientX - drag.size / 2) + 'px';
+    drag.ghost.style.top = (e.clientY - drag.size / 2) + 'px';
+    const edge = 60;                                          // auto-scroll only after hovering at the top or bottom edge for a moment
+    const v = e.clientY < edge ? -Math.ceil((edge - e.clientY) / 8) : e.clientY > window.innerHeight - edge ? Math.ceil((e.clientY - (window.innerHeight - edge)) / 8) : 0;
+    if (!v) drag.edgeSince = null; else if (!drag.edgeSince) drag.edgeSince = performance.now();
+    drag.scrollV = v;
+    updateDropMarks();
+}
+
+function endDrag(e, cancelled) {
+    const d = drag;
+    drag = null;
+    if (!d || !d.active) return;                              // never moved far enough: it was an ordinary tap
+    cancelAnimationFrame(d.raf);
+    if (d.ghost) d.ghost.remove();
+    d.el.classList.remove('drag-src');
+    document.body.classList.remove('qdragging');
+    try { d.el.releasePointerCapture(d.pointerId); } catch (err) { }
+    clearDropMarks();
+    const swallow = ev => { ev.stopPropagation(); ev.preventDefault(); };   // the pointer-up would otherwise count as a tap
+    document.addEventListener('click', swallow, true);
+    setTimeout(() => document.removeEventListener('click', swallow, true), 0);
+    if (cancelled || !G || G.won) return;
+    const t = G.tileMap[d.id];
+    const target = dropTargetAt(e.clientX, e.clientY);
+    if (!target) { msg('Drop the tile on an empty spot on the board.'); return; }
+    if (target.kind === 'tray') {
+        if (t.pos) returnToTray(t.id);
+        return;
+    }
+    if (G.grid[target.r][target.c]) {
+        if (G.grid[target.r][target.c] !== t.id) msg('That spot is already taken. Drop the tile on an empty spot.', 'bad');
+        return;
+    }
+    placeTile(t.id, target.r, target.c);
+}
+
+function bindDrag() {
+    document.addEventListener('pointerdown', e => {
+        if (!G || G.won || drag || (e.pointerType === 'mouse' && e.button !== 0)) return;
+        const src = dragSourceFor(e.target, e);
+        if (!src) return;
+        drag = { id: src.id, el: src.el, sx: e.clientX, sy: e.clientY, x: e.clientX, y: e.clientY, active: false, pointerId: e.pointerId, ghost: null };
+    });
+    document.addEventListener('pointermove', e => {
+        if (!drag || e.pointerId !== drag.pointerId) return;
+        if (!drag.active) {
+            if (Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < DRAG_THRESHOLD) return;
+            startDrag(e);
+        }
+        e.preventDefault();
+        moveDrag(e);
+    });
+    document.addEventListener('pointerup', e => { if (drag && e.pointerId === drag.pointerId) endDrag(e, false); });
+    document.addEventListener('pointercancel', e => { if (drag && e.pointerId === drag.pointerId) endDrag(e, true); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drag && drag.active) endDrag(e, true); });
+}
+
 // ---------- setup ----------
 function newGame(keepBoard) {
     const setId = $('q-set').value, sizeKey = $('q-size').value, mode = $('q-mode').value;
@@ -880,12 +1025,22 @@ function newGame(keepBoard) {
     msg(mode === 'guided' ? 'Tap a tile to read it, then tap a spot to place it.' : 'Tap a tile to read it, then tap an empty spot to place it.');
     startTimer();
     render();
+    requestAnimationFrame(ensureBoardVisible);
 }
 
 function updateSettingsSummary() {
     const setSel = $('q-set');
     const setName = setSel.value === 'all' ? 'Mixed units' : 'Unit ' + setSel.value.replace('unit-', '');
     $('q-settings-sum').textContent = '\u2699 ' + setName + ' \u00b7 ' + SIZES[$('q-size').value].short + ' \u00b7 ' + MODES[$('q-mode').value].label + ' \u00b7 ' + ($('q-length').value === 'short' ? 'Short' : 'Long') + ' text';
+}
+
+function ensureBoardVisible() {
+    const wrap = $('qboard-wrap');
+    if (!wrap) return;
+    const top = wrap.getBoundingClientRect().top;
+    if (top < 0 || top > window.innerHeight * 0.6) {
+        window.scrollTo({ top: Math.max(0, wrap.getBoundingClientRect().top + window.scrollY - 70), behavior: 'smooth' });
+    }
 }
 
 function savePrefs() {
@@ -986,6 +1141,7 @@ async function init() {
     const stat = $('q-total'); if (stat) stat.textContent = total;
     buildControls();
     bind();
+    bindDrag();
     newGame();
 }
 
