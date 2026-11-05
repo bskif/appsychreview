@@ -1028,9 +1028,24 @@ function newGame(keepBoard) {
     requestAnimationFrame(ensureBoardVisible);
 }
 
+function refreshSizeOptions() {
+    const sizeSel = $('q-size');
+    const poolLen = poolFor($('q-set').value).length;
+    let firstOk = null, lastOk = null;
+    [...sizeSel.options].forEach(o => {
+        const { rows, cols } = SIZES[o.value];
+        const ok = 2 * rows * cols + rows + cols <= poolLen;
+        o.disabled = !ok;
+        if (ok) { if (!firstOk) firstOk = o.value; lastOk = o.value; }
+    });
+    if (sizeSel.options[sizeSel.selectedIndex].disabled) sizeSel.value = lastOk || firstOk;
+}
+
 function updateSettingsSummary() {
     const setSel = $('q-set');
-    const setName = setSel.value === 'all' ? 'Mixed units' : 'Unit ' + setSel.value.replace('unit-', '');
+    const found = DATA.sets.find(x => x.id === setSel.value);
+    const unitSets = found ? DATA.sets.filter(x => x.unit === found.unit).length : 0;
+    const setName = setSel.value === 'all' ? 'Mixed units' : 'Unit ' + found.unit + (unitSets > 1 ? ' (Set ' + found.set_number + ')' : '');
     $('q-settings-sum').textContent = '\u2699 ' + setName + ' \u00b7 ' + SIZES[$('q-size').value].short + ' \u00b7 ' + MODES[$('q-mode').value].label + ' \u00b7 ' + ($('q-length').value === 'short' ? 'Short' : 'Long') + ' text';
 }
 
@@ -1050,8 +1065,8 @@ function savePrefs() {
 function buildControls() {
     const setSel = $('q-set');
     setSel.innerHTML = '';
-    const all = el('option'); all.value = 'all'; all.textContent = 'Mixed: all units'; setSel.appendChild(all);
-    DATA.sets.forEach(s => { const o = el('option'); o.value = s.id; o.textContent = 'Unit ' + s.unit + ': ' + s.unit_title; setSel.appendChild(o); });
+    const all = el('option'); all.value = 'all'; all.textContent = 'Mixed: all units and sets'; setSel.appendChild(all);
+    DATA.sets.forEach(s => { const o = el('option'); o.value = s.id; o.textContent = s.label || ('Unit ' + s.unit + ': ' + s.unit_title); setSel.appendChild(o); });
     const sizeSel = $('q-size');
     sizeSel.innerHTML = '';
     Object.keys(SIZES).forEach(k => { const o = el('option'); o.value = k; o.textContent = SIZES[k].label; sizeSel.appendChild(o); });
@@ -1069,12 +1084,14 @@ function buildControls() {
     } else {
         sizeSel.value = phone ? '2x2' : '3x3';
     }
+    refreshSizeOptions();
     $('q-mode-help').textContent = MODES[modeSel.value].help;
 }
 
 function bind() {
     $('q-new').addEventListener('click', () => newGame());
     ['q-set', 'q-size', 'q-mode'].forEach(id => $(id).addEventListener('change', () => {
+        if (id === 'q-set') refreshSizeOptions();
         $('q-mode-help').textContent = MODES[$('q-mode').value].help;
         $('q-new').classList.add('attention');
         msg('Press New Board to apply your changes.');
