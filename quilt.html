@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piece of Mind: Psych Review Quilt Game - Psych Review Hub</title>
+    <link rel="canonical" href="https://appsychreviewhub.com/quilt">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Only styles unique to Piece of Mind live here. The hero, buttons and tip box come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, select:focus-visible, .qslot:focus-visible, .qtray-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+        .page-hero.qg-hero { padding: 26px 0 74px; }
+        .qg-hero h1 { margin: 0 0 6px; font-size: 2.3rem; }
+        .qg-hero .page-lede { margin: 0; max-width: 720px; }
+
+        .container.qg-main { max-width: 1120px; padding: 0 1rem; margin-bottom: 0; }
+        .qg-card { background: white; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); padding: 22px 24px 26px; }
+
+        /* ===== controls ===== */
+        .qg-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 14px; align-items: end; }
+        @media (min-width: 1000px) { .qg-controls { grid-template-columns: 1.75fr 1.45fr 1fr 1fr auto; } }
+        .qg-controls .ctl label { display: block; font-weight: bold; font-size: 0.82rem; color: #555; margin-bottom: 4px; }
+        .qg-controls select { width: 100%; margin: 0; padding: 9px 10px; border-radius: 8px; }
+        #q-new { margin: 0; padding: 11px 18px; font-weight: bold; border-radius: 25px; }
+        #q-new.attention { animation: qpulse 1.1s ease-in-out infinite; }
+        .qg-settings > summary { cursor: pointer; font-weight: bold; color: var(--primary); font-size: 0.98rem; padding: 4px 0 10px; list-style: none; display: flex; align-items: center; gap: 6px; }
+        .qg-settings > summary::-webkit-details-marker { display: none; }
+        .qg-settings > summary::after { content: "\25BE"; margin-left: auto; transition: transform 0.2s; color: var(--accent); }
+        .qg-settings[open] > summary::after { transform: rotate(180deg); }
+        .qg-settings:not([open]) > summary { padding-bottom: 2px; background: var(--panel-blue); border-radius: 10px; padding: 9px 14px; }
+        .qg-help { font-size: 0.92rem; color: #55626d; background: var(--panel-blue); border-left: 4px solid var(--accent); border-radius: 8px; padding: 9px 14px; margin: 14px 0 6px; line-height: 1.5; }
+
+        /* ===== status row ===== */
+        .qg-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 12px 0 4px; }
+        .qg-pill { font-weight: bold; color: var(--primary); background: var(--blue-soft); border-radius: 20px; padding: 5px 13px; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+        #q-extras { color: #6b7b87; font-size: 0.88rem; font-weight: 600; }
+        .qg-tools { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+        .qbtn { border: 2px solid var(--primary); background: white; color: var(--primary); padding: 7px 14px; border-radius: 22px; font-weight: bold; font-size: 0.9rem; cursor: pointer; margin: 0; transition: background 0.15s, color 0.15s; }
+        .qbtn:hover:not(:disabled) { background: var(--panel-blue); transform: none; }
+        .qbtn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .qbtn-primary { background: var(--accent); border-color: var(--accent); color: white; }
+        .qbtn-primary:hover:not(:disabled) { background: #2980b9; }
+        .qbtn.small { padding: 5px 11px; font-size: 0.85rem; }
+        .qg-msg { min-height: 1.5em; font-weight: 600; color: #55626d; margin: 6px 0 4px; font-size: 0.95rem; }
+        .qg-msg.good { color: #1e8449; } .qg-msg.bad { color: #c0392b; }
+
+        /* ===== layout ===== */
+        .qg-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 8px; grid-template-areas: "board" "insp" "tray"; }
+        @media (min-width: 980px) {
+            .qg-layout { grid-template-columns: minmax(0, 1fr) 330px; grid-template-areas: "board insp" "tray insp"; align-items: start; }
+            #qinsp { position: sticky; top: 12px; }
+        }
+        #qboard-wrap { grid-area: board; overflow: auto; background: var(--panel-blue); border-radius: 12px; padding: 8px; max-width: 100%; }
+        #qboard { display: grid; width: max-content; margin: 0 auto; gap: 4px; }
+        #qinsp { grid-area: insp; background: #f8fafb; border: 1px solid #e3eaef; border-radius: 12px; padding: 14px 16px 16px; }
+        #qtray-wrap { grid-area: tray; }
+        #qtray-wrap h3 { font-family: var(--font-display); font-size: 1.05rem; margin: 4px 0 8px; color: var(--primary); }
+        #qtray-wrap.empty h3 { color: #1e8449; }
+
+        /* ===== tiles: four pinwheel patches around a quilt-block center ===== */
+        .qtile {
+            position: relative; width: var(--ts); height: var(--ts); background: #fff; border: 2px solid var(--unit, #2c3e50); border-radius: 9%; box-sizing: border-box;
+            transform: rotate(calc(var(--spin) * 90deg)); transition: transform 0.28s ease, box-shadow 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.18); touch-action: manipulation;
+        }
+        .qzw { position: absolute; inset: 3%; transform: rotate(calc(var(--i) * 90deg)); }
+        .qz { position: absolute; left: 0; top: 0; width: 68%; height: 32%; border-radius: 12%; box-sizing: border-box; padding: 2.2%; border: 1px solid rgba(44,62,80,0.28); }
+        .qz.term { background: #d7e7fb; }
+        .qz.desc { background: #f2f5f8; }
+        .qz.bad { outline: 3px solid #e74c3c; outline-offset: -1px; background: #ffe3e0; }
+        .qz.ok { outline: 2px solid #2ecc71; outline-offset: -1px; }
+        .qt { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; line-height: 1.12; color: #1f2d3a; font-size: 10px; position: relative; }
+        .qt span { display: block; min-width: 0; overflow-wrap: normal; hyphens: manual; }
+        .qz.term .qt { font-weight: 700; color: #12305a; }
+        .qt.clipped::after { content: "\2026"; position: absolute; right: 1px; bottom: 0; background: rgba(255,255,255,0.85); color: #c0392b; font-weight: 800; padding: 0 2px; border-radius: 3px; font-size: 11px; line-height: 1; }
+        .qcenter { position: absolute; left: 33%; top: 33%; width: 34%; height: 34%; }
+        .qstar { position: absolute; left: -4%; top: -4%; width: 22%; height: 22%; min-width: 16px; min-height: 16px; border-radius: 50%; background: #2c3e50; color: #ffd700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; z-index: 2; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+
+        /* ===== board slots and border strips ===== */
+        .qslot { width: var(--s); height: var(--s); box-sizing: border-box; border: 2px dashed #a9bccb; border-radius: 10px; background: rgba(255,255,255,0.55); cursor: pointer; display: flex; align-items: center; justify-content: center; touch-action: manipulation; }
+        .qslot:not(.filled)::before { content: "+"; font-size: 1.6rem; color: #a9bccb; font-weight: 700; }
+        .qslot.filled { border: none; background: transparent; }
+        .qslot.locked .qtile { border-color: #27ae60; }
+        .qslot.sel .qtile, .qtray-item.sel .qtile { outline: 4px solid var(--accent); outline-offset: 1px; box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
+        .qslot.hint { border-color: var(--accent); background: rgba(52,152,219,0.22); animation: qpulse 0.9s ease-in-out infinite; }
+        .qslot.bounce { animation: qshake 0.4s; }
+        .qborder { border-radius: 8px; display: flex; overflow: hidden; box-sizing: border-box; padding: 3px 4px; }
+        .qborder.term { background: #1f3b57; }
+        .qborder.desc { background: #405a72; }
+        .qborder .qt { color: #fff; font-size: 10px; line-height: 1.1; }
+        .qborder.term .qt { font-weight: 700; color: #fff; }
+        .qborder.left .qt { writing-mode: vertical-rl; transform: rotate(180deg); }
+        .qborder.right .qt { writing-mode: vertical-rl; }
+        .qborder .qt.clipped::after { background: rgba(0,0,0,0.5); color: #ffd54a; }
+
+        /* ===== tray ===== */
+        .qtray { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: #f1f5f8; border-radius: 12px; min-height: 72px; }
+        .qtray-item { width: var(--tray); height: var(--tray); cursor: pointer; border-radius: 10px; touch-action: manipulation; }
+
+        /* ===== inspector ===== */
+        #qinsp h3 { font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 8px; color: var(--primary); }
+        .qinsp-empty, .qinsp-mode { font-size: 0.93rem; color: #55626d; line-height: 1.55; margin: 0 0 8px; }
+        .qinsp-mode { font-size: 0.85rem; color: #7a8a96; }
+        .qinsp-body { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: start; }
+        @media (min-width: 980px) { .qinsp-body { grid-template-columns: 1fr; } .qinsp-preview { display: flex; justify-content: center; } }
+        .qinsp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+        .qinsp-list li { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); gap: 0 6px; font-size: 0.86rem; line-height: 1.4; padding: 6px 8px; border-radius: 8px; border: 1px solid rgba(44,62,80,0.15); }
+        .qinsp-list li.term { background: #d7e7fb; } .qinsp-list li.desc { background: #f2f5f8; }
+        .qinsp-list .arrow { grid-row: 1 / span 2; font-weight: 800; color: var(--primary); font-size: 1.05rem; }
+        .qinsp-list .role { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7b87; font-weight: 700; }
+        .qinsp-list li.term .tx { font-weight: 700; color: #12305a; }
+        .qinsp-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+        /* ===== result ===== */
+        .qresult { margin-top: 20px; background: #eaf7ee; border: 2px solid #bfe5c9; border-radius: 14px; padding: 20px 22px 18px; }
+        .qresult h2 { font-family: var(--font-display); color: #1e6b3a; margin: 0 0 6px; font-size: 1.6rem; }
+        .qresult-stats { margin: 0 0 12px; font-weight: 600; color: #2f4a3a; }
+        .qresult-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+        .qstudy summary { cursor: pointer; font-weight: bold; color: var(--primary); margin-bottom: 8px; }
+        .qstudy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+        .qstudy li { background: white; border-radius: 10px; padding: 9px 12px; font-size: 0.92rem; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .qtag { display: inline-block; color: white; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-right: 8px; vertical-align: 1px; }
+        .qlink { color: #2672a8; font-weight: 700; text-decoration: none; white-space: nowrap; }
+        .qlink:hover { text-decoration: underline; }
+
+        .qg-tips { margin: 30px auto 0; max-width: 760px; }
+        .ad-under-review { display: none !important; }
+
+        @keyframes qpulse { 0% { box-shadow: 0 0 0 0 rgba(52,152,219,0.65); } 70%, 100% { box-shadow: 0 0 0 9px rgba(52,152,219,0); } }
+        @keyframes qshake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+
+        @media (max-width: 600px) {
+            .page-hero.qg-hero { padding: 20px 0 66px; }
+            .qg-hero h1 { font-size: 1.9rem; }
+            .qg-card { padding: 14px 10px 18px; }
+            .qg-controls { grid-template-columns: 1fr 1fr; }
+            .qg-controls .ctl:first-child { grid-column: 1 / -1; }
+            #q-new { grid-column: 1 / -1; }
+            .qg-tools { margin-left: 0; width: 100%; }
+            #qboard-wrap { padding: 4px; }
+            .qinsp-list li { font-size: 0.8rem; padding: 5px 6px; }
+            .qresult { padding: 16px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+        <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="psych-hub">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools ▾</a>
+                <div class="dropdown-content">
+                    <a href="studyguide">Study Guides</a>
+                    <a href="glossary">Glossary</a>
+                    <a href="flashcards">Flashcards</a>
+                    <a href="quiz">Quiz</a>
+                    <a href="confusingpairs">Confusing Pairs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame">Connections</a>
+                    <a href="boardgame">Psych Land</a>
+                    <a href="battleship">Cortex Commander</a>
+                    <a href="oddball">Oddball</a>
+                    <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
+                    <a href="quilt">Piece of Mind</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <div class="dropdown-content">
+                    <a href="about">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">🥤 Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="page-hero qg-hero">
+        <div class="page-hero-inner">
+            <h1>Piece of Mind</h1>
+            <p class="page-lede">Fit the tiles together so every term meets its matching description. Tap a tile to read it, tap a spot to place it, and complete the whole quilt.</p>
+        </div>
+    </header>
+
+    <main class="container qg-main over-hero">
+        <div class="qg-card">
+
+            <details class="qg-settings" id="q-settings" open>
+            <summary id="q-settings-sum">Game settings</summary>
+            <div class="qg-controls">
+                <div class="ctl"><label for="q-set">Content</label><select id="q-set"></select></div>
+                <div class="ctl"><label for="q-size">Board size</label><select id="q-size"></select></div>
+                <div class="ctl"><label for="q-mode">Difficulty</label><select id="q-mode"></select></div>
+                <div class="ctl"><label for="q-length">Text length</label>
+                    <select id="q-length"><option value="short">Short</option><option value="long">Long (more detail)</option></select></div>
+                <button class="btn-solid" id="q-new">New Board</button>
+            </div>
+            <p class="qg-help" id="q-mode-help"></p>
+            </details>
+
+            <div class="qg-status">
+                <span class="qg-pill" id="q-timer">00:00</span>
+                <span class="qg-pill" id="q-placed">0 placed</span>
+                <span id="q-extras"></span>
+                <div class="qg-tools">
+                    <button class="qbtn small" id="q-hint">Hint</button>
+                    <button class="qbtn small" id="q-check">Check</button>
+                    <button class="qbtn small" id="q-reset">Reset</button>
+                    <button class="qbtn small" id="q-zoom-out" aria-label="Zoom out">&minus;</button>
+                    <button class="qbtn small" id="q-zoom-fit" aria-label="Fit to screen">Fit</button>
+                    <button class="qbtn small" id="q-zoom-in" aria-label="Zoom in">+</button>
+                </div>
+            </div>
+            <div class="qg-msg" id="q-msg" role="status" aria-live="polite">Loading the quilt sets...</div>
+
+            <div class="qg-layout">
+                <div id="qboard-wrap"><div id="qboard" aria-label="Quilt board"></div></div>
+                <aside id="qinsp" aria-live="polite"></aside>
+                <div id="qtray-wrap"><h3 id="qtray-title">Tiles to place</h3><div id="qtray" class="qtray"></div></div>
+            </div>
+
+            <div id="q-result"></div>
+        </div>
+
+        <div class="tip-box qg-tips">
+            <h3>&#128161; Getting the Most Out of Piece of Mind</h3>
+            <p>Piece of Mind is a quilt-style matching game that uses the same term bank as the other review tools, so every finished quilt doubles as a quick pass through real vocabulary. Start in Guided mode to learn how the edges work, then move to Standard once you can place tiles without hints, and try Advanced when you want the extra challenge of rotating them. Short text is great for speed, while Long text adds the extra detail that often decides between two similar terms. On a phone, the Small board is the easiest to read; use the zoom buttons or the Selected tile panel to read tight text. When you finish, read the study list at the bottom: every pair on your quilt links to its topic, so the terms you hesitated on are easy to review.</p>
+        </div>
+
+        <div class="ad-banner-outer ad-under-review">
+            <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
+            <div class="ad-wrapper-banner">
+                <div style="color: #ccc; font-size: 0.9rem;">[728x90 Ad Unit Placeholder]</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+
+    <p style="margin-bottom: 15px;">
+        <a href="privacy" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+        <a href="terms" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+    </p>
+
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="🥤" data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+
+        <a href="https://www.simpleanalytics.com?utm_source=appsychreviewhub.com&utm_content=badge" referrerpolicy="origin" target="_blank" style="display: inline-block;">
+            <picture>
+                <source srcset="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=dark&counter=false" media="(prefers-color-scheme: dark)" />
+                <img src="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=light&counter=false" alt="Simple Analytics badge" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" />
+            </picture>
+        </a>
+    </div>
+</footer>
+
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+    <script>
+// =====================================================================
+//  Piece of Mind: edge-matching review quilt game
+//  Each tile has four edges; every interior edge and every border strip is half of a
+//  term / description pair. Fit the tiles so each term meets its matching description.
+// =====================================================================
+
+const SIZES = {
+    '2x2': { rows: 2, cols: 2, label: 'Small: 2 \u00d7 2', short: '2 \u00d7 2' },
+    '3x3': { rows: 3, cols: 3, label: 'Medium: 3 \u00d7 3', short: '3 \u00d7 3' },
+    '3x4': { rows: 4, cols: 3, label: 'Tall: 3 \u00d7 4', short: '3 \u00d7 4' },
+    '4x4': { rows: 4, cols: 4, label: 'Large: 4 \u00d7 4', short: '4 \u00d7 4' }
+};
+const MODES = {
+    guided:   { label: 'Guided',   help: 'Tiles face the right way and lock in when you place them correctly. Corner tiles are marked with a star.' },
+    standard: { label: 'Standard', help: 'Tiles face the right way. Place them anywhere, then press Check to see which edges do not match.' },
+    advanced: { label: 'Advanced', help: 'Tiles start rotated. Tap a selected tile again (or press R) to rotate it, then press Check to see mismatches.' }
+};
+const UNIT_COLORS = { '0': '#3498db', '1': '#16a085', '2': '#8e44ad', '3': '#27ae60', '4': '#c0397b', '5': '#2c3e50' };
+const DIRS = [[-1, 0], [0, 1], [1, 0], [0, -1]];             // top, right, bottom, left
+const SIDE_NAMES = ['Top', 'Right', 'Bottom', 'Left'];
+const ARROWS = ['\u2191', '\u2192', '\u2193', '\u2190'];
+const ZOOMS = [1, 1.3, 1.65, 2.1];
+const STRIP = 0.36;                                          // border strip thickness, as a share of tile size
+
+// ---------- helpers ----------
+const $ = id => document.getElementById(id);
+function el(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { } },
+    getJSON(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v === null || v === undefined ? d : v; } catch (e) { return d; } },
+    setJSON(k, v) { this.set(k, JSON.stringify(v)); }
+};
+function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+}
+const pad2 = n => String(n).padStart(2, '0');
+function fmtTime(s) { return pad2(Math.floor(s / 60)) + ':' + pad2(s % 60); }
+
+// Two terms are "nested" when one name is contained in the other ("Stereotype" / "Stereotype Threat"):
+// they never share a board, so no description can fit two tiles.
+function termWords(t) {
+    return new Set(String(t).replace(/\(.*?\)/g, '').replace(/\u2019/g, "'").toLowerCase().split(/[^a-z]+/)
+        .filter(w => w.length > 2).map(w => w.replace(/(ies|es|s)$/, '')));
+}
+function isNested(a, b) {
+    const A = termWords(a), B = termWords(b);
+    if (!A.size || !B.size) return false;
+    return [...A].every(w => B.has(w)) || [...B].every(w => A.has(w));
+}
+
+// ---------- state ----------
+let DATA = null;
+let G = null;
+let timerId = null;
+let zoomIndex = 0;
+
+// ---------- board generation ----------
+function poolFor(setId) {
+    if (setId === 'all') return DATA.sets.flatMap(s => s.pairs.map(p => Object.assign({}, p, { unit: s.unit })));
+    const s = DATA.sets.find(x => x.id === setId);
+    return s.pairs.map(p => Object.assign({}, p, { unit: s.unit }));
+}
+
+function pickPairs(pool, need) {
+    const order = shuffle(pool);
+    const chosen = [];
+    for (const p of order) {
+        if (chosen.length >= need) break;
+        if (!chosen.some(q => isNested(q.label, p.label))) chosen.push(p);
+    }
+    for (const p of order) {                                  // only reached if the guard left us short
+        if (chosen.length >= need) break;
+        if (!chosen.includes(p)) chosen.push(p);
+    }
+    return chosen;
+}
+
+function generateBoard(rows, cols, pool, mode, setId, sizeKey) {
+    const need = 2 * rows * cols + rows + cols;
+    const chosen = pickPairs(pool, need);
+    let k = 0;
+    const pairs = {};
+    const nextPair = () => { const p = chosen[k++]; pairs[p.id] = p; return p.id; };
+
+    const tiles = [];
+    const at = (r, c) => tiles[r * cols + c];
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        tiles.push({ id: 't' + r + '-' + c, solved: { r, c }, edges: [null, null, null, null], spin: 0, pos: null, locked: false,
+                     corner: (r === 0 || r === rows - 1) && (c === 0 || c === cols - 1) });
+    }
+    const flip = () => Math.random() < 0.5;
+    const borders = { top: [], right: [], bottom: [], left: [] };
+
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols - 1; c++) {            // pairs between left/right neighbours
+        const pid = nextPair(), f = flip();
+        at(r, c).edges[1] = { pid, side: f ? 'term' : 'desc' };
+        at(r, c + 1).edges[3] = { pid, side: f ? 'desc' : 'term' };
+    }
+    for (let r = 0; r < rows - 1; r++) for (let c = 0; c < cols; c++) {            // pairs between upper/lower neighbours
+        const pid = nextPair(), f = flip();
+        at(r, c).edges[2] = { pid, side: f ? 'term' : 'desc' };
+        at(r + 1, c).edges[0] = { pid, side: f ? 'desc' : 'term' };
+    }
+    const border = (list, tile, edge) => {                                          // the strip holds the opposite half
+        const pid = nextPair(), f = flip();
+        tile.edges[edge] = { pid, side: f ? 'term' : 'desc' };
+        list.push({ pid, side: f ? 'desc' : 'term' });
+    };
+    for (let c = 0; c < cols; c++) border(borders.top, at(0, c), 0);
+    for (let r = 0; r < rows; r++) border(borders.right, at(r, cols - 1), 1);
+    for (let c = 0; c < cols; c++) border(borders.bottom, at(rows - 1, c), 2);
+    for (let r = 0; r < rows; r++) border(borders.left, at(r, 0), 3);
+
+    if (mode === 'advanced') tiles.forEach(t => { t.spin = Math.floor(Math.random() * 4); });
+    tiles.forEach(t => { t.startSpin = t.spin; });
+
+    const tileMap = {};
+    tiles.forEach(t => { tileMap[t.id] = t; });
+    const grid = Array.from({ length: rows }, () => Array(cols).fill(null));
+    return {
+        rows, cols, mode, setId, sizeKey, length: $('q-length').value,
+        tiles, tileMap, pairs, borders, grid, tray: shuffle(tiles.map(t => t.id)),
+        selected: null, hintSlot: null, marks: null, won: false,
+        hints: 0, checks: 0, mistakes: 0, moves: 0, startTime: performance.now(), elapsed: 0
+    };
+}
+
+// ---------- tile geometry and matching ----------
+const rotOf = t => ((t.spin % 4) + 4) % 4;
+function edgeAt(tile, p) { return tile.edges[(p - rotOf(tile) + 4) % 4]; }
+function edgeText(e) { const p = G.pairs[e.pid]; return e.side === 'term' ? p.label : p[G.length]; }
+const matches = (a, b) => a.pid === b.pid && a.side !== b.side;
+
+// For a placed tile: for each position, true (matches), false (conflicts) or null (nothing there to compare with yet)
+function consistency(tile, pos, spin) {
+    const probe = { edges: tile.edges, spin: spin === undefined ? tile.spin : spin };
+    const { r, c } = pos || tile.pos;
+    const out = [];
+    for (let p = 0; p < 4; p++) {
+        const e = edgeAt(probe, p);
+        const nr = r + DIRS[p][0], nc = c + DIRS[p][1];
+        if (nr < 0 || nr >= G.rows || nc < 0 || nc >= G.cols) {
+            const list = p === 0 ? G.borders.top : p === 1 ? G.borders.right : p === 2 ? G.borders.bottom : G.borders.left;
+            const strip = list[p === 0 || p === 2 ? c : r];
+            out.push(matches(e, strip));
+        } else {
+            const nid = G.grid[nr][nc];
+            out.push(nid ? matches(e, edgeAt(G.tileMap[nid], (p + 2) % 4)) : null);
+        }
+    }
+    return out;
+}
+
+function isSolved() {
+    return G.tiles.every(t => t.pos && consistency(t).every(v => v === true));
+}
+
+// ---------- actions ----------
+function msg(text, kind) {
+    const m = $('q-msg');
+    m.textContent = text || '';
+    m.className = 'qg-msg' + (kind ? ' ' + kind : '');
+}
+
+function afterChange() {
+    G.marks = null;
+    G.hintSlot = null;
+    if (!G.won && isSolved()) { finishGame(); }
+    render();
+}
+
+function selectTile(id, from) {
+    if (G.won) return;
+    const sel = G.selected;
+    if (sel && sel.id === id) {
+        if (G.mode === 'advanced' && !G.tileMap[id].locked) { rotateTile(id); return; }
+        G.selected = null;
+    } else {
+        G.selected = { id, from };
+    }
+    G.hintSlot = null;
+    render();
+}
+
+function rotateTile(id) {
+    const t = G.tileMap[id];
+    if (!t || t.locked || G.mode !== 'advanced') return;
+    t.spin++;
+    G.moves++;
+    msg('');
+    afterChange();
+}
+
+function removeFromGrid(t) {
+    if (t.pos) { G.grid[t.pos.r][t.pos.c] = null; t.pos = null; }
+    const i = G.tray.indexOf(t.id);
+    if (i >= 0) G.tray.splice(i, 1);
+}
+
+function returnToTray(id) {
+    const t = G.tileMap[id];
+    if (!t || t.locked || !t.pos) return;
+    removeFromGrid(t);
+    G.tray.push(id);
+    G.selected = { id, from: 'tray' };
+    msg('');
+    afterChange();
+}
+
+function bounce(r, c) {
+    const slot = document.querySelector('.qslot[data-r="' + r + '"][data-c="' + c + '"]');
+    if (slot) { slot.classList.remove('bounce'); void slot.offsetWidth; slot.classList.add('bounce'); }
+}
+
+function placeTile(id, r, c) {
+    if (G.won) return;
+    const t = G.tileMap[id];
+    if (G.grid[r][c]) return;
+    if (t.locked) { msg('That tile is locked in place.'); return; }
+    if (G.mode === 'guided' && (t.solved.r !== r || t.solved.c !== c)) {
+        G.mistakes++;
+        const conflict = consistency(t, { r, c }, 0).some(v => v === false);
+        msg(conflict ? "Its edges don't match the neighbors or the border at that spot." : 'That tile belongs somewhere else. Try reading its edges again.', 'bad');
+        bounce(r, c);
+        updateStatus();
+        return;
+    }
+    removeFromGrid(t);
+    G.grid[r][c] = id;
+    t.pos = { r, c };
+    if (G.mode === 'guided') { t.locked = true; t.spin = 0; }
+    G.selected = G.mode === 'guided' ? null : { id, from: 'board' };
+    G.moves++;
+    msg(G.mode === 'guided' ? 'Locked in!' : '', G.mode === 'guided' ? 'good' : '');
+    afterChange();
+}
+
+function onSlotClick(r, c) {
+    if (G.won) return;
+    const id = G.grid[r][c];
+    if (id) { selectTile(id, 'board'); return; }
+    if (!G.selected) { msg('Tap a tile first, then tap an empty spot to place it.'); return; }
+    placeTile(G.selected.id, r, c);
+}
+
+function useHint() {
+    if (G.won) return;
+    if (!G.selected) { msg('Tap a tile first, then press Hint to see where it belongs.'); return; }
+    const t = G.tileMap[G.selected.id];
+    G.hints++;
+    const right = t.pos && t.pos.r === t.solved.r && t.pos.c === t.solved.c;
+    if (right && rotOf(t) === 0) { msg('That tile is already exactly where it belongs.'); updateStatus(); return; }
+    if (right) { msg('Right spot! Now check which way it should face.'); updateStatus(); return; }
+    G.hintSlot = { r: t.solved.r, c: t.solved.c };
+    msg('The pulsing spot is where this tile belongs.');
+    render();
+    clearTimeout(useHint.timer);
+    useHint.timer = setTimeout(() => { if (G) { G.hintSlot = null; render(); } }, 3500);
+}
+
+function runCheck() {
+    if (G.won || G.mode === 'guided') return;
+    G.checks++;
+    G.marks = {};
+    let badTiles = 0, placed = 0;
+    G.tiles.forEach(t => {
+        if (!t.pos) return;
+        placed++;
+        const cons = consistency(t);
+        const m = {};
+        let bad = false;
+        cons.forEach((v, p) => {
+            const i = (p - rotOf(t) + 4) % 4;                  // which original edge sits at position p
+            if (v === false) { m[i] = 'bad'; bad = true; } else if (v === true) m[i] = 'ok';
+        });
+        if (bad) badTiles++;
+        G.marks[t.id] = m;
+    });
+    if (!placed) msg('Place a few tiles first, then check.');
+    else if (!badTiles) msg('Everything you have placed so far fits together!', 'good');
+    else msg(badTiles + (badTiles === 1 ? ' tile has' : ' tiles have') + " edges that don't match (marked in red). Rotate or move them and try again.", 'bad');
+    render();
+}
+
+function resetBoard() {
+    G.tiles.forEach(t => { t.pos = null; t.locked = false; t.spin = t.startSpin; });
+    G.grid = Array.from({ length: G.rows }, () => Array(G.cols).fill(null));
+    G.tray = shuffle(G.tiles.map(t => t.id));
+    G.selected = null; G.hintSlot = null; G.marks = null; G.won = false;
+    G.hints = 0; G.checks = 0; G.mistakes = 0; G.moves = 0;
+    G.startTime = performance.now(); G.elapsed = 0;
+    $('q-result').innerHTML = '';
+    msg('Board reset. Same tiles, fresh start.');
+    startTimer();
+    render();
+}
+
+// ---------- timer, finish ----------
+function startTimer() {
+    clearInterval(timerId);
+    timerId = setInterval(() => {
+        if (!G || G.won) return;
+        G.elapsed = Math.floor((performance.now() - G.startTime) / 1000);
+        $('q-timer').textContent = fmtTime(G.elapsed);
+    }, 500);
+}
+
+function finishGame() {
+    G.won = true;
+    G.elapsed = Math.floor((performance.now() - G.startTime) / 1000);
+    clearInterval(timerId);
+    const key = G.setId + '|' + G.sizeKey + '|' + G.mode;
+    const best = store.getJSON('quiltBest', {});
+    G.newBest = !best[key] || G.elapsed < best[key];
+    if (G.newBest) { best[key] = G.elapsed; store.setJSON('quiltBest', best); }
+    G.bestTime = best[key];
+    G.selected = null; G.hintSlot = null;
+    msg('');
+}
+
+// ---------- rendering ----------
+function centerSVG(color) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('class', 'qcenter');
+    svg.setAttribute('aria-hidden', 'true');
+    const tri = ['0,0 50,0 50,50', '100,0 100,50 50,50', '100,100 50,100 50,50', '0,100 0,50 50,50'];
+    const squares = ['0,0 50,0 50,50 0,50', '50,0 100,0 100,50 50,50', '50,50 100,50 100,100 50,100', '0,50 50,50 50,100 0,100'];
+    squares.forEach((pts, i) => {
+        const poly = document.createElementNS(NS, 'polygon');
+        poly.setAttribute('points', pts);
+        poly.setAttribute('fill', i % 2 ? '#ffffff' : color);
+        poly.setAttribute('stroke', color);
+        poly.setAttribute('stroke-width', '3');
+        svg.appendChild(poly);
+    });
+    tri.forEach(pts => {
+        const poly = document.createElementNS(NS, 'polygon');
+        poly.setAttribute('points', pts);
+        poly.setAttribute('fill', '#ffffff');
+        poly.setAttribute('fill-opacity', '0.55');
+        svg.appendChild(poly);
+    });
+    return svg;
+}
+
+function tileEl(tile, size) {
+    const t = el('div', 'qtile');
+    t.dataset.tid = tile.id;
+    t.style.setProperty('--ts', size + 'px');
+    t.style.setProperty('--spin', tile.spin);
+    const unit = G.pairs[tile.edges[0].pid].unit;
+    t.style.setProperty('--unit', UNIT_COLORS[unit] || '#2c3e50');
+    const marks = G.marks && G.marks[tile.id];
+    tile.edges.forEach((e, i) => {
+        const w = el('div', 'qzw');
+        w.style.setProperty('--i', i);
+        const z = el('div', 'qz ' + e.side + (marks && marks[i] ? ' ' + marks[i] : ''));
+        const qt = el('div', 'qt');
+        const span = el('span');
+        span.textContent = edgeText(e);
+        qt.appendChild(span);
+        z.appendChild(qt);
+        w.appendChild(z);
+        t.appendChild(w);
+    });
+    t.appendChild(centerSVG(UNIT_COLORS[unit] || '#2c3e50'));
+    if (G.mode === 'guided' && tile.corner && !tile.locked) { const s = el('div', 'qstar'); s.textContent = '\u2605'; s.title = 'Corner tile'; t.appendChild(s); }
+    return t;
+}
+
+function stripEl(side, list, idx) {
+    const e = list[idx];
+    const d = el('div', 'qborder ' + side + ' ' + e.side);
+    const qt = el('div', 'qt');
+    const span = el('span');
+    span.textContent = edgeText(e);
+    qt.appendChild(span);
+    d.appendChild(qt);
+    return d;
+}
+
+function computeSize() {
+    const wrap = $('qboard-wrap');
+    const avail = Math.max(240, wrap.clientWidth - 16);
+    const gap = 4;
+    const base = (avail - gap * (G.cols + 1)) / (G.cols + 2 * STRIP);
+    return Math.floor(Math.max(62, Math.min(base, 215)) * ZOOMS[zoomIndex]);
+}
+
+function renderBoard(S) {
+    const board = $('qboard');
+    board.innerHTML = '';
+    board.style.setProperty('--s', S + 'px');
+    board.style.setProperty('--t', Math.round(S * STRIP) + 'px');
+    board.style.gridTemplateColumns = 'var(--t) repeat(' + G.cols + ', var(--s)) var(--t)';
+    board.style.gridTemplateRows = 'var(--t) repeat(' + G.rows + ', var(--s)) var(--t)';
+    const blank = () => el('div', 'qblank');
+    board.appendChild(blank());
+    for (let c = 0; c < G.cols; c++) board.appendChild(stripEl('top', G.borders.top, c));
+    board.appendChild(blank());
+    for (let r = 0; r < G.rows; r++) {
+        board.appendChild(stripEl('left', G.borders.left, r));
+        for (let c = 0; c < G.cols; c++) {
+            const id = G.grid[r][c];
+            const s = el('div', 'qslot' + (id ? ' filled' : ''));
+            s.dataset.r = r; s.dataset.c = c; s.tabIndex = 0;
+            s.setAttribute('role', 'button');
+            if (id) {
+                const tile = G.tileMap[id];
+                s.appendChild(tileEl(tile, S));
+                if (tile.locked) s.classList.add('locked');
+                if (G.selected && G.selected.id === id) s.classList.add('sel');
+                s.setAttribute('aria-label', 'Row ' + (r + 1) + ', column ' + (c + 1) + ': ' + describeTile(tile));
+            } else {
+                s.setAttribute('aria-label', 'Empty spot, row ' + (r + 1) + ', column ' + (c + 1));
+            }
+            if (G.hintSlot && G.hintSlot.r === r && G.hintSlot.c === c) s.classList.add('hint');
+            board.appendChild(s);
+        }
+        board.appendChild(stripEl('right', G.borders.right, r));
+    }
+    board.appendChild(blank());
+    for (let c = 0; c < G.cols; c++) board.appendChild(stripEl('bottom', G.borders.bottom, c));
+    board.appendChild(blank());
+}
+
+function describeTile(tile) {
+    return [0, 1, 2, 3].map(p => SIDE_NAMES[p].toLowerCase() + ': ' + edgeText(edgeAt(tile, p))).join('; ');
+}
+
+function renderTray(S) {
+    const tray = $('qtray');
+    tray.innerHTML = '';
+    const ts = Math.round(Math.max(66, Math.min(S * 0.72, 130)));
+    G.tray.forEach(id => {
+        const tile = G.tileMap[id];
+        const item = el('div', 'qtray-item' + (G.selected && G.selected.id === id ? ' sel' : ''));
+        item.dataset.tid = id; item.tabIndex = 0;
+        item.setAttribute('role', 'button');
+        item.setAttribute('aria-label', 'Unplaced tile. ' + describeTile(tile));
+        item.style.setProperty('--tray', ts + 'px');
+        item.appendChild(tileEl(tile, ts));
+        tray.appendChild(item);
+    });
+    $('qtray-title').textContent = G.tray.length ? 'Tiles to place (' + G.tray.length + ')' : 'All tiles placed';
+    $('qtray-wrap').classList.toggle('empty', !G.tray.length);
+}
+
+function renderInspector() {
+    const box = $('qinsp');
+    box.innerHTML = '';
+    const sel = G.selected && G.tileMap[G.selected.id];
+    const h = el('h3');
+    h.textContent = sel ? 'Selected tile' : 'Read a tile here';
+    box.appendChild(h);
+    if (!sel) {
+        const p = el('p', 'qinsp-empty');
+        p.textContent = 'Tap any tile to read all four of its edges here in plain, upright text. Then tap an empty spot on the board to place it.';
+        box.appendChild(p);
+        const tip = el('p', 'qinsp-mode');
+        tip.textContent = MODES[G.mode].help;
+        box.appendChild(tip);
+        return;
+    }
+    const wrap = el('div', 'qinsp-body');
+    const pv = el('div', 'qinsp-preview');
+    const ps = Math.round(Math.max(110, Math.min(180, box.clientWidth * 0.46)));
+    pv.appendChild(tileEl(sel, ps));
+    wrap.appendChild(pv);
+    const ul = el('ul', 'qinsp-list');
+    for (let p = 0; p < 4; p++) {
+        const e = edgeAt(sel, p);
+        const li = el('li', e.side);
+        const a = el('span', 'arrow'); a.textContent = ARROWS[p]; a.title = SIDE_NAMES[p];
+        const role = el('span', 'role'); role.textContent = e.side === 'term' ? 'Term' : 'Description';
+        const tx = el('span', 'tx'); tx.textContent = edgeText(e);
+        li.appendChild(a); li.appendChild(role); li.appendChild(tx);
+        ul.appendChild(li);
+    }
+    wrap.appendChild(ul);
+    box.appendChild(wrap);
+    const btns = el('div', 'qinsp-btns');
+    if (G.mode === 'advanced' && !sel.locked) {
+        const rot = el('button', 'qbtn qbtn-primary'); rot.id = 'q-rotate'; rot.textContent = '\u21bb Rotate';
+        btns.appendChild(rot);
+    }
+    if (sel.pos && !sel.locked) {
+        const rm = el('button', 'qbtn'); rm.id = 'q-remove'; rm.textContent = 'Back to tray';
+        btns.appendChild(rm);
+    }
+    const ds = el('button', 'qbtn'); ds.id = 'q-deselect'; ds.textContent = 'Done';
+    btns.appendChild(ds);
+    box.appendChild(btns);
+}
+
+function updateStatus() {
+    const placed = G.tiles.filter(t => t.pos).length;
+    $('q-timer').textContent = fmtTime(G.elapsed);
+    $('q-placed').textContent = placed + ' of ' + G.tiles.length + ' placed';
+    const extras = [];
+    if (G.hints) extras.push(G.hints + (G.hints === 1 ? ' hint' : ' hints'));
+    if (G.mode === 'guided' && G.mistakes) extras.push(G.mistakes + (G.mistakes === 1 ? ' miss' : ' misses'));
+    if (G.mode !== 'guided' && G.checks) extras.push(G.checks + (G.checks === 1 ? ' check' : ' checks'));
+    $('q-extras').textContent = extras.join(' \u00b7 ');
+    $('q-check').disabled = G.mode === 'guided' || G.won;
+    $('q-hint').disabled = G.won;
+    $('q-zoom-out').disabled = zoomIndex === 0;
+    $('q-zoom-in').disabled = zoomIndex === ZOOMS.length - 1;
+}
+
+function renderResult() {
+    const box = $('q-result');
+    box.innerHTML = '';
+    if (!G.won) return;
+    const card = el('div', 'qresult');
+    const h = el('h2'); h.textContent = 'Quilt complete! \ud83c\udf89';
+    card.appendChild(h);
+    const stats = el('p', 'qresult-stats');
+    stats.textContent = 'Time ' + fmtTime(G.elapsed) + '  \u00b7  ' + G.hints + (G.hints === 1 ? ' hint' : ' hints') +
+        (G.mode === 'guided' ? '  \u00b7  ' + G.mistakes + (G.mistakes === 1 ? ' miss' : ' misses') : '  \u00b7  ' + G.checks + (G.checks === 1 ? ' check' : ' checks')) +
+        (G.newBest ? '  \u00b7  New best time for this board type!' : '  \u00b7  Best: ' + fmtTime(G.bestTime));
+    card.appendChild(stats);
+    const actions = el('div', 'qresult-actions');
+    const again = el('button', 'qbtn qbtn-primary'); again.id = 'q-again'; again.textContent = 'New board';
+    const same = el('button', 'qbtn'); same.id = 'q-replay'; same.textContent = 'Replay this board';
+    actions.appendChild(again); actions.appendChild(same);
+    card.appendChild(actions);
+    const det = el('details', 'qstudy'); det.open = true;
+    const sum = el('summary'); sum.textContent = 'Study list: every pair on this quilt';
+    det.appendChild(sum);
+    const list = el('ul');
+    Object.values(G.pairs).sort((a, b) => parseFloat(a.topic) - parseFloat(b.topic) || a.label.localeCompare(b.label)).forEach(p => {
+        const li = el('li');
+        const tag = el('span', 'qtag'); tag.textContent = 'Topic ' + p.topic; tag.style.background = UNIT_COLORS[p.unit] || '#2c3e50';
+        const b = el('strong'); b.textContent = p.label;
+        const d = el('span'); d.textContent = ': ' + p.long;
+        const a = el('a'); a.href = 'overviews/topic' + p.topic; a.textContent = ' Review topic'; a.className = 'qlink';
+        li.appendChild(tag); li.appendChild(b); li.appendChild(d); li.appendChild(a);
+        list.appendChild(li);
+    });
+    det.appendChild(list);
+    card.appendChild(det);
+    box.appendChild(card);
+    if (!G.resultShown) { G.resultShown = true; card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+}
+
+// Shrink each label until it fits its patch; anything that still can't fit is clipped (the inspector shows the full text)
+function fitAll() {
+    document.querySelectorAll('.qt').forEach(qt => {
+        const span = qt.firstElementChild;
+        if (!span) return;
+        const host = qt.closest('.qtile') || qt.closest('.qborder');
+        const base = host.classList.contains('qtile') ? host.offsetWidth : host.parentElement.style.getPropertyValue('--s') ? parseFloat(host.parentElement.style.getPropertyValue('--s')) : 120;
+        const maxFs = Math.max(8, Math.min(15, base * 0.085));
+        const minFs = 5.5;
+        const fits = () => span.offsetHeight <= qt.clientHeight + 1 && span.offsetWidth <= qt.clientWidth + 1 && qt.scrollHeight <= qt.clientHeight + 1 && qt.scrollWidth <= qt.clientWidth + 1;
+        let lo = minFs, hi = maxFs;
+        qt.style.fontSize = hi + 'px';
+        if (fits()) { qt.classList.remove('clipped'); return; }
+        for (let i = 0; i < 7; i++) {
+            const mid = (lo + hi) / 2;
+            qt.style.fontSize = mid + 'px';
+            if (fits()) lo = mid; else hi = mid;
+        }
+        qt.style.fontSize = lo + 'px';
+        qt.classList.toggle('clipped', !fits());
+    });
+}
+
+function render() {
+    if (!G) return;
+    const S = computeSize();
+    renderBoard(S);
+    renderTray(S);
+    renderInspector();
+    updateStatus();
+    renderResult();
+    requestAnimationFrame(fitAll);
+}
+
+// ---------- setup ----------
+function newGame(keepBoard) {
+    const setId = $('q-set').value, sizeKey = $('q-size').value, mode = $('q-mode').value;
+    const { rows, cols } = SIZES[sizeKey];
+    const pool = poolFor(setId);
+    const need = 2 * rows * cols + rows + cols;
+    if (pool.length < need) { msg('That content set does not have enough pairs for this board size. Try a smaller board or mixed units.', 'bad'); return; }
+    G = generateBoard(rows, cols, pool, mode, setId, sizeKey);
+    $('q-result').innerHTML = '';
+    $('q-new').classList.remove('attention');
+    savePrefs();
+    updateSettingsSummary();
+    if (window.matchMedia('(max-width: 600px)').matches) $('q-settings').open = false;
+    msg(mode === 'guided' ? 'Tap a tile to read it, then tap a spot to place it.' : 'Tap a tile to read it, then tap an empty spot to place it.');
+    startTimer();
+    render();
+}
+
+function updateSettingsSummary() {
+    const setSel = $('q-set');
+    const setName = setSel.value === 'all' ? 'Mixed units' : 'Unit ' + setSel.value.replace('unit-', '');
+    $('q-settings-sum').textContent = '\u2699 ' + setName + ' \u00b7 ' + SIZES[$('q-size').value].short + ' \u00b7 ' + MODES[$('q-mode').value].label + ' \u00b7 ' + ($('q-length').value === 'short' ? 'Short' : 'Long') + ' text';
+}
+
+function savePrefs() {
+    store.setJSON('quiltPrefs', { set: $('q-set').value, size: $('q-size').value, mode: $('q-mode').value, length: $('q-length').value });
+}
+
+function buildControls() {
+    const setSel = $('q-set');
+    setSel.innerHTML = '';
+    const all = el('option'); all.value = 'all'; all.textContent = 'Mixed: all units'; setSel.appendChild(all);
+    DATA.sets.forEach(s => { const o = el('option'); o.value = s.id; o.textContent = 'Unit ' + s.unit + ': ' + s.unit_title; setSel.appendChild(o); });
+    const sizeSel = $('q-size');
+    sizeSel.innerHTML = '';
+    Object.keys(SIZES).forEach(k => { const o = el('option'); o.value = k; o.textContent = SIZES[k].label; sizeSel.appendChild(o); });
+    const modeSel = $('q-mode');
+    modeSel.innerHTML = '';
+    Object.keys(MODES).forEach(k => { const o = el('option'); o.value = k; o.textContent = MODES[k].label; modeSel.appendChild(o); });
+
+    const prefs = store.getJSON('quiltPrefs', null);
+    const phone = window.matchMedia('(max-width: 600px)').matches;
+    if (prefs) {
+        if ([...setSel.options].some(o => o.value === prefs.set)) setSel.value = prefs.set;
+        if (SIZES[prefs.size]) sizeSel.value = prefs.size;
+        if (MODES[prefs.mode]) modeSel.value = prefs.mode;
+        if (prefs.length === 'short' || prefs.length === 'long') $('q-length').value = prefs.length;
+    } else {
+        sizeSel.value = phone ? '2x2' : '3x3';
+    }
+    $('q-mode-help').textContent = MODES[modeSel.value].help;
+}
+
+function bind() {
+    $('q-new').addEventListener('click', () => newGame());
+    ['q-set', 'q-size', 'q-mode'].forEach(id => $(id).addEventListener('change', () => {
+        $('q-mode-help').textContent = MODES[$('q-mode').value].help;
+        $('q-new').classList.add('attention');
+        msg('Press New Board to apply your changes.');
+    }));
+    $('q-length').addEventListener('change', () => { if (!G) return; G.length = $('q-length').value; savePrefs(); updateSettingsSummary(); render(); });
+    $('q-check').addEventListener('click', runCheck);
+    $('q-hint').addEventListener('click', useHint);
+    $('q-reset').addEventListener('click', () => { if (G) resetBoard(); });
+    $('q-zoom-in').addEventListener('click', () => { if (zoomIndex < ZOOMS.length - 1) { zoomIndex++; render(); } });
+    $('q-zoom-out').addEventListener('click', () => { if (zoomIndex > 0) { zoomIndex--; render(); } });
+    $('q-zoom-fit').addEventListener('click', () => { zoomIndex = 0; render(); });
+
+    $('qboard').addEventListener('click', e => {
+        const slot = e.target.closest('.qslot');
+        if (slot && G) onSlotClick(+slot.dataset.r, +slot.dataset.c);
+    });
+    $('qtray').addEventListener('click', e => {
+        const item = e.target.closest('.qtray-item');
+        if (item && G) selectTile(item.dataset.tid, 'tray');
+    });
+    $('qinsp').addEventListener('click', e => {
+        if (!G) return;
+        const id = e.target.closest('button') && e.target.closest('button').id;
+        if (id === 'q-rotate' && G.selected) rotateTile(G.selected.id);
+        else if (id === 'q-remove' && G.selected) returnToTray(G.selected.id);
+        else if (id === 'q-deselect') { G.selected = null; render(); }
+    });
+    $('q-result').addEventListener('click', e => {
+        const id = e.target.closest('button') && e.target.closest('button').id;
+        if (id === 'q-again') newGame();
+        else if (id === 'q-replay' && G) resetBoard();
+    });
+    document.addEventListener('keydown', e => {
+        if (!G || e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') return;
+        if ((e.key === 'r' || e.key === 'R') && G.selected && G.mode === 'advanced') { rotateTile(G.selected.id); }
+        else if (e.key === 'Escape' && G.selected) { G.selected = null; render(); }
+        else if ((e.key === 'Enter' || e.key === ' ') && e.target.classList) {
+            if (e.target.classList.contains('qslot')) { e.preventDefault(); onSlotClick(+e.target.dataset.r, +e.target.dataset.c); }
+            else if (e.target.classList.contains('qtray-item')) { e.preventDefault(); selectTile(e.target.dataset.tid, 'tray'); }
+        }
+    });
+    let lastW = window.innerWidth, rt = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(rt);
+        rt = setTimeout(() => { if (G && window.innerWidth !== lastW) { lastW = window.innerWidth; render(); } }, 150);
+    });
+}
+
+async function init() {
+    try {
+        const r = await fetch('quilt-sets.json');
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        DATA = await r.json();
+        if (!DATA.sets || !DATA.sets.length) throw new Error('no sets');
+    } catch (err) {
+        console.error('Error loading quilt-sets.json:', err);
+        $('q-msg').textContent = "Couldn't load the quilt sets. Please refresh the page and try again.";
+        $('q-msg').className = 'qg-msg bad';
+        $('q-new').disabled = true;
+        return;
+    }
+    const total = DATA.sets.reduce((n, s) => n + s.pairs.length, 0);
+    const stat = $('q-total'); if (stat) stat.textContent = total;
+    buildControls();
+    bind();
+    newGame();
+}
+
+window.addEventListener('load', init);
+
+    </script>
+</body>
+</html>
