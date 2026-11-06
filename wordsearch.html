@@ -46,6 +46,8 @@
         .btn-main { padding: 13px 38px; font-size: 1.1rem; font-weight: bold; }
         .btn-main:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
         .load-error { display: none; color: #c0392b; margin-top: 12px; font-size: 0.92rem; text-align: center; }
+        .ws-note { margin: 10px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--panel-blue); border-left: 5px solid var(--accent); color: #44525d; font-size: 0.93rem; line-height: 1.5; text-align: left; }
+        .ws-note[hidden] { display: none; }
 
         /* ===== PUZZLE ===== */
         #puzzle-area { display: none; scroll-margin-top: 16px; }
@@ -310,6 +312,7 @@
                 </div>
             </div>
             <p class="pool-info" id="pool-info">Loading terms...</p>
+            <p class="ws-note" id="ws-note" role="status" aria-live="polite" hidden></p>
             <div class="setup-actions">
                 <button class="btn-main" id="generate-btn" onclick="generatePuzzle()" disabled>Generate Puzzle</button>
             </div>
@@ -549,10 +552,50 @@
             dataLoaded = true;
             syncWordCounts();
             updatePoolInfo();
+            document.querySelector('.setup-grid').addEventListener('change', () => { document.getElementById('ws-note').hidden = true; });
+            applyDeepLink();
         }).catch(() => {
             document.getElementById('pool-info').textContent = '';
             document.getElementById('load-error').style.display = 'block';
         });
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Other pages can open a ready-made puzzle:
+        //   wordsearch?topic=1.6          words from Topic 1.6 (the unit is filled in for you)
+        //   wordsearch?unit=3             words from Unit 3 (or unit=Unit 3)
+        //   ...&size=15&count=12          grid size (12, 15, 20, 25) and number of words (8, 12, 16, 20)
+        //   ...&start=1                   generates the puzzle right away instead of waiting for "Generate Puzzle"
+        // An unknown unit or topic falls back to All and says so; it never starts a different puzzle.
+        function applyDeepLink() {
+            const q = new URLSearchParams(location.search);
+            const topicRaw = (q.get('topic') || '').trim(), unitRaw = (q.get('unit') || '').trim();
+            if (!topicRaw && !unitRaw && !q.get('size') && !q.get('count')) return;
+            let unit = unitRaw ? (/^\d+$/.test(unitRaw) ? 'Unit ' + unitRaw : unitRaw) : null;
+            if (topicRaw && !unit) {
+                const t = allTopics.find(x => String(x.topic_id) === topicRaw);
+                if (t) unit = t.unit;
+            }
+            const pick = (id, value) => {
+                const sel = document.getElementById(id);
+                if (!sel || !value) return false;
+                const previous = sel.value;
+                sel.value = value;
+                if (sel.value === value) return true;
+                sel.value = previous;
+                return false;
+            };
+            const notes = [];
+            let resolved = true;
+            if (unit && !pick('unit-select', unit)) { notes.push("We couldn't find " + unit + ', so all units are showing.'); resolved = false; }
+            populateTopicDropdown();
+            if (topicRaw && !pick('topic-select', topicRaw)) { notes.push("We couldn't find any words for Topic " + topicRaw + ', so all topics are showing.'); resolved = false; }
+            pick('size-select', q.get('size'));
+            syncWordCounts();
+            pick('count-select', q.get('count'));
+            updatePoolInfo();
+            if (notes.length) { const n = document.getElementById('ws-note'); n.textContent = notes.join(' '); n.hidden = false; }
+            if (q.get('start') === '1' && resolved && !document.getElementById('generate-btn').disabled) generatePuzzle();
+        }
 
         function populateUnitDropdown() {
             const select = document.getElementById('unit-select');
