@@ -376,12 +376,33 @@
         playerGridState = createEmptyGrid();
         playerShips = placeShipsRandomly(playerGridState);
         renderGrid(document.getElementById('preview-board'), playerGridState, true);
+        applyDeepLink();
     })
     .catch(err => {
         console.error("Error loading JSON:", err);
         const le = document.getElementById('load-error');
         if (le) le.style.display = 'block';
     });
+
+    // --- DEEP LINKS ---------------------------------------------------------------------------
+    // Other pages can open a unit directly:  battleship?unit=0   (or unit=Unit 0 / unit=all)
+    //   ...&start=1   launches the mission right away instead of waiting for "Launch Mission"
+    // An unknown unit never launches a different game: it stays on this screen and says why.
+    function applyDeepLink() {
+        const q = new URLSearchParams(location.search);
+        const raw = (q.get('unit') || '').trim();
+        if (!raw) return;
+        const sel = document.getElementById('unit-select');
+        const wanted = raw.toLowerCase() === 'all' ? 'all' : (/^\d+$/.test(raw) ? 'Unit ' + raw : raw);
+        sel.value = wanted;
+        if (sel.value !== wanted) {
+            sel.value = 'all';
+            const sm = document.getElementById('setup-msg');
+            if (sm) { sm.innerText = "We couldn't find " + raw + ' yet, so all units are selected. Pick a unit and press Launch Mission.'; sm.style.display = 'block'; }
+            return;
+        }
+        if (q.get('start') === '1') startGame();
+    }
 
     // --- SETUP FUNCTIONS ---
     function createEmptyGrid() {
