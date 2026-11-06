@@ -44,6 +44,7 @@
         #start-btn { width: 100%; margin: 6px 0 0; padding: 14px; font-size: 1.1rem; font-weight: bold; }
         #start-btn:disabled { background-color: #b0bec5; cursor: not-allowed; transform: none; }
         #load-error { display: none; margin-top: 12px; color: #c0392b; font-size: 0.95rem; text-align: center; }
+        #setup-msg { display: none; margin-top: 12px; color: #44525d; font-size: 0.95rem; text-align: center; }
 
         /* ===== GAME ===== */
         #game-ui { width: 100%; }
@@ -201,6 +202,7 @@
 
             <button class="nav-btn" id="start-btn" onclick="initGame()" disabled>Start Game</button>
             <div id="load-error">Couldn't load the game's questions. Please refresh the page and try again.</div>
+            <div id="setup-msg" role="status" aria-live="polite"></div>
         </div>
 
         <div id="game-ui" style="display:none;">
@@ -289,12 +291,38 @@
             if (ss) ss.textContent = COORDINATES.length;
             const startBtn = document.getElementById('start-btn');
             if (startBtn) startBtn.disabled = false;
+            document.getElementById('unit-select').addEventListener('change', () => { document.getElementById('setup-msg').style.display = 'none'; });
+            applyDeepLink();
         })
         .catch(err => {
             console.error("Error loading JSON:", err);
             const le = document.getElementById('load-error');
             if (le) le.style.display = 'block';
         });
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Other pages can open a unit directly:  boardgame?unit=0   (or unit=Unit 0 / unit=all)
+        //   ...&players=2   sets the number of players (1 = play the computer, up to 4)
+        //   ...&start=1     starts right away instead of waiting for "Start Game"
+        // An unknown unit never starts a different game: it stays on this screen and says why.
+        function applyDeepLink() {
+            const q = new URLSearchParams(location.search);
+            const raw = (q.get('unit') || '').trim();
+            const players = (q.get('players') || '').trim();
+            if (['1', '2', '3', '4'].includes(players)) document.getElementById('player-count').value = players;
+            if (!raw) return;
+            const sel = document.getElementById('unit-select');
+            const wanted = raw.toLowerCase() === 'all' ? 'all' : (/^\d+$/.test(raw) ? 'Unit ' + raw : raw);
+            sel.value = wanted;
+            if (sel.value !== wanted) {
+                sel.value = 'all';
+                const sm = document.getElementById('setup-msg');
+                sm.textContent = "We couldn't find " + raw + ' yet, so all units are selected. Pick a unit and press Start Game.';
+                sm.style.display = 'block';
+                return;
+            }
+            if (q.get('start') === '1') initGame();
+        }
 
         // 2. Init Game
         function initGame() {
