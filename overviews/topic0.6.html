@@ -2,227 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 0.6: The Psychological Perspectives - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/overviews/topic0.6">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* --- STYLING MATCHED TO PRIVACY/TERMS PAGES --- */
-        .blog-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: left;
-            margin-top: 20px;
-        }
+    <link rel="stylesheet" href="../topic.css">
 
-        .blog-container h1 {
-            text-align: left;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .blog-container h2 {
-            margin-top: 35px;
-            font-size: 1.25rem;
-            color: var(--primary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .blog-container h3 {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .blog-container p, .blog-container li {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .blog-container ul {
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
-        .blog-container a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .blog-container a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- CALLOUT BOXES FOR MISCONCEPTIONS --- */
-        .blog-container blockquote {
-            background: #fdfaf2;
-            border-left: 4px solid #5F7FFF;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .blog-container blockquote p {
-            margin-bottom: 0;
-            color: #444;
-        }
-
-        /* --- AAQ FRQ CALLOUT BOX --- */
-        .aaq-callout {
-            background: #f0f7f4;
-            border-left: 4px solid #2b9348;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-        }
-
-        .aaq-callout h4 {
-            color: #1a5e31;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .aaq-callout p, .aaq-callout li {
-            color: #2b4d36;
-            font-size: 1rem;
-        }
-
-        .aaq-callout ul {
-            margin-bottom: 0; 
-        }
-
-        .update-date {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        /* --- TWO-COLUMN LAYOUT WITH SIDEBAR --- */
-        .blog-layout-bridge {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .sidebar-ad-aside {
-            width: 300px;
-            flex-shrink: 0;
-            margin-top: 20px;
-        }
-
-        .ad-wrapper-sidebar {
-            width: 300px;
-            min-height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
-
-        /* --- REVIEW SAFETY BLOCK --- */
-        .ad-under-review {
-            display: none !important;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 600px) {
-            .blog-container {
-                padding: 20px; 
-            }
-        }
-
-                /* --- GUIDED NOTES DROPDOWN --- */
-        .guided-notes-block {
-            margin: 20px 0 30px 0;
-        }
-
-        .notes-dropdown {
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            background: #f6f8ff;
-            overflow: hidden;
-        }
-
-        .notes-dropdown summary {
-            cursor: pointer;
-            list-style: none;
-            padding: 14px 20px;
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .notes-dropdown summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .notes-dropdown summary::after {
-            content: '▾';
-            color: var(--accent);
-            font-size: 1.2rem;
-            transition: transform 0.2s ease;
-            margin-left: 10px;
-        }
-
-        .notes-dropdown[open] summary::after {
-            transform: rotate(180deg);
-        }
-
-        .notes-options {
-            padding: 4px 20px 20px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .notes-options a {
-            flex: 1;
-            min-width: 220px;
-            text-align: center;
-            padding: 12px 16px;
-            border-radius: 6px;
-            background: var(--accent);
-            color: white !important;
-            font-weight: bold !important;
-            text-decoration: none !important;
-        }
-
-        .notes-options a:hover {
-            opacity: 0.88;
-            text-decoration: none !important;
-        }
-
-        .notes-options-note {
-            width: 100%;
-            font-size: 0.85rem;
-            color: #888;
-            font-style: italic;
-            margin: 2px 0 0 0;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -250,6 +41,9 @@
                     <a href="../boardgame">Psych Land</a>
                     <a href="../battleship">Cortex Commander</a>
                     <a href="../oddball">Oddball</a>
+                    <a href="../wordsearch">Word Search</a>
+                    <a href="../crossword">Crossword</a>
+                    <a href="../quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -265,105 +59,165 @@
         </ul>
     </nav>
 
-    <div class="blog-layout-bridge">
-        
-        <div class="blog-container" style="flex: 1; min-width: 300px; max-width: 780px;">
-            <h1>Unit 0: Science Practices</h1>
-            <h3 style="color: #666; margin-top: 5px; margin-bottom: 15px; font-weight: 500;">Topic 0.6: The Psychological Perspectives</h3>
-            <div class="update-date">Last Updated: June 29, 2026</div>
-
-                        <div class="guided-notes-block">
-                <details class="notes-dropdown">
-                    <summary>📥 Get Guided Notes for This Topic</summary>
-                    <div class="notes-options">
-                        <a href="https://appsychreviewhub.com/studyguides/topic0.6.pdf" target="_blank" rel="noopener">📄 Download PDF</a>
-                        <a href="https://docs.google.com/document/d/1HslmrpTL7sTmZNrt_28RrnNEIauyua4dPDMk7V7ujXI/edit?usp=sharing" target="_blank" rel="noopener">📝 Open Google Doc</a>
-                        <p class="notes-options-note">Google Doc opens as view-only — click File &rarr; Make a copy to edit your own version.</p>
-                    </div>
-                </details>
+    <!-- ===== HERO ===== -->
+    <header class="guide-hero">
+        <div class="inner">
+            <div class="crumbs" role="navigation" aria-label="Breadcrumb">
+                <span>
+                    <a href="../studyguide">Study Guides</a><span class="sep">/</span><span class="here">Unit 0: Science Practices</span>
+                </span>
+                <span class="crumb-next"><a href="topic0.5">&larr; Topic 0.5</a><a href="topic1.1">Next: Topic 1.1 &rarr;</a></span>
             </div>
 
-            <!-- TOP NAVIGATION BAR -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 30px 0; padding-bottom: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem;">
-                <a href="topic0.5" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    &larr; Topic 0.5
-                </a>
-                <a href="../studyguide" style="text-decoration: none; color: #666; font-weight: bold; text-align: center;">
-                    Table of Contents
-                </a>
-                <a href="topic1.1" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    Topic 1.1 &rarr;
-                </a>
-            </div>             
+            <div class="guide-hero-grid">
+                <div>
+                    <h1>Topic 0.6: The Psychological Perspectives</h1>
+                    <p class="guide-lede">Seven lenses for explaining the same behavior, and why most psychologists combine them.</p>
+                    <p class="updated">Last updated June 29, 2026</p>
+                </div>
 
-            <h2>The Big Picture: Looking Through Different Lenses</h2>
+                <div class="notes-card">
+                    <h2>📥 Guided notes for this topic</h2>
+                    <p class="notes-sub">Fill them in as you read.</p>
+                    <div class="notes-actions">
+                        <a class="btn-solid" href="https://appsychreviewhub.com/studyguides/topic0.6.pdf" target="_blank" rel="noopener">📄 Download PDF</a>
+                        <a class="btn-outline" href="https://docs.google.com/document/d/1HslmrpTL7sTmZNrt_28RrnNEIauyua4dPDMk7V7ujXI/edit?usp=sharing" target="_blank" rel="noopener">📝 Open Google Doc</a>
+                    </div>
+                    <p class="notes-fine">The Google Doc is view-only. Choose File &rarr; Make a copy to edit your own version.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== BODY ===== -->
+    <div class="guide-layout">
+
+        <aside class="toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ol>
+                <li><a href="#big-picture">The big picture</a></li>
+                <li><a href="#the-seven-perspectives">1. The seven perspectives</a></li>
+                <li><a href="#biopsychosocial">2. Biopsychosocial</a></li>
+                <li><a href="#ap-practice-focus">3. AP practice focus</a></li>
+                <li><a href="#key-terms">4. Key terms</a></li>
+                <li><a href="#review">5. Practice this topic</a></li>
+            </ol>
+        </aside>
+
+        <article class="guide-article">
+
+            <h2 class="first" id="big-picture">The Big Picture: Looking Through Different Lenses</h2>
             <p>Why do people behave the way they do? Is an aggressive student acting out because of a chemical imbalance in their brain, or because they were rewarded for bullying in middle school, or because they are unconsciously redirecting anger meant for their parents? In psychology, there is rarely just one right answer. Instead, psychologists analyze behavior by looking through different "lenses," known as perspectives. Each perspective offers a unique explanation for human behavior and mental processes.</p>
 
-            <h2>1. The Seven Main Perspectives</h2>
+            <h2 id="the-seven-perspectives"><span class="sec-num">1.</span>The Seven Main Perspectives</h2>
             <p>To succeed on the AP Exam, you must be able to read a description of a behavior and identify which perspective is being used to explain it. Let's look at how each of the seven major lenses would explain a common issue: <strong>severe test anxiety</strong>.</p>
+            <dl class="def-list">
+                <div class="def">
+                    <dt>Biological Perspective</dt>
+                    <dd>A branch of psychology that links biological (genetic, neural, hormonal) and psychological processes. It looks strictly at the physical body. <span class="ex"><em>Example:</em> A biological psychologist would explain the student's test anxiety by pointing to an overactive amygdala, a genetic predisposition for anxiety inherited from their parents, or an imbalance of neurotransmitters like GABA.</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Behavioral Perspective</dt>
+                    <dd>A psychological approach that focuses entirely on observable behaviors and the ways they are learned and shaped through interactions with the environment, especially through conditioning and reinforcement. It ignores internal thoughts. <span class="ex"><em>Example:</em> A behavioral psychologist would explain that the student has test anxiety because they previously failed a test and experienced a harsh punishment, conditioning them to associate testing environments with pain and fear.</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Cognitive Perspective</dt>
+                    <dd>A psychological approach that focuses on how people think, perceive, remember, and solve problems, emphasizing the role of mental processes in behavior. <span class="ex"><em>Example:</em> A cognitive psychologist would explain the anxiety is caused by the student's irrational, catastrophic thoughts (e.g., "If I fail this test, I will never get into college and my life will be ruined!").</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Evolutionary Perspective</dt>
+                    <dd>An approach that uses the principles of natural selection to explain behavior, focusing on how certain traits promoted the survival and reproduction of our ancestors. <span class="ex"><em>Example:</em> An evolutionary psychologist might explain that a moderate amount of anxiety is actually an adaptive survival trait; our ancestors who were anxious and cautious were less likely to be eaten by predators, so they passed those "anxious" genes down to us.</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Humanistic Perspective</dt>
+                    <dd>A perspective that emphasizes the growth potential of healthy people and the individual's inherent drive for personal growth, free will, and self-actualization. <span class="ex"><em>Example:</em> A humanistic psychologist would suggest the student is experiencing anxiety because their current high-pressure environment is blocking their natural potential, preventing them from feeling a sense of self-worth and belonging.</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Psychodynamic Perspective</dt>
+                    <dd>A branch of psychology that studies how unconscious drives and childhood conflicts influence behavior, often using that information to treat people with psychological disorders. <span class="ex"><em>Example:</em> A psychodynamic psychologist would explain that the test anxiety is actually an outward symptom of a deeply repressed, unconscious fear of disappointing their parents that developed during early childhood.</span></dd>
+                </div>
+                <div class="def">
+                    <dt>Sociocultural Perspective</dt>
+                    <dd>The study of how situations and cultures affect our behavior and thinking. <span class="ex"><em>Example:</em> A sociocultural psychologist would explain the test anxiety by looking at the intense academic pressure placed on students within their specific cultural community, or the societal expectation that high test scores are the only valid measure of success.</span></dd>
+                </div>
+            </dl>
 
-            <ul>
-                <li><strong>Biological Perspective:</strong> A branch of psychology that links biological (genetic, neural, hormonal) and psychological processes. It looks strictly at the physical body. 
-                    <br><em>Example:</em> A biological psychologist would explain the student's test anxiety by pointing to an overactive amygdala, a genetic predisposition for anxiety inherited from their parents, or an imbalance of neurotransmitters like GABA.</li>
-                
-                <li><strong>Behavioral Perspective:</strong> A psychological approach that focuses entirely on observable behaviors and the ways they are learned and shaped through interactions with the environment, especially through conditioning and reinforcement. It ignores internal thoughts.
-                    <br><em>Example:</em> A behavioral psychologist would explain that the student has test anxiety because they previously failed a test and experienced a harsh punishment, conditioning them to associate testing environments with pain and fear.</li>
-                
-                <li><strong>Cognitive Perspective:</strong> A psychological approach that focuses on how people think, perceive, remember, and solve problems, emphasizing the role of mental processes in behavior.
-                    <br><em>Example:</em> A cognitive psychologist would explain the anxiety is caused by the student's irrational, catastrophic thoughts (e.g., "If I fail this test, I will never get into college and my life will be ruined!").</li>
-                
-                <li><strong>Evolutionary Perspective:</strong> An approach that uses the principles of natural selection to explain behavior, focusing on how certain traits promoted the survival and reproduction of our ancestors.
-                    <br><em>Example:</em> An evolutionary psychologist might explain that a moderate amount of anxiety is actually an adaptive survival trait; our ancestors who were anxious and cautious were less likely to be eaten by predators, so they passed those "anxious" genes down to us.</li>
-                
-                <li><strong>Humanistic Perspective:</strong> A perspective that emphasizes the growth potential of healthy people and the individual's inherent drive for personal growth, free will, and self-actualization.
-                    <br><em>Example:</em> A humanistic psychologist would suggest the student is experiencing anxiety because their current high-pressure environment is blocking their natural potential, preventing them from feeling a sense of self-worth and belonging.</li>
-                
-                <li><strong>Psychodynamic Perspective:</strong> A branch of psychology that studies how unconscious drives and childhood conflicts influence behavior, often using that information to treat people with psychological disorders.
-                    <br><em>Example:</em> A psychodynamic psychologist would explain that the test anxiety is actually an outward symptom of a deeply repressed, unconscious fear of disappointing their parents that developed during early childhood.</li>
-                
-                <li><strong>Sociocultural Perspective:</strong> The study of how situations and cultures affect our behavior and thinking.
-                    <br><em>Example:</em> A sociocultural psychologist would explain the test anxiety by looking at the intense academic pressure placed on students within their specific cultural community, or the societal expectation that high test scores are the only valid measure of success.</li>
-            </ul>
-
-            <h2>2. Putting it All Together: The Biopsychosocial Approach</h2>
-            <p>Are any of these perspectives "wrong"? No! But using only one lens gives you an incomplete picture. Modern psychologists realize that human behavior is incredibly complex. Therefore, most rely on the <strong>Biopsychosocial Perspective</strong>—an integrated approach that incorporates biological, psychological, and social-cultural levels of analysis.</p>
+            <h2 id="biopsychosocial"><span class="sec-num">2.</span>Putting it All Together: The Biopsychosocial Approach</h2>
+            <p>Are any of these perspectives "wrong"? No! But using only one lens gives you an incomplete picture. Modern psychologists realize that human behavior is incredibly complex. Therefore, most rely on the <strong>Biopsychosocial Perspective</strong>: an integrated approach that incorporates biological, psychological, and social-cultural levels of analysis.</p>
             <p>If a doctor is treating a patient for depression, they won't just prescribe a pill to fix the chemistry (Biological). They will also help the patient reframe their negative thoughts (Psychological/Cognitive) and work on improving their stressful home environment and support network (Sociocultural). Treating the whole person yields the best results.</p>
 
-            <h2>3. AP Science Practice Focus: Concept Application</h2>
-            <p>The College Board built a specific Science Practice specifically to test your mastery of these lenses.</p>
-            <ul>
-                <li><strong>Practice 1.A:</strong> Apply psychological perspectives, theories, concepts, and research findings to a scenario. You must be able to compare and contrast how different perspectives would explain the exact same behavior.</li>
-            </ul>
+            <h2 id="ap-practice-focus"><span class="sec-num">3.</span>AP Science Practice Focus: Concept Application</h2>
+            <div class="practice">
+                <span class="pill">AP Science Practice</span>
+                <p>The College Board built a specific Science Practice specifically to test your mastery of these lenses.</p>
+                <dl class="def-list">
+                <div class="def">
+                    <dt>Practice 1.A</dt>
+                    <dd>Apply psychological perspectives, theories, concepts, and research findings to a scenario. You must be able to compare and contrast how different perspectives would explain the exact same behavior.</dd>
+                </div>
+            </dl>
+            </div>
 
-            <h2>4. Level Up Your Score: Full Unit 0 Review</h2>
-            <p>You have made it through the Science Practices! Because this unit lays the foundation for everything else in the course, take some time to review the entire unit holistically using our interactive games:</p>
-            <ul>
-                <li><strong>Oddball:</strong> Can you spot the perspective that doesn't belong? What about the research method that isn't an experiment? Play <a href="../oddball">Oddball</a> to test your grouping skills across all of Unit 0!</li>
-                <li><strong>Confusing Pairs:</strong> Test your ability to distinguish between all the highly tested pairs in this unit (like Random Sample vs. Random Assignment, or Hindsight Bias vs. Overconfidence) in <a href="../confusingpairs">Confusing Pairs</a>.</li>
-                <li><strong>Connections:</strong> Challenge yourself to group together 16 terms from the scientific method, ethics, and statistics by playing <a href="../connectionsgame">Connections</a>.</li>
-                <li><strong>Unit 0 Mega-Quiz:</strong> Ready to prove your mastery? Take a comprehensive review of all the science practices with our <a href="../quiz">adaptive quiz</a>!</li>
-            </ul>
+            <h2 id="key-terms"><span class="sec-num">4.</span>Key Terms in This Topic</h2>
+            <div class="key-terms" data-topic="0.6" data-src="/terms.json">
+                <p data-terms-intro>Look up the terms for this topic in the Glossary.</p>
+                <ul data-terms-list></ul>
+                <a class="btn-outline term-link" href="../glossary">📖 Look these up in the Glossary</a>
+            </div>
 
-            <!-- BOTTOM NAVIGATION BAR -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px 0; padding-top: 15px; border-top: 1px solid #eee; font-size: 0.95rem;">
-                <a href="topic0.5" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    &larr; Topic 0.5
-                </a>
-                <a href="../studyguide" style="text-decoration: none; color: #666; font-weight: bold; text-align: center;">
-                    Table of Contents
-                </a>
-                <a href="topic1.1" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    Topic 1.1 &rarr;
-                </a>
-            </div>            
-        </div>
+            <h2 id="review"><span class="sec-num">5.</span>Practice This Topic</h2>
+            <p>Test yourself on exactly what you just read, then mix it up with games and puzzles. The numbers on each button show how much material is waiting for you.</p>
 
-        <div class="sidebar-ad-aside ad-under-review">
+            <div class="practice-hub" data-topic="0.6" data-unit="0" data-base="/" data-root="../" data-mix="unit">
+
+                <div class="ph-tier ph-tier-topic">
+                    <div class="ph-tier-head"><span class="ph-chip ph-chip-topic">Just this topic</span><span class="ph-sub">Topic 0.6 only</span></div>
+                    <div class="ph-grid">
+                        <a class="ph-card ph-topic ph-featured" data-tool="quick" href="../quiz?mode=quick&amp;topic=0.6&amp;start=1">
+                            <div class="ph-top"><div class="icon-chip">⚡</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Quick Check</div>
+                            <p>The same self-check questions that close your guided notes. Find out whether the perspectives stuck.</p>
+                            <span class="ph-cta">Start Quick Check &rarr;</span>
+                        </a>
+                        <a class="ph-card ph-topic" data-tool="flashcards" href="../flashcards?topic=0.6">
+                            <div class="ph-top"><div class="icon-chip">📇</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Flashcards</div>
+                            <p>Flip through the key terms from this topic, including the behavioral, cognitive, and psychodynamic perspectives.</p>
+                            <span class="ph-cta">Open the deck &rarr;</span>
+                        </a>
+                        <a class="ph-card ph-topic" data-tool="quiz" href="../quiz?topic=0.6&amp;count=10&amp;start=1">
+                            <div class="ph-top"><div class="icon-chip">📝</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Practice Quiz</div>
+                            <p>AP-style multiple choice on the psychological perspectives, with an explanation after every answer.</p>
+                            <span class="ph-cta">Take the quiz &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="ph-note">You've reached the end of Unit 0. Mix it up to review the whole unit before you move on.</p>
+
+                <div class="ph-tier ph-tier-mix">
+                    <div class="ph-tier-head"><span class="ph-chip ph-chip-unit">Mix it up</span><span class="ph-sub">Games and puzzles that review all of Unit 0.</span></div>
+                    <div class="ph-grid cols-4" data-mix-grid></div>
+                    <noscript><p class="ph-fallback">More ways to practice: <a href="../quilt">Piece of Mind</a>, <a href="../confusingpairs">Confusing Pairs</a>, <a href="../oddball">Oddball</a>, <a href="../connectionsgame">Connections</a>, <a href="../battleship">Cortex Commander</a>, <a href="../boardgame">Psych Land</a>, <a href="../wordsearch">Word Search</a>, and <a href="../crossword">Crossword</a>.</p></noscript>
+                </div>
+            </div>
+
+            <div class="pager" role="navigation" aria-label="Topic navigation">
+                <a class="pager-link pager-prev" href="topic0.5"><small>Previous</small>&larr; Topic 0.5</a>
+                <a class="pager-link pager-toc" href="../studyguide">Table of Contents</a>
+                <a class="pager-link pager-next" href="topic1.1"><small>Next</small>Topic 1.1 &rarr;</a>
+            </div>
+
+        </article>
+
+        <!-- Ad rail: stays hidden while "ad-under-review" is on. Remove that class when ads go live. -->
+        <aside class="sidebar-ad-aside ad-under-review">
             <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
             <div class="ad-wrapper-sidebar">
                 <div style="color: #ccc; font-size: 0.9rem;">[300x250 Ad Unit Placeholder]</div>
             </div>
-        </div>
+        </aside>
 
     </div>
 
@@ -388,5 +242,7 @@
 </footer>
 
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script src="../topic.js" defer></script>
+
 </body>
 </html>
