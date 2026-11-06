@@ -658,6 +658,13 @@ a:focus-visible, summary:focus-visible {
 .guide-article a.ph-card.ph-scope-topic { border-top-color: var(--accent); }
 .ph-scope-topic .ph-scope { color: var(--accent); }
 .ph-fallback { font-size: 0.93rem; color: #62707b; line-height: 1.8; }
+/* quiet pointer to the Games menu on pages without a games row */
+.guide-article .ph-more { margin: -8px 0 4px; font-size: 0.92rem; color: #7a8a96; }
+.guide-article .ph-more a { color: #2672a8; font-weight: 600; text-decoration: none; border-bottom: 1px dotted #9fb7cc; }
+.guide-article .ph-more a:hover { border-bottom-style: solid; }
+/* the Games menu opened by that link */
+.nav-links .dropdown.is-open .dropdown-content { display: block; }
+.nav-links .dropdown.is-open > a { color: var(--accent); }
 .ph-cta { font-weight: 700; font-size: 0.92rem; color: var(--accent); margin-top: auto; }
 .ph-card:hover .ph-cta { text-decoration: underline; }
 .ph-card[hidden] { display: none; }
