@@ -627,3 +627,47 @@ a:focus-visible, summary:focus-visible {
     .def-list.nested { padding: 2px 12px; }
     .def-list.nested .def { grid-template-columns: 1fr; gap: 4px; }
 }
+
+
+/* ===== PRACTICE HUB (topic pages: "Practice This Topic") ===== */
+.practice-hub { margin: 16px 0 6px; }
+.ph-tier { margin: 0 0 24px; }
+.ph-tier-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 12px; }
+.ph-chip { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.7px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+.ph-chip-topic { background: var(--accent); color: #fff; }
+.ph-chip-unit { background: var(--blue-soft, #e8f2fb); color: var(--primary); border: 1px solid #cfe0f1; }
+.ph-sub { font-size: 0.92rem; color: #6b7b87; font-weight: 600; }
+.ph-grid { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); }
+.ph-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.guide-article a.ph-card {
+    position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid #e6ecf1; border-top: 4px solid var(--accent);
+    border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.07); padding: 16px 16px 14px; color: #333; font-weight: 400; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.guide-article a.ph-card:hover { transform: translateY(-3px); box-shadow: 0 10px 18px rgba(0,0,0,0.13); text-decoration: none; }
+.guide-article a.ph-card.ph-featured { border-top-color: var(--accent); background: linear-gradient(180deg, #f4f9fe 0%, #fff 55%); }
+.guide-article a.ph-card.ph-unit { border-top-color: #9fb7cc; box-shadow: 0 3px 6px rgba(0,0,0,0.06); }
+.ph-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.ph-top .icon-chip { margin: 0; flex: none; }
+.ph-count { font-size: 0.78rem; font-weight: 700; color: var(--primary); background: var(--blue-soft, #e8f2fb); border-radius: 20px; padding: 4px 11px; white-space: nowrap; }
+.ph-count b { font-weight: 800; }
+.ph-card .card-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.15rem; font-weight: 600; color: #2c3e50; margin: 0 0 5px; }
+.guide-article .ph-card p { font-size: 0.9rem; line-height: 1.5; color: #62707b; margin: 0 0 12px; flex: 1; }
+/* what a game covers: "This topic" (accent) or "All of Unit N" (muted) */
+.ph-scope { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: #7a8a96; margin: -2px 0 8px; }
+.guide-article a.ph-card.ph-scope-topic { border-top-color: var(--accent); }
+.ph-scope-topic .ph-scope { color: var(--accent); }
+.ph-fallback { font-size: 0.93rem; color: #62707b; line-height: 1.8; }
+.ph-cta { font-weight: 700; font-size: 0.92rem; color: var(--accent); margin-top: auto; }
+.ph-card:hover .ph-cta { text-decoration: underline; }
+.ph-card[hidden] { display: none; }
+.guide-article .ph-note { background: var(--blue-soft, #e8f2fb); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 14px; font-size: 0.92rem; color: #4c5c68; margin: 0 0 22px; line-height: 1.5; }
+@media (max-width: 1000px) { .ph-grid.cols-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 820px) {
+    .ph-grid { grid-template-columns: 1fr; }
+    .ph-grid.cols-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .guide-article a.ph-card { padding: 14px 14px 12px; }
+    .ph-card.ph-unit p { display: none; }                      /* compact tiles for the unit-wide row on small screens */
+    .ph-card.ph-unit .ph-top { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+    .ph-card.ph-unit .card-title { font-size: 1.05rem; margin-bottom: 8px; }
+}
