@@ -69,6 +69,14 @@
         .setup-actions { margin-top: 24px; text-align: center; }
         #start-quiz-btn { padding: 13px 40px; font-size: 1.1rem; font-weight: bold; }
 
+        .setup-msg { margin-top: 16px; padding: 11px 16px; border-radius: 10px; background: var(--panel-blue); border-left: 5px solid var(--accent); color: #44525d; font-size: 0.95rem; line-height: 1.5; text-align: left; }
+        .setup-msg.bad { background: #fdecea; border-left-color: #e74c3c; color: #8a2b22; }
+        .setup-msg[hidden], .quiz-context[hidden] { display: none; }
+        .quiz-context { display: inline-block; background: var(--blue-soft, #e8f2fb); color: var(--primary); font-weight: 700; font-size: 0.85rem; border-radius: 20px; padding: 5px 14px; margin: 0 0 10px; }
+        .results-links { margin: 14px 0 12px; }
+        .results-link { display: inline-block; margin: 6px 6px 0; padding: 11px 22px; border: 2px solid var(--primary); border-radius: 25px; color: var(--primary); font-weight: bold; text-decoration: none; background: #fff; }
+        .results-link:hover { background: var(--panel-blue); text-decoration: none; }
+
         /* ===== QUESTION AREA ===== */
         .restart-row { text-align: right; margin-bottom: 8px; }
         .btn-gray { background-color: #95a5a6; padding: 6px 14px; font-size: 0.85rem; margin: 0; }
@@ -460,6 +468,8 @@
                     </div>
                 </div>
 
+                <div id="setup-msg" class="setup-msg" role="status" aria-live="polite" hidden></div>
+
                 <div class="setup-actions">
                     <button id="start-quiz-btn" class="nav-btn" onclick="startQuiz()">Start Quiz</button>
                 </div>
@@ -468,8 +478,10 @@
             <div id="quiz-screen" style="display:none;">
 
                 <div class="restart-row">
-                    <button class="nav-btn btn-gray" onclick="location.reload()">↺ Restart Quiz</button>
+                    <button class="nav-btn btn-gray" onclick="goToSetup()">↺ Restart Quiz</button>
                 </div>
+
+                <div id="quiz-context" class="quiz-context" hidden></div>
 
                 <div class="stats-bar">
                     <span id="progress-text">Question 1/10</span>
@@ -498,7 +510,8 @@
                 <h2>Quiz Complete!</h2>
                 <div class="score-display" id="final-score">0/0</div>
                 <p id="feedback-msg">Great job!</p>
-                <button class="nav-btn" onclick="location.reload()">Take Another Quiz</button>
+                <div id="results-links" class="results-links" style="display:none;"></div>
+                <button class="nav-btn" onclick="goToSetup()">Take Another Quiz</button>
             </div>
 
         </div>
@@ -526,7 +539,49 @@
         let isAnswering = false;
         let quizMode = 'individual';
 
+        // --- On-page notices (replace blocking alert() pop-ups) ---
+        function showSetupMessage(text, kind) {
+            const box = document.getElementById('setup-msg');
+            if (!box) return;
+            box.textContent = text;
+            box.className = 'setup-msg' + (kind ? ' ' + kind : '');
+            box.hidden = false;
+        }
+        function clearSetupMessage() {
+            const box = document.getElementById('setup-msg');
+            if (box) box.hidden = true;
+        }
+        // "Restart" and "Take Another Quiz" go back to a clean setup screen. They drop any ?topic=...&start=1
+        // link settings, so a deep-linked quiz never restarts itself in a loop.
+        function goToSetup() { location.href = location.pathname; }
+
+        // What the student is practicing right now (shown above the questions, and used to link back to the study guide)
+        let focusTopic = null;
+        function topicTitle(id) {
+            const t = allTopics.find(x => String(x.topic_id) === String(id));
+            return t ? (t.topic_title || '') : '';
+        }
+        function setQuizFocus(kind, unit, topic) {
+            const el = document.getElementById('quiz-context');
+            focusTopic = (topic && topic !== 'all') ? topic : null;
+            let text = kind;
+            if (focusTopic) {
+                const title = topicTitle(focusTopic);
+                text += ' \u00b7 Topic ' + focusTopic + (title ? ': ' + title : '');
+            } else if (unit && unit !== 'all') {
+                text += ' \u00b7 ' + unit;
+            }
+            el.textContent = text;
+            el.hidden = false;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const setup = document.getElementById('setup-screen');
+            if (setup) setup.addEventListener('change', clearSetupMessage);
+        });
+
         function switchMode(mode) {
+            clearSetupMessage();
             quizMode = mode;
             document.getElementById('individual-setup').style.display = (mode === 'individual') ? 'block' : 'none';
             document.getElementById('sets-setup').style.display = (mode === 'sets') ? 'block' : 'none';
@@ -555,6 +610,73 @@
             return groups;
         }
 
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Topic pages (and anywhere else) can send students straight to a filtered quiz:
+        //   quiz?topic=0.1                    Practice Quiz set to Topic 0.1 (the unit is filled in for you)
+        //   quiz?unit=3                       Practice Quiz set to Unit 3 (or unit=Unit 3)
+        //   quiz?mode=quick&topic=0.1         Quick Check (Study Guide Questions) for Topic 0.1
+        //   quiz?mode=sets&unit=2             Question Sets for Unit 2
+        //   ...&count=10                      question count for the Practice Quiz (5, 10, 15, 20 or all)
+        //   ...&start=1                       begin right away instead of waiting for "Start Quiz"
+        // If a topic isn't available, the quiz never silently starts something else: it stays on the
+        // setup screen and says why.
+        let _quizDone = false, _studyDone = false;
+        function _maybeApplyDeepLink() { if (_quizDone && _studyDone) applyDeepLink(); }
+
+        function applyDeepLink() {
+            const q = new URLSearchParams(location.search);
+            const rawMode = (q.get('mode') || '').toLowerCase();
+            const topicParam = (q.get('topic') || '').trim();
+            const unitParam = (q.get('unit') || '').trim();
+            let mode = null;
+            if (rawMode === 'quick' || rawMode === 'studyguide') mode = 'studyguide';
+            else if (rawMode === 'sets') mode = 'sets';
+            else if (rawMode === 'individual' || topicParam || unitParam) mode = 'individual';
+            if (!mode) return;
+
+            let unit = unitParam ? (/^\d+$/.test(unitParam) ? 'Unit ' + unitParam : unitParam) : null;
+            if (topicParam && !unit) {
+                const t = allTopics.find(x => String(x.topic_id) === topicParam);
+                if (t) unit = t.unit;
+            }
+
+            const pick = (id, value) => {
+                const sel = document.getElementById(id);
+                if (!sel || value == null || value === '') return false;
+                const previous = sel.value;
+                sel.value = value;
+                if (sel.value === value) return true;
+                sel.value = previous;                          // option doesn't exist: leave the dropdown as it was
+                return false;
+            };
+            const notes = [];
+            let resolved = true;
+
+            switchMode(mode);
+            if (mode === 'individual') {
+                if (unit && !pick('unit-select', unit)) { notes.push("We couldn't find " + unit + ', so all units are showing.'); resolved = false; }
+                handleUnitChange();
+                if (topicParam && !pick('topic-select', topicParam)) { notes.push("We couldn't find Topic " + topicParam + ', so all topics are showing.'); resolved = false; }
+                pick('count-select', (q.get('count') || '').toLowerCase());
+            } else if (mode === 'studyguide') {
+                if (unit && !pick('studyguide-unit-select', unit)) { resolved = false; }
+                handleStudyGuideUnitChange();
+                if (topicParam && !pick('studyguide-topic-select', topicParam)) {
+                    notes.push('There are no Quick Check questions for Topic ' + topicParam + ' yet. Try the Practice Quiz instead, or pick another topic.');
+                    resolved = false;
+                }
+            } else if (mode === 'sets') {
+                if (unit && !pick('sets-unit-select', unit)) {
+                    notes.push('There are no question sets for ' + unit + ' yet. Try another unit or All Units.');
+                    resolved = false;
+                }
+            }
+
+            if (q.get('start') === '1' && resolved) startQuiz();
+            const stillOnSetup = document.getElementById('setup-screen').style.display !== 'none';
+            if (stillOnSetup && notes.length && document.getElementById('setup-msg').hidden) showSetupMessage(notes.join(' '));
+        }
+
         // 1. FETCH DATA CONCURRENTLY
         // The Sample Questions panel above is static HTML baked into the
         // page (that's what gives the page real, crawlable content on
@@ -580,14 +702,15 @@
                     populateTopicDropdown();
                     populateSetsUnitDropdown();
                 } else {
-                    alert("No questions found in quiz.json!");
+                    showSetupMessage("We couldn't find any quiz questions right now. Please refresh the page and try again.", 'bad');
                 }
             } catch(error) {
                 console.error('Processing error:', error);
-                alert("An error occurred while loading the data.");
+                showSetupMessage("Something went wrong while loading the questions. Please refresh the page and try again.", 'bad');
             }
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Error fetching data:', error))
+        .finally(() => { _quizDone = true; _maybeApplyDeepLink(); });
 
         // Study Guide Questions mode pulls from its own file (studyquiz.json)
         // rather than quiz.json, since it's a separate, smaller pool of
@@ -606,7 +729,8 @@
                     populateStudyGuideTopicDropdown();
                 }
             })
-            .catch(error => console.error('Error fetching studyquiz.json (Study Guide tab will be empty until this file exists):', error));
+            .catch(error => console.error('Error fetching studyquiz.json (Study Guide tab will be empty until this file exists):', error))
+            .finally(() => { _studyDone = true; _maybeApplyDeepLink(); });
 
         // --- FILTER LOGIC (Updated to build from topics.json) ---
         function populateUnitDropdown() {
@@ -806,7 +930,7 @@
             });
 
             if (pool.length === 0) {
-                alert("No questions found for this combination!");
+                showSetupMessage('No questions match that unit and topic yet. Try a different topic, or choose All Topics.', 'bad');
                 return;
             }
 
@@ -820,6 +944,7 @@
             }
 
             quizQueue = pool.slice(0, limit);
+            setQuizFocus('Practice Quiz', selectedUnit, selectedTopic);
 
             document.getElementById('setup-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
@@ -847,7 +972,7 @@
             });
 
             if (matchingSetIds.length === 0) {
-                alert("No question sets found for this unit yet! More are being added over time.");
+                showSetupMessage('No question sets for this unit yet. More are being added over time, so try another unit or All Units.', 'bad');
                 return;
             }
 
@@ -862,6 +987,7 @@
             }
 
             const chosenSetIds = matchingSetIds.slice(0, setLimit);
+            setQuizFocus('Question Sets', selectedUnit, null);
 
             quizQueue = [];
             chosenSetIds.forEach(sid => {
@@ -901,12 +1027,13 @@
             });
 
             if (pool.length === 0) {
-                alert("No Study Guide questions found for this topic yet! More are being added over time.");
+                showSetupMessage('No Quick Check questions for this topic yet. More are being added over time, so try another topic.', 'bad');
                 return;
             }
 
             pool.sort(() => Math.random() - 0.5);
             quizQueue = pool;
+            setQuizFocus('Quick Check', selectedUnit, selectedTopic);
 
             document.getElementById('setup-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
@@ -1078,6 +1205,19 @@
             else if (percent >= 50) msg = "Getting there!";
 
             document.getElementById('feedback-msg').textContent = msg;
+
+            const links = document.getElementById('results-links');
+            links.innerHTML = '';
+            if (focusTopic) {
+                const a = document.createElement('a');
+                a.className = 'results-link';
+                a.href = 'overviews/topic' + focusTopic;
+                a.textContent = '\uD83D\uDCD6 Re-read the Topic ' + focusTopic + ' study guide';
+                links.appendChild(a);
+                links.style.display = 'block';
+            } else {
+                links.style.display = 'none';
+            }
         }
     </script>
 
