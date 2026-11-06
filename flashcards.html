@@ -33,6 +33,12 @@
         .setup-area label { display: block; font-weight: bold; color: #555; font-size: 0.9rem; }
         .setup-area select { display: block; width: 100%; margin: 5px 0 0; padding: 10px; }
 
+        .fc-note { margin: 4px 0 8px; padding: 10px 14px; border-radius: 10px; background: var(--panel-blue); border-left: 5px solid var(--accent); color: #44525d; font-size: 0.93rem; line-height: 1.5; text-align: left; }
+        .fc-note[hidden], .fc-guide[hidden] { display: none; }
+        .fc-guide { margin: 0 0 6px; text-align: left; font-size: 0.92rem; }
+        .fc-guide a { font-weight: 700; color: #2672a8; text-decoration: none; }
+        .fc-guide a:hover { text-decoration: underline; }
+
         /* ===== THE CARD (flip mechanics unchanged) ===== */
         .flashcard-container {
             perspective: 1000px; width: 100%; max-width: 640px; height: 340px; margin: 18px auto 6px; cursor: pointer;
@@ -188,6 +194,8 @@
                     </select>
                 </div>
             </div>
+            <p id="fc-note" class="fc-note" role="status" aria-live="polite" hidden></p>
+            <p id="fc-guide" class="fc-guide" hidden><a id="fc-guide-link" href="#"></a></p>
 
             <div class="flashcard-container" onclick="flipCard()" tabindex="0" role="button" aria-label="Flashcard. Press Enter or Space to flip, arrow keys to move between cards." onkeydown="handleCardKey(event)">
                 <div class="flashcard-inner" id="card-inner">
@@ -272,6 +280,7 @@
             populateUnitDropdown();
             populateTopicDropdown();
             filterDeck(); // Initial Load
+            applyDeepLink();
         })
         .catch(error => {
             console.error('Flashcard data failed to load:', error);
@@ -282,6 +291,59 @@
             document.getElementById('card-term').innerText = "Couldn't load the flashcards.";
             document.getElementById('card-def').innerText = "Please refresh the page. If it keeps happening, use the Contact link below.";
             document.getElementById('progress-text').innerText = "0 of 0";
+        }
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Topic pages (and anywhere else) can open a filtered deck:
+        //   flashcards?topic=0.1        the deck for Topic 0.1 (the unit is filled in for you)
+        //   flashcards?unit=3           every card in Unit 3 (or unit=Unit 3)
+        // An unknown topic or unit never leaves the page blank: it falls back to All and says so.
+        function showNote(text) {
+            const n = document.getElementById('fc-note');
+            n.textContent = text;
+            n.hidden = false;
+        }
+        function hideNote() { document.getElementById('fc-note').hidden = true; }
+
+        function applyDeepLink() {
+            const q = new URLSearchParams(location.search);
+            const topicParam = (q.get('topic') || '').trim();
+            const unitParam = (q.get('unit') || '').trim();
+            if (!topicParam && !unitParam) return;
+
+            let unit = unitParam ? (/^\d+$/.test(unitParam) ? 'Unit ' + unitParam : unitParam) : null;
+            if (topicParam && !unit) {
+                const t = allTopics.find(x => String(x.topic_id) === topicParam);
+                if (t) unit = t.unit;
+            }
+            const pick = (id, value) => {
+                const sel = document.getElementById(id);
+                if (!sel || !value) return false;
+                const previous = sel.value;
+                sel.value = value;
+                if (sel.value === value) return true;
+                sel.value = previous;                          // option doesn't exist: leave the dropdown as it was
+                return false;
+            };
+            const notes = [];
+            if (unit && !pick('unit-select', unit)) notes.push("We couldn't find " + unit + ', so all units are showing.');
+            populateTopicDropdown();
+            if (topicParam && !pick('topic-select', topicParam)) notes.push("We couldn't find flashcards for Topic " + topicParam + ', so all topics are showing.');
+            filterDeck();
+            if (notes.length) showNote(notes.join(' '));
+        }
+
+        // A quiet link back to the study guide whenever the deck is a single topic
+        function updateGuideLink(topic) {
+            const box = document.getElementById('fc-guide');
+            const link = document.getElementById('fc-guide-link');
+            if (topic && topic !== 'all') {
+                link.href = 'overviews/topic' + topic;
+                link.textContent = '\uD83D\uDCD6 Back to the Topic ' + topic + ' study guide';
+                box.hidden = false;
+            } else {
+                box.hidden = true;
+            }
         }
 
         // 2. Populate Dropdowns (Now fully linked and built from topics.json)
@@ -359,6 +421,8 @@
         function filterDeck() {
             const unit = document.getElementById('unit-select').value;
             const topic = document.getElementById('topic-select').value;
+            hideNote();
+            updateGuideLink(topic);
             
             // Filter by BOTH Unit and Topic
             const filtered = allTerms.filter(t => {
