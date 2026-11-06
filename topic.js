@@ -79,11 +79,13 @@
    Markup contract:
      <div class="practice-hub" data-topic="0.1" data-unit="0" data-base="/" data-root="../">
         ...top row:   .ph-card.ph-topic[data-tool="quick|flashcards|quiz"]  (static cards, counts filled in here)
-        ...mix row:   <div class="ph-grid cols-4" data-mix-grid></div>       (cards are built here from the catalog below)
+        ...mix row:   <div class="ph-grid cols-4" data-mix-grid></div>       (only on the last three topics of a unit)
      </div>
-   Optional: data-tools="pairs,battleship,..." pins a page's mix; otherwise each page gets a different
-   rotation of the games, chosen from its topic number so neighbouring pages don't match. A game only
-   appears when it has real content for that topic or unit. */
+   The mix row is optional: a page without it just shows the top row. Add data-mix="unit" to the hub on an
+   end-of-unit page so every game reviews the whole unit (Word Search switches from this topic to the unit,
+   and the per-card scope labels are dropped because the section already says so).
+   Optional: data-tools="pairs,battleship,..." pins a page's mix; otherwise each page gets its own shuffle
+   of the games, so neighbouring pages don't match. A game only appears when it has real content. */
 (function () {
     var hub = document.querySelector('.practice-hub');
     if (!hub) return;
@@ -133,7 +135,12 @@
         { id: 'wordsearch', icon: '\uD83D\uDD24', title: 'Word Search', scope: 'topic', cta: 'Play',
           blurb: "Hunt for this topic's key terms hidden in a letter grid.",
           href: function (x) { return root + 'wordsearch?topic=' + x.topic + '&size=15&start=1'; },
-          count: function (d, x) { var n = usableWords(d.terms.filter(function (t) { return String(t.topic) === x.topic; })); return n >= 8 ? { n: n, text: plural(n, 'word') } : null; } },
+          count: function (d, x) { var n = usableWords(d.terms.filter(function (t) { return String(t.topic) === x.topic; })); return n >= 8 ? { n: n, text: plural(n, 'word') } : null; },
+          // on an end-of-unit page the puzzle covers the whole unit
+          unitMode: {
+              blurb: "Hunt for the unit's key terms hidden in a letter grid.",
+              href: function (x) { return root + 'wordsearch?unit=' + x.unit + '&size=15&start=1'; },
+              count: function (d, x) { var n = usableWords(d.terms.filter(function (t) { return unitOf(t) === x.unit; })); return n >= 8 ? { n: n, text: plural(n, 'word') } : null; } } },
         { id: 'oddball', icon: '\uD83D\uDD0E', title: 'Oddball', scope: 'unit', cta: 'Play',
           blurb: "Four terms, one doesn't belong. Spot it and explain why.",
           href: function (x) { return root + 'oddball?unit=' + x.unit + '&start=1'; },
@@ -167,27 +174,41 @@
         for (var i = out.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)), tmp = out[i]; out[i] = out[j]; out[j] = tmp; }
         return out;
     }
-    function eligibleFor(ctx, data, available, needs) {
+    function eligibleFor(ctx, data, available, needs, unitMode) {
         var out = [];
         CATALOG.forEach(function (t) {
             if (!available[needs[t.id]]) return;               // that data file didn't load: skip the game
-            var c = t.count(data, ctx);
-            if (c) out.push(Object.assign({}, t, { _count: c, _href: t.href(ctx) }));
+            var v = (unitMode && t.unitMode) ? Object.assign({}, t, t.unitMode) : t;
+            var c = v.count(data, ctx);
+            if (c) out.push(Object.assign({}, v, { _count: c, _href: v.href(ctx) }));
         });
         return out;
     }
-    function chooseMix(data, available, needs, allTopics) {
+    function chooseMix(data, available, needs, allTopics, unitMode) {
         var here = { topic: topic, unit: unit };
-        var mine = eligibleFor(here, data, available, needs);
+        var mine = eligibleFor(here, data, available, needs, unitMode);
         var pinned = (hub.dataset.tools || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
         if (pinned.length) return pinned.map(function (id) { return mine.filter(function (t) { return t.id === id; })[0]; }).filter(Boolean).slice(0, MIX_SIZE);
         if (mine.length <= MIX_SIZE) return mine;
         var topics = allTopics.slice();
         if (topics.indexOf(topic) === -1) topics.push(topic);
         topics.sort(function (a, b) { return parseFloat(a) - parseFloat(b); });
+
+        // End-of-unit pages work as a set: the unit's games are shuffled once, and each of the last three
+        // pages gets a different slice of that shuffle, so across the three pages overlap is small and
+        // nearly every game shows up.
+        if (unitMode) {
+            var last3 = topics.filter(function (t) { return t.split('.')[0] === unit; }).slice(-3);
+            var k = last3.indexOf(topic);
+            if (k !== -1) {
+                var order = shuffled(mine, 'unit|' + unit), n = order.length, startAt = Math.floor(k * n / 3), slice = [];
+                for (var i = 0; i < MIX_SIZE; i++) slice.push(order[(startAt + i) % n]);
+                return slice;
+            }
+        }
         var prevKey = '', result = null;
         topics.forEach(function (tp) {
-            var ctx = { topic: tp, unit: tp.split('.')[0] }, elig = tp === topic ? mine : eligibleFor(ctx, data, available, needs);
+            var ctx = { topic: tp, unit: tp.split('.')[0] }, elig = tp === topic ? mine : eligibleFor(ctx, data, available, needs, unitMode);
             if (elig.length <= MIX_SIZE) { prevKey = elig.map(function (t) { return t.id; }).sort().join(','); if (tp === topic) result = elig; return; }
             var pick, key, salt = 0;
             do {
@@ -201,9 +222,9 @@
         return result || mine.slice(0, MIX_SIZE);
     }
 
-    function buildCard(t, c) {
+    function buildCard(t, c, unitMode) {
         var a = document.createElement('a');
-        a.className = 'ph-card ph-unit' + (t.scope === 'topic' ? ' ph-scope-topic' : '');
+        a.className = 'ph-card ph-unit' + (t.scope === 'topic' && !unitMode ? ' ph-scope-topic' : '');
         a.dataset.tool = t.id; a.dataset.scope = t.scope;
         a.href = t._href;
         var top = document.createElement('div'); top.className = 'ph-top';
@@ -211,11 +232,15 @@
         var cnt = document.createElement('span'); cnt.className = 'ph-count'; pill(cnt, c.text);
         top.appendChild(chip); top.appendChild(cnt);
         var title = document.createElement('div'); title.className = 'card-title'; title.textContent = t.title;
-        var scope = document.createElement('span'); scope.className = 'ph-scope';
-        scope.textContent = t.scope === 'topic' ? 'This topic' : 'All of Unit ' + unit;
         var p = document.createElement('p'); p.textContent = t.blurb;
         var cta = document.createElement('span'); cta.className = 'ph-cta'; cta.textContent = t.cta + ' \u2192';
-        [top, title, scope, p, cta].forEach(function (el) { a.appendChild(el); });
+        a.appendChild(top); a.appendChild(title);
+        if (!unitMode) {                                           // end-of-unit rows say "the whole unit" once, in the heading
+            var scope = document.createElement('span'); scope.className = 'ph-scope';
+            scope.textContent = t.scope === 'topic' ? 'This topic' : 'All of Unit ' + unit;
+            a.appendChild(scope);
+        }
+        a.appendChild(p); a.appendChild(cta);
         return a;
     }
 
@@ -233,17 +258,13 @@
             quiz: r[1] ? quiz.filter(function (x) { return String(x.topic) === topic; }).length : null
         };
         var labels = { quick: 'question', flashcards: 'term', quiz: 'question' };
-        var topicTotal = 0;
         hub.querySelectorAll('.ph-card.ph-topic[data-tool]').forEach(function (card) {
             var tool = card.dataset.tool, el = card.querySelector('.ph-count'), n = counts[tool];
             if (n === null) { if (el) el.hidden = true; return; }          // data file missing: keep the card, drop the number
             if (n === 0) { card.hidden = true; return; }                   // nothing tagged to this topic: hide the card
-            topicTotal += n;
             if (el) pill(el, plural(n, labels[tool]));
         });
         var visible = hub.querySelectorAll('.ph-topic:not([hidden])').length;
-        var note = hub.querySelector('.ph-note');
-        if (note) note.hidden = !(topicTotal > 0 && topicTotal < 14);
         var tier = hub.querySelector('.ph-tier-topic');
         if (tier && visible === 0) tier.hidden = true;
 
@@ -253,10 +274,43 @@
             var topicIds = {};
             terms.forEach(function (t) { topicIds[String(t.topic)] = 1; });
             grid.innerHTML = '';
-            chooseMix(data, available, needs, Object.keys(topicIds)).forEach(function (t) { grid.appendChild(buildCard(t, t._count)); });
+            var unitMode = hub.dataset.mix === 'unit';
+            chooseMix(data, available, needs, Object.keys(topicIds), unitMode).forEach(function (t) { grid.appendChild(buildCard(t, t._count, unitMode)); });
             var mixTier = hub.querySelector('.ph-tier-mix');
             if (mixTier && !grid.children.length) mixTier.hidden = true;
         }
+    });
+})();
+
+/* ---------- 3b. "Open the Games menu" link ----------
+   A quiet link on pages without a games row: <a href="#top" data-open-games>. It scrolls to the top and opens the
+   Games menu (the hamburger menu first, on phones), then closes it again on the next click or Escape. */
+(function () {
+    var link = document.querySelector('[data-open-games]');
+    if (!link) return;
+    var games = Array.prototype.filter.call(document.querySelectorAll('.nav-links .dropdown'), function (li) {
+        var a = li.querySelector(':scope > a'); return a && /games/i.test(a.textContent);
+    })[0];
+    var toggle = document.getElementById('menu-toggle');
+    if (!games) { link.hidden = true; return; }
+    function close() {
+        games.classList.remove('is-open');
+        if (toggle && toggle.dataset.openedByLink) { toggle.checked = false; delete toggle.dataset.openedByLink; }
+        document.removeEventListener('click', onAway, true);
+        document.removeEventListener('keydown', onKey, true);
+    }
+    function onAway(e) { if (!games.contains(e.target) && e.target !== link) close(); }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        var phone = toggle && getComputedStyle(document.querySelector('.menu-icon')).display !== 'none';
+        if (phone && !toggle.checked) { toggle.checked = true; toggle.dataset.openedByLink = '1'; }
+        games.classList.add('is-open');
+        setTimeout(function () {
+            document.addEventListener('click', onAway, true);
+            document.addEventListener('keydown', onKey, true);
+        }, 0);
     });
 })();
 
