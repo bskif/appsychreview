@@ -75,64 +75,188 @@
 })();
 
 /* ---------- 2. Practice hub ----------
-   Fills the live counts on a topic page's "Practice This Topic" buttons from the site's own data files.
-   Markup contract: <div class="practice-hub" data-topic="0.1" data-unit="0" data-base="/"> containing
-   .ph-card[data-tool] children. Cards in the topic row are hidden when nothing is tagged to the topic. */
+   Fills a topic page's "Practice This Topic" section from the site's own data files.
+   Markup contract:
+     <div class="practice-hub" data-topic="0.1" data-unit="0" data-base="/" data-root="../">
+        ...top row:   .ph-card.ph-topic[data-tool="quick|flashcards|quiz"]  (static cards, counts filled in here)
+        ...mix row:   <div class="ph-grid cols-4" data-mix-grid></div>       (cards are built here from the catalog below)
+     </div>
+   Optional: data-tools="pairs,battleship,..." pins a page's mix; otherwise each page gets a different
+   rotation of the games, chosen from its topic number so neighbouring pages don't match. A game only
+   appears when it has real content for that topic or unit. */
 (function () {
     var hub = document.querySelector('.practice-hub');
     if (!hub) return;
-    var topic = hub.dataset.topic, unit = String(hub.dataset.unit), base = hub.dataset.base || '/';
+    var topic = hub.dataset.topic, unit = String(hub.dataset.unit), base = hub.dataset.base || '/', root = hub.dataset.root || '../';
+    var MIX_SIZE = 4;
+
     function get(name) {
         return fetch(base + name).then(function (r) { if (!r.ok) throw new Error(name); return r.json(); }).catch(function () { return null; });
     }
     function list(d) { return Array.isArray(d) ? d : (d && Object.keys(d).map(function (k) { return d[k]; }).filter(Array.isArray)[0]) || []; }
-    function unitOf(x) { return String(x.unit).replace(/^Unit\s*/i, ''); }
+    function unitOf(x) { return String(x.unit).replace(/^Unit\s*/i, '').trim(); }
     function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')); }
+    function pill(el, text) {                       // "71 pairs" -> <b>71</b> pairs
+        var parts = text.split(' ');
+        el.innerHTML = '';
+        var b = document.createElement('b'); b.textContent = parts[0];
+        el.appendChild(b); el.appendChild(document.createTextNode(' ' + parts.slice(1).join(' ')));
+    }
+    // same rule the Word Search page uses: letters only, 4 or more, fits a 15 x 15 grid, no duplicates
+    function usableWords(terms) {
+        var seen = {}, n = 0;
+        terms.forEach(function (t) {
+            var w = String(t.term || '').replace(/\(.*?\)/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z]/g, '').toUpperCase();
+            if (w.length >= 4 && w.length <= 15 && !seen[w]) { seen[w] = 1; n++; }
+        });
+        return n;
+    }
+
+    // ---- The catalog: one entry per game. To add a game, add an entry here. ----
+    // scope: 'unit' (whole unit) or 'topic' (this topic only). count(d) returns { n, text } or null when there is nothing to offer.
+    var CATALOG = [
+        { id: 'quilt', icon: '\uD83E\uDDE9', title: 'Piece of Mind', scope: 'unit', cta: 'Play',
+          blurb: 'Fit tiles together so every term meets its matching scenario or definition.',
+          href: function (x) { return root + 'quilt?set=unit-' + x.unit; },
+          count: function (d, x) { var mine = d.sets.filter(function (s) { return String(s.unit) === x.unit; }), n = mine.reduce(function (a, s) { return a + s.pairs.length; }, 0);
+                                return n ? { n: n, text: plural(n, 'pair') + (mine.length > 1 ? ' \u00b7 ' + mine.length + ' sets' : '') } : null; } },
+        { id: 'battleship', icon: '\uD83D\uDE80', title: 'Cortex Commander', scope: 'unit', cta: 'Launch',
+          blurb: 'Answer definition questions to fire on the enemy fleet and sink every ship.',
+          href: function (x) { return root + 'battleship?unit=' + x.unit + '&start=1'; },
+          count: function (d, x) { var n = d.terms.filter(function (t) { return unitOf(t) === x.unit; }).length; return n >= 4 ? { n: n, text: plural(n, 'term') } : null; } },
+        { id: 'pairs', icon: '\u2696\uFE0F', title: 'Confusing Pairs', scope: 'unit', cta: 'Play',
+          blurb: 'Tell look-alike terms apart by dropping each definition onto the right term.',
+          href: function (x) { return root + 'confusingpairs?unit=' + x.unit; },
+          // a set can belong to more than one unit ("0, 2"), exactly as the game itself counts it
+          count: function (d, x) { var n = d.pairs.filter(function (r) { return String(r.unit).split(',').map(function (u) { return u.replace(/^Unit\s*/i, '').trim(); }).indexOf(x.unit) !== -1; }).length;
+                                return n ? { n: n, text: plural(n, 'pair set') } : null; } },
+        { id: 'wordsearch', icon: '\uD83D\uDD24', title: 'Word Search', scope: 'topic', cta: 'Play',
+          blurb: "Hunt for this topic's key terms hidden in a letter grid.",
+          href: function (x) { return root + 'wordsearch?topic=' + x.topic + '&size=15&start=1'; },
+          count: function (d, x) { var n = usableWords(d.terms.filter(function (t) { return String(t.topic) === x.topic; })); return n >= 8 ? { n: n, text: plural(n, 'word') } : null; } },
+        { id: 'oddball', icon: '\uD83D\uDD0E', title: 'Oddball', scope: 'unit', cta: 'Play',
+          blurb: "Four terms, one doesn't belong. Spot it and explain why.",
+          href: function (x) { return root + 'oddball?unit=' + x.unit + '&start=1'; },
+          count: function (d, x) { var n = d.odd.filter(function (r) { return unitOf(r) === x.unit; }).length; return n ? { n: n, text: plural(n, 'puzzle') } : null; } },
+        { id: 'psychland', icon: '\uD83C\uDFB2', title: 'Psych Land', scope: 'unit', cta: 'Play',
+          blurb: 'Race around the board by matching definitions to terms. Play solo or with friends.',
+          href: function (x) { return root + 'boardgame?unit=' + x.unit + '&start=1'; },
+          count: function (d, x) { var n = d.terms.filter(function (t) { return unitOf(t) === x.unit; }).length; return n >= 4 ? { n: n, text: plural(n, 'term') } : null; } },
+        { id: 'connections', icon: '\uD83D\uDD17', title: 'Connections', scope: 'unit', cta: 'Play',
+          blurb: 'Sort sixteen terms into four hidden categories.',
+          href: function (x) { return root + 'connectionsgame?unit=' + x.unit; },
+          count: function (d, x) { var n = d.con.filter(function (r) { return unitOf(r) === x.unit; }).length; return n >= 4 ? { n: n, text: plural(n, 'category', 'categories') } : null; } },
+        { id: 'crossword', icon: '\u270F\uFE0F', title: 'Crossword', scope: 'unit', cta: 'Solve',
+          blurb: 'Solve a crossword built from key terms and clues.',
+          href: function (x) { return root + 'crossword?unit=' + x.unit + '&start=1'; },
+          count: function (d, x) { var seen = {}; d.xw.forEach(function (r) { if (r.setid && unitOf(r) === x.unit) seen[r.setid] = 1; }); var n = Object.keys(seen).length; return n ? { n: n, text: plural(n, 'puzzle') } : null; } }
+    ];
+
+    // ---- Choosing a page's mix ----
+    // Pinned by data-tools if the page says so. Otherwise each topic gets its own shuffle of the games that
+    // have content for it. The shuffle is seeded by the topic number, so a page always shows the same mix,
+    // and it is worked out down the whole topic list so two neighbouring topics never get the same four.
+    function seeded(str) {                                    // small deterministic random number generator
+        var h = 2166136261;
+        for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+        var a = h >>> 0;
+        return function () { a = (a + 0x6D2B79F5) >>> 0; var t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    }
+    function shuffled(arr, seedStr) {
+        var out = arr.slice(), rnd = seeded(seedStr);
+        for (var i = out.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)), tmp = out[i]; out[i] = out[j]; out[j] = tmp; }
+        return out;
+    }
+    function eligibleFor(ctx, data, available, needs) {
+        var out = [];
+        CATALOG.forEach(function (t) {
+            if (!available[needs[t.id]]) return;               // that data file didn't load: skip the game
+            var c = t.count(data, ctx);
+            if (c) out.push(Object.assign({}, t, { _count: c, _href: t.href(ctx) }));
+        });
+        return out;
+    }
+    function chooseMix(data, available, needs, allTopics) {
+        var here = { topic: topic, unit: unit };
+        var mine = eligibleFor(here, data, available, needs);
+        var pinned = (hub.dataset.tools || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+        if (pinned.length) return pinned.map(function (id) { return mine.filter(function (t) { return t.id === id; })[0]; }).filter(Boolean).slice(0, MIX_SIZE);
+        if (mine.length <= MIX_SIZE) return mine;
+        var topics = allTopics.slice();
+        if (topics.indexOf(topic) === -1) topics.push(topic);
+        topics.sort(function (a, b) { return parseFloat(a) - parseFloat(b); });
+        var prevKey = '', result = null;
+        topics.forEach(function (tp) {
+            var ctx = { topic: tp, unit: tp.split('.')[0] }, elig = tp === topic ? mine : eligibleFor(ctx, data, available, needs);
+            if (elig.length <= MIX_SIZE) { prevKey = elig.map(function (t) { return t.id; }).sort().join(','); if (tp === topic) result = elig; return; }
+            var pick, key, salt = 0;
+            do {
+                pick = shuffled(elig, tp + '|' + salt).slice(0, MIX_SIZE);
+                key = pick.map(function (t) { return t.id; }).sort().join(',');
+                salt++;
+            } while (key === prevKey && salt < 12);
+            prevKey = key;
+            if (tp === topic) result = pick;
+        });
+        return result || mine.slice(0, MIX_SIZE);
+    }
+
+    function buildCard(t, c) {
+        var a = document.createElement('a');
+        a.className = 'ph-card ph-unit' + (t.scope === 'topic' ? ' ph-scope-topic' : '');
+        a.dataset.tool = t.id; a.dataset.scope = t.scope;
+        a.href = t._href;
+        var top = document.createElement('div'); top.className = 'ph-top';
+        var chip = document.createElement('div'); chip.className = 'icon-chip'; chip.textContent = t.icon;
+        var cnt = document.createElement('span'); cnt.className = 'ph-count'; pill(cnt, c.text);
+        top.appendChild(chip); top.appendChild(cnt);
+        var title = document.createElement('div'); title.className = 'card-title'; title.textContent = t.title;
+        var scope = document.createElement('span'); scope.className = 'ph-scope';
+        scope.textContent = t.scope === 'topic' ? 'This topic' : 'All of Unit ' + unit;
+        var p = document.createElement('p'); p.textContent = t.blurb;
+        var cta = document.createElement('span'); cta.className = 'ph-cta'; cta.textContent = t.cta + ' \u2192';
+        [top, title, scope, p, cta].forEach(function (el) { a.appendChild(el); });
+        return a;
+    }
 
     Promise.all([get('terms.json'), get('quiz.json'), get('studyquiz.json'), get('confusingpairs.json'),
-                 get('oddball.json'), get('connections.json'), get('quilt-sets.json')]).then(function (r) {
-        var terms = list(r[0]), quiz = list(r[1]), quick = list(r[2]), cp = list(r[3]), odd = list(r[4]), con = list(r[5]);
-        var sets = (r[6] && r[6].sets) || [];
+                 get('oddball.json'), get('connections.json'), get('quilt-sets.json'), get('crossword.json')]).then(function (r) {
+        var terms = list(r[0]), quiz = list(r[1]), quick = list(r[2]);
+        var data = { terms: terms, pairs: list(r[3]), odd: list(r[4]), con: list(r[5]), sets: (r[6] && r[6].sets) || [], xw: (r[7] && r[7].crossword) || [] };
+        var available = { terms: !!r[0], pairs: !!r[3], odd: !!r[4], con: !!r[5], sets: !!r[6], xw: !!r[7] };
+        var needs = { quilt: 'sets', battleship: 'terms', pairs: 'pairs', wordsearch: 'terms', oddball: 'odd', psychland: 'terms', connections: 'con', crossword: 'xw' };
+
+        // ---- top row: this topic only ----
         var counts = {
             quick: r[2] ? quick.filter(function (x) { return String(x.topic) === topic; }).length : null,
             flashcards: r[0] ? terms.filter(function (x) { return String(x.topic) === topic; }).length : null,
             quiz: r[1] ? quiz.filter(function (x) { return String(x.topic) === topic; }).length : null
         };
-        var labels = {
-            quick: function (n) { return plural(n, 'question'); },
-            flashcards: function (n) { return plural(n, 'term'); },
-            quiz: function (n) { return plural(n, 'question'); }
-        };
-        var unitText = {};
-        if (r[3]) unitText.pairs = plural(cp.filter(function (x) { return unitOf(x) === unit; }).length, 'pair set');
-        if (r[4]) unitText.oddball = plural(odd.filter(function (x) { return unitOf(x) === unit; }).length, 'puzzle');
-        if (r[5]) unitText.connections = plural(con.filter(function (x) { return unitOf(x) === unit; }).length, 'category', 'categories');
-        if (r[6]) {
-            var mine = sets.filter(function (s) { return String(s.unit) === unit; });
-            var n = mine.reduce(function (a, s) { return a + s.pairs.length; }, 0);
-            unitText.quilt = plural(n, 'pair') + (mine.length > 1 ? ' \u00b7 ' + mine.length + ' sets' : '');
-        }
+        var labels = { quick: 'question', flashcards: 'term', quiz: 'question' };
         var topicTotal = 0;
-        hub.querySelectorAll('.ph-card[data-tool]').forEach(function (card) {
-            var tool = card.dataset.tool, pill = card.querySelector('[data-count]');
-            if (card.classList.contains('ph-topic')) {
-                var n = counts[tool];
-                if (n === null) { if (pill) pill.parentNode.hidden = true; return; }      // data file missing: keep the card, drop the number
-                if (n === 0) { card.hidden = true; return; }                           // nothing tagged to this topic: hide the card
-                topicTotal += n;
-                if (pill) pill.parentNode.innerHTML = '<b>' + labels[tool](n).split(' ')[0] + '</b> ' + labels[tool](n).split(' ').slice(1).join(' ');
-            } else {
-                var t = unitText[tool];
-                if (!t) { if (pill) pill.parentNode.hidden = true; return; }
-                var parts = t.split(' ');
-                if (pill) pill.parentNode.innerHTML = '<b>' + parts[0] + '</b> ' + parts.slice(1).join(' ');
-            }
+        hub.querySelectorAll('.ph-card.ph-topic[data-tool]').forEach(function (card) {
+            var tool = card.dataset.tool, el = card.querySelector('.ph-count'), n = counts[tool];
+            if (n === null) { if (el) el.hidden = true; return; }          // data file missing: keep the card, drop the number
+            if (n === 0) { card.hidden = true; return; }                   // nothing tagged to this topic: hide the card
+            topicTotal += n;
+            if (el) pill(el, plural(n, labels[tool]));
         });
         var visible = hub.querySelectorAll('.ph-topic:not([hidden])').length;
         var note = hub.querySelector('.ph-note');
         if (note) note.hidden = !(topicTotal > 0 && topicTotal < 14);
         var tier = hub.querySelector('.ph-tier-topic');
         if (tier && visible === 0) tier.hidden = true;
+
+        // ---- mix row: games and puzzles ----
+        var grid = hub.querySelector('[data-mix-grid]');
+        if (grid) {
+            var topicIds = {};
+            terms.forEach(function (t) { topicIds[String(t.topic)] = 1; });
+            grid.innerHTML = '';
+            chooseMix(data, available, needs, Object.keys(topicIds)).forEach(function (t) { grid.appendChild(buildCard(t, t._count)); });
+            var mixTier = hub.querySelector('.ph-tier-mix');
+            if (mixTier && !grid.children.length) mixTier.hidden = true;
+        }
     });
 })();
 
