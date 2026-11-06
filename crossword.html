@@ -613,11 +613,39 @@
                 populateSetDropdown();
                 document.getElementById('set-select').value = wanted;
                 startPuzzle();
+            } else {
+                applyUnitLink();
             }
         }).catch(() => {
             document.getElementById('pool-info').textContent = '';
             document.getElementById('load-error').style.display = 'block';
         });
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Other pages can open a puzzle directly:
+        //   crossword?set=u1s2      one specific puzzle (starts right away)
+        //   crossword?unit=1        a puzzle from Unit 1 (or unit=Unit 1); a different one each visit
+        //   ...&start=1             starts the puzzle right away instead of waiting for "Start Puzzle"
+        // An unknown unit falls back to the first unit and says so; it never starts a different puzzle.
+        function applyUnitLink() {
+            const q = new URLSearchParams(location.search);
+            const raw = (q.get('unit') || '').trim();
+            if (!raw) return;
+            const wanted = /^\d+$/.test(raw) ? 'Unit ' + raw : raw;
+            const sel = document.getElementById('unit-select');
+            sel.value = wanted;
+            if (sel.value !== wanted) {
+                populateSetDropdown();
+                updateSetInfo();
+                document.getElementById('pool-info').textContent = "We couldn't find " + raw + ' yet. Pick a unit and puzzle below.';
+                return;
+            }
+            populateSetDropdown();
+            const options = document.getElementById('set-select').options;
+            if (options.length) document.getElementById('set-select').selectedIndex = Math.floor(Math.random() * options.length);
+            updateSetInfo();
+            if (q.get('start') === '1') startPuzzle();
+        }
 
         function mainTopic(entries) {
             const counts = {};
@@ -692,7 +720,7 @@
         function buildPuzzle(id) {
             const entries = setsById[id];
             const lay = xwLayout(entries, id);
-            if (!lay.placements.length) { alert('This puzzle could not be built.'); puzzle = null; return; }
+            if (!lay.placements.length) { document.getElementById('pool-info').textContent = 'This puzzle could not be built. Please try another puzzle.'; puzzle = null; return; }
             const lists = xwNumber(lay.placements);
             const words = lay.placements.map(p => ({
                 idx: p.idx, o: p.o, num: p.num, r: p.r, c: p.c,
