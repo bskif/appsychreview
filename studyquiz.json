@@ -2379,6 +2379,1264 @@
       "image": "",
       "context": "",
       "explanation": "Correct: Social Clock. The social clock is a culturally shared expectation or prescriptive timetable for when major milestones, such as marrying or having children, are supposed to happen, influencing whether individuals judge themselves to be on time, exactly matching this woman's anxiety about not meeting her culture's expected timeline. The chronosystem instead refers to the broader dimension of historical time in Bronfenbrenner's model rather than a specific milestone timetable, and emerging adulthood and personal fable are unrelated concepts involving a specific life stage and an adolescent cognitive distortion, respectively."
+    },
+    {
+      "id": "141",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "In Pavlov's classic experiment, the food placed in front of the dog naturally and automatically triggers salivation without any prior learning being necessary at all. The food itself is best classified as the:",
+      "options": [
+        "Unconditioned Stimulus (UCS)",
+        "Unconditioned Response (UR)",
+        "Conditioned Stimulus (CS)",
+        "Conditioned Response (CR)"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Unconditioned Stimulus (UCS). The unconditioned stimulus is a stimulus that naturally and automatically triggers a specific bodily response without any prior learning required, exactly matching how the food naturally triggers salivation in Pavlov's dog. The unconditioned response is instead the salivation itself rather than the food, and the conditioned stimulus and conditioned response both involve the previously neutral bell and the newly learned salivation to it, none of which describe this naturally triggering food stimulus."
+    },
+    {
+      "id": "142",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "In Pavlov's classic experiment, a bell begins as a completely neutral sound that means nothing to the dog, but after being repeatedly rung right before food is presented, the bell alone eventually begins to trigger salivation. The bell, once it has taken on this new power, is best classified as the:",
+      "options": [
+        "Conditioned Stimulus (CS)",
+        "Unconditioned Stimulus (UCS)",
+        "Unconditioned Response (UR)",
+        "Conditioned Response (CR)"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Conditioned Stimulus (CS). The conditioned stimulus is a previously neutral stimulus that, after being repeatedly paired with the unconditioned stimulus, successfully comes to trigger a learned response, exactly matching the bell's transformation from a meaningless sound into a salivation trigger. The unconditioned stimulus is instead the food, which triggers salivation naturally without any learning, and the unconditioned response and conditioned response both refer to the salivation itself rather than the stimulus that triggers it."
+    },
+    {
+      "id": "143",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "A dentist notices that many of her patients begin to feel anxious the moment they hear the specific whirring sound of the drill, even before it ever actually touches their teeth, because that sound has been repeatedly paired with the pain of past dental work. In this scenario, the anxiety triggered by the sound of the drill alone is the:",
+      "options": [
+        "Conditioned Response (CR)",
+        "Unconditioned Response (UR)",
+        "Unconditioned Stimulus (UCS)",
+        "Conditioned Stimulus (CS)"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Conditioned Response (CR). The conditioned response is the newly learned response triggered by the conditioned stimulus alone, exactly matching the anxiety these patients now feel just from hearing the drill sound, without any actual pain occurring yet. The unconditioned response is instead the anxiety naturally triggered by the pain itself, not the sound, and the unconditioned stimulus and conditioned stimulus refer to the triggering pain and drill sound, respectively, rather than this resulting learned emotional reaction."
+    },
+    {
+      "id": "144",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "During the acquisition phase of a classical conditioning experiment, a researcher makes sure to always ring a bell about half a second before presenting food to a dog, rather than ringing the bell afterward or at the same exact moment. Why is this specific timing and order absolutely critical for successful conditioning?",
+      "options": [
+        "The neutral stimulus must come before the unconditioned stimulus so the brain learns to anticipate the impending event",
+        "The order of presentation has no actual effect on whether conditioning will successfully occur",
+        "The unconditioned stimulus must always be presented before the neutral stimulus for any learning to happen",
+        "Both stimuli must be presented at the exact same instant, with absolutely no time gap between them"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The neutral stimulus must come before the unconditioned stimulus so the brain learns to anticipate the impending event. For a conditioned response to successfully form, the neutral stimulus must be presented slightly before the unconditioned stimulus, usually about half a second, so the brain learns to anticipate the impending event; if the bell rings after the food is already presented, the predictive association will not take hold. The order of presentation absolutely does matter, presenting the unconditioned stimulus first would fail to create the predictive association needed, and the two stimuli are not required to occur at the exact same simultaneous instant for learning to succeed."
+    },
+    {
+      "id": "145",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "Several days after Pavlov's dogs had completely stopped salivating to the sound of the bell, he rang the bell again during a new testing session and was surprised to see the dogs briefly salivate once more, even though no food had been reintroduced since the extinction occurred. This sudden reappearance of the extinguished response is called:",
+      "options": [
+        "Spontaneous Recovery",
+        "Extinction",
+        "Acquisition",
+        "Stimulus Discrimination"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Spontaneous Recovery. Spontaneous recovery is the sudden reappearance of a weakened or extinguished conditioned response after a pause or rest period, exactly matching the dogs briefly salivating to the bell again after several days had passed since extinction, proving the learning was only suppressed rather than permanently erased. Extinction instead describes the original fading of the response, acquisition describes the initial formation of the association, and stimulus discrimination describes distinguishing between similar stimuli, none of which describe this sudden post-rest reappearance."
+    },
+    {
+      "id": "146",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "After being bitten by a large black dog, a young boy becomes fearful and bursts into tears at the sight of any dog he encounters afterward, regardless of its size, breed, or color. This tendency to respond with the conditioned fear response to stimuli that are merely similar to the original one is called:",
+      "options": [
+        "Stimulus Generalization",
+        "Stimulus Discrimination",
+        "Extinction",
+        "Spontaneous Recovery"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Stimulus Generalization. Stimulus generalization is the tendency to respond with the conditioned response to stimuli that are similar to the original conditioned stimulus, exactly matching this boy's fear extending too broadly to all dogs regardless of their differences from the original black dog. Stimulus discrimination instead involves learning to distinguish between the conditioned stimulus and similar but irrelevant stimuli, the opposite pattern, and extinction and spontaneous recovery both involve the fading or reappearance of a response over time rather than its breadth of application."
+    },
+    {
+      "id": "147",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "question": "Unlike typical classical conditioning, which usually requires many repeated pairings to form a lasting association, taste aversion can form a permanent connection after just a single pairing of a food with subsequent illness. This unique, rapid form of associative learning is called:",
+      "options": [
+        "One-Trial Conditioning",
+        "Acquisition",
+        "Stimulus Generalization",
+        "Counterconditioning"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: One-Trial Conditioning. One-trial conditioning is a unique form of associative learning where the brain forms a permanent connection after just one single pairing of a stimulus and response, without needing the repetitive reinforcement typical of standard conditioning, exactly matching this rapid formation of taste aversion after a single illness experience. Acquisition instead usually refers to the more gradual, repeated-pairing process typical of most classical conditioning, and stimulus generalization and counterconditioning both describe unrelated processes involving responding to similar stimuli and a therapeutic fear-replacement technique."
+    },
+    {
+      "id": "148",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "A man quickly buckles his seatbelt every time he gets in his car specifically because doing so makes the annoying, repetitive beeping alarm stop immediately. Removing this unpleasant beeping sound to increase his seatbelt-buckling behavior is an example of:",
+      "options": [
+        "Negative Reinforcement",
+        "Positive Reinforcement",
+        "Positive Punishment",
+        "Negative Punishment"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Negative Reinforcement. Negative reinforcement involves removing or avoiding an unpleasant stimulus to increase a behavior, exactly matching how the beeping alarm stopping increases this man's seatbelt-buckling behavior. Positive reinforcement instead involves adding a desirable stimulus rather than removing an unpleasant one, and positive punishment and negative punishment both involve decreasing a behavior rather than increasing one, none of which match this behavior-increasing, stimulus-removing scenario."
+    },
+    {
+      "id": "149",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "After a teenager breaks his 10 PM curfew, his parents take away his phone privileges for an entire week, and as a result, he becomes much more careful about coming home on time going forward. Removing this desirable phone privilege to decrease his curfew-breaking behavior is an example of:",
+      "options": [
+        "Negative Punishment",
+        "Positive Punishment",
+        "Positive Reinforcement",
+        "Negative Reinforcement"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Negative Punishment. Negative punishment involves removing a desirable stimulus to decrease a behavior, exactly matching how taking away the teenager's phone decreases his curfew-breaking behavior. Positive punishment instead involves adding an unpleasant stimulus rather than removing a desirable one, and positive reinforcement and negative reinforcement both involve increasing a behavior rather than decreasing one, none of which match this behavior-decreasing, stimulus-removing scenario."
+    },
+    {
+      "id": "150",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "A trainer working with a dolphin cannot simply wait for it to accidentally perform a complete, complex jump-and-spin trick on its own. Instead, she first rewards the dolphin for approaching the hoop, then for touching it, then for swimming through it, gradually building up to the full trick over many sessions. This process of rewarding successive approximations toward a final goal behavior is called:",
+      "options": [
+        "Shaping",
+        "Stimulus Generalization",
+        "Continuous Reinforcement",
+        "Instinctive Drift"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Shaping. Shaping is a process of gradually guiding behavior by rewarding successive approximations of the desired goal until the full behavior is learned, exactly matching this trainer's step-by-step approach to teaching the dolphin's full trick. Stimulus generalization instead involves performing a reinforced behavior in new similar situations rather than gradually building toward a complex behavior, continuous reinforcement involves rewarding every single occurrence of an already-established behavior, and instinctive drift involves an animal reverting to natural behaviors, none of which describe this step-by-step behavior-building process."
+    },
+    {
+      "id": "151",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "A child who is consistently praised by her parents for saying thank you at home begins to spontaneously say thank you to her teachers and classmates at school as well, even though she was never specifically rewarded for saying it in that new setting. This tendency to perform a reinforced behavior in new, similar situations is called:",
+      "options": [
+        "Reinforcement Generalization",
+        "Reinforcement Discrimination",
+        "Shaping",
+        "Instinctive Drift"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Reinforcement Generalization. Reinforcement generalization is the tendency to perform a reinforced behavior in new, similar situations, exactly matching this child extending her rewarded thank you habit from home to school without being specifically rewarded there. Reinforcement discrimination instead involves responding only when a specific stimulus is present because the behavior was only rewarded in that specific situation, the opposite pattern, and shaping and instinctive drift are both unrelated concepts involving gradual behavior-building and reverting to natural instincts."
+    },
+    {
+      "id": "152",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "A gambler keeps pulling the lever on a slot machine because she never knows exactly how many pulls it will take before she wins again, sometimes winning after just 3 pulls and other times after 50 pulls. This unpredictable reinforcement schedule, which produces the highest and most consistent rates of behavior and is incredibly resistant to extinction, is called:",
+      "options": [
+        "Variable Ratio",
+        "Fixed Ratio",
+        "Fixed Interval",
+        "Variable Interval"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Variable Ratio. Variable ratio schedules reward a behavior after an unpredictable number of responses, producing the highest, most consistent rates of behavior and making it incredibly hard to extinguish, exactly matching this gambler's unpredictable slot machine wins. Fixed ratio instead rewards after a set, predictable number of responses, and fixed interval and variable interval are both based on the passage of time rather than an unpredictable number of responses, none of which match this response-count-based, unpredictable reward pattern."
+    },
+    {
+      "id": "153",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "question": "A teenager checks his phone repeatedly throughout the day at a slow, steady, and fairly consistent rate, since he never knows exactly when a friend might text him back and the wait time varies unpredictably each time. This reinforcement schedule, which rewards the first response after unpredictable amounts of time have passed, is called:",
+      "options": [
+        "Variable Interval",
+        "Fixed Interval",
+        "Fixed Ratio",
+        "Variable Ratio"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Variable Interval. Variable interval schedules reward the first response after unpredictable amounts of time have passed, leading to a slow, steady, and moderate rate of responding, exactly matching this teenager's steady phone-checking behavior driven by unpredictable text response times. Fixed interval instead rewards after a set, predictable amount of time, and fixed ratio and variable ratio are both based on a number of responses rather than the passage of time, none of which match this steady, time-unpredictable checking pattern."
+    },
+    {
+      "id": "154",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "question": "A young boy watches his older brother confidently ride a skateboard down a ramp and then attempts to copy the exact same movements and technique himself the next day. This process of acquiring new behaviors by actively observing and imitating others is called:",
+      "options": [
+        "Modeling",
+        "Vicarious Conditioning",
+        "Latent Learning",
+        "Insight Learning"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Modeling. Modeling is the process of acquiring new behaviors by actively observing and imitating the actions of others, exactly matching this boy copying his older brother's skateboarding technique. Vicarious conditioning instead involves learning from watching someone else receive a consequence rather than simply imitating an action, latent learning involves hidden knowledge that emerges only when there's motivation to show it, and insight learning involves a sudden solution without any observation at all, none of which describe this direct imitation of an observed behavior."
+    },
+    {
+      "id": "155",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "question": "In Bandura's classic study, children who watched an adult aggressively punch, kick, and yell at an inflatable doll were later placed in a room with that same doll themselves. What did researchers find regarding the children's subsequent behavior?",
+      "options": [
+        "The children were highly likely to imitate the exact same aggressive behaviors they had observed",
+        "The children completely ignored the doll and showed no interest in interacting with it at all",
+        "The children only became aggressive if they were personally and directly rewarded for hitting the doll themselves",
+        "The children exclusively displayed gentle, caring behavior toward the doll regardless of what they had observed"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The children were highly likely to imitate the exact same aggressive behaviors they had observed. Bandura's classic Bobo Doll experiment showed that children who observed an adult aggressively hitting a Bobo doll were highly likely to imitate that exact aggressive behavior when placed in a room with the doll themselves, demonstrating that direct reinforcement is not required for learning to occur. The children did not ignore the doll, they did not require a direct personal reward to imitate the behavior since observation alone was sufficient, and they did not display gentle behavior contrary to what they observed, since imitation of the aggression is exactly what the study famously found."
+    },
+    {
+      "id": "156",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "question": "A student spends several weeks casually wandering through an unfamiliar mall with no reason to memorize its layout, but when a friend later offers to pay for lunch if she can locate a specific store quickly, she immediately knows exactly which route to take. This demonstrates that learning had already occurred even without any reward at the time, a phenomenon called:",
+      "options": [
+        "Latent Learning",
+        "Insight Learning",
+        "Vicarious Conditioning",
+        "Modeling"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Latent Learning. Latent learning is learning that occurs without any immediate reinforcement or obvious demonstration, remaining hidden in the background until there is a motivation or reward to show it, exactly matching this student's hidden knowledge of the mall layout that surfaces once lunch money is on the line. Insight learning instead involves a sudden solution to a problem without prior exposure, vicarious conditioning involves learning from watching someone else's consequence, and modeling involves directly imitating an observed action, none of which describe this hidden, reward-triggered knowledge."
+    },
+    {
+      "id": "157",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "question": "After walking through the hallways of a new school for several days without paying much conscious attention, a student subconsciously builds an internal, mental representation of the school's physical layout, including where each classroom and exit is located. This internal mental representation of a physical space is called a:",
+      "options": [
+        "Cognitive Map",
+        "Schema",
+        "Mental Set",
+        "Prototype"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cognitive Map. A cognitive map is an internal, mental representation of the layout of physical spaces or environments, exactly matching this student's subconsciously built understanding of the school's hallways and rooms. A schema instead is a broader mental framework for organizing general information or categories rather than specifically physical spatial layouts, a mental set is a bias toward using a familiar problem-solving strategy, and a prototype is the most typical example of a concept, none of which describe this specific spatial representation."
+    },
+    {
+      "id": "158",
+      "setid": "",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "question": "After struggling for a long time to figure out how to move a heavy couch through a narrow doorway, a man suddenly realizes, with no new information or trial-and-error involved, that if he simply tilts the couch at a specific angle, it will fit through perfectly. This sudden aha moment where a solution becomes instantly clear is called:",
+      "options": [
+        "Insight Learning",
+        "Latent Learning",
+        "Vicarious Conditioning",
+        "Shaping"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Insight Learning. Insight learning occurs when the solution to a problem suddenly becomes clear without any prior trial-and-error, association, consequence, or modeling present, exactly matching this man's sudden realization about tilting the couch. Latent learning instead involves hidden knowledge that emerges only when there's a reward to demonstrate it, vicarious conditioning involves learning from observing someone else's consequence, and shaping involves a gradual, step-by-step training process, none of which describe this instantaneous, non-gradual problem-solving moment."
+    },
+    {
+      "id": "159",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "After watching a coworker snap angrily at a customer, a man immediately concludes, Wow, she must just be a rude and unpleasant person, without considering that she might be having an unusually difficult day. This explanation, which focuses on the coworker's internal personality traits, is called a:",
+      "options": [
+        "Dispositional Attribution",
+        "Situational Attribution",
+        "Self-Serving Bias",
+        "Relative Deprivation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Dispositional Attribution. Dispositional attributions relate to the internal qualities of others, such as personality or intelligence, exactly matching this man's conclusion that his coworker is simply a rude person. Situational attributions instead relate to external circumstances rather than internal traits, and self-serving bias and relative deprivation are both unrelated concepts involving self-esteem protection and comparative judgments of fairness, none of which describe this internal, trait-based explanation."
+    },
+    {
+      "id": "160",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "After bombing an important job interview, a woman tells herself, The interviewer just seemed to be in a bad mood today, but I know I'm still highly qualified and will definitely nail the next one. This tendency to view negative events as temporary and external while viewing positive events as stable and personal is called:",
+      "options": [
+        "Optimistic Explanatory Style",
+        "Pessimistic Explanatory Style",
+        "Internal Locus of Control",
+        "External Locus of Control"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Optimistic Explanatory Style. Optimistic explanatory style involves viewing negative events as temporary, specific, and external while viewing positive events as stable and personal, exactly matching this woman's belief that the bad interview was a temporary fluke unrelated to her actual qualifications. Pessimistic explanatory style instead involves viewing negative events as permanent and internal, the opposite of this woman's outlook, and internal and external locus of control both relate to perceived control over outcomes rather than this specific pattern of explaining good versus bad events."
+    },
+    {
+      "id": "161",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "A frustrated athlete complains, It doesn't matter how hard I train or how many hours I put into practice, the coach already has his favorites picked out, so I'll never actually make the team no matter what I do. This belief, which places responsibility for outcomes on outside forces, is called an:",
+      "options": [
+        "External Locus of Control",
+        "Internal Locus of Control",
+        "Pessimistic Explanatory Style Only",
+        "Self-Serving Bias"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: External Locus of Control. External locus of control is the belief that outcomes are determined by outside forces such as luck, fate, or other people rather than one's own actions, exactly matching this athlete's belief that the coach's favoritism, not his own effort, determines his fate. Internal locus of control instead is the belief that one's own actions are the primary cause of outcomes, the opposite belief, and pessimistic explanatory style and self-serving bias are both related but distinct concepts rather than this specific belief about who or what controls outcomes."
+    },
+    {
+      "id": "162",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "When another driver cuts a man off aggressively in traffic, he immediately assumes the other driver must be a rude, reckless, and inconsiderate person, without ever considering that the driver might actually be rushing to the hospital for a genuine emergency. This tendency to overestimate personal traits and underestimate situational factors when judging others is called the:",
+      "options": [
+        "Fundamental Attribution Error",
+        "Actor-Observer Bias",
+        "Self-Serving Bias",
+        "Mere Exposure Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Fundamental Attribution Error. The fundamental attribution error is the tendency to overestimate the influence of personal traits and underestimate situational factors specifically when explaining other people's behavior, exactly matching this man's assumption that the other driver is simply rude without considering a possible emergency. The actor-observer bias instead requires a direct comparison between how someone judges their own behavior versus someone else's in a similar situation, which isn't present here, and self-serving bias and the mere exposure effect are both unrelated concepts involving self-esteem protection and increased liking through repeated exposure."
+    },
+    {
+      "id": "163",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "When a student does poorly on a group project, she blames it on her teacher's confusing and unclear instructions, but when her project partner does poorly on his individual portion of a completely different assignment, she assumes he is simply lazy and unmotivated. This pattern, where a person attributes their own behavior to situational factors but others' behavior to internal traits, is called:",
+      "options": [
+        "Actor-Observer Bias",
+        "Fundamental Attribution Error",
+        "Self-Serving Bias",
+        "Relative Deprivation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Actor-Observer Bias. Actor-observer bias is a social perception error in which people attribute their own behavior to situational factors but attribute others' behavior to internal traits or dispositions, exactly matching this student blaming her own poor performance on the teacher's instructions while blaming her partner's poor performance on his laziness. The fundamental attribution error instead only concerns judging others, without this direct self-versus-other comparison, and self-serving bias and relative deprivation are both unrelated concepts involving success/failure attribution for self-esteem and comparative fairness judgments."
+    },
+    {
+      "id": "164",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "A quarterback throws for three touchdowns and wins the big game, proudly crediting his own incredible arm strength and hard work in practice, but the following week after a tough loss, he blames the referees' unfair calls instead of his own performance. This pattern of crediting successes to oneself while blaming failures on external factors is called:",
+      "options": [
+        "Self-Serving Bias",
+        "Fundamental Attribution Error",
+        "Actor-Observer Bias",
+        "Relative Deprivation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Self-Serving Bias. Self-serving bias is the tendency to attribute successes to internal factors, such as ability or effort, and failures to external factors, such as luck or circumstances, in order to protect self-esteem, exactly matching this quarterback crediting his own skill for the win but blaming the referees for the loss. The fundamental attribution error instead applies only to judging others' behavior rather than one's own successes and failures, actor-observer bias requires a direct self-versus-other comparison in a similar situation, and relative deprivation involves comparative judgments of fairness rather than success/failure attribution."
+    },
+    {
+      "id": "165",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.1",
+      "question": "An employee is thrilled after receiving a 5% raise at work, feeling genuinely grateful and appreciated, until she discovers that her coworker with a very similar role and performance history received a 10% raise instead. Even though her own financial situation has objectively improved, she now suddenly feels cheated and undervalued. This phenomenon is called:",
+      "options": [
+        "Relative Deprivation",
+        "Upward Social Comparison Only",
+        "Self-Serving Bias",
+        "The Mere Exposure Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Relative Deprivation. Relative deprivation occurs when people judge their own sense of deprivation relative to others, exactly matching how this employee's objectively positive raise suddenly feels inadequate and unfair once compared to her coworker's larger raise. While this scenario does involve an upward comparison, relative deprivation is the more precise term for this specific feeling of being cheated despite an objective improvement, and self-serving bias and the mere exposure effect are both unrelated concepts involving self-esteem-protecting attributions and increased liking through repetition."
+    },
+    {
+      "id": "166",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "Upon meeting someone from a foreign country for the very first time, a man immediately assumes she must be highly skilled at math simply because she is Asian, oversimplifying an entire diverse group of people into one generalized, assumed characteristic. This generalized belief about a group is called a:",
+      "options": [
+        "Stereotype",
+        "Prejudice",
+        "Discrimination",
+        "Ethnocentrism"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Stereotype. A stereotype is a generalized belief or expectation about a group of people that assumes members of the group share the same characteristics, often oversimplifying reality, exactly matching this man's assumption about the woman's math skills based purely on her ethnicity. Prejudice instead specifically refers to a negative preconceived attitude rather than simply an oversimplified generalized belief, discrimination refers to actual unequal behavior rather than a belief, and ethnocentrism refers to believing one's own culture is superior, none of which precisely describe this generalized, characteristic-assuming belief."
+    },
+    {
+      "id": "167",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "Without ever having a single personal interaction with anyone from a particular religious group, a woman harbors a deep, unfounded negative feeling toward all members of that religion based purely on things she has heard secondhand. This preconceived negative attitude toward an entire group is called:",
+      "options": [
+        "Prejudice",
+        "Discrimination",
+        "A Stereotype",
+        "In-Group Bias"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Prejudice. Prejudice is a preconceived negative attitude or belief about a group of people based on characteristics such as religion, often without sufficient evidence or personal experience, exactly matching this woman's unfounded negative feeling based purely on secondhand information. Discrimination instead refers to actual unequal behavior or action rather than just an internal attitude, a stereotype is a broader, not necessarily negative, generalized belief, and in-group bias refers to favoring one's own group rather than a negative attitude toward another, none of which precisely describe this specific negative internal attitude."
+    },
+    {
+      "id": "168",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "A man privately harbors negative feelings about a certain group of people but has never actually treated any member of that group unfairly or unequally in any observable way. What is the crucial distinction that explains why this man's internal feelings alone do not yet constitute discrimination?",
+      "options": [
+        "Prejudice is an internal attitude or thought, while discrimination specifically requires an actual behavior or action to occur",
+        "Prejudice and discrimination are simply two completely different names for the exact same identical concept",
+        "Discrimination can only occur if a person consciously admits to holding negative beliefs out loud",
+        "Prejudice only applies to positive beliefs about a group, while discrimination only applies to negative ones"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Prejudice is an internal attitude or thought, while discrimination specifically requires an actual behavior or action to occur. It is crucial to distinguish between thoughts and actions: prejudice is an attitude (a thought or feeling), whereas discrimination is a behavior (an action). A person can harbor prejudice without ever acting on it, but when that prejudice is translated into unequal treatment, it becomes discrimination, exactly explaining why this man's private feelings alone don't yet count as discrimination. Prejudice and discrimination are not identical concepts, discrimination does not require a verbal admission of belief since it is defined by the action itself, and prejudice by definition specifically refers to negative rather than positive beliefs."
+    },
+    {
+      "id": "169",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "After hearing about a homeless man's difficult circumstances, a woman assumes he must have made poor life choices or simply not worked hard enough, rather than considering factors like job loss, medical bills, or systemic barriers beyond his control. This tendency to believe people get what they deserve is called the:",
+      "options": [
+        "Just-World Phenomenon",
+        "Out-Group Homogeneity Bias",
+        "In-Group Bias",
+        "Ethnocentrism"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Just-World Phenomenon. The just-world phenomenon is the tendency to believe that people get what they deserve and deserve what they get, leading to the assumption that bad things only happen to bad people, exactly matching this woman's assumption that the homeless man's circumstances must be his own fault. Out-group homogeneity bias and in-group bias both involve perceptions of group similarity or favoritism rather than beliefs about deserved outcomes, and ethnocentrism involves believing one's own culture is superior, none of which describe this specific deserved-outcomes belief."
+    },
+    {
+      "id": "170",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "While traveling abroad, a tourist repeatedly criticizes a foreign country's customs, food, and social norms for being strange or wrong simply because they differ from the customs of his own home country, judging the entire culture by his own cultural standards. This belief that one's own culture is superior to others is called:",
+      "options": [
+        "Ethnocentrism",
+        "In-Group Bias",
+        "Out-Group Homogeneity Bias",
+        "The Just-World Phenomenon"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Ethnocentrism. Ethnocentrism is the belief that one's own culture or group is superior to others, often leading to judging other cultures based on one's own cultural standards, exactly matching this tourist's criticism of foreign customs simply for differing from his own. In-group bias instead involves favoring one's own group through preferential treatment rather than broadly judging other cultures as inferior, out-group homogeneity bias involves perceiving similarity within an out-group, and the just-world phenomenon involves beliefs about deserved outcomes, none of which describe this specific cultural-superiority judgment."
+    },
+    {
+      "id": "171",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "While researching a political topic online, a woman only clicks on articles and sources that already align with her existing political views, while completely ignoring or dismissing any search results that might challenge her current opinion. This tendency to actively seek out only supportive information is called:",
+      "options": [
+        "Confirmation Bias",
+        "Belief Perseverance",
+        "Cognitive Dissonance",
+        "Ethnocentrism"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Confirmation Bias. Confirmation bias is the tendency to seek out, interpret, and remember information that supports existing beliefs while ignoring or discounting contradictory evidence, exactly matching this woman's selective clicking on only supportive articles during her active search. Belief perseverance instead specifically involves refusing to change a belief after being explicitly presented with definitive contradicting evidence, which is a later stage than this active searching behavior, and cognitive dissonance and ethnocentrism are both unrelated concepts involving conflicting-belief discomfort and cultural superiority beliefs."
+    },
+    {
+      "id": "172",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.2",
+      "question": "A committed environmentalist accepts a well-paying job at a large company known for significant pollution, and this decision creates intense internal mental discomfort because her actions directly conflict with her strongly held personal environmental values. This uncomfortable mental tension between one's actions and one's attitudes is called:",
+      "options": [
+        "Cognitive Dissonance",
+        "Belief Perseverance",
+        "Confirmation Bias",
+        "The Just-World Phenomenon"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cognitive Dissonance. Cognitive dissonance refers to the psychological discomfort that occurs when a person holds conflicting beliefs, attitudes, or behaviors, exactly matching this environmentalist's internal tension between her personal values and her new job at a polluting company. Belief perseverance instead involves clinging to a discredited factual belief rather than resolving conflicting attitudes and actions, confirmation bias involves selectively seeking supportive information, and the just-world phenomenon involves beliefs about deserved outcomes, none of which describe this specific action-versus-attitude discomfort."
+    },
+    {
+      "id": "173",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A teenager secretly dislikes the taste of a trendy energy drink but orders it anyway every time she's out with her friend group, purely because she doesn't want to feel left out or judged by them. This type of conformity, driven by a desire to be liked and accepted, is called:",
+      "options": [
+        "Normative Social Influence",
+        "Informational Social Influence",
+        "Obedience",
+        "Groupthink"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Normative Social Influence. Normative social influence is the tendency to conform in order to be liked, accepted, or approved of by others, even if we do not privately agree with the group, exactly matching this teenager ordering a drink she dislikes just to fit in with her friends. Informational social influence instead involves conforming because we believe others have accurate information, especially in ambiguous situations, which isn't the driving factor here, and obedience and groupthink are both unrelated concepts involving direct authority commands and flawed group decision-making."
+    },
+    {
+      "id": "174",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A teacher tells her noisy classroom, Everyone needs to be quiet right now, and the students immediately comply with her direct command. According to the distinction between conformity and obedience, this student behavior is best classified as:",
+      "options": [
+        "Obedience, because it is a response to a direct command from an authority figure",
+        "Conformity, because the students are simply copying each other's quiet behavior",
+        "Normative Social Influence, because the students want to be liked by their teacher",
+        "Groupthink, because the class is avoiding conflict with one another"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Obedience, because it is a response to a direct command from an authority figure. Obedience involves changing behavior in response to a direct command from an authority figure, exactly matching how the students quiet down specifically because their teacher explicitly told them to. This is distinct from conformity, which would involve changing behavior to fit in with peers rather than following a direct order, so this scenario is not conformity, normative social influence (though related to conformity) doesn't capture this direct-command dynamic, and groupthink involves flawed group decision-making rather than a simple compliance response."
+    },
+    {
+      "id": "175",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A customer decides to purchase a specific brand of laptop only after carefully reading multiple in-depth reviews comparing processing speed, battery life, and build quality across several competing models. This method of persuasion, which relies on carefully analyzing the quality of the arguments presented, is called the:",
+      "options": [
+        "Central Route to Persuasion",
+        "Peripheral Route to Persuasion",
+        "Foot-in-the-Door Technique",
+        "Door-in-the-Face Technique"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Central Route to Persuasion. The central route to persuasion involves people carefully analyzing and thinking about the quality of the arguments being presented, exactly matching this customer's thorough comparison of technical specifications across laptops. The peripheral route instead relies on superficial cues rather than careful analysis, and the foot-in-the-door and door-in-the-face techniques are both unrelated request-sequencing persuasion strategies rather than a route based on argument quality."
+    },
+    {
+      "id": "176",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "After learning that a financial advisor graduated from a prestigious university, a client automatically assumes he must also be trustworthy, honest, and highly competent in every other aspect of his job, despite having no actual evidence of these other traits. This tendency for an overall positive impression to influence perceptions of unrelated traits is called the:",
+      "options": [
+        "Halo Effect",
+        "Foot-in-the-Door Technique",
+        "Door-in-the-Face Technique",
+        "False Consensus Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Halo Effect. The halo effect occurs when an overall positive impression of a person influences perceptions of their other traits, exactly matching how this client assumes the advisor's prestigious education means he must also be trustworthy and competent, and this is a prime example of the peripheral route to persuasion. The foot-in-the-door and door-in-the-face techniques are both unrelated request-sequencing persuasion strategies, and the false consensus effect involves overestimating how much others agree with oneself, none of which describe this specific positive-impression spillover effect."
+    },
+    {
+      "id": "177",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A teenager first asks his parents if he can borrow their car for an entire month-long road trip, and when they immediately and firmly refuse this unreasonable request, he quickly follows up by asking if he could at least borrow the car for just this coming weekend instead. This persuasion technique, which uses an unreasonable initial request to increase compliance with a smaller one, is called:",
+      "options": [
+        "Door-in-the-Face Technique",
+        "Foot-in-the-Door Technique",
+        "The Halo Effect",
+        "Groupthink"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Door-in-the-Face Technique. The door-in-the-face technique involves making a massive, unreasonable request that gets rejected, followed by a smaller, more reasonable request, exactly matching this teenager's month-long car request being rejected before he pivots to a much smaller weekend request. The foot-in-the-door technique instead involves starting with a small request before escalating to a larger one, the opposite order, and the halo effect and groupthink are both unrelated concepts involving positive-impression spillover and flawed group decision-making."
+    },
+    {
+      "id": "178",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A runner who normally jogs at a moderate, comfortable pace finds herself running noticeably faster and with more energy during a competitive race with a crowd of spectators watching, since running is already a well-practiced skill for her. This improved performance on a simple, well-practiced task while being watched is called:",
+      "options": [
+        "Social Facilitation",
+        "Social Inhibition",
+        "Social Loafing",
+        "Deindividuation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Social Facilitation. Social facilitation means performing better on simple or well-practiced tasks when others are present, exactly matching this experienced runner performing even better than usual with spectators watching her well-practiced skill. Social inhibition instead describes performing worse on difficult or unpracticed tasks under a crowd's gaze, the opposite pattern, and social loafing and deindividuation are both unrelated concepts involving reduced individual effort in a group and a loss of self-awareness, respectively."
+    },
+    {
+      "id": "179",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "While participating in an anonymous, large, and chaotic crowd during a riot, a normally calm and law-abiding man finds himself throwing rocks and shouting aggressively, engaging in destructive behaviors he would never even consider doing if he were alone and clearly identifiable. This loss of self-awareness and personal accountability within a group is called:",
+      "options": [
+        "Deindividuation",
+        "Social Loafing",
+        "Group Polarization",
+        "Groupthink"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Deindividuation. Deindividuation is a state in which individuals lose self-awareness and personal accountability in a group, making them more likely to act in ways they normally would not, exactly matching this man's uncharacteristic aggressive behavior while anonymous within a riot crowd. Social loafing instead involves reduced effort on a task rather than a broader loss of self-awareness, and group polarization and groupthink are both unrelated concepts involving the strengthening of attitudes through discussion and flawed consensus-driven decision-making, respectively."
+    },
+    {
+      "id": "180",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "After a stranger unexpectedly picks up and returns a wallet a man accidentally dropped on the street, the man feels a strong internal urge to somehow repay this kindness in the future, even in a completely unrelated situation. This expectation to return a favor received from someone else is called the:",
+      "options": [
+        "Social Reciprocity Norm",
+        "Social Responsibility Norm",
+        "Diffusion of Responsibility",
+        "The Bystander Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Social Reciprocity Norm. The social reciprocity norm is the expectation to return a favor, exactly matching this man's internal urge to repay the kindness of the stranger who returned his wallet. The social responsibility norm instead describes the expectation to help those in need regardless of any favor previously received, diffusion of responsibility involves reduced personal accountability to help when others are present, and the bystander effect involves the broader phenomenon of failing to help in emergencies, none of which describe this specific favor-repayment expectation."
+    },
+    {
+      "id": "181",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "A passerby stops to help an elderly stranger who has fallen on the sidewalk, not because he expects anything in return or owes the stranger any favor, but simply because he feels a general moral obligation to assist someone who is vulnerable and in need. This expectation to help those in need, regardless of any personal connection, is called the:",
+      "options": [
+        "Social Responsibility Norm",
+        "Social Reciprocity Norm",
+        "Altruism Exclusively, with No Other Possible Motive",
+        "The False Consensus Effect"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Social Responsibility Norm. The social responsibility norm is the expectation to help those in need, exactly matching this passerby's general moral obligation to assist a vulnerable stranger with no expectation of repayment. The social reciprocity norm instead specifically involves returning a favor previously received, which isn't the case here, while this scenario could also be described more broadly as altruism, the social responsibility norm is the more precise term for this specific type of prosocial norm, and the false consensus effect is an unrelated concept involving overestimating shared agreement."
+    },
+    {
+      "id": "182",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.3",
+      "question": "During a medical emergency on a crowded city street with dozens of witnesses standing around, each individual bystander assumes that surely someone else in the large crowd has already called for help, so no single person actually takes action themselves. This tendency to feel less personally responsible for helping when other people are present is called:",
+      "options": [
+        "Diffusion of Responsibility",
+        "Social Loafing",
+        "The Social Reciprocity Norm",
+        "Group Polarization"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Diffusion of Responsibility. Diffusion of responsibility is the tendency for individuals to feel less personally responsible for taking action when other people are present, and it is the primary cause of the bystander effect, exactly matching this crowd's collective inaction under the assumption that someone else will help. Social loafing instead involves reduced effort on a shared task rather than a failure to help in an emergency, and the social reciprocity norm and group polarization are both unrelated concepts involving returning favors and attitude extremity through discussion, respectively."
+    },
+    {
+      "id": "183",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "After having an incredibly stressful and demeaning day at work, a man comes home and unfairly yells at his innocent dog for barking, even though his real frustration has nothing to do with the dog at all. This defense mechanism, which shifts unacceptable feelings onto a safer target, is called:",
+      "options": [
+        "Displacement",
+        "Projection",
+        "Reaction Formation",
+        "Sublimation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Displacement. Displacement involves shifting unacceptable feelings or impulses from their original source to a safer, substitute target, exactly matching this man taking out his work frustration on his innocent dog instead of his actual source of stress. Projection instead involves attributing one's own unacceptable feelings onto another person rather than shifting an emotion onto a substitute target, reaction formation involves behaving the opposite of one's true feelings, and sublimation involves channeling impulses into constructive activities, none of which match this emotion-redirecting scenario."
+    },
+    {
+      "id": "184",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "After being rejected from her top-choice dream college, a student immediately tells all her friends, Honestly, I never really wanted to go there anyway, the campus was too small and the weather was terrible. This defense mechanism, which creates a logical excuse for an unacceptable disappointment, is called:",
+      "options": [
+        "Rationalization",
+        "Denial",
+        "Reaction Formation",
+        "Sublimation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Rationalization. Rationalization involves creating logical, socially acceptable explanations for behaviors or feelings that were actually driven by unconscious or less acceptable motives, exactly matching this student's excuse-making about the college she was actually devastated to be rejected from. Denial instead would involve refusing to accept that she was rejected at all, reaction formation would involve acting overly enthusiastic about the rejection rather than making excuses, and sublimation involves channeling impulses into constructive activities, none of which match this logical-excuse-making pattern."
+    },
+    {
+      "id": "185",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "A woman who secretly and intensely despises one of her coworkers goes out of her way to act excessively warm, complimentary, and overly friendly toward that exact same coworker every single day at the office. This defense mechanism, which involves acting the complete opposite of one's true feelings, is called:",
+      "options": [
+        "Reaction Formation",
+        "Projection",
+        "Displacement",
+        "Regression"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Reaction Formation. Reaction formation involves behaving in a way that is exactly the opposite of one's true, but unacceptable, feelings, exactly matching this woman's excessive friendliness toward a coworker she actually despises. Projection instead involves attributing one's own feelings onto someone else rather than acting opposite to them, displacement involves redirecting an emotion onto a substitute target, and regression involves reverting to childlike behavior, none of which match this opposite-behavior masking pattern."
+    },
+    {
+      "id": "186",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "A man who harbors deep-seated aggressive tendencies and violent impulses since childhood channels this energy into becoming an incredibly successful and disciplined professional boxer, using the sport as a constructive, socially acceptable outlet for his aggression. This defense mechanism is called:",
+      "options": [
+        "Sublimation",
+        "Reaction Formation",
+        "Rationalization",
+        "Regression"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Sublimation. Sublimation involves channeling unacceptable impulses into socially acceptable or even constructive activities, exactly matching this man redirecting his aggressive tendencies into a successful, disciplined career as a professional boxer. Reaction formation instead involves acting the complete opposite of one's true feelings rather than constructively channeling them, rationalization involves creating logical excuses for behavior, and regression involves reverting to childlike behavior, none of which match this constructive, impulse-channeling outlet."
+    },
+    {
+      "id": "187",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "A famous projective test, developed as an alternative to the classic inkblot test, presents individuals with ambiguous pictures of people in various scenes and asks them to construct a detailed story about what is happening, revealing unconscious themes through their narrative. This specific projective test is called the:",
+      "options": [
+        "Thematic Apperception Test (TAT)",
+        "Rorschach Inkblot Test",
+        "Myers-Briggs Type Indicator",
+        "Minnesota Multiphasic Personality Inventory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Thematic Apperception Test (TAT). The Thematic Apperception Test is a famous projective test in which individuals are shown ambiguous pictures of people in various scenes and asked to tell a story about them, revealing unconscious themes, exactly matching this description. The Rorschach Inkblot Test instead uses symmetrical inkblots rather than scene-based pictures requiring a narrative, and the Myers-Briggs Type Indicator and Minnesota Multiphasic Personality Inventory are both structured self-report personality assessments rather than ambiguous, story-based projective tests."
+    },
+    {
+      "id": "188",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "According to Carl Rogers, the image of who a person truly aspires to become, reflecting their deepest personal goals, values, and life aspirations rather than their current reality, is called the:",
+      "options": [
+        "Ideal Self",
+        "Real Self",
+        "Superego",
+        "Unconscious"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Ideal Self. The ideal self is the person one aspires to be, the image of oneself that reflects personal goals, values, and aspirations, exactly matching this description of who someone truly wants to become. The real self instead refers to one's actual, current thoughts and characteristics rather than future aspirations, and the superego and unconscious are both psychodynamic concepts involving moral judgment and hidden influences, entirely unrelated to Rogers's humanistic self-concept framework."
+    },
+    {
+      "id": "189",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.4",
+      "question": "A therapist practicing from a humanistic perspective makes a deliberate effort to fully accept and support her client without any judgment or conditions whatsoever, regardless of what mistakes or flaws the client reveals during their sessions together. This attitude of total, unconditional acceptance is called:",
+      "options": [
+        "Unconditional Positive Regard",
+        "Self-Actualizing Tendency",
+        "Congruence",
+        "Reaction Formation"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Unconditional Positive Regard. Unconditional positive regard is an attitude of total acceptance toward another person, which Carl Rogers believed was necessary for a person to truly grow and bridge the gap between their real and ideal selves, exactly matching this therapist's non-judgmental, unconditional support. The self-actualizing tendency instead refers to an individual's own innate drive to fulfill their potential rather than an attitude offered by someone else, congruence refers to the alignment between one's real and ideal self, and reaction formation is an unrelated psychodynamic defense mechanism."
+    },
+    {
+      "id": "190",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "When asked to describe who she is, a woman says, I am a mother, a nurse, a marathon runner, and someone who loves painting. This broad, organized collection of beliefs and perceptions a person holds about their own identity and traits is called:",
+      "options": [
+        "Self-Concept",
+        "Self-Esteem",
+        "Self-Efficacy",
+        "Self-Actualizing Tendency"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Self-Concept. Self-concept is how you view yourself and your relation to others, essentially the broad answer to the question Who am I?, exactly matching this woman's description of her identity as a mother, nurse, runner, and painter. Self-esteem instead refers to how much a person values that identity rather than simply listing it, self-efficacy refers to a belief in one's ability to do a specific task, and self-actualizing tendency is an unrelated humanistic concept involving the drive toward reaching one's potential."
+    },
+    {
+      "id": "191",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "Standing at the free-throw line during a critical moment in a basketball game, a player feels completely confident that she has the specific skill and ability needed to successfully make this particular shot. This belief in one's competence to accomplish a specific task is called:",
+      "options": [
+        "Self-Efficacy",
+        "Self-Esteem",
+        "Self-Concept",
+        "Unconditional Positive Regard"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Self-Efficacy. Self-efficacy is one's sense of competence and effectiveness on a specific task, such as believing you can successfully complete a difficult math problem, exactly matching this player's confidence in her specific ability to make this particular free throw. Self-esteem instead refers to a broader overall evaluation of self-worth rather than confidence in one narrow task, self-concept refers to the broad description of one's identity and traits, and unconditional positive regard is an unrelated humanistic concept involving total acceptance from others."
+    },
+    {
+      "id": "192",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "A woman spontaneously books a solo trip to a country she has never visited, eagerly tries unfamiliar and exotic foods at every restaurant, and spends her weekends exploring abstract art museums that challenge her thinking. According to the Big Five, she would likely score very high on which trait?",
+      "options": [
+        "Openness to Experience",
+        "Conscientiousness",
+        "Neuroticism",
+        "Agreeableness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Openness to Experience. Openness to experience reflects how willing a person is to try new things and think outside the box, and a high score is imaginative, independent, and loves variety, exactly matching this woman's spontaneous travel, exotic food adventures, and love of abstract art. Conscientiousness instead relates to organization and work ethic, neuroticism relates to emotional stability, and agreeableness relates to cooperation and compassion, none of which specifically capture this openness to novel and unconventional experiences."
+    },
+    {
+      "id": "193",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "A student frequently misplaces his homework assignments, waits until the very last night before an exam to begin studying, and tends to make major life decisions on a complete whim without much forethought. According to the Big Five, he would likely score very low on which trait?",
+      "options": [
+        "Conscientiousness",
+        "Agreeableness",
+        "Extraversion",
+        "Openness to Experience"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Conscientiousness. A low score on conscientiousness reflects being disorganized, careless, and impulsive, exactly matching this student's lost assignments, last-minute cramming, and impulsive decision-making. Agreeableness instead relates to cooperation and compassion, extraversion relates to social energy, and openness to experience relates to willingness to try new things, none of which specifically capture this disorganized, careless, and impulsive pattern."
+    },
+    {
+      "id": "194",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "A man tends to panic and spiral into significant anxiety over even minor, unexpected changes to his daily plans, and he dwells heavily and repeatedly on his past mistakes long after they have occurred. According to the Big Five, he would likely score very high on which trait?",
+      "options": [
+        "Neuroticism",
+        "Emotional Stability",
+        "Conscientiousness",
+        "Agreeableness"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Neuroticism. Neuroticism reflects how a person experiences and handles negative emotions, and a high score is anxious, insecure, and easily stressed, exactly matching this man's panic over minor changes and heavy dwelling on past mistakes. Emotional stability is actually the inverse, low-neuroticism end of this same spectrum rather than a separate high-scoring trait, and conscientiousness and agreeableness relate to organization and cooperation, respectively, neither of which captures this specific anxious, stress-prone emotional pattern."
+    },
+    {
+      "id": "195",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.5",
+      "question": "Researchers analyzing responses to a new personality inventory notice that people who report they like going to parties also consistently report that they enjoy meeting new people and feel energized in social settings. This complex statistical procedure, which groups these related items together under one broader trait, is called:",
+      "options": [
+        "Factor Analysis",
+        "Reciprocal Determinism",
+        "Self-Efficacy",
+        "Projective Testing"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Factor Analysis. Factor analysis is a complex statistical procedure that identifies clusters of related test items, grouping responses like liking parties and enjoying meeting new people together under the broader trait of Extraversion, exactly matching this scenario. Reciprocal determinism instead refers to the interaction between thoughts, environment, and behavior rather than a statistical grouping procedure, self-efficacy refers to a belief in one's own competence, and projective testing refers to ambiguous-stimulus assessments used in the psychodynamic perspective, none of which describe this specific item-clustering statistical method."
+    },
+    {
+      "id": "196",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "After drinking a full glass of water, the hiker's uncomfortable feeling of thirst completely disappears, and his body returns to a steady, balanced internal state once again. This natural tendency of the body to maintain a steady, balanced internal state is called:",
+      "options": [
+        "Homeostasis",
+        "Arousal",
+        "Instinct",
+        "Incentive Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Homeostasis. Homeostasis is the body's natural tendency to maintain a steady, balanced internal state, much like a thermostat regulating temperature, exactly matching the hiker's body returning to balance after drinking water and eliminating his thirst drive. Arousal instead refers to a level of physiological or mental activation and stimulation-seeking rather than balance, and instinct and incentive theory are both unrelated concepts involving fixed innate behaviors and external reward-based motivation."
+    },
+    {
+      "id": "197",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "During an extremely high-stakes championship game, a normally excellent athlete becomes so overwhelmed with intense anxiety and nervous tension that his performance suffers dramatically and he makes several uncharacteristic mistakes. According to the Yerkes-Dodson Law, this athlete's performance drop is best explained by:",
+      "options": [
+        "His arousal level climbing past the optimal peak into a zone of excessive anxiety",
+        "His arousal level being far too low for the demands of the situation",
+        "A complete lack of any intrinsic motivation to perform well in the game",
+        "The instinct theory of motivation being the sole cause of this specific performance drop"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: His arousal level climbing past the optimal peak into a zone of excessive anxiety. According to the Yerkes-Dodson Law's inverted U-shaped curve, once arousal climbs past the optimal peak into a very high zone, it turns into strong anxiety, which causes performance to drop right back down, exactly explaining this athlete's mistakes under extreme championship pressure. His arousal is actually far too high rather than too low in this high-stakes scenario, a lack of intrinsic motivation isn't indicated since he clearly wants to perform well, and instinct theory is an unrelated concept involving fixed innate behaviors rather than an arousal-performance relationship."
+    },
+    {
+      "id": "198",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "A salesperson works incredibly hard to close a major deal specifically because his company has promised him a substantial cash bonus and a company-wide recognition award for hitting his sales target. This type of motivation, driven by earning an external reward, is called:",
+      "options": [
+        "Extrinsic Motivation",
+        "Intrinsic Motivation",
+        "Self-Determination Theory Exclusively",
+        "Arousal Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Extrinsic Motivation. Extrinsic motivation involves doing something to earn a reward or avoid a punishment, exactly matching this salesperson working hard specifically to earn the promised cash bonus and recognition award. Intrinsic motivation instead involves doing something for its own inherent enjoyment, the opposite of this salesperson's external drive, and while this fits within the broader framework of self-determination theory, incentive theory is the more precise term specifically describing this external-reward-driven behavior, and arousal theory is an unrelated concept involving optimal stimulation-seeking."
+    },
+    {
+      "id": "199",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "A man regularly seeks out physically risky and exciting activities like skydiving, bungee jumping, and extreme mountain biking, specifically craving the intense adrenaline rush that comes with genuine physical danger. According to Zuckerman's sensation-seeking theory, this specific type of sensation seeking is called:",
+      "options": [
+        "Thrill and Adventure Seeking",
+        "Experience Seeking",
+        "Disinhibition",
+        "Boredom Susceptibility"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Thrill and Adventure Seeking. Thrill and adventure seeking is the desire to engage in physically risky or exciting activities like skydiving or bungee jumping, exactly matching this man's craving for adrenaline through genuinely dangerous physical activities. Experience seeking instead involves pursuing new sensations through the mind and senses rather than physical danger, disinhibition involves seeking sensation through social activities and lowered restraint, and boredom susceptibility involves an intolerance for routine, none of which specifically capture this physical-risk-seeking pattern."
+    },
+    {
+      "id": "200",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "A woman feels an overwhelming and nearly unbearable sense of restlessness whenever a work meeting drags on too long or a lecture becomes repetitive, and she frequently switches jobs simply because the daily routine eventually becomes intolerable to her. According to Zuckerman's sensation-seeking theory, this specific type of sensation seeking is called:",
+      "options": [
+        "Boredom Susceptibility",
+        "Thrill and Adventure Seeking",
+        "Experience Seeking",
+        "Disinhibition"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Boredom Susceptibility. Boredom susceptibility is an extreme intolerance for routine, repetitive activities, or predictable people, exactly matching this woman's restlessness during long meetings and her tendency to switch jobs once routine sets in. Thrill and adventure seeking instead involves physically risky activities, experience seeking involves pursuing new sensations through the mind and senses, and disinhibition involves social restraint-lowering, none of which specifically capture this intolerance for repetitive routine."
+    },
+    {
+      "id": "201",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "A woman is offered an exciting dream job with a substantial salary increase, but accepting the position would require her to relocate across the country, far away from all of her close friends and family. According to Lewin's motivational conflicts theory, this type of conflict, involving a single choice with both positive and negative consequences, is called:",
+      "options": [
+        "Approach-Avoidance Conflict",
+        "Approach-Approach Conflict",
+        "Avoidance-Avoidance Conflict",
+        "Reciprocal Determinism"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Approach-Avoidance Conflict. An approach-avoidance conflict involves facing a single choice that has both positive and negative consequences, exactly matching this woman's dream job offer that comes bundled with the difficult downside of relocating away from loved ones. An approach-approach conflict instead involves choosing between two separate desirable options, and an avoidance-avoidance conflict involves choosing between two separate undesirable options, neither of which matches this single choice with mixed consequences, and reciprocal determinism is an unrelated concept involving the interaction between thoughts, environment, and behavior."
+    },
+    {
+      "id": "202",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.6",
+      "question": "A hormone that stimulates hunger increases significantly when a person's stomach is empty, signaling to the brain that it is time to eat. This specific hunger-stimulating hormone, closely monitored by the hypothalamus, is called:",
+      "options": [
+        "Ghrelin",
+        "Leptin",
+        "Oxytocin",
+        "Melatonin"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Ghrelin. Ghrelin is a hormone that regulates feelings of hunger, increasing when the stomach is empty to signal that it is time to eat, exactly matching this description. Leptin instead is the hormone that signals fullness or satiety rather than stimulating hunger, and oxytocin and melatonin are unrelated hormones involved in social bonding and sleep regulation, respectively, neither of which specifically regulates hunger in this way."
+    },
+    {
+      "id": "203",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "A hiker rounds a corner and comes face to face with a bear. His heart begins pounding, and he then consciously interprets this specific situation as dangerous because of the bear's presence; only once he has both this physical arousal and this specific cognitive label does he actually experience the conscious emotion of fear. This mechanism, requiring both physical arousal and an interpretive label to form an emotion, is called:",
+      "options": [
+        "The Two-Factor Model",
+        "Succession",
+        "Simultaneous Processing",
+        "Broaden-and-Build Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: The Two-Factor Model. This mechanism proposes that to experience a conscious emotion, a person must have two things: physical arousal and a cognitive label, exactly matching how this hiker's pounding heart combined with his dangerous label together create his experience of fear. Succession instead proposes physical response causes emotion directly without needing a cognitive label as a separate necessary ingredient, simultaneous processing proposes both occur together without this two-ingredient requirement, and broaden-and-build theory is an unrelated concept involving how positive emotions expand awareness, none of which describe this specific arousal-plus-label requirement."
+    },
+    {
+      "id": "204",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "A woman forces herself to hold a big, wide smile on her face for two full minutes during a stressful morning, even though she doesn't feel happy at all, and she is surprised to notice that her mood genuinely begins to lift and feel lighter shortly afterward. This concept, suggesting that facial muscle movements can directly influence and even happen before the actual experience of an emotion, is called the:",
+      "options": [
+        "Facial-Feedback Hypothesis",
+        "Two-Factor Model",
+        "Broaden-and-Build Theory",
+        "Display Rules"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Facial-Feedback Hypothesis. The facial-feedback hypothesis suggests that the physical movement of facial muscles, like smiling, actually happens before and directly influences the experience of emotion, exactly matching how this woman's forced smile genuinely lifted her mood afterward. The two-factor model instead requires both physical arousal and a specific cognitive label rather than facial muscle movement alone, and broaden-and-build theory and display rules are both unrelated concepts involving the function of positive emotions and culturally learned expression norms, respectively."
+    },
+    {
+      "id": "205",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "Before a person can consciously determine whether a specific situation is exciting, threatening, or completely neutral, their brain must first go through a distinct mental process of evaluating that situation to figure out its emotional significance. This specific mental evaluation process is called:",
+      "options": [
+        "Cognitive Appraisal",
+        "The Facial-Feedback Hypothesis",
+        "Display Rules",
+        "An Elicitor"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Cognitive Appraisal. Cognitive appraisal is the mental process of evaluating a situation to determine its emotional significance, exactly matching this initial mental step of figuring out whether a situation is exciting, threatening, or neutral before an emotion is fully experienced. The facial-feedback hypothesis instead specifically involves facial muscle movement influencing emotion rather than this broader evaluative mental process, and display rules and an elicitor are both unrelated concepts involving culturally learned expression norms and the specific trigger for an emotional response."
+    },
+    {
+      "id": "206",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "After receiving unexpectedly wonderful news, a woman feels a genuine surge of pure joy, and this positive emotion makes her suddenly want to call an old friend she hasn't spoken to in years, try a new hobby she's been curious about, and generally explore new opportunities she wouldn't have considered otherwise. This theory, which explains how positive emotions expand awareness and encourage new thoughts and actions, is called:",
+      "options": [
+        "Broaden-and-Build Theory",
+        "The Two-Factor Model",
+        "Display Rules",
+        "Sensation-Seeking Theory"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Broaden-and-Build Theory. The broaden-and-build theory of emotion proposes that positive emotional experiences broaden awareness and encourage new actions and thoughts, such as being more likely to explore, connect with others, and try new things, exactly matching this woman's joy-driven urge to reconnect with a friend and explore new hobbies. The two-factor model instead relates to the mechanism of how an emotion forms rather than what a positive emotion accomplishes afterward, and display rules and sensation-seeking theory are both unrelated concepts involving culturally learned expression norms and the drive for novel stimulation."
+    },
+    {
+      "id": "207",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "In a certain culture, it is considered completely socially acceptable and even expected for men to openly express anger in public settings, but boys and men are simultaneously taught from a young age to suppress and hide any tears or visible sadness. These culturally learned norms about when, where, and how it is appropriate to express a given emotion are called:",
+      "options": [
+        "Display Rules",
+        "Universal Emotions",
+        "Elicitors",
+        "Cognitive Appraisal"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Display Rules. Display rules are the culturally learned norms that govern when, where, and how it's appropriate to express a given emotion, exactly matching this culture's specific norms allowing open anger while discouraging visible sadness in men. Universal emotions instead refer to the core emotions themselves that may be experienced similarly across cultures, rather than the culturally specific rules about expressing them, and elicitors and cognitive appraisal are both unrelated concepts involving the specific trigger for an emotion and the mental evaluation of a situation's significance."
+    },
+    {
+      "id": "208",
+      "setid": "",
+      "unit": "Unit 4",
+      "topic": "4.7",
+      "question": "For one particular man, the specific sight of a spider crawling across the floor is the exact stimulus that consistently triggers his intense feeling of fear every single time, while other people might not have any emotional reaction to a spider at all. This specific event or stimulus that triggers an emotional response is called an:",
+      "options": [
+        "Elicitor",
+        "Display Rule",
+        "Cognitive Appraisal",
+        "Instinct"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Elicitor. An elicitor is the specific event or stimulus that triggers an emotional response, exactly matching how the sight of a spider is this particular man's specific trigger for intense fear. A display rule instead refers to the culturally learned norm about how to express an emotion once it's triggered, rather than the trigger itself, and cognitive appraisal and instinct are both unrelated concepts involving the mental process of evaluating a situation and a fixed, innate behavior pattern, respectively."
+    },
+    {
+      "id": "209",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "Right before stepping on stage for a big dance recital, a performer feels a surge of nervous energy and adrenaline that actually sharpens her focus and helps her execute her routine flawlessly. This positive, motivating form of stress is called:",
+      "options": [
+        "Eustress",
+        "Distress",
+        "The Alarm Stage",
+        "Tend and Befriend"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Eustress. Eustress is a positive form of stress that can be motivating, enhancing performance or overall well-being, exactly matching how this performer's nervous excitement actually sharpens her focus and helps her succeed. Distress instead is a debilitating, negative form of stress that impairs functioning, the opposite effect described here, and the alarm stage and tend and befriend are both unrelated concepts involving a specific stage of the General Adaptation Syndrome and a nurturing stress-response style, respectively."
+    },
+    {
+      "id": "210",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "A man who has endured years of chronic, unmanaged work stress is later diagnosed by his doctor with dangerously and chronically elevated blood pressure, significantly increasing his risk for a heart attack. This stress-related physical condition is called:",
+      "options": [
+        "Hypertension",
+        "Immune Suppression",
+        "The Exhaustion Stage",
+        "Distress Exclusively"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Hypertension. Stress has been directly linked to chronically elevated blood pressure, known as hypertension, significantly increasing the risk of cardiovascular disease and heart attacks, exactly matching this man's diagnosis after years of chronic work stress. Immune suppression instead refers to a weakened immune system rather than elevated blood pressure specifically, and the exhaustion stage and distress alone are both related but distinct concepts involving a specific GAS stage and the negative stress experience itself, rather than this specific cardiovascular condition."
+    },
+    {
+      "id": "211",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "Weeks into an incredibly demanding new job with a difficult boss, a woman's body has adapted to the ongoing pressure and she continues to function and cope with her daily tasks, but she remains physiologically activated and on high alert the entire time. According to Selye, this ongoing coping phase is called the:",
+      "options": [
+        "Resistance Stage",
+        "Alarm Stage",
+        "Exhaustion Stage",
+        "Eustress Stage"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Resistance Stage. The resistance stage occurs as the body adapts to an ongoing stressor and continues to cope while remaining physiologically activated and on high alert, exactly matching this woman's continued functioning under her demanding job's persistent pressure. The alarm stage instead is the much earlier, initial reaction to a stressor, the exhaustion stage occurs later once the body's resources are completely spent, and eustress stage is not a real term, since eustress is a type of stress rather than a GAS stage."
+    },
+    {
+      "id": "212",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "Rather than reacting to a stressful family crisis with a fight-or-flight response, a woman instead focuses her energy on comforting her children, checking in on her elderly neighbor, and calling close friends for emotional support. This alternative stress response, involving nurturing and connection, is called:",
+      "options": [
+        "Tend and Befriend",
+        "The Alarm Stage",
+        "Problem-Focused Coping",
+        "Hypertension"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Tend and Befriend. Tend and befriend theory proposes that some people react to stress by tending to their own needs or the needs of others and actively seeking connection, a pattern that seems to occur mostly in women, exactly matching this woman's nurturing and social-support-seeking response to her family crisis. The alarm stage instead refers to the initial fight-flight-freeze reaction rather than this nurturing alternative, and problem-focused coping and hypertension are both related but distinct concepts involving directly solving a stressor and a stress-related physical condition, respectively."
+    },
+    {
+      "id": "213",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "Stuck at the airport with an unavoidable two-hour flight delay that she has no power to change, a woman puts on her headphones and listens to a calming playlist specifically to manage her own frustration and stay relaxed during the wait. This coping strategy, which targets the feeling of stress rather than the stressor itself, is called:",
+      "options": [
+        "Emotion-Focused Coping",
+        "Problem-Focused Coping",
+        "Tend and Befriend",
+        "The Alarm Stage"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Emotion-Focused Coping. Emotion-focused coping involves managing the emotional reactions to stress rather than trying to change the stressor itself, exactly matching this woman using calming music to manage her frustration since she cannot control the unavoidable flight delay. Problem-focused coping instead involves directly addressing and changing the source of the stress, which isn't possible in this scenario, and tend and befriend and the alarm stage are both unrelated concepts involving a nurturing stress response and an initial stress reaction, respectively."
+    },
+    {
+      "id": "214",
+      "setid": "",
+      "unit": "Unit 5",
+      "topic": "5.1",
+      "question": "A researcher studying childhood stress explains that experiences like abuse, neglect, or significant household dysfunction during a person's early years can act as significant sources of stress that affect that person throughout their entire lifespan. These potentially traumatic early-life events are called:",
+      "options": [
+        "Adverse Childhood Experiences (ACEs)",
+        "Daily Hassles",
+        "Eustress",
+        "The Resistance Stage"
+      ],
+      "answer": "A",
+      "image": "",
+      "context": "",
+      "explanation": "Correct: Adverse Childhood Experiences (ACEs). ACEs are potentially traumatic events during childhood, such as abuse, neglect, or household dysfunction, that act as significant sources of stress and can affect a person throughout their entire lifespan, exactly matching this description. Daily hassles instead refer to smaller, everyday stressors that steadily build up over time rather than major traumatic childhood events, and eustress and the resistance stage are both unrelated concepts involving a positive form of stress and a specific GAS coping phase, respectively."
     }
   ]
 }
