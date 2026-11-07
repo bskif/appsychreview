@@ -405,6 +405,10 @@
         .game-card .play-btn { background-color: var(--warm); }
         .game-card .play-btn:hover { background-color: #b85f28; }
 
+        /* An odd number of games leaves one card alone in the last row:
+           let it span the full width so the grid always looks finished. */
+        .games-grid .game-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
         /* Toggle: flip this off once ad units are live */
         .ad-under-review {
             display: none !important;
@@ -515,6 +519,7 @@
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
                     <a href="crossword">Crossword</a>
+                    <a href="quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -543,8 +548,8 @@
             </div>
 
             <div class="hero-stats">
-                <a href="glossary" class="stat-tile tile-half"><strong>819</strong><span>Key terms</span></a>
-                <a href="quiz" class="stat-tile tile-half"><strong>982</strong><span>Quiz questions</span></a>
+                <a href="glossary" class="stat-tile tile-half"><strong id="stat-terms">818</strong><span>Key terms</span></a>
+                <a href="quiz" class="stat-tile tile-half"><strong id="stat-questions">1,031</strong><span>Quiz questions</span></a>
 
                 <div class="stat-tile tile-countdown" id="countdown-tile">
                     <div class="countdown-number" id="countdown-number"></div>
@@ -554,7 +559,7 @@
                     </div>
                 </div>
 
-                <a href="#study-tools" class="stat-tile tile-third"><strong>9</strong><span>Study tools &amp; games</span></a>
+                <a href="#study-tools" class="stat-tile tile-third"><strong id="stat-tools">12</strong><span>Study tools &amp; games</span></a>
                 <a href="studyguide" class="stat-tile tile-third"><strong>41</strong><span>Topic study guides</span></a>
                 <a href="psych-hub" class="stat-tile tile-third"><strong>Daily</strong><span>Puzzle &amp; badges</span></a>
             </div>
@@ -718,6 +723,33 @@
                         <a href="oddball" class="play-btn">Play Oddball</a>
                     </div>
                 </div>
+
+                <div class="menu-card game-card">
+                    <div class="icon-chip">🔤</div>
+                    <div class="game-body">
+                        <div class="card-title">Word Search</div>
+                        <p class="card-desc">Hunt for key terms hidden in a letter grid. Choose a unit or topic, and print any puzzle with its answer key.</p>
+                        <a href="wordsearch" class="play-btn">Play Word Search</a>
+                    </div>
+                </div>
+
+                <div class="menu-card game-card">
+                    <div class="icon-chip">✏️</div>
+                    <div class="game-body">
+                        <div class="card-title">Crossword</div>
+                        <p class="card-desc">Solve crosswords built from key terms and clues. Print any puzzle with its answer key.</p>
+                        <a href="crossword" class="play-btn">Solve a Crossword</a>
+                    </div>
+                </div>
+
+                <div class="menu-card game-card">
+                    <div class="icon-chip">🧩</div>
+                    <div class="game-body">
+                        <div class="card-title">Piece of Mind</div>
+                        <p class="card-desc">Fit the tiles together so every edge matches a term to its scenario or definition. Rotate, zoom, and race the clock.</p>
+                        <a href="quilt" class="play-btn">Play Piece of Mind</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -757,6 +789,43 @@
 </footer>
 
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+    <script>
+        // ===== LIVE STATS =====
+        // The numbers typed into the hero tiles are only placeholders. These come
+        // from the data files, so adding terms or questions updates them with no
+        // edits to this page. (The study guide count is not in a data file, so
+        // that tile is typed by hand.)
+        (function () {
+            function list(data) {
+                if (Array.isArray(data)) return data;
+                if (data && typeof data === 'object') {
+                    for (const k in data) { if (Array.isArray(data[k])) return data[k]; }
+                }
+                return null;
+            }
+            function load(url) {
+                return fetch(url).then(function (r) { if (!r.ok) throw new Error(url); return r.json(); }).then(list);
+            }
+            function show(id, n) {
+                const el = document.getElementById(id);
+                if (el && typeof n === 'number' && n > 0) el.textContent = n.toLocaleString('en-US');
+            }
+
+            // Study tools and games: count the cards actually on the page
+            show('stat-tools', document.querySelectorAll('.tools-grid .menu-card, .games-grid .menu-card').length);
+
+            // Key terms
+            load('terms.json').then(function (t) { if (t) show('stat-terms', t.length); }).catch(function () {});
+
+            // Quiz questions = the main quiz bank + the Quick Check (study guide) bank.
+            // Both must load; otherwise the typed placeholder stays rather than show a partial total.
+            Promise.all([load('quiz.json'), load('studyquiz.json')]).then(function (r) {
+                if (r[0] && r[1]) show('stat-questions', r[0].length + r[1].length);
+            }).catch(function () {});
+        })();
+        // END LIVE STATS
+    </script>
 
     <script>
         // Loads announcements.json and renders the 3 most recent entries.
