@@ -1895,8 +1895,8 @@
         {
           "id": "u2-17",
           "topic": "2.3",
-          "term": "Long-term Potentiation",
-          "label": "Long-term Potentiation",
+          "term": "Long-Term Potentiation",
+          "label": "Long-Term Potentiation",
           "type": "definition",
           "short": "Repeated activation strengthens synaptic connections, a neural basis for learning.",
           "long": "A lasting increase in the strength of synapses after repeated firing, believed to be a biological basis for learning.",
@@ -2368,8 +2368,8 @@
         {
           "id": "u2b-19",
           "topic": "2.3",
-          "term": "Short Term Memory",
-          "label": "Short Term Memory",
+          "term": "Short-Term Memory",
+          "label": "Short-Term Memory",
           "type": "scenario",
           "short": "Rae briefly holds seven digits in mind, but they fade without rehearsal.",
           "long": "Rae can hold about seven digits temporarily for immediate use, but they fade within seconds unless she rehearses them.",
@@ -4447,8 +4447,8 @@
         {
           "id": "u5-03",
           "topic": "5.1",
-          "term": "Fight Flight Freeze Response",
-          "label": "Fight Flight Freeze Response",
+          "term": "Fight-Flight-Freeze Response",
+          "label": "Fight-Flight-Freeze Response",
           "type": "scenario",
           "short": "Spotting a bear, Cole's heart pounds as his body prepares to react.",
           "long": "Spotting a bear, Cole's heart pounds as his body automatically readies him to confront the danger, escape, or stay still.",
