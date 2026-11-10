@@ -245,7 +245,7 @@
     }
 
     Promise.all([get('terms.json'), get('quiz.json'), get('studyquiz.json'), get('confusingpairs.json'),
-                 get('oddball.json'), get('connections.json'), get('quilt-sets.json'), get('crossword.json')]).then(function (r) {
+                 get('oddball.json'), get('connections.json'), get('quilt-sets.json'), get('crossword.json'), get('studyguide-parts.json')]).then(function (r) {
         var terms = list(r[0]), quiz = list(r[1]), quick = list(r[2]);
         var data = { terms: terms, pairs: list(r[3]), odd: list(r[4]), con: list(r[5]), sets: (r[6] && r[6].sets) || [], xw: (r[7] && r[7].crossword) || [] };
         var available = { terms: !!r[0], pairs: !!r[3], odd: !!r[4], con: !!r[5], sets: !!r[6], xw: !!r[7] };
@@ -267,6 +267,52 @@
         var visible = hub.querySelectorAll('.ph-topic:not([hidden])').length;
         var tier = hub.querySelector('.ph-tier-topic');
         if (tier && visible === 0) tier.hidden = true;
+
+        // ---- topics with more than one study guide (1.6, 5.4): a Quick Check button for each part ----
+        var partDefs = r[8] && r[8][topic] && Array.isArray(r[8][topic].parts) ? r[8][topic].parts : null;
+        if (partDefs && r[2] && tier && !tier.hidden) {
+            var partOf = function (q) {                      // a question's own "part" field wins, otherwise its id decides
+                var own = q.part ? String(q.part).toLowerCase().trim() : '';
+                var ids = partDefs.filter(function (d) { return String(d.part).toLowerCase() === own; });
+                if (own && ids.length) return own;
+                var id = parseInt(q.id, 10);
+                for (var i = 0; i < partDefs.length; i++) {
+                    var list = partDefs[i].ids || [];
+                    for (var j = 0; j < list.length; j++) {
+                        var x = list[j];
+                        if (Array.isArray(x) ? (id >= x[0] && id <= x[1]) : id === x) return String(partDefs[i].part).toLowerCase();
+                    }
+                }
+                return '';
+            };
+            var mine = quick.filter(function (x) { return String(x.topic) === topic; });
+            var rows = partDefs.map(function (d) {
+                var p = String(d.part).toLowerCase();
+                return { part: p, label: d.label || '', n: mine.filter(function (x) { return partOf(x) === p; }).length };
+            }).filter(function (x) { return x.n > 0; });
+            if (rows.length) {
+                var box = document.createElement('div');
+                box.className = 'ph-parts';
+                var lead = document.createElement('p');
+                lead.className = 'ph-parts-label';
+                lead.textContent = 'This topic has more than one study guide. Practice the Quick Check for just one of them:';
+                box.appendChild(lead);
+                var row = document.createElement('div');
+                row.className = 'ph-parts-row';
+                rows.forEach(function (x) {
+                    var a = document.createElement('a');
+                    a.className = 'ph-part';
+                    a.href = root + 'quiz?mode=quick&topic=' + topic + '&part=' + x.part + '&start=1';
+                    var tag = document.createElement('span'); tag.className = 'ph-part-tag'; tag.textContent = 'Part ' + x.part.toUpperCase();
+                    var name = document.createElement('span'); name.className = 'ph-part-name'; name.textContent = x.label;
+                    var cnt = document.createElement('span'); cnt.className = 'ph-part-count'; pill(cnt, plural(x.n, 'question'));
+                    a.appendChild(tag); a.appendChild(name); a.appendChild(cnt);
+                    row.appendChild(a);
+                });
+                box.appendChild(row);
+                tier.appendChild(box);
+            }
+        }
 
         // ---- mix row: games and puzzles ----
         var grid = hub.querySelector('[data-mix-grid]');
