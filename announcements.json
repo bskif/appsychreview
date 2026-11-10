@@ -1,5 +1,12 @@
 {
   "announcements": [
+     {
+      "date": "2026-11-10",
+      "tag": "UPDATE",
+      "title": "Unit Guides Complete",
+      "blurb": "I am excited to annouce the the Study Guide section is fully complete for Units 0-6 and has a fresh new look! You will also find new links at the end to help focus your studies. Good luck!",
+      "link": "studyguide"
+    },
     {
       "date": "2026-10-23",
       "tag": "NEW",
