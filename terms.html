@@ -2,65 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Terms of Use - Psych Review Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Psych Review Hub</title>
+    <meta name="description" content="The ground rules for using Psych Review Hub: free for personal and classroom studying, a study aid with no exam guarantees, and not affiliated with the College Board.">
     <link rel="canonical" href="https://appsychreviewhub.com/terms">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .policy-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: left;
-            margin-top: 20px;
-        }
+        /* Only styles unique to this page live here. The hero, stat tiles and buttons come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-        .policy-container h1 {
-            text-align: left;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
+        .container.policy-main { max-width: 860px; padding: 0 1rem; margin-bottom: 0; text-align: left; }
+        .hero-meta { margin: 0.9rem 0 0; font-size: 0.95rem; color: #5a6670; }
 
-        .policy-container h2 {
-            margin-top: 35px;
-            font-size: 1.25rem;
-            color: var(--primary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
+        .policy-card { background: white; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); padding: 38px 44px 32px; margin-bottom: 28px; }
+        .policy-card h2 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.25; font-weight: 700; color: var(--primary); margin: 2.3rem 0 0.7rem; text-align: left; scroll-margin-top: 90px; }
+        .policy-card h2 .sec-num { color: var(--warm); margin-right: 0.45rem; }
+        .policy-card p, .policy-card li { font-size: 1.05rem; line-height: 1.75; color: #3d4852; }
+        .policy-card p { margin: 0 0 1.1rem; }
+        .policy-card ul { margin: 0 0 1.2rem; padding-left: 1.3rem; }
+        .policy-card li { margin-bottom: 0.55rem; }
+        .policy-card li::marker { color: var(--warm); }
+        .policy-card strong { color: var(--primary); }
+        .policy-card a { color: #2672a8; font-weight: 700; text-decoration: none; }
+        .policy-card a:hover { text-decoration: underline; }
+        .policy-card a.btn-solid, .policy-card a.btn-solid:hover { color: #fff; text-decoration: none; }
+        .policy-card code { background: var(--panel-blue); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
 
-        .policy-container p, .policy-container li {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+        .summary-box { background: var(--panel-blue); border-left: 5px solid var(--accent); border-radius: 10px; padding: 20px 26px 10px; margin: 0 0 26px; }
+        .policy-card .summary-box h2 { font-size: 1.25rem; margin: 0 0 0.7rem; }
+        .policy-card .summary-box li { font-size: 1rem; line-height: 1.65; }
 
-        .policy-container a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .policy-toc { background: #f8fafb; border: 1px solid #e6ecf0; border-radius: 12px; padding: 18px 24px 10px; margin: 0 0 6px; }
+        .policy-card .toc-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--primary); margin: 0 0 8px; }
+        .policy-toc ol { margin: 0 0 8px; padding-left: 1.4rem; columns: 2; column-gap: 32px; }
+        .policy-card .policy-toc li { font-size: 0.98rem; line-height: 1.5; margin-bottom: 6px; break-inside: avoid; }
+        .policy-toc li::marker { color: var(--warm); font-weight: 700; }
 
-        .policy-container a:hover {
-            text-decoration: underline;
-        }
+        .table-wrap { overflow-x: auto; margin: 0 0 1.2rem; border: 1px solid #e6ecf0; border-radius: 12px; }
+        .svc-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 600px; }
+        .svc-table th { text-align: left; background: var(--panel-blue); color: var(--primary); font-weight: 700; padding: 11px 16px; }
+        .svc-table td { padding: 12px 16px; vertical-align: top; border-top: 1px solid #eef2f5; color: #3d4852; line-height: 1.55; }
+        .svc-table td:first-child { font-weight: 700; color: var(--primary); white-space: nowrap; }
 
-        .update-date {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
+        .related { background: var(--panel-blue); border-radius: 12px; padding: 16px 22px; margin: 2.2rem 0 0; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+        .policy-card .related p { margin: 0; font-size: 1rem; }
 
-        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 600px) {
-            .policy-container {
-                padding: 20px; 
-            }
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            .policy-card { padding: 26px 20px 22px; }
+            .policy-card p, .policy-card li { font-size: 1.02rem; }
+            .policy-toc ol { columns: 1; }
         }
     </style>
 </head>
@@ -91,6 +92,8 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
+                    <a href="quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -106,43 +109,106 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="policy-container">
-            <h1>Terms of Use</h1>
-            <div class="update-date">Last Updated: May 2026</div>
-            
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Terms of Use</h1>
+                    <p class="page-lede">The ground rules for using Psych Review Hub: it is free, it is for studying, and it is not affiliated with the College Board.</p>
+                    <p class="hero-meta">Last updated: November 2026</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong>Free</strong><span>For students and classrooms</span></div>
+                    <div class="stat-tile tile-half"><strong>No account</strong><span>Just open and study</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Not affiliated with or endorsed by the College Board</strong></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container policy-main over-hero">
+
+        <article class="policy-card">
+            <div class="summary-box">
+                <h2>The short version</h2>
+                <ul>
+                    <li><strong>Free for studying.</strong> Use the site for personal and classroom studying.</li>
+                    <li><strong>A study aid, not a guarantee.</strong> We work hard to be accurate, but we can't promise any exam result.</li>
+                    <li><strong>Please don't copy or scrape.</strong> The games, code, and databases are not for redistribution without permission.</li>
+                    <li><strong>Not affiliated with the College Board.</strong> AP&reg; is their registered trademark.</li>
+                    <li><strong>Support is voluntary.</strong> Donations are optional and don't unlock anything.</li>
+                </ul>
+            </div>
+
             <p>Welcome to Psych Review Hub! By accessing or using this website, you agree to comply with and be bound by the following Terms of Use. If you do not agree to these terms, please do not use this site.</p>
 
-            <h2>1. Educational Purpose & Disclaimer</h2>
-            <p>Psych Review Hub is designed strictly as a supplementary educational resource to help students study psychology concepts. While we strive to provide accurate and up-to-date information, the use of this site <strong>does not guarantee</strong> any specific grade on exams, including the AP® Psychology Exam.</p>
+            <div class="policy-toc" role="navigation" aria-label="On this page">
+                <p class="toc-title">On this page</p>
+                <ol>
+                    <li><a href="#purpose">Educational Purpose &amp; Disclaimer</a></li>
+                    <li><a href="#warranties">Disclaimer of Warranties &amp; Limitation of Liability</a></li>
+                    <li><a href="#audience">Intended Audience &amp; Supervision</a></li>
+                    <li><a href="#college-board">No Affiliation with the College Board</a></li>
+                    <li><a href="#ip">Intellectual Property</a></li>
+                    <li><a href="#acceptable-use">Acceptable Use</a></li>
+                    <li><a href="#progress">Saved Progress &amp; Changes to the Site</a></li>
+                    <li><a href="#third-party">Third-Party Links &amp; Advertising</a></li>
+                    <li><a href="#support">Voluntary Support</a></li>
+                    <li><a href="#changes">Changes to These Terms</a></li>
+                    <li><a href="#contact">Contact Information</a></li>
+                </ol>
+            </div>
 
-            <h2>2. Disclaimer of Warranties & Limitation of Liability</h2>
+            <h2 id="purpose"><span class="sec-num">1.</span>Educational Purpose &amp; Disclaimer</h2>
+            <p>Psych Review Hub is designed strictly as a supplementary educational resource to help students study psychology concepts. While we strive to provide accurate and up-to-date information, the use of this site <strong>does not guarantee</strong> any specific grade on exams, including the AP&reg; Psychology Exam.</p>
+
+            <h2 id="warranties"><span class="sec-num">2.</span>Disclaimer of Warranties &amp; Limitation of Liability</h2>
             <p>This website and all of its content, tools, and games are provided "as is" and "as available," without warranties of any kind, express or implied. We do not guarantee that the site will be uninterrupted, error-free, or completely accurate. To the fullest extent permitted by law, Psych Review Hub and its creator shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, this website.</p>
 
-            <h2>3. Intended Audience & Supervision</h2>
+            <h2 id="audience"><span class="sec-num">3.</span>Intended Audience &amp; Supervision</h2>
             <p>Psych Review Hub is intended for use by high school and college-level students. Most users will access this site as minors, often through a school-provided device or under school or parental supervision. Users under the age of 18 should have the permission of a parent, guardian, or teacher to use this site, consistent with typical classroom technology use policies.</p>
 
-            <h2>4. No Affiliation with the College Board</h2>
-            <p><strong>AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this product or website.</strong> All references to AP® concepts are for descriptive, educational purposes only.</p>
+            <h2 id="college-board"><span class="sec-num">4.</span>No Affiliation with the College Board</h2>
+            <p><strong>AP&reg; and Advanced Placement&reg; are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this product or website.</strong> All references to AP&reg; concepts are for descriptive, educational purposes only.</p>
 
-            <h2>5. Intellectual Property</h2>
+            <h2 id="ip"><span class="sec-num">5.</span>Intellectual Property</h2>
             <p>All original content, game designs, code structure, and curated study materials on this website are the property of Psych Review Hub. You may use this website freely for personal and classroom studying. However, you may not scrape, copy, redistribute, or commercially exploit the games, code, or databases without explicit permission.</p>
+            <p>Videos and other third-party materials that appear on the site belong to their owners, and are shown under the terms of the services that host them.</p>
 
-            <h2>6. Third-Party Links & Advertising</h2>
-            <p>To keep this site free for students, we use Google AdSense to display advertisements. We may also include links to external websites. Psych Review Hub does not control, endorse, or assume responsibility for the content, privacy policies, or practices of any third-party websites or advertisers. Your interactions with advertisers found on this site are solely between you and the advertiser.</p>
+            <h2 id="acceptable-use"><span class="sec-num">6.</span>Acceptable Use</h2>
+            <p>Please use the site in good faith. You agree not to:</p>
+            <ul>
+                <li>interfere with or disrupt the site or its servers;</li>
+                <li>try to gain unauthorized access to any part of the site;</li>
+                <li>use automated tools to copy the content, games, or data (see Section 5); or</li>
+                <li>use the site for any unlawful purpose.</li>
+            </ul>
 
-            <h2>7. Voluntary Support</h2>
+            <h2 id="progress"><span class="sec-num">7.</span>Saved Progress &amp; Changes to the Site</h2>
+            <p>Features may change, move, or be removed at any time, and the site may occasionally be unavailable. Progress saved in your browser (see our <a href="privacy">Privacy Policy</a>) can be lost if you clear your browser data or if a feature changes, so please do not treat it as a permanent record.</p>
+
+            <h2 id="third-party"><span class="sec-num">8.</span>Third-Party Links &amp; Advertising</h2>
+            <p>To keep this site free for students, we use Google AdSense to display advertisements. We may also include links to external websites. Psych Review Hub does not control, endorse, or assume responsibility for the content, privacy policies, or practices of any third-party websites or advertisers. Your interactions with advertisers found on this site are solely between you and the advertiser. Embedded content, such as YouTube videos, is governed by the terms of its provider.</p>
+
+            <h2 id="support"><span class="sec-num">9.</span>Voluntary Support</h2>
             <p>Any financial contributions made through our "Buy me a bubbl'r / Buy Me a Coffee" link are completely voluntary donations to help cover hosting and development costs. These contributions do not grant you any special privileges, ownership rights, or premium content, and are non-refundable.</p>
 
-            <h2>8. Changes to These Terms</h2>
+            <h2 id="changes"><span class="sec-num">10.</span>Changes to These Terms</h2>
             <p>We reserve the right to modify these Terms of Use at any time. Any changes will be posted on this page with an updated revision date. Your continued use of the site following the posting of changes constitutes your acceptance of those changes.</p>
 
-            <h2>9. Contact Information</h2>
-            <p>If you have any questions about these Terms of Use, or if you spot an error in our study materials, please reach out via our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">feedback form</a>.</p>
-        </div>
-    </div>
+            <h2 id="contact"><span class="sec-num">11.</span>Contact Information</h2>
+            <p>If you have any questions about these Terms of Use, or if you spot an error in our study materials, please reach out via our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank" rel="noopener">feedback form</a>. If you send us suggestions or corrections, you agree that we may use them to improve the site, without any obligation to you.</p>
 
-     <footer>
+            <div class="related">
+                <p>Want to know how information is handled?</p>
+                <a class="btn-solid" href="privacy">Read the Privacy Policy</a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
