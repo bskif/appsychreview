@@ -201,6 +201,17 @@
     </main>
 
     <script>
+        // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+        // shuffle: items tend to stay near where they started. This version gives every
+        // possible ordering the same chance.
+        function shuffleInPlace(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         let allData = [];
         let currentPuzzle = []; 
         let gridItems = []; 
@@ -238,7 +249,9 @@
                         if (sc) sc.textContent = allData.length;
                         if (su) su.textContent = new Set(allData.map(d => d.unit).filter(u => u)).size;
                         populateFilters();
+                        const deepNote = applyDeepLink();
                         loadNewGame();
+                        if (deepNote) showMessage(deepNote, 'info', true);
                     } else {
                         document.getElementById('grid').innerHTML = "<h3 style='grid-column: 1 / -1; color: #e74c3c;'>Could not find 'connections' data in your connections.json file!</h3>";
                     }
@@ -250,6 +263,20 @@
                 console.error("Connections Game Fetch Error:", err);
                 document.getElementById('grid').innerHTML = `<h3 style='grid-column: 1 / -1; color: #e74c3c;'>File Error: Could not load connections.json</h3>`;
             });
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Other pages can open a unit's puzzles directly:  connectionsgame?unit=0  (or unit=Unit 0 / unit=all)
+        // An unknown unit falls back to Mixed Units and says so. Returns a note to show, or null.
+        function applyDeepLink() {
+            const raw = (new URLSearchParams(location.search).get('unit') || '').trim();
+            if (!raw) return null;
+            const sel = document.getElementById('unit-select');
+            const wanted = raw.toLowerCase() === 'all' ? 'all' : (/^\d+$/.test(raw) ? 'Unit ' + raw : raw);
+            sel.value = wanted;
+            if (sel.value === wanted) return null;
+            sel.value = 'all';
+            return "We couldn't find " + raw + ' yet, so mixed units are showing.';
+        }
 
         function populateFilters() {
             // Safely grab units, ignoring missing ones
@@ -286,7 +313,7 @@
             // (identical tiles belonging to different groups can't be solved)
             let picked = null;
             for (let attempt = 0; attempt < 100 && !picked; attempt++) {
-                const candidate = [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
+                const candidate = shuffleInPlace([...pool]).slice(0, 4);
                 const seen = new Set();
                 let clash = false;
                 candidate.forEach(g => (g?.terms || []).forEach(t => {
@@ -296,7 +323,7 @@
                 }));
                 if (!clash) picked = candidate;
             }
-            currentPuzzle = picked || [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
+            currentPuzzle = picked || shuffleInPlace([...pool]).slice(0, 4);
 
             // Prepare grid items safely
             gridItems = [];
@@ -323,7 +350,7 @@
         function shuffleGrid() {
             // Only shuffle unsolved items
             let unsolvedItems = gridItems.filter(item => !solvedGroups.includes(item.groupIndex));
-            unsolvedItems.sort(() => 0.5 - Math.random());
+            shuffleInPlace(unsolvedItems);
 
             // Reconstruct gridItems: solved items first, then shuffled unsolved items
             let newGridItems = [];
