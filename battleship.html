@@ -322,6 +322,17 @@
     </div>
 
     <script>
+    // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+    // shuffle: items tend to stay near where they started. This version gives every
+    // possible ordering the same chance.
+    function shuffleInPlace(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
     // --- CONFIGURATION ---
     const GRID_SIZE = 10;
     const SHIPS = [
@@ -597,7 +608,7 @@
         });
 
         let sameTopicTerms = activeTerms.filter(t => t.topic === correctTerm.topic && t !== correctTerm);
-        sameTopicTerms.sort(() => Math.random() - 0.5);
+        shuffleInPlace(sameTopicTerms);
 
         // 2. Take up to 3 distractors from same topic
         let distractors = freshOnly(sameTopicTerms).slice(0, 3);
@@ -605,14 +616,14 @@
         // 3. Fallback: If topic is small, fill with others from Unit
         if (distractors.length < 3) {
             let otherTerms = activeTerms.filter(t => t.topic !== correctTerm.topic && t !== correctTerm);
-            otherTerms.sort(() => Math.random() - 0.5);
+            shuffleInPlace(otherTerms);
             let needed = 3 - distractors.length;
             distractors = [...distractors, ...freshOnly(otherTerms).slice(0, needed)];
         }
 
         // 4. Combine and Shuffle
         let options = [correctTerm, ...distractors];
-        options.sort(() => Math.random() - 0.5);
+        shuffleInPlace(options);
 
         const container = document.getElementById('q-options');
         container.innerHTML = '';
