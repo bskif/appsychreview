@@ -312,7 +312,7 @@
                         <option value="all">All Topics</option>
                     </select>
 
-                    <div class="sets-note">These are the same "Quick Check" questions found at the bottom of each Study Guide worksheet. Pick the topic you just studied to check your understanding.</div>
+                    <div class="sets-note">These are the same "Quick Check" questions found at the bottom of each Study Guide worksheet. Pick the topic you just studied to check your understanding. Big topics with more than one study guide list each part separately, so you can practice just the worksheet you are working on.</div>
                 </div>
 
                 <div id="sample-setup" style="display:none;">
@@ -531,6 +531,17 @@
     </main>
 
     <script>
+        // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+        // shuffle: items tend to stay near where they started. This version gives every
+        // possible ordering the same chance.
+        function shuffleInPlace(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         let allQuestions = [];
         let allTopics = [];
         let quizQueue = [];
@@ -556,16 +567,21 @@
         function goToSetup() { location.href = location.pathname; }
 
         // What the student is practicing right now (shown above the questions, and used to link back to the study guide)
-        let focusTopic = null;
+        let focusTopic = null, focusPart = '';
         function topicTitle(id) {
             const t = allTopics.find(x => String(x.topic_id) === String(id));
             return t ? (t.topic_title || '') : '';
         }
         function setQuizFocus(kind, unit, topic) {
             const el = document.getElementById('quiz-context');
-            focusTopic = (topic && topic !== 'all') ? topic : null;
+            const sel = parseStudyTopic(topic);
+            focusTopic = (sel.topic && sel.topic !== 'all') ? sel.topic : null;
+            focusPart = focusTopic ? sel.part : '';
             let text = kind;
-            if (focusTopic) {
+            if (focusTopic && focusPart) {
+                const def = studyPartDef(focusTopic, focusPart);
+                text += ' \u00b7 Topic ' + focusTopic + ' \u00b7 Part ' + focusPart.toUpperCase() + (def && def.label ? ': ' + def.label : '');
+            } else if (focusTopic) {
                 const title = topicTitle(focusTopic);
                 text += ' \u00b7 Topic ' + focusTopic + (title ? ': ' + title : '');
             } else if (unit && unit !== 'all') {
@@ -635,8 +651,10 @@
             if (!mode) return;
 
             let unit = unitParam ? (/^\d+$/.test(unitParam) ? 'Unit ' + unitParam : unitParam) : null;
+            const parsedTopic = parseStudyTopic(topicParam);
+            const partParam = (q.get('part') || '').trim().toLowerCase();
             if (topicParam && !unit) {
-                const t = allTopics.find(x => String(x.topic_id) === topicParam);
+                const t = allTopics.find(x => String(x.topic_id) === parsedTopic.topic);
                 if (t) unit = t.unit;
             }
 
@@ -656,14 +674,20 @@
             if (mode === 'individual') {
                 if (unit && !pick('unit-select', unit)) { notes.push("We couldn't find " + unit + ', so all units are showing.'); resolved = false; }
                 handleUnitChange();
-                if (topicParam && !pick('topic-select', topicParam)) { notes.push("We couldn't find Topic " + topicParam + ', so all topics are showing.'); resolved = false; }
+                if (topicParam && !pick('topic-select', parsedTopic.topic)) { notes.push("We couldn't find Topic " + topicParam + ', so all topics are showing.'); resolved = false; }
                 pick('count-select', (q.get('count') || '').toLowerCase());
             } else if (mode === 'studyguide') {
                 if (unit && !pick('studyguide-unit-select', unit)) { resolved = false; }
                 handleStudyGuideUnitChange();
-                if (topicParam && !pick('studyguide-topic-select', topicParam)) {
-                    notes.push('There are no Quick Check questions for Topic ' + topicParam + ' yet. Try the Practice Quiz instead, or pick another topic.');
-                    resolved = false;
+                if (topicParam) {
+                    const wantPart = parsedTopic.part || partParam;
+                    if (!pick('studyguide-topic-select', parsedTopic.topic)) {
+                        notes.push('There are no Quick Check questions for Topic ' + parsedTopic.topic + ' yet. Try the Practice Quiz instead, or pick another topic.');
+                        resolved = false;
+                    } else if (wantPart && !pick('studyguide-topic-select', parsedTopic.topic + wantPart)) {
+                        notes.push("We couldn't find Part " + wantPart.toUpperCase() + ' of Topic ' + parsedTopic.topic + ', so all of its parts are showing.');
+                        resolved = false;
+                    }
                 }
             } else if (mode === 'sets') {
                 if (unit && !pick('sets-unit-select', unit)) {
@@ -720,11 +744,54 @@
         // never breaks Individual Questions, Question Sets, or Sample
         // Questions mode -- the Study Guide tab just won't have data yet.
         let allStudyQuestions = [];
-        fetch('studyquiz.json')
-            .then(res => res.json())
-            .then(data => {
+
+        // Topics whose study guide is split into parts (1.6, 5.4) are described in studyguide-parts.json.
+        // Each part becomes its own entry in the Quick Check topic menu. The file is optional: if it is
+        // missing, every topic simply works as one list, exactly as before.
+        let studyGuideParts = {};
+        function normalizeStudyParts(raw) {
+            const out = {};
+            Object.keys(raw || {}).forEach(k => {
+                if (k.charAt(0) === '_' || !raw[k] || !Array.isArray(raw[k].parts)) return;
+                out[k] = raw[k].parts.map(p => ({
+                    part: String(p.part || '').toLowerCase().trim(),
+                    label: p.label || '',
+                    sections: p.sections || '',
+                    ids: Array.isArray(p.ids) ? p.ids : []
+                })).filter(p => p.part);
+            });
+            return out;
+        }
+        function studyPartDef(topic, part) {
+            return (studyGuideParts[String(topic)] || []).filter(d => d.part === part)[0] || null;
+        }
+        // Which part a question belongs to: its own "part" field if it has one, otherwise its id.
+        function partOfStudyQuestion(q) {
+            const defs = studyGuideParts[String(q.topic)];
+            if (!defs) return '';
+            const own = q.part ? String(q.part).toLowerCase().trim() : '';
+            if (own && defs.some(d => d.part === own)) return own;
+            const id = parseInt(q.id, 10);
+            for (const d of defs) {
+                if (d.ids.some(r => Array.isArray(r) ? (id >= r[0] && id <= r[1]) : id === r)) return d.part;
+            }
+            return '';
+        }
+        // "1.6a" -> { topic: "1.6", part: "a" }   "1.6" -> { topic: "1.6", part: "" }   "all" -> { topic: "all", part: "" }
+        function parseStudyTopic(value) {
+            const m = /^(\d+\.\d+)([a-z])$/i.exec(String(value || ''));
+            return m ? { topic: m[1], part: m[2].toLowerCase() } : { topic: value, part: '' };
+        }
+
+        Promise.all([
+            fetch('studyquiz.json').then(res => res.json()),
+            fetch('studyguide-parts.json').then(res => res.ok ? res.json() : {}).catch(() => ({}))
+        ])
+            .then(([data, partsData]) => {
                 if (data && data.quiz && data.quiz.length > 0) {
                     allStudyQuestions = data.quiz;
+                    studyGuideParts = normalizeStudyParts(partsData);
+                    allStudyQuestions.forEach(q => { q._part = partOfStudyQuestion(q); });
                     populateStudyGuideUnitDropdown();
                     populateStudyGuideTopicDropdown();
                 }
@@ -858,11 +925,20 @@
             const sortedTopics = Array.from(uniqueTopics).sort((a, b) => parseFloat(a) - parseFloat(b));
 
             sortedTopics.forEach(topicId => {
-                const option = document.createElement('option');
-                option.value = topicId;
-                option.textContent = topicTitleLookup[topicId] ? `${topicId} ${topicTitleLookup[topicId]}` : topicId;
-                topicSelect.appendChild(option);
+            const defs = studyGuideParts[topicId] || [];
+            const partsHere = defs.filter(d => relevantQuestions.some(q => String(q.topic) === topicId && q._part === d.part));
+            const option = document.createElement('option');
+            option.value = topicId;
+            const base = topicTitleLookup[topicId] ? `${topicId} ${topicTitleLookup[topicId]}` : topicId;
+            option.textContent = partsHere.length ? `${base} (all parts)` : base;
+            topicSelect.appendChild(option);
+            partsHere.forEach(d => {
+                const po = document.createElement('option');
+                po.value = topicId + d.part;
+                po.textContent = `\u00A0\u00A0\u00A0${topicId}${d.part.toUpperCase()}: ${d.label}`;
+                topicSelect.appendChild(po);
             });
+        });
         }
 
         function handleStudyGuideUnitChange() {
@@ -934,7 +1010,7 @@
                 return;
             }
 
-            pool.sort(() => Math.random() - 0.5);
+            shuffleInPlace(pool);
 
             // LOGIC FOR QUESTION COUNT
             let limit = pool.length; 
@@ -978,7 +1054,7 @@
 
             // Shuffle at the SET level, not the individual-question level,
             // so a set's questions always stay together and in order.
-            matchingSetIds.sort(() => Math.random() - 0.5);
+            shuffleInPlace(matchingSetIds);
 
             let setLimit = matchingSetIds.length;
             if (selectedSetCount !== 'all') {
@@ -1022,7 +1098,8 @@
 
             let pool = allStudyQuestions.filter(q => {
                 const matchUnit = (selectedUnit === 'all') || (q.unit === selectedUnit);
-                const matchTopic = (selectedTopic === 'all') || (q.topic === selectedTopic);
+                const sel = parseStudyTopic(selectedTopic);
+        const matchTopic = (sel.topic === 'all') || (String(q.topic) === sel.topic && (!sel.part || q._part === sel.part));
                 return matchUnit && matchTopic;
             });
 
@@ -1031,7 +1108,7 @@
                 return;
             }
 
-            pool.sort(() => Math.random() - 0.5);
+            shuffleInPlace(pool);
             quizQueue = pool;
             setQuizFocus('Quick Check', selectedUnit, selectedTopic);
 
@@ -1107,7 +1184,7 @@
                 { text: currentQ.options[3], letter: 'D' }
             ];
 
-            optionsList.sort(() => Math.random() - 0.5);
+            shuffleInPlace(optionsList);
 
             optionsList.forEach(opt => {
                 if (!opt.text) return;
@@ -1212,7 +1289,8 @@
                 const a = document.createElement('a');
                 a.className = 'results-link';
                 a.href = 'overviews/topic' + focusTopic;
-                a.textContent = '\uD83D\uDCD6 Re-read the Topic ' + focusTopic + ' study guide';
+                const pdef = focusPart ? studyPartDef(focusTopic, focusPart) : null;
+            a.textContent = '\uD83D\uDCD6 Re-read the Topic ' + focusTopic + ' study guide' + (pdef ? ' (Part ' + focusPart.toUpperCase() + (pdef.sections ? ': ' + pdef.sections : '') + ')' : '');
                 links.appendChild(a);
                 links.style.display = 'block';
             } else {
