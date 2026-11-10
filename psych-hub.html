@@ -2,170 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Daily Psych Challenge Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Psych Challenge Hub - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/psych-hub">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .stats-board, .trophy-case, .archive-section, .rules-section, .schedule-section {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        .stats-board { display: flex; justify-content: space-around; margin-bottom: 10px; }
-        .stat-box { text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent); }
-        .play-hero { text-align: center; margin: 40px 0; }
-        .massive-btn { font-size: 1.5rem; padding: 20px 40px; border-radius: 10px; text-decoration: none; display: inline-block; background-color: var(--accent); color: white;}
-        
-        /* Tooltip CSS for Game Modes */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            background: #e1f5fe; 
-            padding: 8px 12px; 
-            border-radius: 5px; 
-            color: #0277bd; 
-            font-weight: bold;
-            cursor: help;
-        }
+        /* Only styles unique to the daily hub live here. The hero, stat tiles, buttons and tip box come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible, .tooltip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+        .container.hub-main { max-width: 960px; padding: 0 1rem; margin-bottom: 0; }
+
+        /* ===== hero ===== */
+        .today-chip { display: inline-block; background: white; color: var(--primary); font-weight: 600; padding: 7px 16px; border-radius: 20px; margin: 4px 0 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); font-size: 0.97rem; }
+        .today-chip strong { color: #2672a8; }
+        .hub-hero .btn-solid { font-size: 1.15rem; padding: 14px 34px; }
+        #played-message { display: none; color: #1e8449; font-weight: bold; font-size: 1.05rem; line-height: 1.5; margin: 6px 0 0; max-width: 460px; }
+        .hub-hero .hero-stats .stat-tile strong { font-size: 2.1rem; }
+        .local-note { font-size: 0.82rem; color: #55626d; line-height: 1.45; margin: 10px 4px 0; }
+
+        /* ===== cards ===== */
+        .hub-card { background-color: white; padding: 26px 30px 28px; border-radius: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.08); margin-bottom: 28px; }
+        .hub-card h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); margin: 0 0 12px; }
+        .hub-card > p { color: #55626d; line-height: 1.6; margin: 0 0 14px; }
+        .schedule-section { text-align: center; }
+        .schedule-section h2, .schedule-section > p { text-align: center; }
+
+        /* ===== tooltips (work on hover, tap and keyboard focus) ===== */
+        .tooltip { position: relative; display: inline-block; }
+        .mode-chip { background: var(--blue-soft); padding: 9px 16px; border-radius: 22px; color: #2672a8; font-weight: bold; cursor: help; margin: 4px; }
         .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 220px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 10px;
-            position: absolute;
-            z-index: 10;
-            bottom: 130%; /* Position above the badge */
-            left: 50%;
-            margin-left: -110px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.85rem;
-            font-weight: normal;
-            line-height: 1.4;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            pointer-events: none; /* Prevents flickering */
+            visibility: hidden; width: 230px; background-color: #2b3a47; color: #fff; text-align: center; border-radius: 10px; padding: 11px 12px; position: absolute; z-index: 10;
+            bottom: 125%; left: 50%; margin-left: -115px; opacity: 0; transition: opacity 0.25s; font-size: 0.85rem; font-weight: normal; line-height: 1.45;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25); pointer-events: none;
         }
-        /* Little arrow pointing down */
-        .tooltip .tooltiptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #333 transparent transparent transparent;
-        }
-        .tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
+        .tooltip .tooltiptext::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border-width: 6px; border-style: solid; border-color: #2b3a47 transparent transparent transparent; }
+        .tooltip:hover .tooltiptext, .tooltip:focus .tooltiptext, .tooltip:active .tooltiptext { visibility: visible; opacity: 1; }
 
-        /* Scoring Table */
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border-bottom: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f8f9fa; color: var(--primary); }
-        
-        /* Visual Calendar Styles */
-        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .calendar-header button { padding: 5px 15px; cursor: pointer; background-color: var(--primary); color: white; border: none; border-radius: 5px; font-weight:bold;}
+        /* ===== scoring table ===== */
+        .score-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+        .score-table th, .score-table td { border-bottom: 1px solid #e8eef2; padding: 12px 10px; text-align: left; }
+        .score-table th { background-color: var(--panel-blue); color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .score-table td:last-child { font-weight: bold; color: #1e8449; white-space: nowrap; }
+        .score-note { font-size: 0.9rem; color: #6b7b87; margin: 12px 0 0; line-height: 1.5; }
+
+        /* ===== calendar ===== */
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 10px; }
+        .calendar-header h3 { margin: 0; font-family: var(--font-display); font-size: 1.3rem; color: var(--primary); }
+        .calendar-header button { padding: 8px 18px; cursor: pointer; background-color: var(--primary); color: white; border: none; border-radius: 22px; font-weight: bold; margin: 0; }
+        .calendar-header button:disabled { opacity: 0.35; cursor: not-allowed; }
+        .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.9rem; font-weight: bold; margin-bottom: 16px; }
+        .legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+        .legend .lw::before { background: #2ecc71; } .legend .ll::before { background: #e74c3c; } .legend .lp::before { background: #f1c40f; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
-        .day-label { font-weight: bold; color: #666; margin-bottom: 5px; font-size: 0.9rem;}
-        .cal-day { padding: 15px 5px; border-radius: 5px; background-color: #f0f0f0; border: 1px solid #ddd; cursor: pointer; font-weight: bold; transition: transform 0.1s;}
-        .cal-day:hover { transform: scale(1.05); }
+        .day-label { font-weight: bold; color: #7a8a96; margin-bottom: 4px; font-size: 0.85rem; }
+        .cal-day { padding: 14px 4px; border-radius: 8px; background-color: #f1f5f8; border: 1px solid #e3eaef; font-weight: bold; color: #2c3e50; text-decoration: none; display: block; transition: transform 0.1s; }
+        a.cal-day:hover { transform: scale(1.06); background: #e4eef6; }
         .cal-empty { background-color: transparent; border: none; pointer-events: none; }
-        .cal-future { opacity: 0.4; pointer-events: none; }
-        .cal-locked { opacity: 0.4; pointer-events: none; }
-        .cal-win { background-color: #2ecc71; color: white; border-color: #27ae60; }
-        .cal-loss { background-color: #e74c3c; color: white; border-color: #c0392b; }
-        .cal-practice { background-color: #f1c40f; color: #333; border-color: #f39c12; }
-        
-        /* Trophy Case Grid System */
-        .trophy-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px; 
-            text-align: center; 
-            margin-top: 20px;
-        }
-        @media(min-width: 600px) { .trophy-grid { grid-template-columns: repeat(4, 1fr); } }
-        @media(min-width: 900px) { .trophy-grid { grid-template-columns: repeat(7, 1fr); } }
-        
-        .badge-icon {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            transition: all 0.4s ease;
-            margin-bottom: 5px;
-        }
-        .badge-locked {
-            filter: grayscale(100%);
-            opacity: 0.3;
-        }
-        .badge-container { display: flex; flex-direction: column; align-items: center; background: transparent; padding: 0; cursor: help;}
+        .cal-future, .cal-locked { opacity: 0.35; cursor: default; }
+        .cal-win, a.cal-win:hover { background-color: #2ecc71; color: white; border-color: #27ae60; }
+        .cal-loss, a.cal-loss:hover { background-color: #e74c3c; color: white; border-color: #c0392b; }
+        .cal-practice, a.cal-practice:hover { background-color: #f1c40f; color: #333; border-color: #d4ac0d; }
+        .cal-today { box-shadow: 0 0 0 3px var(--accent); }
+
+        /* ===== trophies ===== */
+        .trophy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; text-align: center; margin-top: 20px; }
+        @media (min-width: 600px) { .trophy-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 900px) { .trophy-grid { grid-template-columns: repeat(7, 1fr); } }
+        .badge-icon { width: 80px; height: 80px; object-fit: contain; transition: all 0.4s ease; margin-bottom: 5px; }
+        .badge-locked { filter: grayscale(100%); opacity: 0.3; }
+        .badge-container { display: flex; flex-direction: column; align-items: center; background: transparent; padding: 4px 0; cursor: help; }
         .badge-title { font-size: 0.85rem; font-weight: bold; color: #2c3e50; }
-        
-        /* Widen the tooltip for badge descriptions */
-        .tooltiptext.badge-tooltip { width: 250px; margin-left: -125px; bottom: 110%; }
-
-        /* --- AD PLACEHOLDER (matches site pattern) ---
-           Two slots: one between the scoring table and the archive (well
-           clear of the Play Today button), one at the very bottom. */
-        .ad-banner-outer {
-            width: 90%;
-            max-width: 728px;
-            margin: 30px auto;
-        }
-        .ad-wrapper-banner {
-            width: 100%;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
+        .tooltiptext.badge-tooltip { width: 250px; margin-left: -125px; bottom: 105%; }
+        /* the tooltips of the first and last badge in each row stay inside the screen */
+        .trophy-grid .badge-container:nth-child(2n+1) .tooltiptext { left: 0; margin-left: 0; }
+        .trophy-grid .badge-container:nth-child(2n+1) .tooltiptext::after { left: 40px; }
+        .trophy-grid .badge-container:nth-child(2n) .tooltiptext { left: auto; right: 0; margin-left: 0; }
+        .trophy-grid .badge-container:nth-child(2n) .tooltiptext::after { left: auto; right: 40px; }
+        @media (min-width: 600px) {
+            .trophy-grid .badge-container .tooltiptext, .trophy-grid .badge-container:nth-child(n) .tooltiptext { left: 50%; right: auto; margin-left: -125px; }
+            .trophy-grid .badge-container:nth-child(n) .tooltiptext::after { left: 50%; right: auto; }
         }
 
-        /* Same toggle class as the rest of the site: flip this to show ads sitewide */
-        .ad-under-review {
-            display: none !important;
-        }
+        .hub-tips { margin: 4px auto 28px; max-width: 760px; }
+        .ad-under-review { display: none !important; }
 
-        .study-tips {
-            background-color: #eef5f9;
-            border-left: 4px solid var(--accent);
-            padding: 15px 20px;
-            margin: 30px auto 0;
-            max-width: 650px;
-            width: 90%;
-            border-radius: 4px;
-            text-align: left;
-            color: #444;
-            line-height: 1.6;
+        @media (max-width: 600px) {
+            .hub-hero .hero-stats { display: grid; }
+            .hub-hero .hero-stats .stat-tile strong { font-size: 1.7rem; }
+            .hub-card { padding: 20px 16px 22px; }
+            .score-table th, .score-table td { padding: 10px 6px; font-size: 0.92rem; }
+            .cal-day { padding: 11px 2px; font-size: 0.92rem; }
         }
-        .study-tips h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            color: var(--primary);
-        }
-        .study-tips p {
-            margin-bottom: 0;
-        }
-
     </style>
 </head>
 <body>
-    
+
 <nav>
         <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
         <label for="menu-toggle" class="menu-icon">☰</label>
@@ -191,6 +131,8 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
+                    <a href="quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -205,83 +147,66 @@
             </li>
         </ul>
     </nav>
-    
-    <div class="container">
-        <div class="hero" style="text-align: center; padding: 20px;">
-            <h1>🧠 The Daily Psych Challenge</h1>
-            <p>Come back daily to test your knowledge, keep your streak alive, earn points, and collect badges! Missed a day? Dive into the puzzle archive below to keep your psych skills sharp.</p>
-        </div>
 
-        <div class="schedule-section" style="text-align: center;">
+    <header class="page-hero hub-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>The Daily Psych Challenge</h1>
+                    <p class="page-lede">Come back daily to test your knowledge, keep your streak alive, earn points, and collect badges! Missed a day? Dive into the puzzle archive below to keep your psych skills sharp.</p>
+                    <div class="today-chip">Today: <strong id="today-mode">...</strong></div>
+                    <div>
+                        <a href="psych-game" class="btn-solid" id="play-today-btn">Play Today's Challenge</a>
+                        <p id="played-message">You&#x27;ve already completed today&#x27;s challenge! Come back tomorrow, or scroll down to practice past puzzles in the archive.</p>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="hero-stats">
+                        <div class="stat-tile tile-half"><strong id="hub-points">0</strong><span>Total Points</span></div>
+                        <div class="stat-tile tile-half"><strong id="hub-streak">0</strong><span>Day Streak</span></div>
+                        <div class="stat-tile tile-half"><strong id="hub-best-time">--:--</strong><span>Best Time</span></div>
+                        <div class="stat-tile tile-half"><strong id="hub-badges">0/14</strong><span>Badges</span></div>
+                    </div>
+                    <p class="local-note">⚠️ Heads up! These scores are stored locally on this device. Clearing your browser cache or site data will reset your progress!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container hub-main over-hero">
+
+        <section class="hub-card schedule-section">
             <h2>🗓️ The Daily Game Rotation</h2>
-            <p style="margin-bottom: 15px;">Every day brings a new way to test your AP Psych knowledge! <em>(Hover or tap a mode below to see how to play):</em></p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                
-                <span class="tooltip">Mon & Sat: Psych-Man
-                    <span class="tooltiptext">Classic hangman. Guess the term letter by letter before your brain loses all its health!</span>
-                </span>
-                
-                <span class="tooltip">Tue & Sun: The Distractor
-                    <span class="tooltiptext">A high-speed multiple-choice race. Find the correct term among the fakes before the 20-second clock runs out.</span>
-                </span>
-                
-                <span class="tooltip">Wed: Anagram Scramble
-                    <span class="tooltiptext">The letters are completely jumbled. Unscramble and type the correct term as fast as you can.</span>
-                </span>
-                
-                <span class="tooltip">Thu: Fact or Fiction
-                    <span class="tooltiptext">Sudden death! You have 10 seconds to decide if the term matches the definition shown. One wrong move = game over.</span>
-                </span>
-                
-                <span class="tooltip">Fri: Synapse Snap
-                    <span class="tooltiptext">A memory matching matrix. Find the 4 pairs of terms and definitions. Every mismatch costs you a life!</span>
-                </span>
-
+            <p>Every day brings a new way to test your AP Psych knowledge! <em>(Hover, tap, or tab to a mode to see how to play)</em></p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;">
+                    <span class="tooltip mode-chip" tabindex="0">Mon &amp; Sat: Psych-Man<span class="tooltiptext" role="tooltip">Classic hangman. Guess the term letter by letter before your brain loses all its health!</span></span>
+                    <span class="tooltip mode-chip" tabindex="0">Tue &amp; Sun: The Distractor<span class="tooltiptext" role="tooltip">A high-speed multiple-choice race. Find the correct term among the fakes before the 20-second clock runs out.</span></span>
+                    <span class="tooltip mode-chip" tabindex="0">Wed: Anagram Scramble<span class="tooltiptext" role="tooltip">The letters are completely jumbled. Unscramble and type the correct term as fast as you can.</span></span>
+                    <span class="tooltip mode-chip" tabindex="0">Thu: Fact or Fiction<span class="tooltiptext" role="tooltip">Sudden death! You have 10 seconds to decide if the term matches the definition shown. One wrong move = game over.</span></span>
+                    <span class="tooltip mode-chip" tabindex="0">Fri: Synapse Snap<span class="tooltiptext" role="tooltip">A memory matching matrix. Find the 4 pairs of terms and definitions. Every mismatch costs you a life!</span></span>
             </div>
-        </div>
+        </section>
 
-        <div class="stats-board">
-            <div class="stat-box">
-                <div class="stat-number" id="hub-points">0</div>
-                <div>Total Points</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number" id="hub-streak">0</div>
-                <div>Day Streak</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number" id="hub-best-time">--:--</div>
-                <div>Best Time</div>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <p style="font-size: 0.9rem; color: #e74c3c; font-weight: bold;">⚠️ Heads up! These scores are stored locally on this device. Clearing your browser cache or site data will reset your progress!</p>
-        </div>
-
-        <div class="play-hero">
-            <a href="psych-game" class="massive-btn" id="play-today-btn">Play Today's Challenge</a>
-            <p id="played-message" style="display:none; color: #27ae60; font-weight: bold; margin-top: 15px; font-size:1.2rem;">You've already completed today's challenge! Come back tomorrow, or scroll down to practice past puzzles in the archive.</p>
-        </div>
-
-        <div class="rules-section">
-            <h2>📖 How to Play & Scoring Guide</h2>
-            <p style="margin-bottom: 10px;">Solve the daily puzzle before your brain runs out of health! The challenge resets every night at midnight.</p>
-            <table>
+        <section class="hub-card rules-section">
+            <h2>📖 How to Play &amp; Scoring Guide</h2>
+            <p>Solve the daily puzzle before your brain runs out of health! The challenge resets every night at midnight.</p>
+            <table class="score-table">
                 <tr><th>Action / Achievement</th><th>Points Earned</th></tr>
                 <tr><td><strong>Daily Challenge Win</strong> (Any Game Mode)</td><td>+10 Points</td></tr>
-                <tr><td><strong>Bonus: Perfect Recall</strong> (Did not use hint tool)</td><td>+5 Points</td></tr>
+                <tr><td><strong>Bonus: Perfect Recall</strong> (Did not use hint tool in Psych-Man or Anagram Scramble)</td><td>+5 Points</td></tr>
                 <tr><td><strong>Bonus: Flawless Score</strong> (0 lives lost)</td><td>+5 Points</td></tr>
-                <tr><td><strong>Bonus: Lightning Speed</strong> (Solved under 45 seconds)</td><td>+5 Points</td></tr>
+                <tr><td><strong>Bonus: Lightning Speed</strong> (Solved in 45 seconds or less)</td><td>+5 Points</td></tr>
+                <tr><td><strong>Bonus: No Peek</strong> (Synapse Snap without using Free Peek)</td><td>+5 Points</td></tr>
                 <tr><td><strong>Challenge Loss</strong></td><td>0 Points</td></tr>
-                <tr><td><strong>7-Day Streak</strong></td><td>+20 Points</td></tr>
+                <tr><td><strong>7-Day Streak</strong> (every 7th consecutive day)</td><td>+20 Points</td></tr>
                 <tr><td><strong>Unlock a Trophy Badge</strong></td><td>+25 Points</td></tr>
             </table>
-        </div>
+            <p class="score-note">Your streak counts every day you play, win or lose. Miss a whole day and it starts over.</p>
+        </section>
 
-        <div class="study-tips">
+        <div class="tip-box hub-tips">
             <h3>💡 Getting the Most Out of the Daily Challenge</h3>
-            <p>The daily habit is where this page really earns its keep &mdash; each puzzle only takes a minute or two, but showing up for it consistently is what builds streaks and, more importantly, keeps low-stakes retrieval practice part of your routine instead of only cramming before a test. Puzzles roughly follow the pace of a typical AP Psych school year, moving through units in order as the year progresses and mixing in review questions over breaks and summer, so what you see here should generally line up with what you're covering in class. Miss a day or fall behind? The Practice Archive below lets you replay any puzzle from the last 90 days in Practice Mode; it won't count for streak or points, but the review value is exactly the same. Don't skip past the Trophy Case tooltips either &mdash; every badge is actually named after a real psychology concept (Miller's Law, Long-Term Potentiation, Signal Detection Theory, and more), so hovering to read what each one references is a quick, painless way to pick up extra vocabulary along the way.</p>
+            <p>The daily habit is where this page really earns its keep: each puzzle only takes a minute or two, but showing up for it consistently is what builds streaks and, more importantly, keeps low-stakes retrieval practice part of your routine instead of only cramming before a test. Puzzles roughly follow the pace of a typical AP Psych school year, moving through units in order as the year progresses and mixing in review questions over breaks and summer, so what you see here should generally line up with what you're covering in class. Miss a day or fall behind? The Practice Archive below lets you replay any puzzle from the last 90 days in Practice Mode; it won't count for streak or points, but the review value is exactly the same. Don't skip past the Trophy Case tooltips either: every badge is actually named after a real psychology concept (Miller's Law, Long-Term Potentiation, Signal Detection Theory, and more), so hovering to read what each one references is a quick, painless way to pick up extra vocabulary along the way.</p>
         </div>
 
         <div class="ad-banner-outer ad-under-review">
@@ -291,106 +216,100 @@
             </div>
         </div>
 
-        <div class="archive-section">
+        <section class="hub-card archive-section" id="archive">
             <h2>📅 Practice Archive</h2>
-            <p style="margin-bottom: 15px;">Click a past date to replay it in Practice Mode (0 Points). <br>
-            <strong style="color:#2ecc71;">Green = Won</strong> | <strong style="color:#e74c3c;">Red = Lost</strong> | <strong style="color:#f1c40f;">Yellow = Practice Only</strong></p>
-            
+            <p>Click a past date to replay it in Practice Mode (0 Points).</p>
+            <div class="legend"><span class="lw">Won</span><span class="ll">Lost</span><span class="lp">Practice Only</span></div>
+
             <div class="calendar-header">
                 <button id="cal-prev-btn" onclick="changeMonth(-1)">&#9664; Prev</button>
-                <h3 id="month-name" style="margin: 0;">Month Year</h3>
-                <button onclick="changeMonth(1)">Next &#9654;</button>
+                <h3 id="month-name">Month Year</h3>
+                <button id="cal-next-btn" onclick="changeMonth(1)">Next &#9654;</button>
             </div>
-            
-            <div class="calendar-grid">
+
+            <div class="calendar-grid" aria-hidden="true">
                 <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
                 <div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div><div class="day-label">Sat</div>
             </div>
-            <div class="calendar-grid" id="calendar-days">
-                </div>
-        </div>
+            <div class="calendar-grid" id="calendar-days"></div>
+        </section>
 
-        <div class="trophy-case">
+        <section class="hub-card trophy-case">
             <h2>🏆 Trophy Case</h2>
             <div class="trophy-grid" id="trophy-grid">
-                
-                <div class="tooltip badge-container">
-                    <img src="images/mlbadge.png" id="badge-millers-law" class="badge-icon badge-locked" alt="Miller's Law">
-                    <div class="badge-title">Miller's Law</div>
-                    <span class="tooltiptext badge-tooltip">Awarded for maintaining a 7-day daily puzzle playing habit. This honors George Miller's discovery that human short-term memory capacity is typically limited to holding 7 ± 2 items at a time.</span>
+                <div class="tooltip badge-container" tabindex="0">
+                    <img src="images/mlbadge.png" id="badge-millers-law" class="badge-icon badge-locked" alt="Miller&#x27;s Law">
+                    <div class="badge-title">Miller&#x27;s Law</div>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Awarded for maintaining a 7-day daily puzzle playing habit. This honors George Miller&#x27;s discovery that human short-term memory capacity is typically limited to holding 7 ± 2 items at a time.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/ltpbadge.png" id="badge-ltp" class="badge-icon badge-locked" alt="Long-Term Potentiation">
                     <div class="badge-title">LTP</div>
-                    <span class="tooltiptext badge-tooltip">Unlocked after achieving a massive 14-day daily winning streak. It connects to the neuroscientific process where repetitive cellular activity permanently strengthens the synaptic pathways between neurons.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Unlocked after achieving a massive 14-day daily winning streak. It connects to the neuroscientific process where repetitive cellular activity permanently strengthens the synaptic pathways between neurons.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/crbadge.png" id="badge-cr" class="badge-icon badge-locked" alt="Continuous Reinforcement">
                     <div class="badge-title">Continuous Reinf.</div>
-                    <span class="tooltiptext badge-tooltip">Awarded for completing a solid month of 30 consecutive days of site activity. This represents B.F. Skinner’s operant conditioning schedule where a target behavior is rewarded every single time it occurs.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Awarded for completing a solid month of 30 consecutive days of site activity. This represents B.F. Skinner’s operant conditioning schedule where a target behavior is rewarded every single time it occurs.</span>
                 </div>
-
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/atbadge.png" id="badge-at" class="badge-icon badge-locked" alt="Absolute Threshold">
                     <div class="badge-title">Absolute Threshold</div>
-                    <span class="tooltiptext badge-tooltip">Earned upon reaching your first 50 total accumulated points. It references the psychological boundary where a faint stimulus transitions from imperceptible to actively detectable at least 50% of the time.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned upon reaching your first 50 total accumulated points. It references the psychological boundary where a faint stimulus transitions from imperceptible to actively detectable at least 50% of the time.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/cibadge.png" id="badge-ci" class="badge-icon badge-locked" alt="Crystallized Intelligence">
                     <div class="badge-title">Crystallized Intel.</div>
-                    <span class="tooltiptext badge-tooltip">Earned upon reaching a cumulative lifetime score of 250 total points. This connects to Raymond Cattell's concept of cognitive knowledge, vocabulary, and skills accumulated through a lifetime.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned upon reaching a cumulative lifetime score of 250 total points. This connects to Raymond Cattell&#x27;s concept of cognitive knowledge, vocabulary, and skills accumulated through a lifetime.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/sabadge.png" id="badge-sa" class="badge-icon badge-locked" alt="Self-Actualization">
                     <div class="badge-title">Self-Actualization</div>
-                    <span class="tooltiptext badge-tooltip">Unlocked when you reach the ultimate milestone of 500 total points. It represents the absolute pinnacle of Maslow's Hierarchy of Needs, where an individual fulfills their highest psychological potential.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Unlocked when you reach the ultimate milestone of 500 total points. It represents the absolute pinnacle of Maslow&#x27;s Hierarchy of Needs, where an individual fulfills their highest psychological potential.</span>
                 </div>
-
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/apbadge.png" id="badge-ap" class="badge-icon badge-locked" alt="Action Potential">
                     <div class="badge-title">Action Potential</div>
-                    <span class="tooltiptext badge-tooltip">Earned by solving any daily puzzle in under 15 seconds. This rapid processing speed mirrors the brief, all-or-nothing electrical impulse that fires down an axon to transmit neural data.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by solving any daily puzzle in under 15 seconds. This rapid processing speed mirrors the brief, all-or-nothing electrical impulse that fires down an axon to transmit neural data.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/autoprocessbadge.png" id="badge-auto" class="badge-icon badge-locked" alt="Automatic Processing">
                     <div class="badge-title">Automatic Process</div>
-                    <span class="tooltiptext badge-tooltip">Earned by accumulating 10 speed bonuses over your historical gameplay. This references the cognitive phenomenon of effortlessly and unconsciously encoding everyday information without active mental strain.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by accumulating 10 speed bonuses over your historical gameplay. This references the cognitive phenomenon of effortlessly and unconsciously encoding everyday information without active mental strain.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/dpbadge.png" id="badge-dp" class="badge-icon badge-locked" alt="Distributed Practice">
                     <div class="badge-title">Distributed Practice</div>
-                    <span class="tooltiptext badge-tooltip">Awarded for playing an archive game on the same day you complete a daily challenge. This utilizes the spacing effect, a proven learning principle showing that breaking up practice over time vastly improves retention.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Awarded for playing an archive game on the same day you complete a daily challenge. This utilizes the spacing effect, a proven learning principle showing that breaking up practice over time vastly improves retention.</span>
                 </div>
-
-                <div class="tooltip badge-container">
-                    <img src="images/bcbadge.png" id="badge-bc" class="badge-icon badge-locked" alt="Broca's Champion">
-                    <div class="badge-title">Broca's Champion</div>
-                    <span class="tooltiptext badge-tooltip">Earned by successfully solving an Anagram Scramble puzzle of 10 or more letters without making a mistake. It honors Broca's area, dedicated to language assembly and fluent speech production.</span>
+                <div class="tooltip badge-container" tabindex="0">
+                    <img src="images/bcbadge.png" id="badge-bc" class="badge-icon badge-locked" alt="Broca&#x27;s Champion">
+                    <div class="badge-title">Broca&#x27;s Champion</div>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by successfully solving an Anagram Scramble puzzle of 10 or more letters without making a mistake. It honors Broca&#x27;s area, dedicated to language assembly and fluent speech production.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/sdbadge.png" id="badge-sd" class="badge-icon badge-locked" alt="Signal Detection">
                     <div class="badge-title">Signal Detection</div>
-                    <span class="tooltiptext badge-tooltip">Earned by correctly solving a Fact or Fiction puzzle in 2 seconds or less. This connects to Signal Detection Theory, which explains how the mind separates meaningful target stimuli from confusing background noise.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by correctly solving a Fact or Fiction puzzle in 2 seconds or less. This connects to Signal Detection Theory, which explains how the mind separates meaningful target stimuli from confusing background noise.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/pgbadge.png" id="badge-pg" class="badge-icon badge-locked" alt="Phineas Gage">
                     <div class="badge-title">Phineas Gage</div>
-                    <span class="tooltiptext badge-tooltip">Awarded for winning a game of Psych-Man while down to your very last remaining brain part. This commemorates psychology's most famous medical history anomaly regarding frontal lobe damage.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Awarded for winning a game of Psych-Man while down to your very last remaining brain part. This commemorates psychology&#x27;s most famous medical history anomaly regarding frontal lobe damage.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/selectattentionbadge.png" id="badge-sa-attn" class="badge-icon badge-locked" alt="Selective Attention">
                     <div class="badge-title">Selective Attention</div>
-                    <span class="tooltiptext badge-tooltip">Earned by correctly solving a Distractor puzzle in 2 seconds or less. This represents the mental faculty required to lock onto a single stream of information while filtering out irrelevant environmental noise.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by correctly solving a Distractor puzzle in 2 seconds or less. This represents the mental faculty required to lock onto a single stream of information while filtering out irrelevant environmental noise.</span>
                 </div>
-                <div class="tooltip badge-container">
+                <div class="tooltip badge-container" tabindex="0">
                     <img src="images/hhbadge.png" id="badge-hh" class="badge-icon badge-locked" alt="Hippocampal Hero">
                     <div class="badge-title">Hippocampal Hero</div>
-                    <span class="tooltiptext badge-tooltip">Earned by completing a game of Synapse Snap with one or fewer mismatched flips. It is named after the hippocampus, the critical brain structure responsible for processing explicit long-term memories.</span>
+                    <span class="tooltiptext badge-tooltip" role="tooltip">Earned by completing a game of Synapse Snap with one or fewer mismatched flips. It is named after the hippocampus, the critical brain structure responsible for processing explicit long-term memories.</span>
                 </div>
-
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <div class="ad-banner-outer ad-under-review">
         <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
@@ -399,7 +318,7 @@
         </div>
     </div>
 
-     <footer>
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
@@ -422,130 +341,149 @@
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <script>
-        // --- 1. STATS & BADGES ---
-        function loadHubData() {
-            let points = localStorage.getItem('psychPoints') || 0;
-            let streak = localStorage.getItem('psychStreak') || 0;
-            let lastPlayed = localStorage.getItem('psychLastPlayed') || "";
-            let bestTime = localStorage.getItem('psychBestTime'); 
+// =====================================================================
+//  Daily Psych Challenge: hub page
+//  Reads the same localStorage keys the game writes, so existing progress carries over.
+// =====================================================================
 
-            document.getElementById('hub-points').innerText = points;
-            document.getElementById('hub-streak').innerText = streak;
+// Keep in sync with MAX_PRACTICE_LOOKBACK_DAYS in psych-game
+const MAX_LOOKBACK_DAYS = 90;
+const MODES = ["The Distractor", "Psych-Man", "The Distractor", "Anagram Scramble", "Fact or Fiction", "Synapse Snap", "Psych-Man"];   // Sun..Sat
+const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-            if (bestTime) {
-                let seconds = parseInt(bestTime);
-                let displayM = String(Math.floor(seconds / 60)).padStart(2, '0');
-                let displayS = String(seconds % 60).padStart(2, '0');
-                document.getElementById('hub-best-time').innerText = `${displayM}:${displayS}`;
+// A blocked or corrupted localStorage must never break the page
+const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+    getInt(k, d) { const n = parseInt(this.get(k, d), 10); return isNaN(n) ? d : n; },
+    getJSON(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return (v === null || v === undefined) ? d : v; } catch (e) { return d; } }
+};
+
+const $ = id => document.getElementById(id);
+const pad2 = n => String(n).padStart(2, '0');
+const fmt = d => d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+
+// ---------- 1. stats, streak, badges ----------
+function loadHubData() {
+    const today = new Date();
+    const todayStr = fmt(today);
+    const yesterday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
+    const yesterdayStr = fmt(yesterday);
+
+    const points = store.getInt('psychPoints', 0);
+    const lastPlayed = store.get('psychLastPlayed', "");
+    let streak = store.getInt('psychStreak', 0);
+
+    // The saved streak only updates when you next play, so show what's TRUE today:
+    // still alive only if you played today or yesterday.
+    if (lastPlayed !== todayStr && lastPlayed !== yesterdayStr) streak = 0;
+
+    $('hub-points').innerText = points;
+    $('hub-streak').innerText = streak;
+
+    const bestTime = store.get('psychBestTime', null);
+    if (bestTime !== null && !isNaN(parseInt(bestTime, 10))) {
+        const seconds = parseInt(bestTime, 10);
+        $('hub-best-time').innerText = `${pad2(Math.floor(seconds / 60))}:${pad2(seconds % 60)}`;
+    }
+
+    // Badges
+    const unlocked = store.getJSON('psychBadges', []);
+    if (Array.isArray(unlocked)) {
+        unlocked.forEach(badgeId => {
+            const img = document.getElementById(badgeId);
+            if (img && img.classList.contains('badge-icon')) {
+                img.classList.remove('badge-locked');
+                img.closest('.badge-container').classList.add('earned');
             }
+        });
+    }
+    const total = document.querySelectorAll('.badge-icon').length;
+    $('hub-badges').innerText = `${document.querySelectorAll('.badge-icon:not(.badge-locked)').length}/${total}`;
 
-            const today = new Date();
-            const todayStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
-            
-            if (lastPlayed === todayStr) {
-                document.getElementById('play-today-btn').style.display = 'none';
-                document.getElementById('played-message').style.display = 'block';
-            }
+    // Today's game + play button
+    $('today-mode').innerText = `${DAY_NAMES[today.getDay()]}: ${MODES[today.getDay()]}`;
+    if (lastPlayed === todayStr) {
+        $('play-today-btn').style.display = 'none';
+        $('played-message').style.display = 'block';
+    }
 
-            // Unlock Badges Visually
-            let unlockedBadges = JSON.parse(localStorage.getItem('psychBadges')) || [];
-            unlockedBadges.forEach(badgeId => {
-                let img = document.getElementById(badgeId);
-                if(img) img.classList.remove('badge-locked');
-            });
-            
-            renderCalendar();
+    calYear = today.getFullYear();
+    calMonth = today.getMonth();
+    renderCalendar();
+}
+
+// ---------- 2. practice archive calendar ----------
+let calYear = new Date().getFullYear();
+let calMonth = new Date().getMonth();
+
+function cutoffDate() {
+    const c = new Date();
+    c.setDate(c.getDate() - MAX_LOOKBACK_DAYS);
+    c.setHours(0, 0, 0, 0);
+    return c;
+}
+
+function changeMonth(dir) {
+    // Always step from the 1st of the month. Stepping from "today" skipped or repeated months on
+    // the 29th-31st (e.g. on Oct 31, "previous month" landed back on October).
+    const proposed = new Date(calYear, calMonth + dir, 1);
+    const cutoff = cutoffDate();
+    const now = new Date();
+    const earliest = new Date(cutoff.getFullYear(), cutoff.getMonth(), 1);
+    const latest = new Date(now.getFullYear(), now.getMonth(), 1);
+    if (proposed < earliest || proposed > latest) return;
+    calYear = proposed.getFullYear();
+    calMonth = proposed.getMonth();
+    renderCalendar();
+}
+
+function renderCalendar() {
+    const history = store.getJSON('psychHistory', {});
+    const year = calYear, month = calMonth;
+    $('month-name').innerText = `${MONTH_NAMES[month]} ${year}`;
+
+    const now = new Date();
+    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const cutoff = cutoffDate();
+
+    const earliest = new Date(cutoff.getFullYear(), cutoff.getMonth(), 1);
+    const latest = new Date(now.getFullYear(), now.getMonth(), 1);
+    const here = new Date(year, month, 1);
+    $('cal-prev-btn').disabled = here <= earliest;
+    $('cal-next-btn').disabled = here >= latest;
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    let html = "";
+    for (let i = 0; i < firstDay; i++) html += `<div class="cal-day cal-empty"></div>`;
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const cellDate = new Date(year, month, day);
+        const fullDateStr = year + '-' + pad2(month + 1) + '-' + pad2(day);
+        const status = history[fullDateStr];
+        const isToday = cellDate.getTime() === todayStart.getTime();
+        const label = `${MONTH_NAMES[month]} ${day}` + (status === 'win' ? ', won' : status === 'loss' ? ', lost' : status === 'practice' ? ', practiced' : '');
+
+        if (cellDate > todayStart) {
+            html += `<span class="cal-day cal-future" aria-hidden="true">${day}</span>`;
+        } else if (cellDate < cutoff) {
+            html += `<span class="cal-day cal-locked" title="Practice mode only covers the last ${MAX_LOOKBACK_DAYS} days">${day}</span>`;
+        } else {
+            let extra = "";
+            if (status === "win") extra = " cal-win";
+            else if (status === "loss") extra = " cal-loss";
+            else if (status === "practice") extra = " cal-practice";
+            if (isToday) extra += " cal-today";
+            html += `<a class="cal-day${extra}" href="psych-game?date=${fullDateStr}" aria-label="${label}">${day}</a>`;
         }
+    }
+    $('calendar-days').innerHTML = html;
+}
 
-        // --- 2. VISUAL CALENDAR LOGIC ---
-        let currentCalDate = new Date(); 
-        // Keep this in sync with MAX_PRACTICE_LOOKBACK_DAYS in psych-game
-        const MAX_LOOKBACK_DAYS = 90;
+window.onload = loadHubData;
 
-        function changeMonth(dir) {
-            const proposed = new Date(currentCalDate);
-            proposed.setMonth(proposed.getMonth() + dir);
-
-            if (dir < 0) {
-                const cutoffDate = new Date();
-                cutoffDate.setDate(cutoffDate.getDate() - MAX_LOOKBACK_DAYS);
-                const beforeCutoff = proposed.getFullYear() < cutoffDate.getFullYear() ||
-                    (proposed.getFullYear() === cutoffDate.getFullYear() && proposed.getMonth() < cutoffDate.getMonth());
-                if (beforeCutoff) return; // Already at the earliest navigable month
-            }
-
-            currentCalDate = proposed;
-            renderCalendar();
-        }
-
-        function renderCalendar() {
-            const history = JSON.parse(localStorage.getItem('psychHistory')) || {};
-            const year = currentCalDate.getFullYear();
-            const month = currentCalDate.getMonth();
-            
-            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            document.getElementById('month-name').innerText = `${monthNames[month]} ${year}`;
-
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            
-            const today = new Date();
-            const cutoffDate = new Date();
-            cutoffDate.setDate(cutoffDate.getDate() - MAX_LOOKBACK_DAYS);
-            cutoffDate.setHours(0, 0, 0, 0);
-
-            const prevBtn = document.getElementById('cal-prev-btn');
-            if (prevBtn) {
-                const atCutoffMonth = (year < cutoffDate.getFullYear()) ||
-                    (year === cutoffDate.getFullYear() && month <= cutoffDate.getMonth());
-                prevBtn.disabled = atCutoffMonth;
-                prevBtn.style.opacity = atCutoffMonth ? '0.4' : '1';
-                prevBtn.style.cursor = atCutoffMonth ? 'not-allowed' : 'pointer';
-            }
-
-            const calDiv = document.getElementById('calendar-days');
-            calDiv.innerHTML = ""; 
-
-            for (let i = 0; i < firstDay; i++) {
-                calDiv.innerHTML += `<div class="cal-day cal-empty"></div>`;
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                let cellDate = new Date(year, month, day);
-                let isFuture = cellDate > today;
-                let isTooOld = cellDate < cutoffDate;
-                
-                // MM-DD still drives the puzzle-content URL param
-                let dateStr = String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
-                
-                // Full year-aware date: history is now keyed on this, so a
-                // day's completion status doesn't collide with the same
-                // calendar date in a different year.
-                let fullDateStr = year + '-' + dateStr;
-                
-                let extraClass = "";
-                let clickAction = `onclick="window.location.href='psych-game?date=${fullDateStr}'"`;
-                
-                if (isFuture) {
-                    extraClass = "cal-future";
-                    clickAction = ""; 
-                } else if (isTooOld) {
-                    // Beyond the practice lookback window (see psych-game)
-                    extraClass = "cal-locked";
-                    clickAction = "";
-                } else if (history[fullDateStr] === "win") {
-                    extraClass = "cal-win";
-                } else if (history[fullDateStr] === "loss") {
-                    extraClass = "cal-loss";
-                } else if (history[fullDateStr] === "practice") {
-                    extraClass = "cal-practice"; // Highlights yellow
-                }
-
-                calDiv.innerHTML += `<div class="cal-day ${extraClass}" ${clickAction}>${day}</div>`;
-            }
-        }
-
-        window.onload = loadHubData;
     </script>
 </body>
 </html>
