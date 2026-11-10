@@ -109,6 +109,7 @@ a:focus-visible, summary:focus-visible {
 .notes-actions { display: flex; flex-direction: column; gap: 8px; }
 .notes-group-label { font-weight: bold; font-size: 0.88rem; color: var(--primary); margin: 12px 0 6px; }
 .notes-group-label:first-of-type { margin-top: 0; }
+.notes-group-label .notes-group-sub { display: block; font-weight: normal; font-size: 0.8rem; color: #666; margin-top: 2px; line-height: 1.35; }
 .notes-actions.row { flex-direction: row; }
 .notes-actions.row a { flex: 1; padding: 9px 8px; font-size: 0.92rem; }
 .notes-card .notes-fine {
