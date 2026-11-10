@@ -2,64 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Psych Review Hub</title>
+    <meta name="description" content="How Psych Review Hub handles information: no accounts, privacy-first analytics, Google ads, and progress saved only on your own device.">
     <link rel="canonical" href="https://appsychreviewhub.com/privacy">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
-        .policy-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: left;
-            margin-top: 20px;
-        }
+        /* Only styles unique to this page live here. The hero, stat tiles and buttons come from the shared style.css. */
+        html { scroll-behavior: smooth; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-        .policy-container h1 {
-            text-align: left;
-            margin-bottom: 20px;
-        }
+        .container.policy-main { max-width: 860px; padding: 0 1rem; margin-bottom: 0; text-align: left; }
+        .hero-meta { margin: 0.9rem 0 0; font-size: 0.95rem; color: #5a6670; }
 
-        .policy-container h2 {
-            margin-top: 30px;
-            font-size: 1.3rem;
-            color: var(--primary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
+        .policy-card { background: white; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); padding: 38px 44px 32px; margin-bottom: 28px; }
+        .policy-card h2 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.25; font-weight: 700; color: var(--primary); margin: 2.3rem 0 0.7rem; text-align: left; scroll-margin-top: 90px; }
+        .policy-card h2 .sec-num { color: var(--warm); margin-right: 0.45rem; }
+        .policy-card p, .policy-card li { font-size: 1.05rem; line-height: 1.75; color: #3d4852; }
+        .policy-card p { margin: 0 0 1.1rem; }
+        .policy-card ul { margin: 0 0 1.2rem; padding-left: 1.3rem; }
+        .policy-card li { margin-bottom: 0.55rem; }
+        .policy-card li::marker { color: var(--warm); }
+        .policy-card strong { color: var(--primary); }
+        .policy-card a { color: #2672a8; font-weight: 700; text-decoration: none; }
+        .policy-card a:hover { text-decoration: underline; }
+        .policy-card a.btn-solid, .policy-card a.btn-solid:hover { color: #fff; text-decoration: none; }
+        .policy-card code { background: var(--panel-blue); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
 
-        .policy-container p, .policy-container li {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+        .summary-box { background: var(--panel-blue); border-left: 5px solid var(--accent); border-radius: 10px; padding: 20px 26px 10px; margin: 0 0 26px; }
+        .policy-card .summary-box h2 { font-size: 1.25rem; margin: 0 0 0.7rem; }
+        .policy-card .summary-box li { font-size: 1rem; line-height: 1.65; }
 
-        .policy-container a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .policy-toc { background: #f8fafb; border: 1px solid #e6ecf0; border-radius: 12px; padding: 18px 24px 10px; margin: 0 0 6px; }
+        .policy-card .toc-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--primary); margin: 0 0 8px; }
+        .policy-toc ol { margin: 0 0 8px; padding-left: 1.4rem; columns: 2; column-gap: 32px; }
+        .policy-card .policy-toc li { font-size: 0.98rem; line-height: 1.5; margin-bottom: 6px; break-inside: avoid; }
+        .policy-toc li::marker { color: var(--warm); font-weight: 700; }
 
-        .policy-container a:hover {
-            text-decoration: underline;
-        }
+        .table-wrap { overflow-x: auto; margin: 0 0 1.2rem; border: 1px solid #e6ecf0; border-radius: 12px; }
+        .svc-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 600px; }
+        .svc-table th { text-align: left; background: var(--panel-blue); color: var(--primary); font-weight: 700; padding: 11px 16px; }
+        .svc-table td { padding: 12px 16px; vertical-align: top; border-top: 1px solid #eef2f5; color: #3d4852; line-height: 1.55; }
+        .svc-table td:first-child { font-weight: 700; color: var(--primary); white-space: nowrap; }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        .related { background: var(--panel-blue); border-radius: 12px; padding: 16px 22px; margin: 2.2rem 0 0; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+        .policy-card .related p { margin: 0; font-size: 1rem; }
+
         @media (max-width: 600px) {
-            .policy-container {
-                padding: 20px; /* Reduces padding so text isn't squished on phones */
-            }
+            .page-hero .hero-stats { display: none; }
+            .page-hero { padding-bottom: 64px; }
+            .policy-card { padding: 26px 20px 22px; }
+            .policy-card p, .policy-card li { font-size: 1.02rem; }
+            .policy-toc ol { columns: 1; }
         }
     </style>
 </head>
 <body>
 
- <nav>
+<nav>
         <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
         <label for="menu-toggle" class="menu-icon">☰</label>
         <input type="checkbox" id="menu-toggle">
@@ -84,6 +92,8 @@
                     <a href="battleship">Cortex Commander</a>
                     <a href="oddball">Oddball</a>
                     <a href="wordsearch">Word Search</a>
+                    <a href="crossword">Crossword</a>
+                    <a href="quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -98,39 +108,128 @@
             </li>
         </ul>
     </nav>
-    
-    <div class="container">
-        <div class="policy-container">
-            <h1>Privacy Policy</h1>
-            <p><strong>Last Updated:</strong> May 2026</p>
+
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-grid">
+                <div>
+                    <h1>Privacy Policy</h1>
+                    <p class="page-lede">Psych Review Hub is free to use and has no accounts. This page explains, in plain language, what information is and is not collected when you use the site.</p>
+                    <p class="hero-meta">Last updated: November 2026</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-tile tile-half"><strong>No accounts</strong><span>No sign-up needed</span></div>
+                    <div class="stat-tile tile-half"><strong>No cookies</strong><span>Set by our own pages</span></div>
+                    <div class="stat-tile tile-wide tile-note"><strong>Your game progress stays on your own device</strong></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container policy-main over-hero">
+
+        <article class="policy-card">
+            <div class="summary-box">
+                <h2>The short version</h2>
+                <ul>
+                    <li><strong>No accounts.</strong> We never ask for your name, email address, or any other personal information.</li>
+                    <li><strong>Privacy-first analytics.</strong> We count visits with Simple Analytics, which uses no cookies and collects no personally identifiable information.</li>
+                    <li><strong>Ads come from Google.</strong> Google and its partners may use cookies to show ads, and you can opt out of personalized ads.</li>
+                    <li><strong>Your progress stays with you.</strong> Daily Puzzle and Piece of Mind progress is saved only in your own browser. We never receive it.</li>
+                    <li><strong>A few outside services</strong> (fonts, YouTube videos, a support button) load on our pages. Section 5 lists them.</li>
+                </ul>
+            </div>
+
             <p>Welcome to Psych Review Hub. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.</p>
 
-            <h2>1. Website Analytics</h2>
-            <p>We use Simple Analytics to understand how visitors interact with our site. Simple Analytics is a privacy-first tool that does <strong>not</strong> use cookies and does <strong>not</strong> collect any personally identifiable information (PII). We use this data strictly to improve our educational tools and website performance.</p>
+            <div class="policy-toc" role="navigation" aria-label="On this page">
+                <p class="toc-title">On this page</p>
+                <ol>
+                    <li><a href="#collect">Information We Do and Do Not Collect</a></li>
+                    <li><a href="#analytics">Website Analytics</a></li>
+                    <li><a href="#ads">Advertising and Cookies</a></li>
+                    <li><a href="#storage">Local Storage and Game Progress</a></li>
+                    <li><a href="#services">Other Third-Party Services</a></li>
+                    <li><a href="#links">External Links</a></li>
+                    <li><a href="#children">Children's Privacy</a></li>
+                    <li><a href="#choices">Your Choices</a></li>
+                    <li><a href="#changes">Changes to This Privacy Policy</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ol>
+            </div>
 
-            <h2>2. Advertising and Cookies</h2>
+            <h2 id="collect"><span class="sec-num">1.</span>Information We Do and Do Not Collect</h2>
+            <p>Psych Review Hub has no accounts, logins, or sign-up forms. We do not ask for, and do not store, your name, email address, school, age, or any other personal information. We do not sell information, and we do not build profiles of individual visitors.</p>
+            <p>A few outside services that load on our pages (listed in Section 5) may receive information from your browser, such as your IP address, when they deliver ads, fonts, or videos. Their use of that information is covered by their own privacy policies.</p>
+            <p>If you contact us through our feedback form, the form is hosted by Google Forms, so what you type is collected by Google Forms and shared with us. We use it only to answer you and to fix errors. Please do not include personal details about yourself or other students.</p>
+
+            <h2 id="analytics"><span class="sec-num">2.</span>Website Analytics</h2>
+            <p>We use Simple Analytics to understand how visitors interact with our site. Simple Analytics is a privacy-first tool that does <strong>not</strong> use cookies and does <strong>not</strong> collect any personally identifiable information (PII). It reports general information, such as which pages are visited, the type of device and browser, and the general location of visits. We use this data strictly to improve our educational tools and website performance.</p>
+
+            <h2 id="ads"><span class="sec-num">3.</span>Advertising and Cookies</h2>
             <p>We use Google AdSense to display advertisements, which helps keep our educational resources free for students. Please be aware of the following regarding ad delivery:</p>
             <ul>
                 <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</li>
                 <li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.</li>
-                <li>You may opt out of personalized advertising by visiting Google's <a href="https://myadcenter.google.com/" target="_blank">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank">www.aboutads.info</a>.</li>
+                <li>You may opt out of personalized advertising by visiting Google's <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a>.</li>
             </ul>
+            <p>The pages of Psych Review Hub do not set cookies of their own. The advertising cookies described here are set by Google and its advertising partners. To learn more about how Google handles data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
 
-            <h2>3. Local Storage and Game Progress</h2>
-            <p>Our daily interactive games use browser local storage (<code>localStorage</code>) to save your cumulative points, game win/loss history, and daily streaks. This data is saved entirely on your own local device, is never transmitted to our servers, and is not accessible by third parties. Clearing your browser cache or site data will reset these statistics.</p>
+            <h2 id="storage"><span class="sec-num">4.</span>Local Storage and Game Progress</h2>
+            <p>Some features save your progress using your browser's local storage (<code>localStorage</code>):</p>
+            <ul>
+                <li>The <strong>Daily Puzzle</strong> saves your cumulative points, game win/loss history, and daily streaks.</li>
+                <li><strong>Piece of Mind</strong> saves your best completion times and your game settings.</li>
+            </ul>
+            <p>This data is saved entirely on your own device. It is never sent to our servers, and we do not share it with anyone. Clearing your browser cache or site data will reset these statistics. All of our other tools, including the quizzes, flashcards, and word games, keep your progress only while the page is open.</p>
 
-            <h2>4. External Links</h2>
+            <h2 id="services"><span class="sec-num">5.</span>Other Third-Party Services</h2>
+            <p>Besides advertising and analytics, a few other outside services are part of our pages:</p>
+            <div class="table-wrap">
+                <table class="svc-table">
+                    <thead><tr><th scope="col">Service</th><th scope="col">What we use it for</th><th scope="col">What it may receive</th></tr></thead>
+                    <tbody>
+                        <tr><td>Google AdSense</td><td>Showing the ads that help keep the site free.</td><td>Cookies, device identifiers, and your IP address (see Section 3).</td></tr>
+                        <tr><td>Simple Analytics</td><td>Counting visits so we can improve the site.</td><td>Anonymous, general visit data. No cookies and no PII (see Section 2).</td></tr>
+                        <tr><td>Google Fonts</td><td>Delivering the typefaces used on our pages.</td><td>Your IP address and browser details, which Google receives when your browser asks for the fonts.</td></tr>
+                        <tr><td>YouTube</td><td>Playing the review videos embedded on study guide pages.</td><td>When a page with a video loads, YouTube (Google) may set cookies and collect information, as described in Google's Privacy Policy.</td></tr>
+                        <tr><td>Buy Me a Coffee</td><td>The optional "Buy me a bubbl'r" support button.</td><td>Information your browser sends when the button loads. If you choose to donate, you leave our site and their privacy policy applies.</td></tr>
+                        <tr><td>Google Docs and Forms</td><td>The view-only guided notes and our feedback form.</td><td>If you open a Google Doc or submit the form, Google's privacy policy applies, along with anything you choose to submit.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>These services have their own privacy policies, and we do not control how they handle information.</p>
+
+            <h2 id="links"><span class="sec-num">6.</span>External Links</h2>
             <p>Our website may contain links to external sites that are not operated by us. Please be aware that we have no control over the content and policies of those sites, and cannot accept responsibility or liability for their respective privacy practices.</p>
 
-            <h2>5. Children's Privacy</h2>
+            <h2 id="children"><span class="sec-num">7.</span>Children's Privacy</h2>
             <p>Psych Review Hub is designed for high school and college-level students studying AP Psychology and is not directed at or intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us so we can address it.</p>
 
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions or concerns about this Privacy Policy, please contact us via our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">feedback form</a>.</p>
-        </div>
-    </div>
+            <h2 id="choices"><span class="sec-num">8.</span>Your Choices</h2>
+            <ul>
+                <li><strong>Ads:</strong> Opt out of personalized advertising using Google's Ads Settings or www.aboutads.info (see Section 3).</li>
+                <li><strong>Cookies:</strong> Most browsers let you block or delete cookies. The study tools and games work without them.</li>
+                <li><strong>Saved progress:</strong> Clear your site data in your browser's settings to delete everything the Daily Puzzle and Piece of Mind have saved on your device.</li>
+                <li><strong>Questions or removal requests:</strong> Reach out through the feedback form below and we will respond.</li>
+            </ul>
 
-     <footer>
+            <h2 id="changes"><span class="sec-num">9.</span>Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with a new "Last updated" date.</p>
+
+            <h2 id="contact"><span class="sec-num">10.</span>Contact Us</h2>
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us via our <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank" rel="noopener">feedback form</a>.</p>
+
+            <div class="related">
+                <p>Looking for the ground rules for using the site?</p>
+                <a class="btn-solid" href="terms">Read the Terms of Use</a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer>
     <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
 
     <p style="margin-bottom: 15px;">
