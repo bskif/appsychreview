@@ -246,6 +246,17 @@
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
     <script>
+        // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+        // shuffle: items tend to stay near where they started. This version gives every
+        // possible ordering the same chance.
+        function shuffleInPlace(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         let masterOddballData = [];
         let activeQuestionSets = [];
         let activeQuestionIndex = 0;
@@ -281,6 +292,11 @@
 
                     const startBtn = document.getElementById('start-btn');
                     if (startBtn) startBtn.disabled = false;
+                    document.getElementById('unit-select').addEventListener('change', () => {
+                        const sm = document.getElementById('setup-msg');
+                        if (sm) sm.style.display = 'none';
+                    });
+                    applyDeepLink();
                 })
                 .catch(err => {
                     console.error("Error loading oddball.json:", err);
@@ -288,6 +304,25 @@
                     if (le) le.style.display = 'block';
                 });
         });
+
+        // --- DEEP LINKS ---------------------------------------------------------------------------
+        // Other pages can open a unit directly:  oddball?unit=0   (or unit=Unit 0 / unit=all)
+        //   ...&start=1   begins right away instead of waiting for "Start Game"
+        // An unknown unit never starts a different game: it stays on this screen and says why.
+        function applyDeepLink() {
+            const q = new URLSearchParams(location.search);
+            const raw = (q.get('unit') || '').trim();
+            if (!raw) return;
+            const sel = document.getElementById('unit-select');
+            const wanted = raw.toLowerCase() === 'all' ? 'all' : (/^\d+$/.test(raw) ? 'Unit ' + raw : raw);
+            sel.value = wanted;
+            if (sel.value !== wanted) {
+                sel.value = 'all';
+                showSetupMsg("We couldn't find " + raw + ' yet, so all units are selected. Pick a unit and press Start Game.');
+                return;
+            }
+            if (q.get('start') === '1') startGame();
+        }
 
         function startGame() {
             if (!masterOddballData || masterOddballData.length === 0) {
@@ -312,7 +347,7 @@
             // Remap JSON keys into standard array configurations for the board
             let processedSets = filteredSets.map(item => {
                 let choices = [item.oddball, item.related1, item.related2, item.related3];
-                choices.sort(() => 0.5 - Math.random()); // Randomize button order
+                shuffleInPlace(choices); // Randomize button order
                 
                 return {
                     options: choices,
@@ -322,7 +357,7 @@
             });
 
             // Shuffle filtered pool and cap at 10 sets for standard game size
-            activeQuestionSets = [...processedSets].sort(() => 0.5 - Math.random()).slice(0, 10);
+            activeQuestionSets = shuffleInPlace([...processedSets]).slice(0, 10);
 
             // Re-initialize game runtime states
             activeQuestionIndex = 0;
