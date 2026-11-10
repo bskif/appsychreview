@@ -252,6 +252,17 @@
     </main>
 
     <script>
+        // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+        // shuffle: items tend to stay near where they started. This version gives every
+        // possible ordering the same chance.
+        function shuffleInPlace(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         let allTerms = [];
         let allTopics = [];
         let activeDeck = [];
@@ -433,7 +444,7 @@
 
             // Shuffle a copy for the interactive deck
             activeDeck = filtered.slice();
-            activeDeck.sort(() => Math.random() - 0.5);
+            shuffleInPlace(activeDeck);
             
             currentIndex = 0;
             knownCount = 0;
