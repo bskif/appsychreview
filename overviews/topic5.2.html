@@ -2,141 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic 5.2: Positive Psychology - Psych Review Hub</title>
     <link rel="canonical" href="https://appsychreviewhub.com/overviews/topic5.2">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /* --- STYLING MATCHED TO HUB CONTEXT --- */
-        .blog-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: left;
-            margin-top: 20px;
-        }
+    <link rel="stylesheet" href="../topic.css">
 
-        .blog-container h1 {
-            text-align: left;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .blog-container h2 {
-            margin-top: 35px;
-            font-size: 1.35rem;
-            color: var(--primary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .blog-container h3 {
-            margin-top: 25px;
-            font-size: 1.15rem;
-            color: #222;
-        }
-
-        .blog-container h4 {
-            margin-top: 20px;
-            font-size: 1.05rem;
-            color: #444;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .blog-container p, .blog-container li {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .blog-container ul, .blog-container ol {
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
-        .blog-container a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .blog-container a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- CALLOUT BOXES FOR MISCONCEPTIONS --- */
-        .blog-container blockquote {
-            background: #fdfaf2;
-            border-left: 4px solid #5F7FFF;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .blog-container blockquote p {
-            margin-bottom: 0;
-            color: #444;
-        }
-
-        .update-date {
-            font-size: 0.95rem;
-            color: #888;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        /* --- TWO-COLUMN LAYOUT WITH SIDEBAR --- */
-        .blog-layout-bridge {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .sidebar-ad-aside {
-            width: 300px;
-            flex-shrink: 0;
-            margin-top: 20px;
-        }
-
-        .ad-wrapper-sidebar {
-            width: 300px;
-            min-height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px dashed #ccc;
-        }
-
-        /* --- REVIEW SAFETY BLOCK --- */
-        .ad-under-review {
-            display: none !important;
-        }
-        
-        .video-responsive {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 600px) {
-            .blog-container {
-                padding: 20px; 
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -164,6 +41,9 @@
                     <a href="../boardgame">Psych Land</a>
                     <a href="../battleship">Cortex Commander</a>
                     <a href="../oddball">Oddball</a>
+                    <a href="../wordsearch">Word Search</a>
+                    <a href="../crossword">Crossword</a>
+                    <a href="../quilt">Piece of Mind</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -179,87 +59,166 @@
         </ul>
     </nav>
 
-    <div class="blog-layout-bridge">
-        
-        <div class="blog-container" style="flex: 1; min-width: 300px; max-width: 780px;">
-            <h1>Unit 5: Mental and Physical Health</h1>
-            <h3 style="color: #666; margin-top: 5px; margin-bottom: 15px; font-weight: 500;">Topic 5.2: Positive Psychology</h3>
-            <div class="update-date">Last Updated: July 13, 2026</div>
-            
-            <!-- TOP NAVIGATION BAR -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0 30px 0; padding-bottom: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem;">
-                <a href="topic5.1" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    &larr; Topic 5.1
-                </a>
-                <a href="../studyguide" style="text-decoration: none; color: #666; font-weight: bold; text-align: center;">
-                    Table of Contents
-                </a>
-                <a href="topic5.3" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    Topic 5.3 &rarr;
-                </a>
+    <!-- ===== HERO ===== -->
+    <header class="guide-hero">
+        <div class="inner">
+            <div class="crumbs" role="navigation" aria-label="Breadcrumb">
+                <span>
+                    <a href="../studyguide">Study Guides</a><span class="sep">/</span><span class="here">Unit 5: Mental and Physical Health</span>
+                </span>
+                <span class="crumb-next"><a href="topic5.1">&larr; Topic 5.1</a><a href="topic5.3">Next: Topic 5.3 &rarr;</a></span>
             </div>
-            
-            <h2>The Big Picture: Thriving, Not Just Surviving</h2>
+
+            <div class="guide-hero-grid">
+                <div>
+                    <h1>Topic 5.2: Positive Psychology</h1>
+                    <p class="guide-lede">The science of thriving: subjective well-being and positive emotions, character strengths and virtues, and how resilience and posttraumatic growth help people respond to adversity.</p>
+                    <p class="updated">Last updated July 13, 2026</p>
+                </div>
+
+                <div class="notes-card">
+                    <h2>📥 Guided notes for this topic</h2>
+                    <p class="notes-sub">Fill them in as you read.</p>
+                    <div class="notes-actions">
+                        <a class="btn-solid" href="https://appsychreviewhub.com/studyguides/topic5.2.pdf" target="_blank" rel="noopener">📄 Download PDF</a>
+                        <a class="btn-outline" href="https://docs.google.com/document/d/1oTYwbHTEzAObyHhkjEHz2hSqzDT70l7HdGcoF8qgRbA/edit?usp=sharing" target="_blank" rel="noopener">📝 Open Google Doc</a>
+                    </div>
+                    <p class="notes-fine">The Google Doc is view-only. Choose File &rarr; Make a copy to edit your own version.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== BODY ===== -->
+    <div class="guide-layout">
+
+        <aside class="toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ol>
+                <li><a href="#big-picture">The big picture</a></li>
+                <li><a href="#subjective-well-being">1. Subjective well-being</a></li>
+                <li><a href="#strengths-and-virtues">2. Strengths and virtues</a></li>
+                <li><a href="#overcoming-adversity">3. Overcoming adversity</a></li>
+                <li><a href="#don-t-trip-up">4. Don't trip up</a></li>
+                <li><a href="#key-terms">5. Key terms</a></li>
+                <li><a href="#review">6. Practice this topic</a></li>
+            </ol>
+        </aside>
+
+        <article class="guide-article">
+
+            <h2 class="first" id="big-picture">The Big Picture: Thriving, Not Just Surviving</h2>
             <p>While many branches of psychology focus on treating mental illness and psychological disorders, <strong>Positive Psychology</strong> takes a different approach. It is the branch of psychology that focuses on the study of strengths, positive emotions, and factors that contribute to happiness, well-being, and human flourishing. Ultimately, positive psychology seeks to identify factors that lead to well-being, resilience, positive emotions, and psychological health.</p>
 
-            <h2>1. Subjective Experiences and Well-Being</h2>
+            <h2 id="subjective-well-being"><span class="sec-num">1.</span>Subjective Experiences and Well-Being</h2>
             <p>Understanding how people experience joy and meaning is central to this topic. <strong>Subjective Well-Being</strong> is a person's self-reported evaluation of their own happiness and life satisfaction, including the balance of positive and negative emotions.</p>
-            <ul>
-                <li><strong>Happiness and Positive Emotions:</strong> The general state of well-being characterized by life satisfaction and a sense of fulfillment is known as <strong>Happiness</strong>. This state relies heavily on experiencing <strong>Positive Emotions</strong>—pleasant emotional states such as joy, gratitude, interest, and contentment that contribute to life satisfaction.</li>
-                <li><strong>The Power of Gratitude:</strong> One proven way to boost your mood is through <strong>Gratitude</strong>, a positive emotional response that involves recognizing and appreciating the benefits, kindness, or support received from others. Expressing gratitude, a positive subjective experience, increases subjective well-being. <em>(Example: Keeping a daily "gratitude journal" where you list three things you are thankful for before bed can significantly improve your overall mood over time).</em></li>
-            </ul>
+            <dl class="def-list">
+                <div class="def">
+                    <dt>Happiness and Positive Emotions</dt>
+                    <dd>The general state of well-being characterized by life satisfaction and a sense of fulfillment is known as <strong>Happiness</strong>. This state relies heavily on experiencing <strong>Positive Emotions</strong>: pleasant emotional states such as joy, gratitude, interest, and contentment that contribute to life satisfaction.</dd>
+                </div>
+                <div class="def">
+                    <dt>The Power of Gratitude</dt>
+                    <dd>One proven way to boost your mood is through <strong>Gratitude</strong>, a positive emotional response that involves recognizing and appreciating the benefits, kindness, or support received from others. Expressing gratitude, a positive subjective experience, increases subjective well-being. <em>(Example: Keeping a daily "gratitude journal" where you list three things you are thankful for before bed can significantly improve your overall mood over time).</em></dd>
+                </div>
+            </dl>
 
-            <h2>2. Signature Strengths and Virtues</h2>
+            <h2 id="strengths-and-virtues"><span class="sec-num">2.</span>Signature Strengths and Virtues</h2>
             <p>Positive psychologists, like Martin Seligman, emphasize that focusing on what we do best naturally leads to a better life. People who exercise their signature strengths or virtues report higher levels of positive objective experiences such as happiness and subjective well-being.</p>
             <p>A classification of character strengths has been developed around 6 categories of virtues:</p>
-            <ul>
-                <li><strong>Wisdom:</strong> Characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding.</li>
-                <li><strong>Courage:</strong> Characterized by persistence, bravery, and the willingness to act despite fear or adversity. <em>(Example: Speaking up for a classmate who is being treated unfairly, even if you are afraid of the social backlash).</em></li>
-                <li><strong>Humanity:</strong> Involves caring, valuing close relationships, and showing kindness and compassion toward others.</li>
-                <li><strong>Justice:</strong> Involves fairness, treating others equally, and contributing to the well-being of the community or society.</li>
-                <li><strong>Temperance:</strong> Involves self-control, moderation, and the ability to regulate impulses and behaviors.</li>
-                <li><strong>Transcendence:</strong> Involves appreciating beauty, finding meaning, and feeling a connection to something larger than oneself.</li>
-            </ul>
+            <dl class="def-list">
+                <div class="def">
+                    <dt>Wisdom</dt>
+                    <dd>Characterized by the ability to think critically, use knowledge effectively, and make sound judgments based on experience and understanding.</dd>
+                </div>
+                <div class="def">
+                    <dt>Courage</dt>
+                    <dd>Characterized by persistence, bravery, and the willingness to act despite fear or adversity. <em>(Example: Speaking up for a classmate who is being treated unfairly, even if you are afraid of the social backlash).</em></dd>
+                </div>
+                <div class="def">
+                    <dt>Humanity</dt>
+                    <dd>Involves caring, valuing close relationships, and showing kindness and compassion toward others.</dd>
+                </div>
+                <div class="def">
+                    <dt>Justice</dt>
+                    <dd>Involves fairness, treating others equally, and contributing to the well-being of the community or society.</dd>
+                </div>
+                <div class="def">
+                    <dt>Temperance</dt>
+                    <dd>Involves self-control, moderation, and the ability to regulate impulses and behaviors.</dd>
+                </div>
+                <div class="def">
+                    <dt>Transcendence</dt>
+                    <dd>Involves appreciating beauty, finding meaning, and feeling a connection to something larger than oneself.</dd>
+                </div>
+            </dl>
 
-            <h2>3. Overcoming Adversity</h2>
+            <h2 id="overcoming-adversity"><span class="sec-num">3.</span>Overcoming Adversity</h2>
             <p>Positive psychology isn't just about ignoring the bad things in life; it's about how we respond to them. <strong>Resilience</strong> is the ability to adapt, recover, and maintain functioning in the face of stress, adversity, or trauma. Beyond just bouncing back, some people experience profound personal improvement.</p>
-            <ul>
-                <li><strong>Posttraumatic Growth:</strong> This is the positive psychological change that can occur as a result of struggling with highly challenging or traumatic life experiences. Posttraumatic growth, a positive subjective experience, may result after the experience of trauma or stress. <em>(Example: A student who goes through a severe and life-threatening illness may emerge from the hospital with a brand-new appreciation for life and a desire to start a foundation to help others with the same disease).</em></li>
-            </ul>
+            <dl class="def-list">
+                <div class="def">
+                    <dt>Posttraumatic Growth</dt>
+                    <dd>This is the positive psychological change that can occur as a result of struggling with highly challenging or traumatic life experiences. Posttraumatic growth, a positive subjective experience, may result after the experience of trauma or stress. <em>(Example: A student who goes through a severe and life-threatening illness may emerge from the hospital with a brand-new appreciation for life and a desire to start a foundation to help others with the same disease).</em></dd>
+                </div>
+            </dl>
 
-            <h2>4. Don't Trip Up! (Common Misconceptions)</h2>
-            <blockquote>
-                <p>⚠️ <strong>Resilience vs. Posttraumatic Growth:</strong> Students sometimes use these terms interchangeably on FRQs. <strong>Resilience</strong> means "bouncing back" to your normal baseline after a hardship. <strong>Posttraumatic Growth</strong> means exceeding your previous baseline and becoming stronger, more purposeful, or more appreciative of life <em>because</em> of the trauma.</p>
-            </blockquote>
+            <h2 id="don-t-trip-up"><span class="sec-num">4.</span>Don't Trip Up! (Common Misconceptions)</h2>
+            <div class="callout"><p>⚠️ <strong>Resilience vs. Posttraumatic Growth:</strong> Students sometimes use these terms interchangeably on FRQs. <strong>Resilience</strong> means "bouncing back" to your normal baseline after a hardship. <strong>Posttraumatic Growth</strong> means exceeding your previous baseline and becoming stronger, more purposeful, or more appreciative of life <em>because</em> of the trauma.</p></div>
 
-            <h2>5. Level Up Your Score: Interactive Review</h2>
-            <p>Positive Psychology requires knowing how human strengths are classified and applied to real scenarios. Keep practicing:</p>
-            <ul>
-                <li><strong>Flashcard Drill:</strong> Head to our <a href="../flashcards">Flashcards</a> page to memorize the 6 categories of virtues (Wisdom, Courage, Humanity, Justice, Temperance, Transcendence).</li>
-                <li><strong>Oddball Game:</strong> Can you identify which strength doesn't belong in a given category? Play a round of <a href="../oddball">Oddball</a> to sharpen your classification skills.</li>
-                <li><strong>Topic 5.2 Quiz:</strong> Verify your mastery of subjective well-being and positive emotions with our <a href="../quiz">adaptive quiz</a> before moving on to Psychological Disorders.</li>
-            </ul>
+            <h2 id="key-terms"><span class="sec-num">5.</span>Key Terms in This Topic</h2>
+            <div class="key-terms" data-topic="5.2" data-src="/terms.json">
+                <p data-terms-intro>Look up the terms for this topic in the Glossary.</p>
+                <ul data-terms-list></ul>
+                <a class="btn-outline term-link" href="../glossary">📖 Look these up in the Glossary</a>
+            </div>
 
-            <!-- BOTTOM NAVIGATION BAR -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px 0; padding-top: 15px; border-top: 1px solid #eee; font-size: 0.95rem;">
-                <a href="topic5.1" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    &larr; Topic 5.1
-                </a>
-                <a href="../studyguide" style="text-decoration: none; color: #666; font-weight: bold; text-align: center;">
-                    Table of Contents
-                </a>
-                <a href="topic5.3" style="text-decoration: none; color: #5F7FFF; font-weight: bold;">
-                    Topic 5.3 &rarr;
-                </a>
-            </div>        
-        </div>
+            <h2 id="review"><span class="sec-num">6.</span>Practice This Topic</h2>
+            <p>Test yourself on exactly what you just read. The numbers on each button show how much material is waiting for you.</p>
 
-        <div class="sidebar-ad-aside ad-under-review">
+            <div class="practice-hub" data-topic="5.2" data-unit="5" data-base="/" data-root="../">
+
+                <div class="ph-tier ph-tier-topic">
+                    <div class="ph-tier-head"><span class="ph-chip ph-chip-topic">Just this topic</span><span class="ph-sub">Topic 5.2 only</span></div>
+                    <div class="ph-grid">
+                        <a class="ph-card ph-topic ph-featured" data-tool="quick" href="../quiz?mode=quick&amp;topic=5.2&amp;start=1">
+                            <div class="ph-top"><div class="icon-chip">⚡</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Quick Check</div>
+                            <p>The same self-check questions that close your guided notes. Find out whether well-being, virtues, and resilience stuck.</p>
+                            <span class="ph-cta">Start Quick Check &rarr;</span>
+                        </a>
+                        <a class="ph-card ph-topic" data-tool="flashcards" href="../flashcards?topic=5.2">
+                            <div class="ph-top"><div class="icon-chip">📇</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Flashcards</div>
+                            <p>Flip through the key terms from this topic, including subjective well-being, resilience, and posttraumatic growth.</p>
+                            <span class="ph-cta">Open the deck &rarr;</span>
+                        </a>
+                        <a class="ph-card ph-topic" data-tool="quiz" href="../quiz?topic=5.2&amp;count=10&amp;start=1">
+                            <div class="ph-top"><div class="icon-chip">📝</div><span class="ph-count"><b data-count>&ndash;</b></span></div>
+                            <div class="card-title">Practice Quiz</div>
+                            <p>AP-style multiple choice on well-being, character strengths and virtues, and resilience, with an explanation after every answer.</p>
+                            <span class="ph-cta">Take the quiz &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="ph-more"><a href="#top" data-open-games>Looking for more games? Open the Games menu.</a></p>
+            </div>
+
+            <div class="pager" role="navigation" aria-label="Topic navigation">
+                <a class="pager-link pager-prev" href="topic5.1"><small>Previous</small>&larr; Topic 5.1</a>
+                <a class="pager-link pager-toc" href="../studyguide">Table of Contents</a>
+                <a class="pager-link pager-next" href="topic5.3"><small>Next</small>Topic 5.3 &rarr;</a>
+            </div>
+
+        </article>
+
+        <!-- Ad rail: stays hidden while "ad-under-review" is on. Remove that class when ads go live. -->
+        <aside class="sidebar-ad-aside ad-under-review">
             <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0 0 5px 0; letter-spacing: 1px;">ADVERTISEMENT</p>
             <div class="ad-wrapper-sidebar">
                 <div style="color: #ccc; font-size: 0.9rem;">[300x250 Ad Unit Placeholder]</div>
             </div>
-        </div>
+        </aside>
 
     </div>
 
@@ -284,5 +243,7 @@
 </footer>
 
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script src="../topic.js" defer></script>
+
 </body>
 </html>
