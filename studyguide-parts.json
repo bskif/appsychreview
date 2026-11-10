@@ -1,0 +1,16 @@
+{
+  "_readme": "Topics whose study guide is split into several parts. For each topic list its parts. 'part' is a short lowercase letter (a, b, c), 'label' is the part's title, 'sections' is shown on the results screen, and 'ids' lists the Quick Check question ids that belong to that part: a single id (61) or a range ([61, 65], inclusive). If a question in studyquiz.json has its own 'part' field (a, b or c), that wins over the id list. Topics not listed here work exactly as before.",
+  "1.6": {
+    "parts": [
+      { "part": "a", "label": "Thresholds & Vision",     "sections": "Sections 1\u20132", "ids": [[61, 65]] },
+      { "part": "b", "label": "Hearing & Other Senses",  "sections": "Sections 3\u20135", "ids": [[56, 60]] }
+    ]
+  },
+  "5.4": {
+    "parts": [
+      { "part": "a", "label": "Neurodevelopmental, Psychotic, and Mood Disorders", "sections": "Sections 1\u20134",  "ids": [[227, 233]] },
+      { "part": "b", "label": "Anxiety, OCD, Dissociative, and Trauma Disorders",  "sections": "Sections 5\u20138",  "ids": [[234, 241]] },
+      { "part": "c", "label": "Eating and Personality Disorders",                  "sections": "Sections 9\u201310", "ids": [[242, 247]] }
+    ]
+  }
+}
