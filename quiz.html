@@ -735,7 +735,7 @@
             }
         })
         .catch(error => console.error('Error fetching data:', error))
-        .finally(() => { _quizDone = true; _maybeApplyDeepLink(); });
+        .finally(() => { rebuildStudyGuideMenus(); _quizDone = true; _maybeApplyDeepLink(); });
 
         // Study Guide Questions mode pulls from its own file (studyquiz.json)
         // rather than quiz.json, since it's a separate, smaller pool of
@@ -782,6 +782,20 @@
         function parseStudyTopic(value) {
             const m = /^(\d+\.\d+)([a-z])$/i.exec(String(value || ''));
             return m ? { topic: m[1], part: m[2].toLowerCase() } : { topic: value, part: '' };
+        }
+
+        // The Quick Check menus show topic and unit titles, which come from topics.json. If studyquiz.json
+        // happens to arrive first, the menus are built without titles; this rebuilds them once the titles are in,
+        // keeping whatever the student has already picked.
+        function rebuildStudyGuideMenus() {
+            if (!allStudyQuestions.length) return;
+            const u = document.getElementById('studyguide-unit-select');
+            const t = document.getElementById('studyguide-topic-select');
+            const keepU = u ? u.value : '', keepT = t ? t.value : '';
+            populateStudyGuideUnitDropdown();
+            if (u && keepU && [...u.options].some(o => o.value === keepU)) u.value = keepU;
+            populateStudyGuideTopicDropdown();
+            if (t && keepT && [...t.options].some(o => o.value === keepT)) t.value = keepT;
         }
 
         Promise.all([
