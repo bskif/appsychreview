@@ -669,7 +669,17 @@ a:focus-visible, summary:focus-visible {
 .ph-cta { font-weight: 700; font-size: 0.92rem; color: var(--accent); margin-top: auto; }
 .ph-card:hover .ph-cta { text-decoration: underline; }
 .ph-card[hidden],
-.guide-article a.ph-card[hidden] { display: none; }   /* beats the card's own display:flex (a hidden card used to stay visible) */
+.guide-article a.ph-card[hidden] { display: none; }
+/* topics with several study guides: one Quick Check button per part */
+.ph-parts { margin-top: 16px; }
+.guide-article .ph-parts-label { font-size: 0.9rem; color: #62707b; margin: 0 0 8px; }
+.ph-parts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.guide-article a.ph-part { display: flex; flex-direction: column; gap: 3px; padding: 11px 14px; background: #fff; border: 1px solid #d7e3ee; border-left: 4px solid var(--accent); border-radius: 10px; color: #333; font-weight: 400; text-decoration: none; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+.guide-article a.ph-part:hover { background: var(--panel-blue); border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.ph-part-tag { font-weight: 700; font-size: 0.92rem; color: var(--primary); }
+.ph-part-name { font-size: 0.82rem; line-height: 1.35; color: #62707b; flex: 1; }
+.ph-part-count { font-size: 0.78rem; font-weight: 700; color: var(--accent); }
+.ph-part-count b { font-weight: 800; }   /* beats the card's own display:flex (a hidden card used to stay visible) */
 /* when a card is hidden (no questions or terms for this topic), let the others share the row */
 @media (min-width: 821px) {
     .ph-grid:not(.cols-4):has(> .ph-card[hidden]) { grid-template-columns: repeat(2, 1fr); }
