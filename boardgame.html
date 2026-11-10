@@ -249,6 +249,17 @@
     </div>
 
     <script>
+        // Fair (Fisher-Yates) shuffle. Sorting with a random comparator is NOT a uniform
+        // shuffle: items tend to stay near where they started. This version gives every
+        // possible ordering the same chance.
+        function shuffleInPlace(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         // --- COORDINATES ---
         const COORDINATES = [{"x":22.59,"y":13.82},{"x":27.69,"y":12.39},{"x":31.44,"y":12.65},{"x":34.99,"y":12.91},{"x":37.96,"y":14.21},{"x":41.22,"y":17.06},{"x":44.05,"y":20.03},{"x":46.81,"y":23.27},{"x":50.35,"y":26.9},{"x":53.61,"y":28.45},{"x":58.5,"y":27.16},{"x":61.47,"y":22.88},{"x":63.53,"y":18.61},{"x":65.93,"y":15.24},{"x":69.26,"y":13.95},{"x":72.8,"y":13.82},{"x":76.35,"y":15.5},{"x":79.25,"y":19.91},{"x":80.59,"y":24.96},{"x":80.38,"y":30.01},{"x":79.25,"y":33.77},{"x":76.35,"y":37},{"x":72.8,"y":38.82},{"x":69.12,"y":40.11},{"x":65.01,"y":40.63},{"x":61.9,"y":40.11},{"x":58.14,"y":39.46},{"x":54.32,"y":37.13},{"x":50.92,"y":35.06},{"x":47.45,"y":32.34},{"x":44.41,"y":29.75},{"x":40.72,"y":26.9},{"x":36.54,"y":25.35},{"x":33.71,"y":25.09},{"x":28.68,"y":26.25},{"x":24.93,"y":27.81},{"x":23.09,"y":33.38},{"x":26.13,"y":36.74},{"x":30.59,"y":37.52},{"x":34.56,"y":35.84},{"x":38.39,"y":36.74},{"x":40.23,"y":41.67},{"x":36.97,"y":46.07},{"x":32.86,"y":47.37},{"x":28.9,"y":47.88},{"x":24.93,"y":47.24},{"x":21.18,"y":46.59},{"x":17.56,"y":48.01},{"x":15.37,"y":53.2},{"x":16.01,"y":59.15},{"x":18.7,"y":62.39},{"x":22.8,"y":63.43},{"x":27.48,"y":63.3},{"x":31.44,"y":62.65},{"x":35.27,"y":60.45},{"x":39.24,"y":57.21},{"x":42.49,"y":53.07},{"x":45.96,"y":49.44},{"x":49.86,"y":47.5},{"x":53.61,"y":48.14},{"x":57.79,"y":49.44},{"x":61.61,"y":50.47},{"x":65.72,"y":49.31},{"x":70.11,"y":48.27},{"x":73.37,"y":47.24},{"x":77.76,"y":47.75},{"x":80.59,"y":51.77},{"x":80.1,"y":57.47},{"x":76.91,"y":60.32},{"x":72.88,"y":61.87},{"x":68.84,"y":62.91},{"x":64.59,"y":62.65},{"x":60.41,"y":62.13},{"x":57.08,"y":59.93},{"x":54.39,"y":55.4},{"x":53.33,"y":46.98},{"x":49.29,"y":47.11},{"x":45.47,"y":48.79},{"x":42.35,"y":52.68},{"x":39.24,"y":56.43},{"x":35.13,"y":59.8},{"x":31.44,"y":62.13},{"x":27.69,"y":63.04},{"x":23.44,"y":63.17},{"x":19.33,"y":62.78},{"x":15.16,"y":67.44},{"x":13.17,"y":74.05},{"x":14.09,"y":79.62},{"x":17.63,"y":81.3},{"x":22.52,"y":83.12},{"x":26.63,"y":83.12},{"x":30.45,"y":81.17},{"x":33.99,"y":77.42},{"x":37.61,"y":72.11},{"x":41.36,"y":70.42},{"x":45.18,"y":71.2},{"x":48.87,"y":73.27},{"x":52.76,"y":77.81},{"x":57.08,"y":81.69},{"x":60.76,"y":83.64},{"x":65.01,"y":84.28},{"x":69.62,"y":84.67},{"x":73.8,"y":82.6},{"x":82.58,"y":80.27}];
         const SPECIALS = {
@@ -438,18 +449,18 @@
             });
 
             let sameTopicTerms = pool.filter(t => t.topic === correct.topic && t !== correct);
-            sameTopicTerms.sort(() => Math.random() - 0.5);
+            shuffleInPlace(sameTopicTerms);
 
             let distractors = freshOnly(sameTopicTerms).slice(0, 3);
 
             if (distractors.length < 3) {
                 let otherTerms = pool.filter(t => t.topic !== correct.topic && t !== correct);
-                otherTerms.sort(() => Math.random() - 0.5);
+                shuffleInPlace(otherTerms);
                 let needed = 3 - distractors.length;
                 distractors = [...distractors, ...freshOnly(otherTerms).slice(0, needed)];
             }
             
-            let options = [...distractors, correct].sort(() => Math.random() - 0.5);
+            let options = shuffleInPlace([...distractors, correct]);
 
             if(p.isBot) botTurn(correct, spacesToMove);
             else showQuestion(correct, options, spacesToMove);
