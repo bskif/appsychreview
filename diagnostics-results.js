@@ -313,8 +313,9 @@
         var list = h('div');
         var flat = (function () {
             /* rebuild the set structure from the saved test version, if it is still in the data file */
+            if (attempt.items) { return DX.flatten(ctx, { items: attempt.items }); }
             var t = DX.findTest(ctx, attempt.testId, attempt.version);
-            return t ? DX.flatten(ctx, t) : null;
+            return t && !DX.isDraw(t) ? DX.flatten(ctx, t) : null;
         })();
         attempt.qids.forEach(function (id, i) {
             var q = ctx.questions[id];
