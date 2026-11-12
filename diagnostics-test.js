@@ -7,7 +7,7 @@
     var preview = DX.isPreview();
     var previewSuffix = preview ? '&preview=1' : '';
 
-    var ctx, test, flat, S;          // S = saved state for the attempt in progress
+    var ctx, test, flat, items, S;   // S = saved state for the attempt in progress; items = the questions drawn or listed for this attempt
     var tickTimer = null, lastTick = 0, lastSave = 0, warned = false, finished = false;
 
     function notify(kind, text, keep) {
@@ -38,7 +38,7 @@
     function newState(timed) {
         return {
             testId: test.test_id, version: test.version, name: test.name, type: test.type, unit: test.unit || null,
-            qids: flat.qids.slice(), answers: {}, flags: {}, crossed: {}, idx: 0,
+            items: items, qids: flat.qids.slice(), answers: {}, flags: {}, crossed: {}, idx: 0,
             startedAt: Date.now(), activeMs: 0, timed: !!timed, limitMin: test.time_limit_minutes || Math.round(flat.qids.length * 72 / 60),
             hideTimer: false
         };
@@ -273,7 +273,7 @@
         clearInterval(tickTimer);
         var attempt = {
             id: DX.newId(), testId: S.testId, version: S.version, name: S.name, type: S.type, unit: S.unit,
-            qids: S.qids.slice(), answers: S.answers, flags: Object.keys(S.flags),
+            items: S.items, qids: S.qids.slice(), answers: S.answers, flags: Object.keys(S.flags),
             startedAt: S.startedAt, submittedAt: Date.now(), activeMs: S.activeMs,
             timed: S.timed, limitMin: S.limitMin, timedOut: !!timedOut
         };
@@ -308,20 +308,32 @@
         $('dxNotices').textContent = '';
     }
 
-    function showIntro() {
+    /* Draw a fresh set of questions (drawn tests) or use the fixed list */
+    function drawNew() {
+        items = DX.isDraw(test) ? DX.draw(ctx, test).items : (test.items || []).slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+        flat = DX.flatten(ctx, { items: items });
+    }
+
+    function showIntroText() {
         var n = flat.qids.length;
         var limit = test.time_limit_minutes || Math.round(n * 72 / 60);
         $('dxTestTitle').textContent = test.name;
-        $('dxTestLede').textContent = n + ' questions, about ' + limit + ' minutes.';
+        $('dxTestLede').textContent = n + ' questions, about ' + limit + ' minutes.' + (DX.isDraw(test) ? ' Every attempt draws a fresh mix of questions, favoring ones you have not seen.' : '');
         $('dxTimedLabel').textContent = '';
         $('dxTimedLabel').appendChild(document.createTextNode('Timed: ' + limit + ' minutes'));
         $('dxTimedLabel').appendChild(h('small', { text: 'About 72 seconds per question, like the real exam. The timer pauses if you leave the page.' }));
         document.title = test.name + ' - Psych Review Hub';
+    }
+
+    function showIntro() {
+        showIntroText();
 
         var saved = DX.getProgress(test.test_id);
         var resumeBox = $('dxResume');
         resumeBox.textContent = '';
-        var usable = saved && saved.version === test.version && JSON.stringify(saved.qids) === JSON.stringify(flat.qids);
+        var usable = saved && saved.version === test.version && Array.isArray(saved.qids) &&
+            saved.qids.every(function (id) { return ctx.questions[id]; }) &&
+            (DX.isDraw(test) ? Array.isArray(saved.items) : JSON.stringify(saved.qids) === JSON.stringify(flat.qids));
         if (saved && !usable) { DX.dropProgress(test.test_id); }
         if (usable) {
             var done = Object.keys(saved.answers || {}).filter(function (k) { return saved.answers[k]; }).length;
@@ -330,9 +342,10 @@
             ]);
             var r = h('button', { type: 'button', class: 'dx-btn solid', text: 'Resume where I left off' });
             var s = h('button', { type: 'button', class: 'dx-btn outline', text: 'Start over' });
-            r.addEventListener('click', function () { S = saved; beginTest(true); go(Math.min(S.idx || 0, total() - 1)); });
+            r.addEventListener('click', function () { S = saved; if (S.items) { items = S.items; flat = DX.flatten(ctx, { items: items }); } beginTest(true); go(Math.min(S.idx || 0, total() - 1)); });
             s.addEventListener('click', function () {
                 DX.dropProgress(test.test_id);
+                if (DX.isDraw(test)) { drawNew(); showIntroText(); }
                 box.remove();
                 $('dxStart').focus();
             });
@@ -355,9 +368,15 @@
             $('dxTestLede').textContent = 'That test is not available yet.';
             notify('warn', 'We could not find that test. Head back to the Diagnostic Tests page to pick one.');
             $('dxNotices').firstChild.appendChild(h('a', { class: 'dx-btn solid', href: 'diagnostics', text: 'Diagnostic Tests' }));
+            if (test && preview && DX.isDraw(test)) {
+                var short = DX.poolReport(ctx, test).filter(function (r) { return r.have < r.need; });
+                if (short.length) {
+                    notify('warn', 'Pool too small (preview only): ' + short.map(function (r) { return r.label + ' has ' + r.have + ' of ' + r.need + ' ' + r.unit; }).join('; ') + '.', true);
+                }
+            }
             return;
         }
-        flat = DX.flatten(ctx, test);
+        drawNew();
         if (preview) { notify('warn', 'Preview mode: this test may include draft or reviewed questions that students cannot see.', true); }
         if (!DX.checkStorage()) { notify('warn', 'This browser is blocking saved data, so your progress will not be saved if you leave the page.', true); }
 
