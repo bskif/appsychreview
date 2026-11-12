@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Test - Psych Review Hub</title>
+    <meta name="description" content="Take an AP Psychology multiple-choice diagnostic test.">
+    <link rel="canonical" href="https://appsychreviewhub.com/diagnostic-test">
+    <meta name="robots" content="noindex,follow">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topic.css">
+    <link rel="stylesheet" href="diagnostics.css">
+</head>
+<body class="dx">
+
+    <nav>
+        <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="psych-hub">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="studyguide">Study Guides</a>
+                    <a href="glossary">Glossary</a>
+                    <a href="flashcards">Flashcards</a>
+                    <a href="quiz">Quiz</a>
+                    <a href="confusingpairs">Confusing Pairs</a>
+                    <a href="diagnostics">Diagnostic Tests</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame">Connections</a>
+                    <a href="boardgame">Psych Land</a>
+                    <a href="battleship">Cortex Commander</a>
+                    <a href="oddball">Oddball</a>
+                    <a href="wordsearch">Word Search</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="about">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">&#129380; Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="dx-hero" id="dxHero">
+        <div class="inner">
+            <div class="dx-crumbs"><a href="/">Home</a> &nbsp;/&nbsp; <a href="diagnostics">Diagnostic Tests</a></div>
+            <h1 id="dxTestTitle">Diagnostic Test</h1>
+            <p class="dx-lede" id="dxTestLede"></p>
+        </div>
+    </header>
+
+    <main class="dx-main" id="dxMain">
+        <div id="dxNotices" aria-live="polite"></div>
+
+        <section class="dx-panel dx-intro" id="dxIntro" hidden>
+            <div class="dx-intro-grid">
+                <div>
+                    <h2>Before you start</h2>
+                    <ul>
+                        <li>Every question has four choices, A through D. There is no penalty for guessing, so answer every question.</li>
+                        <li>Use <b>Flag</b> to mark a question you want to revisit, and the <b>X</b> button to cross out a choice you have ruled out.</li>
+                        <li>Your answers save automatically in this browser. You can close the page and resume later on this device.</li>
+                        <li>When you finish, you will see a results page with a study plan.</li>
+                    </ul>
+                    <div id="dxResume"></div>
+                </div>
+                <div class="dx-options-box">
+                    <h3>Timer</h3>
+                    <label class="dx-radio"><input type="radio" name="dxTimer" value="off" checked> <span>Untimed <small>Work at your own pace.</small></span></label>
+                    <label class="dx-radio"><input type="radio" name="dxTimer" value="on"> <span id="dxTimedLabel">Timed <small>About 72 seconds per question, like the real exam.</small></span></label>
+                    <p style="margin: 14px 0 0;"><button type="button" class="dx-btn solid" id="dxStart">Start test</button></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dxTest" hidden>
+            <div class="dx-bar">
+                <div class="dx-title" id="dxBarTitle"></div>
+                <div class="dx-right">
+                    <span class="dx-saved" id="dxSaved" aria-live="polite"></span>
+                    <span class="dx-timer" id="dxTimer" role="timer"></span>
+                    <button type="button" class="dx-btn quiet" id="dxHideTimer" aria-pressed="false">Hide time</button>
+                </div>
+            </div>
+            <div class="dx-test-grid">
+                <div class="dx-qpanel" id="dxQPanel"></div>
+                <aside class="dx-side" aria-label="Question navigator">
+                    <h3>Questions</h3>
+                    <ol class="dx-palette" id="dxPalette"></ol>
+                    <div class="dx-legend"><span class="a">Answered</span><span class="f">Flagged for review</span></div>
+                    <button type="button" class="dx-btn outline" id="dxToReview">Review and submit</button>
+                </aside>
+            </div>
+        </section>
+
+        <section class="dx-panel" id="dxReview" hidden>
+            <h2>Review your answers</h2>
+            <p class="dx-sub" id="dxReviewSummary"></p>
+            <ul class="dx-review-list" id="dxReviewList"></ul>
+            <div class="dx-clear-row">
+                <button type="button" class="dx-btn solid" id="dxSubmit">Submit test</button>
+                <button type="button" class="dx-btn outline" id="dxBack">Back to questions</button>
+            </div>
+        </section>
+    </main>
+
+<footer>
+    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+
+    <p style="margin-bottom: 15px;">
+        <a href="privacy" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+        <a href="terms" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+    </p>
+
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="&#129380;" data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+
+        <a href="https://www.simpleanalytics.com?utm_source=appsychreviewhub.com&utm_content=badge" referrerpolicy="origin" target="_blank" style="display: inline-block;">
+            <picture>
+                <source srcset="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=dark&counter=false" media="(prefers-color-scheme: dark)" />
+                <img src="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=light&counter=false" alt="Simple Analytics badge" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" />
+            </picture>
+        </a>
+    </div>
+</footer>
+
+    <script src="diagnostics-core.js"></script>
+    <script src="diagnostics-test.js"></script>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

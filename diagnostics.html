@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Tests - Psych Review Hub</title>
+    <meta name="description" content="AP Psychology multiple-choice diagnostic tests by unit, with results by topic and skill and a study plan.">
+    <link rel="canonical" href="https://appsychreviewhub.com/diagnostics">
+    <meta name="robots" content="index,follow">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6612537957463560" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topic.css">
+    <link rel="stylesheet" href="diagnostics.css">
+</head>
+<body class="dx">
+
+    <nav>
+        <div class="nav-brand"><a href="/">Psych Review Hub</a></div>
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="psych-hub">Daily Puzzle</a></li>
+            <li class="dropdown">
+                <a href="#">Study Tools &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="studyguide">Study Guides</a>
+                    <a href="glossary">Glossary</a>
+                    <a href="flashcards">Flashcards</a>
+                    <a href="quiz">Quiz</a>
+                    <a href="confusingpairs">Confusing Pairs</a>
+                    <a href="diagnostics">Diagnostic Tests</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Games &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="connectionsgame">Connections</a>
+                    <a href="boardgame">Psych Land</a>
+                    <a href="battleship">Cortex Commander</a>
+                    <a href="oddball">Oddball</a>
+                    <a href="wordsearch">Word Search</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">About &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="about">About Me</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.buymeacoffee.com/skifpsych" target="_blank" class="nav-bmc-btn">&#129380; Buy me a bubbl'r</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="dx-hero">
+        <div class="inner">
+            <div class="dx-crumbs"><a href="/">Home</a> &nbsp;/&nbsp; <span>Diagnostic Tests</span></div>
+            <h1>Diagnostic Tests</h1>
+            <p class="dx-lede">AP-style multiple-choice practice that shows you where to spend your study time. Every question is original, and every answer comes with an explanation.</p>
+        </div>
+    </header>
+
+    <main class="dx-main">
+        <div id="dxNotices"></div>
+
+        <section class="dx-panel" aria-labelledby="how">
+            <h2 id="how">How it works</h2>
+            <div class="dx-steps">
+                <div class="dx-step"><span class="n">1</span><b>Take a test</b><span>Start with the unit you are studying. Four answer choices, just like the AP exam. Flag questions and come back to them.</span></div>
+                <div class="dx-step"><span class="n">2</span><b>See where you stand</b><span>Your results break down by unit, skill and topic, and say plainly when a topic has too few questions to judge.</span></div>
+                <div class="dx-step"><span class="n">3</span><b>Follow your study plan</b><span>Each priority area links to a study guide, flashcards, quiz questions and a game for that topic.</span></div>
+            </div>
+            <p class="dx-note">These tests cover the multiple-choice section only. Your progress and results are saved in this browser on this device, and nowhere else.</p>
+        </section>
+
+        <section class="dx-panel" aria-labelledby="unit-tests">
+            <h2 id="unit-tests">Unit diagnostics</h2>
+            <p class="dx-sub">One test per unit. Untimed by default, with an optional timer.</p>
+            <div class="dx-grid" id="dxUnitGrid"><p class="dx-empty">Loading tests...</p></div>
+        </section>
+
+        <section class="dx-panel" id="dxFullPanel" aria-labelledby="full-tests">
+            <h2 id="full-tests">Full practice exams and quick diagnostic</h2>
+            <p class="dx-sub">Full 75-question exams, plus a short 24-question check across all units.</p>
+            <div class="dx-grid" id="dxFullGrid"></div>
+        </section>
+
+        <section class="dx-panel" aria-labelledby="hist">
+            <h2 id="hist">Your results</h2>
+            <div id="dxHistory"></div>
+        </section>
+    </main>
+
+<footer>
+    <p style="margin-bottom: 15px;">Notice an issue or have a question? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWIai_5oQGUWz3LKioFxQZcebuN-tDsNkhRcqaMsBpWuHceQ/viewform?usp=header" target="_blank">Contact Me</a></p>
+
+    <p style="margin-bottom: 15px;">
+        <a href="privacy" style="color: #666; font-weight: normal; text-decoration: underline; margin-right: 15px;">Privacy Policy</a>
+        <a href="terms" style="color: #666; font-weight: normal; text-decoration: underline;">Terms of Use</a>
+    </p>
+
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skifpsych" data-color="#5F7FFF" data-emoji="&#129380;" data-font="Poppins" data-text="Buy me a bubbl'r" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+
+        <a href="https://www.simpleanalytics.com?utm_source=appsychreviewhub.com&utm_content=badge" referrerpolicy="origin" target="_blank" style="display: inline-block;">
+            <picture>
+                <source srcset="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=dark&counter=false" media="(prefers-color-scheme: dark)" />
+                <img src="https://simpleanalyticsbadges.com/appsychreviewhub.com?mode=light&counter=false" alt="Simple Analytics badge" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" />
+            </picture>
+        </a>
+    </div>
+</footer>
+
+    <script src="diagnostics-core.js"></script>
+    <script src="diagnostics-hub.js"></script>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

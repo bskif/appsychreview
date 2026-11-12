@@ -1,0 +1,169 @@
+{
+ "note": "Average questions per 75-question practice exam across four real exams, and the frequency band. Source: topic_frequency.csv.",
+ "topics": {
+  "0.1": {
+   "avg": 1.75,
+   "band": "Occasional"
+  },
+  "0.2": {
+   "avg": 3.5,
+   "band": "Frequent"
+  },
+  "0.3": {
+   "avg": 9.0,
+   "band": "Frequent"
+  },
+  "0.4": {
+   "avg": 6.5,
+   "band": "Frequent"
+  },
+  "0.5": {
+   "avg": 3.5,
+   "band": "Frequent"
+  },
+  "0.6": {
+   "avg": 3.25,
+   "band": "Frequent"
+  },
+  "1.1": {
+   "avg": 1.0,
+   "band": "Rare"
+  },
+  "1.2": {
+   "avg": 0.5,
+   "band": "Rare"
+  },
+  "1.3": {
+   "avg": 3.0,
+   "band": "Frequent"
+  },
+  "1.4": {
+   "avg": 3.25,
+   "band": "Frequent"
+  },
+  "1.5": {
+   "avg": 2.5,
+   "band": "Occasional"
+  },
+  "1.6": {
+   "avg": 4.25,
+   "band": "Frequent"
+  },
+  "2.1": {
+   "avg": 3.75,
+   "band": "Frequent"
+  },
+  "2.2": {
+   "avg": 3.75,
+   "band": "Frequent"
+  },
+  "2.3": {
+   "avg": 2.25,
+   "band": "Occasional"
+  },
+  "2.4": {
+   "avg": 0.75,
+   "band": "Rare"
+  },
+  "2.5": {
+   "avg": 0.5,
+   "band": "Rare"
+  },
+  "2.6": {
+   "avg": 0.25,
+   "band": "Rare"
+  },
+  "2.7": {
+   "avg": 0.75,
+   "band": "Rare"
+  },
+  "2.8": {
+   "avg": 2.75,
+   "band": "Occasional"
+  },
+  "3.1": {
+   "avg": 0.75,
+   "band": "Rare"
+  },
+  "3.2": {
+   "avg": 3.5,
+   "band": "Frequent"
+  },
+  "3.3": {
+   "avg": 0.0,
+   "band": "Absent"
+  },
+  "3.4": {
+   "avg": 1.75,
+   "band": "Occasional"
+  },
+  "3.5": {
+   "avg": 1.25,
+   "band": "Rare"
+  },
+  "3.6": {
+   "avg": 1.0,
+   "band": "Rare"
+  },
+  "3.7": {
+   "avg": 2.5,
+   "band": "Occasional"
+  },
+  "3.8": {
+   "avg": 3.25,
+   "band": "Frequent"
+  },
+  "3.9": {
+   "avg": 1.25,
+   "band": "Rare"
+  },
+  "4.1": {
+   "avg": 3.25,
+   "band": "Frequent"
+  },
+  "4.2": {
+   "avg": 2.25,
+   "band": "Occasional"
+  },
+  "4.3": {
+   "avg": 5.75,
+   "band": "Frequent"
+  },
+  "4.4": {
+   "avg": 1.25,
+   "band": "Rare"
+  },
+  "4.5": {
+   "avg": 2.0,
+   "band": "Occasional"
+  },
+  "4.6": {
+   "avg": 0.75,
+   "band": "Rare"
+  },
+  "4.7": {
+   "avg": 0.75,
+   "band": "Rare"
+  },
+  "5.1": {
+   "avg": 4.0,
+   "band": "Frequent"
+  },
+  "5.2": {
+   "avg": 1.0,
+   "band": "Rare"
+  },
+  "5.3": {
+   "avg": 3.25,
+   "band": "Frequent"
+  },
+  "5.4": {
+   "avg": 4.25,
+   "band": "Frequent"
+  },
+  "5.5": {
+   "avg": 2.0,
+   "band": "Occasional"
+  }
+ }
+}

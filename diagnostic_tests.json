@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-11-11",
+  "figures": {
+    "fig-0001": {
+      "figure_id": "fig-0001",
+      "file": "images/diagnostics/fig-0001.svg",
+      "type": "bar_simple",
+      "alt": "Bar graph with two bars. Practice-quiz group: mean recall of 18 words. Re-reading group: mean recall of 11 words. Y-axis: mean words recalled, 0 to 20.",
+      "caption": "Mean Words Recalled One Week Later, by Study Method",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0001.json",
+        "tool": "Python SVG script (build_figures.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {
+        "x_label": "Study method",
+        "y_label": "Mean words recalled",
+        "categories": [
+          "Practice quizzes",
+          "Re-reading"
+        ],
+        "values": [
+          18,
+          11
+        ]
+      }
+    },
+    "fig-0002": {
+      "figure_id": "fig-0002",
+      "file": "images/diagnostics/fig-0002.svg",
+      "type": "bio_diagram",
+      "alt": "Side view of a human brain with four regions marked by the letters W, X, Y, and Z. W is at the front, X at the top toward the back, Y at the lower side, and Z at the very back.",
+      "caption": "Regions of the Brain",
+      "source": {
+        "kind": "original_diagram",
+        "data_file": null,
+        "tool": "Python SVG script (build_figures.py)",
+        "attribution": "Diagram by appsychreviewhub.com",
+        "license": "CC BY 4.0"
+      }
+    }
+  },
+  "stimuli": {
+    "stim-0001": {
+      "stimulus_id": "stim-0001",
+      "type": "text+figure",
+      "text": "A researcher randomly assigned 60 college students to one of two groups. Both groups studied the same list of 20 words for 15 minutes. One group took three short practice quizzes on the words; the other group re-read the list three times. One week later, all students wrote down as many words as they could remember.",
+      "table": null,
+      "figure_ids": [
+        "fig-0001"
+      ]
+    }
+  },
+  "questions": {
+    "dq-0001": {
+      "id": "dq-0001",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Every time Priyanka finishes her chores before dinner, her parents let her skip washing the dishes that night. Priyanka now finishes her chores early almost every day. Which of the following best explains the change in Priyanka's behavior?",
+      "options": [
+        "Positive reinforcement",
+        "Negative reinforcement",
+        "Positive punishment",
+        "Negative punishment"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Removing an unpleasant task (washing dishes) after the behavior makes the behavior more likely, which is negative reinforcement.",
+      "distractor_notes": {
+        "A": "Positive reinforcement adds something pleasant; nothing is added here.",
+        "C": "Punishment makes a behavior less likely; her chore behavior increased.",
+        "D": "Negative punishment removes something pleasant to decrease a behavior."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": "SB",
+      "published": "2026-12-01"
+    },
+    "dq-0002": {
+      "id": "dq-0002",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.3"
+      ],
+      "format": "standalone_reverse",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is the best example of the phonological loop at work?",
+      "options": [
+        "Jordan pictures the route from his house to school to estimate the distance.",
+        "Lena repeats a new phone number under her breath until she can type it in.",
+        "Marcus remembers how to ride a bike after years without practice.",
+        "Ana recalls the details of her tenth birthday party."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The phonological loop holds and rehearses verbal and auditory information in working memory, as when repeating a number to keep it active.",
+      "distractor_notes": {
+        "A": "Mental images of a route use the visuospatial sketchpad.",
+        "C": "Riding a bike is a procedural (implicit) memory.",
+        "D": "Personal events are episodic long-term memories."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": "SB",
+      "published": "2026-12-01"
+    },
+    "dq-0003": {
+      "id": "dq-0003",
+      "status": "reviewed",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0002"
+      ],
+      "question": "After a head injury, Tomas can see objects clearly but cannot recognize familiar faces. Which region labeled in the figure is most likely damaged?",
+      "options": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Region Y is the temporal lobe, which includes an area involved in recognizing faces.",
+      "distractor_notes": {
+        "A": "W is the frontal lobe, linked to planning and movement.",
+        "B": "X is the parietal lobe, linked to touch and spatial processing.",
+        "D": "Z is the occipital lobe; damage there would impair basic vision, but Tomas sees clearly."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": "images/diagnostics/fig-0002.svg",
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": "SB",
+      "published": null
+    },
+    "dq-0004": {
+      "id": "dq-0004",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.3"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0001",
+      "stimulus_id": "stim-0001",
+      "figure_ids": [
+        "fig-0001"
+      ],
+      "question": "What is the independent variable in this study?",
+      "options": [
+        "The number of words each student recalled one week later",
+        "Whether students took practice quizzes or re-read the list",
+        "The 15 minutes students spent studying the list",
+        "The college students who took part in the study"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The researcher manipulated the study method (quizzes or re-reading), so it is the independent variable.",
+      "distractor_notes": {
+        "A": "Words recalled is the measured outcome, the dependent variable.",
+        "C": "Study time was held constant for both groups.",
+        "D": "The participants are the sample, not a variable."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0001.svg",
+      "context": "stim-0001",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": "SB",
+      "published": "2026-12-01"
+    },
+    "dq-0005": {
+      "id": "dq-0005",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.3"
+      ],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0001",
+      "stimulus_id": "stim-0001",
+      "figure_ids": [
+        "fig-0001"
+      ],
+      "question": "Which of the following concepts is best supported by the results shown in the graph?",
+      "options": [
+        "The testing effect",
+        "The serial position effect",
+        "Proactive interference",
+        "State-dependent memory"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Students who practiced retrieving the words recalled more of them, which is the testing effect.",
+      "distractor_notes": {
+        "B": "The study did not compare words by their position in the list.",
+        "C": "No earlier learning interfered with the new list.",
+        "D": "The students' internal states were not varied."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0001.svg",
+      "context": "stim-0001",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": "SB",
+      "published": "2026-12-01"
+    },
+    "dq-0006": {
+      "id": "dq-0006",
+      "status": "draft",
+      "unit": "Unit 5",
+      "topic": "5.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "5.4.E",
+      "ek": [
+        "5.4.E.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is a defining feature of panic disorder?",
+      "options": [
+        "Recurring, unexpected episodes of intense fear with physical symptoms",
+        "Persistent fear of being judged in social situations",
+        "Unwanted repetitive thoughts paired with ritual behaviors",
+        "Flashbacks and nightmares following a traumatic event"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Panic disorder involves repeated, unexpected panic attacks with physical symptoms such as a racing heart.",
+      "distractor_notes": {
+        "B": "Describes social anxiety disorder.",
+        "C": "Describes obsessive-compulsive disorder.",
+        "D": "Describes posttraumatic stress disorder."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-11",
+      "reviewed_by": null,
+      "published": null
+    }
+  },
+  "tests": [
+    {
+      "test_id": "unit-2-v1",
+      "name": "Unit 2 Diagnostic: Cognition",
+      "type": "unit",
+      "unit": "Unit 2",
+      "version": 1,
+      "status": "published",
+      "time_limit_minutes": 40,
+      "reporting": {
+        "min_items_topic": 3,
+        "min_items_unit": 10,
+        "min_items_skill": 8
+      },
+      "items": [
+        {
+          "order": 1,
+          "qid": "dq-0002"
+        },
+        {
+          "order": 2,
+          "set": "set-0001",
+          "stimulus_id": "stim-0001",
+          "qids": [
+            "dq-0004",
+            "dq-0005"
+          ]
+        }
+      ]
+    }
+  ]
+}
