@@ -26,7 +26,7 @@
     }
 
     function testCard(ctx, t, history, progress, title, eyebrow) {
-        var count = DX.testQids(t).length;
+        var count = DX.testSize(t);
         var mine = attemptsFor(history, t);
         var prog = progress.filter(function (p) { return familyOf({ test_id: p.testId }) === familyOf(t); })[0];
         var card = h('div', { class: 'dx-card' });
@@ -127,6 +127,18 @@
             } else {
                 box.appendChild(h('p', { text: 'Content checks: no problems found.' }));
             }
+            ctx.tests.filter(DX.isDraw).forEach(function (t) {
+                var rows = DX.poolReport(ctx, t);
+                var short = rows.filter(function (r) { return r.have < r.need; }).length;
+                var det = h('details', {}, [h('summary', { text: 'Question pool: ' + t.name + (short ? ' (' + short + ' slot' + (short === 1 ? '' : 's') + ' short)' : ' (ready)') })]);
+                var ul = h('ul');
+                rows.forEach(function (r) {
+                    var depth = r.need ? Math.round((r.have / r.need) * 10) / 10 : 0;
+                    ul.appendChild(h('li', { text: r.label + ': ' + r.have + ' ' + (r.have === 1 ? r.unit.replace(/s$/, '') : r.unit) + ' for ' + r.need + ' needed (' + depth + 'x)' }));
+                });
+                det.appendChild(ul);
+                box.appendChild(det);
+            });
         }
 
         var history = DX.getHistory();
