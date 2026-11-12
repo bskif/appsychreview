@@ -9,9 +9,9 @@
     var DX = {};
     var LETTERS = ['A', 'B', 'C', 'D'];
     var PATHS = {
-        data: 'data/diagnostic_tests.json',
+        data: 'diagnostic_tests.json',
         topics: 'topics.json',
-        weights: 'data/diagnostic_topic_weights.json'
+        weights: 'diagnostic_topic_weights.json'
     };
     /* Folder that holds the figure images, relative to the site root.
        A figure's "file" in the JSON can be just a file name (fig-0001.svg); it is looked up here.
