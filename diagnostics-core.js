@@ -196,9 +196,137 @@
         return out;
     };
 
-    /* A test can be taken only when every question in it is available */
+    /* ---------- drawn tests ----------
+       A fixed test lists its questions in "items". A drawn test has a "recipe" instead:
+         { "order": "mixed" | "slots",
+           "slots": [ { "topic": "2.1", "count": 4 },
+                      { "unit": "Unit 2", "skill_focused": true, "kind": "set", "size": 3, "count": 1 },
+                      { "unit": "Unit 2", "skill_focused": true, "count": 3 } ] }
+       A slot picks from published, non-retired questions. A slot matches on "topic", "topics" or "unit";
+       skill_focused is false unless the slot says true (or "any"). "kind": "set" draws whole sets of "size"
+       questions (default 3), shown in question-id order. */
+    DX.isDraw = function (t) { return !!(t && t.recipe && t.recipe.slots); };
+
+    function liveBank(ctx) {
+        return Object.keys(ctx.questions).map(function (id) { return ctx.questions[id]; })
+            .filter(function (q) { return DX.isLive(ctx, q) && !q.retired; });
+    }
+    function slotMatch(q, slot) {
+        var sf = slot.skill_focused === undefined ? false : slot.skill_focused;
+        if (sf !== 'any' && !!q.skill_focused !== !!sf) { return false; }
+        if (slot.topic) { return q.topic === slot.topic; }
+        if (slot.topics) { return slot.topics.indexOf(q.topic) >= 0; }
+        if (slot.unit) { return q.unit === slot.unit; }
+        return true;
+    }
+    function slotCandidates(ctx, slot, bank) {
+        if (slot.kind === 'set') {
+            var size = slot.size || 3, groups = {};
+            Object.keys(ctx.questions).forEach(function (id) {
+                var q = ctx.questions[id];
+                if (q.setid) { (groups[q.setid] = groups[q.setid] || []).push(q); }
+            });
+            return Object.keys(groups).map(function (sid) {
+                var qs = groups[sid].slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; });
+                var ok = qs.length === size && qs.every(function (q) {
+                    return DX.isLive(ctx, q) && !q.retired && slotMatch(q, slot) && q.stimulus_id === qs[0].stimulus_id;
+                });
+                return ok ? { kind: 'set', setid: sid, stimulus_id: qs[0].stimulus_id, qs: qs } : null;
+            }).filter(Boolean);
+        }
+        return bank.filter(function (q) { return !q.setid && slotMatch(q, slot); })
+            .map(function (q) { return { kind: 'q', qs: [q] }; });
+    }
+    function slotLabel(s) {
+        var w = s.topic ? 'Topic ' + s.topic : (s.topics ? 'Topics ' + s.topics.join(', ') : (s.unit || 'Any topic'));
+        if (s.skill_focused === true) { w += ' research and data'; }
+        return w + (s.kind === 'set' ? ', sets of ' + (s.size || 3) : '');
+    }
+    function shuffle(a, rnd) {
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(rnd() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+    }
+
+    /* How many times each question has already appeared in this student's finished tests */
+    DX.seenCounts = function () {
+        var m = {};
+        DX.getHistory().forEach(function (a) { (a.qids || []).forEach(function (id) { m[id] = (m[id] || 0) + 1; }); });
+        return m;
+    };
+
+    DX.testSize = function (t) {
+        if (!DX.isDraw(t)) { return DX.testQids(t).length; }
+        return t.recipe.slots.reduce(function (n, s) { return n + (s.count || 0) * (s.kind === 'set' ? (s.size || 3) : 1); }, 0);
+    };
+
+    /* Per slot: how many questions (or sets) the bank has versus how many a draw needs */
+    DX.poolReport = function (ctx, t) {
+        var bank = liveBank(ctx);
+        return (t.recipe.slots || []).map(function (s) {
+            return { label: slotLabel(s), need: s.count || 0, have: slotCandidates(ctx, s, bank).length, unit: s.kind === 'set' ? 'sets' : 'questions' };
+        });
+    };
+
+    function keyPenalty(picks) {
+        var keys = [];
+        picks.forEach(function (c) { c.qs.forEach(function (q) { keys.push(q.answer); }); });
+        var pen = 0, i;
+        for (i = 2; i < keys.length; i++) { if (keys[i] === keys[i - 1] && keys[i] === keys[i - 2]) { pen++; } }
+        if (keys.length >= 12) {
+            var counts = { A: 0, B: 0, C: 0, D: 0 };
+            keys.forEach(function (k) { if (counts[k] !== undefined) { counts[k]++; } });
+            LETTERS.forEach(function (L) { var dev = Math.abs(counts[L] - keys.length / 4); if (dev > 2) { pen += dev - 2; } });
+        }
+        return pen;
+    }
+
+    /* Draw one test. Prefers questions this student has not seen, then balances the answer key.
+       Throws if a slot does not have enough questions. opts: { rng, seen, tries } */
+    DX.draw = function (ctx, t, opts) {
+        opts = opts || {};
+        var rnd = opts.rng || Math.random;
+        var seen = opts.seen || DX.seenCounts();
+        var bank = liveBank(ctx);
+        var slots = t.recipe.slots;
+        var pools = slots.map(function (s) { return slotCandidates(ctx, s, bank); });
+        var best = null, bestPen = Infinity, tries = opts.tries || 250;
+        for (var n = 0; n < tries; n++) {
+            var used = {}, picks = [];
+            for (var si = 0; si < slots.length; si++) {
+                var need = slots[si].count || 0;
+                var cands = pools[si].filter(function (c) { return !c.qs.some(function (q) { return used[q.id]; }); });
+                if (cands.length < need) {
+                    var err = new Error('The question pool is too small for ' + slotLabel(slots[si]) + ': needs ' + need + ', has ' + cands.length + '.');
+                    err.slotIndex = si;
+                    throw err;
+                }
+                var keyed = cands.map(function (c) {
+                    var s = c.qs.reduce(function (m, q) { return Math.max(m, seen[q.id] || 0); }, 0);
+                    return { c: c, k: s + rnd() * 0.99 };
+                }).sort(function (a, b) { return a.k - b.k; });
+                keyed.slice(0, need).forEach(function (x) { x.c.qs.forEach(function (q) { used[q.id] = 1; }); picks.push(x.c); });
+            }
+            if (t.recipe.order !== 'slots') { shuffle(picks, rnd); }
+            var pen = keyPenalty(picks);
+            if (pen < bestPen) { bestPen = pen; best = picks; }
+            if (pen === 0) { break; }
+        }
+        var items = best.map(function (c, i) {
+            return c.kind === 'set'
+                ? { order: i + 1, set: c.setid, stimulus_id: c.stimulus_id, qids: c.qs.map(function (q) { return q.id; }) }
+                : { order: i + 1, qid: c.qs[0].id };
+        });
+        return { items: items, penalty: bestPen };
+    };
+
+    /* A test can be taken only when every question it needs is available */
     DX.testReady = function (ctx, t) {
         if (!ctx.preview && t.status !== 'published') { return false; }
+        if (DX.isDraw(t)) {
+            try { DX.draw(ctx, t, { tries: 1, seen: {} }); return true; } catch (e) { return false; }
+        }
         var ids = DX.testQids(t);
         if (!ids.length) { return false; }
         return ids.every(function (id) { return DX.isLive(ctx, ctx.questions[id]); });
@@ -261,6 +389,22 @@
             }
         });
         ctx.tests.forEach(function (t) {
+            if (DX.isDraw(t)) {
+                var keyCount = { A: 0, B: 0, C: 0, D: 0 }, total = 0, bank = liveBank(ctx);
+                DX.poolReport(ctx, t).forEach(function (r) {
+                    if (r.have < r.need) { p(t.test_id, r.label + ' has ' + r.have + ' ' + r.unit + ' but a draw needs ' + r.need); }
+                });
+                t.recipe.slots.forEach(function (s) {
+                    slotCandidates(ctx, s, bank).forEach(function (c) { c.qs.forEach(function (q) { if (keyCount[q.answer] !== undefined) { keyCount[q.answer]++; total++; } }); });
+                });
+                if (total >= 20) {
+                    LETTERS.forEach(function (L) {
+                        var share = keyCount[L] / total;
+                        if (share < 0.18 || share > 0.32) { p(t.test_id, 'pool answer key is lopsided: ' + L + ' is ' + Math.round(share * 100) + '% of ' + total + ' questions'); }
+                    });
+                }
+                return;
+            }
             var ids = DX.testQids(t);
             var seen = {};
             ids.forEach(function (id) {
