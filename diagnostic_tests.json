@@ -5223,7 +5223,7 @@
     },
     "dq-0125": {
       "id": "dq-0125",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.5",
       "topic_secondary": [
@@ -5262,12 +5262,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0126": {
       "id": "dq-0126",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.5",
       "topic_secondary": [
@@ -5306,12 +5306,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0127": {
       "id": "dq-0127",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.5",
       "topic_secondary": [
@@ -5350,12 +5350,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0128": {
       "id": "dq-0128",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.6",
       "topic_secondary": [
@@ -5392,12 +5392,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0129": {
       "id": "dq-0129",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.6",
       "topic_secondary": [
@@ -5434,12 +5434,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0130": {
       "id": "dq-0130",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.6",
       "topic_secondary": [
@@ -5476,12 +5476,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0131": {
       "id": "dq-0131",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.5",
       "topic_secondary": [
@@ -5518,12 +5518,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0132": {
       "id": "dq-0132",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.4",
       "topic_secondary": [
@@ -5560,12 +5560,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0133": {
       "id": "dq-0133",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.4",
       "topic_secondary": [
@@ -5602,12 +5602,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0134": {
       "id": "dq-0134",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.3",
       "topic_secondary": [
@@ -5644,12 +5644,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0135": {
       "id": "dq-0135",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.5",
       "topic_secondary": [
@@ -5686,12 +5686,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0136": {
       "id": "dq-0136",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 1",
       "topic": "1.4",
       "topic_secondary": [
@@ -5722,6 +5722,766 @@
         "D": "Class Y's range is 40 and Class X's is 0."
       },
       "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0137": {
+      "id": "dq-0137",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a stock market crash, Mr. Costa tells his friends, \"I saw that coming all along,\" although he never made any prediction before the crash. Which of the following best describes his thinking?",
+      "options": [
+        "Overconfidence",
+        "Confirmation bias",
+        "Availability heuristic",
+        "Hindsight bias"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Believing after an event that one knew it would happen is hindsight bias.",
+      "distractor_notes": {
+        "A": "Overconfidence is overestimating how much one knows or can do, not claiming to have predicted an event afterward.",
+        "B": "Confirmation bias is favoring information that supports existing beliefs.",
+        "C": "The availability heuristic judges likelihood by how easily examples come to mind."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0138": {
+      "id": "dq-0138",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before a psychology test, students predict that they will each earn at least a 90. The average score turns out to be 72. Which of the following best explains the students' predictions?",
+      "options": [
+        "Overconfidence",
+        "Hindsight bias",
+        "Confirmation bias",
+        "Skepticism"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Predicting much better performance than one actually achieves is overconfidence.",
+      "distractor_notes": {
+        "B": "Hindsight bias is a belief after the fact that an outcome was predictable.",
+        "C": "Confirmation bias is favoring information that agrees with existing beliefs.",
+        "D": "Skepticism is a willingness to question claims, which the students did not show."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0139": {
+      "id": "dq-0139",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Sato believes a new diet improves memory. She reads only the studies that support her belief and ignores studies that found no effect. Which of the following best describes her approach?",
+      "options": [
+        "Hindsight bias",
+        "Overconfidence",
+        "Confirmation bias",
+        "Humility"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Searching only for evidence that agrees with a belief is confirmation bias.",
+      "distractor_notes": {
+        "A": "Hindsight bias is believing after the fact that one knew the outcome.",
+        "B": "Overconfidence is overestimating one's own knowledge or ability.",
+        "D": "Humility is acknowledging that one's ideas may be wrong."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0140": {
+      "id": "dq-0140",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Lopez reads a claim that a phone app doubles intelligence. She responds by asking to see the data and how the researchers collected it. Which of the following parts of the scientific attitude is Dr. Lopez showing?",
+      "options": [
+        "Curiosity",
+        "Skepticism",
+        "Humility",
+        "Overconfidence"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Asking for evidence before accepting a claim shows skepticism.",
+      "distractor_notes": {
+        "A": "Curiosity is a desire to explore and ask questions.",
+        "C": "Humility is a willingness to admit one might be wrong.",
+        "D": "Overconfidence is not part of the scientific attitude."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0141": {
+      "id": "dq-0141",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After another lab fails to repeat his results, Dr. Banda publishes a correction and says that he may have been wrong. Which of the following parts of the scientific attitude is Dr. Banda showing?",
+      "options": [
+        "Humility",
+        "Skepticism",
+        "Curiosity",
+        "Confirmation bias"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Admitting that one's ideas may be wrong is humility.",
+      "distractor_notes": {
+        "B": "Skepticism is a willingness to question claims.",
+        "C": "Curiosity is a desire to explore and ask questions.",
+        "D": "Confirmation bias would lead him to defend his results."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0142": {
+      "id": "dq-0142",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.1",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A fair coin lands on heads six times in a row. Luis insists the coin must be rigged, even though runs like this happen by chance in many sequences of flips. Which of the following best describes his thinking?",
+      "options": [
+        "Hindsight bias",
+        "Overconfidence",
+        "Confirmation bias",
+        "Seeing order in random events"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. People tend to see patterns in random events that chance alone can produce.",
+      "distractor_notes": {
+        "A": "Hindsight bias is believing after the fact that one knew the outcome.",
+        "B": "Overconfidence is overestimating one's knowledge or ability.",
+        "C": "Confirmation bias is favoring evidence that supports an existing belief."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0143": {
+      "id": "dq-0143",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Kim states that students who sleep eight hours will recall more words than students who sleep four hours. Which of the following terms best describes this statement?",
+      "options": [
+        "Theory",
+        "Hypothesis",
+        "Operational definition",
+        "Replication"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. A specific, testable prediction is a hypothesis.",
+      "distractor_notes": {
+        "A": "A theory is a broad explanation that organizes many observations.",
+        "C": "An operational definition states how a variable is measured.",
+        "D": "Replication is repeating a study."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0144": {
+      "id": "dq-0144",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After many observations, psychologists propose a set of principles that explains why people forget and predicts when forgetting will happen. Which of the following terms best describes these principles?",
+      "options": [
+        "Hypothesis",
+        "Operational definition",
+        "Theory",
+        "Replication"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A broad explanation that organizes observations and generates predictions is a theory.",
+      "distractor_notes": {
+        "A": "A hypothesis is one specific testable prediction.",
+        "B": "An operational definition states how a variable is measured.",
+        "D": "Replication is repeating a study."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0145": {
+      "id": "dq-0145",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Obi defines aggression in her study as the number of times a child hits a doll in ten minutes. Which of the following best describes this definition?",
+      "options": [
+        "Theory",
+        "Replication",
+        "Hypothesis",
+        "Operational definition"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Defining a variable by exactly how it will be measured is an operational definition.",
+      "distractor_notes": {
+        "A": "A theory is a broad explanation, not a measurement rule.",
+        "B": "Replication is repeating a study.",
+        "C": "A hypothesis is a prediction about results."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0146": {
+      "id": "dq-0146",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A research team in another country repeats a published experiment using the same procedures to see whether it gets the same results. Which of the following scientific practices is the team using?",
+      "options": [
+        "Replication",
+        "Peer review",
+        "Operational definition",
+        "Hypothesis"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Repeating a study to see whether results hold is replication.",
+      "distractor_notes": {
+        "B": "Peer review is expert evaluation before publication.",
+        "C": "An operational definition states how a variable is measured.",
+        "D": "A hypothesis is a prediction, not a repeat of a study."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0147": {
+      "id": "dq-0147",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.D",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before a journal publishes a study, it sends the manuscript to independent experts, who judge the study's methods and conclusions. Which of the following best describes this process?",
+      "options": [
+        "Replication",
+        "Operational definition",
+        "Peer review",
+        "Hypothesis"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Having independent experts evaluate research before publication is peer review.",
+      "distractor_notes": {
+        "A": "Replication is repeating the study, not judging a manuscript.",
+        "B": "An operational definition states how a variable is measured.",
+        "D": "A hypothesis is a prediction."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0148": {
+      "id": "dq-0148",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher wants to study stress. Which of the following is the best operational definition of stress for her study?",
+      "options": [
+        "Stress is the general feeling of being overwhelmed by daily life.",
+        "Stress is a score on a 20-item worry and tension questionnaire.",
+        "Stress is whatever makes a person's life feel harder than usual.",
+        "Stress is the opposite of feeling relaxed and calm in life."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. A measurable definition, such as a questionnaire score, lets others repeat the measurement.",
+      "distractor_notes": {
+        "A": "This describes the idea in general terms, not how it will be measured.",
+        "C": "This is vague and cannot be measured consistently.",
+        "D": "This defines stress by another vague term."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0149": {
+      "id": "dq-0149",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is the best example of a testable hypothesis?",
+      "options": [
+        "People who care about learning should sleep more each night.",
+        "Dreams always show what people secretly want but cannot admit.",
+        "Having a good memory is one of the most important abilities for success.",
+        "Students given a nap will recall more words than students given none."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A testable hypothesis predicts a specific, measurable result.",
+      "distractor_notes": {
+        "A": "This is an opinion, not a testable prediction.",
+        "B": "This cannot be checked with observable measures.",
+        "C": "This is too broad to test directly."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0150": {
+      "id": "dq-0150",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.2",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher finds that her data do not support her hypothesis. According to the scientific method, which of the following is the best next step?",
+      "options": [
+        "Revise the theory and test the new prediction.",
+        "Run the study again until the data support the hypothesis.",
+        "Report only the results that agree with the hypothesis.",
+        "Change the hypothesis and say it was predicted all along."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Science improves when theories are revised in light of evidence and then tested again.",
+      "distractor_notes": {
+        "B": "Repeating until results agree is biased.",
+        "C": "Leaving out results is dishonest.",
+        "D": "This is hindsight bias."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0151": {
+      "id": "dq-0151",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Reed explains why Mia studies so hard by pointing to the praise and good grades she receives after each study session. Which of the following psychological perspectives does this explanation best match?",
+      "options": [
+        "Humanistic perspective",
+        "Evolutionary perspective",
+        "Behavioral perspective",
+        "Psychodynamic perspective"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Explaining behavior by rewards and consequences is the behavioral perspective.",
+      "distractor_notes": {
+        "A": "The humanistic perspective focuses on growth and free will.",
+        "B": "The evolutionary perspective focuses on survival and reproduction.",
+        "D": "The psychodynamic perspective focuses on unconscious conflicts."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0152": {
+      "id": "dq-0152",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Ortiz explains a student's test anxiety by how the student thinks about the test, including thoughts such as \"I am going to fail.\" Which of the following psychological perspectives does this explanation best match?",
+      "options": [
+        "Behavioral perspective",
+        "Biological perspective",
+        "Evolutionary perspective",
+        "Cognitive perspective"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Explaining behavior through thoughts and interpretations is the cognitive perspective.",
+      "distractor_notes": {
+        "A": "The behavioral perspective focuses on observable behavior and rewards.",
+        "B": "The biological perspective focuses on the brain and genes.",
+        "C": "The evolutionary perspective focuses on survival and reproduction."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0153": {
+      "id": "dq-0153",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Park studies how people strive to reach their full potential and how their sense of free will shapes their choices. Which of the following psychological perspectives does Dr. Park's work best match?",
+      "options": [
+        "Cognitive perspective",
+        "Humanistic perspective",
+        "Psychodynamic perspective",
+        "Biological perspective"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Focus on growth, potential, and free will is the humanistic perspective.",
+      "distractor_notes": {
+        "A": "The cognitive perspective focuses on mental processes.",
+        "C": "The psychodynamic perspective focuses on unconscious conflicts.",
+        "D": "The biological perspective focuses on the brain and genes."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0154": {
+      "id": "dq-0154",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Weiss explains an adult's persistent fear of close relationships by pointing to unconscious conflicts that began in early childhood. Which of the following psychological perspectives does this explanation best match?",
+      "options": [
+        "Psychodynamic perspective",
+        "Behavioral perspective",
+        "Humanistic perspective",
+        "Evolutionary perspective"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Explaining behavior through unconscious conflicts from early life is the psychodynamic perspective.",
+      "distractor_notes": {
+        "B": "The behavioral perspective focuses on observable behavior.",
+        "C": "The humanistic perspective focuses on growth and free will.",
+        "D": "The evolutionary perspective focuses on survival and reproduction."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0155": {
+      "id": "dq-0155",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Tran explains one person's depression by pointing to differences in brain chemistry and in the person's family history. Which of the following psychological perspectives does this explanation best match?",
+      "options": [
+        "Sociocultural perspective",
+        "Biological perspective",
+        "Cognitive perspective",
+        "Humanistic perspective"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Explaining behavior through the brain and heredity is the biological perspective.",
+      "distractor_notes": {
+        "A": "The sociocultural perspective focuses on culture and social context.",
+        "C": "The cognitive perspective focuses on mental processes.",
+        "D": "The humanistic perspective focuses on growth and free will."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0156": {
+      "id": "dq-0156",
+      "status": "draft",
+      "unit": "Unit 0",
+      "topic": "0.6",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Nakamura explains why people in two countries show respect to elders in different ways by pointing to each country's cultural norms and social setting. Which of the following psychological perspectives does this explanation best match?",
+      "options": [
+        "Behavioral perspective",
+        "Biological perspective",
+        "Sociocultural perspective",
+        "Evolutionary perspective"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Explaining behavior through culture and social context is the sociocultural perspective.",
+      "distractor_notes": {
+        "A": "The behavioral perspective focuses on rewards and consequences.",
+        "B": "The biological perspective focuses on the brain and genes.",
+        "D": "The evolutionary perspective focuses on survival and reproduction."
+      },
+      "difficulty": "easy",
       "cognitive_level": "application",
       "image": null,
       "context": null,
@@ -5846,6 +6606,67 @@
           {
             "unit": "Unit 1",
             "skill_focused": true,
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "test_id": "unit-0-v1",
+      "name": "Unit 0 Diagnostic: Scientific Foundations",
+      "type": "unit",
+      "unit": "Unit 0",
+      "version": 1,
+      "status": "published",
+      "time_limit_minutes": 30,
+      "reporting": {
+        "min_items_topic": 3,
+        "min_items_unit": 10,
+        "min_items_skill": 8
+      },
+      "recipe": {
+        "order": "mixed",
+        "slots": [
+          {
+            "topic": "0.1",
+            "count": 3
+          },
+          {
+            "topic": "0.2",
+            "count": 4
+          },
+          {
+            "topic": "0.3",
+            "count": 1,
+            "kind": "set",
+            "size": 3
+          },
+          {
+            "topic": "0.3",
+            "count": 3
+          },
+          {
+            "topic": "0.4",
+            "count": 1,
+            "kind": "set",
+            "size": 3
+          },
+          {
+            "topic": "0.4",
+            "count": 2
+          },
+          {
+            "topic": "0.5",
+            "count": 1,
+            "kind": "set",
+            "size": 3
+          },
+          {
+            "topic": "0.5",
+            "count": 1
+          },
+          {
+            "topic": "0.6",
             "count": 3
           }
         ]
