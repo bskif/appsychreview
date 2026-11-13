@@ -41,6 +41,51 @@
         "attribution": "Diagram by appsychreviewhub.com",
         "license": "CC BY 4.0"
       }
+    },
+    "fig-0003": {
+      "figure_id": "fig-0003",
+      "file": "images/diagnostics/fig-0003.svg",
+      "type": "diagram",
+      "alt": "Twelve identical black dots in two rows. Four dots sit close together in each of three clusters, with wide gaps between the clusters.",
+      "caption": "Arrangement of Twelve Dots",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0003.json",
+        "tool": "Python SVG script (batch1.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0004": {
+      "figure_id": "fig-0004",
+      "file": "images/diagnostics/fig-0004.svg",
+      "type": "line_two_series",
+      "alt": "Line graph. Days after study: 1, 7, 14. Distributed study: 22, 19, 16 words. Massed study: 20, 12, 8 words. Y-axis: mean words recalled, 0 to 30.",
+      "caption": "Mean Words Recalled by Study Schedule",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0004.json",
+        "tool": "Python SVG script (batch4.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0005": {
+      "figure_id": "fig-0005",
+      "file": "images/diagnostics/fig-0005.svg",
+      "type": "diagram",
+      "alt": "Diagram with three boxes in a row: sensory memory, short-term memory, long-term memory. Arrow 1 points from sensory memory to short-term memory. Arrow 2 points from short-term memory to long-term memory. Arrow 3 points from long-term memory back to short-term memory. Arrow 4 loops from short-term memory back to itself.",
+      "caption": "Model of Memory Stages",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0005.json",
+        "tool": "Python SVG script (batch67.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
     }
   },
   "stimuli": {
@@ -52,6 +97,44 @@
       "figure_ids": [
         "fig-0001"
       ]
+    },
+    "stim-0002": {
+      "stimulus_id": "stim-0002",
+      "type": "text+figure",
+      "text": "Dr. Mbeki studied how the timing of study sessions affects memory. She randomly assigned 120 college students to one of two groups. All students studied the same list of 30 words for a total of 30 minutes. The massed group studied for 30 minutes in one session. The distributed group studied for 10 minutes on each of three consecutive days. Each student was tested on recall of the words 1, 7, or 14 days after the last study session. The graph shows the mean number of words recalled.",
+      "table": null,
+      "figure_ids": [
+        "fig-0004"
+      ]
+    },
+    "stim-0003": {
+      "stimulus_id": "stim-0003",
+      "type": "text+table",
+      "text": "Dr. Okoye studied whether talking on a phone affects what walkers notice. She randomly assigned 200 college students to walk across a campus square. One group of 100 students talked on a phone while walking. The other group of 100 students walked without a phone. A person in a clown costume rode a unicycle along the walkers' path. After each walk, students were asked whether they had seen anything unusual.",
+      "table": {
+        "title": "Students Who Noticed the Unicycling Clown",
+        "columns": [
+          "Group",
+          "Number of students",
+          "Noticed the clown",
+          "Did not notice the clown"
+        ],
+        "rows": [
+          [
+            "Phone",
+            "100",
+            "25",
+            "75"
+          ],
+          [
+            "No phone",
+            "100",
+            "60",
+            "40"
+          ]
+        ]
+      },
+      "figure_ids": []
     }
   },
   "questions": {
@@ -90,7 +173,7 @@
       "image": null,
       "context": null,
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": "SB",
       "published": null
@@ -130,7 +213,7 @@
       "image": null,
       "context": null,
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": "SB",
       "published": null
@@ -172,7 +255,7 @@
       "image": "images/diagnostics/fig-0002.svg",
       "context": null,
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": "SB",
       "published": null
@@ -216,7 +299,7 @@
       "image": "images/diagnostics/fig-0001.svg",
       "context": "stim-0001",
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": "SB",
       "published": null
@@ -258,7 +341,7 @@
       "image": "images/diagnostics/fig-0001.svg",
       "context": "stim-0001",
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": "SB",
       "published": null
@@ -298,10 +381,2613 @@
       "image": null,
       "context": null,
       "supersedes": null,
-      "retired": false,
+      "retired": true,
       "created": "2026-11-11",
       "reviewed_by": null,
       "published": null
+    },
+    "dq-0007": {
+      "id": "dq-0007",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A smudge covers the middle of one word in the sentence \"The cat chased the mouse across the kitchen floor.\" Kiran reads the whole sentence quickly and does not notice the smudge. Which of the following best explains why Kiran reads the word so easily?",
+      "options": [
+        "Top-down processing",
+        "Bottom-up processing",
+        "Perceptual constancy",
+        "Selective attention"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Kiran uses expectations and the surrounding context to interpret the smudged word, which is top-down processing.",
+      "distractor_notes": {
+        "B": "Bottom-up processing builds perception from the raw features alone, without relying on context.",
+        "C": "Constancy keeps an object's properties stable as viewing conditions change.",
+        "D": "Selective attention is about focusing on one stimulus and ignoring others."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0008": {
+      "id": "dq-0008",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.5",
+        "2.1.A.5.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Mateo is talking with a friend in a loud, crowded cafeteria and cannot follow the other conversations around him. From across the room, he suddenly hears someone say his name. Which of the following best explains what happened?",
+      "options": [
+        "Change blindness",
+        "Inattentional blindness",
+        "Selective attention",
+        "Perceptual set"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Mateo focuses on one conversation and filters out the rest, yet his own name still pulls his attention away.",
+      "distractor_notes": {
+        "A": "Change blindness is failing to notice a change in a visual scene.",
+        "B": "Inattentional blindness is missing a visible object while attending to something else; nothing is missed here.",
+        "D": "A perceptual set is a readiness to perceive in a certain way; it does not describe filtering sound."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0009": {
+      "id": "dq-0009",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.B",
+      "ek": [
+        "2.1.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "In a photograph, two parallel railroad tracks appear to move closer together as they stretch toward the horizon. This helps viewers judge how far away the horizon is. Which of the following depth cues does the photograph use?",
+      "options": [
+        "Interposition",
+        "Linear perspective",
+        "Retinal disparity",
+        "Texture gradient"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Parallel lines that seem to meet in the distance provide the monocular cue of linear perspective.",
+      "distractor_notes": {
+        "A": "Interposition is one object partly blocking another.",
+        "C": "Retinal disparity is a binocular cue and cannot be created by a flat photograph.",
+        "D": "Texture gradient is the way texture becomes finer with distance; the stem describes converging lines."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0010": {
+      "id": "dq-0010",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.B",
+      "ek": [
+        "2.1.B.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Ana watches a friend walk away down a long hallway. The image of her friend on Ana's retina gets smaller and smaller, but Ana does not think her friend is shrinking. Which of the following best explains Ana's perception?",
+      "options": [
+        "Apparent movement",
+        "Relative size",
+        "Closure",
+        "Size constancy"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Ana keeps perceiving the friend's size as unchanged even though the retinal image shrinks, which is size constancy.",
+      "distractor_notes": {
+        "A": "Apparent movement is seeing motion when there is none, such as in a series of still images.",
+        "B": "Relative size is a depth cue comparing objects of known size; it does not explain a stable perception of one object.",
+        "C": "Closure is filling in gaps to see a complete figure."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0011": {
+      "id": "dq-0011",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.4"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0003"
+      ],
+      "question": "Which of the following Gestalt principles best explains why most people looking at the figure see the dots as groups?",
+      "options": [
+        "Closure",
+        "Proximity",
+        "Similarity",
+        "Figure and ground"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The dots in each cluster are close together, so the viewer groups them by proximity.",
+      "distractor_notes": {
+        "A": "Closure is perceiving a complete shape from an incomplete one; no gaps in a shape are filled here.",
+        "C": "Similarity groups items that look alike, but all of the dots are identical.",
+        "D": "Figure and ground separates an object from its background, not groups of objects."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0012": {
+      "id": "dq-0012",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After watching several news reports about plane crashes, Dr. Nguyen's neighbor decides that driving across the country is safer than flying. Statistics show that flying is much safer per mile traveled. Which of the following best explains the neighbor's decision?",
+      "options": [
+        "Availability heuristic",
+        "Representativeness heuristic",
+        "Functional fixedness",
+        "Gambler's fallacy"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Vivid, easily remembered crash stories make the risk of flying seem more likely than it is.",
+      "distractor_notes": {
+        "B": "The representativeness heuristic judges by how well something matches a prototype, not by how easily examples come to mind.",
+        "C": "Functional fixedness is seeing an object only in its usual use.",
+        "D": "The gambler's fallacy is believing that past random events change the odds of future ones."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0013": {
+      "id": "dq-0013",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Farah pays $15 for a movie ticket. Thirty minutes into the film she is bored and would rather leave, but she stays because she does not want to waste the money she paid. Which of the following is most consistent with Farah's decision?",
+      "options": [
+        "Gambler's fallacy",
+        "Representativeness heuristic",
+        "Framing",
+        "Sunk-cost fallacy"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Farah lets money that is already spent and cannot be recovered guide her choice, which is the sunk-cost fallacy.",
+      "distractor_notes": {
+        "A": "The gambler's fallacy is a belief about random outcomes, such as a coin flip being \"due.\"",
+        "B": "The representativeness heuristic compares something to a typical example.",
+        "C": "Framing is the way wording changes a choice; the same wording is not at issue here."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0014": {
+      "id": "dq-0014",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.8"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A hiker needs to tighten a loose screw on a backpack but has no screwdriver. A friend suggests using a coin, but the hiker says, \"A coin is only for paying for things,\" and keeps searching. Which of the following best describes the hiker's thinking?",
+      "options": [
+        "Mental set",
+        "Convergent thinking",
+        "Functional fixedness",
+        "Divergent thinking"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The hiker can only see the coin in its usual role as money, which blocks a new use for it.",
+      "distractor_notes": {
+        "A": "A mental set is repeating a strategy that worked before; the hiker is not reusing a past solution.",
+        "B": "Convergent thinking narrows many ideas to one correct answer.",
+        "D": "Divergent thinking generates many ideas, which the hiker is not doing."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0015": {
+      "id": "dq-0015",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A young child has only seen small pet dogs and calls a horse a \"big dog.\" After her father explains it is a horse, the child creates a new mental category for horses. Which of the following processes best describes the creation of the new category?",
+      "options": [
+        "Assimilation",
+        "Accommodation",
+        "Priming",
+        "Mental set"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The child changes her schema by building a new category because the existing one did not fit, which is accommodation.",
+      "distractor_notes": {
+        "A": "Assimilation fits new information into an existing schema, as when she first called the horse a dog.",
+        "C": "Priming is an earlier cue influencing a later response.",
+        "D": "A mental set is a habit of using a previously successful strategy."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0016": {
+      "id": "dq-0016",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Adeyemi tells one group of patients that a surgery has a 90% survival rate. She tells a second group that the same surgery has a 10% death rate. The first group is much more willing to have the surgery. Which of the following best explains this result?",
+      "options": [
+        "Algorithm",
+        "Representativeness heuristic",
+        "Priming",
+        "Framing"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The same facts led to different choices because they were worded as a gain in one case and a loss in the other.",
+      "distractor_notes": {
+        "A": "An algorithm is a step-by-step procedure that guarantees a solution.",
+        "B": "The representativeness heuristic judges by similarity to a prototype.",
+        "C": "Priming is an earlier stimulus influencing a later response, not the wording of one message."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0017": {
+      "id": "dq-0017",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.1",
+        "2.3.A.1.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Tanvir easily describes his tenth birthday party to a friend, including blowing out the candles, the cake flavor, and the gift his cousin gave him. Which of the following types of memory is Tanvir mainly using?",
+      "options": [
+        "Semantic memory",
+        "Episodic memory",
+        "Procedural memory",
+        "Prospective memory"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Tanvir is recalling a specific personal event from a particular time and place, which is episodic memory.",
+      "distractor_notes": {
+        "A": "Semantic memory is general knowledge and facts, not a personal event.",
+        "C": "Procedural memory is for skills and how to do things.",
+        "D": "Prospective memory is remembering to do something in the future."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0018": {
+      "id": "dq-0018",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.1",
+        "2.3.A.1.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Lucia has not ridden a bicycle in ten years. She climbs onto one and rides smoothly without thinking about each step, but she cannot explain in words how she keeps her balance. Which of the following types of memory best explains her ability?",
+      "options": [
+        "Procedural memory",
+        "Episodic memory",
+        "Semantic memory",
+        "Prospective memory"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Lucia's skill is stored as an implicit memory for a procedure, which is hard to explain in words.",
+      "distractor_notes": {
+        "B": "Episodic memory is for personal events, which can be described.",
+        "C": "Semantic memory is for facts and general knowledge, which can be described.",
+        "D": "Prospective memory is about remembering future actions."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0019": {
+      "id": "dq-0019",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.1",
+        "2.3.A.1.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before leaving school, Jamal tells himself he needs to stop at the pharmacy on his way home. That afternoon, he remembers and picks up his sister's medicine. Which of the following types of memory did Jamal use?",
+      "options": [
+        "Episodic memory",
+        "Semantic memory",
+        "Procedural memory",
+        "Prospective memory"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Remembering to carry out an action in the future is prospective memory.",
+      "distractor_notes": {
+        "A": "Episodic memory is recalling a past personal event.",
+        "B": "Semantic memory is recalling general facts.",
+        "C": "Procedural memory is for skills such as riding a bicycle."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0020": {
+      "id": "dq-0020",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "While solving a math problem in her head, Mei silently repeats the numbers 47 and 38 to herself so she can keep them in mind. According to the working memory model, which of the following components is Mei mainly using?",
+      "options": [
+        "Central executive",
+        "Visuospatial sketchpad",
+        "Phonological loop",
+        "Echoic memory"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The phonological loop holds sounds and words, such as numbers repeated silently.",
+      "distractor_notes": {
+        "A": "The central executive directs attention and coordinates the other components.",
+        "B": "The visuospatial sketchpad holds images and spatial information.",
+        "D": "Echoic memory is brief sensory memory for sound in the multi-store model, not a working memory component."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0021": {
+      "id": "dq-0021",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Park asks students to study a word list by deciding whether each word fits into the sentence \"The ___ was on the table.\" According to the levels of processing model, which of the following types of encoding are the students using?",
+      "options": [
+        "Semantic encoding",
+        "Structural encoding",
+        "Phonemic encoding",
+        "Iconic encoding"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Judging whether a word fits a sentence depends on its meaning, which is semantic encoding, the deepest level of processing.",
+      "distractor_notes": {
+        "B": "Structural encoding focuses on how words look, the shallowest level.",
+        "C": "Phonemic encoding focuses on how words sound.",
+        "D": "Iconic memory is brief visual sensory memory, not a level of processing."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0022": {
+      "id": "dq-0022",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.B",
+      "ek": [
+        "2.8.B.2",
+        "2.8.B.2.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A psychologist gives the same intelligence test to 200 students in September and again to the same students in October. Each student's score is very similar on both days. Which of the following best describes the test?",
+      "options": [
+        "Valid",
+        "Standardized",
+        "Reliable",
+        "Biased"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Getting similar results when the test is given twice shows test-retest reliability.",
+      "distractor_notes": {
+        "A": "Validity is whether a test measures what it is meant to measure, which these scores do not show.",
+        "B": "Standardization is about using consistent procedures, not about consistent scores.",
+        "D": "Nothing in the stem suggests unfair results for any group."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0023": {
+      "id": "dq-0023",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.B",
+      "ek": [
+        "2.8.B.2",
+        "2.8.B.2.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A company creates a test to predict how well applicants will perform as sales representatives. Applicants' scores on the test strongly match their supervisors' performance ratings one year later. Which of the following is this an example of?",
+      "options": [
+        "Predictive validity",
+        "Test-retest reliability",
+        "Split-half reliability",
+        "Standardization"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The test scores accurately forecast a later outcome, which is predictive validity.",
+      "distractor_notes": {
+        "B": "Test-retest reliability compares scores from two administrations of the same test.",
+        "C": "Split-half reliability compares scores on two halves of one test.",
+        "D": "Standardization is about consistent testing procedures."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0024": {
+      "id": "dq-0024",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.B",
+      "ek": [
+        "2.8.B.2",
+        "2.8.B.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Every student taking a state aptitude test receives the same directions, has the same time limit, and sits in a quiet room. Which of the following psychometric principles does this best illustrate?",
+      "options": [
+        "Construct validity",
+        "Test-retest reliability",
+        "Predictive validity",
+        "Standardization"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Giving the test with consistent procedures and in consistent settings is standardization.",
+      "distractor_notes": {
+        "A": "Construct validity asks whether a test measures the trait it claims to measure.",
+        "B": "Test-retest reliability compares scores across two testing times.",
+        "C": "Predictive validity is how well scores forecast a future outcome."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0025": {
+      "id": "dq-0025",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.B",
+      "ek": [
+        "2.8.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Early intelligence tests divided mental age by chronological age and multiplied by 100. A 12-year-old child performs at the level of a typical 10-year-old. Which of the following is closest to this child's IQ on the early formula?",
+      "options": [
+        "22",
+        "83",
+        "100",
+        "120"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Mental age 10 divided by chronological age 12, times 100, is about 83.",
+      "distractor_notes": {
+        "A": "22 comes from adding the two ages instead of dividing.",
+        "C": "100 would mean mental age equals chronological age, which is not the case here.",
+        "D": "120 comes from dividing 12 by 10, which reverses the formula."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0026": {
+      "id": "dq-0026",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.A",
+      "ek": [
+        "2.8.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Alvarez finds that students who score high on a vocabulary test usually also score high on tests of math, spatial reasoning, and memory. She concludes that one underlying ability influences performance on all of these tasks. Which of the following does her conclusion best support?",
+      "options": [
+        "Multiple intelligences",
+        "Emotional intelligence",
+        "General intelligence (g)",
+        "Mental age"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A single factor behind performance on many different tasks is the idea of general intelligence, or g.",
+      "distractor_notes": {
+        "A": "Multiple intelligences proposes separate, independent abilities.",
+        "B": "Emotional intelligence is about perceiving and managing emotions.",
+        "D": "Mental age is part of an early IQ formula, not a theory of structure."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0027": {
+      "id": "dq-0027",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "To remember the phone number 5558675309, Rosa mentally splits it into three smaller sets: 555, 867, and 5309. Which of the following best describes the strategy Rosa is using?",
+      "options": [
+        "Method of loci",
+        "Serial position effect",
+        "Spacing effect",
+        "Chunking"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Combining digits into a few meaningful units is chunking, which makes the number easier to hold and encode.",
+      "distractor_notes": {
+        "A": "The method of loci links items to places along a familiar route.",
+        "B": "The serial position effect is about memory for items by their place in a list.",
+        "C": "The spacing effect is about spreading study over time."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0028": {
+      "id": "dq-0028",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before giving a speech, Amara imagines placing each of her main points at a different spot along the path through her house. During the speech she mentally walks the path to recall each point in order. Which of the following best describes her strategy?",
+      "options": [
+        "Method of loci",
+        "Chunking",
+        "Maintenance rehearsal",
+        "Primacy effect"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Linking each item to a location on a familiar route is the method of loci, a mnemonic device.",
+      "distractor_notes": {
+        "B": "Chunking groups information into meaningful units.",
+        "C": "Maintenance rehearsal is repeating information over and over.",
+        "D": "The primacy effect is better memory for items at the start of a list."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0029": {
+      "id": "dq-0029",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Lindgren has two groups study the same vocabulary words. Group 1 studies for four hours the night before a test. Group 2 studies for one hour each day over four days. A week later, Group 2 scores higher. Which of the following best explains the result?",
+      "options": [
+        "Primacy effect",
+        "Chunking",
+        "Spacing effect",
+        "Context-dependent memory"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Study spread over time, rather than crammed at once, leads to better long-term memory, which is the spacing effect.",
+      "distractor_notes": {
+        "A": "The primacy effect concerns items at the start of a list, not how study time is arranged.",
+        "B": "Chunking is grouping information, which neither group is described as doing.",
+        "D": "Context-dependent memory depends on matching the setting at study and test."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0030": {
+      "id": "dq-0030",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a head injury, Mr. Osei can describe his childhood and his wedding in detail. He cannot form new memories, so each morning he meets his nurse as if for the first time. Which of the following best describes his condition?",
+      "options": [
+        "Retrograde amnesia",
+        "Anterograde amnesia",
+        "Infantile amnesia",
+        "Source amnesia"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Being unable to form new memories after an injury is anterograde amnesia.",
+      "distractor_notes": {
+        "A": "Retrograde amnesia is losing memories formed before an injury, which Mr. Osei has kept.",
+        "C": "Infantile amnesia is the normal lack of memories from early childhood.",
+        "D": "Source amnesia is forgetting where a memory came from."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0031": {
+      "id": "dq-0031",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Kim asks one group of students to repeat the definition of a term over and over. She asks a second group to connect the term to events in their own lives. A week later, the second group remembers much more. Which of the following best explains the difference?",
+      "options": [
+        "Maintenance rehearsal",
+        "Elaborative rehearsal",
+        "Chunking",
+        "Iconic memory"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Linking material to personal meaning is elaborative rehearsal, which supports retention better than simple repetition.",
+      "distractor_notes": {
+        "A": "Maintenance rehearsal is the simple repetition that the first group used.",
+        "C": "Chunking is grouping items into larger units.",
+        "D": "Iconic memory is a brief visual sensory memory lasting a fraction of a second."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0032": {
+      "id": "dq-0032",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Singh's family says she walked, talked, and attended a birthday party before she turned two. As an adult, she cannot recall any of these events or anything else from before about age three. Which of the following best explains this?",
+      "options": [
+        "Retrograde amnesia",
+        "Anterograde amnesia",
+        "Alzheimer's disease",
+        "Infantile amnesia"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Adults typically cannot recall events from the earliest years of life, which is infantile amnesia.",
+      "distractor_notes": {
+        "A": "Retrograde amnesia follows an injury or illness and erases memories formed earlier.",
+        "B": "Anterograde amnesia is the inability to form new memories.",
+        "C": "Nothing suggests a disease; this pattern is typical of adults."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0033": {
+      "id": "dq-0033",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "On a short-answer quiz, Kofi writes the names of the five Great Lakes without any hints or answer choices. Which of the following retrieval processes is Kofi using?",
+      "options": [
+        "Recall",
+        "Recognition",
+        "Rehearsal",
+        "Consolidation"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Remembering information without cues is recall.",
+      "distractor_notes": {
+        "B": "Recognition identifies information when cues, such as answer choices, are provided.",
+        "C": "Rehearsal is repeating information to keep it in memory.",
+        "D": "Consolidation is the process that stabilizes a memory after it forms."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0034": {
+      "id": "dq-0034",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Students who studied for a test in the same classroom where they take it earn higher scores than students who studied in the library. Which of the following best explains this finding?",
+      "options": [
+        "Mood-congruent memory",
+        "State-dependent memory",
+        "Context-dependent memory",
+        "Testing effect"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Retrieval improves when the environment matches the setting where the information was encoded.",
+      "distractor_notes": {
+        "A": "Mood-congruent memory favors memories that match the person's current mood.",
+        "B": "State-dependent memory depends on a matching physical state, such as alertness.",
+        "D": "The testing effect is better memory from practicing retrieval."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0035": {
+      "id": "dq-0035",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Haddad has half of her students re-read a chapter and the other half take a practice quiz on the same chapter. A week later, the practice-quiz group scores higher on a final test. Which of the following best explains the result?",
+      "options": [
+        "Testing effect",
+        "Serial position effect",
+        "Misinformation effect",
+        "Source amnesia"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Practicing retrieval, as quizzing does, strengthens memory more than re-reading, which is the testing effect.",
+      "distractor_notes": {
+        "B": "The serial position effect is about where an item falls in a list.",
+        "C": "The misinformation effect is memory distorted by misleading information.",
+        "D": "Source amnesia is forgetting where information was learned."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0036": {
+      "id": "dq-0036",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Ivy gets a new locker combination at the start of the semester, but for weeks she keeps entering her old combination by mistake. Which of the following best explains her difficulty?",
+      "options": [
+        "Retroactive interference",
+        "Encoding failure",
+        "Proactive interference",
+        "Repression"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Older learning gets in the way of recalling new information, which is proactive interference.",
+      "distractor_notes": {
+        "A": "Retroactive interference is new learning disrupting memory of old information, the reverse of this case.",
+        "B": "Encoding failure means information never entered memory; Ivy did learn the new number.",
+        "D": "Repression is forgetting to protect the ego from distress."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0037": {
+      "id": "dq-0037",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Participants watch a video of a car accident. Some are asked how fast the cars were going when they \"smashed\" into each other, and others are asked about the cars that \"hit\" each other. A week later, the \"smashed\" group is more likely to report seeing broken glass that was not in the video. Which of the following best explains this result?",
+      "options": [
+        "Source amnesia",
+        "Imagination inflation",
+        "Tip-of-the-tongue phenomenon",
+        "Misinformation effect"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The wording of the question introduced misleading information that changed what participants remembered.",
+      "distractor_notes": {
+        "A": "Source amnesia is forgetting where a memory came from.",
+        "B": "Imagination inflation is greater confidence in a memory after imagining the event.",
+        "C": "The tip-of-the-tongue phenomenon is failing to retrieve a word that feels familiar."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0038": {
+      "id": "dq-0038",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher tests how many items from a list of nonsense syllables people remember at several times after learning. The graph shows that most forgetting happens soon after learning, and then the rate of forgetting slows. Which of the following does this pattern illustrate?",
+      "options": [
+        "Spacing effect",
+        "Forgetting curve",
+        "Primacy effect",
+        "Retroactive interference"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Rapid early loss that levels off over time is the forgetting curve.",
+      "distractor_notes": {
+        "A": "The spacing effect is about distributing study sessions.",
+        "C": "The primacy effect is better memory for early items in a list.",
+        "D": "Retroactive interference is new learning disrupting old memories."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0039": {
+      "id": "dq-0039",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0002",
+      "stimulus_id": "stim-0002",
+      "figure_ids": [
+        "fig-0004"
+      ],
+      "question": "Why did Dr. Mbeki randomly assign students to the two groups?",
+      "options": [
+        "To make the groups likely to be similar at the start",
+        "To make sure every student studied the same number of words",
+        "To allow the results to apply to all college students",
+        "To keep students from learning which group they were in"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Random assignment spreads participant differences evenly across groups, so differences in recall are more likely due to the study schedule.",
+      "distractor_notes": {
+        "B": "Giving everyone the same word list is a control, not random assignment.",
+        "C": "Applying results to a population depends on random sampling, not random assignment.",
+        "D": "Random assignment does not hide group membership; that would be blinding."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0004.svg",
+      "context": "stim-0002",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0040": {
+      "id": "dq-0040",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0002",
+      "stimulus_id": "stim-0002",
+      "figure_ids": [
+        "fig-0004"
+      ],
+      "question": "According to the graph, how many more words did the distributed group recall than the massed group 14 days after study?",
+      "options": [
+        "2",
+        "7",
+        "8",
+        "16"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. At 14 days the distributed group recalled 16 words and the massed group recalled 8, a difference of 8.",
+      "distractor_notes": {
+        "A": "2 is the difference at 1 day, not 14 days.",
+        "B": "7 is the difference at 7 days, not 14 days.",
+        "D": "16 is the distributed group's mean, not the difference."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0004.svg",
+      "context": "stim-0002",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0041": {
+      "id": "dq-0041",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "3.C",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0002",
+      "stimulus_id": "stim-0002",
+      "figure_ids": [
+        "fig-0004"
+      ],
+      "question": "Which of the following conclusions is best supported by the results?",
+      "options": [
+        "Both groups recalled more words as more days passed.",
+        "The distributed group recalled more words at every test time.",
+        "The massed group forgot words more slowly than the distributed group.",
+        "Every student should study in three short sessions."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The distributed group's mean was higher than the massed group's at 1, 7, and 14 days.",
+      "distractor_notes": {
+        "A": "Recall for both groups fell over time.",
+        "C": "The massed group's recall dropped faster, so it forgot more quickly.",
+        "D": "The study cannot show what is best for every student."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0004.svg",
+      "context": "stim-0002",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0042": {
+      "id": "dq-0042",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Perez randomly assigns 80 students to drink either a caffeinated or a decaffeinated beverage before studying a word list. A day later, he tests how many words each student remembers. Which of the following research methods is Dr. Perez using?",
+      "options": [
+        "Experiment",
+        "Correlational study",
+        "Case study",
+        "Naturalistic observation"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Dr. Perez manipulates the beverage and randomly assigns students, which defines an experiment.",
+      "distractor_notes": {
+        "B": "A correlational study measures variables without manipulating them.",
+        "C": "A case study is an in-depth examination of one individual or a small group.",
+        "D": "Naturalistic observation records behavior in its natural setting without intervening."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0043": {
+      "id": "dq-0043",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.C",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher surveys 300 high school students about their nightly hours of sleep and collects their grade point averages (GPAs). She finds a correlation of +0.45 between sleep and GPA. Which of the following is the best conclusion from this result?",
+      "options": [
+        "Sleep and GPA have no relationship in this sample",
+        "Getting more sleep causes students' GPAs to rise",
+        "Earning a high GPA causes students to sleep more",
+        "Students who sleep more tend to have higher GPAs"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A positive correlation means the two variables tend to rise together, but it does not show cause.",
+      "distractor_notes": {
+        "A": "A correlation of +0.45 indicates a moderate positive relationship, not none.",
+        "B": "Correlation cannot show that sleep causes higher GPAs.",
+        "C": "Correlation cannot show the direction of cause either."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0044": {
+      "id": "dq-0044",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.3"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Five participants recalled the following numbers of words from a list: 8, 10, 10, 12, 20. What is the mean number of words recalled?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "20"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The sum is 60, and 60 divided by 5 participants equals 12.",
+      "distractor_notes": {
+        "A": "8 is the lowest score.",
+        "B": "10 is the median and the mode, not the mean.",
+        "D": "20 is the highest score."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0045": {
+      "id": "dq-0045",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.5.ii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0003",
+      "stimulus_id": "stim-0003",
+      "figure_ids": [],
+      "question": "What is the dependent variable in this study?",
+      "options": [
+        "Whether students talked on a phone while walking",
+        "Whether students noticed the clown",
+        "The number of students in each group",
+        "The campus square where the walk took place"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The researcher measured whether each student noticed the clown, which is the outcome and so the dependent variable.",
+      "distractor_notes": {
+        "A": "Phone use is what the researcher manipulated, the independent variable.",
+        "C": "The number of students per group was held equal, so it is not measured as an outcome.",
+        "D": "The setting was the same for everyone; it is a constant, not a variable."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0003",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0046": {
+      "id": "dq-0046",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.5.ii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0003",
+      "stimulus_id": "stim-0003",
+      "figure_ids": [],
+      "question": "What percentage of the phone group noticed the clown?",
+      "options": [
+        "25%",
+        "40%",
+        "60%",
+        "75%"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. 25 of the 100 students in the phone group noticed the clown, which is 25%.",
+      "distractor_notes": {
+        "B": "40% is the percentage of the no-phone group that did not notice.",
+        "C": "60% is the percentage of the no-phone group that noticed.",
+        "D": "75% is the percentage of the phone group that did not notice."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0003",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0047": {
+      "id": "dq-0047",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "3.C",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.5.ii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0003",
+      "stimulus_id": "stim-0003",
+      "figure_ids": [],
+      "question": "Which of the following conclusions is best supported by the results?",
+      "options": [
+        "Most students in both groups noticed the clown.",
+        "Students who noticed the clown were more likely to be on a phone.",
+        "Phone use harms attention in every person.",
+        "Talking on a phone reduced how many students noticed the clown."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Students were randomly assigned, and fewer in the phone group noticed the clown, so phone use likely reduced noticing.",
+      "distractor_notes": {
+        "A": "Only 25 of 100 in the phone group noticed, so not most students in both groups.",
+        "B": "This reverses the pattern; the no-phone group noticed more often.",
+        "C": "The study cannot show an effect on every person."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0003",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0048": {
+      "id": "dq-0048",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [
+        "0.4"
+      ],
+      "skill": "2.D",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.8"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Huang tells participants they will complete a puzzle task. The puzzle is actually impossible, and she is measuring how people respond to failure. When the session ends, she explains the real purpose of the study and answers participants' questions. Which of the following ethical procedures does this best illustrate?",
+      "options": [
+        "Informed consent",
+        "Confidentiality",
+        "Debriefing",
+        "Protection from harm"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Explaining the true purpose and answering questions after the study is debriefing.",
+      "distractor_notes": {
+        "A": "Informed consent happens before the study and explains what participation involves.",
+        "B": "Confidentiality is keeping participants' data private.",
+        "D": "Protection from harm is limiting risk to participants during the study."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0049": {
+      "id": "dq-0049",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [
+        "0.2"
+      ],
+      "skill": "2.B",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Silva wants to study whether sleep improves memory. In her study, she defines memory as the number of words a participant correctly recalls from a 20-word list ten minutes after studying. Which of the following research design elements does this definition best illustrate?",
+      "options": [
+        "Random sampling",
+        "Operational definition",
+        "Confounding variable",
+        "Placebo"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. An operational definition states exactly how a variable will be measured, here memory as words recalled.",
+      "distractor_notes": {
+        "A": "Random sampling is selecting participants from a population by chance.",
+        "C": "A confounding variable is an uncontrolled factor that could affect the outcome.",
+        "D": "A placebo is an inactive treatment given to a control group."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0050": {
+      "id": "dq-0050",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.3"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Five students solved a puzzle in the following numbers of minutes: 4, 9, 12, 15, 17. What is the range of these times?",
+      "options": [
+        "4",
+        "11",
+        "12",
+        "13"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The range is the highest value minus the lowest, 17 minus 4, which is 13.",
+      "distractor_notes": {
+        "A": "4 is the lowest time, not the range.",
+        "B": "11 is about the mean, not the range.",
+        "C": "12 is the median, not the range."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0051": {
+      "id": "dq-0051",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.B",
+      "ek": [
+        "2.1.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Leila watches a 3D movie wearing special glasses. Each of her eyes receives a slightly different image of the scene, and the film appears to have depth. Which of the following depth cues best explains this experience?",
+      "options": [
+        "Convergence",
+        "Relative size",
+        "Retinal disparity",
+        "Interposition"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The brain uses the difference between the two eyes' images to judge distance, which is retinal disparity.",
+      "distractor_notes": {
+        "A": "Convergence is the inward turning of the eyes for near objects, not a difference between images.",
+        "B": "Relative size is a monocular cue and works with one eye.",
+        "D": "Interposition is a monocular cue in which one object blocks another."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0052": {
+      "id": "dq-0052",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.A",
+      "ek": [
+        "2.1.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Bello shows two groups the same ambiguous drawing that can look like either a rabbit or a duck. Before seeing it, one group looks at pictures of rabbits and the other looks at pictures of ducks. Most people in each group see the animal they were just shown. Which of the following best explains the difference?",
+      "options": [
+        "Perceptual set",
+        "Closure",
+        "Apparent movement",
+        "Retinal disparity"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Prior experience created a readiness to perceive the drawing in a particular way, which is a perceptual set.",
+      "distractor_notes": {
+        "B": "Closure is filling in gaps to see a complete form.",
+        "C": "Apparent movement is seeing motion in still images.",
+        "D": "Retinal disparity is a binocular depth cue."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0053": {
+      "id": "dq-0053",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.1.B",
+      "ek": [
+        "2.1.B.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "The lights on a theater sign turn on one after another in a row, a fraction of a second apart. Viewers say they see a single light moving along the sign. Which of the following best explains what viewers perceive?",
+      "options": [
+        "Texture gradient",
+        "Size constancy",
+        "Convergence",
+        "Apparent movement"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Perceiving motion from stationary stimuli shown in quick succession is apparent movement.",
+      "distractor_notes": {
+        "A": "Texture gradient is a depth cue based on changes in texture.",
+        "B": "Size constancy keeps an object's size stable as distance changes.",
+        "C": "Convergence is a binocular depth cue."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0054": {
+      "id": "dq-0054",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Meera meets a quiet man who wears glasses and loves books. She decides he is more likely a librarian than a salesperson, even though there are many more salespeople than librarians. Which of the following best explains her judgment?",
+      "options": [
+        "Availability heuristic",
+        "Representativeness heuristic",
+        "Framing",
+        "Functional fixedness"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. She judged by how well the man matches her image of a librarian and ignored how common each job is.",
+      "distractor_notes": {
+        "A": "Availability depends on how easily examples come to mind, not on a match to a stereotype.",
+        "C": "Framing is about the wording of options.",
+        "D": "Functional fixedness is seeing objects only in their usual use."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0055": {
+      "id": "dq-0055",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A fair coin lands on heads five times in a row. Dr. Reyes's friend bets a large sum that the next flip will be tails because tails is \"due.\" Which of the following is the best description of the friend's reasoning?",
+      "options": [
+        "Sunk-cost fallacy",
+        "Mental set",
+        "Gambler's fallacy",
+        "Priming"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Believing past random events change the odds of the next one is the gambler's fallacy.",
+      "distractor_notes": {
+        "A": "The sunk-cost fallacy is about continuing because of past investment.",
+        "B": "A mental set is repeating a past strategy.",
+        "D": "Priming is an earlier cue influencing a later response."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0056": {
+      "id": "dq-0056",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.2.A",
+      "ek": [
+        "2.2.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A student solves several math problems using the same three-step method. When a new problem has a much simpler solution, she still uses the three-step method and takes much longer. Which of the following best describes her thinking?",
+      "options": [
+        "Mental set",
+        "Functional fixedness",
+        "Divergent thinking",
+        "Framing"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Sticking with a strategy that worked before, even when a better one exists, is a mental set.",
+      "distractor_notes": {
+        "B": "Functional fixedness is limited to seeing objects only in their usual use.",
+        "C": "Divergent thinking produces many different ideas, which she does not.",
+        "D": "Framing is about how wording changes a choice."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0057": {
+      "id": "dq-0057",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.3",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "2.3.A",
+      "ek": [
+        "2.3.A.4"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0005"
+      ],
+      "question": "In the model shown, which numbered arrow represents encoding information into long-term memory?",
+      "options": [
+        "Arrow 1",
+        "Arrow 2",
+        "Arrow 3",
+        "Arrow 4"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Arrow 2 carries information from short-term memory into long-term memory, which is encoding.",
+      "distractor_notes": {
+        "A": "Arrow 1 moves information from sensory memory into short-term memory.",
+        "C": "Arrow 3 moves information from long-term memory back into short-term memory, which is retrieval.",
+        "D": "Arrow 4 keeps information within short-term memory."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0058": {
+      "id": "dq-0058",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.8.B",
+      "ek": [
+        "2.8.B.2.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A test developer compares each student's scores on the odd-numbered items of a test with the same student's scores on the even-numbered items. The two sets of scores are very similar. Which of the following does this result best support?",
+      "options": [
+        "Test-retest reliability",
+        "Construct validity",
+        "Predictive validity",
+        "Split-half reliability"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Consistent scores across two halves of the same test support split-half reliability.",
+      "distractor_notes": {
+        "A": "Test-retest reliability compares scores from two separate testing times.",
+        "B": "Construct validity is whether the test measures the intended trait.",
+        "C": "Predictive validity is how well scores forecast a future outcome."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0059": {
+      "id": "dq-0059",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After hearing a list of 15 unrelated words read aloud, participants recall the last few words on the list most easily. Which of the following best explains this result?",
+      "options": [
+        "Primacy effect",
+        "Recency effect",
+        "Spacing effect",
+        "Chunking"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Items at the end of a list are still active in memory when recall begins, which is the recency effect.",
+      "distractor_notes": {
+        "A": "The primacy effect is better memory for the first items.",
+        "C": "The spacing effect is about distributing study over time.",
+        "D": "Chunking is grouping items into larger units."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0060": {
+      "id": "dq-0060",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dev studies for six hours straight the night before his exam. He does well the next morning but remembers very little of the material a month later. Which of the following best describes Dev's study method?",
+      "options": [
+        "Massed practice",
+        "Distributed practice",
+        "Elaborative rehearsal",
+        "Primacy effect"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Studying all at once in one long session is massed practice, which usually produces weaker long-term memory.",
+      "distractor_notes": {
+        "B": "Distributed practice spreads study over several sessions.",
+        "C": "Elaborative rehearsal links information to meaning; no linking is described.",
+        "D": "The primacy effect depends on position in a list."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0061": {
+      "id": "dq-0061",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.4.A",
+      "ek": [
+        "2.4.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A waiter takes a 12-item order from a large table without writing it down. When he recalls it, he remembers the first few items best because he had time to repeat them before more items arrived. Which of the following best explains this pattern?",
+      "options": [
+        "Recency effect",
+        "Method of loci",
+        "Primacy effect",
+        "Massed practice"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Early items in a list get more rehearsal and are remembered better, which is the primacy effect.",
+      "distractor_notes": {
+        "A": "The recency effect is better memory for the last items.",
+        "B": "The method of loci links items to places.",
+        "D": "Massed practice is studying all at once."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0062": {
+      "id": "dq-0062",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.2"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0005"
+      ],
+      "question": "In the model shown, which of the following does Arrow 4 best represent?",
+      "options": [
+        "Elaborative rehearsal",
+        "Echoic memory",
+        "Consolidation",
+        "Maintenance rehearsal"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Arrow 4 returns to short-term memory, which shows repeating information to keep it active, or maintenance rehearsal.",
+      "distractor_notes": {
+        "A": "Elaborative rehearsal links information to meaning and supports movement into long-term memory.",
+        "B": "Echoic memory is a sensory store for sounds.",
+        "C": "Consolidation stabilizes memory in long-term storage."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0063": {
+      "id": "dq-0063",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a car accident, Mr. Dubois cannot remember the three years before the crash. He learns new information normally since the accident. Which of the following best describes his condition?",
+      "options": [
+        "Anterograde amnesia",
+        "Retrograde amnesia",
+        "Infantile amnesia",
+        "Alzheimer's disease"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Losing memories formed before an injury is retrograde amnesia.",
+      "distractor_notes": {
+        "A": "Anterograde amnesia is trouble forming new memories, which he does not have.",
+        "C": "Infantile amnesia is the normal lack of early childhood memories.",
+        "D": "Nothing in the stem suggests a progressive disease."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0064": {
+      "id": "dq-0064",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.5.A",
+      "ek": [
+        "2.5.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher flashes a grid of 12 letters on a screen for one-twentieth of a second. Participants report seeing all the letters, but within a second they can name only a few. Which of the following best explains this result?",
+      "options": [
+        "Echoic memory",
+        "Procedural memory",
+        "Iconic memory",
+        "Prospective memory"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A brief visual memory that fades within a fraction of a second is iconic memory.",
+      "distractor_notes": {
+        "A": "Echoic memory holds sounds, not images.",
+        "B": "Procedural memory is for skills.",
+        "D": "Prospective memory is for future tasks."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0065": {
+      "id": "dq-0065",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Ravi feels sad after a bad day. He finds it much easier to remember sad events from his past than happy ones. Which of the following best explains his recall?",
+      "options": [
+        "Mood-congruent memory",
+        "State-dependent memory",
+        "Context-dependent memory",
+        "Testing effect"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Memories that match a person's current mood are easier to retrieve, which is mood-congruent memory.",
+      "distractor_notes": {
+        "B": "State-dependent memory depends on a matching physical state.",
+        "C": "Context-dependent memory depends on a matching environment.",
+        "D": "The testing effect is better memory after retrieval practice."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0066": {
+      "id": "dq-0066",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A student studies for a test while having a strong cup of coffee. She finds that she recalls the material better if she drinks a cup of coffee again before the test. Which of the following best explains her experience?",
+      "options": [
+        "Context-dependent memory",
+        "Mood-congruent memory",
+        "Testing effect",
+        "State-dependent memory"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Retrieval improves when the physical state matches the state during encoding, which is state-dependent memory.",
+      "distractor_notes": {
+        "A": "Context-dependent memory depends on a matching place, not the body's state.",
+        "B": "Mood-congruent memory depends on a matching emotion.",
+        "C": "The testing effect is about practicing retrieval."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0067": {
+      "id": "dq-0067",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.6",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "2.6.A",
+      "ek": [
+        "2.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before a test, Alana quizzes herself on each chapter. She realizes she knows chapter 3 well but not chapter 5, so she spends more time on chapter 5. Which of the following best describes Alana's awareness of what she knows?",
+      "options": [
+        "Recall",
+        "Metacognition",
+        "Chunking",
+        "Primacy effect"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Thinking about and judging your own knowledge is metacognition, which helps guide study.",
+      "distractor_notes": {
+        "A": "Recall is retrieving information without cues, not judging what you know.",
+        "C": "Chunking is grouping information.",
+        "D": "The primacy effect depends on list position."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0068": {
+      "id": "dq-0068",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Omar learns Spanish vocabulary this semester. He now has trouble remembering the French words he learned last year. Which of the following best explains his difficulty?",
+      "options": [
+        "Proactive interference",
+        "Encoding failure",
+        "Retroactive interference",
+        "Repression"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. New learning, Spanish, is getting in the way of recalling older learning, French, which is retroactive interference.",
+      "distractor_notes": {
+        "A": "Proactive interference is old learning disrupting new learning, the reverse of this case.",
+        "B": "Omar did learn the French words, so they were encoded.",
+        "D": "Repression is forgetting to protect the ego from distress."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0069": {
+      "id": "dq-0069",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Priya is sure she knows the name of an actor. She remembers the name starts with M and has two syllables, but she cannot say it. Which of the following best describes her experience?",
+      "options": [
+        "Source amnesia",
+        "Encoding failure",
+        "Imagination inflation",
+        "Tip-of-the-tongue phenomenon"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Knowing a word is in memory but failing to retrieve it fully is the tip-of-the-tongue phenomenon.",
+      "distractor_notes": {
+        "A": "Source amnesia is forgetting where information came from.",
+        "B": "Priya clearly encoded part of the name.",
+        "C": "Imagination inflation is greater confidence after imagining an event."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0070": {
+      "id": "dq-0070",
+      "status": "published",
+      "unit": "Unit 2",
+      "topic": "2.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "2.7.A",
+      "ek": [
+        "2.7.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Fischer, a psychodynamic theorist, suggests that an adult cannot remember a painful childhood event because the mind pushed it out of awareness to protect itself from distress. Which of the following concepts does Dr. Fischer's explanation describe?",
+      "options": [
+        "Repression",
+        "Encoding failure",
+        "Proactive interference",
+        "Misinformation effect"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Psychodynamic theorists propose that painful memories are pushed out of awareness to defend the ego, which is repression.",
+      "distractor_notes": {
+        "B": "Encoding failure means the event never entered memory.",
+        "C": "Proactive interference is old learning disrupting new learning.",
+        "D": "The misinformation effect is memory distorted by misleading information."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
     }
   },
   "tests": [
