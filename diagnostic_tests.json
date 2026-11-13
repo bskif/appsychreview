@@ -86,6 +86,36 @@
         "license": null
       },
       "data": {}
+    },
+    "fig-0006": {
+      "figure_id": "fig-0006",
+      "file": "images/diagnostics/fig-0006.svg",
+      "type": "diagram",
+      "alt": "Side view of an eye with light entering from the left. Part 1 is the lens near the front. Part 2 is the point at the back lower edge where the optic nerve leaves the eye. Part 3 is the light-sensitive layer lining the back of the eye. Part 4 is a small spot at the center of that layer directly behind the lens.",
+      "caption": "Cross Section of the Human Eye",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0006.json",
+        "tool": "Python SVG script (batch11.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0007": {
+      "figure_id": "fig-0007",
+      "file": "images/diagnostics/fig-0007.svg",
+      "type": "bar_simple",
+      "alt": "Bar graph. Hours of sleep the night before the test: 8 hours, mean 16 problems; 6 hours, mean 13 problems; 4 hours, mean 9 problems. Y-axis: mean problems solved correctly out of 20.",
+      "caption": "Mean Math Problems Solved Correctly by Hours of Sleep",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0007.json",
+        "tool": "Python SVG script (batch12.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
     }
   },
   "stimuli": {
@@ -131,6 +161,42 @@
             "100",
             "60",
             "40"
+          ]
+        ]
+      },
+      "figure_ids": []
+    },
+    "stim-0004": {
+      "stimulus_id": "stim-0004",
+      "type": "text+figure",
+      "text": "Dr. Ncube studied how sleep affects problem solving. She randomly assigned 90 high school students to sleep for 8 hours, 6 hours, or 4 hours in a sleep lab. The next morning, each student solved 20 math problems. The graph shows the mean number of problems solved correctly in each group.",
+      "table": null,
+      "figure_ids": [
+        "fig-0007"
+      ]
+    },
+    "stim-0005": {
+      "stimulus_id": "stim-0005",
+      "type": "text+table",
+      "text": "Dr. Varga studied how long it takes for people to see dim light after entering a dark room. Each of 40 adults sat in a dark room and was tested after 0, 10, and 20 minutes. At each test, the researcher lowered the brightness of a small light until the adult could detect it only half of the time. The table shows the mean light intensity at that point, in arbitrary units.",
+      "table": {
+        "title": "Mean Dimmest Light Intensity Detected Half of the Time",
+        "columns": [
+          "Minutes in the dark",
+          "Mean light intensity (arbitrary units)"
+        ],
+        "rows": [
+          [
+            "0",
+            "50"
+          ],
+          [
+            "10",
+            "30"
+          ],
+          [
+            "20",
+            "10"
           ]
         ]
       },
@@ -2988,6 +3054,2682 @@
       "created": "2026-11-12",
       "reviewed_by": "SB",
       "published": "2026-11-12"
+    },
+    "dq-0071": {
+      "id": "dq-0071",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Mehta concludes that a child's musical ability reflects both the traits the child was born with and the lessons and practice the child has received. Which of the following best describes this conclusion?",
+      "options": [
+        "Nature only",
+        "Interaction of nature and nurture",
+        "Nurture only",
+        "Natural selection"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The conclusion gives weight to both inherited traits and experience, which is the interaction of nature and nurture.",
+      "distractor_notes": {
+        "A": "Nature only would ignore the lessons and practice.",
+        "C": "Nurture only would ignore inborn traits.",
+        "D": "Natural selection explains how traits spread across generations, not one child's ability."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0072": {
+      "id": "dq-0072",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "2.A",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Chen compares the personality scores of pairs of siblings who were born at the same time and are genetically identical with the scores of pairs who are not genetically identical. Which of the following research methods is Dr. Chen using?",
+      "options": [
+        "Adoption study",
+        "Family study",
+        "Case study",
+        "Twin study"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Comparing pairs who share the same genes with pairs who do not is the logic of a twin study.",
+      "distractor_notes": {
+        "A": "An adoption study compares children with their birth and adoptive families.",
+        "B": "A family study compares relatives with different degrees of genetic relatedness, not same-age siblings.",
+        "C": "A case study examines one individual or group in depth."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0073": {
+      "id": "dq-0073",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "2.A",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher compares the intelligence scores of children with the scores of the parents who raised them and with the scores of their birth parents, whom the children never met. Which of the following research methods is the researcher using?",
+      "options": [
+        "Twin study",
+        "Family study",
+        "Adoption study",
+        "Naturalistic observation"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Separating the effects of birth parents' genes from the home environment is the purpose of an adoption study.",
+      "distractor_notes": {
+        "A": "A twin study compares pairs of twins.",
+        "B": "A family study compares biological relatives who usually live together.",
+        "D": "Naturalistic observation records behavior in natural settings without intervening."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0074": {
+      "id": "dq-0074",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Osei argues that infants smile at caregivers because this behavior helped the ancestors of today's infants get care and survive. Which of the following psychological perspectives best matches this argument?",
+      "options": [
+        "Evolutionary perspective",
+        "Behavioral perspective",
+        "Humanistic perspective",
+        "Sociocultural perspective"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Explaining a behavior by how it improved survival and reproductive success reflects the evolutionary perspective.",
+      "distractor_notes": {
+        "B": "The behavioral perspective focuses on learning from the environment.",
+        "C": "The humanistic perspective focuses on growth and personal choice.",
+        "D": "The sociocultural perspective focuses on culture and social context."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0075": {
+      "id": "dq-0075",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "In the early twentieth century, some people used ideas about inherited traits to support laws that kept certain groups of people from having children. Which of the following terms describes this discriminatory misuse of the evolutionary perspective?",
+      "options": [
+        "Natural selection",
+        "Behavioral genetics",
+        "Environmental influence",
+        "Eugenics"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Applying ideas about heredity to discriminate against groups is eugenics.",
+      "distractor_notes": {
+        "A": "Natural selection is a process in nature, not a set of laws.",
+        "B": "Behavioral genetics studies how genes and environment affect behavior; it is not a discriminatory movement.",
+        "C": "Environmental influence refers to external experiences."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0076": {
+      "id": "dq-0076",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.1.A",
+      "ek": [
+        "1.1.A.1.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Two children have similar inherited traits. One attends an enriched preschool and the other does not. At age six, the first child scores much higher on a reading test. Which of the following best explains the difference in scores?",
+      "options": [
+        "Inherited predisposition",
+        "Environmental factors",
+        "Natural selection",
+        "Genetic similarity"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The children differ in their experiences, so the preschool environment is the best explanation.",
+      "distractor_notes": {
+        "A": "The children are said to have similar inherited traits.",
+        "C": "Natural selection does not explain differences between two individuals.",
+        "D": "The children's genetic similarity cannot explain a difference in scores."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0077": {
+      "id": "dq-0077",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following parts of the nervous system consists of the brain and the spinal cord?",
+      "options": [
+        "Central nervous system",
+        "Peripheral nervous system",
+        "Autonomic nervous system",
+        "Somatic nervous system"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The brain and spinal cord together make up the central nervous system.",
+      "distractor_notes": {
+        "B": "The peripheral nervous system includes the nerves outside the brain and spinal cord.",
+        "C": "The autonomic nervous system is part of the peripheral system.",
+        "D": "The somatic nervous system is also part of the peripheral system."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0078": {
+      "id": "dq-0078",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "While walking alone at night, Sam hears footsteps behind him. His heart pounds, his pupils widen, and his breathing speeds up. Which of the following nervous system divisions is mainly responsible?",
+      "options": [
+        "Somatic nervous system",
+        "Parasympathetic nervous system",
+        "Sympathetic nervous system",
+        "Central nervous system"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The sympathetic nervous system prepares the body for action when a threat appears.",
+      "distractor_notes": {
+        "A": "The somatic system controls voluntary muscle movement.",
+        "B": "The parasympathetic system calms the body after arousal.",
+        "D": "The central nervous system is the brain and spinal cord, not the division that produces this response."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0079": {
+      "id": "dq-0079",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a large meal, Dr. Grant sits down and relaxes. Her heart rate slows and her body digests the food. Which of the following nervous system divisions is mainly responsible for these changes?",
+      "options": [
+        "Somatic nervous system",
+        "Sympathetic nervous system",
+        "Central nervous system",
+        "Parasympathetic nervous system"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The parasympathetic nervous system calms the body and supports digestion.",
+      "distractor_notes": {
+        "A": "The somatic system controls voluntary movement.",
+        "B": "The sympathetic system speeds up the body in response to threat.",
+        "C": "The central nervous system is not a division of the autonomic system."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0080": {
+      "id": "dq-0080",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.2.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Aisha chooses to pick up a pen from her desk. Which of the following parts of the nervous system sends the signals from her brain to the muscles of her hand?",
+      "options": [
+        "Autonomic nervous system",
+        "Somatic nervous system",
+        "Parasympathetic nervous system",
+        "Sympathetic nervous system"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Voluntary movement of skeletal muscles is controlled by the somatic nervous system.",
+      "distractor_notes": {
+        "A": "The autonomic system controls involuntary processes.",
+        "C": "The parasympathetic system is a branch of the autonomic system.",
+        "D": "The sympathetic system is a branch of the autonomic system."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0081": {
+      "id": "dq-0081",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Without thinking about it, a person's heart keeps beating and food keeps moving through the digestive system. Which of the following systems governs these involuntary processes?",
+      "options": [
+        "Autonomic nervous system",
+        "Somatic nervous system",
+        "Central nervous system",
+        "Endocrine system"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Involuntary processes such as heartbeat and digestion are governed by the autonomic nervous system.",
+      "distractor_notes": {
+        "B": "The somatic system governs voluntary movement.",
+        "C": "The central nervous system is the brain and spinal cord.",
+        "D": "The endocrine system uses hormones and is not part of the nervous system."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0082": {
+      "id": "dq-0082",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.2.A",
+      "ek": [
+        "1.2.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Ito's patient has damaged the nerves that connect the spinal cord to the muscles in the patient's hand. The patient's brain and spinal cord are not injured. Which of the following parts of the nervous system is damaged?",
+      "options": [
+        "Central nervous system",
+        "Brain",
+        "Spinal cord",
+        "Peripheral nervous system"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Nerves outside the brain and spinal cord belong to the peripheral nervous system.",
+      "distractor_notes": {
+        "A": "The central nervous system is not injured.",
+        "B": "The brain is not injured.",
+        "C": "The spinal cord is not injured."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0083": {
+      "id": "dq-0083",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.A",
+      "ek": [
+        "1.3.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Marcus touches a hot stove and pulls his hand away before he feels any pain. Which of the following types of neurons carries the message from the spinal cord to the muscles in his arm?",
+      "options": [
+        "Sensory neuron",
+        "Glial cell",
+        "Motor neuron",
+        "Interneuron"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Motor neurons carry commands from the spinal cord to muscles, producing the movement.",
+      "distractor_notes": {
+        "A": "Sensory neurons carry the message from the hand to the spinal cord.",
+        "B": "Glial cells support neurons but do not carry the message.",
+        "D": "Interneurons connect sensory and motor neurons inside the spinal cord."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0084": {
+      "id": "dq-0084",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A stimulus that is too weak to affect a neuron produces no response. Once a stimulus is strong enough, the neuron fires with the same strength no matter how much stronger the stimulus gets. Which of the following principles does this describe?",
+      "options": [
+        "Refractory period",
+        "All-or-none principle",
+        "Reuptake",
+        "Resting potential"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. A neuron either fires completely or not at all, which is the all-or-none principle.",
+      "distractor_notes": {
+        "A": "The refractory period is the brief time after firing when a neuron cannot fire.",
+        "C": "Reuptake is the reabsorption of neurotransmitters.",
+        "D": "Resting potential is the neuron's state when it is not firing."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0085": {
+      "id": "dq-0085",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Immediately after a neuron fires, it cannot fire again for a brief time, even if it receives a very strong stimulus. Which of the following terms describes this brief time?",
+      "options": [
+        "Resting potential",
+        "Threshold",
+        "Refractory period",
+        "Reuptake"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The brief period when a neuron cannot fire again is the refractory period.",
+      "distractor_notes": {
+        "A": "Resting potential is the neuron's state before firing.",
+        "B": "Threshold is the level of stimulation needed to fire.",
+        "D": "Reuptake is the reabsorption of neurotransmitters by the sending neuron."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0086": {
+      "id": "dq-0086",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A medication that increases GABA activity makes many people feel calmer and less anxious. Which of the following best explains why this happens?",
+      "options": [
+        "GABA makes neurons less likely to fire.",
+        "GABA makes neurons more likely to fire.",
+        "GABA triggers the release of adrenaline.",
+        "GABA blocks the reuptake of dopamine."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. GABA is an inhibitory neurotransmitter, so more GABA activity lowers neural firing and brings calm.",
+      "distractor_notes": {
+        "B": "GABA is an inhibitory neurotransmitter, not an excitatory one.",
+        "C": "GABA does not trigger adrenaline release.",
+        "D": "GABA does not act as a reuptake inhibitor for dopamine."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0087": {
+      "id": "dq-0087",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A neurotransmitter released at the junction between motor neurons and muscles causes the muscles to contract. A disruption of this chemical's action can cause muscle weakness. Which of the following neurotransmitters is described?",
+      "options": [
+        "Dopamine",
+        "Acetylcholine",
+        "Serotonin",
+        "Endorphins"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Acetylcholine triggers muscle contraction at the neuromuscular junction.",
+      "distractor_notes": {
+        "A": "Dopamine is linked to reward and movement control in the brain.",
+        "C": "Serotonin is linked to mood, sleep, and appetite.",
+        "D": "Endorphins reduce pain."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0088": {
+      "id": "dq-0088",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a long run, a marathon runner feels less pain and a sense of well-being. A researcher says this effect comes from the body's own pain-relieving chemicals. Which of the following neurotransmitters best fits this description?",
+      "options": [
+        "Glutamate",
+        "Substance P",
+        "Norepinephrine",
+        "Endorphins"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Endorphins are natural pain relievers released during intense exercise.",
+      "distractor_notes": {
+        "A": "Glutamate is the main excitatory neurotransmitter, linked to learning and memory.",
+        "B": "Substance P helps transmit pain signals.",
+        "C": "Norepinephrine is linked to alertness and arousal."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0089": {
+      "id": "dq-0089",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Yilmaz finds that the level of a particular hormone rises at night and signals the body to prepare for sleep. Which of the following hormones is described?",
+      "options": [
+        "Leptin",
+        "Ghrelin",
+        "Melatonin",
+        "Oxytocin"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Melatonin rises in the evening and helps regulate the sleep cycle.",
+      "distractor_notes": {
+        "A": "Leptin signals fullness.",
+        "B": "Ghrelin signals hunger.",
+        "D": "Oxytocin is linked to bonding and trust."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0090": {
+      "id": "dq-0090",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.C",
+      "ek": [
+        "1.3.C.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A drug blocks the sending neuron from reabsorbing serotonin. As a result, more serotonin stays in the synapse. Which of the following best describes this drug?",
+      "options": [
+        "Reuptake inhibitor",
+        "Agonist",
+        "Antagonist",
+        "Depressant"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Blocking reabsorption of a neurotransmitter is the action of a reuptake inhibitor.",
+      "distractor_notes": {
+        "B": "An agonist mimics or increases a neurotransmitter's effect.",
+        "C": "An antagonist blocks a neurotransmitter's effect.",
+        "D": "A depressant is a category of drugs that slows neural activity."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0091": {
+      "id": "dq-0091",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.A",
+      "ek": [
+        "1.3.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Haas studies cells in the brain that wrap around neurons to insulate them, provide structure, and carry away waste, but that do not themselves transmit information. Which of the following types of cells is Dr. Haas studying?",
+      "options": [
+        "Sensory neurons",
+        "Glial cells",
+        "Motor neurons",
+        "Interneurons"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Cells that support, insulate, and clean up around neurons without transmitting information are glial cells.",
+      "distractor_notes": {
+        "A": "Sensory neurons do transmit information, from the senses to the central nervous system.",
+        "C": "Motor neurons transmit commands to muscles.",
+        "D": "Interneurons transmit messages between other neurons."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0092": {
+      "id": "dq-0092",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.C",
+      "ek": [
+        "1.3.C.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After drinking several cups of strong coffee, Jun feels very alert and notices that his heart is beating faster. Which of the following categories of psychoactive drugs does caffeine belong to?",
+      "options": [
+        "Depressant",
+        "Hallucinogen",
+        "Opioid",
+        "Stimulant"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Caffeine increases neural activity, which defines a stimulant.",
+      "distractor_notes": {
+        "A": "Depressants slow neural activity.",
+        "B": "Hallucinogens distort perception or thinking.",
+        "C": "Opioids act as pain relievers."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0093": {
+      "id": "dq-0093",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.C",
+      "ek": [
+        "1.3.C.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Over several months, Rosa needs larger and larger doses of a drug to get the same effect she first felt from a small dose. Which of the following terms describes this change?",
+      "options": [
+        "Tolerance",
+        "Withdrawal",
+        "Reuptake",
+        "Depolarization"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Needing more of a drug to get the same effect is tolerance.",
+      "distractor_notes": {
+        "B": "Withdrawal is the set of symptoms after stopping a drug.",
+        "C": "Reuptake is the reabsorption of a neurotransmitter.",
+        "D": "Depolarization is a change in a neuron's electrical charge."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0094": {
+      "id": "dq-0094",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.3.B",
+      "ek": [
+        "1.3.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher finds that people's brains release a neurotransmitter linked to feelings of reward and motivation when they eat a favorite food or win a game. Which of the following neurotransmitters best fits this description?",
+      "options": [
+        "GABA",
+        "Glutamate",
+        "Dopamine",
+        "Substance P"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Dopamine is associated with reward, pleasure, and motivation.",
+      "distractor_notes": {
+        "A": "GABA is inhibitory and linked to calming.",
+        "B": "Glutamate is the main excitatory neurotransmitter.",
+        "D": "Substance P helps transmit pain signals."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-12"
+    },
+    "dq-0095": {
+      "id": "dq-0095",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a stroke damages his frontal and temporal lobes, Mr. Perez can no longer speak or understand words. His breathing and heart rate remain steady. Which of the following brain structures continues to control these basic functions?",
+      "options": [
+        "Cerebellum",
+        "Hippocampus",
+        "Thalamus",
+        "Brain stem"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The brain stem, including the medulla, controls basic life functions such as breathing and heart rate.",
+      "distractor_notes": {
+        "A": "The cerebellum coordinates movement and balance.",
+        "B": "The hippocampus is involved in forming new memories.",
+        "C": "The thalamus relays sensory information."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0096": {
+      "id": "dq-0096",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After an injury to the lower back of his brain, Mateo staggers when he walks and cannot touch his nose smoothly with his finger. He can think and speak normally. Which of the following brain structures was most likely damaged?",
+      "options": [
+        "Cerebellum",
+        "Amygdala",
+        "Hypothalamus",
+        "Corpus callosum"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Poor balance and uncoordinated movement with normal thinking point to the cerebellum.",
+      "distractor_notes": {
+        "B": "The amygdala is involved in emotion, especially fear.",
+        "C": "The hypothalamus regulates hunger, thirst, and temperature.",
+        "D": "The corpus callosum connects the two hemispheres."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0097": {
+      "id": "dq-0097",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After surgery, a patient remembers his childhood clearly but cannot form new long-term memories. The surgeons removed part of the limbic system. Which of the following structures was most likely removed?",
+      "options": [
+        "Amygdala",
+        "Hippocampus",
+        "Thalamus",
+        "Hypothalamus"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The hippocampus is needed to form new long-term memories.",
+      "distractor_notes": {
+        "A": "The amygdala is involved in emotion, especially fear.",
+        "C": "The thalamus relays sensory information.",
+        "D": "The hypothalamus regulates hunger, thirst, and temperature."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0098": {
+      "id": "dq-0098",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After an accident, a patient no longer shows fear when shown a snake or an angry face, although she can describe these as dangerous. Damage to which of the following limbic system structures is most likely?",
+      "options": [
+        "Thalamus",
+        "Hippocampus",
+        "Amygdala",
+        "Pituitary gland"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The amygdala is central to fear and other strong emotions.",
+      "distractor_notes": {
+        "A": "The thalamus relays sensory information to the cortex.",
+        "B": "The hippocampus is involved in forming new memories.",
+        "D": "The pituitary gland releases hormones."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0099": {
+      "id": "dq-0099",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Ruiz studies a structure deep in the brain that helps regulate hunger, thirst, and body temperature and controls the pituitary gland. Which of the following structures is Dr. Ruiz studying?",
+      "options": [
+        "Hypothalamus",
+        "Cerebellum",
+        "Corpus callosum",
+        "Medulla"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The hypothalamus regulates basic drives such as hunger and thirst and directs the pituitary gland.",
+      "distractor_notes": {
+        "B": "The cerebellum coordinates movement and balance.",
+        "C": "The corpus callosum connects the two hemispheres.",
+        "D": "The medulla controls breathing and heart rate."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0100": {
+      "id": "dq-0100",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a blow to the back of her head, Kayla's eyes are healthy, but she cannot see objects in part of her visual field. Which of the following lobes of the cortex was most likely damaged?",
+      "options": [
+        "Frontal lobe",
+        "Parietal lobe",
+        "Temporal lobe",
+        "Occipital lobe"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Visual information is processed in the occipital lobes at the back of the brain.",
+      "distractor_notes": {
+        "A": "The frontal lobe handles planning and movement.",
+        "B": "The parietal lobe processes touch and association information.",
+        "C": "The temporal lobe handles hearing and language."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0101": {
+      "id": "dq-0101",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After damage to the sides of his brain, a patient has trouble recognizing sounds and understanding spoken words. His vision and sense of touch are normal. Which of the following lobes of the cortex was most likely damaged?",
+      "options": [
+        "Occipital lobe",
+        "Temporal lobe",
+        "Parietal lobe",
+        "Frontal lobe"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The temporal lobes process auditory and language information.",
+      "distractor_notes": {
+        "A": "The occipital lobe processes vision.",
+        "C": "The parietal lobe processes touch.",
+        "D": "The frontal lobe handles planning and movement."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0102": {
+      "id": "dq-0102",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.4.iv"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A stroke damages a strip at the rear of the frontal lobe in a patient's left hemisphere. The patient can feel touch normally but cannot move his right arm. Which of the following areas was most likely damaged?",
+      "options": [
+        "Somatosensory cortex",
+        "Association areas",
+        "Motor cortex",
+        "Prefrontal cortex"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The motor cortex controls skeletal movement, so damage there can paralyze the opposite arm.",
+      "distractor_notes": {
+        "A": "The somatosensory cortex processes touch, which is normal here.",
+        "B": "Association areas organize information from several senses.",
+        "D": "The prefrontal cortex supports planning and higher-order thinking."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0103": {
+      "id": "dq-0103",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.5",
+        "1.4.A.5.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A split-brain patient stares at a dot while a word is flashed only to her left visual field. She says she saw nothing, but her left hand picks out the matching object from a group hidden behind a screen. Which of the following best explains the result?",
+      "options": [
+        "The word reached only the left hemisphere, which controls the left hand.",
+        "The word was blocked from the visual cortex, so it was never seen.",
+        "The surgery damaged the patient's occipital lobes.",
+        "The right hemisphere got the word, and speech is usually left-sided."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Information from the left visual field goes to the right hemisphere, which can guide the left hand but usually cannot produce speech.",
+      "distractor_notes": {
+        "A": "The left hemisphere controls the right hand, and it did not receive the word.",
+        "B": "The left hand's correct choice shows the word was seen.",
+        "C": "Damaged occipital lobes would impair vision for all tasks."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0104": {
+      "id": "dq-0104",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a stroke damages a speech area on one side of a child's brain, she gradually regains much of her speech as other parts of her brain take over the task. Which of the following best explains her recovery?",
+      "options": [
+        "Brain plasticity",
+        "Aphasia",
+        "Lesioning",
+        "Contralateral organization"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The brain's ability to rewire and shift functions to other regions is brain plasticity.",
+      "distractor_notes": {
+        "B": "Aphasia is the language impairment, not the recovery.",
+        "C": "Lesioning is a research procedure that destroys brain tissue.",
+        "D": "Contralateral organization is the opposite-side wiring of the brain."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0105": {
+      "id": "dq-0105",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.5.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a stroke, Mr. Adeyemi understands everything said to him but speaks slowly, with great effort, in short phrases. Damage to which of the following areas of the left hemisphere is most likely?",
+      "options": [
+        "Wernicke's area",
+        "Broca's area",
+        "Occipital lobe",
+        "Hippocampus"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Broca's area controls speech production, so damage leaves comprehension intact but speech effortful.",
+      "distractor_notes": {
+        "A": "Damage to Wernicke's area impairs comprehension, which Mr. Adeyemi has.",
+        "C": "The occipital lobe processes vision.",
+        "D": "The hippocampus is involved in forming new memories."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0106": {
+      "id": "dq-0106",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.7"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Wu wants to see which parts of participants' brains are most active while they solve math problems. She will use images that show changes in blood flow. Which of the following research tools is she using?",
+      "options": [
+        "EEG",
+        "Lesioning",
+        "fMRI",
+        "Case study"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. fMRI shows brain activity by detecting changes in blood flow.",
+      "distractor_notes": {
+        "A": "EEG records electrical activity with electrodes on the scalp.",
+        "B": "Lesioning destroys tissue to see what functions are lost.",
+        "D": "A case study examines one individual in depth."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0107": {
+      "id": "dq-0107",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.3.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher monitors a sleeper whose brain waves look much like those of someone who is awake, even though the sleeper's body is deeply relaxed. The sleeper reports a vivid dream when woken. Which of the following stages is the sleeper most likely in?",
+      "options": [
+        "REM sleep",
+        "Stage 1 sleep",
+        "Stage 2 sleep",
+        "Stage 3 sleep"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Waking-like brain waves with a relaxed body and vivid dreams describe REM sleep.",
+      "distractor_notes": {
+        "B": "Stage 1 has slow, irregular waves as sleep begins.",
+        "C": "Stage 2 has sleep spindles and slower waves.",
+        "D": "Stage 3 has the slowest waves and is the deepest NREM stage."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0108": {
+      "id": "dq-0108",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.B",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After flying across several time zones, Amira feels sleepy at midday and wide awake at 3 a.m. for several days. Which of the following best describes this experience?",
+      "options": [
+        "Narcolepsy",
+        "Insomnia",
+        "REM rebound",
+        "Jet lag"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Travel across time zones disrupts the circadian rhythm, producing jet lag.",
+      "distractor_notes": {
+        "A": "Narcolepsy is sudden sleep attacks, not a time-zone mismatch.",
+        "B": "Insomnia is chronic difficulty falling or staying asleep.",
+        "C": "REM rebound is extra dreaming sleep after deprivation."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0109": {
+      "id": "dq-0109",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "During the day, Diego suddenly falls asleep in the middle of conversations and enters dreaming sleep almost immediately. Which of the following sleep disorders best fits this pattern?",
+      "options": [
+        "Insomnia",
+        "Narcolepsy",
+        "Sleep apnea",
+        "Somnambulism"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Sudden daytime sleep attacks are the main feature of narcolepsy.",
+      "distractor_notes": {
+        "A": "Insomnia is difficulty falling or staying asleep.",
+        "C": "Sleep apnea involves repeated pauses in breathing during sleep.",
+        "D": "Somnambulism is sleepwalking."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0110": {
+      "id": "dq-0110",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Maria snores loudly, and her partner notices that she repeatedly stops breathing for short periods at night. During the day she feels very tired. Which of the following sleep disorders best fits this pattern?",
+      "options": [
+        "Insomnia",
+        "Narcolepsy",
+        "Sleep apnea",
+        "REM sleep behavior disorder"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Repeated pauses in breathing during sleep are the defining feature of sleep apnea.",
+      "distractor_notes": {
+        "A": "Insomnia is difficulty falling or staying asleep.",
+        "B": "Narcolepsy is sudden sleep attacks.",
+        "D": "In this disorder, people physically act out their dreams."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0111": {
+      "id": "dq-0111",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.3.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "For several nights, researchers wake Noah whenever his dreaming sleep begins. When he is finally allowed to sleep undisturbed, he spends much more time than usual in dreaming sleep. Which of the following best describes this result?",
+      "options": [
+        "Hypnagogic sensations",
+        "Circadian rhythm",
+        "Activation-synthesis theory",
+        "REM rebound"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Spending extra time in a sleep stage after being deprived of it is called rebound.",
+      "distractor_notes": {
+        "A": "Hypnagogic sensations occur as a person falls asleep.",
+        "B": "A circadian rhythm is the roughly 24-hour sleep and wake cycle.",
+        "C": "Activation-synthesis is a theory of why people dream."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0112": {
+      "id": "dq-0112",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Lindqvist proposes that dreams are the brain's attempt to make sense of random neural activity during sleep. Which of the following theories does her proposal best match?",
+      "options": [
+        "Activation-synthesis theory",
+        "Consolidation theory",
+        "Restoration theory",
+        "Opponent-process theory"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Interpreting random neural firing as a story is the core idea of activation-synthesis theory.",
+      "distractor_notes": {
+        "B": "Consolidation theory says dreams relate to organizing memories.",
+        "C": "Restoration theory is about why the body needs sleep, not why people dream.",
+        "D": "Opponent-process theory explains color vision."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0113": {
+      "id": "dq-0113",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Kapoor plays a tone at many different volumes. At one volume, a participant reports hearing the tone on half of the trials. Which of the following terms describes this volume?",
+      "options": [
+        "Just-noticeable difference",
+        "Absolute threshold",
+        "Sensory adaptation",
+        "Transduction"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The lowest intensity detected half of the time is the absolute threshold.",
+      "distractor_notes": {
+        "A": "A just-noticeable difference is the smallest change in a stimulus that can be detected.",
+        "C": "Sensory adaptation is reduced sensitivity to a constant stimulus.",
+        "D": "Transduction is converting stimuli into neural messages."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0114": {
+      "id": "dq-0114",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A person holding a 100-gram weight can just notice a difference when 2 grams are added. When holding a 200-gram weight, the person needs 4 grams added to notice a difference. Which of the following principles does this pattern illustrate?",
+      "options": [
+        "Absolute threshold",
+        "Sensory adaptation",
+        "Sensory interaction",
+        "Weber's law"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The needed change grows in proportion to the original stimulus, which is Weber's law.",
+      "distractor_notes": {
+        "A": "Absolute threshold is the minimum stimulus that can be detected.",
+        "B": "Sensory adaptation is decreased sensitivity to constant stimuli.",
+        "C": "Sensory interaction is the way senses influence each other."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0115": {
+      "id": "dq-0115",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Soon after walking into a room that smells strongly of perfume, Dana notices the smell less and less. After ten minutes, she hardly notices it at all. Which of the following best explains this change?",
+      "options": [
+        "Transduction",
+        "Weber's law",
+        "Sensory adaptation",
+        "Synesthesia"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Sensitivity decreases when a stimulus stays constant, which is sensory adaptation.",
+      "distractor_notes": {
+        "A": "Transduction is the conversion of stimuli into neural messages.",
+        "B": "Weber's law relates the size of a detectable change to the original stimulus.",
+        "D": "Synesthesia is experiencing one sense through another."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0116": {
+      "id": "dq-0116",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "For Jamal, the number 5 always appears red, and the day Tuesday always tastes like cinnamon. Which of the following terms best describes his experiences?",
+      "options": [
+        "Synesthesia",
+        "Sensory adaptation",
+        "Blindsight",
+        "Prosopagnosia"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Experiencing one sensory system through another is synesthesia.",
+      "distractor_notes": {
+        "B": "Sensory adaptation is reduced sensitivity to constant stimuli.",
+        "C": "Blindsight is responding to visual stimuli without awareness of seeing.",
+        "D": "Prosopagnosia is the inability to recognize faces."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0117": {
+      "id": "dq-0117",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "When Priya has a bad cold and her nose is blocked, her favorite foods seem to have much less flavor. Which of the following best explains this experience?",
+      "options": [
+        "Sensory adaptation",
+        "Synesthesia",
+        "Sensory interaction",
+        "Transduction"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Taste and smell work together, so losing one changes the other, which is sensory interaction.",
+      "distractor_notes": {
+        "A": "Sensory adaptation is a decrease in sensitivity to constant stimuli.",
+        "B": "Synesthesia is one sense triggering another unrelated sense.",
+        "D": "Transduction is converting stimuli into neural messages."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0118": {
+      "id": "dq-0118",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "At dusk, Lena can see shapes and movement at the edges of her vision, but she cannot tell the colors of objects. Which of the following types of cells is mainly responsible for the vision she has in dim light?",
+      "options": [
+        "Cones",
+        "Rods",
+        "Ganglion cells",
+        "Glial cells"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Rods detect shapes and movement in dim light but not color.",
+      "distractor_notes": {
+        "A": "Cones detect color and detail and need brighter light.",
+        "C": "Ganglion cells pass visual information toward the brain.",
+        "D": "Glial cells support neurons but do not detect light."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0119": {
+      "id": "dq-0119",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.4",
+        "1.6.B.4.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher finds that three types of cells in the retina respond best to short, medium, and long wavelengths of light. Different combinations of their activity produce the full range of colors people see. Which of the following theories does this finding support?",
+      "options": [
+        "Opponent-process theory",
+        "Weber's law",
+        "Sensory interaction",
+        "Trichromatic theory"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Three cone types combining their signals is the core of trichromatic theory.",
+      "distractor_notes": {
+        "A": "Opponent-process theory involves paired cells such as red and green.",
+        "B": "Weber's law is about detecting differences in stimulus intensity.",
+        "C": "Sensory interaction is the way senses influence each other."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0120": {
+      "id": "dq-0120",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.4.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Ava stares at a green square for thirty seconds and then looks at a white wall. She briefly sees a red square on the wall. Which of the following best explains what she sees?",
+      "options": [
+        "Opponent-process theory",
+        "Trichromatic theory",
+        "Accommodation",
+        "Blind spot"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Afterimages occur when paired ganglion cells, such as red and green, rebound after fatigue.",
+      "distractor_notes": {
+        "B": "Trichromatic theory explains color mixing by three cone types, not afterimages.",
+        "C": "Accommodation is the lens changing shape to focus light.",
+        "D": "The blind spot is where the optic nerve leaves the eye."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0121": {
+      "id": "dq-0121",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A patient can read a book held in her hands without trouble, but she cannot read a road sign across the street. An eye doctor explains that light from far objects focuses in front of her retina. Which of the following conditions does she have?",
+      "options": [
+        "Farsightedness",
+        "Color vision deficiency",
+        "Blindsight",
+        "Nearsightedness"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Clear near vision and blurry distance vision describes nearsightedness.",
+      "distractor_notes": {
+        "A": "Farsightedness makes close objects blurry, the opposite pattern.",
+        "B": "Color vision deficiency affects seeing certain colors.",
+        "C": "Blindsight is responding to visual stimuli without awareness of seeing."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0122": {
+      "id": "dq-0122",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.1"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0006"
+      ],
+      "question": "In the diagram, which numbered part is where the optic nerve leaves the eye, creating the blind spot?",
+      "options": [
+        "Part 1",
+        "Part 2",
+        "Part 3",
+        "Part 4"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The optic nerve exits at part 2, where there are no rods or cones, so that spot cannot detect light.",
+      "distractor_notes": {
+        "A": "Part 1 is the lens.",
+        "C": "Part 3 is the retina, which does contain light-sensitive cells.",
+        "D": "Part 4 is the fovea, where vision is sharpest."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0123": {
+      "id": "dq-0123",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.2"
+      ],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0006"
+      ],
+      "question": "In the diagram, which numbered part changes shape to focus light onto the retina?",
+      "options": [
+        "Part 1",
+        "Part 2",
+        "Part 3",
+        "Part 4"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The lens changes shape to focus light onto the retina, a process called accommodation.",
+      "distractor_notes": {
+        "B": "Part 2 is where the optic nerve leaves the eye.",
+        "C": "Part 3 is the retina, which receives light rather than focusing it.",
+        "D": "Part 4 is the fovea, a part of the retina."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0124": {
+      "id": "dq-0124",
+      "status": "published",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "1.6.B",
+      "ek": [
+        "1.6.B.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After damage to part of his occipital lobes, a patient can no longer recognize the faces of his family members, although he sees faces clearly and recognizes his family by their voices. Which of the following conditions does the patient have?",
+      "options": [
+        "Blindsight",
+        "Aphasia",
+        "Prosopagnosia",
+        "Synesthesia"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Being unable to recognize faces despite normal vision is prosopagnosia.",
+      "distractor_notes": {
+        "A": "Blindsight is responding to unseen stimuli without awareness.",
+        "B": "Aphasia is a language impairment.",
+        "D": "Synesthesia is experiencing one sense through another."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-12",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0125": {
+      "id": "dq-0125",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0004",
+      "stimulus_id": "stim-0004",
+      "figure_ids": [
+        "fig-0007"
+      ],
+      "question": "What is the independent variable in this study?",
+      "options": [
+        "The number of math problems solved",
+        "The students' math ability",
+        "The time of day of the test",
+        "The number of hours the students slept"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Dr. Ncube manipulated the hours of sleep, so sleep is the independent variable.",
+      "distractor_notes": {
+        "A": "This is the outcome that was measured, the dependent variable.",
+        "B": "Random assignment spreads ability across groups; it is not manipulated.",
+        "C": "The test was given the next morning for all students."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0007.svg",
+      "context": "stim-0004",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0126": {
+      "id": "dq-0126",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0004",
+      "stimulus_id": "stim-0004",
+      "figure_ids": [
+        "fig-0007"
+      ],
+      "question": "According to the graph, how many more problems did the 8-hour group solve, on average, than the 4-hour group?",
+      "options": [
+        "3",
+        "4",
+        "7",
+        "9"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The 8-hour group solved 16 problems and the 4-hour group solved 9, a difference of 7.",
+      "distractor_notes": {
+        "A": "3 is the difference between the 8-hour and 6-hour groups.",
+        "B": "4 is the difference between the 6-hour and 4-hour groups.",
+        "D": "9 is the mean for the 4-hour group, not a difference."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0007.svg",
+      "context": "stim-0004",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0127": {
+      "id": "dq-0127",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "1.A",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0004",
+      "stimulus_id": "stim-0004",
+      "figure_ids": [
+        "fig-0007"
+      ],
+      "question": "Which of the following best explains why the 4-hour group scored lower?",
+      "options": [
+        "Sleep loss can reduce thinking and performance the next day.",
+        "Jet lag disrupted the circadian rhythm of the 4-hour group.",
+        "The 4-hour group had narcolepsy.",
+        "Hypnagogic sensations lowered the 4-hour group's math ability."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Less sleep can impair cognitive performance the next day.",
+      "distractor_notes": {
+        "B": "No travel across time zones was involved.",
+        "C": "Nothing in the study suggests a sleep disorder.",
+        "D": "Hypnagogic sensations occur when falling asleep and do not explain the next day's scores."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": "images/diagnostics/fig-0007.svg",
+      "context": "stim-0004",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0128": {
+      "id": "dq-0128",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.1"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0005",
+      "stimulus_id": "stim-0005",
+      "figure_ids": [],
+      "question": "Why did the same 40 adults take part in all three tests?",
+      "options": [
+        "Person-to-person differences could not explain the changes over time.",
+        "Each adult's results could be compared with the results of a placebo group.",
+        "It guaranteed that the adults were randomly sampled from all adults.",
+        "It kept the light intensity the same at each of the three tests."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Using the same people in every condition means that differences between individuals cannot explain differences between test times.",
+      "distractor_notes": {
+        "B": "There is no placebo group in this design.",
+        "C": "Random sampling concerns how adults were chosen, not repeated testing.",
+        "D": "The researcher changed the intensity on purpose at each test."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0005",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0129": {
+      "id": "dq-0129",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.1"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0005",
+      "stimulus_id": "stim-0005",
+      "figure_ids": [],
+      "question": "According to the table, how much did the mean light intensity needed for detection decrease from 0 minutes to 20 minutes?",
+      "options": [
+        "10",
+        "40",
+        "50",
+        "60"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The mean fell from 50 to 10, a decrease of 40 units.",
+      "distractor_notes": {
+        "A": "10 is the mean intensity at 20 minutes, not the decrease.",
+        "C": "50 is the mean intensity at 0 minutes, not the decrease.",
+        "D": "60 comes from adding the two values instead of subtracting."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0005",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0130": {
+      "id": "dq-0130",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.6",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "1.A",
+      "lo": "1.6.A",
+      "ek": [
+        "1.6.A.1"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0005",
+      "stimulus_id": "stim-0005",
+      "figure_ids": [],
+      "question": "The light intensity measured in this study is an example of which of the following?",
+      "options": [
+        "Just-noticeable difference",
+        "Sensory interaction",
+        "Transduction",
+        "Absolute threshold"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Detecting a stimulus half of the time defines the absolute threshold.",
+      "distractor_notes": {
+        "A": "A just-noticeable difference is the smallest detectable change between two stimuli.",
+        "B": "Sensory interaction is senses influencing each other.",
+        "C": "Transduction converts stimuli into neural messages."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": "stim-0005",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0131": {
+      "id": "dq-0131",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Moreno randomly assigns 60 volunteers to take either melatonin or a placebo one hour before bed. She then measures how long it takes each volunteer to fall asleep. Which of the following is the control group in this study?",
+      "options": [
+        "The group that took melatonin",
+        "The group that took the placebo",
+        "The group that fell asleep first",
+        "Both groups combined"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The control group receives no real treatment and serves as the comparison, here the placebo group.",
+      "distractor_notes": {
+        "A": "This group receives the treatment being tested.",
+        "C": "Falling asleep first is a result, not a group assigned in advance.",
+        "D": "A control group is a comparison group, not the whole sample."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0132": {
+      "id": "dq-0132",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.A",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.7"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher measures activity in the amygdala of 40 participants using fMRI while they view photographs. She then compares each participant's activity with the participant's score on an anxiety questionnaire. Which of the following research designs is the researcher using?",
+      "options": [
+        "Experiment",
+        "Case study",
+        "Correlational study",
+        "Naturalistic observation"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The researcher measures two variables and compares them without manipulating either, which is correlational.",
+      "distractor_notes": {
+        "A": "No variable is manipulated and no one is assigned to conditions.",
+        "B": "A case study examines one individual or a small group in depth.",
+        "D": "Participants are viewing photographs in a lab, not being observed in a natural setting."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0133": {
+      "id": "dq-0133",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.C",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.7"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Idowu studies one patient who lost the ability to form new memories after brain surgery and reports the findings in detail. Which of the following is the most important limitation of this research design?",
+      "options": [
+        "Results from one person may not apply to others.",
+        "Case studies cannot describe behavior in much detail.",
+        "Case studies always break ethical guidelines for research.",
+        "Case studies cannot be used to study the human brain."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Results from a single case may not generalize to the wider population.",
+      "distractor_notes": {
+        "B": "Case studies are known for rich detail.",
+        "C": "Case studies can follow ethical guidelines.",
+        "D": "Case studies are often used to study brain damage."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0134": {
+      "id": "dq-0134",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.3",
+      "topic_secondary": [
+        "0.4"
+      ],
+      "skill": "2.D",
+      "lo": "1.3.C",
+      "ek": [
+        "1.3.C.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher testing a new sleep medication gives volunteers pills without telling them about the possible side effects. Which of the following ethical guidelines was most clearly violated?",
+      "options": [
+        "Debriefing",
+        "Confidentiality",
+        "Right to withdraw",
+        "Informed consent"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Participants must be told about risks beforehand so they can agree knowingly, which is informed consent.",
+      "distractor_notes": {
+        "A": "Debriefing is explaining the study after it ends.",
+        "B": "Confidentiality is keeping data private.",
+        "C": "The stem does not say participants were prevented from leaving."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0135": {
+      "id": "dq-0135",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.5",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "1.5.A",
+      "ek": [
+        "1.5.A.3.ii"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Seven participants spent the following numbers of minutes in REM sleep during one night: 18, 22, 22, 25, 28, 30, 34. What is the median?",
+      "options": [
+        "22",
+        "25",
+        "26",
+        "28"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. With seven scores in order, the fourth score, 25, is the median.",
+      "distractor_notes": {
+        "A": "22 is the mode, not the median.",
+        "C": "26 is the mean rounded to the nearest whole number.",
+        "D": "28 is one of the scores but not the middle score."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0136": {
+      "id": "dq-0136",
+      "status": "draft",
+      "unit": "Unit 1",
+      "topic": "1.4",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "1.4.A",
+      "ek": [
+        "1.4.A.7"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Class X scores on a brain unit test are 70, 70, 70, 70, and 70. Class Y scores are 50, 60, 70, 80, and 90. Both classes have a mean of 70. Which of the following statements is correct?",
+      "options": [
+        "Class X has a larger range than Class Y.",
+        "Class Y has a lower mean than Class X.",
+        "Class Y has a larger range than Class X.",
+        "The two classes have the same range."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Class Y's scores range from 50 to 90, a range of 40, while Class X has a range of 0.",
+      "distractor_notes": {
+        "A": "Class X's scores are all identical, so its range is zero.",
+        "B": "Both classes have a mean of 70.",
+        "D": "Class Y's range is 40 and Class X's is 0."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
     }
   },
   "tests": [
@@ -3048,6 +5790,61 @@
           },
           {
             "unit": "Unit 2",
+            "skill_focused": true,
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "test_id": "unit-1-v1",
+      "name": "Unit 1 Diagnostic: Biological Bases of Behavior",
+      "type": "unit",
+      "unit": "Unit 1",
+      "version": 1,
+      "status": "published",
+      "time_limit_minutes": 35,
+      "reporting": {
+        "min_items_topic": 3,
+        "min_items_unit": 10,
+        "min_items_skill": 8
+      },
+      "recipe": {
+        "order": "mixed",
+        "slots": [
+          {
+            "topic": "1.1",
+            "count": 3
+          },
+          {
+            "topic": "1.2",
+            "count": 3
+          },
+          {
+            "topic": "1.3",
+            "count": 4
+          },
+          {
+            "topic": "1.4",
+            "count": 4
+          },
+          {
+            "topic": "1.5",
+            "count": 3
+          },
+          {
+            "topic": "1.6",
+            "count": 5
+          },
+          {
+            "unit": "Unit 1",
+            "skill_focused": true,
+            "kind": "set",
+            "size": 3,
+            "count": 1
+          },
+          {
+            "unit": "Unit 1",
             "skill_focused": true,
             "count": 3
           }
