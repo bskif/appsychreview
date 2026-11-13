@@ -116,6 +116,96 @@
         "license": null
       },
       "data": {}
+    },
+    "fig-0008": {
+      "figure_id": "fig-0008",
+      "file": "images/diagnostics/fig-0008.svg",
+      "type": "diagram",
+      "alt": "Scatterplot of 12 students. X-axis: hours studied, 0 to 10. Y-axis: exam score, 40 to 100. Points rise from about 60 at 1 hour to about 92 at 9 hours.",
+      "caption": "Hours Studied and Exam Score",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0008.json",
+        "tool": "Python SVG script (batch14.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0009": {
+      "figure_id": "fig-0009",
+      "file": "images/diagnostics/fig-0009.svg",
+      "type": "diagram",
+      "alt": "Bar graph. Mean score out of 20: silence 18, instrumental music 17, music with lyrics 11.",
+      "caption": "Mean Reading Comprehension Score by Condition",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0009.json",
+        "tool": "Python SVG script (batch14.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0010": {
+      "figure_id": "fig-0010",
+      "file": "images/diagnostics/fig-0010.svg",
+      "type": "diagram",
+      "alt": "Flow diagram. Volunteer participants on the left are split by arrows, labeled part 1, into two groups. Part 2 is the top group, which receives the treatment. Part 3 is the bottom group, which does not. Part 4 is a box on the right, to which both groups lead, where results on the outcome measure are compared.",
+      "caption": "Plan of an Experiment",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0010.json",
+        "tool": "Python SVG script (batch14.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0011": {
+      "figure_id": "fig-0011",
+      "file": "images/diagnostics/fig-0011.svg",
+      "type": "diagram",
+      "alt": "Bell-shaped normal curve with mean 100 and standard deviation 15. Score axis marks 55, 70, 85, 100, 115, 130, 145. Percentages of scores in each band: 2, 14, 34, 34, 14, 2.",
+      "caption": "Distribution of Test Scores",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0011.json",
+        "tool": "Python SVG script (batch15.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0012": {
+      "figure_id": "fig-0012",
+      "file": "images/diagnostics/fig-0012.svg",
+      "type": "diagram",
+      "alt": "Four bell-shaped graphs in a row, numbered 1 to 4. Graph 1 has its peak on the left and a long tail on the right. Graph 2 has its peak on the right and a long tail on the left. Graph 3 is symmetric with one peak in the middle. Graph 4 has two separate peaks.",
+      "caption": "Four Distributions",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0012.json",
+        "tool": "Python SVG script",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0013": {
+      "figure_id": "fig-0013",
+      "file": "images/diagnostics/fig-0013.svg",
+      "type": "diagram",
+      "alt": "Smooth curve of test scores. The horizontal axis is test score from low to high. The vertical axis is number of students. The curve peaks at the low scores on the left and has a long tail toward the high scores on the right.",
+      "caption": "Scores on a Unit Test",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0013.json",
+        "tool": "Python SVG script",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
     }
   },
   "stimuli": {
@@ -197,6 +287,105 @@
           [
             "20",
             "10"
+          ]
+        ]
+      },
+      "figure_ids": []
+    },
+    "stim-0006": {
+      "stimulus_id": "stim-0006",
+      "type": "text+figure",
+      "text": "Dr. Alvarez surveyed 12 students in a psychology class about the number of hours each studied for an exam. She then recorded each student's exam score. The scatterplot shows the results.",
+      "table": null,
+      "figure_ids": [
+        "fig-0008"
+      ]
+    },
+    "stim-0007": {
+      "stimulus_id": "stim-0007",
+      "type": "text+figure",
+      "text": "Dr. Bose tested whether background music affects reading comprehension. She randomly assigned 90 students to read the same passage in silence, with instrumental music, or with music that had lyrics, with 30 students in each condition. Each student then answered 20 comprehension questions. The graph shows the mean score for each condition.",
+      "table": null,
+      "figure_ids": [
+        "fig-0009"
+      ]
+    },
+    "stim-0008": {
+      "stimulus_id": "stim-0008",
+      "type": "text+table",
+      "text": "Dr. Rao wanted to know whether the 1,200 students at Lincoln High School support a later school start time. She used a computer to randomly select 100 students, 25 from each grade, and asked each one, \"Do you support a later school start time?\" The table shows how many in each grade said yes.",
+      "table": {
+        "title": "Students Who Support a Later Start Time",
+        "columns": [
+          "Grade",
+          "Students surveyed",
+          "Said yes"
+        ],
+        "rows": [
+          [
+            "9",
+            "25",
+            "15"
+          ],
+          [
+            "10",
+            "25",
+            "18"
+          ],
+          [
+            "11",
+            "25",
+            "20"
+          ],
+          [
+            "12",
+            "25",
+            "22"
+          ]
+        ]
+      },
+      "figure_ids": []
+    },
+    "stim-0009": {
+      "stimulus_id": "stim-0009",
+      "type": "text",
+      "text": "Dr. Mendez studied how stress affects problem solving. Each of 60 volunteers first read and signed a form that described the procedure, the time required, the possible discomfort, and the right to stop at any time. During the study, some volunteers were told, falsely, that most people solved the puzzle in half the time they were taking. After the study, Dr. Mendez explained the true purpose and the false feedback to each volunteer. Each volunteer's data were stored under an ID number instead of a name.",
+      "table": null,
+      "figure_ids": []
+    },
+    "stim-0010": {
+      "stimulus_id": "stim-0010",
+      "type": "text+figure",
+      "text": "The graph shows the distribution of scores on a widely used test. The scores have a mean of 100 and a standard deviation of 15.",
+      "table": null,
+      "figure_ids": [
+        "fig-0011"
+      ]
+    },
+    "stim-0011": {
+      "stimulus_id": "stim-0011",
+      "type": "text+table",
+      "text": "Dr. Chu compared the scores of two classes on the same unit test. The table shows the mean, median, and standard deviation of each class.",
+      "table": {
+        "title": "Unit Test Scores in Two Classes",
+        "columns": [
+          "Class",
+          "Mean",
+          "Median",
+          "Standard deviation"
+        ],
+        "rows": [
+          [
+            "A",
+            "80",
+            "80",
+            "4"
+          ],
+          [
+            "B",
+            "76",
+            "84",
+            "12"
           ]
         ]
       },
@@ -5733,7 +5922,7 @@
     },
     "dq-0137": {
       "id": "dq-0137",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5766,12 +5955,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0138": {
       "id": "dq-0138",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5804,12 +5993,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0139": {
       "id": "dq-0139",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5842,12 +6031,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0140": {
       "id": "dq-0140",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5880,12 +6069,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0141": {
       "id": "dq-0141",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5918,12 +6107,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0142": {
       "id": "dq-0142",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.1",
       "topic_secondary": [],
@@ -5956,12 +6145,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0143": {
       "id": "dq-0143",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -5994,12 +6183,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0144": {
       "id": "dq-0144",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6032,12 +6221,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0145": {
       "id": "dq-0145",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6070,12 +6259,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0146": {
       "id": "dq-0146",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6108,12 +6297,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0147": {
       "id": "dq-0147",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6146,12 +6335,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0148": {
       "id": "dq-0148",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6184,12 +6373,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0149": {
       "id": "dq-0149",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6222,12 +6411,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0150": {
       "id": "dq-0150",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.2",
       "topic_secondary": [],
@@ -6260,12 +6449,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0151": {
       "id": "dq-0151",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6298,12 +6487,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0152": {
       "id": "dq-0152",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6336,12 +6525,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0153": {
       "id": "dq-0153",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6374,12 +6563,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0154": {
       "id": "dq-0154",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6412,12 +6601,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0155": {
       "id": "dq-0155",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6450,12 +6639,12 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     },
     "dq-0156": {
       "id": "dq-0156",
-      "status": "draft",
+      "status": "published",
       "unit": "Unit 0",
       "topic": "0.6",
       "topic_secondary": [],
@@ -6488,8 +6677,1288 @@
       "supersedes": null,
       "retired": false,
       "created": "2026-11-13",
-      "reviewed_by": null,
-      "published": null
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0157": {
+      "id": "dq-0157",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0006",
+      "stimulus_id": "stim-0006",
+      "figure_ids": [
+        "fig-0008"
+      ],
+      "question": "Which of the following best describes the relationship shown in the scatterplot?",
+      "options": [
+        "Negative correlation",
+        "Positive correlation",
+        "No correlation",
+        "Illusory correlation"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. As hours studied increase, exam scores tend to increase, which is a positive correlation.",
+      "distractor_notes": {
+        "A": "In a negative correlation, one variable falls as the other rises.",
+        "C": "The points form a clear upward pattern, not a random scatter.",
+        "D": "Illusory correlation is seeing a relationship that is not there; this one is real."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0008.svg",
+      "context": "stim-0006",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0158": {
+      "id": "dq-0158",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0006",
+      "stimulus_id": "stim-0006",
+      "figure_ids": [
+        "fig-0008"
+      ],
+      "question": "Which of the following correlation coefficients is closest to the one for these data?",
+      "options": [
+        "-0.9",
+        "-0.2",
+        "+0.2",
+        "+0.9"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The points rise in a tight upward pattern, so a strong positive coefficient fits.",
+      "distractor_notes": {
+        "A": "A negative coefficient would show scores falling as hours rise.",
+        "B": "A value near zero would show a random scatter.",
+        "C": "A value near zero would show a random scatter."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0008.svg",
+      "context": "stim-0006",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0159": {
+      "id": "dq-0159",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0006",
+      "stimulus_id": "stim-0006",
+      "figure_ids": [
+        "fig-0008"
+      ],
+      "question": "Which of the following is the best reason Dr. Alvarez cannot conclude that more studying caused higher exam scores?",
+      "options": [
+        "A third variable, such as motivation, could affect both studying and scores.",
+        "A correlation this strong means the data were probably recorded incorrectly.",
+        "Scatterplots can show only relationships that are negative.",
+        "Survey data from students cannot be used to calculate correlations."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Correlation alone cannot rule out other variables that influence both measures.",
+      "distractor_notes": {
+        "B": "Strong correlations are not a sign of error.",
+        "C": "Scatterplots can show positive, negative, or no relationship.",
+        "D": "Correlations are often calculated from survey data."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": "images/diagnostics/fig-0008.svg",
+      "context": "stim-0006",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0160": {
+      "id": "dq-0160",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0007",
+      "stimulus_id": "stim-0007",
+      "figure_ids": [
+        "fig-0009"
+      ],
+      "question": "Which group served as the control group in this study?",
+      "options": [
+        "The instrumental music group",
+        "The music with lyrics group",
+        "The silence group",
+        "All 90 students together"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The silence group received no music and served as the comparison condition.",
+      "distractor_notes": {
+        "A": "This group received a music condition.",
+        "B": "This group received a music condition.",
+        "D": "A control group is a comparison group, not the whole sample."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0009.svg",
+      "context": "stim-0007",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0161": {
+      "id": "dq-0161",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0007",
+      "stimulus_id": "stim-0007",
+      "figure_ids": [
+        "fig-0009"
+      ],
+      "question": "How many more questions, on average, did the silence group answer correctly than the music with lyrics group?",
+      "options": [
+        "1",
+        "7",
+        "11",
+        "18"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The silence group averaged 18 and the lyrics group averaged 11, a difference of 7.",
+      "distractor_notes": {
+        "A": "1 is the difference between the silence and instrumental music groups.",
+        "C": "11 is the mean for the music with lyrics group.",
+        "D": "18 is the mean for the silence group."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0009.svg",
+      "context": "stim-0007",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0162": {
+      "id": "dq-0162",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0007",
+      "stimulus_id": "stim-0007",
+      "figure_ids": [
+        "fig-0009"
+      ],
+      "question": "Which of the following would be a confounding variable in this study?",
+      "options": [
+        "The number of students in each group of the study",
+        "Using random assignment to form the three groups",
+        "The comprehension scores that students earned",
+        "Testing the silent group only in the morning"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. If the silent group was tested at a different time of day, time of day could explain the difference, so it would confound the results.",
+      "distractor_notes": {
+        "A": "Equal group sizes help the comparison rather than confuse it.",
+        "B": "Random assignment reduces confounds.",
+        "C": "The scores are the outcome being measured."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": "images/diagnostics/fig-0009.svg",
+      "context": "stim-0007",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0163": {
+      "id": "dq-0163",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0010"
+      ],
+      "question": "In the diagram, which numbered part represents the random assignment of participants to groups?",
+      "options": [
+        "Part 1",
+        "Part 2",
+        "Part 3",
+        "Part 4"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The arrows that split the volunteers into two groups by chance, part 1, show random assignment.",
+      "distractor_notes": {
+        "B": "Part 2 is a group that receives the treatment.",
+        "C": "Part 3 is a group that does not receive the treatment.",
+        "D": "Part 4 is the comparison of the results."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0164": {
+      "id": "dq-0164",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "In a study of a new pain medication, volunteers in one group receive a pill that looks identical to the medication but has no active ingredient. Which of the following terms describes this pill?",
+      "options": [
+        "Confounding variable",
+        "Random sample",
+        "Placebo",
+        "Double-blind procedure"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. An inactive treatment given to a comparison group is a placebo.",
+      "distractor_notes": {
+        "A": "A confounding variable is an uncontrolled factor that changes the results.",
+        "B": "A random sample is a way of choosing participants.",
+        "D": "A double-blind procedure keeps both participants and researchers unaware of group assignment."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0165": {
+      "id": "dq-0165",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Neither the participants nor the researchers who record the results know which participants received the new treatment until the study ends. Which of the following best describes this procedure?",
+      "options": [
+        "Random assignment",
+        "Double-blind procedure",
+        "Operational definition",
+        "Replication"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Keeping both participants and researchers unaware of group membership is a double-blind procedure.",
+      "distractor_notes": {
+        "A": "Random assignment is how participants are placed in groups.",
+        "C": "An operational definition states how a variable is measured.",
+        "D": "Replication is repeating a study."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0166": {
+      "id": "dq-0166",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher finds that as the number of hours people spend on social media each night increases, their hours of sleep decrease. Which of the following best describes this relationship?",
+      "options": [
+        "Positive correlation",
+        "Zero correlation",
+        "Illusory correlation",
+        "Negative correlation"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. One variable rising as the other falls is a negative correlation.",
+      "distractor_notes": {
+        "A": "In a positive correlation, both variables rise together.",
+        "B": "The two variables are related here.",
+        "C": "Illusory correlation is a perceived relationship that does not exist."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0167": {
+      "id": "dq-0167",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following correlation coefficients indicates the strongest relationship between two variables?",
+      "options": [
+        "-0.85",
+        "-0.40",
+        "+0.30",
+        "+0.60"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Strength depends on distance from zero, not the sign, so -0.85 is the strongest.",
+      "distractor_notes": {
+        "B": "This is weaker than 0.85 in either direction.",
+        "C": "This is weaker than 0.85 in either direction.",
+        "D": "This is weaker than 0.85 in either direction."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0168": {
+      "id": "dq-0168",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.3",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Hale tests whether students who take handwritten notes score higher on a quiz than students who type their notes. Which of the following is the independent variable?",
+      "options": [
+        "The students' scores on the quiz",
+        "The students' typing speed",
+        "The way students took notes",
+        "The number of students in the study"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The researcher manipulates how notes are taken, so it is the independent variable.",
+      "distractor_notes": {
+        "A": "This is the outcome measured, the dependent variable.",
+        "B": "Typing speed is not what the researcher manipulated.",
+        "D": "Sample size is not a manipulated variable."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0169": {
+      "id": "dq-0169",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0008",
+      "stimulus_id": "stim-0008",
+      "figure_ids": [],
+      "question": "What is the population in this study?",
+      "options": [
+        "The 100 students who completed the survey",
+        "The 25 students chosen from each grade level",
+        "The 75 students who said yes to the question",
+        "All 1,200 students at Lincoln High School"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The population is the entire group the researcher wants to learn about.",
+      "distractor_notes": {
+        "A": "These students are the sample.",
+        "B": "These are the groups within the sample.",
+        "C": "These students are a subset of the sample."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0008",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0170": {
+      "id": "dq-0170",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0008",
+      "stimulus_id": "stim-0008",
+      "figure_ids": [],
+      "question": "Why did Dr. Rao use a computer to randomly select the 100 students?",
+      "options": [
+        "So every student had an equal chance of being chosen",
+        "So students would not know the purpose of the survey",
+        "So students would be more likely to answer yes to the question",
+        "So the survey would take less time for students to complete"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Random selection gives every member of the population an equal chance, which helps the sample represent the population.",
+      "distractor_notes": {
+        "B": "Random selection does not hide the survey's purpose.",
+        "C": "Random selection does not change the answers students give.",
+        "D": "Random selection does not shorten the survey."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0008",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0171": {
+      "id": "dq-0171",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0008",
+      "stimulus_id": "stim-0008",
+      "figure_ids": [],
+      "question": "According to the table, what percentage of the students surveyed said yes?",
+      "options": [
+        "25%",
+        "60%",
+        "75%",
+        "88%"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The yes answers total 15 + 18 + 20 + 22 = 75 out of 100 students, or 75%.",
+      "distractor_notes": {
+        "A": "25% is the percentage who said no.",
+        "B": "60% is the percentage of 9th graders who said yes, not of all students.",
+        "D": "88% is the percentage of 12th graders who said yes, not of all students."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0008",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0172": {
+      "id": "dq-0172",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.D",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0009",
+      "stimulus_id": "stim-0009",
+      "figure_ids": [],
+      "question": "Which ethical guideline was met when volunteers signed the form before the study?",
+      "options": [
+        "Debriefing",
+        "Informed consent",
+        "Confidentiality",
+        "Protection from harm"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Describing the procedure, discomfort, and right to stop so volunteers can agree knowingly is informed consent.",
+      "distractor_notes": {
+        "A": "Debriefing happens after the study.",
+        "C": "Confidentiality is protecting participants' identities and data.",
+        "D": "Protection from harm is limiting physical or psychological risk."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0009",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0173": {
+      "id": "dq-0173",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.D",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0009",
+      "stimulus_id": "stim-0009",
+      "figure_ids": [],
+      "question": "Which ethical guideline was met when Dr. Mendez explained the true purpose and the false feedback after the study?",
+      "options": [
+        "Informed consent",
+        "Confidentiality",
+        "Right to withdraw",
+        "Debriefing"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Explaining the purpose and any deception after the study is debriefing.",
+      "distractor_notes": {
+        "A": "Informed consent happens before the study.",
+        "B": "Confidentiality is protecting participants' identities and data.",
+        "C": "The right to withdraw is the freedom to stop during the study."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0009",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0174": {
+      "id": "dq-0174",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.D",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0009",
+      "stimulus_id": "stim-0009",
+      "figure_ids": [],
+      "question": "Which ethical guideline was met when each volunteer's data were stored under an ID number?",
+      "options": [
+        "Confidentiality",
+        "Informed consent",
+        "Debriefing",
+        "Protection from harm"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Keeping names separate from data protects participants' privacy, which is confidentiality.",
+      "distractor_notes": {
+        "B": "Informed consent is agreeing to take part after learning the risks.",
+        "C": "Debriefing is explaining the study afterward.",
+        "D": "Protection from harm is limiting risk during the study."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0009",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0175": {
+      "id": "dq-0175",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.C",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A pollster asks half of a random sample of adults, \"Do you support aid to the needy?\" and asks the other half, \"Do you support welfare?\" Far more people say yes to the first question. Which of the following best explains the difference?",
+      "options": [
+        "Sampling bias",
+        "Framing",
+        "Illusory correlation",
+        "Replication"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The way a question is worded, or framed, can change how people answer it.",
+      "distractor_notes": {
+        "A": "Both groups were randomly sampled, so the sample is not biased.",
+        "C": "Illusory correlation is seeing a relationship that does not exist.",
+        "D": "Replication is repeating a study."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0176": {
+      "id": "dq-0176",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.C",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher posts a survey about exercise habits on the website of a gym chain. She finds that 90% of respondents exercise weekly and concludes that 90% of all adults exercise weekly. Which of the following is the best criticism of her conclusion?",
+      "options": [
+        "The sample was too large to be accurate.",
+        "The survey measured something that cannot be measured.",
+        "The sample does not represent all adults.",
+        "The survey used random assignment to groups."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. People who visit a gym website are likely to exercise more than other adults, so the sample is biased.",
+      "distractor_notes": {
+        "A": "A large sample is not a flaw by itself.",
+        "B": "Exercise habits can be measured.",
+        "D": "The study did not assign anyone to groups."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0177": {
+      "id": "dq-0177",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher sits quietly in a park for a week and records how often parents praise or scold their children. She does not interact with anyone. Which of the following research methods is she using?",
+      "options": [
+        "Case study",
+        "Survey",
+        "Experiment",
+        "Naturalistic observation"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Watching behavior in its natural setting without interfering is naturalistic observation.",
+      "distractor_notes": {
+        "A": "A case study examines one individual or a small group in depth.",
+        "B": "A survey asks people questions.",
+        "C": "An experiment manipulates a variable and assigns participants to conditions."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0178": {
+      "id": "dq-0178",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.4",
+      "topic_secondary": [],
+      "skill": "2.D",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Before starting a study, Dr. Ito submits her plan to a committee at her university. The committee reviews whether the study protects participants. Which of the following best describes this committee?",
+      "options": [
+        "Institutional review board",
+        "Peer review panel",
+        "Replication team",
+        "Debriefing group"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. An institutional review board reviews proposed studies to protect participants.",
+      "distractor_notes": {
+        "B": "Peer review evaluates studies after they are written, for publication.",
+        "C": "A replication team repeats a study.",
+        "D": "Debriefing is done with participants after a study."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0179": {
+      "id": "dq-0179",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0010",
+      "stimulus_id": "stim-0010",
+      "figure_ids": [
+        "fig-0011"
+      ],
+      "question": "Approximately what percentage of people have scores between 85 and 115?",
+      "options": [
+        "34%",
+        "50%",
+        "68%",
+        "95%"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The two middle bands, 34% and 34%, add to 68%.",
+      "distractor_notes": {
+        "A": "34% is the percentage between 85 and 100 only.",
+        "B": "50% is the percentage above the mean.",
+        "D": "95% is the percentage within two standard deviations."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0011.svg",
+      "context": "stim-0010",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0180": {
+      "id": "dq-0180",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.B",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0010",
+      "stimulus_id": "stim-0010",
+      "figure_ids": [
+        "fig-0011"
+      ],
+      "question": "A score of 130 is how many standard deviations above the mean?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The difference of 30 points divided by the standard deviation of 15 is 2.",
+      "distractor_notes": {
+        "A": "One standard deviation above the mean is 115.",
+        "C": "Three standard deviations above the mean is 145.",
+        "D": "Four standard deviations above the mean is 160."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0011.svg",
+      "context": "stim-0010",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0181": {
+      "id": "dq-0181",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0010",
+      "stimulus_id": "stim-0010",
+      "figure_ids": [
+        "fig-0011"
+      ],
+      "question": "Which of the following statements is true of the distribution shown in the graph?",
+      "options": [
+        "Most scores are above the mean.",
+        "The distribution is skewed to the right.",
+        "More scores are below 70 than between 85 and 100.",
+        "The mean, median, and mode are equal."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. In a symmetric normal curve, the mean, median, and mode fall at the same point.",
+      "distractor_notes": {
+        "A": "Half the scores are above the mean.",
+        "B": "The curve is symmetric, not skewed.",
+        "C": "Only 2% are below 70 or so, far fewer than the 34% between 85 and 100."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": "images/diagnostics/fig-0011.svg",
+      "context": "stim-0010",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0182": {
+      "id": "dq-0182",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.B",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0011",
+      "stimulus_id": "stim-0011",
+      "figure_ids": [],
+      "question": "Which class had scores that were more spread out?",
+      "options": [
+        "Class B",
+        "Class A",
+        "Both classes equally",
+        "It cannot be determined"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. The standard deviation is larger in Class B, 12 compared with 4, so its scores are more spread out.",
+      "distractor_notes": {
+        "B": "Class A has the smaller standard deviation.",
+        "C": "The standard deviations differ.",
+        "D": "The standard deviation shows spread."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0011",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0183": {
+      "id": "dq-0183",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0011",
+      "stimulus_id": "stim-0011",
+      "figure_ids": [],
+      "question": "Which of the following is most likely true of the shape of the distribution of Class B's scores?",
+      "options": [
+        "Symmetric, like a normal curve",
+        "Skewed to the right",
+        "Bimodal, with two peaks",
+        "Skewed to the left"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The mean is lower than the median because a few very low scores pull it down, which indicates a left skew.",
+      "distractor_notes": {
+        "A": "In a symmetric distribution the mean equals the median.",
+        "B": "In a right skew the mean is higher than the median.",
+        "C": "The table gives no sign of two peaks."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0011",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0184": {
+      "id": "dq-0184",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.B",
+      "lo": null,
+      "ek": [],
+      "format": "set",
+      "skill_focused": false,
+      "setid": "set-0011",
+      "stimulus_id": "stim-0011",
+      "figure_ids": [],
+      "question": "Which of the following best explains why the median may describe a typical score in Class B better than the mean?",
+      "options": [
+        "Medians are always more accurate than means.",
+        "A few very low scores pull the mean down.",
+        "The mean cannot be calculated for a skewed set of scores.",
+        "The median is based on the standard deviation."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Extreme scores affect the mean but not the median.",
+      "distractor_notes": {
+        "A": "Neither measure is always better.",
+        "C": "A mean can be calculated for any set of numbers.",
+        "D": "The median does not use the standard deviation."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": "stim-0011",
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0185": {
+      "id": "dq-0185",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.C",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher compares two groups and finds a difference with a p value of .03. The researcher uses .05 as the cutoff. Which of the following best describes the result?",
+      "options": [
+        "The result is not statistically significant.",
+        "The two groups are identical.",
+        "The result is statistically significant.",
+        "The hypothesis has been proven true."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A p value below .05 means the difference is unlikely to be due to chance alone.",
+      "distractor_notes": {
+        "A": "A p value below the cutoff is significant.",
+        "B": "The p value shows a difference, not sameness.",
+        "D": "A single study cannot prove a hypothesis."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0186": {
+      "id": "dq-0186",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Maya's score on a standardized test is at the 80th percentile. Which of the following best describes her performance?",
+      "options": [
+        "She scored higher than about 80% of test takers.",
+        "She answered 80% of the questions correctly on the test.",
+        "She scored lower than about 80% of test takers.",
+        "Her score was 80 points above the average score."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. A percentile rank shows the percentage of people who scored lower.",
+      "distractor_notes": {
+        "B": "A percentile compares people, not percent correct.",
+        "C": "The 80th percentile means higher, not lower.",
+        "D": "A percentile is a rank, not a distance in points."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0187": {
+      "id": "dq-0187",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0012"
+      ],
+      "question": "Which of the numbered graphs shows a negatively skewed distribution?",
+      "options": [
+        "Graph 1",
+        "Graph 2",
+        "Graph 3",
+        "Graph 4"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Graph 2 has its peak on the right and a long tail on the left, which is a negative skew.",
+      "distractor_notes": {
+        "A": "Graph 1 has its tail on the right, a positive skew.",
+        "C": "Graph 3 is symmetric, with one peak in the middle.",
+        "D": "Graph 4 has two separate peaks, a bimodal shape."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0188": {
+      "id": "dq-0188",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.A",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0013"
+      ],
+      "question": "A teacher graphs the scores that his students earned on a unit test and gets the graph shown. Which of the following best describes the results of the test?",
+      "options": [
+        "Most students scored high, and a few scored very low.",
+        "Most students scored near the middle of the scale.",
+        "Most students scored low, and a few scored very high.",
+        "The students formed two separate groups of scores."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The peak is at the low scores and the tail stretches toward high scores, so most students scored low and a few scored very high.",
+      "distractor_notes": {
+        "A": "This describes a negative skew, with the peak at high scores and a tail to the left.",
+        "B": "A peak in the middle would show a symmetric distribution.",
+        "D": "Two separate groups would show two peaks."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
+    },
+    "dq-0189": {
+      "id": "dq-0189",
+      "status": "published",
+      "unit": "Unit 0",
+      "topic": "0.5",
+      "topic_secondary": [],
+      "skill": "3.B",
+      "lo": null,
+      "ek": [],
+      "format": "standalone_visual",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [
+        "fig-0013"
+      ],
+      "question": "A teacher graphs the scores that his students earned on a unit test and gets the graph shown. Which of the following is most likely true of the mean and the median of these scores?",
+      "options": [
+        "The mean is lower than the median.",
+        "The mean and the median are equal.",
+        "The mean is higher than the median.",
+        "The mean is the same as the mode."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A few very high scores pull the mean toward the long tail on the right, so the mean is higher than the median.",
+      "distractor_notes": {
+        "A": "A mean below the median happens when the long tail is on the left.",
+        "B": "The mean and median are equal only in a symmetric distribution.",
+        "D": "In a skewed distribution the mean is pulled away from the peak, which is the mode."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-13"
     }
   },
   "tests": [
