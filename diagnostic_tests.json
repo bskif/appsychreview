@@ -206,6 +206,36 @@
         "license": null
       },
       "data": {}
+    },
+    "fig-0014": {
+      "figure_id": "fig-0014",
+      "file": "images/diagnostics/fig-0014.svg",
+      "type": "line_two_series",
+      "alt": "Line graph. Extinction session: 1, 2, 3, 4. Partial group: 45, 38, 28, 18 lever presses. Continuous group: 36, 20, 8, 2 lever presses. Y-axis: mean lever presses per session, 0 to 50.",
+      "caption": "Mean Lever Presses After Food Was Stopped",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0014.json",
+        "tool": "Python SVG script (batch21.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
+    },
+    "fig-0015": {
+      "figure_id": "fig-0015",
+      "file": "images/diagnostics/fig-0015.svg",
+      "type": "bar_simple",
+      "alt": "Bar graph. Age 4: 10 percent; Age 6: 30 percent; Age 8: 80 percent; Age 10: 90 percent. Y-axis: percent of children answering correctly, 0 to 100.",
+      "caption": "Children Answering Correctly by Age",
+      "source": {
+        "kind": "generated_from_data",
+        "data_file": "data/figures/fig-0015.json",
+        "tool": "Python SVG script (batch21.py)",
+        "attribution": null,
+        "license": null
+      },
+      "data": {}
     }
   },
   "stimuli": {
@@ -390,6 +420,24 @@
         ]
       },
       "figure_ids": []
+    },
+    "stim-0012": {
+      "stimulus_id": "stim-0012",
+      "type": "text+figure",
+      "text": "Dr. Fontaine studied how the schedule of reinforcement affects lever pressing in rats. She randomly assigned 40 rats to two groups of 20 rats each. Every rat first learned to press a lever for food. For 10 days, the continuous group received a food pellet after every press. The partial group received a food pellet after an unpredictable number of presses, averaging five. Then food was stopped for both groups, and she counted lever presses in four 10-minute sessions. The graph shows the mean number of lever presses per session.",
+      "table": null,
+      "figure_ids": [
+        "fig-0014"
+      ]
+    },
+    "stim-0013": {
+      "stimulus_id": "stim-0013",
+      "type": "text+figure",
+      "text": "Dr. Lindqvist studied how children's thinking changes with age. She tested 160 children, 40 children at each of the ages 4, 6, 8, and 10. Each child watched an experimenter pour the same amount of water from a short, wide glass into a tall, thin glass and was asked whether there was more water now, less water, or the same amount. Saying \"the same amount\" counted as a correct answer. The graph shows the percent of children at each age who answered correctly.",
+      "table": null,
+      "figure_ids": [
+        "fig-0015"
+      ]
     }
   },
   "questions": {
@@ -7959,6 +8007,3642 @@
       "created": "2026-11-13",
       "reviewed_by": "SB",
       "published": "2026-11-13"
+    },
+    "dq-0190": {
+      "id": "dq-0190",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "2.A",
+      "lo": "3.1.B",
+      "ek": [
+        "3.1.B"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher measures the vocabulary of the same 40 children at ages 2, 4, 6, and 8. Which of the following research designs is the researcher using?",
+      "options": [
+        "Cross-sectional study",
+        "Longitudinal study",
+        "Case study",
+        "Naturalistic observation"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Following the same participants over time to see how they change is a longitudinal design.",
+      "distractor_notes": {
+        "A": "A cross-sectional study compares different age groups at one time.",
+        "C": "A case study examines one individual or group in depth.",
+        "D": "Naturalistic observation records behavior in its natural setting without intervening."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0191": {
+      "id": "dq-0191",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": "3.1.B",
+      "ek": [
+        "3.1.B"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is an advantage of a cross-sectional study compared with a longitudinal study?",
+      "options": [
+        "It shows how each person changes with age.",
+        "It controls for differences between generations.",
+        "It removes the effect of individual differences.",
+        "Results can be collected quickly."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A cross-sectional study compares different age groups at one time, so results come quickly and no one is followed for years.",
+      "distractor_notes": {
+        "A": "Following individuals over time is the strength of a longitudinal study.",
+        "B": "Age groups grew up in different eras, so generational differences remain.",
+        "C": "Each group contains different people, so individual differences remain."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0192": {
+      "id": "dq-0192",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "2.B",
+      "lo": "3.1.B",
+      "ek": [
+        "3.1.B"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is a major limitation of a longitudinal study?",
+      "options": [
+        "Participants may drop out before the study ends.",
+        "Differences between generations can be mistaken for age effects.",
+        "Changes within one person cannot be observed.",
+        "Results are available almost at once."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Following the same people for years often means some drop out, which can bias the final sample.",
+      "distractor_notes": {
+        "B": "That limitation belongs to cross-sectional studies, which compare different age groups.",
+        "C": "Following the same people is what shows change within a person.",
+        "D": "Following people for years takes a long time."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0193": {
+      "id": "dq-0193",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.1.A",
+      "ek": [
+        "3.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Lee finds that toddlers who were very shy at age two are usually still shy as adults. Which of the following developmental themes does this finding most strongly support?",
+      "options": [
+        "Change",
+        "Discontinuity",
+        "Stability",
+        "Maturation"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Traits that stay much the same from childhood into adulthood illustrate stability in development.",
+      "distractor_notes": {
+        "A": "Change would mean traits shift a great deal over time.",
+        "B": "Discontinuity concerns abrupt, stage-like shifts, not how consistent a trait stays.",
+        "D": "Maturation is biological growth that follows a genetic timetable."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0194": {
+      "id": "dq-0194",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.1.A",
+      "ek": [
+        "3.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A theorist argues that children move through distinct stages, and that thinking in each stage differs in kind from thinking in the stage before it. Which of the following views does this support?",
+      "options": [
+        "Continuity",
+        "Discontinuity",
+        "Stability",
+        "Nurture"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Distinct stages that differ in kind reflect a discontinuous view of development.",
+      "distractor_notes": {
+        "A": "Continuity describes gradual, cumulative change.",
+        "C": "Stability concerns whether traits stay consistent over time.",
+        "D": "Nurture refers to environmental influence, not the pattern of change."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0195": {
+      "id": "dq-0195",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.1.A",
+      "ek": [
+        "3.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher describes a child's growth in height as many small, steady increases rather than abrupt jumps. Which of the following best describes this view of development?",
+      "options": [
+        "Stage-like change",
+        "Stability",
+        "Critical period",
+        "Continuous change"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Small, gradual, cumulative increases reflect continuity in development.",
+      "distractor_notes": {
+        "A": "Stage-like change involves abrupt shifts between distinct levels.",
+        "B": "Stability would mean the child's height stays the same.",
+        "C": "A critical period is a window when experience has its strongest effect."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0196": {
+      "id": "dq-0196",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.1",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.1.A",
+      "ek": [
+        "3.1.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher finds that an infant's inherited temperament shapes how parents respond to the child, and the parents' responses then shape the child's later behavior. Which of the following best describes this pattern?",
+      "options": [
+        "Interaction of nature and nurture",
+        "Influence of nature alone",
+        "Influence of nurture alone",
+        "Natural selection"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Inherited temperament and parental responses influence each other, which is an interaction of nature and nurture.",
+      "distractor_notes": {
+        "B": "The parents' responses are environmental, so nature alone is incomplete.",
+        "C": "The infant's inherited temperament also matters, so nurture alone is incomplete.",
+        "D": "Natural selection explains how traits spread across generations, not one child's development."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0197": {
+      "id": "dq-0197",
+      "status": "draft",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.A",
+      "ek": [
+        "3.2.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Between about the third and eighth weeks after conception, the major organs and body structures of a developing human begin to form. Which of the following prenatal stages is this?",
+      "options": [
+        "Zygote",
+        "Fetus",
+        "Embryo",
+        "Neonate"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Organs and body structures begin forming in the embryo stage, from about week 3 through week 8.",
+      "distractor_notes": {
+        "A": "The zygote stage covers roughly the first two weeks after fertilization.",
+        "B": "The fetal stage begins around the ninth week.",
+        "D": "A neonate is a newborn, not a prenatal stage."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": true,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0198": {
+      "id": "dq-0198",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.A",
+      "ek": [
+        "3.2.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A woman drinks heavily throughout her pregnancy. Her baby is born with a small head, unusual facial features, and intellectual disability. Which of the following best explains the baby's condition?",
+      "options": [
+        "Delayed maturation after birth",
+        "Prenatal exposure to a harmful substance",
+        "A failure of the rooting reflex",
+        "Poor attachment to a caregiver"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Alcohol is a teratogen, a harmful substance that can disrupt prenatal development.",
+      "distractor_notes": {
+        "A": "Maturation after birth cannot explain features already present at birth.",
+        "C": "Rooting is a feeding reflex and is unrelated to these features.",
+        "D": "Attachment develops after birth and does not cause physical features present at birth."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0199": {
+      "id": "dq-0199",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.B",
+      "ek": [
+        "3.2.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "When a caregiver gently strokes a newborn's cheek, the baby turns toward the touch and opens its mouth. Which of the following reflexes is this?",
+      "options": [
+        "Rooting reflex",
+        "Sucking reflex",
+        "Grasping reflex",
+        "Stepping reflex"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Turning toward a touch on the cheek helps a newborn find food, which is the rooting reflex.",
+      "distractor_notes": {
+        "B": "The sucking reflex is sucking on an object placed in the mouth.",
+        "C": "The grasping reflex is closing the fingers around an object in the palm.",
+        "D": "The stepping reflex is making walking motions when held upright."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0200": {
+      "id": "dq-0200",
+      "status": "draft",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.A",
+      "ek": [
+        "3.2.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A loud noise makes a newborn throw out both arms and then pull them back toward the body. Which of the following reflexes is this?",
+      "options": [
+        "Rooting reflex",
+        "Grasping reflex",
+        "Sucking reflex",
+        "Moro reflex"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The startle response of flinging out and then drawing in the arms is the Moro reflex.",
+      "distractor_notes": {
+        "A": "Rooting is turning toward a touch on the cheek.",
+        "B": "Grasping is closing the fingers around an object.",
+        "C": "The sucking reflex is sucking on an object placed in the mouth."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": true,
+      "created": "2026-11-13",
+      "reviewed_by": null,
+      "published": null
+    },
+    "dq-0201": {
+      "id": "dq-0201",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.B",
+      "ek": [
+        "3.2.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "In nearly every culture, babies sit up, crawl, and walk in about the same order, even when caregivers do little to teach these skills. Which of the following best explains this pattern?",
+      "options": [
+        "Operant conditioning",
+        "Observational learning",
+        "Maturation",
+        "Scaffolding"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Motor skills that unfold in a similar order across cultures reflect maturation, a genetically guided biological timetable.",
+      "distractor_notes": {
+        "A": "Operant conditioning relies on consequences, not a biological timetable.",
+        "B": "Observational learning requires models to imitate.",
+        "D": "Scaffolding is guided help from others, which caregivers provide little of here."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0202": {
+      "id": "dq-0202",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.C",
+      "ek": [
+        "3.2.C.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is a secondary sex characteristic that develops during puberty?",
+      "options": [
+        "Growth of the ovaries",
+        "Deepening of the voice",
+        "Enlargement of the testes",
+        "Growth of the uterus"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Secondary sex characteristics, such as a deeper voice, are not directly involved in reproduction.",
+      "distractor_notes": {
+        "A": "The ovaries are reproductive organs, a primary sex characteristic.",
+        "C": "The testes are reproductive organs, a primary sex characteristic.",
+        "D": "The uterus is a reproductive organ, a primary sex characteristic."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0203": {
+      "id": "dq-0203",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.D",
+      "ek": [
+        "3.2.D.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 52-year-old woman reports that her menstrual periods have stopped and that her estrogen levels have dropped. Which of the following terms describes this change?",
+      "options": [
+        "Menarche",
+        "Puberty",
+        "Gestation",
+        "Menopause"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The end of menstruation and the drop in estrogen in midlife mark menopause.",
+      "distractor_notes": {
+        "A": "Menarche is the first menstrual period.",
+        "B": "Puberty is the period of sexual maturation in adolescence.",
+        "C": "Gestation is the period of pregnancy."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0204": {
+      "id": "dq-0204",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.D",
+      "ek": [
+        "3.2.D.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following physical changes is typical in late adulthood?",
+      "options": [
+        "Slower reaction times",
+        "Faster recovery from illness",
+        "Increased muscle mass",
+        "Greater sensitivity to faint sounds"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Reaction times typically slow in late adulthood, along with declines in muscle mass and sensory sharpness.",
+      "distractor_notes": {
+        "B": "Recovery from illness typically slows with age.",
+        "C": "Muscle mass typically declines with age.",
+        "D": "Hearing sensitivity typically declines with age."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-13",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0205": {
+      "id": "dq-0205",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.B",
+      "ek": [
+        "3.2.B.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Researchers place crawling infants on a glass-topped table with a checkerboard pattern. One side looks like a sharp drop. Most infants refuse to crawl onto that side, even when their mothers call to them from it. Which of the following is the best conclusion?",
+      "options": [
+        "Infants cannot yet tell patterns apart.",
+        "Infants fear heights only after caregivers warn them.",
+        "Infants crawl toward whichever side is closer.",
+        "Infants can perceive depth by the time they crawl."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Avoiding the apparent drop, even with a mother calling, shows that crawling infants already perceive depth.",
+      "distractor_notes": {
+        "A": "The pattern was the same on both sides, so it cannot explain the choice.",
+        "B": "Infants refused even when their mothers encouraged them to cross.",
+        "C": "Both sides were equally close, yet infants avoided one."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0206": {
+      "id": "dq-0206",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.B",
+      "ek": [
+        "3.2.B.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Soon after hatching, a gosling follows the first moving object it sees, a researcher, and keeps following him instead of its mother. Which of the following terms best describes this behavior?",
+      "options": [
+        "Maturation",
+        "Imprinting",
+        "Habituation",
+        "Classical conditioning"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Forming a rapid, lasting attachment to the first moving object seen early in life is imprinting.",
+      "distractor_notes": {
+        "A": "Maturation is biological growth on a genetic timetable, not attachment to the first object seen.",
+        "C": "Habituation is a reduced response to a repeated stimulus.",
+        "D": "Classical conditioning pairs a neutral stimulus with a stimulus that triggers a reflex."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0207": {
+      "id": "dq-0207",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.2",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.2.B",
+      "ek": [
+        "3.2.B.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A girl who had no exposure to any language until age 13 learned many words but never mastered grammar, even after years of instruction. Which of the following best explains this outcome?",
+      "options": [
+        "Adolescents lack the brain structures for language.",
+        "Language is learned only through reinforcement.",
+        "Language exposure matters most in an early window.",
+        "Grammar is inherited and needs no exposure."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Some abilities develop best only if experience arrives during an early critical or sensitive period.",
+      "distractor_notes": {
+        "A": "Older learners have the structures, but they missed early exposure.",
+        "B": "Reinforcement does not explain why the timing of exposure matters.",
+        "D": "Without exposure, grammar does not develop fully."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0208": {
+      "id": "dq-0208",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "At 6 months, a baby stops looking for a toy as soon as it is hidden under a blanket. By 12 months, the baby lifts the blanket to find it. Which of the following abilities has the baby developed?",
+      "options": [
+        "Object permanence",
+        "Conservation",
+        "Egocentrism",
+        "Theory of mind"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Knowing that a hidden object still exists is object permanence, which develops in the sensorimotor stage.",
+      "distractor_notes": {
+        "B": "Conservation is understanding that quantity stays the same when appearance changes.",
+        "C": "Egocentrism is difficulty seeing another person's viewpoint.",
+        "D": "Theory of mind is understanding that others have different thoughts and beliefs."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0209": {
+      "id": "dq-0209",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Four-year-old Maya watches the same amount of juice poured from a short, wide glass into a tall, thin glass. She says the tall glass now holds more juice. Which of Piaget's stages is Maya most likely in?",
+      "options": [
+        "Sensorimotor stage",
+        "Concrete operational stage",
+        "Preoperational stage",
+        "Formal operational stage"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Young children in the preoperational stage cannot yet conserve quantity when the shape of a container changes.",
+      "distractor_notes": {
+        "A": "Sensorimotor children are infants and toddlers still developing object permanence.",
+        "B": "Concrete operational children understand that quantity stays the same.",
+        "D": "Formal operational thinkers reason about abstract and hypothetical ideas."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0210": {
+      "id": "dq-0210",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 9-year-old correctly reasons that a ball of clay holds the same amount of clay after it is rolled into a long snake, and she can sort sticks from shortest to longest. She struggles with abstract, hypothetical problems. Which of Piaget's stages is she most likely in?",
+      "options": [
+        "Sensorimotor stage",
+        "Preoperational stage",
+        "Formal operational stage",
+        "Concrete operational stage"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Logical thinking about concrete situations, with trouble on abstract problems, marks the concrete operational stage.",
+      "distractor_notes": {
+        "A": "Sensorimotor children are infants and toddlers, not 9-year-olds.",
+        "B": "Preoperational children typically cannot yet conserve quantity.",
+        "C": "Formal operational thinkers handle abstract, hypothetical problems."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0211": {
+      "id": "dq-0211",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.iv"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 15-year-old is asked what would happen to a society with no laws. She considers several hypothetical possibilities and reasons about abstract ideas such as justice. Which of Piaget's stages is she most likely in?",
+      "options": [
+        "Concrete operational stage",
+        "Formal operational stage",
+        "Preoperational stage",
+        "Sensorimotor stage"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Abstract and hypothetical reasoning is the hallmark of the formal operational stage.",
+      "distractor_notes": {
+        "A": "Concrete operational thinking is logical but limited to concrete situations.",
+        "C": "Preoperational children rely on mental symbols and pretend play, not abstract logic.",
+        "D": "Sensorimotor infants learn through their senses and actions."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0212": {
+      "id": "dq-0212",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A child watches Anne move a marble from a basket to a box while Sally is out of the room. Asked where Sally will look for the marble, a 3-year-old points to the box, and a 5-year-old points to the basket. Which of the following abilities does the 5-year-old show that the 3-year-old lacks?",
+      "options": [
+        "Conservation",
+        "Object permanence",
+        "Theory of mind",
+        "Abstract reasoning"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Understanding that Sally holds a belief different from what the child knows is theory of mind.",
+      "distractor_notes": {
+        "A": "Conservation concerns quantity staying the same, not other people's beliefs.",
+        "B": "Both children know that a hidden marble still exists.",
+        "D": "Abstract reasoning develops later, in the formal operational stage."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0213": {
+      "id": "dq-0213",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A tutor helps a child with a puzzle that the child cannot yet solve alone. The tutor gives hints and gradually removes them as the child improves. Which of the following best describes the tutor's support?",
+      "options": [
+        "Scaffolding",
+        "Accommodation",
+        "Egocentrism",
+        "Conservation"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Temporary support that is gradually withdrawn as the child gains skill is scaffolding, used within the zone of proximal development.",
+      "distractor_notes": {
+        "B": "Accommodation is changing a schema to fit new information.",
+        "C": "Egocentrism is difficulty taking another person's viewpoint.",
+        "D": "Conservation is understanding that quantity stays the same despite changes in appearance."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0214": {
+      "id": "dq-0214",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A toddler who calls every flying object a bird sees an airplane and calls it a bird. After her mother explains the difference, she creates a new category for airplanes. Which of the following processes did the toddler use to create the new category?",
+      "options": [
+        "Assimilation",
+        "Object permanence",
+        "Conservation",
+        "Accommodation"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Creating a new category when an existing schema does not fit is accommodation.",
+      "distractor_notes": {
+        "A": "Assimilation fits new information into an existing schema, as her first label did.",
+        "B": "Object permanence is knowing that hidden objects still exist.",
+        "C": "Conservation is understanding that quantity stays the same despite changes in appearance."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0215": {
+      "id": "dq-0215",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A study follows adults from age 30 to age 70. Their vocabulary and general knowledge scores stay about the same, but their speed at solving unfamiliar puzzles declines. Which of the following correctly describes these results?",
+      "options": [
+        "Crystallized intelligence declines, and fluid intelligence stays stable.",
+        "Crystallized intelligence stays stable, and fluid intelligence declines.",
+        "Both crystallized and fluid intelligence stay stable.",
+        "Both crystallized and fluid intelligence improve."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Knowledge-based crystallized intelligence stays stable in adulthood, while fluid intelligence tends to decline.",
+      "distractor_notes": {
+        "A": "The pattern is reversed. Vocabulary and knowledge reflect crystallized intelligence.",
+        "C": "Speed at solving unfamiliar puzzles, a fluid ability, declines.",
+        "D": "Neither measure improves in this study."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0216": {
+      "id": "dq-0216",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "An 82-year-old woman gradually loses her memory and her ability to think clearly, and she can no longer manage daily tasks. Doctors describe this as a progressive disorder of cognition. Which of the following terms describes her condition?",
+      "options": [
+        "Dementia",
+        "Anterograde amnesia",
+        "Aphasia",
+        "Prosopagnosia"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. A progressive decline in memory and thinking that disrupts daily life is dementia, a cognitive disorder of adulthood.",
+      "distractor_notes": {
+        "B": "Anterograde amnesia is an inability to form new memories, not a broad cognitive decline.",
+        "C": "Aphasia is impaired language production or comprehension.",
+        "D": "Prosopagnosia is difficulty recognizing faces."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0217": {
+      "id": "dq-0217",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.A",
+      "ek": [
+        "3.5.A.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following is the smallest unit of sound in a spoken language?",
+      "options": [
+        "Morpheme",
+        "Semantics",
+        "Syntax",
+        "Phoneme"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A phoneme is the smallest unit of sound in a language.",
+      "distractor_notes": {
+        "A": "A morpheme is the smallest unit of meaning.",
+        "B": "Semantics is the study of the meaning of words and sentences.",
+        "C": "Syntax is the set of rules for ordering words into sentences."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "recall",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0218": {
+      "id": "dq-0218",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.A",
+      "ek": [
+        "3.5.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "The word \"unfriendly\" can be broken into three parts: un, friend, and ly. Each part carries meaning. Which of the following terms describes these parts?",
+      "options": [
+        "Phonemes",
+        "Syntax",
+        "Morphemes",
+        "Semantics"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The smallest units of meaning in a language are morphemes.",
+      "distractor_notes": {
+        "A": "Phonemes are units of sound and need not carry meaning.",
+        "B": "Syntax is the rule system for ordering words.",
+        "D": "Semantics is the study of meaning, not a unit of language."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0219": {
+      "id": "dq-0219",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.A",
+      "ek": [
+        "3.5.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "\"The dog chased the cat\" and \"The cat chased the dog\" use the same words but mean different things. Which of the following aspects of language explains the difference?",
+      "options": [
+        "Morphemes",
+        "Syntax",
+        "Semantics",
+        "Phonemes"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Word order changes the meaning, and the rules for ordering words make up syntax.",
+      "distractor_notes": {
+        "A": "The same morphemes appear in both sentences.",
+        "C": "The meanings of the individual words are identical. Only their order differs.",
+        "D": "The same words, and so the same phonemes, appear in both sentences."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0220": {
+      "id": "dq-0220",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.A",
+      "ek": [
+        "3.5.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A listener hears \"The bat flew out of the cave\" and \"He swung the bat at the ball\" and understands that bat means something different in each sentence. Which of the following aspects of language does the listener use to interpret the word?",
+      "options": [
+        "Semantics",
+        "Syntax",
+        "Phonemes",
+        "Overgeneralization"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Interpreting what words and sentences mean is the role of semantics.",
+      "distractor_notes": {
+        "B": "Syntax concerns word order, which does not change the meaning of bat here.",
+        "C": "The sounds of the word are the same in both sentences.",
+        "D": "Overgeneralization is applying a grammar rule to irregular words."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0221": {
+      "id": "dq-0221",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.B",
+      "ek": [
+        "3.5.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 6-month-old repeats \"ba-ba-ba\" and \"da-da-da,\" although the sounds do not yet carry meaning. Which of the following stages of language development is the infant in?",
+      "options": [
+        "Cooing stage",
+        "Babbling stage",
+        "One-word stage",
+        "Telegraphic stage"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Repeating consonant-vowel sounds without meaning is babbling.",
+      "distractor_notes": {
+        "A": "Cooing is making vowel-like sounds, usually at about 2 months.",
+        "C": "The one-word stage begins around age 1, with meaningful words.",
+        "D": "Telegraphic speech uses short, key-word sentences, around age 2."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0222": {
+      "id": "dq-0222",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.B",
+      "ek": [
+        "3.5.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 2-year-old says \"Want juice\" and \"Daddy go work,\" using short sentences that contain only key words. Which of the following stages of language development is this?",
+      "options": [
+        "Cooing stage",
+        "Babbling stage",
+        "One-word stage",
+        "Telegraphic stage"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Short sentences that keep only the key words are telegraphic speech.",
+      "distractor_notes": {
+        "A": "Cooing is making vowel-like sounds in early infancy.",
+        "B": "Babbling is repeating syllables that carry no meaning.",
+        "C": "The one-word stage uses single words, not short sentences."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0223": {
+      "id": "dq-0223",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.B",
+      "ek": [
+        "3.5.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A toddler who has learned to add -ed to past-tense verbs says \"goed\" and \"runned.\" Which of the following best describes these errors?",
+      "options": [
+        "Overgeneralization of grammar rules",
+        "Babbling",
+        "Telegraphic speech",
+        "Cooing"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Applying a regular grammar rule to irregular words is overgeneralization, a sign the child is learning rules.",
+      "distractor_notes": {
+        "B": "Babbling is repeating syllables that carry no meaning.",
+        "C": "Telegraphic speech drops small words, while these errors add endings.",
+        "D": "Cooing is making vowel-like sounds in early infancy."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0224": {
+      "id": "dq-0224",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.5.A",
+      "ek": [
+        "3.5.A.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following examples best illustrates that language is generative?",
+      "options": [
+        "The sounds of the word \"dog\" have no natural link to the animal that it names.",
+        "Speakers of the same language agree on what the words of that language mean.",
+        "A speaker combines known words into a sentence never heard before.",
+        "Word order in a sentence changes its meaning for a listener of that language."
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Combining a limited set of words and rules into endless new sentences shows that language is generative.",
+      "distractor_notes": {
+        "A": "That illustrates that language is arbitrary.",
+        "B": "That illustrates that language is shared.",
+        "D": "That illustrates that language is rule governed."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0225": {
+      "id": "dq-0225",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A child's behavior at school is affected by her father's work schedule, which requires him to work long hours, even though the child has never been to his workplace. According to ecological systems theory, which of the following systems best describes the father's workplace?",
+      "options": [
+        "Microsystem",
+        "Exosystem",
+        "Macrosystem",
+        "Chronosystem"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Settings that affect the child indirectly, without the child taking part in them, make up the exosystem.",
+      "distractor_notes": {
+        "A": "The microsystem is made up of settings the child directly experiences, such as home and school.",
+        "C": "The macrosystem is the broader culture and its values.",
+        "D": "The chronosystem is change over time."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0226": {
+      "id": "dq-0226",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A parent sets strict rules and expects obedience without explanation, saying \"Because I said so\" when the child asks why. The parent shows little warmth. Which of the following parenting styles is this?",
+      "options": [
+        "Authoritative",
+        "Permissive",
+        "Avoidant attachment",
+        "Authoritarian"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Strict rules, demanded obedience and little warmth describe an authoritarian parenting style.",
+      "distractor_notes": {
+        "A": "Authoritative parents set limits but explain reasons and show warmth.",
+        "B": "Permissive parents set few rules and rarely enforce them.",
+        "C": "Avoidant attachment describes a child's bond, not a parenting style."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0227": {
+      "id": "dq-0227",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A parent sets clear limits, explains the reasons for rules, listens to the child's point of view, and is warm and responsive. Which of the following parenting styles is this?",
+      "options": [
+        "Authoritative",
+        "Authoritarian",
+        "Permissive",
+        "Secure attachment"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Firm limits combined with warmth and explanation describe an authoritative parenting style.",
+      "distractor_notes": {
+        "B": "Authoritarian parents demand obedience without explanation and show little warmth.",
+        "C": "Permissive parents set few rules and rarely enforce them.",
+        "D": "Secure attachment describes a child's bond, not a parenting style."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0228": {
+      "id": "dq-0228",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 1-year-old cries when her mother leaves the room. When her mother returns, the girl is quickly comforted and goes back to playing. Which of the following attachment styles does the girl show?",
+      "options": [
+        "Avoidant attachment",
+        "Anxious attachment",
+        "Secure attachment",
+        "Disorganized attachment"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Distress at separation followed by quick comfort and a return to play shows secure attachment.",
+      "distractor_notes": {
+        "A": "Avoidant infants show little distress at separation and ignore the caregiver on return.",
+        "B": "Anxious infants are very distressed and hard to soothe on return.",
+        "D": "Disorganized infants show confused, contradictory behavior toward the caregiver."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0229": {
+      "id": "dq-0229",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.3.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "At 10 months, Luis begins to cry when his mother leaves the room and when a stranger comes near. Which of the following terms describes this behavior?",
+      "options": [
+        "Imprinting",
+        "Separation anxiety",
+        "Habituation",
+        "Egocentrism"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Heightened fear when apart from a caregiver or near a stranger is separation anxiety.",
+      "distractor_notes": {
+        "A": "Imprinting is attachment to the first moving object seen, as in some animals.",
+        "C": "Habituation is a reduced response to a repeated stimulus.",
+        "D": "Egocentrism is difficulty seeing other people's viewpoints."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0230": {
+      "id": "dq-0230",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.3.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Baby monkeys are raised with two artificial mothers: a wire one that provides milk and a soft cloth one that provides no food. The monkeys spend most of their time clinging to the cloth one. Which of the following is the best conclusion?",
+      "options": [
+        "Attachment forms mainly with whoever supplies food.",
+        "Attachment depends entirely on inherited traits.",
+        "Monkeys cannot become attached to any caregiver.",
+        "Comfort matters more than food for attachment."
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The monkeys clung to the soft mother rather than the feeding one, showing that comfort matters more than food.",
+      "distractor_notes": {
+        "A": "The monkeys clung to the one that did not feed them.",
+        "B": "The monkeys' choice reflects the comfort they received, not genes alone.",
+        "C": "The monkeys formed a strong attachment to the cloth mother."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0231": {
+      "id": "dq-0231",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.4.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 14-year-old refuses to go to school because of a small pimple. She is convinced that everyone will stare at it and talk about her all day. Which of the following concepts best describes her thinking?",
+      "options": [
+        "Imaginary audience",
+        "Personal fable",
+        "Identity diffusion",
+        "Social clock"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Believing that everyone is watching and judging you is the imaginary audience, a form of adolescent egocentrism.",
+      "distractor_notes": {
+        "B": "The personal fable is the belief that one's experiences are unique and that harm will not happen to oneself.",
+        "C": "Identity diffusion is neither exploring nor committing to an identity.",
+        "D": "The social clock is the culturally preferred timing of life events."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0232": {
+      "id": "dq-0232",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.4.ii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 16-year-old drives recklessly and says, \"Accidents only happen to other people, not me.\" Which of the following concepts best describes this thinking?",
+      "options": [
+        "Imaginary audience",
+        "Identity foreclosure",
+        "Personal fable",
+        "Social clock"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Believing that one's experiences are unique and that danger applies only to others is the personal fable.",
+      "distractor_notes": {
+        "A": "The imaginary audience is the belief that others are watching and judging you closely.",
+        "B": "Identity foreclosure is committing to an identity without exploring options.",
+        "D": "The social clock is the culturally preferred timing of life events."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0233": {
+      "id": "dq-0233",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A 45-year-old mentors younger coworkers and volunteers with a local youth group, wanting to contribute to the next generation. According to Erikson, which of the following psychosocial challenges is she facing?",
+      "options": [
+        "Integrity versus despair",
+        "Generativity versus stagnation",
+        "Intimacy versus isolation",
+        "Identity versus role confusion"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Contributing to the next generation is the focus of generativity versus stagnation in middle adulthood.",
+      "distractor_notes": {
+        "A": "Integrity versus despair involves reflecting on one's life in late adulthood.",
+        "C": "Intimacy versus isolation involves forming close relationships in young adulthood.",
+        "D": "Identity versus role confusion is the central task of adolescence."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0234": {
+      "id": "dq-0234",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.8"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A college sophomore has tried several majors and clubs and has not yet committed to a career or a set of values. She is actively exploring her options. Which of the following identity statuses best describes her?",
+      "options": [
+        "Moratorium",
+        "Foreclosure",
+        "Diffusion",
+        "Achievement"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Actively exploring options without yet committing is the moratorium identity status.",
+      "distractor_notes": {
+        "B": "Foreclosure is committing to an identity without exploring options.",
+        "C": "Diffusion is neither exploring nor committing.",
+        "D": "Achievement is committing to an identity after exploring options."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0235": {
+      "id": "dq-0235",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A teacher and a student's parents meet to coordinate how to help the student with reading. According to ecological systems theory, which of the following systems best describes the connection between the student's home and school?",
+      "options": [
+        "Microsystem",
+        "Exosystem",
+        "Chronosystem",
+        "Mesosystem"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Links between a child's immediate settings, such as home and school, make up the mesosystem.",
+      "distractor_notes": {
+        "A": "The microsystem is a single setting the child directly experiences, such as home or school.",
+        "B": "The exosystem is a setting that affects the child without the child taking part in it.",
+        "C": "The chronosystem is change over time."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0236": {
+      "id": "dq-0236",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.6"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A baby whose cries are consistently answered with comfort and food develops a basic sense that the world is safe and that caregivers can be relied on. According to Erikson, which of the following psychosocial challenges is the infant resolving?",
+      "options": [
+        "Trust versus mistrust",
+        "Autonomy versus shame and doubt",
+        "Initiative versus guilt",
+        "Industry versus inferiority"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Reliable caregiving in infancy builds a sense that the world is safe, which resolves trust versus mistrust.",
+      "distractor_notes": {
+        "B": "Autonomy versus shame and doubt is the challenge of toddlerhood.",
+        "C": "Initiative versus guilt is the challenge of early childhood.",
+        "D": "Industry versus inferiority is the challenge of the school years."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-14"
+    },
+    "dq-0237": {
+      "id": "dq-0237",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog is given food right after a bell rings, over many trials. Soon the dog salivates when it hears the bell alone. Which of the following terms describes the bell after this training?",
+      "options": [
+        "Unconditioned stimulus",
+        "Unconditioned response",
+        "Conditioned response",
+        "Conditioned stimulus"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Through pairing with food, the bell now triggers salivation by itself, so it is the conditioned stimulus.",
+      "distractor_notes": {
+        "A": "The unconditioned stimulus is the food, which triggers salivation without learning.",
+        "B": "The unconditioned response is salivating to the food itself.",
+        "C": "The conditioned response is salivating to the bell."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0238": {
+      "id": "dq-0238",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A child bitten by a dog now feels afraid whenever she sees a dog. Which of the following terms describes the child's fear at the sight of a dog?",
+      "options": [
+        "Unconditioned response",
+        "Conditioned response",
+        "Conditioned stimulus",
+        "Unconditioned stimulus"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Fear triggered by the sight of a dog, after it was paired with the bite, is a conditioned response.",
+      "distractor_notes": {
+        "A": "The unconditioned response would be the fear caused directly by the bite.",
+        "C": "The conditioned stimulus is the sight of the dog.",
+        "D": "The unconditioned stimulus is the bite."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0239": {
+      "id": "dq-0239",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.i"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "The smell of baking pie makes Jordan's mouth water without any learning. Jordan's mouth also begins to water at the sound of the oven timer that always goes off when the pie is done. Which of the following terms describes the smell of the pie?",
+      "options": [
+        "Conditioned stimulus",
+        "Conditioned response",
+        "Unconditioned stimulus",
+        "Unconditioned response"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A stimulus that triggers a response without any learning is an unconditioned stimulus.",
+      "distractor_notes": {
+        "A": "The conditioned stimulus is the oven timer.",
+        "B": "The conditioned response is mouth watering at the timer.",
+        "D": "The unconditioned response is mouth watering at the smell."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0240": {
+      "id": "dq-0240",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog has learned to salivate at the sound of a bell. Then the bell is sounded many times without food, and the dog gradually stops salivating. Which of the following processes does this show?",
+      "options": [
+        "Extinction",
+        "Acquisition",
+        "Spontaneous recovery",
+        "Stimulus generalization"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. When the conditioned stimulus is no longer paired with the unconditioned stimulus, the response fades, which is extinction.",
+      "distractor_notes": {
+        "B": "Acquisition is the initial learning of the association.",
+        "C": "Spontaneous recovery is the reappearance of the weakened response after a rest.",
+        "D": "Generalization is responding to stimuli similar to the conditioned stimulus."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0241": {
+      "id": "dq-0241",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.iii"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a dog's salivation to a bell has disappeared, the dog is given a rest. When the bell is sounded again the next day, the dog salivates a little. Which of the following best describes this?",
+      "options": [
+        "Acquisition",
+        "Extinction",
+        "Stimulus discrimination",
+        "Spontaneous recovery"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. The return of an extinguished response after a rest is spontaneous recovery.",
+      "distractor_notes": {
+        "A": "Acquisition is the initial learning of the association, not the return of a response.",
+        "B": "Extinction is the weakening of the response when the pairing stops.",
+        "C": "Discrimination is responding to the conditioned stimulus but not to similar ones."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0242": {
+      "id": "dq-0242",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.iv"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A child bitten by a large brown dog now fears small white dogs and even cats. Which of the following best describes this fear of similar animals?",
+      "options": [
+        "Stimulus discrimination",
+        "Stimulus generalization",
+        "Extinction",
+        "Higher-order conditioning"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Responding to stimuli similar to the original conditioned stimulus is stimulus generalization.",
+      "distractor_notes": {
+        "A": "Discrimination is responding to the original stimulus but not to similar ones.",
+        "C": "Extinction is the weakening of a response when the pairing stops.",
+        "D": "Higher-order conditioning pairs a new stimulus with an existing conditioned stimulus."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0243": {
+      "id": "dq-0243",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.iv"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog salivates to a 1,000-hertz tone that has been paired with food but does not salivate to a 500-hertz tone that has not. Which of the following best describes this?",
+      "options": [
+        "Stimulus generalization",
+        "Extinction",
+        "Stimulus discrimination",
+        "Spontaneous recovery"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Responding to the paired tone but not to a different tone is stimulus discrimination.",
+      "distractor_notes": {
+        "A": "Generalization would mean salivating to both tones.",
+        "B": "Extinction is the loss of a response when the pairing stops.",
+        "D": "Spontaneous recovery is the return of an extinguished response."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0244": {
+      "id": "dq-0244",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.2.v"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog learns that a tone predicts food and salivates to the tone. Then a flashing light is repeatedly paired with the tone, with no food. Soon the dog salivates to the light alone. Which of the following best describes this?",
+      "options": [
+        "Higher-order conditioning",
+        "Extinction",
+        "Stimulus generalization",
+        "Habituation"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. A conditioned stimulus, the tone, served as the pairing partner for a new stimulus, which is higher-order conditioning.",
+      "distractor_notes": {
+        "B": "Extinction is the weakening of a response, not the learning of a new one.",
+        "C": "Generalization is responding to stimuli similar to the original.",
+        "D": "Habituation is a reduced response to a repeated stimulus."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0245": {
+      "id": "dq-0245",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After eating oyster stew and becoming sick, Priya feels nauseated at the thought of oysters, even though she ate them only once. Which of the following concepts best explains why one experience was enough?",
+      "options": [
+        "Spontaneous recovery",
+        "Stimulus discrimination",
+        "Shaping",
+        "Biological preparedness"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Organisms are biologically prepared to link foods with illness, so taste aversions can form in one trial.",
+      "distractor_notes": {
+        "A": "Spontaneous recovery is the return of an extinguished response.",
+        "B": "Discrimination is responding to some stimuli but not to similar ones.",
+        "C": "Shaping is reinforcing successive approximations of a behavior."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0246": {
+      "id": "dq-0246",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A family moves next to a train track. At first the noise wakes them every night, but after a few weeks they sleep through it. Which of the following best describes this change?",
+      "options": [
+        "Extinction",
+        "Habituation",
+        "Spontaneous recovery",
+        "Stimulus generalization"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. A diminished response to a repeated, harmless stimulus is habituation.",
+      "distractor_notes": {
+        "A": "Extinction is the loss of a conditioned response when the pairing stops.",
+        "C": "Spontaneous recovery is the return of an extinguished response.",
+        "D": "Generalization is responding to stimuli similar to the conditioned stimulus."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0247": {
+      "id": "dq-0247",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.7",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.7.A",
+      "ek": [
+        "3.7.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A therapist helps a client who fears dogs by repeatedly pairing the sight of dogs with relaxation until the client responds calmly. Which of the following learning principles underlies this approach?",
+      "options": [
+        "Positive reinforcement",
+        "Observational learning",
+        "Counterconditioning",
+        "Latent learning"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Replacing a fear response with a relaxation response through new pairings is counterconditioning.",
+      "distractor_notes": {
+        "A": "Positive reinforcement adds a reward after a behavior.",
+        "B": "Observational learning involves watching and imitating a model.",
+        "D": "Latent learning occurs without reinforcement and shows up later."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0248": {
+      "id": "dq-0248",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.A",
+      "ek": [
+        "3.9.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A boy sees a classmate praised for sharing toys, and he then begins sharing his own toys. He has not been rewarded himself. Which of the following best describes this learning?",
+      "options": [
+        "Vicarious conditioning",
+        "Classical conditioning",
+        "Shaping",
+        "Latent learning"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Learning from the consequences that another person receives is vicarious conditioning.",
+      "distractor_notes": {
+        "B": "Classical conditioning pairs two stimuli, and no stimuli are paired here.",
+        "C": "Shaping reinforces successive approximations of a behavior.",
+        "D": "Latent learning occurs without reinforcement and appears later when needed."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0249": {
+      "id": "dq-0249",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.A",
+      "ek": [
+        "3.9.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Ten-year-old Mia copies the techniques of a gymnast her own age more closely than those of an adult coach. Which of the following best explains this?",
+      "options": [
+        "Mia is rewarded whenever the coach performs a skill.",
+        "Learners copy models who are similar to them.",
+        "Adult coaches cannot serve as models for children.",
+        "Mia reached the technique through sudden insight."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The more similar a model is to the learner, the more likely the learner is to copy the model.",
+      "distractor_notes": {
+        "A": "Mia is not the one being rewarded in this scenario.",
+        "C": "Adults can serve as models, but similarity affects copying.",
+        "D": "Insight is a sudden solution without a model."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0250": {
+      "id": "dq-0250",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.A",
+      "ek": [
+        "3.9.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Children watch an adult hit a large inflatable doll. Later, when left alone with the doll, the children hit it in the same ways. Which of the following types of learning does this show?",
+      "options": [
+        "Insight learning",
+        "Latent learning",
+        "Shaping",
+        "Observational learning"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Learning by watching and then imitating a model is observational learning.",
+      "distractor_notes": {
+        "A": "Insight learning is a sudden solution without a model.",
+        "B": "Latent learning occurs without reinforcement and appears later.",
+        "C": "Shaping reinforces successive approximations of a behavior."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0251": {
+      "id": "dq-0251",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.B",
+      "ek": [
+        "3.9.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A chimpanzee sits quietly for a while, then stacks boxes to reach a banana hanging out of reach. It has never been rewarded for stacking boxes or seen another chimp do it. Which of the following best describes this learning?",
+      "options": [
+        "Observational learning",
+        "Shaping",
+        "Insight learning",
+        "Classical conditioning"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A sudden solution without prior association, consequence or model is insight learning.",
+      "distractor_notes": {
+        "A": "Observational learning needs a model to copy.",
+        "B": "Shaping reinforces successive approximations of a behavior.",
+        "D": "Classical conditioning pairs two stimuli."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0252": {
+      "id": "dq-0252",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.B",
+      "ek": [
+        "3.9.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Rats explore a maze for ten days with no food reward. When food is placed at the end on day 11, they run the maze correctly almost at once. Which of the following best explains this?",
+      "options": [
+        "Latent learning",
+        "Insight learning",
+        "Vicarious conditioning",
+        "Extinction"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Learning that occurs without reinforcement and shows up only when it is useful is latent learning.",
+      "distractor_notes": {
+        "B": "The rats learned gradually while exploring, not through a sudden solution.",
+        "C": "Vicarious conditioning requires watching a model.",
+        "D": "Extinction is the loss of a learned response."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0253": {
+      "id": "dq-0253",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.B",
+      "ek": [
+        "3.9.B.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a road closure, a student who has walked the same route to school for years picks a new route on the first try by using her mental picture of how the streets connect. Which of the following concepts best describes her mental picture?",
+      "options": [
+        "Shaping",
+        "Vicarious conditioning",
+        "Stimulus generalization",
+        "Cognitive map"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A mental representation of the layout of a place is a cognitive map.",
+      "distractor_notes": {
+        "A": "Shaping reinforces successive approximations of a behavior.",
+        "B": "Vicarious conditioning is learning by watching a model's consequences.",
+        "C": "Generalization is responding to stimuli similar to a conditioned stimulus."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0254": {
+      "id": "dq-0254",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.9.B",
+      "ek": [
+        "3.9.B.1"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Which of the following best distinguishes insight learning from latent learning?",
+      "options": [
+        "Insight learning requires reinforcement, while latent learning does not.",
+        "Insight is a sudden solution, while latent learning stays hidden until needed.",
+        "Latent learning is a sudden solution, while insight stays hidden until needed.",
+        "Insight learning requires a model, while latent learning does not."
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Insight is a sudden solution to a problem, while latent learning is hidden until a reason to use it appears.",
+      "distractor_notes": {
+        "A": "Neither type of learning requires reinforcement.",
+        "C": "These descriptions are reversed.",
+        "D": "Neither type of learning requires a model."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-14",
+      "reviewed_by": "SB",
+      "published": "2026-11-15"
+    },
+    "dq-0255": {
+      "id": "dq-0255",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Every time Lena finishes her math homework, her parents give her a sticker, and she begins finishing her homework more often. Which of the following processes does this show?",
+      "options": [
+        "Negative reinforcement",
+        "Positive punishment",
+        "Positive reinforcement",
+        "Negative punishment"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Adding a pleasant stimulus after a behavior, which makes the behavior more frequent, is positive reinforcement.",
+      "distractor_notes": {
+        "A": "Negative reinforcement removes an unpleasant stimulus to increase a behavior.",
+        "B": "Positive punishment adds an unpleasant stimulus to decrease a behavior.",
+        "D": "Negative punishment removes a pleasant stimulus to decrease a behavior."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0256": {
+      "id": "dq-0256",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A car makes an annoying beeping sound until the driver fastens his seat belt. Since then, he fastens his seat belt more quickly after getting in. Which of the following processes does this show?",
+      "options": [
+        "Negative reinforcement",
+        "Positive reinforcement",
+        "Positive punishment",
+        "Negative punishment"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Removing an unpleasant stimulus after a behavior, which makes the behavior more frequent, is negative reinforcement.",
+      "distractor_notes": {
+        "B": "Positive reinforcement adds a pleasant stimulus to increase a behavior.",
+        "C": "Positive punishment adds an unpleasant stimulus to decrease a behavior.",
+        "D": "Negative punishment removes a pleasant stimulus to decrease a behavior."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0257": {
+      "id": "dq-0257",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a teenager comes home late, her parents assign her extra chores. She then comes home on time. Which of the following processes does this show?",
+      "options": [
+        "Positive reinforcement",
+        "Negative reinforcement",
+        "Negative punishment",
+        "Positive punishment"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Adding an unpleasant stimulus after a behavior, which makes the behavior less frequent, is positive punishment.",
+      "distractor_notes": {
+        "A": "Positive reinforcement adds a pleasant stimulus to increase a behavior.",
+        "B": "Negative reinforcement removes an unpleasant stimulus to increase a behavior.",
+        "C": "Negative punishment removes a pleasant stimulus to decrease a behavior."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0258": {
+      "id": "dq-0258",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "After a teenager breaks curfew, her parents take away her phone for a week. She stops breaking curfew. Which of the following processes does this show?",
+      "options": [
+        "Positive punishment",
+        "Negative punishment",
+        "Positive reinforcement",
+        "Negative reinforcement"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Removing a pleasant stimulus after a behavior, which makes the behavior less frequent, is negative punishment.",
+      "distractor_notes": {
+        "A": "Positive punishment adds an unpleasant stimulus to decrease a behavior.",
+        "C": "Positive reinforcement adds a pleasant stimulus to increase a behavior.",
+        "D": "Negative reinforcement removes an unpleasant stimulus to increase a behavior."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0259": {
+      "id": "dq-0259",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog trainer pairs the sound of a clicker with treats. Soon the dog works hard just to hear the click. Which of the following best describes the click?",
+      "options": [
+        "Primary reinforcer",
+        "Positive punishment",
+        "Secondary reinforcer",
+        "Negative punishment"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. A stimulus that gains reinforcing power through pairing with a primary reinforcer is a secondary reinforcer.",
+      "distractor_notes": {
+        "A": "A primary reinforcer, such as food, satisfies a biological need without learning.",
+        "B": "Positive punishment decreases behavior, but the dog's behavior increases.",
+        "D": "Negative punishment decreases behavior, but the dog's behavior increases."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0260": {
+      "id": "dq-0260",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "To teach a dog to jump through a hoop, a trainer first rewards the dog for looking at the hoop, then for walking toward it, then for touching it, and finally for jumping through it. Which of the following techniques is the trainer using?",
+      "options": [
+        "Shaping",
+        "Counterconditioning",
+        "Latent learning",
+        "Vicarious conditioning"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Rewarding successive approximations of the target behavior is shaping.",
+      "distractor_notes": {
+        "B": "Counterconditioning replaces an unwanted response by pairing the stimulus with a new response.",
+        "C": "Latent learning occurs without reinforcement and appears later when needed.",
+        "D": "Vicarious conditioning is learning by watching a model's consequences."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0261": {
+      "id": "dq-0261",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A factory pays workers $5 for every 10 items they assemble. Which of the following reinforcement schedules is this?",
+      "options": [
+        "Variable-ratio schedule",
+        "Fixed-interval schedule",
+        "Variable-interval schedule",
+        "Fixed-ratio schedule"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Reinforcement after a set number of responses is a fixed-ratio schedule.",
+      "distractor_notes": {
+        "A": "A variable-ratio schedule rewards after an unpredictable number of responses.",
+        "B": "A fixed-interval schedule rewards the first response after a set time.",
+        "C": "A variable-interval schedule rewards the first response after an unpredictable time."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0262": {
+      "id": "dq-0262",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A gambler keeps pulling a slot machine lever quickly and steadily, even though the machine pays off after an unpredictable number of pulls. Which of the following reinforcement schedules is this?",
+      "options": [
+        "Fixed-ratio schedule",
+        "Variable-ratio schedule",
+        "Fixed-interval schedule",
+        "Variable-interval schedule"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Reinforcement after an unpredictable number of responses is a variable-ratio schedule, which produces fast, steady responding.",
+      "distractor_notes": {
+        "A": "A fixed-ratio schedule rewards after a set number of responses.",
+        "C": "A fixed-interval schedule rewards the first response after a set time.",
+        "D": "A variable-interval schedule rewards the first response after an unpredictable time."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0263": {
+      "id": "dq-0263",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A teacher gives a test every four weeks. Students study little just after a test, and then study more and more as the next test approaches. Which of the following reinforcement schedules best explains this pattern?",
+      "options": [
+        "Fixed-ratio schedule",
+        "Variable-ratio schedule",
+        "Fixed-interval schedule",
+        "Variable-interval schedule"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Responding that speeds up as the reinforcer approaches, then drops, fits a fixed-interval schedule.",
+      "distractor_notes": {
+        "A": "A fixed-ratio schedule rewards after a set number of responses.",
+        "B": "A variable-ratio schedule rewards after an unpredictable number of responses.",
+        "D": "A variable-interval schedule rewards after unpredictable times, producing slow, steady responding."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0264": {
+      "id": "dq-0264",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A boss checks employees' work at random times during the day. Employees work at a slow, steady pace. Which of the following reinforcement schedules is this?",
+      "options": [
+        "Variable-interval schedule",
+        "Fixed-interval schedule",
+        "Fixed-ratio schedule",
+        "Variable-ratio schedule"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Reinforcement after unpredictable amounts of time is a variable-interval schedule, which produces slow, steady responding.",
+      "distractor_notes": {
+        "B": "A fixed-interval schedule produces a scalloped pattern of responding.",
+        "C": "A fixed-ratio schedule rewards after a set number of responses.",
+        "D": "A variable-ratio schedule is based on number of responses and produces fast responding."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0265": {
+      "id": "dq-0265",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A basketball player always bounces the ball three times and spins it before a free throw because he once made a shot after doing so. The routine has no effect on the shot. Which of the following best explains the routine?",
+      "options": [
+        "Latent learning",
+        "Insight learning",
+        "Learned helplessness",
+        "Superstitious behavior"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. A behavior that was accidentally reinforced, though unrelated to the outcome, is superstitious behavior.",
+      "distractor_notes": {
+        "A": "Latent learning occurs without reinforcement and appears later when needed.",
+        "B": "Insight learning is a sudden solution to a problem.",
+        "C": "Learned helplessness is giving up after experiencing uncontrollable aversive events."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0266": {
+      "id": "dq-0266",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.4"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A dog receives shocks it cannot escape. Later, placed in a box where it could easily escape shocks by jumping a barrier, it does not try. Which of the following best explains this?",
+      "options": [
+        "Superstitious behavior",
+        "Learned helplessness",
+        "Instinctive drift",
+        "Latent learning"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Giving up after learning that aversive events cannot be controlled is learned helplessness.",
+      "distractor_notes": {
+        "A": "Superstitious behavior arises when unrelated behaviors are accidentally reinforced.",
+        "C": "Instinctive drift is an animal reverting to instinctive behavior despite training.",
+        "D": "Latent learning occurs without reinforcement and appears later when needed."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0267": {
+      "id": "dq-0267",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": false,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A trainer teaches a raccoon to put coins in a bank for food. Over time, the raccoon begins rubbing the coins together and dipping them instead, which delays the reward. Which of the following best explains this?",
+      "options": [
+        "Learned helplessness",
+        "Superstitious behavior",
+        "Instinctive drift",
+        "Spontaneous recovery"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. Animals drift back toward instinctive behaviors, which limits what can be shaped, a pattern called instinctive drift.",
+      "distractor_notes": {
+        "A": "Learned helplessness is giving up after experiencing uncontrollable aversive events.",
+        "B": "Superstitious behavior arises when unrelated behaviors are accidentally reinforced.",
+        "D": "Spontaneous recovery is the return of an extinguished conditioned response after a rest."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-15",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0268": {
+      "id": "dq-0268",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.B",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0012",
+      "stimulus_id": "stim-0012",
+      "figure_ids": [
+        "fig-0014"
+      ],
+      "question": "Which of the following is the independent variable in this study?",
+      "options": [
+        "The number of lever presses in each session",
+        "The schedule of reinforcement",
+        "The number of rats in each group",
+        "The length of each session"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. The researcher manipulated the schedule of reinforcement, so it is the independent variable.",
+      "distractor_notes": {
+        "A": "The number of presses is the outcome that was measured, so it is the dependent variable.",
+        "C": "Group size was the same for both groups and was not manipulated.",
+        "D": "Every session lasted 10 minutes, so it did not vary."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0269": {
+      "id": "dq-0269",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0012",
+      "stimulus_id": "stim-0012",
+      "figure_ids": [
+        "fig-0014"
+      ],
+      "question": "According to the graph, how many more lever presses did the partial group make than the continuous group in extinction session 3?",
+      "options": [
+        "8",
+        "18",
+        "20",
+        "28"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. In session 3 the partial group averaged 28 presses and the continuous group averaged 8, a difference of 20.",
+      "distractor_notes": {
+        "A": "8 is the continuous group's mean in session 3, not the difference.",
+        "B": "18 is the difference in session 2, not session 3.",
+        "D": "28 is the partial group's mean in session 3, not the difference."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0270": {
+      "id": "dq-0270",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "1.A",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0012",
+      "stimulus_id": "stim-0012",
+      "figure_ids": [
+        "fig-0014"
+      ],
+      "question": "Which of the following best explains why the partial group kept pressing longer after food was stopped?",
+      "options": [
+        "Behavior reinforced unpredictably resists extinction.",
+        "Continuous reinforcement creates a stronger lasting association than partial reinforcement does.",
+        "The partial group had received more food pellets during training.",
+        "Only the partial group had been shaped to press the lever."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. When reinforcement was unpredictable, the rats kept responding longer when food stopped, so the behavior resisted extinction.",
+      "distractor_notes": {
+        "B": "The graph shows the opposite, since the continuous group stopped pressing sooner.",
+        "C": "The continuous group received a pellet after every press, so it got more pellets.",
+        "D": "Both groups first learned to press the lever for food."
+      },
+      "difficulty": "hard",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0271": {
+      "id": "dq-0271",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.iii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0013",
+      "stimulus_id": "stim-0013",
+      "figure_ids": [
+        "fig-0015"
+      ],
+      "question": "Which of the following research designs did Dr. Lindqvist use?",
+      "options": [
+        "Longitudinal study",
+        "Case study",
+        "Experiment",
+        "Cross-sectional study"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Different children were tested at each age at one time, which is a cross-sectional design.",
+      "distractor_notes": {
+        "A": "A longitudinal study follows the same children over time.",
+        "B": "A case study examines one individual or group in depth.",
+        "C": "Children cannot be randomly assigned to an age, so this is not an experiment."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0272": {
+      "id": "dq-0272",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.iii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0013",
+      "stimulus_id": "stim-0013",
+      "figure_ids": [
+        "fig-0015"
+      ],
+      "question": "According to the graph, by how many percentage points did the rate of correct answers increase from age 6 to age 8?",
+      "options": [
+        "10",
+        "30",
+        "50",
+        "80"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The rate rose from 30 percent at age 6 to 80 percent at age 8, an increase of 50 percentage points.",
+      "distractor_notes": {
+        "A": "10 percent is the rate at age 4, not the increase.",
+        "B": "30 percent is the rate at age 6, not the increase.",
+        "D": "80 percent is the rate at age 8, not the increase."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0273": {
+      "id": "dq-0273",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.4",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "1.A",
+      "lo": "3.4.A",
+      "ek": [
+        "3.4.A.1.iii"
+      ],
+      "format": "set",
+      "skill_focused": true,
+      "setid": "set-0013",
+      "stimulus_id": "stim-0013",
+      "figure_ids": [
+        "fig-0015"
+      ],
+      "question": "Children who answered correctly at ages 8 and 10 were most likely in which of Piaget's stages?",
+      "options": [
+        "Sensorimotor stage",
+        "Concrete operational stage",
+        "Preoperational stage",
+        "Formal operational stage"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Understanding that quantity stays the same despite a change in shape marks the concrete operational stage.",
+      "distractor_notes": {
+        "A": "Sensorimotor children are infants and toddlers, not 8- and 10-year-olds.",
+        "C": "Preoperational children typically cannot yet understand that quantity stays the same.",
+        "D": "Formal operational thinking involves abstract reasoning, which this task does not require."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0274": {
+      "id": "dq-0274",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.6",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.A",
+      "lo": "3.6.A",
+      "ek": [
+        "3.6.A.3"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Dr. Haas wants to know whether the attachment a child forms in infancy predicts the quality of the child's friendships at age 15. She will test the same children as infants and again as teenagers. Which of the following research designs is she using?",
+      "options": [
+        "Longitudinal study",
+        "Cross-sectional study",
+        "Case study",
+        "Survey"
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. Testing the same children across many years is a longitudinal design.",
+      "distractor_notes": {
+        "B": "A cross-sectional study compares different age groups at one time.",
+        "C": "A case study examines one individual or group in depth.",
+        "D": "A survey asks many people questions at one time and does not follow them over years."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0275": {
+      "id": "dq-0275",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [
+        "0.2"
+      ],
+      "skill": "2.B",
+      "lo": "3.9.A",
+      "ek": [
+        "3.9.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A researcher wants to test whether watching a violent cartoon increases aggression in preschoolers. Which of the following is the best operational definition of aggression for this study?",
+      "options": [
+        "A teacher's general impression of how aggressive each child seems at school each day",
+        "The child's overall level of hostility toward other people in daily life",
+        "How angry each child looks while watching the cartoon during the study",
+        "The number of times a child hits or pushes a peer in a 20-minute play session"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. An operational definition states exactly how a variable is measured, such as counting hits and pushes.",
+      "distractor_notes": {
+        "A": "This is a vague impression and cannot be measured the same way for every child.",
+        "B": "This is too general to observe and count directly.",
+        "C": "Looking angry is a subjective judgment and is not aggression toward a peer."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0276": {
+      "id": "dq-0276",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.9",
+      "topic_secondary": [
+        "0.4"
+      ],
+      "skill": "2.D",
+      "lo": "3.9.A",
+      "ek": [
+        "3.9.A.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Researchers plan a study in which preschool children watch an adult behave aggressively toward a doll, and then the researchers observe the children's play. Which of the following steps best protects the children?",
+      "options": [
+        "Ask the children's teachers, rather than the parents, for permission",
+        "Obtain parental consent and allow each child to stop at any time",
+        "Observe the children without telling their parents what the study involves",
+        "Publish each child's name with the child's level of aggression"
+      ],
+      "answer": "B",
+      "explanation": "Correct: B. Parental consent and the freedom to withdraw are core protections for young participants.",
+      "distractor_notes": {
+        "A": "Parents or guardians must give permission for young children.",
+        "C": "Parents must be informed before the study begins.",
+        "D": "Participants' identities should remain confidential."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0277": {
+      "id": "dq-0277",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.B",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.5"
+      ],
+      "format": "standalone_direct",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "Five rats pressed a lever 12, 15, 15, 18, and 20 times in one session. What is the mean number of presses?",
+      "options": [
+        "12",
+        "15",
+        "16",
+        "20"
+      ],
+      "answer": "C",
+      "explanation": "Correct: C. The sum of 12, 15, 15, 18, and 20 is 80, and 80 divided by 5 is 16.",
+      "distractor_notes": {
+        "A": "12 is the lowest number of presses, not the mean.",
+        "B": "15 is the median and the mode, not the mean.",
+        "D": "20 is the highest number of presses, not the mean."
+      },
+      "difficulty": "easy",
+      "cognitive_level": "application",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0278": {
+      "id": "dq-0278",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.5",
+      "topic_secondary": [
+        "0.5"
+      ],
+      "skill": "3.C",
+      "lo": "3.5.B",
+      "ek": [
+        "3.5.B.1"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A study of 200 children finds a correlation of +0.60 between the hours per week that parents read to the children and the children's vocabulary scores. Which of the following is the best interpretation?",
+      "options": [
+        "Children who were read to more tended to have larger vocabularies.",
+        "Reading to children causes their vocabularies to grow.",
+        "Children who were read to more tended to have smaller vocabularies.",
+        "There is almost no relationship between reading and vocabulary."
+      ],
+      "answer": "A",
+      "explanation": "Correct: A. A positive correlation means that more reading goes with larger vocabularies, but it does not prove cause.",
+      "distractor_notes": {
+        "B": "A correlation alone cannot show that one variable causes the other.",
+        "C": "A positive correlation means both variables tend to rise together.",
+        "D": "A correlation of +0.60 is a moderately strong relationship."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
+    },
+    "dq-0279": {
+      "id": "dq-0279",
+      "status": "published",
+      "unit": "Unit 3",
+      "topic": "3.8",
+      "topic_secondary": [
+        "0.3"
+      ],
+      "skill": "2.C",
+      "lo": "3.8.A",
+      "ek": [
+        "3.8.A.2"
+      ],
+      "format": "standalone_scenario",
+      "skill_focused": true,
+      "setid": null,
+      "stimulus_id": null,
+      "figure_ids": [],
+      "question": "A teacher tests whether giving stickers increases homework completion. She gives stickers to her first-period class and none to her fifth-period class, then compares how much homework each class completes. Which of the following is the biggest problem with this design?",
+      "options": [
+        "The study did not measure how much homework was completed",
+        "Stickers cannot work as reinforcers for students",
+        "The sample of students was too large to be useful",
+        "Students were not randomly assigned to the two groups"
+      ],
+      "answer": "D",
+      "explanation": "Correct: D. Without random assignment, the classes may differ in other ways, so the stickers may not explain the difference.",
+      "distractor_notes": {
+        "A": "Homework completion was measured for both classes.",
+        "B": "Stickers can be reinforcers for many students.",
+        "C": "A larger sample is generally an advantage, not a flaw."
+      },
+      "difficulty": "medium",
+      "cognitive_level": "analysis",
+      "image": null,
+      "context": null,
+      "supersedes": null,
+      "retired": false,
+      "created": "2026-11-18",
+      "reviewed_by": "SB",
+      "published": "2026-11-18"
     }
   },
   "tests": [
@@ -8136,6 +11820,69 @@
           },
           {
             "topic": "0.6",
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "test_id": "unit-3-v1",
+      "name": "Unit 3 Diagnostic: Development and Learning",
+      "type": "unit",
+      "unit": "Unit 3",
+      "version": 1,
+      "status": "published",
+      "time_limit_minutes": 40,
+      "reporting": {
+        "min_items_topic": 3,
+        "min_items_unit": 10,
+        "min_items_skill": 8
+      },
+      "recipe": {
+        "order": "mixed",
+        "slots": [
+          {
+            "topic": "3.1",
+            "count": 3
+          },
+          {
+            "topic": "3.2",
+            "count": 3
+          },
+          {
+            "topic": "3.4",
+            "count": 3
+          },
+          {
+            "topic": "3.5",
+            "count": 3
+          },
+          {
+            "topic": "3.6",
+            "count": 3
+          },
+          {
+            "topic": "3.7",
+            "count": 4
+          },
+          {
+            "topic": "3.8",
+            "count": 4
+          },
+          {
+            "topic": "3.9",
+            "count": 3
+          },
+          {
+            "unit": "Unit 3",
+            "skill_focused": true,
+            "kind": "set",
+            "size": 3,
+            "count": 1
+          },
+          {
+            "unit": "Unit 3",
+            "skill_focused": true,
             "count": 3
           }
         ]
